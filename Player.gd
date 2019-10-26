@@ -24,6 +24,6 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("Attack"):
 		var coll = fire_ball.launch(1)
-			
+	
 func kill():
 	get_tree().reload_current_scene()
