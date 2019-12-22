@@ -1,20 +1,21 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://Images/barbarian/hero-barbarian-idle.png" type="Texture" id=2]
-[ext_resource path="res://Images/barbarian/hero-barbarian-attack.png" type="Texture" id=3]
+[ext_resource path="res://Images/barbarian/hero-barbarian-attack.png" type="Texture" id=2]
+[ext_resource path="res://Images/barbarian/hero-barbarian-walk.png" type="Texture" id=3]
 [ext_resource path="res://Images/barbarian/hero-barbarian-throw.png" type="Texture" id=4]
-[ext_resource path="res://Images/barbarian/hero-barbarian-walk.png" type="Texture" id=5]
+[ext_resource path="res://Images/barbarian/hero-barbarian-idle.png" type="Texture" id=5]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 20.0
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 13.5631
+height = 31.7566
 
 [sub_resource type="Animation" id=2]
 resource_name = "Attack"
 loop = true
 step = 0.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("Attack:frame")
+tracks/0/path = NodePath("Animations/Attack:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -32,7 +33,7 @@ length = 2.0
 loop = true
 step = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Idle:frame")
+tracks/0/path = NodePath("Animations/Idle:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -44,13 +45,30 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 0 ]
 }
 
+[sub_resource type="Animation" id=7]
+resource_name = "Idle-Left"
+length = 2.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animations/Idle-Left:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
 [sub_resource type="Animation" id=4]
 resource_name = "Range"
 length = 0.4
 loop = true
 step = 0.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("Range:frame")
+tracks/0/path = NodePath("Animations/Range:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -68,7 +86,25 @@ length = 0.8
 loop = true
 step = 0.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("Walk:frame")
+tracks/0/path = NodePath("Animations/Walk:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Walk-Left"
+length = 0.8
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animations/Walk-Left:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -81,43 +117,73 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 0, -0.500694 )
+position = Vector2( 0.358475, -0.859184 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Idle" type="Sprite" parent="."]
-visible = false
-position = Vector2( 0, 0.125167 )
-scale = Vector2( 1.33379, 1.21557 )
-texture = ExtResource( 2 )
-hframes = 4
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attack = SubResource( 2 )
+anims/Idle = SubResource( 3 )
+anims/Idle-Left = SubResource( 7 )
+anims/Range = SubResource( 4 )
+anims/Walk = SubResource( 5 )
+anims/Walk-Left = SubResource( 6 )
 
-[node name="Attack" type="Sprite" parent="."]
+[node name="Animations" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Attack" type="Sprite" parent="Animations"]
 visible = false
 position = Vector2( 1.52588e-005, 0.125175 )
 scale = Vector2( 1.34492, 1.47983 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 hframes = 5
 frame = 3
 
-[node name="Range" type="Sprite" parent="."]
+[node name="Walk" type="Sprite" parent="Animations"]
+visible = false
+position = Vector2( -1.90261, -3.57628e-006 )
+scale = Vector2( 1.68706, 1.58135 )
+texture = ExtResource( 3 )
+hframes = 4
+frame = 1
+
+[node name="Walk-Left" type="Sprite" parent="Animations"]
+visible = false
+position = Vector2( -1.90261, -3.57628e-006 )
+scale = Vector2( 1.68706, 1.58135 )
+texture = ExtResource( 3 )
+flip_h = true
+hframes = 4
+frame = 3
+
+[node name="Range" type="Sprite" parent="Animations"]
 visible = false
 position = Vector2( -0.375496, 0.500685 )
 scale = Vector2( 1.53198, 1.48678 )
 texture = ExtResource( 4 )
 hframes = 2
 
-[node name="Walk" type="Sprite" parent="."]
-position = Vector2( -1.90261, -3.57628e-006 )
-scale = Vector2( 1.68706, 1.58135 )
+[node name="Idle" type="Sprite" parent="Animations"]
+position = Vector2( 0.896215, -0.771054 )
+scale = Vector2( 1.74207, 1.64376 )
 texture = ExtResource( 5 )
 hframes = 4
-frame = 2
+frame = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Attack = SubResource( 2 )
-anims/Idle = SubResource( 3 )
-anims/Range = SubResource( 4 )
-anims/Walk = SubResource( 5 )
+[node name="Idle-Left" type="Sprite" parent="Animations"]
+visible = false
+position = Vector2( 0.896215, -0.771054 )
+scale = Vector2( 1.74207, 1.64376 )
+texture = ExtResource( 5 )
+flip_h = true
+hframes = 4
+frame = 3
+[connection signal="shoot" from="." to="." method="_on_Player_shoot"]

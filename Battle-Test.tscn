@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Lizard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Zombie.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 
 [node name="Battle-Test" type="Node"]
 
-[node name="Lizard" parent="." instance=ExtResource( 1 )]
+[node name="Zombie" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1312, 374 )
 
-[node name="Lizard2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1310, 291 )
+[node name="Zombie2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1315.8, 445.25 )
 
-[node name="Lizard3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1316, 447 )
+[node name="Zombie3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1307.25, 291.35 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 113, 369 )
+position = Vector2( 575.358, 375.141 )
