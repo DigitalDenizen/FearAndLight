@@ -19,6 +19,11 @@ config/name="FearAndLight-2"
 run/main_scene="res://Battle-Test.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1507
+window/size/height=953
+
 [input]
 
 move_up={

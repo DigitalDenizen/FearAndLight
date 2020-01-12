@@ -1,8 +1,12 @@
 extends Area2D
+var direction = Vector2()
+export var speed = 1000
 
-var velocity = Vector2.ZERO
+func shoot(aim_position, caster_position):
+	global_position = caster_position
+	direction = (aim_position - caster_position).normalized()
+	rotation = direction.angle()
 
-func _physics_process(delta):
-    position += velocity * delta
-
+func _process(delta):
+    position += direction * speed * delta
 
