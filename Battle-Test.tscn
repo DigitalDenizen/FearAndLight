@@ -8,30 +8,6 @@
 [node name="Zombie" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1312, 374 )
 
-[node name="Zombie2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1312.95, 462.35 )
-
-[node name="Zombie3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1307.25, 291.35 )
-
-[node name="Zombie4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1320.39, 548.168 )
-
-[node name="Zombie5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1312.95, 203 )
-
-[node name="Zombie6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1401.3, 526.95 )
-
-[node name="Zombie7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1402.25, 412 )
-
-[node name="Zombie8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1391.65, 331.246 )
-
-[node name="Zombie9" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1388.63, 245.746 )
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 575.358, 375.141 )
 [connection signal="shoot" from="Player" to="Player" method="_on_player_shoot"]

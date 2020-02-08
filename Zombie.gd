@@ -13,7 +13,12 @@ func _physics_process(delta):
 	
 	var vec_not_norm = player.global_position - global_position
 	var vec_to_player = vec_not_norm.normalized()
-	move_and_collide(vec_to_player * MOVE_SPEED * delta)
+	var collision = move_and_collide(vec_to_player * MOVE_SPEED * delta)
+	
+	if collision != null:
+		print(player.get_property_list())
+		print('#################################################################')
+		print(collision.collider.get_property_list())
 	
 	if vec_not_norm.x > 0:
 		_change_animation("Walk")

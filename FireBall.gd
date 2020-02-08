@@ -10,3 +10,5 @@ func shoot(aim_position, caster_position):
 func _process(delta):
     position += direction * speed * delta
 
+func _on_VisibilityNotifier2D_exit_screen():
+	queue_free()
