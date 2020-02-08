@@ -218,4 +218,5 @@ margin_top = -38.0489
 margin_right = 24.9477
 margin_bottom = 1.95111
 rect_scale = Vector2( 0.5, 0.5 )
+[connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
 [connection signal="shoot" from="." to="." method="_on_Player_shoot"]

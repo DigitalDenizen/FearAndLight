@@ -16,9 +16,8 @@ func _physics_process(delta):
 	var collision = move_and_collide(vec_to_player * MOVE_SPEED * delta)
 	
 	if collision != null:
-		print(player.get_property_list())
-		print('#################################################################')
-		print(collision.collider.get_property_list())
+		get_node("CollisionShape2D").set_deferred("disabled", true)
+		if body. 
 	
 	if vec_not_norm.x > 0:
 		_change_animation("Walk")
