@@ -8,9 +8,6 @@ radius = 4.55626
 
 [node name="FireBall" type="Area2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.209061, -0.627174 )
@@ -20,3 +17,4 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+[connection signal="body_entered" from="." to="." method="_body_entered"]

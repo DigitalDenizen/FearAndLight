@@ -213,10 +213,10 @@ hframes = 4
 frame = 3
 
 [node name="HealthBar" parent="." instance=ExtResource( 6 )]
-margin_left = -15.0523
-margin_top = -38.0489
-margin_right = 24.9477
-margin_bottom = 1.95111
+margin_left = -15.0
+margin_top = -40.0
+margin_right = 25.0
+margin_bottom = 1.14441e-005
 rect_scale = Vector2( 0.5, 0.5 )
 [connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
 [connection signal="shoot" from="." to="." method="_on_Player_shoot"]

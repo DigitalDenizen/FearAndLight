@@ -8,7 +8,12 @@ func shoot(aim_position, caster_position):
 	rotation = direction.angle()
 
 func _process(delta):
-    position += direction * speed * delta
+	position += direction * speed * delta
 
-func _on_VisibilityNotifier2D_exit_screen():
+func _on_Visibility_exit_screen():
 	queue_free()
+
+func _body_entered(body):
+	if body.name != "Player":
+		body.hurt(25)
+		queue_free()
