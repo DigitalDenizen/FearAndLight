@@ -8,7 +8,8 @@ signal killed()
 export (float) var max_health = 100
 
 onready var health = max_health setget _set_health
-
+var alive = true
+var deathCountdown = 0
 var FireBall = preload("res://FireBall.tscn")
 var facing = "Right"
 var attack = 0
@@ -31,16 +32,18 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			emit_signal("shoot", FireBall, get_global_mouse_position(), global_position)
-	
+
 func _change_animation(animationSelected, change_dir : bool = false):
 	if attack == 0 || change_dir:
 		for animation in $Animations.get_children():
 			if animation.name != animationSelected:
 				animation.hide()
 			else:
-				attack = 0
 				animation.show()
 				$AnimationPlayer.play(animation.name)
+				if animationSelected == "Death":
+					alive = false
+					deathCountdown = 20
 
 func _on_Player_shoot(FireBall, mouse_pos, player_pos):
 	var direction = mouse_pos - player_pos
@@ -79,8 +82,8 @@ func _cool_downs():
 	if attack > 0:
 		attack -= 1
 
-func damage(amount):
-	_set_health(health - amount)
+func hurt(damage):
+	_set_health(health - damage)
 
 func _set_health(value):
 	var prev_health = health
@@ -88,4 +91,4 @@ func _set_health(value):
 	if health != prev_health:
 		emit_signal("health_updated", health)
 		if health <= 0:
-			kill()
+			_change_animation("Death")

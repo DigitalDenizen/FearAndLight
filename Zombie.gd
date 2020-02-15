@@ -7,7 +7,7 @@ const MOVE_SPEED = 200
 export (float) var max_health = 100
 onready var health = max_health setget _set_health
 var player = null
-var dead = false
+var alive = true
 var deathCountdown = 0
 
 func _ready():
@@ -16,11 +16,12 @@ func _ready():
 func _physics_process(delta):
 	if player == null:
 		return
-	if dead == false:
+	if alive == true:
 		var vec_not_norm = player.global_position - global_position
 		var vec_to_player = vec_not_norm.normalized()
 		var collision = move_and_collide(vec_to_player * MOVE_SPEED * delta)
-		
+		if collision != null:
+			print(collision)
 		if vec_not_norm.x > 0:
 			_change_animation("Walk")
 		else:
@@ -60,5 +61,5 @@ func _change_animation(animationSelected):
 			animation.show()
 			$AnimationPlayer.play(animation.name)
 			if animationSelected == "Death":
-				dead = true
+				alive = false
 				deathCountdown = 20
