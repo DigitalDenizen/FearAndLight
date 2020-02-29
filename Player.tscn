@@ -1,12 +1,11 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Images/barbarian/hero-barbarian-attack.png" type="Texture" id=2]
-[ext_resource path="res://Images/barbarian/hero-barbarian-die.png" type="Texture" id=3]
-[ext_resource path="res://Images/barbarian/hero-barbarian-walk.png" type="Texture" id=4]
-[ext_resource path="res://Images/barbarian/hero-barbarian-throw.png" type="Texture" id=5]
-[ext_resource path="res://Images/barbarian/hero-barbarian-idle.png" type="Texture" id=6]
-[ext_resource path="res://HealthBar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Images/barbarian/hero-barbarian-walk.png" type="Texture" id=3]
+[ext_resource path="res://Images/barbarian/hero-barbarian-throw.png" type="Texture" id=4]
+[ext_resource path="res://Images/barbarian/hero-barbarian-idle.png" type="Texture" id=5]
+[ext_resource path="res://HealthBar.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 13.5631
@@ -27,23 +26,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4 ]
-}
-
-[sub_resource type="Animation" id=9]
-resource_name = "Death"
-length = 0.7
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Animations/Death:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 2, 3, 4, 5, 6 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -150,18 +132,18 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="AnimatedTexture" id=10]
-
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0.358475, -0.859184 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attack = SubResource( 2 )
-anims/Death = SubResource( 9 )
 anims/Idle = SubResource( 3 )
 anims/Idle-Left = SubResource( 4 )
 anims/Range = SubResource( 5 )
@@ -170,6 +152,9 @@ anims/Walk = SubResource( 7 )
 anims/Walk-Left = SubResource( 8 )
 
 [node name="Animations" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Attack" type="Sprite" parent="Animations"]
 visible = false
@@ -179,19 +164,11 @@ texture = ExtResource( 2 )
 hframes = 5
 frame = 1
 
-[node name="Death" type="Sprite" parent="Animations"]
-position = Vector2( -1.52588e-005, 0.209076 )
-scale = Vector2( 1.67696, 1.63879 )
-texture = ExtResource( 3 )
-normal_map = SubResource( 10 )
-hframes = 7
-frame = 3
-
 [node name="Walk" type="Sprite" parent="Animations"]
 visible = false
 position = Vector2( -1.90261, -3.57628e-006 )
 scale = Vector2( 1.68706, 1.58135 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 hframes = 4
 frame = 1
 
@@ -199,7 +176,7 @@ frame = 1
 visible = false
 position = Vector2( -1.90261, -3.57628e-006 )
 scale = Vector2( 1.68706, 1.58135 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 flip_h = true
 hframes = 4
 frame = 3
@@ -208,22 +185,21 @@ frame = 3
 visible = false
 position = Vector2( -0.375496, 0.500685 )
 scale = Vector2( 1.53198, 1.48678 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 hframes = 2
 
 [node name="Range-Left" type="Sprite" parent="Animations"]
 visible = false
 position = Vector2( -0.375496, 0.500685 )
 scale = Vector2( 1.53198, 1.48678 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 flip_h = true
 hframes = 2
 
 [node name="Idle" type="Sprite" parent="Animations"]
-visible = false
-position = Vector2( -0.149091, -0.352938 )
-scale = Vector2( 1.684, 1.62053 )
-texture = ExtResource( 6 )
+position = Vector2( 0.896215, -0.771054 )
+scale = Vector2( 1.74207, 1.64376 )
+texture = ExtResource( 5 )
 hframes = 4
 frame = 1
 
@@ -231,16 +207,16 @@ frame = 1
 visible = false
 position = Vector2( 0.896215, -0.771054 )
 scale = Vector2( 1.74207, 1.64376 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 flip_h = true
 hframes = 4
 frame = 3
 
-[node name="HealthBar" parent="." instance=ExtResource( 7 )]
-margin_left = -15.0
-margin_top = -40.0
-margin_right = 25.0
-margin_bottom = 1.14441e-005
+[node name="HealthBar" parent="." instance=ExtResource( 6 )]
+margin_left = -15.0523
+margin_top = -38.0489
+margin_right = 24.9477
+margin_bottom = 1.95111
 rect_scale = Vector2( 0.5, 0.5 )
 [connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
 [connection signal="shoot" from="." to="." method="_on_Player_shoot"]

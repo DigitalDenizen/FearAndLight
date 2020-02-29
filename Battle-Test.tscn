@@ -6,25 +6,34 @@
 [node name="Battle-Test" type="Node"]
 
 [node name="Zombie" parent="." instance=ExtResource( 1 )]
-position = Vector2( 213.296, 469.641 )
+position = Vector2( 1298.32, 382.421 )
 
 [node name="Zombie2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 344.234, 713.47 )
+position = Vector2( 1436.21, 234 )
 
 [node name="Zombie3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1162.09, 506.78 )
+position = Vector2( 1452, 374 )
 
 [node name="Zombie4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1065.04, 721.634 )
+position = Vector2( 1382.53, 282.421 )
 
 [node name="Zombie5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1279.34, 392.723 )
+position = Vector2( 1425.68, 320.316 )
 
 [node name="Zombie6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 819.677, 188.304 )
+position = Vector2( 1266.74, 312.947 )
 
 [node name="Zombie7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 256.512, 210.465 )
+position = Vector2( 1450.95, 440.315 )
+
+[node name="Zombie8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1380.42, 429.789 )
+
+[node name="Zombie9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1339.37, 222.421 )
+
+[node name="Zombie10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1276.21, 238.21 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 575.358, 375.141 )

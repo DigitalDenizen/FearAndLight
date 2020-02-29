@@ -6,10 +6,10 @@ signal health_updated(health)
 signal killed()
 
 export (float) var max_health = 100
-
 onready var health = max_health setget _set_health
 var alive = true
 var deathCountdown = 0
+
 var FireBall = preload("res://FireBall.tscn")
 var facing = "Right"
 var attack = 0
