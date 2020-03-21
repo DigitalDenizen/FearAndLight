@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://AnimatedTileset/AnimatedBackground1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Zombie.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 24.7805 )
+
+[node name="Battle-Test" type="Node"]
+
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+z_index = -1
+
+[node name="Zombie" parent="." instance=ExtResource( 2 )]
+position = Vector2( 915, 251.167 )
+z_index = 7
+
+[node name="Zombie2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 959.669, 331.951 )
+z_index = 8
+
+[node name="Zombie3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 929.771, 410 )
+
+[node name="Zombie4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 914.188, 319.641 )
+
+[node name="Zombie5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1051.58, 357.359 )
+
+[node name="Zombie6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1131, 347.823 )
+
+[node name="Zombie7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1029.08, 420 )
+
+[node name="Zombie8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 975.252, 287.753 )
+
+[node name="Zombie9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1044, 280 )
+
+[node name="Zombie10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1146.58, 287.753 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 87, 350 )
+
+[node name="Sprite" type="Sprite" parent="."]
+editor/display_folded = true
+visible = false
+position = Vector2( 460.975, 178.101 )
+scale = Vector2( 22.5617, 0.566203 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 0, 24.7805 )
+shape = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+editor/display_folded = true
+visible = false
+position = Vector2( 460.975, 499.119 )
+scale = Vector2( 22.5617, 0.566203 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/StaticBody2D"]
+position = Vector2( 0, 1.52588e-005 )
+shape = SubResource( 1 )
+[connection signal="shoot" from="Player" to="Player" method="_on_player_shoot"]

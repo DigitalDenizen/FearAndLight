@@ -16,13 +16,17 @@ _global_script_class_icons={
 [application]
 
 config/name="FearAndLight-2"
-run/main_scene="res://Battle-Test.tscn"
+run/main_scene="res://Battle-Test_Fog.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/size/width=1507
-window/size/height=953
+window/size/width=870
+window/size/height=490
+window/size/test_width=870
+window/size/test_height=490
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
 
 [input]
 

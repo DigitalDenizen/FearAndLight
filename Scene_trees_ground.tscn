@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/scene-trees-ground.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 218.044, 54.1611 )
+
+[node name="Scene_trees_ground" type="Node2D"]
+
+[node name="Scene_solid_trees" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 435, 108 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Scene_solid_trees"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene_solid_trees/StaticBody2D"]
+visible = false
+position = Vector2( 217.382, 53.9266 )
+shape = SubResource( 3 )
+
+[node name="Scene_solid_foreground" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 17.1837, 355.129 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 198, 435, 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Scene_solid_foreground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene_solid_foreground/StaticBody2D"]
+visible = false
+position = Vector2( 217.382, 53.9266 )
+shape = SubResource( 3 )
+
+[node name="Scene_ground" type="Sprite" parent="."]
+position = Vector2( 7.15979, 146.061 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 108, 435, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Scene_ground2" type="Sprite" parent="."]
+position = Vector2( 484.007, 150.357 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 108, 435, 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Scene_ground3" type="Sprite" parent="."]
+position = Vector2( 486.871, 189.02 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 126, 435, 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Scene_ground4" type="Sprite" parent="."]
+position = Vector2( 492.598, 229.116 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 144, 435, 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Scene_ground5" type="Sprite" parent="."]
+position = Vector2( 494.03, 274.939 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 162, 435, 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Scene_ground6" type="Sprite" parent="."]
+position = Vector2( 498.326, 316.466 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 180, 435, 18 )
+__meta__ = {
+"_edit_group_": true
+}

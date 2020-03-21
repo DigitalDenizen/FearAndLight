@@ -3,7 +3,7 @@ extends KinematicBody2D
 signal health_updated(health)
 signal killed()
 
-const MOVE_SPEED = 200
+const MOVE_SPEED = 100
 export (float) var max_health = 100
 onready var health = max_health setget _set_health
 var player = null
