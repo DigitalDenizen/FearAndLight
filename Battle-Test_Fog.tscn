@@ -48,8 +48,7 @@ position = Vector2( 1146.58, 287.753 )
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 87, 350 )
 
-[node name="Sprite" type="Sprite" parent="."]
-editor/display_folded = true
+[node name="Barrier" type="Sprite" parent="."]
 visible = false
 position = Vector2( 460.975, 178.101 )
 scale = Vector2( 22.5617, 0.566203 )
@@ -58,14 +57,13 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Barrier"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier/StaticBody2D"]
 position = Vector2( 0, 24.7805 )
 shape = SubResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="."]
-editor/display_folded = true
+[node name="Barrier2" type="Sprite" parent="."]
 visible = false
 position = Vector2( 460.975, 499.119 )
 scale = Vector2( 22.5617, 0.566203 )
@@ -74,9 +72,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Barrier2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier2/StaticBody2D"]
 position = Vector2( 0, 1.52588e-005 )
 shape = SubResource( 1 )
 [connection signal="shoot" from="Player" to="Player" method="_on_player_shoot"]

@@ -14,6 +14,7 @@ func _on_Visibility_exit_screen():
 	queue_free()
 
 func _body_entered(body):
-	if body.name != "Player":
+	print(body.name)
+	if body.name != "Player" && body.name != "StaticBody2D":
 		body.hurt(25)
 		queue_free()
