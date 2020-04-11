@@ -26,7 +26,7 @@ func _physics_process(delta):
 	move_and_collide(move_vec * MOVE_SPEED * delta)
 
 func kill():
-	get_tree().reload_current_scene()
+	queue_free()
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -43,7 +43,7 @@ func _change_animation(animationSelected, change_dir : bool = false):
 				$AnimationPlayer.play(animation.name)
 				if animationSelected == "Death":
 					alive = false
-					deathCountdown = 20
+					deathCountdown = 100
 
 func _on_Player_shoot(FireBall, mouse_pos, player_pos):
 	var direction = mouse_pos - player_pos
@@ -57,26 +57,32 @@ func _on_Player_shoot(FireBall, mouse_pos, player_pos):
 	fire.shoot(mouse_pos, player_pos)
 	
 func _player_movement():
-	if Input.is_action_pressed("move_up"):
-		var animate = "Walk" if facing == "Right" else "Walk-Left"
-		_change_animation(animate)
-		move_vec.y -= 1
-	if Input.is_action_pressed("move_down"):
-		var animate = "Walk" if facing == "Right" else "Walk-Left"
-		_change_animation(animate)
-		move_vec.y += 1
-	if Input.is_action_pressed("move_left"):
-		facing = "Left"
-		_change_animation("Walk-Left")
-		move_vec.x -= 1
-	if Input.is_action_pressed("move_right"):
-		facing = "Right"
-		_change_animation("Walk")
-		move_vec.x += 1
-	if move_vec.x == 0 && move_vec.y == 0 && facing == "Right":
-		_change_animation("Idle")
-	if move_vec.x == 0 && move_vec.y == 0 && facing == "Left":
-		_change_animation("Idle-Left")
+	if alive:
+		if Input.is_action_pressed("move_up"):
+			var animate = "Walk" if facing == "Right" else "Walk-Left"
+			_change_animation(animate)
+			move_vec.y -= 1
+		if Input.is_action_pressed("move_down"):
+			var animate = "Walk" if facing == "Right" else "Walk-Left"
+			_change_animation(animate)
+			move_vec.y += 1
+		if Input.is_action_pressed("move_left"):
+			facing = "Left"
+			_change_animation("Walk-Left")
+			move_vec.x -= 1
+		if Input.is_action_pressed("move_right"):
+			facing = "Right"
+			_change_animation("Walk")
+			move_vec.x += 1
+		if move_vec.x == 0 && move_vec.y == 0 && facing == "Right":
+			_change_animation("Idle")
+		if move_vec.x == 0 && move_vec.y == 0 && facing == "Left":
+			_change_animation("Idle-Left")
+	else:
+		if deathCountdown == 0:
+			kill()
+		else:
+			deathCountdown = deathCountdown - 1
 		
 func _cool_downs():
 	if attack > 0:
