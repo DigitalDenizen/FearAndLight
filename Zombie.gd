@@ -39,6 +39,7 @@ func _physics_process(delta):
 		if not attacking:
 			deathCountdown = deathCountdown - 1
 			if deathCountdown == 0:
+				emit_signal("killed")
 				kill()
 		else:
 			attackCountDown = attackCountDown - 1
@@ -64,6 +65,7 @@ func _set_health(value):
 		emit_signal("health_updated", health)
 		if health <= 0:
 			_change_animation("Death")
+		
 
 func _change_animation(animationSelected):
 	for animation in $Animations.get_children():
@@ -86,3 +88,8 @@ func _body_entered(body):
 		else: 
 			_change_animation("Attack-Left")
 		body.hurt(5)
+		
+	KinematicBody2D.connect("killed", self, "zombie_killed")
+		
+
+	
