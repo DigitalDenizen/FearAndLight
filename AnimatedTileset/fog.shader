@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
-uniform vec3 color = vec3(0.3, 0.26, 0.367);
-uniform int OCTAVES = 4;
+uniform vec3 color = vec3(0.3, 0.26, 0.367); 
+uniform int OCTAVES = 1;
 
 float rand(vec2 coord) {
 	return fract(sin(dot(coord, vec2(56,78))*1000.0)*1000.0);

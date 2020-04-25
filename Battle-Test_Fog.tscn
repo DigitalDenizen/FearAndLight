@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://AnimatedTileset/AnimatedBackground1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Zombie.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Images/defense-mud-wall-idle.png" type="Texture" id=5]
+[ext_resource path="res://Images/object-gravestone.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 24.7805 )
+extents = Vector2( 36.5938, 10.5761 )
 
 [node name="Battle-Test" type="Node"]
 
@@ -46,37 +48,68 @@ position = Vector2( 1044, 280 )
 position = Vector2( 1146.58, 287.753 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
 position = Vector2( 87, 350 )
 
-[node name="Sprite" type="Sprite" parent="."]
-editor/display_folded = true
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 3.68323, -2.45547 )
+current = true
+zoom = Vector2( 0.75, 0.75 )
+
+[node name="barrier_top" type="Sprite" parent="."]
 visible = false
-position = Vector2( 460.975, 178.101 )
-scale = Vector2( 22.5617, 0.566203 )
+position = Vector2( 821.883, 193.222 )
+scale = Vector2( 29.6064, 0.400582 )
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+[node name="StaticBody2D" type="StaticBody2D" parent="barrier_top"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barrier_top/StaticBody2D"]
 position = Vector2( 0, 24.7805 )
 shape = SubResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="."]
-editor/display_folded = true
-visible = false
-position = Vector2( 460.975, 499.119 )
-scale = Vector2( 22.5617, 0.566203 )
+[node name="barrier_bottom" type="Sprite" parent="."]
+position = Vector2( 845.996, 479.78 )
+scale = Vector2( 28.3218, -0.144741 )
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="barrier_bottom"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barrier_bottom/StaticBody2D"]
+position = Vector2( 0, 1.52588e-005 )
+shape = SubResource( 1 )
+
+[node name="mud_wall" type="Sprite" parent="."]
+position = Vector2( 774.746, 264.13 )
+scale = Vector2( 1.50333, 1.71889 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="wall" type="StaticBody2D" parent="mud_wall"]
+
+[node name="wall" type="CollisionShape2D" parent="mud_wall/wall"]
+position = Vector2( 0, 1.52588e-005 )
+shape = SubResource( 1 )
+
+[node name="grave" type="Sprite" parent="."]
+position = Vector2( 1472.66, 293.189 )
+scale = Vector2( 1.50333, 1.71889 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grave"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grave/StaticBody2D"]
 position = Vector2( 0, 1.52588e-005 )
 shape = SubResource( 1 )
 [connection signal="shoot" from="Player" to="Player" method="_on_player_shoot"]

@@ -1,0 +1,327 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://AnimatedTileset/Moon_ParallaxLayer.gd" type="Script" id=1]
+[ext_resource path="res://AnimatedTileset/scenes/scene-moon.png" type="Texture" id=2]
+[ext_resource path="res://AnimatedTileset/scenes/scene-layer-clouds.png" type="Texture" id=3]
+[ext_resource path="res://AnimatedTileset/scenes/scene-layer-hills.png" type="Texture" id=4]
+[ext_resource path="res://AnimatedTileset/scenes/scene-layer-sky.png" type="Texture" id=5]
+[ext_resource path="res://AnimatedTileset/scenes/scene-layer-stars.png" type="Texture" id=6]
+[ext_resource path="res://AnimatedTileset/scenes/scene-layer-trees-dark.png" type="Texture" id=7]
+[ext_resource path="res://AnimatedTileset/scenes/scene-layer-trees-ground.png" type="Texture" id=8]
+[ext_resource path="res://AnimatedTileset/fog.shader" type="Shader" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=11]
+[ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=12]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 9 )
+shader_param/color = Vector3( 0.3, 0.26, 0.367 )
+shader_param/OCTAVES = 1
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 33.1215, 13.9037 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Moon_ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -196.751, -114.934 )
+z_index = 2
+motion_scale = Vector2( 0.5, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Moon_2" type="Sprite" parent="ParallaxBackground/Moon_ParallaxLayer"]
+position = Vector2( 576.77, 167.746 )
+scale = Vector2( 2, 2 )
+z_index = 2
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Coulds_3" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2( 2, 2 )
+z_index = 3
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Hills_ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+motion_scale = Vector2( 0.25, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hills_4" type="Sprite" parent="ParallaxBackground/Hills_ParallaxLayer3"]
+scale = Vector2( 2, 2 )
+z_index = 4
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Hills_ParallaxLayer3_left" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+position = Vector2( -870, 0 )
+motion_scale = Vector2( 0.25, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hills_4" type="Sprite" parent="ParallaxBackground/Hills_ParallaxLayer3_left"]
+scale = Vector2( 2, 2 )
+z_index = 4
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Hills_ParallaxLayer3_right" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+position = Vector2( 870, 0 )
+motion_scale = Vector2( 0.25, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hills_4" type="Sprite" parent="ParallaxBackground/Hills_ParallaxLayer3_right"]
+scale = Vector2( 2, 2 )
+z_index = 4
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sky_0" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Stars_1" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+scale = Vector2( 2, 2 )
+z_index = 1
+texture = ExtResource( 6 )
+centered = false
+
+[node name="DarkTrees_5" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+scale = Vector2( 2, 2 )
+z_index = 5
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Foreground_6" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+scale = Vector2( 2, 2 )
+z_index = 6
+texture = ExtResource( 8 )
+centered = false
+
+[node name="ParallaxLayer4_left" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+position = Vector2( -870, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sky_0" type="Sprite" parent="ParallaxBackground/ParallaxLayer4_left"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Stars_1" type="Sprite" parent="ParallaxBackground/ParallaxLayer4_left"]
+scale = Vector2( 2, 2 )
+z_index = 1
+texture = ExtResource( 6 )
+centered = false
+
+[node name="DarkTrees_5" type="Sprite" parent="ParallaxBackground/ParallaxLayer4_left"]
+scale = Vector2( 2, 2 )
+z_index = 5
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Foreground_6" type="Sprite" parent="ParallaxBackground/ParallaxLayer4_left"]
+scale = Vector2( 2, 2 )
+z_index = 6
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Fog_5" type="Sprite" parent="ParallaxBackground/ParallaxLayer4_left"]
+visible = false
+material = SubResource( 1 )
+position = Vector2( -0.439058, 233.19 )
+scale = Vector2( 27.1967, -7.42355 )
+z_index = 5
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxLayer4_right" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+position = Vector2( 870, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sky_0" type="Sprite" parent="ParallaxBackground/ParallaxLayer4_right"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Stars_1" type="Sprite" parent="ParallaxBackground/ParallaxLayer4_right"]
+scale = Vector2( 2, 2 )
+z_index = 1
+texture = ExtResource( 6 )
+centered = false
+
+[node name="DarkTrees_5" type="Sprite" parent="ParallaxBackground/ParallaxLayer4_right"]
+scale = Vector2( 2, 2 )
+z_index = 5
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Foreground_6" type="Sprite" parent="ParallaxBackground/ParallaxLayer4_right"]
+scale = Vector2( 2, 2 )
+z_index = 6
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Fog_5" type="Sprite" parent="ParallaxBackground/ParallaxLayer4_right"]
+visible = false
+material = SubResource( 1 )
+position = Vector2( -0.439058, 233.19 )
+scale = Vector2( 27.1967, -7.42355 )
+z_index = 5
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxLayer2_left" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+position = Vector2( -870, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Coulds_3" type="Sprite" parent="ParallaxBackground/ParallaxLayer2_left"]
+scale = Vector2( 2, 2 )
+z_index = 3
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ParallaxLayer2_right" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+position = Vector2( 870, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Coulds_3" type="Sprite" parent="ParallaxBackground/ParallaxLayer2_right"]
+scale = Vector2( 2, 2 )
+z_index = 3
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ParallaxLayer_fog" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Fog_5" type="Sprite" parent="ParallaxBackground/ParallaxLayer_fog"]
+material = SubResource( 1 )
+position = Vector2( -870.547, -0.760887 )
+scale = Vector2( 82.3113, 7.30347 )
+z_index = 5
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Barrier_top" type="Sprite" parent="ParallaxBackground"]
+editor/display_folded = true
+visible = false
+position = Vector2( -865.396, 169.544 )
+scale = Vector2( 40.9658, 0.642346 )
+z_index = 7
+texture = ExtResource( 10 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ParallaxBackground/Barrier_top"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/Barrier_top/StaticBody2D"]
+position = Vector2( 32.0605, 31.6973 )
+scale = Vector2( -0.974377, -2.26766 )
+shape = SubResource( 2 )
+
+[node name="Barrier_bottom" type="Sprite" parent="ParallaxBackground"]
+editor/display_folded = true
+visible = false
+position = Vector2( -876.756, 467.187 )
+scale = Vector2( 40.9658, 0.642346 )
+z_index = 7
+texture = ExtResource( 10 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ParallaxBackground/Barrier_bottom"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/Barrier_bottom/StaticBody2D"]
+position = Vector2( 32.0605, 31.6973 )
+scale = Vector2( -0.974377, -2.26766 )
+shape = SubResource( 2 )
+
+[node name="Barrier_left" type="Sprite" parent="ParallaxBackground"]
+editor/display_folded = true
+visible = false
+position = Vector2( -877.863, 208.208 )
+scale = Vector2( 0.124735, 4.10326 )
+z_index = 7
+texture = ExtResource( 10 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ParallaxBackground/Barrier_left"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/Barrier_left/StaticBody2D"]
+position = Vector2( 32.0605, 31.6973 )
+scale = Vector2( -0.974377, -2.26766 )
+shape = SubResource( 2 )
+
+[node name="Barrier_right" type="Sprite" parent="ParallaxBackground"]
+editor/display_folded = true
+visible = false
+position = Vector2( 1739.44, 207.252 )
+scale = Vector2( 0.123884, 4.1272 )
+z_index = 7
+texture = ExtResource( 10 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ParallaxBackground/Barrier_right"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/Barrier_right/StaticBody2D"]
+position = Vector2( 32.0605, 31.6973 )
+scale = Vector2( -0.974377, -2.26766 )
+shape = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 11 )]
+position = Vector2( 185.417, 287.355 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 253.302, -42.6479 )
+current = true
+smoothing_enabled = true
+script = ExtResource( 12 )
