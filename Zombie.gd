@@ -40,6 +40,7 @@ func _physics_process(delta):
 			deathCountdown = deathCountdown - 1
 			if deathCountdown == 0:
 				kill()
+				emit_signal("killed")
 		else:
 			attackCountDown = attackCountDown - 1
 			if attackCountDown == 0:
@@ -64,6 +65,7 @@ func _set_health(value):
 		emit_signal("health_updated", health)
 		if health <= 0:
 			_change_animation("Death")
+		
 
 func _change_animation(animationSelected):
 	for animation in $Animations.get_children():
@@ -86,3 +88,8 @@ func _body_entered(body):
 		else: 
 			_change_animation("Attack-Left")
 		body.hurt(5)
+		
+	
+		
+
+	
