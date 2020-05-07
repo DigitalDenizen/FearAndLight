@@ -42,6 +42,7 @@ func _physics_process(delta):
 			deathCountdown = deathCountdown - 1
 			if deathCountdown == 0:
 				kill()
+				emit_signal("killed")
 		else:
 			attackCountDown = attackCountDown - 1
 			print(attackCountDown)
@@ -67,6 +68,7 @@ func _set_health(value):
 		emit_signal("health_updated", health)
 		if health <= 0:
 			_change_animation("Death")
+		
 
 func _change_animation(animationSelected):
 	for animation in $Animations.get_children():
@@ -84,6 +86,7 @@ func _change_animation(animationSelected):
 				not_attacking = false
 				attackCountDown = 50
 
+<<<<<<< HEAD
 func _on_Zombie_melee(Melee, player_pos, zombie_pos):
 	var direction = player_pos - zombie_pos
 	if direction.x > 0:
@@ -95,3 +98,17 @@ func _on_Zombie_melee(Melee, player_pos, zombie_pos):
 	scratch.attacker = "Zombie"
 	add_child(scratch)
 	scratch.shoot(player_pos, zombie_pos)
+=======
+func _body_entered(body):
+	if body.name == "Player":
+		if facing_right:
+			_change_animation("Attack")
+		else: 
+			_change_animation("Attack-Left")
+		body.hurt(5)
+		
+	
+		
+
+	
+>>>>>>> a4bcfd271685431bc6ad9f2995f9583f83b35e3b

@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="FearAndLight-2"
-run/main_scene="res://Battle-Test_Fog.tscn"
+run/main_scene="res://AnimatedTileset/Layered_background.tscn"
 config/icon="res://icon.png"
 
 [display]
