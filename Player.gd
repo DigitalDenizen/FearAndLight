@@ -99,6 +99,7 @@ func _player_movement():
 			kill()
 		else:
 			deathCountdown = deathCountdown - 1
+			print("death count: " + str(deathCountdown))
 		
 func _cool_downs():
 	if attack > 0:

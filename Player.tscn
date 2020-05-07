@@ -211,7 +211,7 @@ frame = 1
 
 [node name="Walk" type="Sprite" parent="Animations"]
 visible = false
-position = Vector2( -1.90261, -3.57628e-006 )
+position = Vector2( -1.90261, -3.57628e-06 )
 scale = Vector2( 1.68706, 1.58135 )
 texture = ExtResource( 3 )
 hframes = 4
@@ -219,7 +219,7 @@ frame = 1
 
 [node name="Walk-Left" type="Sprite" parent="Animations"]
 visible = false
-position = Vector2( -1.90261, -3.57628e-006 )
+position = Vector2( -1.90261, -3.57628e-06 )
 scale = Vector2( 1.68706, 1.58135 )
 texture = ExtResource( 3 )
 flip_h = true
