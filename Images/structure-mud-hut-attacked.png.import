@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/effects-spritesheet-bg-transparent.png-7311016dbac92fa101f7f7bd268cf679.stex"
+path="res://.import/structure-mud-hut-attacked.png-5a33c5026e61e9f8b54197b30e88e5d7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/effects-spritesheet-bg-transparent.png"
-dest_files=[ "res://.import/effects-spritesheet-bg-transparent.png-7311016dbac92fa101f7f7bd268cf679.stex" ]
+source_file="res://Images/structure-mud-hut-attacked.png"
+dest_files=[ "res://.import/structure-mud-hut-attacked.png-5a33c5026e61e9f8b54197b30e88e5d7.stex" ]
 
 [params]
 

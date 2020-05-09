@@ -1,0 +1,119 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://HealthBar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Images/structure-mud-hut-attacked.png" type="Texture" id=2]
+[ext_resource path="res://MudHut.gd" type="Script" id=3]
+[ext_resource path="res://Images/structure-mud-hut-idle.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 54.2406, 34.5476 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 27.8689, 19.41 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 57, 0, 57, 42 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 114, 0, 57, 42 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 171, 0, 57, 42 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 57, 42 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 228, 0, 57, 42 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 285, 0, 57, 42 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 342, 0, 57, 42 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 399, 0, 57, 42 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 57, 0, 57, 42 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 2 )
+region = Rect2( 114, 0, 57, 42 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 2 )
+region = Rect2( 171, 0, 57, 42 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": false,
+"name": "Death",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "Health 75",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 12 ) ],
+"loop": true,
+"name": "Health 50",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ) ],
+"loop": true,
+"name": "Health 25",
+"speed": 5.0
+} ]
+
+[node name="MudHut" type="StaticBody2D"]
+position = Vector2( 128, 160 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HealthBar" parent="." instance=ExtResource( 1 )]
+margin_left = 0.568787
+margin_top = -31.8528
+margin_right = 40.5688
+margin_bottom = 8.1472
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 2.92603, 0.487671 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 25.3591, 15.1179 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 27.0102, 15.3467 )
+scale = Vector2( 1.94773, 1.7308 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 27.0102, 15.3467 )
+scale = Vector2( 1.94773, 1.7308 )
+frames = SubResource( 14 )
+animation = "idle"
+frame = 1
+[connection signal="health_updated" from="." to="HealthBar" method="_on_MudHut_health_updated"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

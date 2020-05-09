@@ -56,6 +56,8 @@ func _on_Player_shoot(FireBall, mouse_pos, player_pos):
 	add_child(fire)
 	fire.shoot(mouse_pos, player_pos)
 	
+	
+	
 func _player_movement():
 	if alive:
 		if Input.is_action_pressed("move_up"):
@@ -98,3 +100,7 @@ func _set_health(value):
 		emit_signal("health_updated", health)
 		if health <= 0:
 			_change_animation("Death")
+
+
+func _on_MudWall2_health_updated(health):
+	pass # Replace with function body.

@@ -7,11 +7,13 @@ const MOVE_SPEED = 100
 export (float) var max_health = 100
 onready var health = max_health setget _set_health
 var player = null
+var wall = null
 var alive = true
 var attacking = false
 var attackCountDown = 0
 var deathCountdown = 0
 var facing_right = true
+var facing_left = true
 
 func _ready():
 	add_to_group("zombies")
@@ -23,6 +25,7 @@ func _physics_process(delta):
 		var vec_not_norm = player.global_position - global_position
 		var vec_to_player = vec_not_norm.normalized()
 		var collision = move_and_collide(vec_to_player * MOVE_SPEED * delta)
+
 		
 		if collision != null:
 			collision
@@ -34,7 +37,7 @@ func _physics_process(delta):
 			_change_animation("Walk-Left")
 			facing_right = false
 			
-		var look_vec = get_global_mouse_position() - global_position
+		var _look_vec = get_global_mouse_position() - global_position
 	else:
 		if not attacking:
 			deathCountdown = deathCountdown - 1
@@ -50,7 +53,10 @@ func kill():
 
 func set_player(p):
 	player = p
-	
+
+func set_wall(w):
+	wall = w
+
 func hurt(damage):
 	var vec_not_norm = player.global_position - global_position
 	var vec_to_player = vec_not_norm.normalized()
@@ -80,9 +86,12 @@ func _change_animation(animationSelected):
 				attackCountDown = 50
 
 func _body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" || body.name == "MudWall":
 		if facing_right:
 			_change_animation("Attack")
-		else: 
-			_change_animation("Attack-Left")
-		body.hurt(5)
+		else:
+			_change_animation("Attack-Left")	
+			body.hurt(5)
+		
+	
+

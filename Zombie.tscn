@@ -54,7 +54,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 2.79397e-007, 0.2, 0.4 ),
+"times": PoolRealArray( 2.79397e-07, 0.2, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2 ]
@@ -113,7 +113,7 @@ tracks/0/keys = {
 [sub_resource type="AnimatedTexture" id=7]
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 35.8448, 21.9436 )
+extents = Vector2( 23.0596, 23.9043 )
 
 [sub_resource type="CapsuleShape2D" id=9]
 radius = 14.6072
@@ -151,7 +151,6 @@ visible = false
 scale = Vector2( 1.70483, 1.54878 )
 texture = ExtResource( 3 )
 hframes = 4
-frame = 1
 
 [node name="Attack-Left" type="Sprite" parent="Animations"]
 visible = false
@@ -185,12 +184,13 @@ margin_bottom = 10.0
 rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="AttackRange" type="Area2D" parent="."]
+position = Vector2( -5.41501, 0 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
-position = Vector2( 0, 3.8147e-006 )
+position = Vector2( 0, 3.8147e-06 )
 z_index = -1
 shape = SubResource( 8 )
 __meta__ = {
@@ -198,6 +198,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.568802, -1.70641 )
 shape = SubResource( 9 )
 [connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
 [connection signal="body_entered" from="AttackRange" to="." method="_body_entered"]

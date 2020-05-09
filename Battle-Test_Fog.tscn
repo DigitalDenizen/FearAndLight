@@ -76,5 +76,5 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="Barrier2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier2/StaticBody2D"]
-position = Vector2( 0, 1.52588e-005 )
+position = Vector2( 0, 1.52588e-05 )
 shape = SubResource( 1 )
