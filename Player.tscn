@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Images/barbarian/hero-barbarian-attack.png" type="Texture" id=2]
@@ -29,8 +29,23 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "Death"
+[sub_resource type="Animation" id=3]
+resource_name = "Attack-Left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animations/Attack-Left:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=4]
 length = 2.4
 loop = true
 step = 0.4
@@ -57,8 +72,7 @@ tracks/1/keys = {
 "values": [ 1, 2, 3, 4, 5, 6 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Idle"
+[sub_resource type="Animation" id=5]
 length = 2.0
 loop = true
 step = 0.5
@@ -75,8 +89,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 0 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Idle-Left"
+[sub_resource type="Animation" id=6]
 length = 2.0
 step = 0.5
 tracks/0/type = "value"
@@ -92,7 +105,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=7]
 length = 0.4
 loop = true
 step = 0.2
@@ -109,8 +122,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "Range-Left"
+[sub_resource type="Animation" id=8]
 length = 0.4
 loop = true
 step = 0.2
@@ -127,7 +139,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=9]
 length = 0.8
 loop = true
 step = 0.2
@@ -144,7 +156,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=10]
 length = 0.8
 loop = true
 step = 0.2
@@ -161,7 +173,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="AnimatedTexture" id=10]
+[sub_resource type="AnimatedTexture" id=11]
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0.358475, -0.859184 )
@@ -172,27 +184,34 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attack = SubResource( 2 )
-anims/Death = SubResource( 9 )
-anims/Idle = SubResource( 3 )
-anims/Idle-Left = SubResource( 4 )
-anims/Range = SubResource( 5 )
-anims/Range-Left = SubResource( 6 )
-anims/Walk = SubResource( 7 )
-anims/Walk-Left = SubResource( 8 )
+anims/Attack-Left = SubResource( 3 )
+anims/Death = SubResource( 4 )
+anims/Idle = SubResource( 5 )
+anims/Idle-Left = SubResource( 6 )
+anims/Range = SubResource( 7 )
+anims/Range-Left = SubResource( 8 )
+anims/Walk = SubResource( 9 )
+anims/Walk-Left = SubResource( 10 )
 
 [node name="Animations" type="Node2D" parent="."]
 
 [node name="Attack" type="Sprite" parent="Animations"]
 visible = false
-position = Vector2( 1.52588e-005, 0.125175 )
-scale = Vector2( 1.34492, 1.47983 )
+scale = Vector2( 1.88678, 1.76502 )
 texture = ExtResource( 2 )
 hframes = 5
-frame = 2
+
+[node name="Attack-Left" type="Sprite" parent="Animations"]
+visible = false
+scale = Vector2( 1.88678, 1.8078 )
+texture = ExtResource( 2 )
+flip_h = true
+hframes = 5
+frame = 1
 
 [node name="Walk" type="Sprite" parent="Animations"]
 visible = false
-position = Vector2( -1.90261, -3.57628e-006 )
+position = Vector2( -1.90261, -3.57628e-06 )
 scale = Vector2( 1.68706, 1.58135 )
 texture = ExtResource( 3 )
 hframes = 4
@@ -200,7 +219,7 @@ frame = 1
 
 [node name="Walk-Left" type="Sprite" parent="Animations"]
 visible = false
-position = Vector2( -1.90261, -3.57628e-006 )
+position = Vector2( -1.90261, -3.57628e-06 )
 scale = Vector2( 1.68706, 1.58135 )
 texture = ExtResource( 3 )
 flip_h = true
@@ -209,15 +228,13 @@ frame = 3
 
 [node name="Range" type="Sprite" parent="Animations"]
 visible = false
-position = Vector2( -0.375496, 0.500685 )
-scale = Vector2( 1.53198, 1.48678 )
+scale = Vector2( 1.77439, 1.71493 )
 texture = ExtResource( 4 )
 hframes = 2
 
 [node name="Range-Left" type="Sprite" parent="Animations"]
 visible = false
-position = Vector2( -0.375496, 0.500685 )
-scale = Vector2( 1.53198, 1.48678 )
+scale = Vector2( 1.80291, 1.61512 )
 texture = ExtResource( 4 )
 flip_h = true
 hframes = 2
@@ -242,7 +259,7 @@ visible = false
 position = Vector2( 5.64676, -2.5667 )
 scale = Vector2( 1.83112, 1.77001 )
 texture = ExtResource( 6 )
-normal_map = SubResource( 10 )
+normal_map = SubResource( 11 )
 hframes = 7
 
 [node name="HealthBar" parent="." instance=ExtResource( 7 )]
@@ -252,4 +269,5 @@ margin_right = 24.9477
 margin_bottom = 1.95111
 rect_scale = Vector2( 0.5, 0.5 )
 [connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
+[connection signal="melee" from="." to="." method="_on_Player_melee"]
 [connection signal="shoot" from="." to="." method="_on_Player_shoot"]
