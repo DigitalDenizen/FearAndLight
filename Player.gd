@@ -2,6 +2,7 @@ extends KinematicBody2D
 	
 const MOVE_SPEED = 300
 signal shoot(fireball, mouse_pos, player_pos)
+signal melee(melee, mouse_pos, player_pos)
 signal health_updated(health)
 signal killed()
 
@@ -11,6 +12,7 @@ var alive = true
 var deathCountdown = 0
 
 var FireBall = preload("res://FireBall.tscn")
+var Melee = preload("res://Melee.tscn")
 var facing = "Right"
 var attack = 0
 var move_vec
@@ -32,6 +34,8 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			emit_signal("shoot", FireBall, get_global_mouse_position(), global_position)
+		if event.button_index == BUTTON_RIGHT and event.pressed:
+			emit_signal("melee", Melee, get_global_mouse_position(), global_position)
 
 func _change_animation(animationSelected, change_dir : bool = false):
 	if attack == 0 || change_dir:
@@ -56,7 +60,17 @@ func _on_Player_shoot(FireBall, mouse_pos, player_pos):
 	add_child(fire)
 	fire.shoot(mouse_pos, player_pos)
 	
-	
+func _on_Player_melee(Melee, mouse_pos, player_pos):
+	var direction = mouse_pos - player_pos
+	if direction.x > 0:
+		_change_animation("Attack", true)
+	else:
+		_change_animation("Attack-Left", true)
+	attack = 30
+	var punch = Melee.instance()
+	punch.attacker = "Player"
+	add_child(punch)
+	punch.shoot(mouse_pos, player_pos)
 	
 func _player_movement():
 	if alive:
@@ -85,6 +99,7 @@ func _player_movement():
 			kill()
 		else:
 			deathCountdown = deathCountdown - 1
+			print("death count: " + str(deathCountdown))
 		
 func _cool_downs():
 	if attack > 0:
@@ -100,7 +115,3 @@ func _set_health(value):
 		emit_signal("health_updated", health)
 		if health <= 0:
 			_change_animation("Death")
-
-
-func _on_MudWall2_health_updated(health):
-	pass # Replace with function body.

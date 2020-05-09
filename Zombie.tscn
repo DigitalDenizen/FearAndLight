@@ -113,7 +113,11 @@ tracks/0/keys = {
 [sub_resource type="AnimatedTexture" id=7]
 
 [sub_resource type="RectangleShape2D" id=8]
+<<<<<<< HEAD
 extents = Vector2( 23.0596, 23.9043 )
+=======
+extents = Vector2( 25.4249, 33.5215 )
+>>>>>>> master
 
 [sub_resource type="CapsuleShape2D" id=9]
 radius = 14.6072
@@ -159,6 +163,7 @@ z_index = 1
 texture = ExtResource( 3 )
 flip_h = true
 hframes = 4
+frame = 3
 
 [node name="Idle" type="Sprite" parent="Animations"]
 visible = false
@@ -201,4 +206,4 @@ __meta__ = {
 position = Vector2( -0.568802, -1.70641 )
 shape = SubResource( 9 )
 [connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
-[connection signal="body_entered" from="AttackRange" to="." method="_body_entered"]
+[connection signal="melee" from="." to="." method="_on_Zombie_melee"]

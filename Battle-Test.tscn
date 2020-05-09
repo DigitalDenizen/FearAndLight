@@ -126,7 +126,6 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 435, 105 )
 
 [node name="Dark_Trees" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-editor/display_folded = true
 position = Vector2( 0.630249, 0 )
 z_index = 5
 texture = ExtResource( 8 )
@@ -210,7 +209,6 @@ region_enabled = true
 region_rect = Rect2( 0, 140, 435, 105 )
 
 [node name="Solid_Ground7" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-editor/display_folded = true
 position = Vector2( 0.630249, 455 )
 z_index = 6
 texture = ExtResource( 9 )
@@ -229,7 +227,6 @@ position = Vector2( 216.37, 17 )
 shape = SubResource( 2 )
 
 [node name="Solid_Ground8" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-editor/display_folded = true
 position = Vector2( 435, 455 )
 z_index = 6
 texture = ExtResource( 9 )
