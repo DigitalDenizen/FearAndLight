@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-hills.png-de63c99107cdc48a936bf5b43760eb01.stex"
+path="res://.import/scene-layer-hills.png-52c88d27b216e267753518f93730ed7c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/scene-layer-hills.png"
-dest_files=[ "res://.import/scene-layer-hills.png-de63c99107cdc48a936bf5b43760eb01.stex" ]
+source_file="res://Scenes/scene-layer-hills.png"
+dest_files=[ "res://.import/scene-layer-hills.png-52c88d27b216e267753518f93730ed7c.stex" ]
 
 [params]
 
