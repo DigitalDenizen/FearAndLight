@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://AnimatedTileset/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=2]
-[ext_resource path="res://AnimatedTileset/Moon_ParallaxLayer.gd" type="Script" id=3]
 [ext_resource path="res://AnimatedTileset/scenes/scene-moon.png" type="Texture" id=4]
 [ext_resource path="res://AnimatedTileset/scenes/scene-layer-sky.png" type="Texture" id=5]
 [ext_resource path="res://AnimatedTileset/scenes/scene-layer-stars.png" type="Texture" id=6]
@@ -12,9 +11,10 @@
 [ext_resource path="res://AnimatedTileset/scenes/scene-layer-hills.png" type="Texture" id=10]
 [ext_resource path="res://AnimatedTileset/scenes/scene-layer-trees-dark.png" type="Texture" id=11]
 [ext_resource path="res://AnimatedTileset/fog.shader" type="Shader" id=12]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=13]
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=14]
-[ext_resource path="res://Zombie.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Characters/Zombie.tscn" type="PackedScene" id=15]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33.1215, 13.9037 )
@@ -70,7 +70,6 @@ text = ":"
 position = Vector2( -196.751, -114.934 )
 z_index = 2
 motion_scale = Vector2( 0.1, 1 )
-script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -92,6 +91,7 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 centered = false
+script = ExtResource( 1 )
 
 [node name="Stars_1" type="Sprite" parent="ParallaxBackground/Screen0"]
 scale = Vector2( 2, 2 )

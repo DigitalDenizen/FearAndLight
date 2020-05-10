@@ -12,9 +12,11 @@
 [ext_resource path="res://AnimatedTileset/scenes/scene-layer-hills.png" type="Texture" id=10]
 [ext_resource path="res://AnimatedTileset/scenes/scene-layer-trees-dark.png" type="Texture" id=11]
 [ext_resource path="res://AnimatedTileset/fog.shader" type="Shader" id=12]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=13]
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=14]
-[ext_resource path="res://Zombie.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Characters/Zombie.tscn" type="PackedScene" id=15]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33.1215, 13.9037 )
