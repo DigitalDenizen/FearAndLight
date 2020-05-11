@@ -8,7 +8,6 @@ const MOVE_SPEED = 75
 export (float) var max_health = 100
 onready var health = max_health setget _set_health
 
-var Movement = preload("res://Physics/Movement_Logic.gd")
 var Melee = preload("res://Characters/Combat/Melee.tscn")
 var player = null
 var alive = true
@@ -29,7 +28,7 @@ func _physics_process(delta):
 		var vec_to_player = vec_not_norm.normalized()
 		var collision = move_and_collide(vec_to_player * MOVE_SPEED * delta)
 		
-		velocity = Movement._follow(velocity, global_position, player.global_position, MOVE_SPEED)
+		velocity = MovementLogic._follow(velocity, global_position, player.global_position, MOVE_SPEED)
 		move_and_slide(velocity)
 		
 		if vec_not_norm.x > 0:
