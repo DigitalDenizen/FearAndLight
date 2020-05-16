@@ -1,11 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Zombie.gd" type="Script" id=1]
+[ext_resource path="res://Characters/Zombie.gd" type="Script" id=1]
 [ext_resource path="res://Images/zombie/enemy-zombie-walk.png" type="Texture" id=2]
 [ext_resource path="res://Images/zombie/enemy-zombie-attack.png" type="Texture" id=3]
 [ext_resource path="res://Images/zombie/enemy-zombie-idle.png" type="Texture" id=4]
 [ext_resource path="res://Images/zombie/enemy-die-poof.png" type="Texture" id=5]
-[ext_resource path="res://HealthBar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Characters/UI/HealthBar.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Attack"
@@ -111,17 +111,10 @@ tracks/0/keys = {
 }
 
 [sub_resource type="AnimatedTexture" id=7]
-
-[sub_resource type="RectangleShape2D" id=8]
-<<<<<<< HEAD
-extents = Vector2( 23.0596, 23.9043 )
-=======
 extents = Vector2( 25.4249, 33.5215 )
->>>>>>> master
-
-[sub_resource type="CapsuleShape2D" id=9]
+[sub_resource type="CapsuleShape2D" id=8]
 radius = 14.6072
-height = 15.551
+height = 2.61852
 
 [node name="Zombie" type="KinematicBody2D"]
 position = Vector2( 0.418106, 0 )
@@ -188,22 +181,7 @@ margin_right = 25.0
 margin_bottom = 10.0
 rect_scale = Vector2( 0.5, 0.5 )
 
-[node name="AttackRange" type="Area2D" parent="."]
-position = Vector2( -5.41501, 0 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
-position = Vector2( 0, 3.8147e-06 )
-z_index = -1
-shape = SubResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.568802, -1.70641 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 [connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
 [connection signal="melee" from="." to="." method="_on_Zombie_melee"]

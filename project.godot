@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="FearAndLight-2"
 config/icon="res://icon.png"
 
+[autoload]
+
+MovementLogic="*res://Physics/Movement_Logic.gd"
+
 [display]
 
 window/size/width=870

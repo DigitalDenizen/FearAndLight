@@ -9,7 +9,6 @@ var destroyed = false
 var deathCountdown = 0
 var attacked = false
 var wall = null
-var FireBall = preload("res://FireBall.tscn")
 
 
 func _ready():

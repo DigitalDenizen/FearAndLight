@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://FireBall.gd" type="Script" id=1]
+[ext_resource path="res://Characters/Combat/FireBall.gd" type="Script" id=1]
 [ext_resource path="res://Images/Fire.png" type="Texture" id=2]
 [ext_resource path="res://Images/zombie/enemy-die-poof.png" type="Texture" id=3]
 [ext_resource path="res://Images/Fire-Particle.png" type="Texture" id=4]
