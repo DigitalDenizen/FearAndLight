@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-trees-dark.png-6cc2a01aa7773c37f15ad13d349f8ee6.stex"
+path="res://.import/scene-layer-trees-dark.png-7b0467a40317c7b42adf8b420b99a4f9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/scene-layer-trees-dark.png"
-dest_files=[ "res://.import/scene-layer-trees-dark.png-6cc2a01aa7773c37f15ad13d349f8ee6.stex" ]
+source_file="res://scenes/scene-layer-trees-dark.png"
+dest_files=[ "res://.import/scene-layer-trees-dark.png-7b0467a40317c7b42adf8b420b99a4f9.stex" ]
 
 [params]
 

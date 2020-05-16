@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Characters/UI/HealthBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/defense-spritesheet-mud-wall-attacked (1).png" type="Texture" id=2]
-[ext_resource path="res://MudWall.gd" type="Script" id=3]
+[ext_resource path="res://Structures/MudWall.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 53.8512, 50.6998 )

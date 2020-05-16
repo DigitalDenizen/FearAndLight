@@ -2,7 +2,7 @@
 
 [ext_resource path="res://UI/Score.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=2]
-[ext_resource path="res://MudWall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Structures/MudWall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=13]
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=14]
 [ext_resource path="res://Characters/Zombie.tscn" type="PackedScene" id=15]
