@@ -19,6 +19,10 @@ config/name="FearAndLight"
 run/main_scene="res://Main_World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+MovementLogic="*res://Physics/Movement_Logic.gd"
+
 [display]
 
 window/size/width=870

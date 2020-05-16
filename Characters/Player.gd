@@ -11,8 +11,8 @@ onready var health = max_health setget _set_health
 var alive = true
 var deathCountdown = 0
 
-var FireBall = preload("res://FireBall.tscn")
-var Melee = preload("res://Melee.tscn")
+var FireBall = preload("res://Characters/Combat/FireBall.tscn")
+var Melee = preload("res://Characters/Combat/Melee.tscn")
 var facing = "Right"
 var attack = 0
 var move_vec
@@ -99,7 +99,6 @@ func _player_movement():
 			kill()
 		else:
 			deathCountdown = deathCountdown - 1
-			print("death count: " + str(deathCountdown))
 		
 func _cool_downs():
 	if attack > 0:
