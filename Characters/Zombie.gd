@@ -72,7 +72,6 @@ func _set_health(value):
 		emit_signal("health_updated", health)
 		if health <= 0:
 			_change_animation("Death")
-		
 
 func _change_animation(animationSelected):
 	for animation in $Animations.get_children():
