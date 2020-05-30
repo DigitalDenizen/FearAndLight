@@ -13,3 +13,11 @@ func _on_Zombie_killed():
 
 func update():
 	$ScoreNumber.text += str(int(score))
+
+
+func _on_Zombie2_killed():
+	pass # Replace with function body.
+
+
+func _on_Zombie3_killed():
+	pass # Replace with function body.

@@ -6,7 +6,7 @@ uniform int OCTAVES = 1;
 //colour is RGB divided by 256
 
 float rand(vec2 coord) {
-	return fract(sin(dot(coord, vec2(75,125))*1000.0)*1000.0);
+	return fract(sin(dot(coord, vec2(100,10))*1000.0)*1000.0);
 }
 //vec2(x,y) controls the fog pattern 
 	
@@ -24,7 +24,7 @@ float noise(vec2 coord){
 
 float fbm(vec2 coord) {
 	float value = 0.0;
-	float scale = 0.35;
+	float scale = 0.15;
 //scale can be used to toggle transparency
 	
 	for(int i = 0; i < OCTAVES; i++){
@@ -36,7 +36,7 @@ float fbm(vec2 coord) {
 }
 
 void fragment() {
-	vec2 coord = UV * 20.0;
+	vec2 coord = UV * 15.0;
 //UV * x, value of x looks to control fog density
 
 	vec2 motion = vec2(fbm(coord + vec2(TIME * -.8)));

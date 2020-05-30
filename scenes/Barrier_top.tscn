@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 33.1215, 14.6184 )
+
+[node name="Barrier_top" type="Sprite"]
+visible = false
+position = Vector2( -874.924, 169.544 )
+scale = Vector2( 49.0775, 0.642346 )
+z_index = 7
+texture = ExtResource( 1 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 32.0605, 31.6973 )
+scale = Vector2( -0.974377, -2.26766 )
+shape = SubResource( 1 )
