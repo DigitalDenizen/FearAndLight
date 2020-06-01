@@ -24,12 +24,13 @@ func _on_Visibility_exit_screen():
 
 func _body_entered(body):
 	
-	if body.name != "Player" && body.name != "MudWall" && body.name != "MudHut":
+	if body.name != "Player" && body.name != "MudWall" && body.name != "MudHut" && body.name != "Bones":
 		body.hurt(25)
 		_fireBall_collid()
 	if body.name == "MudWall" || body.name == "MudHut" :
 		_fireBall_collid()
-
+	
+ 
 func _fireBall_collid():
 	collid = true
 	$AnimatedSprite.play("Poof")

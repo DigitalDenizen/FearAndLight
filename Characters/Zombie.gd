@@ -7,8 +7,10 @@ signal killed()
 const MOVE_SPEED = 75
 export (float) var max_health = 100
 onready var health = max_health setget _set_health
+onready var bones_scene = preload("res://Characters/Item Drops/Bones.tscn")
 
 var Melee = preload("res://Characters/Combat/Melee.tscn")
+
 var player = null
 var wall = null
 var alive = true
@@ -17,9 +19,13 @@ var attackCountDown = 0
 var deathCountdown = 0
 var facing_right = true
 var velocity: = Vector2.ZERO
+var rng = RandomNumberGenerator.new()
+
 
 func _ready():
 	add_to_group("zombies")
+	rng.randomize()
+	
 
 func _physics_process(delta):
 	if player == null:
@@ -76,7 +82,9 @@ func _set_health(value):
 		emit_signal("health_updated", health)
 		if health <= 0:
 			_change_animation("Death")
+			
 		
+
 func _change_animation(animationSelected):
 	for animation in $Animations.get_children():
 		if animation.name != animationSelected:
@@ -87,6 +95,7 @@ func _change_animation(animationSelected):
 			if animationSelected == "Death":
 				alive = false
 				deathCountdown = 20
+				
 			if animationSelected == "Attack" || animationSelected == "Attack-Left":
 				not_attacking = false
 				attackCountDown = 50
@@ -102,3 +111,8 @@ func _on_Zombie_melee(Melee, player_pos, zombie_pos):
 	scratch.attacker = "Zombie"
 	add_child(scratch)
 	scratch.shoot(player_pos, zombie_pos)
+
+func _on_Zombie_killed():
+	var itemDrop = bones_scene.instance()
+	itemDrop.global_position = global_position
+	get_tree().get_root().add_child(itemDrop)

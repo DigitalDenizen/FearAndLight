@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Structures/MudHut.gd" type="Script" id=1]
 [ext_resource path="res://Characters/UI/HealthBar.tscn" type="PackedScene" id=2]
@@ -13,78 +13,94 @@ extents = Vector2( 27.8689, 19.41 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
-region = Rect2( 57, 0, 57, 42 )
+region = Rect2( 0, 0, 57, 40 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 3 )
-region = Rect2( 114, 0, 57, 42 )
+region = Rect2( 57, 0, 57, 40 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
-region = Rect2( 171, 0, 57, 42 )
+region = Rect2( 114, 0, 57, 40 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 57, 42 )
+region = Rect2( 171, 0, 57, 40 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 4 )
-region = Rect2( 228, 0, 57, 42 )
+atlas = ExtResource( 3 )
+region = Rect2( 228, 0, 57, 40 )
 
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 4 )
-region = Rect2( 285, 0, 57, 42 )
+atlas = ExtResource( 3 )
+region = Rect2( 285, 0, 57, 40 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 4 )
-region = Rect2( 342, 0, 57, 42 )
+atlas = ExtResource( 3 )
+region = Rect2( 342, 0, 57, 40 )
 
 [sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 4 )
-region = Rect2( 399, 0, 57, 42 )
+atlas = ExtResource( 3 )
+region = Rect2( 399, 0, 57, 40 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 4 )
-region = Rect2( 57, 0, 57, 42 )
+region = Rect2( 228, 0, 57, 42 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 4 )
-region = Rect2( 114, 0, 57, 42 )
+region = Rect2( 285, 0, 57, 42 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 4 )
+region = Rect2( 342, 0, 57, 42 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 4 )
+region = Rect2( 399, 0, 57, 42 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 4 )
+region = Rect2( 114, 0, 57, 42 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 4 )
 region = Rect2( 171, 0, 57, 42 )
 
-[sub_resource type="SpriteFrames" id=14]
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 4 )
+region = Rect2( 57, 0, 57, 42 )
+
+[sub_resource type="SpriteFrames" id=18]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": false,
 "name": "Death",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 11 ) ],
-"loop": true,
-"name": "Health 75",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 12 ) ],
+"frames": [ SubResource( 15 ) ],
 "loop": true,
 "name": "Health 50",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 13 ) ],
+"frames": [ SubResource( 16 ) ],
 "loop": true,
 "name": "Health 25",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "Health 75",
 "speed": 5.0
 } ]
 
 [node name="MudHut" type="StaticBody2D"]
-position = Vector2( 128, 160 )
+position = Vector2( 181.2, 127.7 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -104,15 +120,15 @@ position = Vector2( 25.3591, 15.1179 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 27.0102, 15.3467 )
 scale = Vector2( 1.94773, 1.7308 )
 shape = SubResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 27.0102, 15.3467 )
-scale = Vector2( 1.94773, 1.7308 )
-frames = SubResource( 14 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CollisionShape2D"]
+position = Vector2( 1.21937, -0.823318 )
+scale = Vector2( 1.01426, 1.01056 )
+z_index = 8
+frames = SubResource( 18 )
 animation = "idle"
-frame = 1
+frame = 6
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

@@ -49,7 +49,7 @@ position = Vector2( 1290.94, 377.426 )
 [node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
 
 [node name="MudWall" parent="." instance=ExtResource( 3 )]
-position = Vector2( 356, 287 )
+position = Vector2( 377.585, 239.514 )
 [connection signal="killed" from="Zombie" to="Score" method="_on_Zombie_killed"]
 [connection signal="killed" from="Zombie2" to="Score" method="_on_Zombie_killed"]
 [connection signal="killed" from="Zombie3" to="Score" method="_on_Zombie_killed"]

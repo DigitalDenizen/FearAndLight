@@ -8,7 +8,7 @@ onready var health = max_health setget _set_health
 var destroyed = false
 var deathCountdown = 0
 var attacked = false
-var wall = null
+
 
 
 func _ready():
