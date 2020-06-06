@@ -19,6 +19,7 @@ var move_vec
 
 func _ready():
 	yield(get_tree(), "idle_frame")
+	add_to_group("Player")
 	get_tree().call_group("zombies", "set_player", self)
 	
 func _physics_process(delta):

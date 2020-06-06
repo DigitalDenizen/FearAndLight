@@ -113,6 +113,8 @@ func _on_Zombie_melee(Melee, player_pos, zombie_pos):
 	scratch.shoot(player_pos, zombie_pos)
 
 func _on_Zombie_killed():
-	var itemDrop = bones_scene.instance()
-	itemDrop.global_position = global_position
-	get_tree().get_root().add_child(itemDrop)
+	if rng.randf() <= 0.8:
+		var itemDrop = bones_scene.instance()
+		itemDrop = rng.randi() % 2
+		global_position = global_position
+		get_tree().get_root().get_child(itemDrop)

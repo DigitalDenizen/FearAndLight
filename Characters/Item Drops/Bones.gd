@@ -5,6 +5,7 @@ var collectCountDown = 5
 
 func _ready():
 	$AnimatedSprite.play("idle")
+	add_to_group("ZombieItemDrop")
 
 func _process(delta):
 	if collected == false:
