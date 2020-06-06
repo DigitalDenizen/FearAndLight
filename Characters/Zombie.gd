@@ -4,16 +4,18 @@ signal health_updated(health)
 signal melee(melee, player_pos, zombie_pos)
 signal killed()
 
-const MOVE_SPEED = 100
+const MOVE_SPEED = 75
 export (float) var max_health = 100
 onready var health = max_health setget _set_health
-var Melee = preload("res://Melee.tscn")
+
+var Melee = preload("res://Characters/Combat/Melee.tscn")
 var player = null
 var alive = true
 var not_attacking = true
 var attackCountDown = 0
 var deathCountdown = 0
 var facing_right = true
+var velocity: = Vector2.ZERO
 
 func _ready():
 	add_to_group("zombies")
@@ -25,6 +27,9 @@ func _physics_process(delta):
 		var vec_not_norm = player.global_position - global_position
 		var vec_to_player = vec_not_norm.normalized()
 		var collision = move_and_collide(vec_to_player * MOVE_SPEED * delta)
+		
+		velocity = MovementLogic._follow(velocity, global_position, player.global_position, MOVE_SPEED)
+		move_and_slide(velocity)
 		
 		if vec_not_norm.x > 0:
 			_change_animation("Walk")
@@ -67,7 +72,6 @@ func _set_health(value):
 		emit_signal("health_updated", health)
 		if health <= 0:
 			_change_animation("Death")
-		
 
 func _change_animation(animationSelected):
 	for animation in $Animations.get_children():
@@ -75,8 +79,6 @@ func _change_animation(animationSelected):
 			animation.hide()
 		else:
 			animation.show()
-			if animation.name != "Walk-Left":
-				print(animation.name)
 			$AnimationPlayer.play(animation.name)
 			if animationSelected == "Death":
 				alive = false
