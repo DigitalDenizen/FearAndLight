@@ -1,0 +1,161 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/mud/mud-below/scene-layer-mud-below-ground.png" type="Texture" id=1]
+[ext_resource path="res://scenes/mud/mud-below/scene-layer-mud-below-trees.png" type="Texture" id=2]
+[ext_resource path="res://scenes/mud-to-ice/mud-to-ice-below/scene-layer-mud-to-ice-below-ground.png" type="Texture" id=3]
+[ext_resource path="res://scenes/mud-to-ice/mud-to-ice-below/scene-layer-mud-to-ice-below-trees.png" type="Texture" id=4]
+[ext_resource path="res://scenes/ice/ice-below/scene-layer-ice-below-ground.png" type="Texture" id=5]
+[ext_resource path="res://scenes/ice/ice-below/scene-layer-ice-below-trees.png" type="Texture" id=6]
+
+[node name="Under_Ground" type="Node"]
+
+[node name="Screen0" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( -1740, 490 )
+
+[node name="Below_Ground_0" type="Sprite" parent="Screen0"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Below_Trees_2" type="Sprite" parent="Screen0"]
+scale = Vector2( 2, 2 )
+z_index = 4
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Screen0/Below_Trees_2"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen0/Below_Trees_2/StaticBody2D"]
+build_mode = 1
+polygon = PoolVector2Array( 434.291, 30.1846, 432.712, 245.448, 1.13225, 245.448, 1.50034, 30.0002 )
+
+[node name="Screen1" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( -870, 490 )
+
+[node name="Below_Ground_0" type="Sprite" parent="Screen1"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Below_Trees_2" type="Sprite" parent="Screen1"]
+editor/display_folded = true
+scale = Vector2( 2, 2 )
+z_index = 4
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Screen1/Below_Trees_2"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen1/Below_Trees_2/StaticBody2D"]
+build_mode = 1
+polygon = PoolVector2Array( 434.291, 30.1846, 432.712, 245.448, 1.13225, 245.448, 1.50034, 30.0002 )
+
+[node name="Screen2" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 0, 490 )
+
+[node name="Below_Ground_0" type="Sprite" parent="Screen2"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Below_Trees_2" type="Sprite" parent="Screen2"]
+scale = Vector2( 2, 2 )
+z_index = 4
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Screen2/Below_Trees_2"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen2/Below_Trees_2/StaticBody2D"]
+build_mode = 1
+polygon = PoolVector2Array( 434.291, 30.1846, 432.712, 245.448, 1.13225, 245.448, 1.50034, 30.0002 )
+
+[node name="Screen3" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 870, 490 )
+
+[node name="Below_Ground_0" type="Sprite" parent="Screen3"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Below_Trees_2" type="Sprite" parent="Screen3"]
+scale = Vector2( 2, 2 )
+z_index = 4
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Screen3/Below_Trees_2"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen3/Below_Trees_2/StaticBody2D"]
+build_mode = 1
+polygon = PoolVector2Array( 434.291, 30.1846, 432.712, 245.448, 1.13225, 245.448, 1.50034, 30.0002 )
+
+[node name="Screen4" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1740, 490 )
+
+[node name="Below_Ground_0" type="Sprite" parent="Screen4"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Below_Trees_2" type="Sprite" parent="Screen4"]
+scale = Vector2( 2, 2 )
+z_index = 8
+texture = ExtResource( 4 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Screen4/Below_Trees_2"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen4/Below_Trees_2/StaticBody2D"]
+build_mode = 1
+polygon = PoolVector2Array( 434.291, 30.1846, 432.712, 245.448, 1.13225, 245.448, 1.50034, 30.0002 )
+
+[node name="Screen5" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 2610, 490 )
+
+[node name="Below_Ground_0" type="Sprite" parent="Screen5"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Below_Trees_2" type="Sprite" parent="Screen5"]
+scale = Vector2( 2, 2 )
+z_index = 6
+texture = ExtResource( 6 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Screen5/Below_Trees_2"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen5/Below_Trees_2/StaticBody2D"]
+build_mode = 1
+polygon = PoolVector2Array( 434.291, 30.1846, 432.712, 245.448, 1.13225, 245.448, 1.50034, 30.0002 )
