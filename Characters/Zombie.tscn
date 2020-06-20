@@ -118,6 +118,8 @@ height = 2.61852
 
 [node name="Zombie" type="KinematicBody2D"]
 position = Vector2( 0.418106, 0 )
+collision_layer = 4
+collision_mask = 3
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

@@ -1,75 +1,75 @@
 [gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Images/drop-spritesheet-zombie-bone.png" type="Texture" id=1]
-[ext_resource path="res://Characters/Item Drops/Bones.gd" type="Script" id=2]
+[ext_resource path="res://Images/drop-spritesheet-magic-potion.png" type="Texture" id=1]
+[ext_resource path="res://Characters/Item Drops/Magic Potion.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 24.9049
+radius = 29.0172
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 25.7938
+radius = 30.1496
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 23, 23 )
+region = Rect2( 0, 0, 18, 22 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
-region = Rect2( 23, 0, 23, 23 )
+region = Rect2( 18, 0, 18, 22 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 46, 0, 23, 23 )
+region = Rect2( 36, 0, 18, 22 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
-region = Rect2( 69, 0, 23, 23 )
+region = Rect2( 54, 0, 18, 22 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
-region = Rect2( 92, 0, 23, 23 )
+region = Rect2( 72, 0, 18, 22 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
-region = Rect2( 115, 0, 23, 23 )
+region = Rect2( 90, 0, 18, 22 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
-region = Rect2( 138, 0, 23, 23 )
+region = Rect2( 108, 0, 18, 22 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
-region = Rect2( 161, 0, 23, 23 )
+region = Rect2( 126, 0, 18, 22 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 184, 0, 23, 23 )
+region = Rect2( 144, 0, 18, 22 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 207, 0, 23, 23 )
+region = Rect2( 162, 0, 18, 22 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 230, 0, 23, 23 )
+region = Rect2( 180, 0, 18, 22 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 253, 0, 23, 23 )
+region = Rect2( 198, 0, 18, 22 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 276, 0, 23, 23 )
+region = Rect2( 216, 0, 18, 22 )
 
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
 "frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
+"speed": 9.0
 } ]
 
-[node name="Bones" type="StaticBody2D"]
+[node name="Magic Potion" type="StaticBody2D"]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource( 2 )
@@ -78,16 +78,17 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 1 )
 
-[node name="CollectedRange" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectedRange"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -1.08073, -0.810539 )
-scale = Vector2( 2, 2 )
+scale = Vector2( 2.44444, 2.09091 )
 frames = SubResource( 16 )
 animation = "idle"
-[connection signal="body_entered" from="CollectedRange" to="." method="_on_CollectedRange_body_entered"]
+frame = 7
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

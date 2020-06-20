@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/defense-mud-wall-idle.png-22a11d0c83b4f9aef134c95432ac3f75.stex"
+path="res://.import/drop-spritesheet-heart.png-7a6d53d8d738503ee8c6e5df275372ff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/defense-mud-wall-idle.png"
-dest_files=[ "res://.import/defense-mud-wall-idle.png-22a11d0c83b4f9aef134c95432ac3f75.stex" ]
+source_file="res://Images/drop-spritesheet-heart.png"
+dest_files=[ "res://.import/drop-spritesheet-heart.png-7a6d53d8d738503ee8c6e5df275372ff.stex" ]
 
 [params]
 

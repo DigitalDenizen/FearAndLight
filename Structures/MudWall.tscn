@@ -1,11 +1,11 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Characters/UI/HealthBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/defense-spritesheet-mud-wall-attacked (1).png" type="Texture" id=2]
 [ext_resource path="res://Structures/MudWall.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 53.8512, 50.6998 )
+extents = Vector2( 45.35, 42.0152 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
@@ -13,39 +13,39 @@ region = Rect2( 0, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
-region = Rect2( 172, 0, 43, 49 )
+region = Rect2( 86, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
-region = Rect2( 215, 0, 43, 49 )
+region = Rect2( 43, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
-region = Rect2( 258, 0, 43, 49 )
+region = Rect2( 129, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
-region = Rect2( 301, 0, 43, 49 )
+region = Rect2( 172, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
-region = Rect2( 344, 0, 43, 49 )
+region = Rect2( 215, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
-region = Rect2( 387, 0, 43, 49 )
+region = Rect2( 258, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
-region = Rect2( 129, 0, 43, 49 )
+region = Rect2( 301, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
-region = Rect2( 86, 0, 43, 49 )
+region = Rect2( 344, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
-region = Rect2( 43, 0, 43, 49 )
+region = Rect2( 387, 0, 43, 49 )
 
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
@@ -54,32 +54,31 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
-"loop": true,
-"name": "Death",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 9 ) ],
-"loop": true,
-"name": "Health 25",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 10 ) ],
+"frames": [ SubResource( 3 ) ],
 "loop": true,
 "name": "Health 50",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 11 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "Health 75",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "Health 25",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "Death",
+"speed": 5.0
 } ]
-
-[sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 53.7323, 50.3976 )
 
 [node name="MudWall" type="StaticBody2D"]
 position = Vector2( 64, 64 )
+collision_layer = 16
+collision_mask = 6
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -92,22 +91,16 @@ margin_right = 8.0
 margin_bottom = -24.0
 
 [node name="DefenseRange" type="Area2D" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="DefenseRange" type="CollisionShape2D" parent="DefenseRange"]
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2.23256, 1.95918 )
 frames = SubResource( 12 )
 animation = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
-shape = SubResource( 13 )
+polygon = PoolVector2Array( -21.1099, -48.0026, -42.0657, -45.0089, -45.0594, -24.0531, -45.6582, -4.29474, -46.8556, 32.2283, -29.4922, 44.203, -6.74019, 48.3942, 24.3942, 45.4005, 48.9424, 37.6169, 45.35, -16.8682, 45.35, -40.219, 19.0055, -48.0026 )
 [connection signal="health_updated" from="." to="HealthBar" method="_on_MudWall_health_updated"]

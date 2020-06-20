@@ -50,13 +50,31 @@ position = Vector2( 1290.94, 377.426 )
 [node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
 
 [node name="MudWall" parent="." instance=ExtResource( 3 )]
-position = Vector2( 377.585, 239.514 )
+position = Vector2( 363.231, 207.731 )
 
 [node name="MudHut" parent="." instance=ExtResource( 4 )]
-position = Vector2( 15.8196, 289.943 )
+position = Vector2( -79.5309, 202.795 )
 
 [node name="MudWall2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 293.183, 411.896 )
+position = Vector2( 360.851, 430.351 )
+
+[node name="Zombie9" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1615.9, 291.272 )
+
+[node name="Zombie10" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1348.3, 358.94 )
+
+[node name="Zombie11" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1197.59, 341.511 )
+
+[node name="Zombie12" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1354.46, 235.907 )
+
+[node name="Zombie13" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1632.31, 367.142 )
+
+[node name="Zombie14" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1470.31, 312.803 )
 [connection signal="killed" from="Zombie" to="Score" method="_on_Zombie_killed"]
 [connection signal="killed" from="Zombie2" to="Score" method="_on_Zombie_killed"]
 [connection signal="killed" from="Zombie3" to="Score" method="_on_Zombie_killed"]

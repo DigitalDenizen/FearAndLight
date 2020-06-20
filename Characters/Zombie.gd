@@ -7,9 +7,9 @@ signal killed()
 const MOVE_SPEED = 75
 export (float) var max_health = 100
 onready var health = max_health setget _set_health
-onready var bones_scene = preload("res://Characters/Item Drops/Bones.tscn")
-
+onready var itemDrop_scene = preload("res://Characters/Item Drops/Item Drop.tscn")
 var Melee = preload("res://Characters/Combat/Melee.tscn")
+
 
 var player = null
 var wall = null
@@ -83,7 +83,6 @@ func _set_health(value):
 		if health <= 0:
 			_change_animation("Death")
 			
-		
 
 func _change_animation(animationSelected):
 	for animation in $Animations.get_children():
@@ -113,8 +112,8 @@ func _on_Zombie_melee(Melee, player_pos, zombie_pos):
 	scratch.shoot(player_pos, zombie_pos)
 
 func _on_Zombie_killed():
-	if rng.randf() <= 0.8:
-		var itemDrop = bones_scene.instance()
-		itemDrop = rng.randi() % 2
-		global_position = global_position
-		get_tree().get_root().get_child(itemDrop)
+	if rng.randf() <= 0.1:
+		var itemDrop = itemDrop_scene.instance()
+		itemDrop.type = rng.randi() % 2
+		get_tree().get_root().add_child(itemDrop)
+		itemDrop.global_position = global_position
