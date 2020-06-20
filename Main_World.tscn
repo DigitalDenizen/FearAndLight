@@ -10,6 +10,9 @@
 
 [node name="Main" type="Node2D"]
 
+[node name="MudWall" parent="." instance=ExtResource( 4 )]
+position = Vector2( 332.787, 252.303 )
+
 [node name="Player" parent="." instance=ExtResource( 13 )]
 position = Vector2( 185.417, 287.355 )
 

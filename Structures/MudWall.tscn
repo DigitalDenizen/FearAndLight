@@ -1,3 +1,4 @@
+"_edit_group_": true
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Characters/UI/HealthBar.tscn" type="PackedScene" id=1]

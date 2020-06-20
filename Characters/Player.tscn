@@ -31,7 +31,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "Death"
 length = 2.4
-loop = true
 step = 0.4
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Animations/Death:hframes")
@@ -225,6 +224,7 @@ flip_h = true
 hframes = 2
 
 [node name="Idle" type="Sprite" parent="Animations"]
+visible = false
 position = Vector2( 0.896215, -0.771054 )
 scale = Vector2( 1.74207, 1.64376 )
 texture = ExtResource( 3 )
@@ -240,12 +240,12 @@ hframes = 4
 frame = 3
 
 [node name="Death" type="Sprite" parent="Animations"]
-visible = false
 position = Vector2( 5.64676, -2.5667 )
 scale = Vector2( 1.83112, 1.77001 )
 texture = ExtResource( 6 )
 normal_map = SubResource( 10 )
 hframes = 7
+frame = 1
 
 [node name="HealthBar" parent="." instance=ExtResource( 1 )]
 margin_left = -15.0523

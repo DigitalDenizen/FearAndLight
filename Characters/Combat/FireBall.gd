@@ -40,3 +40,8 @@ func _fireBall_collid():
 	collid = true
 	$AnimatedSprite.play("Poof")
 	poofCountdown = 15
+
+func _fireBall_collid():
+	collid = true
+	$AnimatedSprite.play("Poof")
+	poofCountdown = 15
