@@ -25,7 +25,7 @@ func _body_entered(body):
 			body.hurt(25)
 			queue_free()
 	elif attacker == "Zombie":
-		if !body.name.begins_with("Zombie"):
+		if !body.name.begins_with("@Zombie"):
 			body.hurt(10)
 			queue_free()
 		

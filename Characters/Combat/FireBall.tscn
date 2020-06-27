@@ -62,6 +62,8 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = -1.49575
+z_index = 1000
+z_as_relative = false
 frames = SubResource( 9 )
 animation = "Poof"
 [connection signal="body_entered" from="." to="." method="_body_entered"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-ice-all.png-50a3c60000683e1ba06830521030dbc0.stex"
+path="res://.import/scene-layer-ice-all.png-c10b89bc10fd64cc1805ece8d0cbb76f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/ice/ice-main/scene-layer-ice-all.png"
-dest_files=[ "res://.import/scene-layer-ice-all.png-50a3c60000683e1ba06830521030dbc0.stex" ]
+source_file="res://Scenes/ice/ice-main/scene-layer-ice-all.png"
+dest_files=[ "res://.import/scene-layer-ice-all.png-c10b89bc10fd64cc1805ece8d0cbb76f.stex" ]
 
 [params]
 
