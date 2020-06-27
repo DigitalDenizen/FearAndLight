@@ -39,4 +39,4 @@ func _body_entered(body):
 func _fireBall_collid():
 	collid = true
 	$AnimatedSprite.play("Poof")
-	poofCountdown = 15
+	poofCountdown = 1
