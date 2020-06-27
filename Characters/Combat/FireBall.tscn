@@ -6,31 +6,31 @@
 [ext_resource path="res://Images/effect-poof-small.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 17.7362
+radius = 5.56409
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 18, 17 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 12, 12 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 11, 9 )
 
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 18, 17 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 12, 12 )
-
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "Poof",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "Fire",
 "speed": 1.5
-}, {
-"frames": [ SubResource( 5 ), SubResource( 6 ) ],
-"loop": true,
-"name": "Poof",
-"speed": 5.0
 } ]
 
 [node name="FireBall" type="Area2D"]
@@ -48,7 +48,7 @@ shape = SubResource( 1 )
 position = Vector2( 0.231651, -0.694939 )
 rotation = 0.0261799
 scale = Vector2( 1.14956, 1.28872 )
-frames = SubResource( 7 )
-animation = "Fire"
+frames = SubResource( 5 )
+animation = "Poof"
 flip_v = true
 [connection signal="body_entered" from="." to="." method="_body_entered"]
