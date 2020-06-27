@@ -27,13 +27,13 @@ func _body_entered(body):
 	collid = true
 	if collid == true:
 		_fireBall_collid()
-		if body.is_in_group("zombies"):
+		if body.is_in_group("baddies"):
 			body.hurt(25)
 	
 	if body.is_in_group("Player"):
 		collid = false
 	
-	if body.is_in_group("Bones"):
+	if body.is_in_group("Baddies"):
 		collid = false
 	 
 func _fireBall_collid():

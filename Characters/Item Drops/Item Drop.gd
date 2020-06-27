@@ -5,6 +5,7 @@ var collected = false
 var collectedCountDown = 0
 
 func _ready():
+	add_to_group("item drops")
 	if type == ItemDrop.BONES:
 		$AnimatedSprite.play("Bones")
 	else:
