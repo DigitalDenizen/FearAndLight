@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="FearAndLight"
+config/name="FearAndLight-2"
 run/main_scene="res://Main_World.tscn"
 config/icon="res://icon.png"
 
@@ -27,9 +27,9 @@ Score="*res://UI/Score.gd"
 [display]
 
 window/size/width=870
-window/size/height=489
+window/size/height=490
 window/size/test_width=870
-window/size/test_height=489
+window/size/test_height=490
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
@@ -55,6 +55,14 @@ move_down={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_render/layer_1="fireball"
+2d_render/layer_2="player"
+2d_render/layer_3="enemies"
+2d_render/layer_4="item drops"
+2d_render/layer_5="walls"
 
 [rendering]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-mud-to-ice-dark-trees.png-8edcdca41c43a7f0e06f4f9138c25d25.stex"
+path="res://.import/scene-layer-mud-to-ice-dark-trees.png-68331321d799b8778fd7cfec47078e80.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/mud-to-ice/mud-to-ice-main/scene-layer-mud-to-ice-dark-trees.png"
-dest_files=[ "res://.import/scene-layer-mud-to-ice-dark-trees.png-8edcdca41c43a7f0e06f4f9138c25d25.stex" ]
+source_file="res://scenes/mud-to-ice/mud-to-ice-main/scene-layer-mud-to-ice-dark-trees.png"
+dest_files=[ "res://.import/scene-layer-mud-to-ice-dark-trees.png-68331321d799b8778fd7cfec47078e80.stex" ]
 
 [params]
 

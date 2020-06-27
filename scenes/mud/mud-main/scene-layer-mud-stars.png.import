@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-mud-stars.png-a329bd1c3f77766f575a176c7a9a893a.stex"
+path="res://.import/scene-layer-mud-stars.png-d6a89978feadbece8ca78ad9a1a3b374.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/mud/mud-main/scene-layer-mud-stars.png"
-dest_files=[ "res://.import/scene-layer-mud-stars.png-a329bd1c3f77766f575a176c7a9a893a.stex" ]
+source_file="res://scenes/mud/mud-main/scene-layer-mud-stars.png"
+dest_files=[ "res://.import/scene-layer-mud-stars.png-d6a89978feadbece8ca78ad9a1a3b374.stex" ]
 
 [params]
 

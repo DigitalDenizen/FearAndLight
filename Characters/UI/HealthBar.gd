@@ -14,3 +14,17 @@ func _on_health_updated(health):
 func _on_max_health_updated(max_health):
 	health_over.max_value = max_health
 	health_under.max_value = max_health
+
+func _on_MudWall_health_updated(health):
+	health_over.value = health
+	update_tween.interpolate_property(health_under, "value", health_under.value, health, 0.4, Tween.TRANS_SINE, Tween.EASE_IN_OUT, 0.4)
+	update_tween.start()
+	if health_over.value == 0:
+		hide()
+
+func _on_MudHut_health_updated(health):
+	health_over.value = health
+	update_tween.interpolate_property(health_under, "value", health_under.value, health, 0.4, Tween.TRANS_SINE, Tween.EASE_IN_OUT, 0.4)
+	update_tween.start()
+	if health_over.value == 0:
+		hide()

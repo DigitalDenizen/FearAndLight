@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-ice-hills.png-467cd9e5f8fd005e48e87fa93d387c56.stex"
+path="res://.import/scene-layer-ice-hills.png-b7ccde29555e845d18f051c700a29bef.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/ice/ice-main/scene-layer-ice-hills.png"
-dest_files=[ "res://.import/scene-layer-ice-hills.png-467cd9e5f8fd005e48e87fa93d387c56.stex" ]
+source_file="res://scenes/ice/ice-main/scene-layer-ice-hills.png"
+dest_files=[ "res://.import/scene-layer-ice-hills.png-b7ccde29555e845d18f051c700a29bef.stex" ]
 
 [params]
 

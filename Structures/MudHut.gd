@@ -9,11 +9,12 @@ var alive = true
 var deathCountdown = 0
 var destroyed = false
 var mudhut = null
-var FireBall = preload("res://FireBall.tscn")
+
 
 
 func _ready():
 	$AnimatedSprite.play("idle")
+	add_to_group("Structures")
 	
 func _physics_process(delta):
 	if destroyed == false:
@@ -23,10 +24,6 @@ func _physics_process(delta):
 			deathCountdown = deathCountdown - 1
 		if deathCountdown <= 0:
 			queue_free()
-
-func _on_Area2D_body_entered(body):
-	if body.name == "FireBall":
-		FireBall = queue_free()
 
 func hurt(damage):
 	_set_health(health - damage)
@@ -49,10 +46,3 @@ func _set_health(value):
 			deathCountdown = 100
 			destroyed = true
 			$AnimatedSprite.play('Death')
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-

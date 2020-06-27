@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-mud-to-ice-below-all.png-d6eda0d4739019bb40b25f4fc1e88039.stex"
+path="res://.import/scene-layer-mud-to-ice-below-all.png-20c6542036bf8759dd8a67aa3eb5330b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/mud-to-ice/mud-to-ice-below/scene-layer-mud-to-ice-below-all.png"
-dest_files=[ "res://.import/scene-layer-mud-to-ice-below-all.png-d6eda0d4739019bb40b25f4fc1e88039.stex" ]
+source_file="res://scenes/mud-to-ice/mud-to-ice-below/scene-layer-mud-to-ice-below-all.png"
+dest_files=[ "res://.import/scene-layer-mud-to-ice-below-all.png-20c6542036bf8759dd8a67aa3eb5330b.stex" ]
 
 [params]
 

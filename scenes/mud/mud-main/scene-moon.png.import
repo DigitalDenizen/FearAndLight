@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-moon.png-ff135f6c3f7eb4dea369038595b89284.stex"
+path="res://.import/scene-moon.png-511072b7a2714ffc5ad0a52e7ab3dc40.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/mud/mud-main/scene-moon.png"
-dest_files=[ "res://.import/scene-moon.png-ff135f6c3f7eb4dea369038595b89284.stex" ]
+source_file="res://scenes/mud/mud-main/scene-moon.png"
+dest_files=[ "res://.import/scene-moon.png-511072b7a2714ffc5ad0a52e7ab3dc40.stex" ]
 
 [params]
 

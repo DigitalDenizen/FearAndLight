@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-ice-trees-ground.png-b89001ff75b5314808648730273803d5.stex"
+path="res://.import/scene-layer-ice-trees-ground.png-9cf486064e2edd694e19495542cd049d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/ice/scene-layer-ice-trees-ground.png"
-dest_files=[ "res://.import/scene-layer-ice-trees-ground.png-b89001ff75b5314808648730273803d5.stex" ]
+source_file="res://scenes/ice/scene-layer-ice-trees-ground.png"
+dest_files=[ "res://.import/scene-layer-ice-trees-ground.png-9cf486064e2edd694e19495542cd049d.stex" ]
 
 [params]
 

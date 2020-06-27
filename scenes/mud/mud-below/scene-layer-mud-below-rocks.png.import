@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-mud-below-rocks.png-f3dd31416025be0ebd319642721fe8f5.stex"
+path="res://.import/scene-layer-mud-below-rocks.png-9c351a5a6c8aef8b6d42cb6bcf700293.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/mud/mud-below/scene-layer-mud-below-rocks.png"
-dest_files=[ "res://.import/scene-layer-mud-below-rocks.png-f3dd31416025be0ebd319642721fe8f5.stex" ]
+source_file="res://scenes/mud/mud-below/scene-layer-mud-below-rocks.png"
+dest_files=[ "res://.import/scene-layer-mud-below-rocks.png-9c351a5a6c8aef8b6d42cb6bcf700293.stex" ]
 
 [params]
 
