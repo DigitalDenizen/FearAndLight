@@ -33,4 +33,4 @@ position = Vector2( -186.881, 379.726 )
 
 [node name="Mob_Spawn" parent="." instance=ExtResource( 5 )]
 position = Vector2( 821.356, 357.272 )
-spawn_num = 20
+spawn_num = 50

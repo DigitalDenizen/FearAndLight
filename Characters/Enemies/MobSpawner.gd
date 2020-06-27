@@ -16,6 +16,7 @@ func _ready():
 	var screen_size = get_viewport().get_visible_rect().size
 	for i in range(0,spawn_num):
 		var enemy = enemyscene.instance()
+		enemy.add_to_group('Baddies')
 		enemy.position.y = (randi() % int(size.x)) - (int(size.x/2)) + center.x
 		enemy.position.x = (randi() % int(size.y)) - (int(size.y/2)) + center.y
 		add_child(enemy)
