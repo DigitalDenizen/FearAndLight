@@ -9,8 +9,6 @@ var destroyed = false
 var deathCountdown = 0
 var attacked = false
 
-
-
 func _ready():
 	$AnimatedSprite.play("idle")
 	add_to_group("MudWall")
@@ -55,3 +53,7 @@ func _set_health(value):
 
 
 
+
+
+func _on_Area2D_body_entered(body):
+	pass # Replace with function body.

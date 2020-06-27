@@ -10,7 +10,6 @@ onready var health = max_health setget _set_health
 onready var itemDrop_scene = preload("res://Characters/Item Drops/Item Drop.tscn")
 var Melee = preload("res://Characters/Combat/Melee.tscn")
 
-
 var player = null
 var wall = null
 var alive = true
@@ -20,7 +19,6 @@ var deathCountdown = 0
 var facing_right = true
 var velocity: = Vector2.ZERO
 var rng = RandomNumberGenerator.new()
-
 
 func _ready():
 	add_to_group("zombies")
@@ -41,6 +39,7 @@ func _physics_process(delta):
 		if vec_not_norm.x > 0:
 			_change_animation("Walk")
 			facing_right = true
+			
 		else:
 			_change_animation("Walk-Left")
 			facing_right = false

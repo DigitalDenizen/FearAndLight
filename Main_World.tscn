@@ -11,7 +11,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="MudWall" parent="." instance=ExtResource( 4 )]
-position = Vector2( 332.787, 252.303 )
+position = Vector2( 53.2083, 368.905 )
 
 [node name="Player" parent="." instance=ExtResource( 13 )]
 position = Vector2( 185.417, 287.355 )
@@ -53,7 +53,7 @@ position = Vector2( 1290.94, 377.426 )
 [node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
 
 [node name="MudWall" parent="." instance=ExtResource( 3 )]
-position = Vector2( 363.231, 207.731 )
+position = Vector2( 395.031, 268.682 )
 
 [node name="MudHut" parent="." instance=ExtResource( 4 )]
 position = Vector2( -79.5309, 202.795 )

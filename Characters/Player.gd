@@ -38,21 +38,15 @@ func _input(event):
 		if event.button_index == BUTTON_RIGHT and event.pressed:
 			emit_signal("melee", Melee, get_global_mouse_position(), global_position)
 
-func _change_animation(animationSelected, change_dir : bool = false):
-	if not attacking || change_dir:
-		for animation in $Animations.get_children():
-			if animation.name != animationSelected:
-				animation.hide()
-			else:
-				animation.show()
-				$AnimationPlayer.play(animation.name)
-
 func _on_Player_shoot(FireBall, mouse_pos, player_pos):
 	var direction = mouse_pos - player_pos
 	if direction.x > 0:
-		_change_animation("Range", true)
+		$AnimatedSprite.play("throw")
+		$AnimatedSprite.flip_h = false
 	else:
-		_change_animation("Range-Left", true)
+		$AnimatedSprite.play("throw")
+		$AnimatedSprite.flip_h = true
+		facing == "Left"
 	_set_attack(30)
 	var fire = FireBall.instance()
 	add_child(fire)
@@ -61,9 +55,11 @@ func _on_Player_shoot(FireBall, mouse_pos, player_pos):
 func _on_Player_melee(Melee, mouse_pos, player_pos):
 	var direction = mouse_pos - player_pos
 	if direction.x > 0:
-		_change_animation("Attack", true)
+		$AnimatedSprite.play("melee")
+		$AnimatedSprite.flip_h = false
 	else:
-		_change_animation("Attack-Left", true)
+		$AnimatedSprite.play("melee")
+		$AnimatedSprite.flip_h = true
 	_set_attack(30)
 	var punch = Melee.instance()
 	punch.attacker = "Player"
@@ -74,24 +70,27 @@ func _player_movement():
 	if alive && not attacking:
 		if Input.is_action_pressed("move_up"):
 			var animate = "Walk" if facing == "Right" else "Walk-Left"
-			_change_animation(animate)
+			$AnimatedSprite.play("walk")
 			move_vec.y -= 1
 		if Input.is_action_pressed("move_down"):
 			var animate = "Walk" if facing == "Right" else "Walk-Left"
-			_change_animation(animate)
+			$AnimatedSprite.play("walk")
 			move_vec.y += 1
 		if Input.is_action_pressed("move_left"):
 			facing = "Left"
-			_change_animation("Walk-Left")
+			$AnimatedSprite.play("walk")
+			$AnimatedSprite.flip_h = true
 			move_vec.x -= 1
 		if Input.is_action_pressed("move_right"):
 			facing = "Right"
-			_change_animation("Walk")
+			$AnimatedSprite.play("walk")
+			$AnimatedSprite.flip_h = false
 			move_vec.x += 1
 		if move_vec.x == 0 && move_vec.y == 0 && facing == "Right":
-			_change_animation("Idle")
+			$AnimatedSprite.play("idle")
 		if move_vec.x == 0 && move_vec.y == 0 && facing == "Left":
-			_change_animation("Idle-Left")
+			$AnimatedSprite.play("idle")
+			$AnimatedSprite.flip_h = true
 	else:
 		if not alive:
 			if deathCountdown == 0:
@@ -116,7 +115,7 @@ func _set_health(value):
 			attacking = false
 			attackCountdown = 0
 			deathCountdown = 100
-			_change_animation("Death")
+			$AnimatedSprite.play("death")
 			
 func _set_attack(animTime):
 	attackCountdown = animTime
