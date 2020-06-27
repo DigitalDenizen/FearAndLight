@@ -7,7 +7,7 @@ signal killed()
 const MOVE_SPEED = 75
 export (float) var max_health = 100
 onready var health = max_health setget _set_health
-onready var itemDrop_scene = preload("res://Characters/Item Drops/Item Drop.tscn")
+onready var itemDrop_scene = preload("res://Characters/Item Drops/Item_Drop.tscn")
 var Melee = preload("res://Characters/Combat/Melee.tscn")
 
 var player = null
