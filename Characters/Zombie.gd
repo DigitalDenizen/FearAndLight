@@ -28,7 +28,7 @@ func _physics_process(delta):
 		var vec_to_player = vec_not_norm.normalized()
 		var collision = move_and_collide(vec_to_player * MOVE_SPEED * delta)
 		
-		velocity = MovementLogic._follow(velocity, global_position, player.global_position, MOVE_SPEED)
+		velocity = Movement_Logic._follow(velocity, global_position, player.global_position, MOVE_SPEED)
 		move_and_slide(velocity)
 		
 		if vec_not_norm.x > 0:
@@ -71,6 +71,7 @@ func _set_health(value):
 	if health != prev_health:
 		emit_signal("health_updated", health)
 		if health <= 0:
+			Score._on_Zombie_killed()
 			_change_animation("Death")
 
 func _change_animation(animationSelected):
