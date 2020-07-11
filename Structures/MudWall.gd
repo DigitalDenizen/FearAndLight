@@ -8,12 +8,10 @@ onready var health = max_health setget _set_health
 var destroyed = false
 var deathCountdown = 0
 var attacked = false
-var wall = null
-
 
 func _ready():
 	$AnimatedSprite.play("idle")
-	add_to_group("Walls")
+	add_to_group("MudWall")
 	get_tree().call_group("zombies","set_wall", self)
 	
 func _physics_process(delta):
@@ -55,3 +53,7 @@ func _set_health(value):
 
 
 
+
+
+func _on_Area2D_body_entered(body):
+	pass # Replace with function body.

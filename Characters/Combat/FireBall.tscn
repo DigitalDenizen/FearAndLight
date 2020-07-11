@@ -1,67 +1,54 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Characters/Combat/FireBall.gd" type="Script" id=1]
-[ext_resource path="res://Images/Fire.png" type="Texture" id=2]
-[ext_resource path="res://Images/zombie/enemy-die-poof.png" type="Texture" id=3]
-[ext_resource path="res://Images/Fire-Particle.png" type="Texture" id=4]
+[ext_resource path="res://Images/effect-poof-large.png" type="Texture" id=3]
+[ext_resource path="res://Images/object-fireball-right.png" type="Texture" id=5]
+[ext_resource path="res://Images/effect-poof-small.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 4.55626
+radius = 5.56409
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 32, 32 )
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 18, 17 )
 
 [sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 32, 32 )
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 12, 12 )
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 32, 32 )
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 11, 9 )
 
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 33, 48 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 3 )
-region = Rect2( 33, 0, 33, 48 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 3 )
-region = Rect2( 66, 0, 33, 48 )
-
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
-"name": "idle",
+"name": "Poof",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "Fire",
 "speed": 1.5
-}, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
-"loop": true,
-"name": "Poof",
-"speed": 5.0
 } ]
 
 [node name="FireBall" type="Area2D"]
+position = Vector2( -0.463287, 0.926575 )
+collision_mask = 20
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-rotation = -1.49575
-frames = SubResource( 9 )
+position = Vector2( 0.231651, -0.694939 )
+rotation = 0.0261799
+scale = Vector2( 1.14956, 1.28872 )
+frames = SubResource( 5 )
 animation = "Poof"
+flip_v = true
 [connection signal="body_entered" from="." to="." method="_body_entered"]

@@ -7,18 +7,23 @@ signal killed()
 const MOVE_SPEED = 75
 export (float) var max_health = 100
 onready var health = max_health setget _set_health
-
+onready var itemDrop_scene = preload("res://Characters/Item_Drops/Item_Drop.tscn")
 var Melee = preload("res://Characters/Combat/Melee.tscn")
+
 var player = null
+var wall = null
 var alive = true
 var not_attacking = true
 var attackCountDown = 0
 var deathCountdown = 0
 var facing_right = true
 var velocity: = Vector2.ZERO
+var rng = RandomNumberGenerator.new()
 
 func _ready():
 	add_to_group("zombies")
+	rng.randomize()
+	
 
 func _physics_process(delta):
 	if player == null:
@@ -34,6 +39,7 @@ func _physics_process(delta):
 		if vec_not_norm.x > 0:
 			_change_animation("Walk")
 			facing_right = true
+			
 		else:
 			_change_animation("Walk-Left")
 			facing_right = false
@@ -41,7 +47,7 @@ func _physics_process(delta):
 		if abs(vec_not_norm.x) < 30 && abs(vec_not_norm.y) < 30:
 			_on_Zombie_melee(Melee, player.global_position, global_position)
 			
-		var look_vec = get_global_mouse_position() - global_position
+		var _look_vec = get_global_mouse_position() - global_position
 	else:
 		if not_attacking:
 			deathCountdown = deathCountdown - 1
@@ -58,7 +64,10 @@ func kill():
 
 func set_player(p):
 	player = p
-	
+
+func set_wall(w):
+	wall = w
+
 func hurt(damage):
 	var vec_not_norm = player.global_position - global_position
 	var vec_to_player = vec_not_norm.normalized()
@@ -71,7 +80,9 @@ func _set_health(value):
 	if health != prev_health:
 		emit_signal("health_updated", health)
 		if health <= 0:
+			Score._on_Zombie_killed()
 			_change_animation("Death")
+			
 
 func _change_animation(animationSelected):
 	for animation in $Animations.get_children():
@@ -83,6 +94,7 @@ func _change_animation(animationSelected):
 			if animationSelected == "Death":
 				alive = false
 				deathCountdown = 20
+				
 			if animationSelected == "Attack" || animationSelected == "Attack-Left":
 				not_attacking = false
 				attackCountDown = 50
@@ -98,3 +110,10 @@ func _on_Zombie_melee(Melee, player_pos, zombie_pos):
 	scratch.attacker = "Zombie"
 	add_child(scratch)
 	scratch.shoot(player_pos, zombie_pos)
+
+func _on_Zombie_killed():
+	if rng.randf() <= 0.1:
+		var itemDrop = itemDrop_scene.instance()
+		itemDrop.type = rng.randi() % 2
+		get_tree().get_root().add_child(itemDrop)
+		itemDrop.global_position = global_position
