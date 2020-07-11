@@ -5,6 +5,7 @@ uniform int OCTAVES = 1;
 
 //colour is RGB divided by 256
 
+//rand funtion gives us a random number for each pixel in the image
 float rand(vec2 coord) {
 	return fract(sin(dot(coord, vec2(100,10))*1000.0)*1000.0);
 }
