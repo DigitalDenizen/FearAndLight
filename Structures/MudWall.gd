@@ -11,7 +11,7 @@ var attacked = false
 
 func _ready():
 	$AnimatedSprite.play("idle")
-	add_to_group("MudWall")
+	add_to_group("walls")
 	get_tree().call_group("zombies","set_wall", self)
 	
 func _physics_process(delta):
@@ -50,10 +50,3 @@ func _set_health(value):
 			deathCountdown = 100
 			destroyed = true
 			$AnimatedSprite.play('Death')
-
-
-
-
-
-func _on_Area2D_body_entered(body):
-	pass # Replace with function body.
