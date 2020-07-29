@@ -112,7 +112,7 @@ func _on_Zombie_melee(Melee, player_pos, zombie_pos):
 	scratch.shoot(player_pos, zombie_pos)
 
 func _on_Zombie_killed():
-	if rng.randf() <= 0.1:
+	if rng.randf() <= 0.3:
 		var itemDrop = itemDrop_scene.instance()
 		itemDrop.type = rng.randi() % 2
 		get_tree().get_root().add_child(itemDrop)
