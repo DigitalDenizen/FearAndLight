@@ -1,22 +1,20 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://scenes/mud/mud-main/scene-moon.png" type="Texture" id=1]
+[ext_resource path="res://scenes/global/scene-layer-moon.png" type="Texture" id=1]
 [ext_resource path="res://scenes/sky/scene-layer-sky-star-mist.png" type="Texture" id=2]
-[ext_resource path="res://scenes/mud/mud-main/scene-layer-mud-stars.png" type="Texture" id=3]
+[ext_resource path="res://scenes/global/scene-layer-main-stars.png" type="Texture" id=3]
 [ext_resource path="res://scenes/sky/scene-layer-sky.png" type="Texture" id=4]
 [ext_resource path="res://scenes/sky/scene-layer-sky-stars.png" type="Texture" id=5]
 [ext_resource path="res://scenes/sky/scene-layer-sky-quasars.png" type="Texture" id=6]
-[ext_resource path="res://scenes/mud/mud-main/scene-layer-mud-sky.png" type="Texture" id=7]
+[ext_resource path="res://scenes/global/scene-layer-main-sky.png" type="Texture" id=7]
 [ext_resource path="res://scenes/mud/mud-main/scene-layer-mud-trees-ground.png" type="Texture" id=8]
-[ext_resource path="res://scenes/mud/mud-main/scene-layer-mud-clouds.png" type="Texture" id=9]
-[ext_resource path="res://scenes/mud/mud-main/scene-layer-mud-hills.png" type="Texture" id=10]
-[ext_resource path="res://scenes/mud/mud-main/scene-layer-mud-trees-dark.png" type="Texture" id=11]
-[ext_resource path="res://scenes/mud-to-ice/mud-to-ice-main/scene-layer-mud-to-ice-trees-ground.png" type="Texture" id=12]
-[ext_resource path="res://scenes/mud-to-ice/mud-to-ice-main/scene-layer-mud-to-ice-dark-trees.png" type="Texture" id=13]
+[ext_resource path="res://scenes/global/scene-layer-main-clouds.png" type="Texture" id=9]
+[ext_resource path="res://scenes/global/scene-layer-main-hills.png" type="Texture" id=10]
+[ext_resource path="res://scenes/global/scene-layer-main-dark-trees.png" type="Texture" id=11]
+[ext_resource path="res://scenes/mud/mud-main-trans-right/scene-layer-mud-trans-right-ground-trees.png" type="Texture" id=12]
+[ext_resource path="res://scenes/ice-wall/ice-wall-main/scene-layer-ice-trans-left-trees-ground-wall.png" type="Texture" id=13]
 [ext_resource path="res://AnimatedTileset/fog.shader" type="Shader" id=14]
-[ext_resource path="res://scenes/ice/scene-layer-ice-sky.png" type="Texture" id=15]
-[ext_resource path="res://scenes/ice/ice-main/scene-layer-ice-trees-ground.png" type="Texture" id=16]
-[ext_resource path="res://scenes/ice/scene-layer-ice-dark-trees.png" type="Texture" id=17]
+[ext_resource path="res://scenes/ice/ice-main/scene-layer-ice-main-trees-ground.png" type="Texture" id=15]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 14 )
@@ -394,7 +392,6 @@ texture = ExtResource( 10 )
 centered = false
 
 [node name="Dark_Trees_Screen3" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 position = Vector2( 870, 0 )
 motion_scale = Vector2( 0.4, 1 )
 __meta__ = {
@@ -408,7 +405,6 @@ texture = ExtResource( 11 )
 centered = false
 
 [node name="Screen4" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 position = Vector2( 1740, 0 )
 __meta__ = {
 "_edit_group_": true
@@ -419,19 +415,26 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 centered = false
 
-[node name="Foreground_6" type="Sprite" parent="Screen4"]
+[node name="Foreground_mud_6" type="Sprite" parent="Screen4"]
 scale = Vector2( 2, 2 )
 z_index = 6
 texture = ExtResource( 12 )
 centered = false
 
-[node name="Mud_to_ice_dark_trees" type="Sprite" parent="Screen4"]
+[node name="Foreground_ice_6" type="Sprite" parent="Screen4"]
 scale = Vector2( 2, 2 )
-z_index = 5
+z_index = 6
 texture = ExtResource( 13 )
 centered = false
 
+[node name="Mud_to_ice_dark_trees" type="Sprite" parent="Screen4"]
+scale = Vector2( 2, 2 )
+z_index = 5
+texture = ExtResource( 11 )
+centered = false
+
 [node name="Fog_all_screens" type="ParallaxLayer" parent="."]
+editor/display_folded = true
 __meta__ = {
 "_edit_group_": true
 }
@@ -445,23 +448,24 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Screen5" type="ParallaxLayer" parent="."]
+editor/display_folded = true
 
 [node name="Sky_0" type="Sprite" parent="Screen5"]
 position = Vector2( 2610, 0 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 15 )
+texture = ExtResource( 7 )
 centered = false
 
 [node name="Foreground_6" type="Sprite" parent="Screen5"]
 position = Vector2( 2610, 0 )
 scale = Vector2( 2, 2 )
 z_index = 6
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 centered = false
 
 [node name="Ice_Dark_trees_5" type="Sprite" parent="Screen5"]
 position = Vector2( 2610, 0 )
 scale = Vector2( 2, 2 )
 z_index = 5
-texture = ExtResource( 17 )
+texture = ExtResource( 11 )
 centered = false
