@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/procedural_fire.shader" type="Shader" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/transparent = Color( 0, 0, 0, 0 )
+shader_param/inner = Color( 0.972549, 0.784314, 0.14902, 1 )
+shader_param/outer = Color( 0.941176, 0.0313726, 0.160784, 1 )
+shader_param/inner_threshold = 0.4
+shader_param/outer_threshold = 0.15
+shader_param/soft_edge = 0.04
+shader_param/center = Vector2( 0.5, 0.8 )
+shader_param/OCTAVES = 4
+
+[node name="Node2D" type="Node2D"]
+
+[node name="icon" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 160.374, 170.026 )
+texture = ExtResource( 2 )
