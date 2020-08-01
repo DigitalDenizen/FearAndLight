@@ -3,7 +3,7 @@ var direction = Vector2()
 export var speed = 1000
 var collid = false
 var poofCountdown = 0
-
+var attacker = ""
 
 func shoot(aim_position, caster_position):
 	global_position = caster_position
@@ -23,19 +23,21 @@ func _process(delta):
 func _on_Visibility_exit_screen():
 	queue_free()
 
+func _FireBall_body_exited(body):
+	if body.is_in_group("Player"):
+		attacker = "Player"
+		
+
 func _body_entered(body):
-	collid = true
-	if collid == true:
-		_fireBall_collid()
+	if attacker == "Player":
 		if body.is_in_group("Baddies"):
 			body.hurt(25)
-	
-	if body.is_in_group("Player"):
-		collid = false
-	
-	if body.is_in_group("item drops"):
-		collid = false
-	 
+			_fireBall_collid()
+		if body.is_in_group("walls"):
+			_fireBall_collid()
+		elif body.is_in_group("structures"):
+			_fireBall_collid()
+
 func _fireBall_collid():
 	collid = true
 	$AnimatedSprite.play("Poof")

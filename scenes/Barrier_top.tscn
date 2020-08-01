@@ -6,9 +6,8 @@
 extents = Vector2( 33.1215, 14.6184 )
 
 [node name="Barrier_top" type="Sprite"]
-visible = false
-position = Vector2( -874.924, 169.544 )
-scale = Vector2( 49.0775, 0.642346 )
+position = Vector2( -2920.1, 169.544 )
+scale = Vector2( 96.3248, 0.642346 )
 z_index = 7
 texture = ExtResource( 1 )
 centered = false
