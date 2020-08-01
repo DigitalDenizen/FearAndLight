@@ -50,9 +50,9 @@ float egg_shape(vec2 coord, float radius) {
 	
 	//if statement stretches out portion of semi-circle that is above the center, else statement brings the bottom portion up, in order to create egg shape
 	if (coord.y < center.y){
-		diff.y /= 2.0;			
+		diff.y /= 3.0;			
 	} else {
-		diff.y *= 2.0;
+		diff.y *= 1.5;
 	}
 	float dist = sqrt(diff.x * diff.x + diff.y * diff.y) / radius;
 	float value = clamp(1.0 - dist, 0.0, 1.0);

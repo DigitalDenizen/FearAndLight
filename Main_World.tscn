@@ -46,3 +46,4 @@ spawn_num = 50
 
 [node name="Barrier_top" parent="." instance=ExtResource( 11 )]
 visible = false
+position = Vector2( -2920.1, 160.544 )
