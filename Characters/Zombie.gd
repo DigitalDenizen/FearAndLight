@@ -4,7 +4,7 @@ signal health_updated(health)
 signal melee(melee, player_pos, zombie_pos)
 signal killed()
 
-const MOVE_SPEED = 75
+const MOVE_SPEED = 38
 export (float) var max_health = 100
 onready var health = max_health setget _set_health
 onready var itemDrop_scene = preload("res://Characters/Item_Drops/Item_Drop.tscn")

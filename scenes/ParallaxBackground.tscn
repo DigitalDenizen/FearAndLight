@@ -27,15 +27,13 @@ shader_param/OCTAVES = 1
 motion_scale = Vector2( 0, 1 )
 
 [node name="Moon_2" type="Sprite" parent="Moon_Sky_Mist"]
-position = Vector2( 2.65369, 66.3422 )
-scale = Vector2( 2, 2 )
+position = Vector2( 1.06065, 27.5772 )
 z_index = 2
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Upper_Sky_Star_Mist_2" type="Sprite" parent="Moon_Sky_Mist"]
-position = Vector2( 0, -490 )
-scale = Vector2( 2, 2 )
+position = Vector2( 0, -245 )
 z_index = 2
 texture = ExtResource( 2 )
 centered = false
