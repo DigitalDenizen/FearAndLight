@@ -79,17 +79,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PoolVector2Array( -14.8188, -38.9894, -30.4244, -38.5017, -31.3997, -18.9947, -36.2765, 3.43835, -31.3997, 25.8714, -28.9613, 36.6003, -8.96667, 39.0386, 8.58963, 38.5509, 23.2199, 39.5263, 36.3871, 28.3098, 38.8255, 12.7042, 32.4857, 1.97533, 33.9487, -14.6056, 26.6336, -19.4824, 28.0966, -32.6496, 13.9541, -38.014 )
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PoolVector2Array( -14.8188, -38.5017, -27.0106, -33.625, -31.3997, -18.9947, -32.3751, 27.3344, -25.0599, 38.5509, -7.50365, 39.0386, 8.58963, 38.5509, 35.4118, 29.7728, 31.998, 2.95068, 32.9734, -15.0933, 27.1213, -17.5317, 26.6336, -34.1126, 13.9541, -38.014 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.55196, -0.18759 )
-scale = Vector2( 1.72883, 1.72883 )
 frames = SubResource( 11 )
 animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PoolVector2Array( -11.625, -17.75, -13.875, -12.125, -14.375, -4.5, -14.875, 1.375, -15.125, 15.625, -11.5, 17.875, 2, 19.125, 12.25, 18.75, 17.375, 13.75, 14.75, -14.125, 14.75, -17.625, 8, -20.375, -5.25, -20.5 )
