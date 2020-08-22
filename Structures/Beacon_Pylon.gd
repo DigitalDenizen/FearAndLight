@@ -1,5 +1,5 @@
 extends StaticBody2D
-
+signal beacon_activated()
 signal health_updated(health)
 signal killed()
 
@@ -7,27 +7,21 @@ export (float) var max_health = 100
 onready var health = max_health setget _set_health
 var alive = true
 var deathCountdown = 0
-var destroyed = false
-var mudhut = null
-
-
 
 func _ready():
-	$AnimatedSprite.play("idle")
+	$Pylon_Active.visible = false
+	$Pylon.visible = true
+	$Pylon.play("Idle")
 	add_to_group("structures")
 	
-func _physics_process(delta):
-	if destroyed == false:
-		get_constant_angular_velocity()
-	else:
-		if deathCountdown > 0:
-			deathCountdown = deathCountdown - 1
-		if deathCountdown <= 0:
-			queue_free()
 
-func hurt(damage):
-	_set_health(health - damage)
-	
+func _on_Pylon_input_event(viewport, event, shape_idx):
+	if  event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+		print("it's alive")
+		$Pylon.visible = false
+		$Pylon_Active.visible = true
+		$Pylon_Active.play("Active")
+		emit_signal("beacon_activated")	
 
 
 func _set_health(value):
@@ -36,15 +30,19 @@ func _set_health(value):
 	if health != prev_health:
 		emit_signal("health_updated", health)
 		if health <= 75 && health >= 51:
-			$AnimatedSprite.play('Health 75')
+			$Pylon.play('Health 75')
 			deathCountdown = 25
 		if health <= 50 && health >= 26:
-			$AnimatedSprite.play('Health 50')
+			$Pylon.play('Health 50')
 			deathCountdown = 50
 		if health <= 25 && health >= 1:
-			$AnimatedSprite.play('Health 25')
+			$Pylon.play('Health 25')
 			deathCountdown = 75
 		if health <= 0:
 			deathCountdown = 100
-			destroyed = true
-			$AnimatedSprite.play('Death')
+			alive = false
+			$Pylon.play('Death')
+
+
+
+	

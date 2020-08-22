@@ -24,7 +24,6 @@ shader_param/OCTAVES = 1
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
 [node name="Moon_Sky_Mist" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 motion_scale = Vector2( 0, 1 )
 
 [node name="Moon_2" type="Sprite" parent="Moon_Sky_Mist"]
@@ -42,7 +41,6 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Stars" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 motion_scale = Vector2( 0, 1 )
 
 [node name="Stars1_Screen0" type="Sprite" parent="Stars"]
@@ -212,7 +210,6 @@ texture = ExtResource( 6 )
 centered = false
 
 [node name="Screen0" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 position = Vector2( -1740, 0 )
 __meta__ = {
 "_edit_group_": true
@@ -230,7 +227,6 @@ texture = ExtResource( 8 )
 centered = false
 
 [node name="Screen1" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 position = Vector2( -870, 0 )
 __meta__ = {
 "_edit_group_": true
@@ -248,7 +244,6 @@ texture = ExtResource( 8 )
 centered = false
 
 [node name="Clouds_Screen1" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 position = Vector2( -870, 0 )
 motion_scale = Vector2( 0.25, 1 )
 __meta__ = {
@@ -262,7 +257,6 @@ texture = ExtResource( 9 )
 centered = false
 
 [node name="Hills_Screen1" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 position = Vector2( -870, 0 )
 motion_scale = Vector2( 0.25, 1 )
 __meta__ = {
@@ -276,7 +270,6 @@ texture = ExtResource( 10 )
 centered = false
 
 [node name="Dark_Trees_Screen1" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 position = Vector2( -870, 0 )
 motion_scale = Vector2( 0.4, 1 )
 __meta__ = {
@@ -290,7 +283,6 @@ texture = ExtResource( 11 )
 centered = false
 
 [node name="Screen2" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 __meta__ = {
 "_edit_group_": true
 }
@@ -307,7 +299,6 @@ texture = ExtResource( 8 )
 centered = false
 
 [node name="Clouds_Screen2" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 motion_scale = Vector2( 0.25, 1 )
 __meta__ = {
 "_edit_group_": true
@@ -320,7 +311,6 @@ texture = ExtResource( 9 )
 centered = false
 
 [node name="Hills_Screen2" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 motion_scale = Vector2( 0.25, 1 )
 __meta__ = {
 "_edit_group_": true
@@ -333,7 +323,6 @@ texture = ExtResource( 10 )
 centered = false
 
 [node name="Dark_Trees_Screen2" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 motion_scale = Vector2( 0.4, 1 )
 __meta__ = {
 "_edit_group_": true
@@ -346,7 +335,6 @@ texture = ExtResource( 11 )
 centered = false
 
 [node name="Screen3" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 position = Vector2( 870, 0 )
 __meta__ = {
 "_edit_group_": true
@@ -364,7 +352,6 @@ texture = ExtResource( 8 )
 centered = false
 
 [node name="Clouds_Screen3" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 position = Vector2( 870, 0 )
 motion_scale = Vector2( 0.25, 1 )
 __meta__ = {
@@ -378,7 +365,6 @@ texture = ExtResource( 9 )
 centered = false
 
 [node name="Hills_Screen3" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 position = Vector2( 870, 0 )
 motion_scale = Vector2( 0.25, 1 )
 __meta__ = {
@@ -434,7 +420,6 @@ texture = ExtResource( 11 )
 centered = false
 
 [node name="Fog_all_screens" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 __meta__ = {
 "_edit_group_": true
 }
@@ -448,7 +433,6 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Screen5" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 
 [node name="Sky_0" type="Sprite" parent="Screen5"]
 position = Vector2( 2610, 0 )
