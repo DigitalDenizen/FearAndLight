@@ -5,6 +5,10 @@ export (float) var shape_y = 0.0
 export (int) var spawn_num = 0
 
 func _ready():
+	_spawn()
+	
+	
+func _spawn():
 	var colShape = $Spawn_area
 	if shape_x != 0.0 && shape_y != 0.0:
 		colShape.shape.extents = Vector2(shape_x/2, shape_y/2)
@@ -20,3 +24,7 @@ func _ready():
 		enemy.position.y = (randi() % int(size.x)) - (int(size.x/2)) + center.x
 		enemy.position.x = (randi() % int(size.y)) - (int(size.y/2)) + center.y
 		add_child(enemy)
+
+func _on_Pylon_beacon_activated():
+	print('beacon activated')
+	_spawn()
