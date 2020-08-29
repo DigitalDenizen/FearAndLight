@@ -5,14 +5,14 @@
 [ext_resource path="res://Images/object-fireball-right.png" type="Texture" id=5]
 [ext_resource path="res://Images/effect-poof-small.png" type="Texture" id=6]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=5]
 radius = 5.56409
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 18, 17 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 12, 12 )
 
@@ -20,9 +20,9 @@ region = Rect2( 0, 0, 12, 12 )
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 11, 9 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "Poof",
 "speed": 5.0
@@ -42,14 +42,13 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.231651, -0.694939 )
 rotation = 0.0261799
-scale = Vector2( 1.14956, 1.28872 )
-frames = SubResource( 5 )
-animation = "Poof"
+frames = SubResource( 8 )
+animation = "Fire"
 flip_v = true
 [connection signal="body_entered" from="." to="." method="_body_entered"]
 [connection signal="body_exited" from="." to="." method="_FireBall_body_exited"]

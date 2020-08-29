@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Structures/MudWall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=2]
@@ -11,18 +11,22 @@
 [ext_resource path="res://objects/Ice_Wall_Below.tscn" type="PackedScene" id=9]
 [ext_resource path="res://objects/Ice_Wall_Main.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Barrier_top.tscn" type="PackedScene" id=11]
+[ext_resource path="res://structures/Beacon_Pylon.tscn" type="PackedScene" id=12]
 
 [node name="Main" type="Node2D"]
 
 [node name="MudWall" parent="." instance=ExtResource( 1 )]
-position = Vector2( 53.2083, 368.905 )
+position = Vector2( -50.136, 136.38 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 185.417, 287.355 )
+position = Vector2( 178.172, 173.962 )
 z_index = 11
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 4.24744, -30.6759 )
+scale = Vector2( 0.646373, 0.360952 )
 current = true
+zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true
 drag_margin_bottom = 1.0
 script = ExtResource( 3 )
@@ -32,11 +36,12 @@ script = ExtResource( 3 )
 [node name="ParallaxBackground" parent="." instance=ExtResource( 5 )]
 
 [node name="MudHut" parent="." instance=ExtResource( 6 )]
-position = Vector2( -186.881, 379.726 )
+position = Vector2( -211.826, 181.946 )
 
 [node name="Mob_Spawn" parent="." instance=ExtResource( 7 )]
-position = Vector2( 810.078, 357.272 )
-spawn_num = 50
+position = Vector2( 571.597, 170.707 )
+scale = Vector2( 0.5, 0.5 )
+spawn_num = 5
 
 [node name="Under_Ground" parent="." instance=ExtResource( 8 )]
 
@@ -46,4 +51,8 @@ spawn_num = 50
 
 [node name="Barrier_top" parent="." instance=ExtResource( 11 )]
 visible = false
-position = Vector2( -2920.1, 160.544 )
+position = Vector2( -2921.69, 56.5692 )
+
+[node name="Pylon" parent="." instance=ExtResource( 12 )]
+position = Vector2( 97.5266, 104.663 )
+scale = Vector2( 0.996938, 1 )
