@@ -9,37 +9,35 @@
 radius = 5.56409
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 18, 17 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 12, 12 )
-
-[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 11, 9 )
 
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 18, 17 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 12, 12 )
+
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ) ],
-"loop": true,
-"name": "Poof",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 4 ) ],
+"frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "Fire",
 "speed": 1.5
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "Poof",
+"speed": 5.0
 } ]
 
 [node name="FireBall" type="Area2D"]
 position = Vector2( -0.463287, 0.926575 )
-collision_mask = 21
+collision_layer = 4
+collision_mask = 7
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -49,7 +47,7 @@ position = Vector2( 0.231651, -0.694939 )
 rotation = 0.0261799
 scale = Vector2( 1.14956, 1.28872 )
 frames = SubResource( 5 )
-animation = "Poof"
+animation = "Fire"
 flip_v = true
 [connection signal="body_entered" from="." to="." method="_body_entered"]
 [connection signal="body_exited" from="." to="." method="_FireBall_body_exited"]

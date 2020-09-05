@@ -28,4 +28,3 @@ func _body_entered(body):
 		if !body.is_in_group('Baddies'):
 			body.hurt(10)
 			queue_free()
-		

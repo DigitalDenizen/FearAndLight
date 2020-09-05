@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Images/defense-spritesheet-mud-wall-attacked.png" type="Texture" id=1]
 [ext_resource path="res://Structures/MudWall.gd" type="Script" id=2]
@@ -17,31 +17,31 @@ region = Rect2( 129, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
-region = Rect2( 172, 0, 43, 49 )
+region = Rect2( 86, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 215, 0, 43, 49 )
+region = Rect2( 172, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
-region = Rect2( 258, 0, 43, 49 )
+region = Rect2( 215, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
-region = Rect2( 301, 0, 43, 49 )
+region = Rect2( 258, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
-region = Rect2( 344, 0, 43, 49 )
+region = Rect2( 301, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
-region = Rect2( 387, 0, 43, 49 )
+region = Rect2( 344, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
-region = Rect2( 86, 0, 43, 49 )
+region = Rect2( 387, 0, 43, 49 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
@@ -60,20 +60,24 @@ animations = [ {
 "name": "Health 25",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
-"loop": true,
-"name": "Death",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 10 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "Health 50",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "Death",
+"speed": 5.0
 } ]
 
+[sub_resource type="OccluderPolygon2D" id=12]
+polygon = PoolVector2Array( -31.2095, 20.8161, -25.9464, 33.4477, -17.5253, 36.6056, 2.47473, 38.7108, 15.1063, 37.6582, 27.7379, 32.395, 34.0537, 27.1319, 28.7906, 19.7634, 8.79053, 18.7108, -1.73578, 18.7108, -19.6306, 19.7634 )
+
 [node name="MudWall" type="StaticBody2D"]
-collision_layer = 7
-collision_mask = 16
+light_mask = 2
+position = Vector2( 0, 1.05263 )
+z_index = 10
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -81,15 +85,21 @@ __meta__ = {
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
-polygon = PoolVector2Array( -14.8188, -38.9894, -30.4244, -38.5017, -31.3997, -18.9947, -36.2765, 3.43835, -31.3997, 25.8714, -28.9613, 36.6003, -8.96667, 39.0386, 8.58963, 38.5509, 23.2199, 39.5263, 36.3871, 28.3098, 38.8255, 12.7042, 32.4857, 1.97533, 33.9487, -14.6056, 26.6336, -19.4824, 28.0966, -32.6496, 13.9541, -38.014 )
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PoolVector2Array( -14.8188, -38.5017, -27.0106, -33.625, -31.3997, -18.9947, -32.3751, 27.3344, -25.0599, 38.5509, -7.50365, 39.0386, 8.58963, 38.5509, 35.4118, 29.7728, 31.998, 2.95068, 32.9734, -15.0933, 27.1213, -17.5317, 26.6336, -34.1126, 13.9541, -38.014 )
+polygon = PoolVector2Array( -9.10388, -12.8678, -21.7355, -10.7625, -29.1039, -2.34145, -36.2765, 3.43835, -31.3997, 25.8714, -28.9613, 36.6003, -8.96667, 39.0386, 8.58963, 38.5509, 23.2199, 39.5263, 36.3871, 28.3098, 38.8255, 12.7042, 32.4857, 1.97533, 29.8436, -8.65724, 22.4752, -11.8151, 10.8962, -11.8151, 2.4751, -11.8151 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+show_behind_parent = true
+light_mask = 2
 position = Vector2( 0.55196, -0.18759 )
 scale = Vector2( 1.72883, 1.72883 )
 frames = SubResource( 11 )
 animation = "idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -8.05121, -16.0257, -23.8408, -11.8151, -32.2618, 0.81645, -32.3751, 27.3344, -25.0599, 38.5509, -7.50365, 39.0386, 8.58963, 38.5509, 35.4118, 29.7728, 29.8436, 5.02702, 26.6857, -6.55196, 20.3699, -12.8678, 15.1067, -16.0257, 3.52777, -14.973 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+show_behind_parent = true
+occluder = SubResource( 12 )

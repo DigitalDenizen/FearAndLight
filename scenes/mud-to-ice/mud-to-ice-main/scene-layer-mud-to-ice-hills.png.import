@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-mud-to-ice-hills.png-fe13c050ac8144f46e804329764968b6.stex"
+path="res://.import/scene-layer-mud-to-ice-hills.png-8b738f03274e48da7d4d1aaa2f0460ea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/mud-to-ice/mud-to-ice-main/scene-layer-mud-to-ice-hills.png"
-dest_files=[ "res://.import/scene-layer-mud-to-ice-hills.png-fe13c050ac8144f46e804329764968b6.stex" ]
+source_file="res://Scenes/mud-to-ice/mud-to-ice-main/scene-layer-mud-to-ice-hills.png"
+dest_files=[ "res://.import/scene-layer-mud-to-ice-hills.png-8b738f03274e48da7d4d1aaa2f0460ea.stex" ]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Characters/Zombie.gd" type="Script" id=1]
 [ext_resource path="res://Images/zombie/enemy-zombie-walk.png" type="Texture" id=2]
@@ -116,6 +116,8 @@ tracks/0/keys = {
 radius = 14.6072
 height = 2.61852
 
+[sub_resource type="OccluderPolygon2D" id=9]
+
 [node name="Zombie" type="KinematicBody2D"]
 position = Vector2( 0.418106, 0 )
 collision_layer = 4
@@ -189,6 +191,9 @@ rect_scale = Vector2( 0.5, 0.5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource( 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 9 )
 [connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
 [connection signal="killed" from="." to="." method="_on_Zombie_killed"]
 [connection signal="melee" from="." to="." method="_on_Zombie_melee"]

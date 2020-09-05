@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-mud-hills.png-ff284fdae8ea2d6dd16d26ba4b714ea8.stex"
+path="res://.import/scene-layer-mud-hills.png-3149a109a662d32aa3d6ea1fd8b32371.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/mud/mud-main/scene-layer-mud-hills.png"
-dest_files=[ "res://.import/scene-layer-mud-hills.png-ff284fdae8ea2d6dd16d26ba4b714ea8.stex" ]
+source_file="res://Scenes/mud/mud-main/scene-layer-mud-hills.png"
+dest_files=[ "res://.import/scene-layer-mud-hills.png-3149a109a662d32aa3d6ea1fd8b32371.stex" ]
 
 [params]
 

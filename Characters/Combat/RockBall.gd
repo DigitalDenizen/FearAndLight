@@ -3,6 +3,7 @@ var direction = Vector2()
 export var speed = 1000
 var collid = false
 var poofCountdown = 0
+var attacker = ""
 
 func shoot(aim_position, caster_position):
 	global_position = caster_position
@@ -11,7 +12,7 @@ func shoot(aim_position, caster_position):
 
 func _process(delta):
 	if not collid:
-		$AnimatedSprite.play("Fire")
+		$AnimatedSprite.play("Rock")
 		position += direction * speed * delta
 	else:
 		if poofCountdown <= 0:
@@ -22,15 +23,22 @@ func _process(delta):
 func _on_Visibility_exit_screen():
 	queue_free()
 
+func _RockBall_body_exited(body):
+	if body.is_in_group("Player"):
+		attacker = "Player"
+		
+
 func _body_entered(body):
-	
-	if body.name != "Player" && body.name != "MudWall" && body.name != "MudHut":
-		body.hurt(25)
-		_fireBall_collid()
-	if body.name == "MudWall" || body.name == "MudHut" :
-		_fireBall_collid()
+	if attacker == "Player":
+		if body.is_in_group("Baddies"):
+			body.hurt(25)
+			_fireBall_collid()
+		if body.is_in_group("walls"):
+			_fireBall_collid()
+		elif body.is_in_group("structures"):
+			_fireBall_collid()
 
 func _fireBall_collid():
 	collid = true
 	$AnimatedSprite.play("Poof")
-	poofCountdown = 15
+	poofCountdown = 1

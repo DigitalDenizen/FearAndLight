@@ -1,7 +1,7 @@
 extends KinematicBody2D
 	
 const MOVE_SPEED = 300
-signal shoot(fireball, mouse_pos, player_pos)
+signal shoot(rock, mouse_pos, player_pos)
 signal melee(melee, mouse_pos, player_pos)
 signal health_updated(health)
 signal killed()
@@ -13,6 +13,7 @@ var attacking = false
 var deathCountdown = 0
 var attackCountdown = 0
 
+var RockBall = preload("res://Characters/Combat/RockBall.tscn")
 var FireBall = preload("res://Characters/Combat/FireBall.tscn")
 var Melee = preload("res://Characters/Combat/Melee.tscn")
 var facing = "Right"
@@ -34,11 +35,11 @@ func kill():
 func _input(event):
 	if event is InputEventMouseButton && alive:
 		if event.button_index == BUTTON_LEFT and event.pressed:
-			emit_signal("shoot", FireBall, get_global_mouse_position(), global_position)
+			emit_signal("shoot", RockBall, get_global_mouse_position(), global_position)
 		if event.button_index == BUTTON_RIGHT and event.pressed:
 			emit_signal("melee", Melee, get_global_mouse_position(), global_position)
 
-func _on_Player_shoot(FireBall, mouse_pos, player_pos):
+func _on_Player_shoot(Rock, mouse_pos, player_pos):
 	var direction = mouse_pos - player_pos
 	if direction.x > 0:
 		$AnimatedSprite.play("throw")
@@ -48,9 +49,9 @@ func _on_Player_shoot(FireBall, mouse_pos, player_pos):
 		$AnimatedSprite.flip_h = true
 		facing == "Left"
 	_set_attack(30)
-	var fire = FireBall.instance()
-	add_child(fire)
-	fire.shoot(mouse_pos, player_pos)
+	var rock = Rock.instance()
+	add_child(rock)
+	rock.shoot(mouse_pos, player_pos)
 	
 func _on_Player_melee(Melee, mouse_pos, player_pos):
 	var direction = mouse_pos - player_pos

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-ice-sky.png-a78f0e076a20f1a466e72ac4f96600f0.stex"
+path="res://.import/scene-layer-ice-sky.png-cf9362bc80aa059f03968e30a4fdd0da.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/ice/scene-layer-ice-sky.png"
-dest_files=[ "res://.import/scene-layer-ice-sky.png-a78f0e076a20f1a466e72ac4f96600f0.stex" ]
+source_file="res://Scenes/ice/scene-layer-ice-sky.png"
+dest_files=[ "res://.import/scene-layer-ice-sky.png-cf9362bc80aa059f03968e30a4fdd0da.stex" ]
 
 [params]
 
