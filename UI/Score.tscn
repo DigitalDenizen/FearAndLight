@@ -17,6 +17,9 @@ custom_fonts/italics_font = ExtResource( 2 )
 custom_fonts/bold_font = ExtResource( 2 )
 custom_fonts/normal_font = ExtResource( 2 )
 text = "SCORE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ScoreNumber" type="RichTextLabel" parent="."]
 margin_left = 383.348
