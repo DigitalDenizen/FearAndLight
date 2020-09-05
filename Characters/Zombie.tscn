@@ -136,27 +136,23 @@ anims/Walk-Left = SubResource( 6 )
 [node name="Animations" type="Node2D" parent="."]
 
 [node name="Walk" type="Sprite" parent="Animations"]
-scale = Vector2( 1.58836, 1.50958 )
 z_index = 1
 texture = ExtResource( 2 )
 hframes = 4
 
 [node name="Walk-Left" type="Sprite" parent="Animations"]
 visible = false
-scale = Vector2( 1.68094, 1.58798 )
 texture = ExtResource( 2 )
 flip_h = true
 hframes = 4
 
 [node name="Attack" type="Sprite" parent="Animations"]
 visible = false
-scale = Vector2( 1.70483, 1.54878 )
 texture = ExtResource( 3 )
 hframes = 4
 
 [node name="Attack-Left" type="Sprite" parent="Animations"]
 visible = false
-scale = Vector2( 1.70483, 1.54878 )
 z_index = 1
 texture = ExtResource( 3 )
 flip_h = true
@@ -166,14 +162,12 @@ frame = 3
 [node name="Idle" type="Sprite" parent="Animations"]
 visible = false
 position = Vector2( 6.899, -6.48087 )
-scale = Vector2( 1.68393, 1.58798 )
 texture = ExtResource( 4 )
 hframes = 4
 
 [node name="Death" type="Sprite" parent="Animations"]
 visible = false
 position = Vector2( -0.209088, -0.418091 )
-scale = Vector2( 1.37589, 1.19164 )
 texture = ExtResource( 5 )
 normal_map = SubResource( 7 )
 hframes = 3

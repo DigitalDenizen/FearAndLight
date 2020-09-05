@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/structure-mud-pylon-attacked.png-73bcfc949fd771a007dac9eb00cc3a99.stex"
+path="res://.import/structure-mud-pylon-attacked.png-ae226d1e26f4f7d722b74d49f084a98c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://structures/mud pylon/structure-mud-pylon-attacked.png"
-dest_files=[ "res://.import/structure-mud-pylon-attacked.png-73bcfc949fd771a007dac9eb00cc3a99.stex" ]
+source_file="res://Structures/mud pylon/structure-mud-pylon-attacked.png"
+dest_files=[ "res://.import/structure-mud-pylon-attacked.png-ae226d1e26f4f7d722b74d49f084a98c.stex" ]
 
 [params]
 
