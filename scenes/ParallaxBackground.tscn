@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/global/scene-layer-moon.png" type="Texture" id=1]
 [ext_resource path="res://scenes/sky/scene-layer-sky-star-mist.png" type="Texture" id=2]
@@ -7,14 +7,10 @@
 [ext_resource path="res://scenes/sky/scene-layer-sky-stars.png" type="Texture" id=5]
 [ext_resource path="res://scenes/sky/scene-layer-sky-quasars.png" type="Texture" id=6]
 [ext_resource path="res://scenes/global/scene-layer-main-sky.png" type="Texture" id=7]
-[ext_resource path="res://scenes/mud/mud-main/scene-layer-mud-trees-ground.png" type="Texture" id=8]
 [ext_resource path="res://scenes/global/scene-layer-main-clouds.png" type="Texture" id=9]
 [ext_resource path="res://scenes/global/scene-layer-main-hills.png" type="Texture" id=10]
 [ext_resource path="res://scenes/global/scene-layer-main-dark-trees.png" type="Texture" id=11]
-[ext_resource path="res://scenes/mud/mud-main-trans-right/scene-layer-mud-trans-right-ground-trees.png" type="Texture" id=12]
-[ext_resource path="res://scenes/ice-wall/ice-wall-main/scene-layer-ice-trans-left-trees-ground-wall.png" type="Texture" id=13]
 [ext_resource path="res://AnimatedTileset/fog.shader" type="Shader" id=14]
-[ext_resource path="res://scenes/ice/ice-main/scene-layer-ice-main-trees-ground.png" type="Texture" id=15]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 14 )
@@ -193,11 +189,6 @@ __meta__ = {
 texture = ExtResource( 7 )
 centered = false
 
-[node name="Foreground_6" type="Sprite" parent="Screen0"]
-z_index = 6
-texture = ExtResource( 8 )
-centered = false
-
 [node name="Screen1" type="ParallaxLayer" parent="."]
 position = Vector2( -435, 0 )
 __meta__ = {
@@ -206,11 +197,6 @@ __meta__ = {
 
 [node name="Sky_0" type="Sprite" parent="Screen1"]
 texture = ExtResource( 7 )
-centered = false
-
-[node name="Foreground_6" type="Sprite" parent="Screen1"]
-z_index = 6
-texture = ExtResource( 8 )
 centered = false
 
 [node name="Clouds_Screen1" type="ParallaxLayer" parent="."]
@@ -258,11 +244,6 @@ __meta__ = {
 texture = ExtResource( 7 )
 centered = false
 
-[node name="Foreground_6" type="Sprite" parent="Screen2"]
-z_index = 6
-texture = ExtResource( 8 )
-centered = false
-
 [node name="Clouds_Screen2" type="ParallaxLayer" parent="."]
 motion_scale = Vector2( 0.25, 1 )
 __meta__ = {
@@ -304,11 +285,6 @@ __meta__ = {
 
 [node name="Sky_0" type="Sprite" parent="Screen3"]
 texture = ExtResource( 7 )
-centered = false
-
-[node name="Foreground_6" type="Sprite" parent="Screen3"]
-z_index = 6
-texture = ExtResource( 8 )
 centered = false
 
 [node name="Clouds_Screen3" type="ParallaxLayer" parent="."]
@@ -357,16 +333,6 @@ __meta__ = {
 texture = ExtResource( 7 )
 centered = false
 
-[node name="Foreground_mud_6" type="Sprite" parent="Screen4"]
-z_index = 6
-texture = ExtResource( 12 )
-centered = false
-
-[node name="Foreground_ice_6" type="Sprite" parent="Screen4"]
-z_index = 6
-texture = ExtResource( 13 )
-centered = false
-
 [node name="Mud_to_ice_dark_trees" type="Sprite" parent="Screen4"]
 z_index = 5
 texture = ExtResource( 11 )
@@ -390,11 +356,6 @@ position = Vector2( 1305, 0 )
 
 [node name="Sky_0" type="Sprite" parent="Screen5"]
 texture = ExtResource( 7 )
-centered = false
-
-[node name="Foreground_6" type="Sprite" parent="Screen5"]
-z_index = 6
-texture = ExtResource( 15 )
 centered = false
 
 [node name="Ice_Dark_trees_5" type="Sprite" parent="Screen5"]

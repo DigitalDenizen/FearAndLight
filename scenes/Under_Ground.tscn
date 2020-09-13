@@ -19,6 +19,7 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Below_Trees_2" type="Sprite" parent="Screen0"]
+position = Vector2( -2, 3 )
 z_index = 13
 texture = ExtResource( 2 )
 centered = false
@@ -42,6 +43,7 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Below_Trees_2" type="Sprite" parent="Screen1"]
+position = Vector2( 3, 3 )
 z_index = 13
 texture = ExtResource( 2 )
 centered = false
@@ -64,7 +66,7 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Below_Trees_2" type="Sprite" parent="Screen2"]
-z_index = 12
+z_index = 13
 texture = ExtResource( 2 )
 centered = false
 __meta__ = {
