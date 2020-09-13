@@ -6,7 +6,7 @@
 [ext_resource path="res://Images/structure-mud-hut-attacked.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 54.2406, 34.5476 )
+extents = Vector2( 20.4885, 8.64011 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
@@ -62,11 +62,11 @@ region = Rect2( 57, 0, 57, 42 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 4 )
-region = Rect2( 114, 0, 57, 42 )
+region = Rect2( 171, 0, 57, 42 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 4 )
-region = Rect2( 171, 0, 57, 42 )
+region = Rect2( 114, 0, 57, 42 )
 
 [sub_resource type="SpriteFrames" id=17]
 animations = [ {
@@ -87,33 +87,35 @@ animations = [ {
 }, {
 "frames": [ SubResource( 15 ) ],
 "loop": true,
-"name": "Health 50",
+"name": "Health 25",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 16 ) ],
 "loop": true,
-"name": "Health 25",
+"name": "Health 50",
 "speed": 5.0
 } ]
 
 [node name="MudHut" type="StaticBody2D"]
 position = Vector2( 181.2, 127.7 )
+z_index = 10
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="HealthBar" parent="." instance=ExtResource( 2 )]
-margin_left = 0.568787
-margin_top = -31.8528
-margin_right = 40.5688
-margin_bottom = 8.1472
+margin_left = 6.0
+margin_top = -14.0
+margin_right = 75.0
+margin_bottom = 9.0
+rect_scale = Vector2( 0.75, 0.75 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 2.92603, 0.487671 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 25.3591, 15.1179 )
+position = Vector2( 26.2165, 21.1195 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -125,5 +127,5 @@ frame = 6
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
-polygon = PoolVector2Array( -3.481, -11.8544, -22.0126, -8.14809, -26.1823, 17.3329, -27.1088, 32.1582, -28.0354, 46.057, -5.79745, 48.3734, 44.7013, 49.7633, 72.4988, 48.8367, 83.1545, 45.5937, 81.3013, 20.576, 76.2051, -4.90504, 62.7696, -10.9278, 59.9899, -20.1937, 49.3342, -23.9, 37.2886, -21.1202, 38.2152, -16.024 )
+polygon = PoolVector2Array( 23.9097, 11.2524, 18.7654, 11.2524, 9.33432, 16.3966, 1.61792, 23.2556, 2.47528, 30.972, 25.6245, 30.972, 38.4851, 30.972, 47.0589, 30.972, 53.9179, 28.3999, 53.0605, 24.113, 53.0605, 16.3966, 47.9163, 12.1098, 42.772, 11.2524, 38.4851, 9.53761, 35.0556, 10.395, 28.1966, 11.2524 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

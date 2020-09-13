@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Structures/MudWall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://objects/Ice_Wall_Main.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Barrier_top.tscn" type="PackedScene" id=11]
 [ext_resource path="res://structures/Beacon_Pylon.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Images/occl-background.png" type="Texture" id=13]
+
+[sub_resource type="CanvasItemMaterial" id=1]
 
 [node name="Main" type="Node2D"]
 
@@ -39,7 +42,8 @@ script = ExtResource( 3 )
 position = Vector2( -211.826, 181.946 )
 
 [node name="Mob_Spawn" parent="." instance=ExtResource( 7 )]
-position = Vector2( 571.597, 170.707 )
+position = Vector2( 602.123, 187.549 )
+z_index = 5
 spawn_num = 5
 
 [node name="Under_Ground" parent="." instance=ExtResource( 8 )]
@@ -55,3 +59,10 @@ position = Vector2( -2921.69, 56.5692 )
 [node name="Pylon" parent="." instance=ExtResource( 12 )]
 position = Vector2( 97.5266, 104.663 )
 scale = Vector2( 0.996938, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 440.288, 154.211 )
+scale = Vector2( 2.25358, 1.43016 )
+z_index = 15
+texture = ExtResource( 13 )
