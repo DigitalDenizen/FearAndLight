@@ -12,45 +12,19 @@
 [ext_resource path="res://objects/Ice_Wall_Main.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Barrier_top.tscn" type="PackedScene" id=11]
 [ext_resource path="res://structures/Beacon_Pylon.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Fore_Ground.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Fore_Ground.tscn" type="PackedScene" id=13]
 
 [node name="Main" type="Node2D"]
 
-[node name="MudWall" parent="." instance=ExtResource( 1 )]
-light_mask = 2
-position = Vector2( -50.136, 136.38 )
-z_index = 5
-collision_layer = 10
-collision_mask = 13
-
 [node name="Score" parent="." instance=ExtResource( 4 )]
-
-[node name="ParallaxBackground" parent="." instance=ExtResource( 5 )]
-
-[node name="MudHut" parent="." instance=ExtResource( 6 )]
-light_mask = 2
-position = Vector2( -211.826, 181.946 )
-z_index = 5
-collision_layer = 10
-collision_mask = 13
 
 [node name="Mob_Spawn" parent="." instance=ExtResource( 7 )]
 position = Vector2( 571.597, 170.707 )
 spawn_num = 10
 
-[node name="Under_Ground" parent="." instance=ExtResource( 8 )]
-
-[node name="Ice_Wall_below" parent="." instance=ExtResource( 9 )]
-
-[node name="Ice_Wall_main" parent="." instance=ExtResource( 10 )]
-
 [node name="Barrier_top" parent="." instance=ExtResource( 11 )]
 visible = false
 position = Vector2( -2921.69, 56.5692 )
-
-[node name="Pylon" parent="." instance=ExtResource( 12 )]
-position = Vector2( 97.5266, 104.663 )
-scale = Vector2( 0.996938, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -124.893, 150.631 )
@@ -65,9 +39,37 @@ smoothing_enabled = true
 drag_margin_bottom = 1.0
 script = ExtResource( 3 )
 
-[node name="Fore_Ground" parent="." instance=ExtResource( 13 )]
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0, 0, 0, 1 )
 
-[editable path="Fore_Ground"]
+[node name="Scene" type="Node2D" parent="."]
+
+[node name="Fore_Ground" parent="Scene" instance=ExtResource( 13 )]
+
+[node name="Under_Ground" parent="Scene" instance=ExtResource( 8 )]
+
+[node name="Ice_Wall_main" parent="Scene" instance=ExtResource( 10 )]
+
+[node name="Ice_Wall_below" parent="Scene" instance=ExtResource( 9 )]
+
+[node name="ParallaxBackground" parent="Scene" instance=ExtResource( 5 )]
+
+[node name="Buildings" type="Node2D" parent="."]
+
+[node name="Pylon" parent="Buildings" instance=ExtResource( 12 )]
+position = Vector2( 97.5266, 104.663 )
+scale = Vector2( 0.996938, 1 )
+
+[node name="MudHut" parent="Buildings" instance=ExtResource( 6 )]
+light_mask = 2
+position = Vector2( -211.826, 181.946 )
+z_index = 5
+collision_layer = 10
+collision_mask = 13
+
+[node name="MudWall" parent="Buildings" instance=ExtResource( 1 )]
+light_mask = 2
+position = Vector2( -50.136, 136.38 )
+z_index = 5
+collision_layer = 10
+collision_mask = 13
