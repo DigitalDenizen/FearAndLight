@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-ice-wall-below.png-40e0271d3a6d8b6453443dffd8fb5220.stex"
+path="res://.import/light.png-9bf9266ff9311093ae7679958656d74b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/ice-wall/ice-wall-below/scene-layer-ice-wall-below.png"
-dest_files=[ "res://.import/scene-layer-ice-wall-below.png-40e0271d3a6d8b6453443dffd8fb5220.stex" ]
+source_file="res://Images/light.png"
+dest_files=[ "res://.import/light.png-9bf9266ff9311093ae7679958656d74b.stex" ]
 
 [params]
 

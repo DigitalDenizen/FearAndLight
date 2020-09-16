@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="FearAndLight-2"
+config/name="FearAndLight"
 run/main_scene="res://Main_World.tscn"
 config/icon="res://icon.png"
 

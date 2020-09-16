@@ -16,7 +16,6 @@ var alive = true
 var not_attacking = true
 var attackCountDown = 0
 var deathCountdown = 0
-var facing_right = true
 var velocity: = Vector2.ZERO
 var rng = RandomNumberGenerator.new()
 
@@ -37,12 +36,11 @@ func _physics_process(delta):
 		move_and_slide(velocity)
 		
 		if vec_not_norm.x > 0:
-			_change_animation("Walk")
-			facing_right = true
-			
+			$AnimatedSprite.play("Walk")
+			$AnimatedSprite.flip_h = false
 		else:
-			_change_animation("Walk-Left")
-			facing_right = false
+			$AnimatedSprite.play("Walk")
+			$AnimatedSprite.flip_h = true
 		
 		if abs(vec_not_norm.x) < 30 && abs(vec_not_norm.y) < 30:
 			_on_Zombie_melee(Melee, player.global_position, global_position)
@@ -81,31 +79,20 @@ func _set_health(value):
 		emit_signal("health_updated", health)
 		if health <= 0:
 			Score._on_Zombie_killed()
-			_change_animation("Death")
-			
-
-func _change_animation(animationSelected):
-	for animation in $Animations.get_children():
-		if animation.name != animationSelected:
-			animation.hide()
-		else:
-			animation.show()
-			$AnimationPlayer.play(animation.name)
-			if animationSelected == "Death":
-				alive = false
-				deathCountdown = 20
-				
-			if animationSelected == "Attack" || animationSelected == "Attack-Left":
-				not_attacking = false
-				attackCountDown = 50
+			alive = false
+			deathCountdown = 30
+			$AnimatedSprite.play("Death")
 
 func _on_Zombie_melee(Melee, player_pos, zombie_pos):
 	var direction = player_pos - zombie_pos
 	if direction.x > 0:
-		_change_animation("Attack")
+		$AnimatedSprite.play("Attack")
+		$AnimatedSprite.flip_h = false
 	else:
-		_change_animation("Attack-Left")
-	attackCountDown = 30
+		$AnimatedSprite.play("Attack")
+		$AnimatedSprite.flip_h = true
+	not_attacking = false
+	attackCountDown = 50
 	var scratch = Melee.instance()
 	scratch.attacker = "Zombie"
 	add_child(scratch)
