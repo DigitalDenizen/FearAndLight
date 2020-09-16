@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Images/defense-spritesheet-mud-wall-attacked.png" type="Texture" id=1]
 [ext_resource path="res://Structures/MudWall.gd" type="Script" id=2]
@@ -9,11 +9,11 @@ region = Rect2( 0, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
-region = Rect2( 129, 0, 43, 49 )
+region = Rect2( 43, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
-region = Rect2( 43, 0, 43, 49 )
+region = Rect2( 129, 0, 43, 49 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
@@ -52,12 +52,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 2 ) ],
 "loop": true,
-"name": "Health 25",
+"name": "Health 75",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 3 ) ],
 "loop": true,
-"name": "Health 75",
+"name": "Health 25",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
@@ -74,9 +74,6 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=12]
 radius = 9.34186
 
-[sub_resource type="OccluderPolygon2D" id=13]
-polygon = PoolVector2Array( -17.86, 16.317, -18.2804, 10.4307, -12.8146, 5.80577, -4.82607, 4.96487, 4.4238, 4.54442, 9.88963, 4.54442, 15.7759, 5.80577, 19.9804, 10.4307, 19.5599, 15.8965, 16.6168, 19.6806, 8.20784, 22.2032, -3.98517, 22.2032, -13.235, 20.5215 )
-
 [node name="MudWall" type="StaticBody2D"]
 collision_layer = 7
 collision_mask = 16
@@ -86,8 +83,8 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-light_mask = 2
 position = Vector2( 0.55196, -0.18759 )
+z_index = 8
 frames = SubResource( 11 )
 animation = "idle"
 
@@ -95,8 +92,3 @@ animation = "idle"
 position = Vector2( 0.840897, 13.4658 )
 rotation = -1.5708
 shape = SubResource( 12 )
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-light_mask = 3
-occluder = SubResource( 13 )
-light_mask = 3
