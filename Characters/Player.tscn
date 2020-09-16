@@ -65,56 +65,56 @@ atlas = ExtResource( 6 )
 region = Rect2( 144, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 5 )
 region = Rect2( 36, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 36, 36 )
+atlas = ExtResource( 5 )
+region = Rect2( 72, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 2 )
-region = Rect2( 36, 0, 36, 36 )
+atlas = ExtResource( 5 )
+region = Rect2( 108, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 2 )
-region = Rect2( 72, 0, 36, 36 )
+region = Rect2( 0, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 2 )
-region = Rect2( 108, 0, 36, 36 )
+region = Rect2( 36, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 2 )
-region = Rect2( 144, 0, 36, 36 )
+region = Rect2( 72, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 2 )
-region = Rect2( 180, 0, 36, 36 )
+region = Rect2( 108, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 2 )
-region = Rect2( 216, 0, 36, 36 )
+region = Rect2( 144, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 36, 36 )
+atlas = ExtResource( 2 )
+region = Rect2( 180, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 5 )
-region = Rect2( 36, 0, 36, 36 )
+atlas = ExtResource( 2 )
+region = Rect2( 216, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 5 )
-region = Rect2( 72, 0, 36, 36 )
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 5 )
-region = Rect2( 108, 0, 36, 36 )
+atlas = ExtResource( 4 )
+region = Rect2( 36, 0, 36, 36 )
 
 [sub_resource type="SpriteFrames" id=28]
 animations = [ {
@@ -133,23 +133,25 @@ animations = [ {
 "name": "melee",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
 "loop": true,
-"name": "throw",
+"name": "walk",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
 "loop": true,
 "name": "death",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"frames": [ SubResource( 26 ), SubResource( 27 ) ],
 "loop": true,
-"name": "walk",
+"name": "throw",
 "speed": 5.0
 } ]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"Player",
+]]
 position = Vector2( 0.358475, -0.859184 )
 collision_layer = 10
 collision_mask = 13

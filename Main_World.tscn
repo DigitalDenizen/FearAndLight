@@ -4,14 +4,14 @@
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Structures/MudHut.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Structures/MudWall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Characters/Enemies/Mob_Spawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Characters/vampireSpider.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=13]
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=14]
 
 [node name="Main" type="Node2D"]
 
 [node name="MudWall" parent="." instance=ExtResource( 4 )]
-position = Vector2( 53.2083, 368.905 )
+position = Vector2( 259.741, 290.333 )
 
 [node name="Player" parent="." instance=ExtResource( 13 )]
 position = Vector2( 185.417, 287.355 )
@@ -31,6 +31,5 @@ script = ExtResource( 14 )
 [node name="MudHut" parent="." instance=ExtResource( 3 )]
 position = Vector2( -186.881, 379.726 )
 
-[node name="Mob_Spawn" parent="." instance=ExtResource( 5 )]
-position = Vector2( 810.078, 357.272 )
-spawn_num = 50
+[node name="vampireSpider" parent="." instance=ExtResource( 5 )]
+position = Vector2( 787.53, 268.525 )

@@ -21,10 +21,9 @@ var velocity: = Vector2.ZERO
 var rng = RandomNumberGenerator.new()
 
 func _ready():
-	add_to_group("zombies")
+	add_to_group("Baddies")
 	rng.randomize()
 	
-
 func _physics_process(delta):
 	if player == null:
 		return
@@ -65,9 +64,6 @@ func kill():
 func set_player(p):
 	player = p
 
-func set_wall(w):
-	wall = w
-
 func hurt(damage):
 	var vec_not_norm = player.global_position - global_position
 	var vec_to_player = vec_not_norm.normalized()
@@ -82,6 +78,7 @@ func _set_health(value):
 		if health <= 0:
 			Score._on_Zombie_killed()
 			_change_animation("Death")
+			
 			
 
 func _change_animation(animationSelected):

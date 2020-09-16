@@ -8,11 +8,11 @@ onready var health = max_health setget _set_health
 var destroyed = false
 var deathCountdown = 0
 var attacked = false
+var attacker = ""
 
 func _ready():
 	$AnimatedSprite.play("idle")
-	add_to_group("MudWall")
-	get_tree().call_group("zombies","set_wall", self)
+	
 	
 func _physics_process(delta):
 	if destroyed == false:
@@ -29,9 +29,9 @@ func hurt(damage):
 func _on_DefenseRange_body_entered(body):
 	if body.name == "FireBall":
 		queue_free()
-	if body.name == "Zombie":
+	if body.name == "Zombie" || body.name == "vampireSpider":
 		attacked = true
-	
+
 func _set_health(value):
 	var prev_health = health
 	health = clamp(value, 0, max_health)
@@ -50,10 +50,3 @@ func _set_health(value):
 			deathCountdown = 100
 			destroyed = true
 			$AnimatedSprite.play('Death')
-
-
-
-
-
-func _on_Area2D_body_entered(body):
-	pass # Replace with function body.

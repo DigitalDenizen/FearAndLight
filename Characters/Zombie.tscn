@@ -116,7 +116,9 @@ tracks/0/keys = {
 radius = 14.6072
 height = 2.61852
 
-[node name="Zombie" type="KinematicBody2D"]
+[node name="Zombie" type="KinematicBody2D" groups=[
+"Baddies",
+]]
 position = Vector2( 0.418106, 0 )
 collision_layer = 4
 collision_mask = 7
