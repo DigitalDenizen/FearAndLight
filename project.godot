@@ -24,7 +24,6 @@ config/icon="res://icon.png"
 Movement_Logic="*res://Physics/Movement_Logic.gd"
 Score="*res://UI/Score.gd"
 Constants="*res://constants/constants.gd"
-Utilities="*res://Utilities/utilities.gd"
 
 [display]
 

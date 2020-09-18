@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-mud-below-trees.png-110810e53b60637c91be06946494cd89.stex"
+path="res://.import/scene-layer-mud-below-trees.png-efb6f255f05a77b0facc360106aa4f94.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/mud/mud-below/scene-layer-mud-below-trees.png"
-dest_files=[ "res://.import/scene-layer-mud-below-trees.png-110810e53b60637c91be06946494cd89.stex" ]
+source_file="res://scenes/mud/mud-below/scene-layer-mud-below-trees.png"
+dest_files=[ "res://.import/scene-layer-mud-below-trees.png-efb6f255f05a77b0facc360106aa4f94.stex" ]
 
 [params]
 
