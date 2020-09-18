@@ -89,7 +89,6 @@ func _set_health(value):
 			Score._on_vampire_spider_killed()
 			alive = false
 			$AnimatedSprite.play("death")
-			
 
 func _on_vampireSpider_melee(Melee, player_pos, vampireSpider_pos):
 	not_attacking = false
