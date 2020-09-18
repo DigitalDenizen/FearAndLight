@@ -5,7 +5,7 @@
 [ext_resource path="res://Characters/Item_Drops/Item_Drop.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 13.3146
+radius = 6.57643
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
@@ -136,14 +136,12 @@ __meta__ = {
 type = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( -0.698341, -3.49171 )
+position = Vector2( 0.342217, -5.12687 )
 scale = Vector2( 2.39668, 2.39668 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.69834, -5.24521e-06 )
-scale = Vector2( 1.54653, 1.54653 )
 frames = SubResource( 28 )
 animation = "health"
 [connection signal="body_entered" from="." to="." method="_Item_Drop_body_entered"]

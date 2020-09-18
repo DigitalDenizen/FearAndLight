@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Characters/Zombie.gd" type="Script" id=1]
 [ext_resource path="res://Images/zombie/enemy-zombie-walk.png" type="Texture" id=2]
@@ -7,190 +7,113 @@
 [ext_resource path="res://Images/zombie/enemy-die-poof.png" type="Texture" id=5]
 [ext_resource path="res://Characters/UI/HealthBar.tscn" type="PackedScene" id=6]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Attack"
-length = 0.8
-loop = true
-step = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Animations/Attack:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "Attack-Left"
-length = 0.8
-loop = true
-step = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Animations/Attack-Left:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
-}
-
-[sub_resource type="Animation" id=3]
-length = 0.6
-loop = true
-step = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Animations/Death:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 2.79397e-07, 0.2, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2 ]
-}
-
-[sub_resource type="Animation" id=4]
-length = 0.6
-loop = true
-step = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Animations/Idle:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2 ]
-}
-
-[sub_resource type="Animation" id=5]
-length = 0.8
-loop = true
-step = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Animations/Walk:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
-}
-
-[sub_resource type="Animation" id=6]
-length = 0.8
-step = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Animations/Walk-Left:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
-}
-
-[sub_resource type="AnimatedTexture" id=7]
-
-[sub_resource type="CapsuleShape2D" id=8]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 14.6072
 height = 2.61852
 
-[node name="Zombie" type="KinematicBody2D" groups=[
-"Baddies",
-]]
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 33, 48 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 5 )
+region = Rect2( 33, 0, 33, 48 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 5 )
+region = Rect2( 66, 0, 33, 48 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 35, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 35, 0, 35, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 70, 0, 35, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 4 )
+region = Rect2( 105, 0, 35, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 35, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 35, 0, 35, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 70, 0, 35, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 2 )
+region = Rect2( 105, 0, 35, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 35, 32 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 3 )
+region = Rect2( 35, 0, 35, 32 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 3 )
+region = Rect2( 70, 0, 35, 32 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 3 )
+region = Rect2( 105, 0, 35, 32 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "Death",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 5.0
+} ]
+
+[node name="Zombie" type="KinematicBody2D"]
 position = Vector2( 0.418106, 0 )
 collision_layer = 4
 collision_mask = 7
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Attack = SubResource( 1 )
-anims/Attack-Left = SubResource( 2 )
-anims/Death = SubResource( 3 )
-anims/Idle = SubResource( 4 )
-anims/Walk = SubResource( 5 )
-anims/Walk-Left = SubResource( 6 )
-
-[node name="Animations" type="Node2D" parent="."]
-
-[node name="Walk" type="Sprite" parent="Animations"]
-scale = Vector2( 1.58836, 1.50958 )
-z_index = 1
-texture = ExtResource( 2 )
-hframes = 4
-
-[node name="Walk-Left" type="Sprite" parent="Animations"]
-visible = false
-scale = Vector2( 1.68094, 1.58798 )
-texture = ExtResource( 2 )
-flip_h = true
-hframes = 4
-
-[node name="Attack" type="Sprite" parent="Animations"]
-visible = false
-scale = Vector2( 1.70483, 1.54878 )
-texture = ExtResource( 3 )
-hframes = 4
-
-[node name="Attack-Left" type="Sprite" parent="Animations"]
-visible = false
-scale = Vector2( 1.70483, 1.54878 )
-z_index = 1
-texture = ExtResource( 3 )
-flip_h = true
-hframes = 4
-frame = 3
-
-[node name="Idle" type="Sprite" parent="Animations"]
-visible = false
-position = Vector2( 6.899, -6.48087 )
-scale = Vector2( 1.68393, 1.58798 )
-texture = ExtResource( 4 )
-hframes = 4
-
-[node name="Death" type="Sprite" parent="Animations"]
-visible = false
-position = Vector2( -0.209088, -0.418091 )
-scale = Vector2( 1.37589, 1.19164 )
-texture = ExtResource( 5 )
-normal_map = SubResource( 7 )
-hframes = 3
-frame = 1
 
 [node name="HealthBar" parent="." instance=ExtResource( 6 )]
-margin_left = -15.0
-margin_top = -30.0
-margin_right = 25.0
-margin_bottom = 10.0
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = -10.6486
+margin_top = -20.5946
+margin_right = 29.3514
+margin_bottom = 19.4054
+rect_scale = Vector2( 0.266, 0.266 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource( 8 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 17 )
+animation = "Idle"
 [connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
 [connection signal="killed" from="." to="." method="_on_Zombie_killed"]
 [connection signal="melee" from="." to="." method="_on_Zombie_melee"]

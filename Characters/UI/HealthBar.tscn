@@ -38,20 +38,21 @@ __meta__ = {
 }
 
 [node name="HealthUnder" type="TextureProgress" parent="."]
-margin_left = 0.166084
-margin_right = 61.1661
+margin_right = 61.0
 margin_bottom = 10.0
 value = 100.0
 texture_progress = ExtResource( 2 )
 tint_progress = Color( 1, 0.0156863, 0.0156863, 1 )
 
 [node name="HealthOver" type="TextureProgress" parent="."]
-margin_left = 0.166084
-margin_right = 61.1661
+margin_right = 61.0
 margin_bottom = 10.0
 value = 100.0
 texture_over = ExtResource( 3 )
 texture_progress = ExtResource( 2 )
 tint_progress = Color( 0, 1, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="UpdateTween" type="Tween" parent="."]

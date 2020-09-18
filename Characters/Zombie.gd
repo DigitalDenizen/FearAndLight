@@ -4,7 +4,7 @@ signal health_updated(health)
 signal melee(melee, player_pos, zombie_pos)
 signal killed()
 
-const MOVE_SPEED = 75
+const MOVE_SPEED = 38
 export (float) var max_health = 100
 onready var health = max_health setget _set_health
 onready var itemDrop_scene = preload("res://Characters/Item_Drops/Item_Drop.tscn")
@@ -16,11 +16,11 @@ var alive = true
 var not_attacking = true
 var attackCountDown = 0
 var deathCountdown = 0
-var facing_right = true
 var velocity: = Vector2.ZERO
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	player = get_parent().get_parent().get_node("Player")
 	add_to_group("Baddies")
 	rng.randomize()
 	
@@ -36,12 +36,11 @@ func _physics_process(delta):
 		move_and_slide(velocity)
 		
 		if vec_not_norm.x > 0:
-			_change_animation("Walk")
-			facing_right = true
-			
+			$AnimatedSprite.play("Walk")
+			$AnimatedSprite.flip_h = false
 		else:
-			_change_animation("Walk-Left")
-			facing_right = false
+			$AnimatedSprite.play("Walk")
+			$AnimatedSprite.flip_h = true
 		
 		if abs(vec_not_norm.x) < 30 && abs(vec_not_norm.y) < 30:
 			_on_Zombie_melee(Melee, player.global_position, global_position)
@@ -77,39 +76,27 @@ func _set_health(value):
 		emit_signal("health_updated", health)
 		if health <= 0:
 			Score._on_Zombie_killed()
-			_change_animation("Death")
-			
-			
-
-func _change_animation(animationSelected):
-	for animation in $Animations.get_children():
-		if animation.name != animationSelected:
-			animation.hide()
-		else:
-			animation.show()
-			$AnimationPlayer.play(animation.name)
-			if animationSelected == "Death":
-				alive = false
-				deathCountdown = 20
-				
-			if animationSelected == "Attack" || animationSelected == "Attack-Left":
-				not_attacking = false
-				attackCountDown = 50
+			alive = false
+			deathCountdown = 30
+			$AnimatedSprite.play("Death")
 
 func _on_Zombie_melee(Melee, player_pos, zombie_pos):
 	var direction = player_pos - zombie_pos
 	if direction.x > 0:
-		_change_animation("Attack")
+		$AnimatedSprite.play("Attack")
+		$AnimatedSprite.flip_h = false
 	else:
-		_change_animation("Attack-Left")
-	attackCountDown = 30
+		$AnimatedSprite.play("Attack")
+		$AnimatedSprite.flip_h = true
+	not_attacking = false
+	attackCountDown = 50
 	var scratch = Melee.instance()
 	scratch.attacker = "Zombie"
 	add_child(scratch)
 	scratch.shoot(player_pos, zombie_pos)
 
 func _on_Zombie_killed():
-	if rng.randf() <= 0.1:
+	if rng.randf() <= 0.3:
 		var itemDrop = itemDrop_scene.instance()
 		itemDrop.type = rng.randi() % 2
 		get_tree().get_root().add_child(itemDrop)

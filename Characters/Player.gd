@@ -1,6 +1,6 @@
 extends KinematicBody2D
 	
-const MOVE_SPEED = 300
+const MOVE_SPEED = 150
 signal shoot(fireball, mouse_pos, player_pos)
 signal melee(melee, mouse_pos, player_pos)
 signal health_updated(health)

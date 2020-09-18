@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="FearAndLight-2"
+config/name="FearAndLight"
 run/main_scene="res://Main_World.tscn"
 config/icon="res://icon.png"
 
@@ -28,10 +28,6 @@ Utilities="*res://Utilities/utilities.gd"
 
 [display]
 
-window/size/width=870
-window/size/height=490
-window/size/test_width=870
-window/size/test_height=490
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
