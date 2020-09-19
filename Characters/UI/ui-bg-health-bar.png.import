@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-ice-trans-left-trees-ground.png-73a863666b63fa0c663ccf9542fb05de.stex"
+path="res://.import/ui-bg-health-bar.png-e5e4feb577ea5334cfca2e474e2e9f5d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/ice/ice-main-trans-left/scene-layer-ice-trans-left-trees-ground.png"
-dest_files=[ "res://.import/scene-layer-ice-trans-left-trees-ground.png-73a863666b63fa0c663ccf9542fb05de.stex" ]
+source_file="res://Characters/UI/ui-bg-health-bar.png"
+dest_files=[ "res://.import/ui-bg-health-bar.png-e5e4feb577ea5334cfca2e474e2e9f5d.stex" ]
 
 [params]
 
