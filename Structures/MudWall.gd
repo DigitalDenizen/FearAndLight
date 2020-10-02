@@ -12,8 +12,7 @@ var attacker = ""
 
 func _ready():
 	$AnimatedSprite.play("idle")
-	add_to_group("walls")
-	get_tree().call_group("zombies","set_wall", self)
+	get_parent().get_node("MudWall")
 	
 	
 func _physics_process(delta):
