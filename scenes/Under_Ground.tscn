@@ -15,11 +15,12 @@
 position = Vector2( -870, 245 )
 
 [node name="Below_Ground_0" type="Sprite" parent="Screen0"]
+z_index = -5
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Below_Trees_2" type="Sprite" parent="Screen0"]
-position = Vector2( -2, 3 )
+position = Vector2( 6, -5 )
 z_index = 13
 texture = ExtResource( 2 )
 centered = false
@@ -39,11 +40,12 @@ polygon = PoolVector2Array( 434.291, 30.1846, 432.712, 245.448, 1.13225, 245.448
 position = Vector2( -435, 245 )
 
 [node name="Below_Ground_0" type="Sprite" parent="Screen1"]
+z_index = -5
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Below_Trees_2" type="Sprite" parent="Screen1"]
-position = Vector2( 3, 3 )
+position = Vector2( 3, -5 )
 z_index = 13
 texture = ExtResource( 2 )
 centered = false
@@ -62,6 +64,7 @@ polygon = PoolVector2Array( 434.291, 30.1846, 432.712, 245.448, 1.13225, 245.448
 position = Vector2( 0, 245 )
 
 [node name="Below_Ground_0" type="Sprite" parent="Screen2"]
+z_index = -4
 texture = ExtResource( 1 )
 centered = false
 
@@ -84,6 +87,7 @@ polygon = PoolVector2Array( 434.291, 30.1846, 432.712, 245.448, 1.13225, 245.448
 position = Vector2( 435, 245 )
 
 [node name="Below_Ground_0" type="Sprite" parent="Screen3"]
+z_index = -5
 texture = ExtResource( 1 )
 centered = false
 
@@ -106,6 +110,7 @@ polygon = PoolVector2Array( 434.291, 30.1846, 432.712, 245.448, 1.13225, 245.448
 position = Vector2( 870, 245 )
 
 [node name="Below_Mud_Ground_0" type="Sprite" parent="Screen4"]
+z_index = -5
 texture = ExtResource( 1 )
 centered = false
 
