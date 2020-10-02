@@ -30,7 +30,7 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	$AnimatedSprite.play("idle")
 	player = get_parent().get_node("Player")
-	mudwall = get_parent().get_node("MudWall")
+	mudwall = get_parent().get_node("Buildings/MudWall")
 	rng.randomize()
 
 func _physics_process(delta):

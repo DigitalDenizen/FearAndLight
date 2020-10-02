@@ -53,7 +53,6 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.582865, 0.0926933 )
-scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
 animation = "fire_web"
 

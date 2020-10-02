@@ -12,7 +12,7 @@ var attacker = ""
 
 func _ready():
 	$AnimatedSprite.play("idle")
-	get_parent().get_node("MudWall")
+	get_parent().get_node("Buildings/MudWall")
 	
 	
 func _physics_process(delta):

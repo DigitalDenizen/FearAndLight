@@ -130,7 +130,9 @@ radius = 45.0028
 [node name="vampireSpider" type="KinematicBody2D" groups=[
 "Baddies",
 ]]
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( -4.89994, -8.01809 )
+z_index = 5
+z_as_relative = false
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -138,7 +140,6 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.503914, 0.706305 )
-scale = Vector2( 3.71317, 3.818 )
 frames = SubResource( 23 )
 animation = "idle"
 
@@ -148,10 +149,11 @@ position = Vector2( 2, -6 )
 shape = SubResource( 24 )
 
 [node name="HealthBar" parent="." instance=ExtResource( 1 )]
-margin_left = -50.0
-margin_top = -30.0
-margin_right = 22.0
-margin_bottom = -21.0
+margin_left = -23.0
+margin_top = -14.0
+margin_right = 38.0
+margin_bottom = -5.0
+rect_scale = Vector2( 0.5, 0.5 )
 [connection signal="health_updated" from="." to="HealthBar" method="_on_vampireSpider_health_updated"]
 [connection signal="killed" from="." to="." method="_on_vampireSpider_killed"]
 [connection signal="melee" from="." to="." method="_on_vampireSpider_melee"]

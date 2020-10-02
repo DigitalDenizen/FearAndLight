@@ -10,11 +10,9 @@ var deathCountdown = 0
 var destroyed = false
 var mudhut = null
 
-
-
 func _ready():
 	$AnimatedSprite.play("idle")
-	add_to_group("structures")
+	get_parent().get_node("Buildings/MudHut")
 	
 func _physics_process(delta):
 	if destroyed == false:
@@ -28,8 +26,6 @@ func _physics_process(delta):
 func hurt(damage):
 	_set_health(health - damage)
 	
-
-
 func _set_health(value):
 	var prev_health = health
 	health = clamp(value, 0, max_health)
