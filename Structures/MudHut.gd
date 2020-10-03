@@ -12,7 +12,6 @@ var mudhut = null
 
 func _ready():
 	$AnimatedSprite.play("idle")
-	get_parent().get_node("Buildings/MudHut")
 	
 func _physics_process(delta):
 	if destroyed == false:
