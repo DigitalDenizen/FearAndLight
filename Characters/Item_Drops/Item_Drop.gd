@@ -5,17 +5,16 @@ var collected = false
 var collectedCountDown = 0
 
 func _ready():
-	add_to_group("item drops")
+	add_to_group("item_drops")
 	if type == ItemDrop.BONES:
-		$AnimatedSprite.play("Bones")
+		$AnimatedSprite.play("bones")
 	else:
-		$AnimatedSprite.play("Health")
-	
+		$AnimatedSprite.play("health")
 
 func _process(delta):
 	if Engine.editor_hint:
 		if type == ItemDrop.HEALTH:
-			$AnimateSprite.play("Health")
+			$AnimateSprite.play("health")
 
 func _Item_Drop_body_entered(body):
 	if body.name == "Player":
