@@ -1,11 +1,148 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=30 format=2]
 
-[ext_resource path="res://UI/start screen/logo-fear-light.png" type="Texture" id=1]
+[ext_resource path="res://spirits/dog/spirit-dog-exit.png" type="Texture" id=1]
 [ext_resource path="res://UI/start screen/tile-brick.png" type="Texture" id=2]
-[ext_resource path="res://UI/start screen/btn-options.png" type="Texture" id=3]
-[ext_resource path="res://UI/start screen/btn-play-game.png" type="Texture" id=4]
-[ext_resource path="res://UI/start screen/glow.png" type="Texture" id=5]
-[ext_resource path="res://UI/Button.gd" type="Script" id=6]
+[ext_resource path="res://spirits/dog/spirit-dog-idle.png" type="Texture" id=3]
+[ext_resource path="res://spirits/dog/spirit-dog-walk-float.png" type="Texture" id=4]
+[ext_resource path="res://spirits/dog/spirit-dog-talk.png" type="Texture" id=5]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 71, 36 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 71, 0, 71, 36 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 142, 0, 71, 36 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 213, 0, 71, 36 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 284, 0, 71, 36 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 73, 36 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 73, 0, 73, 36 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 146, 0, 73, 36 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 219, 0, 73, 36 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 292, 0, 73, 36 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 69, 36 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 69, 0, 69, 36 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 138, 0, 69, 36 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 207, 0, 69, 36 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 276, 0, 69, 36 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 345, 0, 69, 36 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 414, 0, 69, 36 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 483, 0, 69, 36 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 71, 36 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 71, 0, 71, 36 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 142, 0, 71, 36 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 213, 0, 71, 36 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 284, 0, 71, 36 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "exit",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "talk",
+"speed": 5.0
+} ]
 
 [node name="TitleScreen" type="Node2D"]
 
@@ -18,75 +155,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 1025.0
-margin_bottom = 601.0
-alignment = 1
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 88.9697, 135.595 )
+frames = SubResource( 24 )
+animation = "talk"
+frame = 2
+playing = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AnimatedSprite"]
+margin_left = 21.9203
+margin_top = -39.2444
+margin_right = 61.9203
+margin_bottom = 0.755569
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 127.0
-margin_right = 1025.0
-margin_bottom = 413.0
-alignment = 1
-
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 369.0
-margin_right = 656.0
-margin_bottom = 286.0
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2/CenterContainer"]
-margin_right = 287.0
-margin_bottom = 286.0
-texture = ExtResource( 1 )
-stretch_mode = 6
-
-[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer2/CenterContainer/TextureRect"]
-margin_left = 92.2188
-margin_top = -95.7609
-margin_right = 381.219
-margin_bottom = 184.239
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 417.0
-margin_right = 1025.0
-margin_bottom = 447.0
-alignment = 1
-
-[node name="Play_Button" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 438.0
-margin_right = 587.0
-margin_bottom = 30.0
-focus_mode = 0
-mouse_default_cursor_shape = 2
-shortcut_in_tooltip = false
-enabled_focus_mode = 0
-icon = ExtResource( 4 )
-flat = true
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 451.0
-margin_right = 1025.0
-margin_bottom = 474.0
-alignment = 1
-
-[node name="Options_Button" type="Button" parent="VBoxContainer/HBoxContainer3"]
-margin_left = 460.0
-margin_right = 565.0
-margin_bottom = 23.0
-icon = ExtResource( 3 )
-flat = true
-[connection signal="button_down" from="VBoxContainer/HBoxContainer/Play_Button" to="VBoxContainer/HBoxContainer/Play_Button" method="_on_Button_button_down"]
-[connection signal="button_up" from="VBoxContainer/HBoxContainer/Play_Button" to="VBoxContainer/HBoxContainer/Play_Button" method="_on_Play_Button_button_up"]
-[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/Play_Button" to="VBoxContainer/HBoxContainer/Play_Button" method="_on_Play_Button_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/Play_Button" to="VBoxContainer/HBoxContainer/Play_Button" method="_on_Play_Button_mouse_exited"]
