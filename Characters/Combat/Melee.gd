@@ -3,7 +3,6 @@ var direction = Vector2()
 export var speed = 100
 var attacker = ""
 
-
 func shoot(aim_position, caster_position):
 	global_position = caster_position
 	direction = (aim_position - caster_position).normalized()
@@ -12,7 +11,7 @@ func shoot(aim_position, caster_position):
 func _process(delta):
 	position += direction * speed * delta
 	if speed > 0:
-		speed = speed - 5
+		speed = speed - 0.5
 	else:
 		queue_free()
 
@@ -28,4 +27,8 @@ func _body_entered(body):
 		if !body.is_in_group('Baddies'):
 			body.hurt(10)
 			queue_free()
-		
+	elif attacker == "vampireSpider":
+		if !body.is_in_group("Baddies"):
+			body.hurt(10)
+			queue_free()
+	

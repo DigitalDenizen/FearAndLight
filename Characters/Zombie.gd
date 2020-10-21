@@ -20,10 +20,10 @@ var velocity: = Vector2.ZERO
 var rng = RandomNumberGenerator.new()
 
 func _ready():
-	add_to_group("zombies")
+	player = get_parent().get_parent().get_node("Player")
+	add_to_group("Baddies")
 	rng.randomize()
 	
-
 func _physics_process(delta):
 	if player == null:
 		return
@@ -62,9 +62,6 @@ func kill():
 
 func set_player(p):
 	player = p
-
-func set_wall(w):
-	wall = w
 
 func hurt(damage):
 	var vec_not_norm = player.global_position - global_position

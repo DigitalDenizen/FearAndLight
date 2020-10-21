@@ -6,8 +6,7 @@ export (int) var spawn_num = 0
 
 func _ready():
 	_spawn()
-	
-	
+
 func _spawn():
 	var colShape = $Spawn_area
 	if shape_x != 0.0 && shape_y != 0.0:
