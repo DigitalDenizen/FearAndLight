@@ -1,74 +1,73 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://spirits/dog/spirit-dog-exit.png" type="Texture" id=1]
 [ext_resource path="res://UI/start screen/tile-brick.png" type="Texture" id=2]
 [ext_resource path="res://spirits/dog/spirit-dog-talk.png" type="Texture" id=3]
 [ext_resource path="res://UI/ui-talk-bubble.png" type="Texture" id=4]
 [ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Images/object-gravestone.png" type="Texture" id=6]
+[ext_resource path="res://UI/ui-talk-bubble-more.png" type="Texture" id=6]
 [ext_resource path="res://UI/intro.gd" type="Script" id=7]
-[ext_resource path="res://Images/defense-mud-wall-idle.png" type="Texture" id=8]
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
 region = Rect2( 483, 0, 69, 36 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
 region = Rect2( 414, 0, 69, 36 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
 region = Rect2( 345, 0, 69, 36 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
 region = Rect2( 276, 0, 69, 36 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
 region = Rect2( 207, 0, 69, 36 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
 region = Rect2( 138, 0, 69, 36 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
 region = Rect2( 69, 0, 69, 36 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 69, 36 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 71, 36 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 3 )
 region = Rect2( 71, 0, 71, 36 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 3 )
 region = Rect2( 142, 0, 71, 36 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 3 )
 region = Rect2( 213, 0, 71, 36 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 3 )
 region = Rect2( 284, 0, 71, 36 )
 
-[sub_resource type="SpriteFrames" id=15]
+[sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": false,
 "name": "enter",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
 "name": "talk",
 "speed": 5.0
@@ -78,8 +77,10 @@ animations = [ {
 script = ExtResource( 7 )
 
 [node name="Background" type="TextureRect" parent="."]
-margin_right = 1021.0
-margin_bottom = 602.0
+margin_left = -45.0
+margin_top = -30.0
+margin_right = 1033.0
+margin_bottom = 619.0
 texture = ExtResource( 2 )
 stretch_mode = 2
 __meta__ = {
@@ -87,26 +88,28 @@ __meta__ = {
 }
 
 [node name="spirit_dog" type="AnimatedSprite" parent="."]
-position = Vector2( 123.653, 177.773 )
+position = Vector2( 264.179, 225.039 )
 scale = Vector2( 3, 3 )
-frames = SubResource( 15 )
+frames = SubResource( 14 )
 animation = "enter"
 centered = false
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="speech_bubble" type="TextureRect" parent="spirit_dog"]
 margin_left = 67.5061
-margin_top = -34.1485
+margin_top = -34.3251
 margin_right = 202.506
-margin_bottom = 18.8515
+margin_bottom = 18.6749
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Speech1" type="RichTextLabel" parent="spirit_dog/speech_bubble"]
-visible = false
 margin_left = 5.0
-margin_top = 6.0
+margin_top = 5.0
 margin_right = 129.0
 margin_bottom = 33.0
 custom_fonts/normal_font = ExtResource( 5 )
@@ -144,6 +147,7 @@ __meta__ = {
 }
 
 [node name="Speech4" type="RichTextLabel" parent="spirit_dog/speech_bubble"]
+visible = false
 margin_left = 5.0
 margin_top = 6.0
 margin_right = 129.0
@@ -156,34 +160,35 @@ __meta__ = {
 }
 
 [node name="Text_Button" type="Button" parent="spirit_dog/speech_bubble"]
-margin_left = 121.982
-margin_top = 24.3065
-margin_right = 176.982
-margin_bottom = 79.3065
-rect_scale = Vector2( 0.128999, 0.142707 )
-icon = ExtResource( 8 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="."]
-margin_left = 340.497
-margin_top = 265.89
-margin_right = 370.497
-margin_bottom = 293.89
-rect_scale = Vector2( 2, 2 )
+margin_left = 111.24
+margin_top = 18.3988
+margin_right = 128.24
+margin_bottom = 38.3988
 icon = ExtResource( 6 )
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button" type="Button" parent="."]
+margin_left = 423.007
+margin_top = 224.79
+margin_right = 478.007
+margin_bottom = 277.79
+mouse_default_cursor_shape = 2
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="skip_button" type="Button" parent="."]
-margin_left = 500.25
-margin_top = 280.0
-margin_right = 573.25
+margin_left = 779.0
+margin_top = 281.0
+margin_right = 831.0
 margin_bottom = 312.0
+hint_tooltip = "Skip Intro"
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 5 )
 text = "SKIP"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -4,7 +4,9 @@ var dog_frame = 1
 var dialog_text = 1
 
 func _ready():
-	$spirit_dog/speech_bubble.visible = false	
+	$spirit_dog/speech_bubble.visible = false
+	$skip_button.visible = false
+	
 
 func _dog_enter():	
 	$spirit_dog.play("enter")	
@@ -30,6 +32,7 @@ func _speech1():
 	$spirit_dog/speech_bubble/Speech2.visible = false
 	$spirit_dog/speech_bubble/Speech3.visible = false
 	$spirit_dog/speech_bubble/Speech4.visible = false
+	$skip_button.visible = true
 	dialog_text = 2
 	
 func _speech2():
