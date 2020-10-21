@@ -5,48 +5,41 @@
 [ext_resource path="res://spirits/dog/spirit-dog-talk.png" type="Texture" id=3]
 [ext_resource path="res://UI/ui-talk-bubble.png" type="Texture" id=4]
 [ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=5]
-[ext_resource path="res://UI/Click_area.gd" type="Script" id=6]
+[ext_resource path="res://Images/object-gravestone.png" type="Texture" id=6]
 [ext_resource path="res://UI/intro.gd" type="Script" id=7]
+[ext_resource path="res://Images/defense-mud-wall-idle.png" type="Texture" id=8]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
 region = Rect2( 483, 0, 69, 36 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
 region = Rect2( 414, 0, 69, 36 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 1 )
 region = Rect2( 345, 0, 69, 36 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 1 )
 region = Rect2( 276, 0, 69, 36 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 1 )
 region = Rect2( 207, 0, 69, 36 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 1 )
 region = Rect2( 138, 0, 69, 36 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 1 )
 region = Rect2( 69, 0, 69, 36 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 69, 36 )
-
-[sub_resource type="SpriteFrames" id=9]
-animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
-"loop": false,
-"name": "enter",
-"speed": 5.0
-} ]
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 3 )
@@ -70,6 +63,11 @@ region = Rect2( 284, 0, 71, 36 )
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": false,
+"name": "enter",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "talk",
@@ -88,48 +86,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Click_area" type="Area2D" parent="."]
-z_index = 1
-z_as_relative = false
-script = ExtResource( 6 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Click_area"]
-z_index = 1
-build_mode = 1
-polygon = PoolVector2Array( 294.374, 154.425, 267.916, 178.363, 222.559, 196.632, 110.426, 199.152, 80.8175, 231.28, 145.073, 264.668, 200.51, 256.478, 234.528, 284.197, 267.286, 254.589, 285.555, 226.87, 320.202, 222.461, 334.062, 200.412, 321.462, 161.984 )
-
-[node name="dog_enter" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( 113.122, 164.065 )
+[node name="spirit_dog" type="AnimatedSprite" parent="."]
+position = Vector2( 123.653, 177.773 )
 scale = Vector2( 3, 3 )
-frames = SubResource( 9 )
+frames = SubResource( 15 )
 animation = "enter"
 centered = false
 
-[node name="dog_talk" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( 106.343, 160.931 )
-scale = Vector2( 3, 3 )
-frames = SubResource( 15 )
-animation = "talk"
-frame = 3
-playing = true
-centered = false
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="speech_bubble" type="TextureRect" parent="dog_talk"]
-margin_left = 73.0
-margin_top = -34.0
-margin_right = 208.0
-margin_bottom = 19.0
+[node name="speech_bubble" type="TextureRect" parent="spirit_dog"]
+margin_left = 67.5061
+margin_top = -34.1485
+margin_right = 202.506
+margin_bottom = 18.8515
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="dog_talk/speech_bubble"]
+[node name="Speech1" type="RichTextLabel" parent="spirit_dog/speech_bubble"]
+visible = false
 margin_left = 5.0
 margin_top = 6.0
 margin_right = 129.0
@@ -141,4 +116,78 @@ text = "WHEN NO ONE  PLAYS WITH YOU, YOU MUST PLAY WITH YOURSELF
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="input_event" from="Click_area" to="Click_area" method="_on_Click_area_input_event"]
+
+[node name="Speech2" type="RichTextLabel" parent="spirit_dog/speech_bubble"]
+visible = false
+margin_left = 5.0
+margin_top = 6.0
+margin_right = 129.0
+margin_bottom = 33.0
+custom_fonts/normal_font = ExtResource( 5 )
+custom_colors/default_color = Color( 0.231373, 0.207843, 0.207843, 1 )
+text = "Man braid shabby chic tofu yuccie. Gentrify plaid pinterest taiyaki. Narwhal cray godard, tumblr "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speech3" type="RichTextLabel" parent="spirit_dog/speech_bubble"]
+visible = false
+margin_left = 5.0
+margin_top = 6.0
+margin_right = 129.0
+margin_bottom = 33.0
+custom_fonts/normal_font = ExtResource( 5 )
+custom_colors/default_color = Color( 0.231373, 0.207843, 0.207843, 1 )
+text = "Quinoa banh mi pabst chicharrones, bushwick pitchfork VHS blog butcher trust fund. Craft beer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speech4" type="RichTextLabel" parent="spirit_dog/speech_bubble"]
+margin_left = 5.0
+margin_top = 6.0
+margin_right = 129.0
+margin_bottom = 33.0
+custom_fonts/normal_font = ExtResource( 5 )
+custom_colors/default_color = Color( 0.231373, 0.207843, 0.207843, 1 )
+text = "Chartreuse pour-over cred, brunch readymade VHS listicle keffiyeh selvage DIY slow-carb. Man "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text_Button" type="Button" parent="spirit_dog/speech_bubble"]
+margin_left = 121.982
+margin_top = 24.3065
+margin_right = 176.982
+margin_bottom = 79.3065
+rect_scale = Vector2( 0.128999, 0.142707 )
+icon = ExtResource( 8 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 340.497
+margin_top = 265.89
+margin_right = 370.497
+margin_bottom = 293.89
+rect_scale = Vector2( 2, 2 )
+icon = ExtResource( 6 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="skip_button" type="Button" parent="."]
+margin_left = 500.25
+margin_top = 280.0
+margin_right = 573.25
+margin_bottom = 312.0
+text = "SKIP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="spirit_dog/speech_bubble/Text_Button" to="." method="_on_Text_Button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="skip_button" to="." method="_on_skip_button_pressed"]
