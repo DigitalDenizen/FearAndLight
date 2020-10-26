@@ -104,6 +104,9 @@ func _player_movement():
 
 func hurt(damage):
 	_set_health(health - damage)
+	
+func heal(healing):
+	_set_health(health + healing)
 
 func _set_health(value):
 	var prev_health = health

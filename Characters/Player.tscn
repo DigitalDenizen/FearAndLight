@@ -53,56 +53,56 @@ atlas = ExtResource( 5 )
 region = Rect2( 144, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 6 )
 region = Rect2( 36, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 3 )
-region = Rect2( 72, 0, 36, 36 )
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 3 )
-region = Rect2( 108, 0, 36, 36 )
+atlas = ExtResource( 7 )
+region = Rect2( 36, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 36, 36 )
+region = Rect2( 72, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 7 )
-region = Rect2( 36, 0, 36, 36 )
+region = Rect2( 108, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 7 )
-region = Rect2( 72, 0, 36, 36 )
+region = Rect2( 144, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 7 )
-region = Rect2( 108, 0, 36, 36 )
+region = Rect2( 180, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 7 )
-region = Rect2( 144, 0, 36, 36 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 7 )
-region = Rect2( 180, 0, 36, 36 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 7 )
 region = Rect2( 216, 0, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 3 )
 region = Rect2( 36, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 72, 0, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 3 )
+region = Rect2( 108, 0, 36, 36 )
 
 [sub_resource type="SpriteFrames" id=25]
 animations = [ {
@@ -116,19 +116,19 @@ animations = [ {
 "name": "melee",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
-"name": "walk",
+"name": "throw",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "death",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 23 ), SubResource( 24 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
 "loop": true,
-"name": "throw",
+"name": "walk",
 "speed": 5.0
 } ]
 

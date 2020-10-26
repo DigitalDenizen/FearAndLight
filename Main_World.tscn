@@ -41,7 +41,6 @@ drag_margin_bottom = 1.0
 script = ExtResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Scene" type="Node2D" parent="."]
