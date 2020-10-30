@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 Movement_Logic="*res://Physics/Movement_Logic.gd"
 Score="*res://UI/Score.gd"
+Util="*res://Shared/Util.gd"
 
 [display]
 

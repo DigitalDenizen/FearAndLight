@@ -28,8 +28,6 @@ func _physics_process(delta):
 func hurt(damage):
 	_set_health(health - damage)
 	
-
-
 func _set_health(value):
 	var prev_health = health
 	health = clamp(value, 0, max_health)

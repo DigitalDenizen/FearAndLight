@@ -28,7 +28,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Screen0/Below_Trees_2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Screen0/Below_Trees_2" groups=[
+"CollisionBox",
+]]
 visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen0/Below_Trees_2/StaticBody2D"]
@@ -53,7 +55,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Screen1/Below_Trees_2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Screen1/Below_Trees_2" groups=[
+"CollisionBox",
+]]
 visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen1/Below_Trees_2/StaticBody2D"]
@@ -76,7 +80,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Screen2/Below_Trees_2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Screen2/Below_Trees_2" groups=[
+"CollisionBox",
+]]
 visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen2/Below_Trees_2/StaticBody2D"]
@@ -99,7 +105,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Screen3/Below_Trees_2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Screen3/Below_Trees_2" groups=[
+"CollisionBox",
+]]
 visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen3/Below_Trees_2/StaticBody2D"]
@@ -115,7 +123,6 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Below_Ground_ice_1" type="Sprite" parent="Screen4"]
-z_index = 1
 texture = ExtResource( 3 )
 centered = false
 
@@ -127,7 +134,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Screen4/Below_Trees_Back_2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Screen4/Below_Trees_Back_2" groups=[
+"CollisionBox",
+]]
 visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen4/Below_Trees_Back_2/StaticBody2D"]
@@ -159,7 +168,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Screen5/Below_Trees_2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Screen5/Below_Trees_2" groups=[
+"CollisionBox",
+]]
 visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen5/Below_Trees_2/StaticBody2D"]

@@ -20,7 +20,9 @@ var velocity: = Vector2.ZERO
 var rng = RandomNumberGenerator.new()
 
 func _ready():
-	add_to_group("zombies")
+	player = Util.get_main_node().get_node("Player")
+	wall = Util.get_main_node().get_node("Buildings/MudWall")
+	add_to_group("Baddies")
 	rng.randomize()
 	
 
@@ -28,22 +30,31 @@ func _physics_process(delta):
 	if player == null:
 		return
 	if alive && not_attacking:
-		var vec_not_norm = player.global_position - global_position
-		var vec_to_player = vec_not_norm.normalized()
-		var collision = move_and_collide(vec_to_player * MOVE_SPEED * delta)
+		var vec_not_norm_player = player.global_position - global_position
+		var vec_to_target = vec_not_norm_player.normalized()
+		var target = player
+		if is_instance_valid(wall):
+			var vec_not_norm_wall = wall.global_position - global_position
+			var vec_to_wall = vec_not_norm_wall.normalized()
+			target = player if vec_to_wall > vec_to_target else wall
+			vec_to_target = vec_not_norm_player if vec_to_wall > vec_to_target else vec_not_norm_wall
+		else:
+			vec_to_target = vec_not_norm_player
 		
-		velocity = Movement_Logic._follow(velocity, global_position, player.global_position, MOVE_SPEED)
+		var collision = move_and_collide(vec_to_target.normalized() * MOVE_SPEED * delta)
+		
+		velocity = Movement_Logic._follow(velocity, global_position, target.global_position, MOVE_SPEED)
 		move_and_slide(velocity)
 		
-		if vec_not_norm.x > 0:
+		if vec_to_target.x > 0:
 			$AnimatedSprite.play("Walk")
 			$AnimatedSprite.flip_h = false
 		else:
 			$AnimatedSprite.play("Walk")
 			$AnimatedSprite.flip_h = true
 		
-		if abs(vec_not_norm.x) < 30 && abs(vec_not_norm.y) < 30:
-			_on_Zombie_melee(Melee, player.global_position, global_position)
+		if abs(vec_to_target.x) < 30 && abs(vec_to_target.y) < 30:
+			_on_Zombie_melee(Melee, target.global_position, global_position)
 			
 		var _look_vec = get_global_mouse_position() - global_position
 	else:
@@ -83,8 +94,8 @@ func _set_health(value):
 			deathCountdown = 30
 			$AnimatedSprite.play("Death")
 
-func _on_Zombie_melee(Melee, player_pos, zombie_pos):
-	var direction = player_pos - zombie_pos
+func _on_Zombie_melee(Melee, target_pos, zombie_pos):
+	var direction = target_pos - zombie_pos
 	if direction.x > 0:
 		$AnimatedSprite.play("Attack")
 		$AnimatedSprite.flip_h = false
@@ -96,7 +107,7 @@ func _on_Zombie_melee(Melee, player_pos, zombie_pos):
 	var scratch = Melee.instance()
 	scratch.attacker = "Zombie"
 	add_child(scratch)
-	scratch.shoot(player_pos, zombie_pos)
+	scratch.shoot(target_pos, zombie_pos)
 
 func _on_Zombie_killed():
 	if rng.randf() <= 0.3:
