@@ -3,7 +3,6 @@ var direction = Vector2()
 export var speed = 0
 var attacker = ""
 
-
 func shoot(aim_position, caster_position):
 	global_position = caster_position
 	direction = (aim_position - caster_position).normalized()
@@ -15,7 +14,7 @@ func _ready():
 func _process(delta):
 	position += direction * speed * delta
 	if speed > 0:
-		speed = speed - 5
+		speed = speed - 0.5
 	else:
 		queue_free()
 
