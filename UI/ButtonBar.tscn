@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/ui-button-config-idle.png" type="Texture" id=1]
+[ext_resource path="res://UI/ButtonBar.gd" type="Script" id=2]
+
+[node name="ButtonBar" type="GridContainer"]
+light_mask = 32
+anchor_right = 1.0
+margin_right = -930.0
+margin_bottom = 39.0
+columns = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="config" type="Button" parent="."]
+margin_right = 45.0
+margin_bottom = 39.0
+icon = ExtResource( 1 )
+flat = true
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 49.0
+margin_right = 94.0
+margin_bottom = 39.0
+icon = ExtResource( 1 )
+flat = true
+[connection signal="pressed" from="config" to="." method="_on_config_pressed"]
