@@ -21,7 +21,7 @@
 
 [node name="Mob_Spawn" parent="." instance=ExtResource( 7 )]
 position = Vector2( 348.597, 184.651 )
-spawn_num = 5
+spawn_num = 10
 
 [node name="Barrier_top" parent="." instance=ExtResource( 11 )]
 visible = false
@@ -71,10 +71,10 @@ collision_mask = 13
 
 [node name="MudWall" parent="Buildings" instance=ExtResource( 1 )]
 light_mask = 2
-position = Vector2( -41.1692, 138.268 )
+position = Vector2( -50.136, 136.38 )
 z_index = 5
 collision_layer = 10
 collision_mask = 13
 
 [node name="vampireSpider" parent="." instance=ExtResource( 14 )]
-position = Vector2( 191.24, 144.76 )
+position = Vector2( 609.555, 154.084 )

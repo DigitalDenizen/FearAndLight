@@ -12,9 +12,6 @@ var alive = true
 var attacking = false
 var deathCountdown = 0
 var attackCountdown = 0
-var statusEffect = false
-var statusEffectCountDown
-var statusCooldown
 
 var FireBall = preload("res://Characters/Combat/FireBall.tscn")
 var Melee = preload("res://Characters/Combat/Melee.tscn")
@@ -70,7 +67,7 @@ func _on_Player_melee(Melee, mouse_pos, player_pos):
 	punch.shoot(mouse_pos, player_pos)
 	
 func _player_movement():
-	if alive && not attacking && not statusEffect:
+	if alive && not attacking:
 		if Input.is_action_pressed("move_up"):
 			var animate = "Walk" if facing == "Right" else "Walk-Left"
 			$AnimatedSprite.play("walk")
@@ -94,11 +91,6 @@ func _player_movement():
 		if move_vec.x == 0 && move_vec.y == 0 && facing == "Left":
 			$AnimatedSprite.play("idle")
 			$AnimatedSprite.flip_h = true
-	elif statusEffect && alive:
-		if statusEffectCountDown <= 0:
-			statusEffect = false
-		else:
-			statusEffectCountDown -= 1
 	else:
 		if not alive:
 			if deathCountdown == 0:
@@ -110,20 +102,11 @@ func _player_movement():
 			if attackCountdown <= 0:
 				attacking = false
 
-func hurt(damage: int, type: String = ""):
+func hurt(damage):
 	_set_health(health - damage)
-	if type == "web":
-		statusEffect = true
-		statusEffectCountDown = 75
-
 	
 func heal(healing):
 	_set_health(health + healing)
-	
-func stuck(hold):
-	statusEffect = true
-	if statusEffect == true:
-		MOVE_SPEED - hold
 
 func _set_health(value):
 	var prev_health = health
