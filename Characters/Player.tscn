@@ -161,6 +161,7 @@ frames = SubResource( 25 )
 animation = "walk"
 
 [node name="Light2D" type="Light2D" parent="."]
+light_mask = 7
 position = Vector2( 2.09364, -27.6285 )
 texture = ExtResource( 8 )
 [connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
