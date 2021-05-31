@@ -4,11 +4,11 @@ signal health_updated(health)
 signal killed()
 
 export (float) var max_health = 100
+onready var collision_shape = $CollisionShape2D
 onready var health = max_health setget _set_health
 var alive = true
 var deathCountdown = 0
 var destroyed = false
-var mudhut = null
 
 func _ready():
 	$AnimatedSprite.play("idle")
