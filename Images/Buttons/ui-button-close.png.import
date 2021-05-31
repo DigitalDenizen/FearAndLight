@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-gravestone.png-1e157fd7df03da40ec3cc279840be55c.stex"
+path="res://.import/ui-button-close.png-eeb745a0984c3a2c4464d613a1511ea7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/object-gravestone.png"
-dest_files=[ "res://.import/object-gravestone.png-1e157fd7df03da40ec3cc279840be55c.stex" ]
+source_file="res://Images/Buttons/ui-button-close.png"
+dest_files=[ "res://.import/ui-button-close.png-eeb745a0984c3a2c4464d613a1511ea7.stex" ]
 
 [params]
 

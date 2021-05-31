@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-gravestone.png-1e157fd7df03da40ec3cc279840be55c.stex"
+path="res://.import/ui-battle-msg-fire.png-570ee1571d105bdeb2d899b988de9ee2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/object-gravestone.png"
-dest_files=[ "res://.import/object-gravestone.png-1e157fd7df03da40ec3cc279840be55c.stex" ]
+source_file="res://Images/Battle_UI/ui-battle-msg-fire.png"
+dest_files=[ "res://.import/ui-battle-msg-fire.png-570ee1571d105bdeb2d899b988de9ee2.stex" ]
 
 [params]
 

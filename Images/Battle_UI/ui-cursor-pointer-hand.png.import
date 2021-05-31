@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-gravestone.png-1e157fd7df03da40ec3cc279840be55c.stex"
+path="res://.import/ui-cursor-pointer-hand.png-1fecbbf7bb1b748d2983a77ef2d41b17.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/object-gravestone.png"
-dest_files=[ "res://.import/object-gravestone.png-1e157fd7df03da40ec3cc279840be55c.stex" ]
+source_file="res://Images/Battle_UI/ui-cursor-pointer-hand.png"
+dest_files=[ "res://.import/ui-cursor-pointer-hand.png-1fecbbf7bb1b748d2983a77ef2d41b17.stex" ]
 
 [params]
 

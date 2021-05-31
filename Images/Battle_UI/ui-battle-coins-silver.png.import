@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-gravestone.png-1e157fd7df03da40ec3cc279840be55c.stex"
+path="res://.import/ui-battle-coins-silver.png-44f44c957b9feeb7bb1b4d348b828539.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/object-gravestone.png"
-dest_files=[ "res://.import/object-gravestone.png-1e157fd7df03da40ec3cc279840be55c.stex" ]
+source_file="res://Images/Battle_UI/ui-battle-coins-silver.png"
+dest_files=[ "res://.import/ui-battle-coins-silver.png-44f44c957b9feeb7bb1b4d348b828539.stex" ]
 
 [params]
 

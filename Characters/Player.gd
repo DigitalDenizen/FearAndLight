@@ -14,6 +14,9 @@ var alive = true
 var attacking = false
 var deathCountdown = 0
 var attackCountdown = 0
+var statusEffect = false
+var statusEffectCountDown
+var statusCooldown
 
 var FireBall = preload("res://Characters/Combat/FireBall.tscn")
 var Melee = preload("res://Characters/Combat/Melee.tscn")
@@ -104,11 +107,20 @@ func _player_movement(delta):
 			if attackCountdown <= 0:
 				attacking = false
 
-func hurt(damage):
+func hurt(damage: int, type: String = ""):
 	_set_health(health - damage)
+	if type == "web":
+		statusEffect = true
+		statusEffectCountDown = 75
+
 	
 func heal(healing):
 	_set_health(health + healing)
+	
+func stuck(hold):
+	statusEffect = true
+	if statusEffect == true:
+		MOVE_SPEED - hold
 
 func _set_health(value):
 	var prev_health = health
