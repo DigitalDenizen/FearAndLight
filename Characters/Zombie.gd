@@ -45,15 +45,13 @@ func _physics_process(delta):
 	if alive && not_attacking:
 		var path = pathFinding.get_new_path(global_position, player.global_position)
 		var zomboidVector
-		if path.size() > 1:
+		if path.size() > 2:
 			zomboidVector = global_position.direction_to(path[1]) * MOVE_SPEED
 			walk_animation(zomboidVector)
 			move_and_slide(zomboidVector)
 			set_path_line(path)
 		else:
-			zomboidVector = Vector2.ZERO
-			walk_animation(zomboidVector)
-			path_line.clear_points()
+			_on_Zombie_melee(Melee, player.global_position, global_position)
 	else:
 		if not_attacking:
 			deathCountdown = deathCountdown - 1

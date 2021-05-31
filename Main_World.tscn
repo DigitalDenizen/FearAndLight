@@ -181,7 +181,9 @@ position = Vector2( -0.943848, 0.943878 )
 
 [node name="Buildings" type="Node2D" parent="."]
 
-[node name="Ground" type="TileMap" parent="."]
+[node name="Ground" type="TileMap" parent="." groups=[
+"tileMap",
+]]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 30, 30 )
 format = 1
@@ -189,6 +191,7 @@ tile_data = PoolIntArray( 327638, 0, 0, 327639, 0, 0, 327640, 0, 0, 327641, 0, 0
 
 [node name="Structures" type="TileMap" parent="." groups=[
 "obstacles",
+"tileMap",
 ]]
 tile_set = SubResource( 6 )
 cell_size = Vector2( 30, 30 )
