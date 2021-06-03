@@ -3,5 +3,5 @@
 [ext_resource path="res://Font/f-l-base-font.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 6
+size = 14
 font_data = ExtResource( 1 )

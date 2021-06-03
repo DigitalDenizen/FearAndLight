@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/mud_wall_position.tscn" type="PackedScene" id=1]
+
+[node name="inventory_slot" type="CenterContainer"]
+anchor_right = 0.98
+anchor_bottom = 0.883
+margin_left = -1.0
+margin_top = -1.0
+margin_right = -961.52
+margin_bottom = -482.8
+size_flags_horizontal = 4
+size_flags_vertical = 4
+use_top_left = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mud_wall_position" parent="." instance=ExtResource( 1 )]
