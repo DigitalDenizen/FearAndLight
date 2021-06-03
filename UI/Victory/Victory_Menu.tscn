@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Images/ui-window-main.png" type="Texture" id=1]
+[ext_resource path="res://Images/ui-button-close (1).png" type="Texture" id=2]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 14.834, 422, 181.166 )
+margin_top = 8.0
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowDialog" type="WindowDialog" parent="."]
+visible = true
+anchor_right = 0.309
+anchor_bottom = 0.305
+margin_left = 2.0
+margin_top = 17.0
+margin_right = -0.416016
+margin_bottom = -9.0
+rect_min_size = Vector2( 309, 157 )
+rect_clip_content = true
+custom_icons/close = ExtResource( 2 )
+custom_styles/panel = SubResource( 1 )
