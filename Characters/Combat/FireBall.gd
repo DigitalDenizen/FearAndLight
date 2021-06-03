@@ -29,9 +29,6 @@ func _FireBall_body_exited(body):
 		
 
 func _body_entered(body):
-	print("Body name: " + body.name)
-	print("Baddies group: " + str(body.is_in_group("Baddies")))
-	print("Attacker is: " + attacker)
 	if attacker == "Player":
 		if body.is_in_group("Baddies"):
 			body.hurt(25)
@@ -42,7 +39,6 @@ func _body_entered(body):
 			_fireBall_collid()
 
 func _fireBall_collid():
-	print("It Collided!")
 	collid = true
 	$AnimatedSprite.play("Poof")
 	poofCountdown = 1
