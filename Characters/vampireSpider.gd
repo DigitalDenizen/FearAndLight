@@ -4,8 +4,8 @@ signal melee(Melee, player_pos, vampireSpider_pos)
 signal shoot(Web, player_pos, vampireSpider_pos)
 signal killed()
 
-const MOVE_SPEED = 65
-export (float) var max_health = 100
+const MOVE_SPEED = 28
+export (float) var max_health = 150
 onready var itemdrop_scene = preload("res://Characters/Item_Drops/Item_Drop_2.tscn")
 onready var health = max_health setget _set_health
 var Melee = preload("res://Characters/Combat/Melee.tscn")
@@ -52,10 +52,10 @@ func _physics_process(delta):
 			$AnimatedSprite.flip_h = false
 			$AnimatedSprite.play("walk")
 		
-		if abs(vec_not_norm.x) <= 65 && abs(vec_not_norm.y) <= 65: 
+		if abs(vec_not_norm.x) <= 35 && abs(vec_not_norm.y) <= 35: 
 			_on_vampireSpider_melee(Melee, player.global_position, global_position)
 	
-		elif abs(vec_not_norm.x) > 65 && abs(vec_not_norm.y) > 65:
+		elif abs(vec_not_norm.x) > 55 && abs(vec_not_norm.y) > 55:
 			_on_vampireSpider_shoot(Web, player.global_position, global_position)
 		
 		var _look_vec = get_global_mouse_position() - global_position
@@ -85,7 +85,7 @@ func _set_health(value):
 	if health != prev_health:
 		emit_signal("health_updated", health)
 		if health <= 0:
-			deathCountdown = 20
+			deathCountdown = 15
 			Score._on_vampire_spider_killed()
 			alive = false
 			$AnimatedSprite.play("death")
@@ -121,7 +121,7 @@ func _on_vampireSpider_shoot(Web, player_pos, vampireSpider_pos):
 	else: 
 		$AnimatedSprite.play("projectile")
 		$AnimatedSprite.flip_h = false
-	attackCountDown = 50
+	attackCountDown = 175
 	var web = Web.instance()
 	add_child(web)
 	web.shoot(player_pos, vampireSpider_pos)

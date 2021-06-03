@@ -3,8 +3,10 @@ extends Node
 export (float) var shape_x = 0.0
 export (float) var shape_y = 0.0
 export (int) var spawn_num = 0
+var pathFinding: PathFinding
 
-func _ready():
+func initialize(pathFinding: PathFinding):
+	self.pathFinding = pathFinding
 	_spawn()
 
 func _spawn():
@@ -22,8 +24,8 @@ func _spawn():
 		enemy.add_to_group('Baddies')
 		enemy.position.y = (randi() % int(size.x)) - (int(size.x/2)) + center.x
 		enemy.position.x = (randi() % int(size.y)) - (int(size.y/2)) + center.y
+		enemy.pathFinding = pathFinding
 		add_child(enemy)
 
 func _on_Pylon_beacon_activated():
 	print('beacon activated')
-	_spawn()
