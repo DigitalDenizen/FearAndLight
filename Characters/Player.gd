@@ -54,6 +54,7 @@ func _on_Player_shoot(FireBall, mouse_pos, player_pos):
 		facing == "Left"
 	_set_attack(30)
 	var fire = FireBall.instance()
+	fire.attacker = "Player"
 	add_child(fire)
 	fire.shoot(mouse_pos, player_pos)
 	
