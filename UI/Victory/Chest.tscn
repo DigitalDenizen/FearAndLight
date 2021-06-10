@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Images/Victory/ui-victory-bkgd-large.png" type="Texture" id=2]
+[ext_resource path="res://Images/Victory/ui-stats-icon-chest.png" type="Texture" id=3]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 121, 108 )
+
+[sub_resource type="Theme" id=3]
+default_font = ExtResource( 1 )
+
+[node name="Panel" type="Panel"]
+margin_right = 125.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 125, 95 )
+theme = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 125.0
+margin_bottom = 97.0
+rect_min_size = Vector2( 112, 90 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 134.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 125, 75 )
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer"]
+margin_right = 134.0
+margin_bottom = 75.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/CenterContainer"]
+margin_left = 39.0
+margin_top = 10.0
+margin_right = 94.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 55, 55 )
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 79.0
+margin_right = 134.0
+margin_bottom = 97.0
+rect_min_size = Vector2( 125, 17 )
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2"]
+margin_right = 134.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 121, 17 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/CenterContainer"]
+margin_left = 7.0
+margin_right = 126.0
+margin_bottom = 18.0
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/CenterContainer/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 49, 18 )
+text = "YOU GOT A:"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/CenterContainer/HBoxContainer"]
+margin_left = 54.0
+margin_right = 119.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 65, 18 )
+custom_colors/font_color = Color( 0.427451, 0.403922, 0.403922, 1 )
+text = "SILVER CHEST"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 125.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 113, 95 )
+theme = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

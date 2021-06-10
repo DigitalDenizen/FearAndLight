@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Images/Victory/ui-victory-bkgd-small.png" type="Texture" id=2]
+[ext_resource path="res://Images/Victory/ui-stats-icon-enemies.png" type="Texture" id=3]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 121, 32 )
+
+[sub_resource type="Theme" id=3]
+
+[node name="Panel" type="Panel"]
+margin_left = 1.0
+margin_right = 131.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 127, 30 )
+theme = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = -0.148651
+margin_right = 127.0
+margin_bottom = 29.8513
+rect_min_size = Vector2( 127, 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy_Image" type="CenterContainer" parent="HBoxContainer"]
+margin_right = 34.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 34, 22 )
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Enemy_Image"]
+margin_left = 5.0
+margin_top = 3.0
+margin_right = 28.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 12, 21 )
+theme = SubResource( 3 )
+texture = ExtResource( 3 )
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+margin_left = 38.0
+margin_right = 125.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 85, 0 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/CenterContainer"]
+margin_top = 9.0
+margin_right = 87.0
+margin_bottom = 21.0
+
+[node name="Label" type="Label" parent="HBoxContainer/CenterContainer/HBoxContainer"]
+margin_right = 78.0
+margin_bottom = 12.0
+text = "ENEMIES KILLED:"
+
+[node name="Label2" type="Label" parent="HBoxContainer/CenterContainer/HBoxContainer"]
+margin_left = 82.0
+margin_right = 87.0
+margin_bottom = 12.0
+text = "0"
