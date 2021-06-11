@@ -10,7 +10,7 @@
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 422, 196 )
 
@@ -37,7 +37,7 @@ rect_min_size = Vector2( 715, 385 )
 theme = SubResource( 1 )
 custom_icons/close_highlight = ExtResource( 2 )
 custom_icons/close = ExtResource( 2 )
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 2 )
 custom_constants/close_h_ofs = 21
 custom_constants/close_v_ofs = -8
 popup_exclusive = true
