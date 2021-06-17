@@ -46,10 +46,14 @@ region_rect = Rect2( 0, 0, 86, 21 )
 content_margin_left = 0.0
 content_margin_right = 0.0
 
-[node name="Battle_Panel" type="Panel"]
-margin_right = 625.0
-margin_bottom = 335.0
-rect_min_size = Vector2( 675, 335 )
+[node name="MarginContainer" type="MarginContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Battle_Panel" type="Panel" parent="."]
+margin_right = 1000.0
+margin_bottom = 481.0
+rect_min_size = Vector2( 1000, 481 )
 theme = SubResource( 1 )
 custom_styles/panel = SubResource( 2 )
 script = ExtResource( 13 )
@@ -57,72 +61,75 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="GridContainer" type="GridContainer" parent="Battle_Panel"]
 anchor_bottom = 1.0
-margin_right = 466.0
-rect_min_size = Vector2( 635, 335 )
+margin_right = 1001.0
+margin_bottom = -3.05176e-05
+rect_min_size = Vector2( 635, 432 )
 custom_constants/vseparation = 3
 columns = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="GridContainer"]
-margin_right = 675.0
-margin_bottom = 335.0
-rect_min_size = Vector2( 675, 310 )
+[node name="MarginContainer" type="MarginContainer" parent="Battle_Panel/GridContainer"]
+margin_right = 1013.0
+margin_bottom = 490.0
+rect_min_size = Vector2( 1000, 481 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/MarginContainer"]
-margin_right = 675.0
-margin_bottom = 335.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer"]
+margin_right = 1013.0
+margin_bottom = 490.0
 rect_min_size = Vector2( 0, 200 )
 
-[node name="Battle_Details" type="VBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer"]
-margin_right = 210.0
-margin_bottom = 335.0
-rect_min_size = Vector2( 210, 325 )
+[node name="Battle_Details" type="VBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer"]
+margin_right = 315.0
+margin_bottom = 490.0
+rect_min_size = Vector2( 310, 490 )
 
-[node name="MarginContainer" type="MarginContainer" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details"]
-margin_right = 210.0
-margin_bottom = 330.0
-rect_min_size = Vector2( 200, 330 )
+[node name="MarginContainer" type="MarginContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details"]
+margin_right = 315.0
+margin_bottom = 481.0
+rect_min_size = Vector2( 200, 481 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer"]
-margin_right = 210.0
-margin_bottom = 330.0
-rect_min_size = Vector2( 165, 200 )
+[node name="VBoxContainer" type="VBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer"]
+margin_right = 315.0
+margin_bottom = 481.0
+rect_min_size = Vector2( 310, 200 )
 theme = SubResource( 3 )
 
-[node name="CenterContainer3" type="CenterContainer" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer"]
-margin_right = 210.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 200, 40 )
+[node name="CenterContainer3" type="CenterContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer"]
+margin_right = 315.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 200, 52 )
 
-[node name="Label" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/CenterContainer3"]
-margin_left = 39.0
-margin_top = 7.0
-margin_right = 171.0
-margin_bottom = 32.0
+[node name="Label" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/CenterContainer3"]
+margin_left = 54.0
+margin_top = 13.0
+margin_right = 260.0
+margin_bottom = 38.0
 rect_min_size = Vector2( 120, 25 )
 custom_colors/font_color = Color( 1, 0.988235, 0.988235, 1 )
 text = "      BATTLE    DETAILS"
 valign = 1
 
-[node name="Difficulty_Rating" type="CenterContainer" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer"]
-margin_top = 44.0
-margin_right = 210.0
-margin_bottom = 74.0
-rect_min_size = Vector2( 140, 30 )
+[node name="Difficulty_Rating" type="CenterContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer"]
+margin_top = 56.0
+margin_right = 315.0
+margin_bottom = 101.0
+rect_min_size = Vector2( 140, 45 )
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Difficulty_Rating"]
-margin_left = 20.0
+[node name="HBoxContainer5" type="HBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Difficulty_Rating"]
+margin_left = 26.0
 margin_top = 7.0
-margin_right = 189.0
-margin_bottom = 23.0
+margin_right = 289.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 263, 30 )
 
-[node name="Label2" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Difficulty_Rating/HBoxContainer5"]
-margin_right = 138.0
-margin_bottom = 16.0
+[node name="Label2" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Difficulty_Rating/HBoxContainer5"]
+margin_top = 3.0
+margin_right = 217.0
+margin_bottom = 27.0
 custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
 text = "DIFFICULTY RATING: "
 align = 2
@@ -130,105 +137,107 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Difficulty_Rating/HBoxContainer5"]
-margin_left = 142.0
-margin_right = 169.0
-margin_bottom = 16.0
+[node name="Label" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Difficulty_Rating/HBoxContainer5"]
+margin_left = 221.0
+margin_top = 3.0
+margin_right = 263.0
+margin_bottom = 27.0
 rect_min_size = Vector2( 25, 0 )
 custom_colors/font_color = Color( 0.709804, 0.760784, 0.105882, 1 )
 text = "1/5"
 align = 1
 
-[node name="Stars" type="CenterContainer" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer"]
-margin_top = 78.0
-margin_right = 210.0
-margin_bottom = 118.0
-rect_min_size = Vector2( 140, 40 )
+[node name="Stars" type="CenterContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer"]
+margin_top = 105.0
+margin_right = 315.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 140, 45 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Stars"]
-margin_left = 22.0
-margin_top = 7.0
-margin_right = 188.0
-margin_bottom = 33.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Stars"]
+margin_left = 69.0
+margin_top = 8.0
+margin_right = 245.0
+margin_bottom = 36.0
 rect_min_size = Vector2( 140, 25 )
 
-[node name="TextureRect3" type="TextureRect" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Stars/HBoxContainer"]
-margin_right = 30.0
-margin_bottom = 26.0
-rect_min_size = Vector2( 30, 26 )
+[node name="TextureRect3" type="TextureRect" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Stars/HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 32, 28 )
 texture = ExtResource( 11 )
 stretch_mode = 1
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="TextureRect7" type="TextureRect" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Stars/HBoxContainer"]
-margin_left = 34.0
-margin_right = 64.0
-margin_bottom = 26.0
-rect_min_size = Vector2( 30, 26 )
+[node name="TextureRect7" type="TextureRect" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Stars/HBoxContainer"]
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 32, 28 )
 texture = ExtResource( 12 )
 stretch_mode = 1
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="TextureRect5" type="TextureRect" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Stars/HBoxContainer"]
-margin_left = 68.0
-margin_right = 98.0
-margin_bottom = 26.0
-rect_min_size = Vector2( 30, 26 )
+[node name="TextureRect5" type="TextureRect" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Stars/HBoxContainer"]
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 32, 28 )
 texture = ExtResource( 12 )
 stretch_mode = 1
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="TextureRect6" type="TextureRect" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Stars/HBoxContainer"]
-margin_left = 102.0
-margin_right = 132.0
-margin_bottom = 26.0
-rect_min_size = Vector2( 30, 26 )
+[node name="TextureRect6" type="TextureRect" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Stars/HBoxContainer"]
+margin_left = 108.0
+margin_right = 140.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 32, 28 )
 texture = ExtResource( 12 )
 stretch_mode = 1
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="TextureRect4" type="TextureRect" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Stars/HBoxContainer"]
-margin_left = 136.0
-margin_right = 166.0
-margin_bottom = 26.0
-rect_min_size = Vector2( 30, 26 )
+[node name="TextureRect4" type="TextureRect" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/Stars/HBoxContainer"]
+margin_left = 144.0
+margin_right = 176.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 32, 28 )
 texture = ExtResource( 12 )
 stretch_mode = 1
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer"]
-margin_top = 122.0
-margin_right = 210.0
-margin_bottom = 202.0
+[node name="MarginContainer" type="MarginContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer"]
+margin_top = 154.0
+margin_right = 315.0
+margin_bottom = 289.0
 rect_min_size = Vector2( 125, 80 )
 
-[node name="CenterContainer" type="CenterContainer" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer"]
-margin_right = 210.0
-margin_bottom = 80.0
+[node name="CenterContainer" type="CenterContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer"]
+margin_right = 315.0
+margin_bottom = 135.0
+rect_min_size = Vector2( 315, 135 )
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer"]
-margin_left = 18.0
-margin_top = 2.0
-margin_right = 191.0
-margin_bottom = 78.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer"]
+margin_left = 23.0
+margin_top = 13.0
+margin_right = 291.0
+margin_bottom = 121.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2"]
-margin_right = 173.0
-margin_bottom = 16.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2"]
+margin_right = 268.0
+margin_bottom = 24.0
 
-[node name="Label2" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer"]
-margin_right = 81.0
-margin_bottom = 16.0
+[node name="Label2" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer"]
+margin_right = 125.0
+margin_bottom = 24.0
 custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
 text = "DIRECTION: "
 align = 2
@@ -236,24 +245,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer"]
-margin_left = 85.0
-margin_right = 173.0
-margin_bottom = 16.0
+[node name="Label" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer"]
+margin_left = 129.0
+margin_right = 268.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 50, 0 )
 custom_colors/font_color = Color( 0.509804, 0.494118, 0.494118, 1 )
 text = "RIGHT & LEFT"
 align = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2"]
-margin_top = 20.0
-margin_right = 173.0
-margin_bottom = 36.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2"]
+margin_top = 28.0
+margin_right = 268.0
+margin_bottom = 52.0
 rect_min_size = Vector2( 123, 12 )
 
-[node name="Label2" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer2"]
-margin_right = 97.0
-margin_bottom = 16.0
+[node name="Label2" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer2"]
+margin_right = 154.0
+margin_bottom = 24.0
 custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
 text = "ENEMY COUNT: "
 align = 2
@@ -261,22 +270,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer2"]
-margin_left = 101.0
-margin_right = 151.0
-margin_bottom = 16.0
+[node name="Label" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer2"]
+margin_left = 158.0
+margin_right = 221.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 50, 0 )
 custom_colors/font_color = Color( 0.509804, 0.494118, 0.494118, 1 )
 text = "RIGHT"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2"]
-margin_top = 40.0
-margin_right = 173.0
-margin_bottom = 56.0
+[node name="HBoxContainer3" type="HBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2"]
+margin_top = 56.0
+margin_right = 268.0
+margin_bottom = 80.0
 
-[node name="Label2" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer3"]
-margin_right = 86.0
-margin_bottom = 16.0
+[node name="Label2" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer3"]
+margin_right = 133.0
+margin_bottom = 24.0
 custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
 text = "ENEMY TYPE: "
 align = 2
@@ -284,22 +293,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer3"]
-margin_left = 90.0
-margin_right = 140.0
-margin_bottom = 16.0
+[node name="Label" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer3"]
+margin_left = 137.0
+margin_right = 200.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 50, 0 )
 custom_colors/font_color = Color( 0.454902, 0.443137, 0.443137, 1 )
 text = "RIGHT"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2"]
-margin_top = 60.0
-margin_right = 173.0
-margin_bottom = 76.0
+[node name="HBoxContainer4" type="HBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2"]
+margin_top = 84.0
+margin_right = 268.0
+margin_bottom = 108.0
 
-[node name="Label2" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer4"]
-margin_right = 48.0
-margin_bottom = 16.0
+[node name="Label2" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer4"]
+margin_right = 74.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 35, 12 )
 custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
 text = "HORDE: "
@@ -308,34 +317,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer4"]
-margin_left = 52.0
-margin_right = 102.0
-margin_bottom = 16.0
+[node name="Label" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Battle_Details/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer4"]
+margin_left = 78.0
+margin_right = 128.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 50, 0 )
 custom_colors/font_color = Color( 0.454902, 0.443137, 0.443137, 1 )
 text = "107"
 
-[node name="Enemy_Info" type="VBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer"]
-margin_left = 214.0
-margin_right = 462.0
-margin_bottom = 335.0
-rect_min_size = Vector2( 248, 335 )
+[node name="Enemy_Info" type="VBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer"]
+margin_left = 319.0
+margin_right = 659.0
+margin_bottom = 490.0
+rect_min_size = Vector2( 340, 335 )
 
-[node name="CenterContainer2" type="CenterContainer" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info"]
-margin_right = 248.0
-margin_bottom = 43.0
-rect_min_size = Vector2( 115, 43 )
+[node name="CenterContainer2" type="CenterContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Enemy_Info"]
+margin_right = 340.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 115, 50 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info/CenterContainer2"]
-margin_left = 64.0
-margin_top = 9.0
-margin_right = 184.0
-margin_bottom = 34.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Enemy_Info/CenterContainer2"]
+margin_left = 103.0
+margin_top = 12.0
+margin_right = 236.0
+margin_bottom = 37.0
 rect_min_size = Vector2( 120, 25 )
 
-[node name="RichTextLabel" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info/CenterContainer2/VBoxContainer"]
-margin_right = 120.0
+[node name="RichTextLabel" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Enemy_Info/CenterContainer2/VBoxContainer"]
+margin_right = 133.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 120, 25 )
 custom_colors/font_color = Color( 1, 0.988235, 0.988235, 1 )
@@ -343,43 +352,43 @@ text = "ENEMY  INFO"
 align = 1
 valign = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info"]
-margin_top = 47.0
-margin_right = 248.0
-margin_bottom = 162.0
-rect_min_size = Vector2( 136, 75 )
+[node name="MarginContainer" type="MarginContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Enemy_Info"]
+margin_top = 54.0
+margin_right = 340.0
+margin_bottom = 249.0
+rect_min_size = Vector2( 136, 195 )
 
-[node name="CenterContainer" type="CenterContainer" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer"]
-margin_right = 248.0
-margin_bottom = 115.0
-rect_min_size = Vector2( 125, 115 )
+[node name="CenterContainer" type="CenterContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer"]
+margin_right = 340.0
+margin_bottom = 195.0
+rect_min_size = Vector2( 125, 135 )
 
-[node name="TextureRect" type="TextureRect" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer/CenterContainer"]
-margin_left = 39.0
-margin_top = 7.0
-margin_right = 209.0
-margin_bottom = 107.0
-rect_min_size = Vector2( 170, 100 )
+[node name="TextureRect" type="TextureRect" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer/CenterContainer"]
+margin_left = 57.0
+margin_top = 37.0
+margin_right = 282.0
+margin_bottom = 157.0
+rect_min_size = Vector2( 225, 120 )
 texture = ExtResource( 6 )
 expand = true
 
-[node name="MarginContainer2" type="MarginContainer" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info"]
-margin_top = 166.0
-margin_right = 248.0
-margin_bottom = 221.0
+[node name="MarginContainer2" type="MarginContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Enemy_Info"]
+margin_top = 253.0
+margin_right = 340.0
+margin_bottom = 308.0
 rect_min_size = Vector2( 0, 50 )
 
-[node name="CenterContainer" type="CenterContainer" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer2"]
-margin_right = 248.0
+[node name="CenterContainer" type="CenterContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer2"]
+margin_right = 340.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 120, 55 )
 
-[node name="Button" type="Button" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer2/CenterContainer"]
-margin_left = 56.0
-margin_top = 10.0
-margin_right = 191.0
-margin_bottom = 45.0
-rect_min_size = Vector2( 135, 35 )
+[node name="Button" type="Button" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer2/CenterContainer"]
+margin_left = 87.0
+margin_top = 7.0
+margin_right = 252.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 165, 40 )
 focus_mode = 0
 theme = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
@@ -389,89 +398,88 @@ toggle_mode = true
 text = "START BATTLE!"
 expand_icon = true
 
-[node name="Spoils_Of_war" type="VBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer"]
-margin_left = 466.0
-margin_right = 661.0
-margin_bottom = 335.0
-rect_min_size = Vector2( 190, 265 )
+[node name="Spoils_Of_war" type="VBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer"]
+margin_left = 663.0
+margin_right = 1013.0
+margin_bottom = 490.0
+rect_min_size = Vector2( 350, 265 )
 
-[node name="MarginContainer" type="MarginContainer" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war"]
-margin_right = 195.0
-margin_bottom = 76.0
+[node name="MarginContainer" type="MarginContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war"]
+margin_right = 350.0
+margin_bottom = 119.0
 rect_min_size = Vector2( 120, 68 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer"]
-margin_right = 195.0
-margin_bottom = 76.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer"]
+margin_right = 350.0
+margin_bottom = 119.0
 rect_min_size = Vector2( 120, 35 )
 
-[node name="CenterContainer" type="CenterContainer" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer/VBoxContainer"]
-margin_right = 195.0
-margin_bottom = 42.0
-rect_min_size = Vector2( 195, 42 )
+[node name="CenterContainer" type="CenterContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer/VBoxContainer"]
+margin_right = 350.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 195, 65 )
 
-[node name="RichTextLabel" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer/VBoxContainer/CenterContainer"]
-margin_left = 35.0
-margin_top = 8.0
-margin_right = 159.0
-margin_bottom = 33.0
+[node name="RichTextLabel" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer/VBoxContainer/CenterContainer"]
+margin_left = 75.0
+margin_top = 20.0
+margin_right = 274.0
+margin_bottom = 45.0
 rect_min_size = Vector2( 120, 25 )
 custom_colors/font_color = Color( 1, 0.988235, 0.988235, 1 )
 text = "       SPOILS  OF  WAR"
 valign = 1
 
-[node name="CenterContainer2" type="CenterContainer" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer/VBoxContainer"]
-margin_top = 46.0
-margin_right = 195.0
-margin_bottom = 76.0
-rect_min_size = Vector2( 0, 30 )
+[node name="CenterContainer2" type="CenterContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer/VBoxContainer"]
+margin_top = 69.0
+margin_right = 350.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 350, 50 )
 theme = SubResource( 8 )
 
-[node name="Label" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer/VBoxContainer/CenterContainer2"]
-margin_left = 2.0
-margin_top = 7.0
-margin_right = 192.0
-margin_bottom = 23.0
+[node name="Label" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer/VBoxContainer/CenterContainer2"]
+margin_left = 24.0
+margin_top = 13.0
+margin_right = 326.0
+margin_bottom = 37.0
 rect_min_size = Vector2( 0, 15 )
 custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
 text = "IF VICTORIOUS YOU WIL GET"
 
-[node name="MarginContainer2" type="MarginContainer" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war"]
-margin_top = 80.0
-margin_right = 195.0
-margin_bottom = 165.0
+[node name="MarginContainer2" type="MarginContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war"]
+margin_top = 123.0
+margin_right = 350.0
+margin_bottom = 213.0
 rect_min_size = Vector2( 0, 75 )
 
-[node name="CenterContainer" type="CenterContainer" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2"]
-margin_right = 195.0
-margin_bottom = 85.0
+[node name="CenterContainer" type="CenterContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2"]
+margin_right = 350.0
+margin_bottom = 90.0
 rect_min_size = Vector2( 0, 85 )
 
-[node name="Reward_list" type="VBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer"]
-margin_left = 70.0
-margin_top = 8.0
-margin_right = 124.0
-margin_bottom = 76.0
+[node name="Reward_list" type="VBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer"]
+margin_left = 136.0
+margin_right = 214.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 78, 90 )
 
-[node name="Emerald_coin" type="HBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list"]
-margin_right = 54.0
-margin_bottom = 20.0
+[node name="Emerald_coin" type="HBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list"]
+margin_right = 78.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 50, 20 )
 
-[node name="TextureRect" type="TextureRect" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list/Emerald_coin"]
+[node name="TextureRect" type="TextureRect" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list/Emerald_coin"]
 margin_right = 15.0
-margin_bottom = 20.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 12, 5 )
 texture = ExtResource( 9 )
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Label" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list/Emerald_coin"]
+[node name="Label" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list/Emerald_coin"]
 margin_left = 19.0
-margin_top = 2.0
-margin_right = 54.0
-margin_bottom = 18.0
+margin_right = 72.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 35, 12 )
 theme = SubResource( 9 )
 custom_styles/normal = SubResource( 10 )
@@ -479,26 +487,25 @@ custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
 text = "x 200"
 align = 2
 
-[node name="Gold_coin" type="HBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list"]
-margin_top = 24.0
-margin_right = 54.0
-margin_bottom = 44.0
+[node name="Gold_coin" type="HBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list"]
+margin_top = 28.0
+margin_right = 78.0
+margin_bottom = 52.0
 rect_min_size = Vector2( 50, 20 )
 
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list/Gold_coin"]
+[node name="TextureRect2" type="TextureRect" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list/Gold_coin"]
 margin_right = 15.0
-margin_bottom = 20.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 12, 12 )
 texture = ExtResource( 10 )
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Label2" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list/Gold_coin"]
+[node name="Label2" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list/Gold_coin"]
 margin_left = 19.0
-margin_top = 2.0
-margin_right = 46.0
-margin_bottom = 18.0
+margin_right = 60.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 27, 12 )
 theme = SubResource( 9 )
 custom_styles/normal = SubResource( 10 )
@@ -506,26 +513,25 @@ custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
 text = "x 50"
 align = 2
 
-[node name="Sliver_coin" type="HBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list"]
-margin_top = 48.0
-margin_right = 54.0
-margin_bottom = 68.0
+[node name="Sliver_coin" type="HBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list"]
+margin_top = 56.0
+margin_right = 78.0
+margin_bottom = 80.0
 rect_min_size = Vector2( 50, 20 )
 
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list/Sliver_coin"]
-margin_right = 15.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 12, 12 )
+[node name="TextureRect2" type="TextureRect" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list/Sliver_coin"]
+margin_right = 20.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 20, 24 )
 texture = ExtResource( 7 )
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Label2" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list/Sliver_coin"]
-margin_left = 19.0
-margin_top = 2.0
-margin_right = 38.0
-margin_bottom = 18.0
+[node name="Label2" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer2/CenterContainer/Reward_list/Sliver_coin"]
+margin_left = 24.0
+margin_right = 53.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 19, 12 )
 theme = SubResource( 9 )
 custom_styles/normal = SubResource( 10 )
@@ -533,39 +539,38 @@ custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
 text = "x 5"
 align = 2
 
-[node name="MarginContainer3" type="MarginContainer" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war"]
-margin_top = 169.0
-margin_right = 195.0
-margin_bottom = 224.0
+[node name="MarginContainer3" type="MarginContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war"]
+margin_top = 217.0
+margin_right = 350.0
+margin_bottom = 282.0
 rect_min_size = Vector2( 135, 50 )
 
-[node name="CenterContainer" type="CenterContainer" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer3"]
-margin_right = 195.0
-margin_bottom = 55.0
-rect_min_size = Vector2( 140, 55 )
+[node name="CenterContainer" type="CenterContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer3"]
+margin_right = 350.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 140, 65 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer3/CenterContainer"]
-margin_left = 23.0
-margin_top = 18.0
-margin_right = 172.0
-margin_bottom = 36.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer3/CenterContainer"]
+margin_left = 65.0
+margin_top = 20.0
+margin_right = 285.0
+margin_bottom = 44.0
 rect_min_size = Vector2( 95, 12 )
 alignment = 1
 
-[node name="Label" type="Label" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer3/CenterContainer/HBoxContainer"]
-margin_top = 1.0
-margin_right = 124.0
-margin_bottom = 17.0
+[node name="Label" type="Label" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer3/CenterContainer/HBoxContainer"]
+margin_right = 195.0
+margin_bottom = 24.0
 custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
 text = "AND  A  CHANCE  FOR"
 
-[node name="TextureRect3" type="TextureRect" parent="GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer3/CenterContainer/HBoxContainer"]
-margin_left = 128.0
-margin_right = 149.0
-margin_bottom = 18.0
+[node name="TextureRect3" type="TextureRect" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war/MarginContainer3/CenterContainer/HBoxContainer"]
+margin_left = 199.0
+margin_right = 220.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 12, 12 )
 texture = ExtResource( 8 )
 __meta__ = {
 "_editor_description_": ""
 }
-[connection signal="toggled" from="GridContainer/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer2/CenterContainer/Button" to="." method="_on_Button_toggled"]
+[connection signal="toggled" from="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer2/CenterContainer/Button" to="Battle_Panel" method="_on_Button_toggled"]

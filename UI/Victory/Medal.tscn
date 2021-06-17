@@ -11,67 +11,75 @@ default_font = ExtResource( 2 )
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 121, 108 )
 
-[node name="Panel" type="Panel"]
-margin_right = 125.0
+[node name="Medals_Earned" type="CenterContainer"]
+margin_right = 144.0
 margin_bottom = 95.0
-rect_min_size = Vector2( 125, 95 )
+rect_min_size = Vector2( 241, 191 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 275.0
+margin_bottom = 191.0
+rect_min_size = Vector2( 275, 191 )
 theme = SubResource( 1 )
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+margin_right = 275.0
+margin_bottom = 189.0
 rect_min_size = Vector2( 125, 95 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
-margin_right = 131.0
-margin_bottom = 74.0
-rect_min_size = Vector2( 125, 74 )
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
+margin_right = 275.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 125, 155 )
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer"]
-margin_right = 131.0
-margin_bottom = 74.0
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/MarginContainer"]
+margin_right = 275.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 240, 148 )
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/CenterContainer"]
-margin_left = 43.0
-margin_top = 9.0
-margin_right = 88.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 45, 55 )
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/CenterContainer"]
+margin_left = 85.0
+margin_top = 17.0
+margin_right = 190.0
+margin_bottom = 137.0
+rect_min_size = Vector2( 105, 120 )
 texture = ExtResource( 3 )
 stretch_mode = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
-margin_top = 78.0
-margin_right = 131.0
-margin_bottom = 95.0
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer"]
+margin_top = 159.0
+margin_right = 275.0
+margin_bottom = 183.0
 rect_min_size = Vector2( 125, 17 )
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2"]
-margin_right = 125.0
-margin_bottom = 17.0
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/MarginContainer2"]
+margin_right = 275.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 125, 0 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/CenterContainer"]
-margin_left = 18.0
-margin_top = 2.0
-margin_right = 107.0
-margin_bottom = 14.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer2/CenterContainer"]
+margin_left = 43.0
+margin_right = 232.0
+margin_bottom = 24.0
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/CenterContainer/HBoxContainer"]
-margin_right = 60.0
-margin_bottom = 12.0
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer2/CenterContainer/HBoxContainer"]
+margin_right = 131.0
+margin_bottom = 24.0
 text = "YOUR MEDAL:"
 
-[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/CenterContainer/HBoxContainer"]
-margin_left = 64.0
-margin_right = 89.0
-margin_bottom = 12.0
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/MarginContainer2/CenterContainer/HBoxContainer"]
+margin_left = 135.0
+margin_right = 189.0
+margin_bottom = 24.0
 custom_colors/font_color = Color( 0.741176, 0.752941, 0.109804, 1 )
 text = "GOLD"
