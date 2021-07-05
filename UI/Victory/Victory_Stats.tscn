@@ -1,0 +1,141 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Images/Battle_UI/ui-button-close.png" type="Texture" id=1]
+[ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Images/Battle_UI/ui-window-large.png" type="Texture" id=3]
+[ext_resource path="res://Images/Victory/ui-victory-text-banner-wndw.png" type="Texture" id=4]
+[ext_resource path="res://UI/Victory/Heros_killed.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Victory/Defenses_destroyed.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/Victory/Enemies_killed.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/Victory/Chest.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI/Victory/Continue_button.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/Victory/Medal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://UI/Victory/Victory_Stats.gd" type="Script" id=11]
+
+[sub_resource type="Theme" id=3]
+default_font = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 4 )
+normal_map = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 451, 247 )
+
+[node name="Victory_Stats_popup" type="WindowDialog"]
+visible = true
+anchor_right = 1.026
+anchor_bottom = 1.0
+margin_left = -0.94397
+margin_top = 3.83163
+margin_right = -0.567993
+margin_bottom = -0.168335
+rect_min_size = Vector2( 701, 288 )
+theme = SubResource( 3 )
+custom_icons/close_highlight = ExtResource( 1 )
+custom_icons/close = ExtResource( 1 )
+custom_styles/panel = SubResource( 2 )
+custom_constants/close_h_ofs = 62
+custom_constants/scaleborder_size = 11
+custom_constants/close_v_ofs = -135
+custom_constants/title_height = 3
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 71.4143
+margin_top = 251.0
+margin_right = 985.414
+margin_bottom = 595.0
+rect_min_size = Vector2( 914, 285 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Your_Results" type="CenterContainer" parent="GridContainer"]
+margin_right = 914.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 914, 25 )
+
+[node name="Label" type="Label" parent="GridContainer/Your_Results"]
+margin_left = 384.0
+margin_right = 530.0
+margin_bottom = 24.0
+text = "YOUR RESULTS"
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer"]
+margin_top = 29.0
+margin_right = 914.0
+margin_bottom = 274.0
+rect_min_size = Vector2( 910, 245 )
+
+[node name="CenterContainer" type="CenterContainer" parent="GridContainer/MarginContainer"]
+margin_right = 914.0
+margin_bottom = 245.0
+rect_min_size = Vector2( 910, 245 )
+
+[node name="Stats_container" type="HBoxContainer" parent="GridContainer/MarginContainer/CenterContainer"]
+margin_left = 25.0
+margin_top = 10.0
+margin_right = 888.0
+margin_bottom = 235.0
+rect_min_size = Vector2( 800, 215 )
+
+[node name="Killed" type="CenterContainer" parent="GridContainer/MarginContainer/CenterContainer/Stats_container"]
+margin_right = 305.0
+margin_bottom = 225.0
+rect_min_size = Vector2( 225, 225 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/MarginContainer/CenterContainer/Stats_container/Killed"]
+margin_right = 305.0
+margin_bottom = 225.0
+rect_min_size = Vector2( 245, 225 )
+alignment = 1
+
+[node name="Heros_Killed" parent="GridContainer/MarginContainer/CenterContainer/Stats_container/Killed/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 13.0
+margin_bottom = 74.0
+
+[node name="Enemies_Killed" parent="GridContainer/MarginContainer/CenterContainer/Stats_container/Killed/VBoxContainer" instance=ExtResource( 7 )]
+margin_top = 78.0
+margin_right = 305.0
+margin_bottom = 143.0
+
+[node name="Defenses_destroyed" parent="GridContainer/MarginContainer/CenterContainer/Stats_container/Killed/VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 147.0
+margin_right = 305.0
+margin_bottom = 212.0
+
+[node name="Medals" type="CenterContainer" parent="GridContainer/MarginContainer/CenterContainer/Stats_container"]
+margin_left = 309.0
+margin_right = 584.0
+margin_bottom = 225.0
+rect_min_size = Vector2( 255, 215 )
+
+[node name="Medals_Earned" parent="GridContainer/MarginContainer/CenterContainer/Stats_container/Medals" instance=ExtResource( 10 )]
+margin_top = 17.0
+margin_right = 275.0
+margin_bottom = 208.0
+
+[node name="Chest" type="CenterContainer" parent="GridContainer/MarginContainer/CenterContainer/Stats_container"]
+margin_left = 588.0
+margin_right = 863.0
+margin_bottom = 225.0
+rect_min_size = Vector2( 255, 215 )
+
+[node name="Panel" parent="GridContainer/MarginContainer/CenterContainer/Stats_container/Chest" instance=ExtResource( 8 )]
+margin_top = 17.0
+margin_right = 275.0
+margin_bottom = 208.0
+
+[node name="CenterContainer" type="CenterContainer" parent="GridContainer"]
+margin_top = 278.0
+margin_right = 914.0
+margin_bottom = 503.0
+rect_min_size = Vector2( 914, 225 )
+
+[node name="Continue_button" parent="GridContainer/CenterContainer" instance=ExtResource( 9 )]
+margin_left = 309.0
+margin_top = 85.0
+margin_right = 604.0
+margin_bottom = 140.0

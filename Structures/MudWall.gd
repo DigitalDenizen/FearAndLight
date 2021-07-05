@@ -33,7 +33,6 @@ func _on_DefenseRange_body_entered(body):
 		attacked = true
 
 func _set_health(value):
-	#Test
 	var prev_health = health
 	health = clamp(value, 0, max_health)
 	if health != prev_health:
