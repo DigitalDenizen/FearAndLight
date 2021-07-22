@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Images/tilemap-mud-wall-idle.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/Fore_Ground.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Structures/MudWall.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Images/tile-mud.png" type="Texture" id=15]
+[ext_resource path="res://UI/Victory/Victory_Stats.tscn" type="PackedScene" id=16]
 
 [sub_resource type="TileSet" id=1]
 0/name = "mud"
@@ -142,8 +143,6 @@ points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
 [node name="Main" type="Node2D"]
 script = ExtResource( 8 )
 
-[node name="Score" parent="." instance=ExtResource( 4 )]
-
 [node name="Mob_Spawn" parent="." instance=ExtResource( 7 )]
 position = Vector2( 369.643, 194.889 )
 spawn_num = 10
@@ -190,6 +189,7 @@ collision_layer = 10
 collision_mask = 13
 
 [node name="MudWall" parent="Buildings" instance=ExtResource( 14 )]
+visible = false
 position = Vector2( 44.8503, 208.581 )
 
 [node name="Ground" type="TileMap" parent="." groups=[
@@ -213,3 +213,9 @@ occluder_light_mask = 2
 format = 1
 
 [node name="PathFinding" parent="." instance=ExtResource( 12 )]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Victory_Stats_popup" parent="UI" instance=ExtResource( 16 )]
+
+[node name="Score" parent="UI" instance=ExtResource( 4 )]

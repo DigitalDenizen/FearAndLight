@@ -12,7 +12,7 @@
 [ext_resource path="res://UI/Victory/Medal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://UI/Victory/Victory_Stats.gd" type="Script" id=11]
 
-[sub_resource type="Theme" id=3]
+[sub_resource type="Theme" id=1]
 default_font = ExtResource( 2 )
 
 [sub_resource type="StyleBoxTexture" id=2]
@@ -21,7 +21,6 @@ normal_map = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 451, 247 )
 
 [node name="Victory_Stats_popup" type="WindowDialog"]
-visible = true
 anchor_right = 1.026
 anchor_bottom = 1.0
 margin_left = -0.94397
@@ -29,7 +28,7 @@ margin_top = 3.83163
 margin_right = -0.567993
 margin_bottom = -0.168335
 rect_min_size = Vector2( 701, 288 )
-theme = SubResource( 3 )
+theme = SubResource( 1 )
 custom_icons/close_highlight = ExtResource( 1 )
 custom_icons/close = ExtResource( 1 )
 custom_styles/panel = SubResource( 2 )
