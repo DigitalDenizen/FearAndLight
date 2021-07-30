@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui-build-res-mud-clumps-lg.png-e116014dac48ed5976bb9aaa4b639ba4.stex"
+path="res://.import/ui-build-button-info-active.png-db3ecfb2528bfa111f3a76b404346a0e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/build/ui-build-res-mud-clumps-lg.png"
-dest_files=[ "res://.import/ui-build-res-mud-clumps-lg.png-e116014dac48ed5976bb9aaa4b639ba4.stex" ]
+source_file="res://UI/build/ui-build-button-info-active.png"
+dest_files=[ "res://.import/ui-build-button-info-active.png-db3ecfb2528bfa111f3a76b404346a0e.stex" ]
 
 [params]
 

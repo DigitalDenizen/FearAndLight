@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://UI/placement.gd" type="Script" id=1]
-[ext_resource path="res://UI/build-menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/build/build scenes and scripts/placement.gd" type="Script" id=1]
+[ext_resource path="res://UI/build/build scenes and scripts/build-menu.tscn" type="PackedScene" id=2]
+
 
 [node name="TileMap" type="TileMap"]
 position = Vector2( 0, 1 )

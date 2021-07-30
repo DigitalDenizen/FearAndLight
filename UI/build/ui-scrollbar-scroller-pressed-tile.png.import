@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui-build-res-mud-clumps-lg.png-e116014dac48ed5976bb9aaa4b639ba4.stex"
+path="res://.import/ui-scrollbar-scroller-pressed-tile.png-7a57667d93f812bab76730dd5998f50e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/build/ui-build-res-mud-clumps-lg.png"
-dest_files=[ "res://.import/ui-build-res-mud-clumps-lg.png-e116014dac48ed5976bb9aaa4b639ba4.stex" ]
+source_file="res://UI/build/ui-scrollbar-scroller-pressed-tile.png"
+dest_files=[ "res://.import/ui-scrollbar-scroller-pressed-tile.png-7a57667d93f812bab76730dd5998f50e.stex" ]
 
 [params]
 
