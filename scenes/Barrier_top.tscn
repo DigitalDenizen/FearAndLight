@@ -15,9 +15,13 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
+"CollisionBox",
+]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=[
+"CollisionBox",
+]]
 position = Vector2( 32.0605, 31.6973 )
 scale = Vector2( -0.974377, -2.26766 )
 shape = SubResource( 1 )

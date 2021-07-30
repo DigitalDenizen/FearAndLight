@@ -1,6 +1,8 @@
 extends KinematicBody2D
 	
-const MOVE_SPEED = 150
+const MOVE_SPEED = 100
+const ACCELERATION = 100
+const FRICTION = 100
 signal shoot(fireball, mouse_pos, player_pos)
 signal melee(melee, mouse_pos, player_pos)
 signal health_updated(health)
@@ -12,6 +14,9 @@ var alive = true
 var attacking = false
 var deathCountdown = 0
 var attackCountdown = 0
+var statusEffect = false
+var statusEffectCountDown
+var statusCooldown
 
 var FireBall = preload("res://Characters/Combat/FireBall.tscn")
 var Melee = preload("res://Characters/Combat/Melee.tscn")
@@ -25,7 +30,7 @@ func _ready():
 	
 func _physics_process(delta):
 	move_vec = Vector2()
-	_player_movement()
+	_player_movement(delta)
 	move_and_collide(move_vec * MOVE_SPEED * delta)
 
 func kill():
@@ -49,6 +54,7 @@ func _on_Player_shoot(FireBall, mouse_pos, player_pos):
 		facing == "Left"
 	_set_attack(30)
 	var fire = FireBall.instance()
+	fire.attacker = "Player"
 	add_child(fire)
 	fire.shoot(mouse_pos, player_pos)
 	
@@ -66,31 +72,31 @@ func _on_Player_melee(Melee, mouse_pos, player_pos):
 	add_child(punch)
 	punch.shoot(mouse_pos, player_pos)
 	
-func _player_movement():
+func _player_movement(delta):
 	if alive && not attacking:
-		if Input.is_action_pressed("move_up"):
-			var animate = "Walk" if facing == "Right" else "Walk-Left"
-			$AnimatedSprite.play("walk")
-			move_vec.y -= 1
-		if Input.is_action_pressed("move_down"):
-			var animate = "Walk" if facing == "Right" else "Walk-Left"
-			$AnimatedSprite.play("walk")
-			move_vec.y += 1
-		if Input.is_action_pressed("move_left"):
-			facing = "Left"
-			$AnimatedSprite.play("walk")
-			$AnimatedSprite.flip_h = true
-			move_vec.x -= 1
-		if Input.is_action_pressed("move_right"):
-			facing = "Right"
-			$AnimatedSprite.play("walk")
-			$AnimatedSprite.flip_h = false
-			move_vec.x += 1
-		if move_vec.x == 0 && move_vec.y == 0 && facing == "Right":
-			$AnimatedSprite.play("idle")
-		if move_vec.x == 0 && move_vec.y == 0 && facing == "Left":
-			$AnimatedSprite.play("idle")
-			$AnimatedSprite.flip_h = true
+		var input_vector = Vector2.ZERO
+		input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+		input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+		input_vector = input_vector.normalized()
+		
+		if input_vector != Vector2.ZERO:
+			if input_vector.x > 0:
+				facing = "Right"
+				$AnimatedSprite.play("walk")
+				$AnimatedSprite.flip_h = false
+			else:
+				facing = "Left"
+				$AnimatedSprite.play("walk")
+				$AnimatedSprite.flip_h = true
+			move_vec = move_vec.move_toward(input_vector * MOVE_SPEED, ACCELERATION * delta)
+		else:
+			if facing == "Right":
+				$AnimatedSprite.play("idle")
+				$AnimatedSprite.flip_h = false
+			else:
+				$AnimatedSprite.play("idle")
+				$AnimatedSprite.flip_h = true
+			move_vec = move_vec.move_toward(Vector2.ZERO, FRICTION * delta)
 	else:
 		if not alive:
 			if deathCountdown == 0:
@@ -102,11 +108,20 @@ func _player_movement():
 			if attackCountdown <= 0:
 				attacking = false
 
-func hurt(damage):
+func hurt(damage: int, type: String = ""):
 	_set_health(health - damage)
+	if type == "web":
+		statusEffect = true
+		statusEffectCountDown = 75
+
 	
 func heal(healing):
 	_set_health(health + healing)
+	
+func stuck(hold):
+	statusEffect = true
+	if statusEffect == true:
+		MOVE_SPEED - hold
 
 func _set_health(value):
 	var prev_health = health

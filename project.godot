@@ -8,9 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "PathFinding",
+"language": "GDScript",
+"path": "res://Shared/PathFinding.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Zombie",
+"language": "GDScript",
+"path": "res://Characters/Zombie.gd"
+} ]
 _global_script_class_icons={
-
+"PathFinding": "",
+"Zombie": ""
 }
 
 [application]
@@ -23,7 +34,9 @@ config/icon="res://icon.png"
 
 Movement_Logic="*res://Physics/Movement_Logic.gd"
 Score="*res://UI/Score.gd"
+Util="*res://Shared/Util.gd"
 Constants="*res://constants/constants.gd"
+Nav="*res://Shared/PathFinding.gd"
 
 [display]
 
