@@ -6,7 +6,7 @@ func _ready():
 	
 func _process(delta):
 	if visible == true:
-		popup_centered_ratio(.55)
+		popup_centered_ratio(.85)
 
 func _on_Button_toggled(button_pressed):
 	if button_pressed == true:
