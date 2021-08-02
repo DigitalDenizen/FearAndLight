@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-ice-trans-left-trees-ground-wall.png-6c7bfb22c88fd0d74005571e7a3be60e.stex"
+path="res://.import/scene-layer-ice-trans-left-trees-ground-wall.png-d77edcc035ffd07282eb4eea49e6c380.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/ice-wall/ice-wall-main/scene-layer-ice-trans-left-trees-ground-wall.png"
-dest_files=[ "res://.import/scene-layer-ice-trans-left-trees-ground-wall.png-6c7bfb22c88fd0d74005571e7a3be60e.stex" ]
+source_file="res://Scenes/ice-wall/ice-wall-main/scene-layer-ice-trans-left-trees-ground-wall.png"
+dest_files=[ "res://.import/scene-layer-ice-trans-left-trees-ground-wall.png-d77edcc035ffd07282eb4eea49e6c380.stex" ]
 
 [params]
 
