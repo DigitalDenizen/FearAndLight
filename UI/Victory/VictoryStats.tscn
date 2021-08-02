@@ -10,7 +10,8 @@
 [ext_resource path="res://UI/Victory/Chest.tscn" type="PackedScene" id=8]
 [ext_resource path="res://UI/Victory/Continue_button.tscn" type="PackedScene" id=9]
 [ext_resource path="res://UI/Victory/Medal.tscn" type="PackedScene" id=10]
-[ext_resource path="res://UI/Victory/Victory_Stats.gd" type="Script" id=11]
+[ext_resource path="res://UI/Victory/VictoryStats.gd" type="Script" id=11]
+
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 2 )

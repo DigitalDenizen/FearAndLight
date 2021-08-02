@@ -1,13 +1,14 @@
 [gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://spirits/dog/spirit-dog-exit.png" type="Texture" id=1]
-[ext_resource path="res://UI/start screen/tile-brick.png" type="Texture" id=2]
+[ext_resource path="res://UI/StartScreen/tile-brick.png" type="Texture" id=2]
 [ext_resource path="res://spirits/dog/spirit-dog-talk.png" type="Texture" id=3]
 [ext_resource path="res://UI/ui-talk-bubble.png" type="Texture" id=4]
 [ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=5]
 [ext_resource path="res://UI/ui-talk-bubble-more.png" type="Texture" id=6]
 [ext_resource path="res://UI/intro.gd" type="Script" id=7]
 [ext_resource path="res://spirits/dog/spirit-dog-walk-float.png" type="Texture" id=8]
+
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )

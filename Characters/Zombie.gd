@@ -5,19 +5,20 @@ signal health_updated(health)
 signal melee(melee, player_pos, zombie_pos)
 signal killed()
 
-const MOVE_SPEED = 40
 export (float) var max_health = 100
+export (bool) var should_draw_path_line := true
+
+const MOVE_SPEED = 40
 enum STATES { IDLE, FOLLOW }
 onready var collision_shape = $CollisionShape2D
 onready var health = max_health setget _set_health
 onready var itemDrop_scene = preload("res://Characters/Item_Drops/Item_Drop.tscn")
 onready var path_line = $PathLine
-var Melee = preload("res://Characters/Combat/Melee.tscn")
-
-export (bool) var should_draw_path_line := true
+onready var Melee = preload("res://Characters/Combat/Melee.tscn")
 
 var pathFinding: PathFinding
-
+var spawner = {}
+var waveSpawn = false
 var player = null
 var path = []
 var _state = null
@@ -104,6 +105,8 @@ func _set_health(value):
 		emit_signal("health_updated", health)
 		if health <= 0:
 			Score._on_Zombie_killed()
+			if waveSpawn:
+				spawner.removeEnemy()
 			alive = false
 			deathCountdown = 30
 			$AnimatedSprite.play("Death")

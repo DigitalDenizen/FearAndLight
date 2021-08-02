@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Characters/UI/HealthBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/Spider/enemy-vampire-spider-idle (1).png" type="Texture" id=2]
-[ext_resource path="res://Characters/vampireSpider.gd" type="Script" id=3]
+[ext_resource path="res://Characters/VampireSpider.gd" type="Script" id=3]
 [ext_resource path="res://Images/Spider/enemy-vampire-spider-walk (1).png" type="Texture" id=4]
 [ext_resource path="res://Images/Spider/enemy-vampire-spider-attack-2 (1).png" type="Texture" id=5]
 [ext_resource path="res://Images/Spider/enemy-vampire-spider-attack (1).png" type="Texture" id=6]
@@ -127,7 +127,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="vampireSpider" type="KinematicBody2D" groups=[
+[node name="VampireSpider" type="KinematicBody2D" groups=[
 "Baddies",
 ]]
 position = Vector2( -3.34086, -10.0226 )

@@ -2,11 +2,11 @@ extends Node2D
 
 onready var ground = $Ground
 onready var pathFinding = $PathFinding
-onready var mobSpawner = $Mob_Spawn
+onready var mobSpawner = $MobSpawn
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pathFinding.create_navigation_map(ground)
+	pathFinding.createNavigationMap(ground)
 	
 	mobSpawner.initialize(pathFinding)

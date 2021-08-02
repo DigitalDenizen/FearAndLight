@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile-brick-3x.png-9532e4dbbcb2a0984c8b8c553cf56876.stex"
+path="res://.import/start-page.png-3db3a58a310f45deb1e989978a1bd9c7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/start screen/tile-brick-3x.png"
-dest_files=[ "res://.import/tile-brick-3x.png-9532e4dbbcb2a0984c8b8c553cf56876.stex" ]
+source_file="res://UI/StartScreen/start-page.png"
+dest_files=[ "res://.import/start-page.png-3db3a58a310f45deb1e989978a1bd9c7.stex" ]
 
 [params]
 
