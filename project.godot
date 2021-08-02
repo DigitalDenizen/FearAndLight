@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "MobSpawner",
+"language": "GDScript",
+"path": "res://Characters/Enemies/MobSpawner.gd"
+}, {
 "base": "Node2D",
 "class": "PathFinding",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://Characters/Zombie.gd"
 } ]
 _global_script_class_icons={
+"MobSpawner": "",
 "PathFinding": "",
 "Zombie": ""
 }
@@ -27,15 +33,15 @@ _global_script_class_icons={
 [application]
 
 config/name="FearAndLight"
-run/main_scene="res://Main_World.tscn"
+run/main_scene="res://MainWorld.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Movement_Logic="*res://Physics/Movement_Logic.gd"
+Movement_Logic="*res://Shared/Physics/MovementLogic.gd"
 Score="*res://UI/Score.gd"
-Constants="*res://constants/constants.gd"
 Util="*res://Shared/Util.gd"
+Constants="*res://constants/constants.gd"
 Nav="*res://Shared/PathFinding.gd"
 
 [display]
