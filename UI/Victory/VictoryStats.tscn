@@ -12,7 +12,6 @@
 [ext_resource path="res://UI/Victory/Medal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://UI/Victory/VictoryStats.gd" type="Script" id=11]
 
-
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 2 )
 

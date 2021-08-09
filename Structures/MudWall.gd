@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+signal defenseDestroyed()
 signal health_updated(health)
 signal killed()
 
@@ -48,6 +49,7 @@ func _set_health(value):
 			$AnimatedSprite.play('Health 25')
 			deathCountdown = 75
 		if health <= 0:
+			emit_signal("defenseDestroyed")
 			deathCountdown = 100
 			destroyed = true
 			$AnimatedSprite.play('Death')

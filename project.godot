@@ -38,7 +38,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Movement_Logic="*res://Shared/Physics/MovementLogic.gd"
+Movement_Logic="*res://Physics/Movement_Logic.gd"
 Score="*res://UI/Score.gd"
 Util="*res://Shared/Util.gd"
 Constants="*res://constants/constants.gd"

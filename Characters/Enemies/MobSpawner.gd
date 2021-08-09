@@ -1,7 +1,7 @@
 extends Node
 class_name MobSpawner
 
-signal victory()
+signal victory(enemies, heroes, defenses)
 
 export (float) var shape_x = 0.0
 export (float) var shape_y = 0.0
@@ -11,12 +11,15 @@ onready var zombie = load("res://Characters/Zombie.tscn")
 
 var pathFinding: PathFinding
 var waveSize = 0
+var enemiesKilled = 0
+var heroesKilled = 0
+var defensesDestroyed = 0
 
 func initialize(pathFinding: PathFinding):
 	self.pathFinding = pathFinding
-	_spawn(self)
+	spawn(self)
 
-func _spawn(mobSpawner):
+func spawn(mobSpawner):
 	var colShape = $Spawn_area
 	if shape_x != 0.0 && shape_y != 0.0:
 		colShape.shape.extents = Vector2(shape_x/2, shape_y/2)
@@ -40,5 +43,12 @@ func _spawn(mobSpawner):
 
 func removeEnemy():
 	waveSize = waveSize - 1
+	enemiesKilled = enemiesKilled + 1
 	if waveSize == 0:
-		emit_signal("victory")
+		emit_signal("victory", enemiesKilled, heroesKilled, defensesDestroyed)
+		
+func heroKilled():
+	heroesKilled = heroesKilled + 1
+
+func defenseDestroyed():
+	defensesDestroyed = defensesDestroyed + 1

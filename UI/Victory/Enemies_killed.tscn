@@ -63,15 +63,14 @@ margin_bottom = 56.0
 rect_min_size = Vector2( 199, 0 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/CenterContainer"]
-margin_top = 15.0
+margin_top = 16.0
 margin_right = 204.0
-margin_bottom = 39.0
+margin_bottom = 40.0
 rect_min_size = Vector2( 192, 24 )
 
 [node name="Label" type="Label" parent="Panel/HBoxContainer/CenterContainer/HBoxContainer"]
-margin_top = -1.0
 margin_right = 176.0
-margin_bottom = 23.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 176, 24 )
 text = "ENEMIES KILLED:"
 

@@ -165,7 +165,6 @@ drag_margin_bottom = 1.0
 script = ExtResource( 16 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Scene" type="Node2D" parent="."]
@@ -219,3 +218,4 @@ format = 1
 
 [node name="Score" parent="UI" instance=ExtResource( 3 )]
 [connection signal="victory" from="MobSpawn" to="UI/VictoryStatsPopup" method="waveSpawnVictory"]
+[connection signal="defenseDestroyed" from="Buildings/MudWall" to="MobSpawn" method="defenseDestroyed"]
