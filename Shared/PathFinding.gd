@@ -6,7 +6,7 @@ class_name PathFinding
 
 export (Color) var enabled_color
 export (Color) var disabled_color
-export (bool) var should_display_grid := true
+export (bool) var should_display_grid := false
 
 
 onready var grid = $Grid
@@ -122,7 +122,7 @@ func get_new_path(start: Vector2, end: Vector2):
 	
 	var path_map = astar.get_point_path(start_id, end_id)
 	
-	var path_world = []
+	var path_world:PoolVector2Array = []
 	for point in path_map:
 		var point_world = tileMap.map_to_world(point) + half_cell_size
 		path_world.append(point_world)

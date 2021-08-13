@@ -6,7 +6,7 @@ signal melee(melee, player_pos, zombie_pos)
 signal killed()
 
 export (float) var max_health = 100
-export (bool) var should_draw_path_line := true
+export (bool) var should_draw_path_line := false
 
 const MOVE_SPEED = 40
 enum STATES { IDLE, FOLLOW }
@@ -22,7 +22,7 @@ var waveSpawn = false
 var player = null
 var path = []
 var _state = null
-var wall = null
+var buildings = null
 var alive = true
 var not_attacking = true
 var attackCountDown = 0
@@ -35,7 +35,7 @@ var target_position = Vector2()
 
 func _ready():
 	player = Util.get_main_node().get_node("Player")
-	wall = Util.get_main_node().get_node("Buildings/MudWall")
+	buildings = Util.get_main_node().get_node("Buildings")
 	add_to_group("Baddies")
 	rng.randomize()
 	path_line.visible = should_draw_path_line
@@ -44,7 +44,21 @@ func _physics_process(delta):
 	if player == null:
 		return
 	if alive && not_attacking:
-		var path = pathFinding.get_new_path(global_position, player.global_position)
+		var pathHeroes:PoolVector2Array = pathFinding.get_new_path(global_position, player.global_position)
+		var buildingList = buildings.get_children()
+		if buildingList.size() > 0:
+			var pathBuildings:PoolVector2Array = prioritize_target(buildings)
+			
+			if pathHeroes.size() < 10:
+				path = pathHeroes
+			elif pathBuildings.size() < 5:
+				path = pathBuildings
+			else:
+				path = pathHeroes
+		else:
+			path = pathHeroes
+		
+		
 		var zomboidVector
 		if path.size() > 2:
 			zomboidVector = global_position.direction_to(path[1]) * MOVE_SPEED
@@ -155,3 +169,16 @@ func walk_animation(vector: Vector2):
 	else:
 		$AnimatedSprite.play("Walk")
 		$AnimatedSprite.flip_h = true
+
+func prioritize_target(buildings):
+	var target:PoolVector2Array
+	var count = 0
+	for building in buildings.get_children():
+		var currentPath:PoolVector2Array = pathFinding.get_new_path(global_position, building.global_position)
+		if currentPath.size() > 0:
+			if count == 0:
+				target = currentPath
+			
+			target = currentPath if currentPath.size() < target.size() else target
+		
+	return target
