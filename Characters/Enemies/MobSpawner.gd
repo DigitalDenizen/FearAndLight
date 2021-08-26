@@ -29,3 +29,4 @@ func _spawn():
 
 func _on_Pylon_beacon_activated():
 	print('beacon activated')
+

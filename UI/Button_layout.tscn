@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/Main_world_UI_layout.tscn" type="PackedScene" id=1]
+
+[node name="Button_layout" type="CanvasLayer"]
+
+[node name="UI_layout" parent="." instance=ExtResource( 1 )]
