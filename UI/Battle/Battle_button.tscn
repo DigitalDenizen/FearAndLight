@@ -65,4 +65,11 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="toggled" from="CenterContainer/Battle_Button " to="CenterContainer/Battle_Button " method="_on_Battle_Button__toggled"]
+
+[node name="WindowDialog" parent="Button" instance=ExtResource( 4 )]
+visible = false
+margin_top = 1.0
+margin_bottom = 548.0
+popup_exclusive = false
+script = ExtResource( 6 )
+[connection signal="toggled" from="Button" to="Button/WindowDialog" method="_on_Button_toggled"]

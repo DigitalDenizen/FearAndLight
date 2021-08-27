@@ -6,6 +6,7 @@ signal killed()
 export (float) var max_health = 100
 onready var collision_shape = $CollisionShape2D
 onready var health = max_health setget _set_health
+onready var collision_shape = $CollisionShape2D
 var destroyed = false
 var deathCountdown = 0
 var attacked = false
@@ -34,7 +35,6 @@ func _on_DefenseRange_body_entered(body):
 		attacked = true
 
 func _set_health(value):
-	#Test
 	var prev_health = health
 	health = clamp(value, 0, max_health)
 	if health != prev_health:

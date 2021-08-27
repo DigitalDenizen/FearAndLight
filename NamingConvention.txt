@@ -1,0 +1,3 @@
+all files, scene object, etc: CapitalCase
+
+everything in code: camelCase

@@ -2,7 +2,8 @@ extends PanelContainer
 signal battleStart()
 
 func _ready():
-	pass
+	
+	pass # Replace with function body.
 
 func _process(delta):
 	pass
