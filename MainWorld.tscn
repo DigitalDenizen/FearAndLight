@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://MainWorld.gd" type="Script" id=1]
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Images/tilemap-mud-wall-idle.png" type="Texture" id=14]
 [ext_resource path="res://Images/tile-mud.png" type="Texture" id=15]
+[ext_resource path="res://Audio/Music/village-song-1.wav" type="AudioStream" id=16]
 
 [sub_resource type="TileSet" id=1]
 0/name = "mud"
@@ -189,6 +190,11 @@ position = Vector2( -160.462, 230.039 )
 light_mask = 2
 position = Vector2( 54.4463, 196.577 )
 z_index = 5
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Buildings/MudHut"]
+stream = ExtResource( 16 )
+autoplay = true
+attenuation = 16.5642
 
 [node name="Ground" type="TileMap" parent="." groups=[
 "tileMap",
