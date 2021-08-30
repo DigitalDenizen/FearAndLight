@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://UI/Battle/Battle_button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/statsButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/chestButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/shopButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/settingsButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/itemBar.tscn" type="PackedScene" id=6]
+
+[node name="UI_layout" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 0.958
+margin_bottom = 0.199951
+rect_min_size = Vector2( 1024, 575 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.03
+margin_right = 5.0
+margin_bottom = 15.75
+rect_min_size = Vector2( 1029, 575 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer"]
+margin_right = 1029.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 1029, 100 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer"]
+margin_top = 104.0
+margin_right = 1029.0
+margin_bottom = 464.0
+rect_min_size = Vector2( 1029, 360 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer"]
+margin_top = 468.0
+margin_right = 1029.0
+margin_bottom = 623.0
+rect_min_size = Vector2( 1029, 150 )
+custom_constants/separation = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/HBoxContainer"]
+margin_right = 295.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 295, 145 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/HBoxContainer/MarginContainer"]
+margin_right = 295.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 275, 140 )
+custom_constants/separation = 15
+
+[node name="MarginContainer2" parent="GridContainer/HBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource( 1 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 105.0
+margin_bottom = 155.0
+
+[node name="chestButton" parent="GridContainer/HBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 120.0
+margin_right = 195.0
+margin_bottom = 155.0
+
+[node name="statsButton" parent="GridContainer/HBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource( 2 )]
+margin_left = 210.0
+margin_right = 285.0
+margin_bottom = 155.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="GridContainer/HBoxContainer"]
+margin_left = 296.0
+margin_right = 721.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 425, 140 )
+
+[node name="MarginContainer" parent="GridContainer/HBoxContainer/MarginContainer2" instance=ExtResource( 6 )]
+margin_right = 425.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 425, 55 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="GridContainer/HBoxContainer"]
+margin_left = 722.0
+margin_right = 1017.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 295, 130 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/HBoxContainer/MarginContainer3"]
+margin_right = 295.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 87, 155 )
+custom_constants/separation = 19
+
+[node name="settingsButton" parent="GridContainer/HBoxContainer/MarginContainer3/HBoxContainer" instance=ExtResource( 5 )]
+margin_bottom = 155.0
+
+[node name="shopButton" parent="GridContainer/HBoxContainer/MarginContainer3/HBoxContainer" instance=ExtResource( 4 )]
+margin_left = 94.0
+margin_right = 169.0
+margin_bottom = 155.0
+
+[node name="MarginContainer" parent="GridContainer/HBoxContainer/MarginContainer3/HBoxContainer" instance=ExtResource( 1 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 188.0
+margin_top = 0.0
+margin_right = 293.0
+margin_bottom = 155.0

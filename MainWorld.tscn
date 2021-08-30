@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://MainWorld.gd" type="Script" id=1]
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Images/tilemap-mud-wall-idle.png" type="Texture" id=14]
 [ext_resource path="res://Images/tile-mud.png" type="Texture" id=15]
+
 
 [sub_resource type="TileSet" id=1]
 0/name = "mud"
@@ -165,6 +166,8 @@ smoothing_enabled = true
 drag_margin_bottom = 1.0
 script = ExtResource( 2 )
 
+
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color( 0, 0, 0, 1 )
@@ -210,4 +213,5 @@ collision_mask = 13
 occluder_light_mask = 2
 format = 1
 
-[node name="PathFinding" parent="." instance=ExtResource( 5 )]
+[node name="PathFinding" parent="." instance=ExtResource( 12 )]
+visible = false

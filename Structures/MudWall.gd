@@ -4,6 +4,7 @@ signal health_updated(health)
 signal killed()
 
 export (float) var max_health = 100
+onready var collision_shape = $CollisionShape2D
 onready var health = max_health setget _set_health
 onready var collision_shape = $CollisionShape2D
 var destroyed = false
