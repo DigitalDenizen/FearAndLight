@@ -43,7 +43,7 @@ func _physics_process(delta):
 		var vec_to_player = vec_not_norm.normalized()
 		var collison = move_and_collide(vec_to_player * MOVE_SPEED * delta)
 		
-		velocity = Movement_Logic._follow(velocity, global_position, player.global_position, MOVE_SPEED)
+		velocity = Physics._follow(velocity, global_position, player.global_position, MOVE_SPEED)
 		move_and_slide(velocity)
 		if vec_not_norm.x > 0:
 			$AnimatedSprite.flip_h = true
