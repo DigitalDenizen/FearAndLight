@@ -176,14 +176,10 @@ position = Vector2( -2.05194, 0.943878 )
 [node name="Buildings" type="Node2D" parent="."]
 
 [node name="MudHut" parent="Buildings" instance=ExtResource( 9 )]
-light_mask = 2
-position = Vector2( 54.4463, 196.577 )
-z_index = 5
-collision_layer = 10
-collision_mask = 13
+position = Vector2( -32.143, 175.841 )
 
 [node name="MudWall" parent="Buildings" instance=ExtResource( 13 )]
-position = Vector2( 156.071, 203.02 )
+position = Vector2( -267.228, 232.564 )
 
 [node name="Ground" type="TileMap" parent="." groups=[
 "tileMap",
@@ -215,5 +211,4 @@ pause_mode = 2
 [node name="Score" parent="UI" instance=ExtResource( 3 )]
 pause_mode = 2
 [connection signal="victory" from="MobSpawn" to="UI/VictoryStatsPopup" method="waveSpawnVictory"]
-[connection signal="defenseDestroyed" from="Buildings/MudWall" to="MobSpawn" method="defenseDestroyed"]
 [connection signal="hide" from="UI/VictoryStatsPopup" to="UI/VictoryStatsPopup" method="closeWindow"]

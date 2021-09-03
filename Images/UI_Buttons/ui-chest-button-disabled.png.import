@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui-announcement-enemies-are-coming.png-3077c68aa90a09c71a1c0914dd23b3a5.stex"
+path="res://.import/ui-chest-button-disabled.png-919e2a18a324855e7a758400f8b514a6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Battle_UI/ui-announcement-enemies-are-coming.png"
-dest_files=[ "res://.import/ui-announcement-enemies-are-coming.png-3077c68aa90a09c71a1c0914dd23b3a5.stex" ]
+source_file="res://Images/UI_Buttons/ui-chest-button-disabled.png"
+dest_files=[ "res://.import/ui-chest-button-disabled.png-919e2a18a324855e7a758400f8b514a6.stex" ]
 
 [params]
 

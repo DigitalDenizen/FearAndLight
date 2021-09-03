@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Images/Battle_UI/ui-battle-three-panel-window.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Images/Battle_UI/ui-battle-star-active.png" type="Texture" id=11]
 [ext_resource path="res://Images/Battle_UI/ui-battle-star-inactive.png" type="Texture" id=12]
 [ext_resource path="res://UI/Battle/Battle_Panel.gd" type="Script" id=13]
+[ext_resource path="res://UI/Battle/Start_Battle.gd" type="Script" id=14]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 1 )
@@ -27,22 +28,26 @@ region_rect = Rect2( 0, 0, 397, 163 )
 default_font = ExtResource( 1 )
 
 [sub_resource type="StyleBoxTexture" id=5]
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 86, 21 )
-
-[sub_resource type="StyleBoxTexture" id=6]
-texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 86, 21 )
-
-[sub_resource type="StyleBoxTexture" id=7]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 86, 21 )
 
-[sub_resource type="Theme" id=8]
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 86, 21 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 86, 21 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 86, 21 )
 
 [sub_resource type="Theme" id=9]
 
-[sub_resource type="StyleBoxTexture" id=10]
+[sub_resource type="Theme" id=10]
+
+[sub_resource type="StyleBoxTexture" id=11]
 content_margin_left = 0.0
 content_margin_right = 0.0
 
@@ -131,7 +136,7 @@ margin_top = 3.0
 margin_right = 217.0
 margin_bottom = 27.0
 custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
-text = "DIFFICULTY RATING: "
+text = "DIFFCULTY RATING:"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -239,7 +244,7 @@ margin_bottom = 24.0
 margin_right = 125.0
 margin_bottom = 24.0
 custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
-text = "DIRECTION: "
+text = "DIRECTION:"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -391,12 +396,14 @@ margin_bottom = 47.0
 rect_min_size = Vector2( 165, 40 )
 focus_mode = 0
 theme = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
 toggle_mode = true
+shortcut_in_tooltip = false
 text = "START BATTLE!"
-expand_icon = true
+script = ExtResource( 14 )
 
 [node name="Spoils_Of_war" type="VBoxContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer"]
 margin_left = 663.0
@@ -443,7 +450,7 @@ margin_right = 326.0
 margin_bottom = 37.0
 rect_min_size = Vector2( 0, 15 )
 custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
-text = "IF VICTORIOUS YOU WIL GET"
+text = "IF VICTORIOUS "
 
 [node name="MarginContainer2" type="MarginContainer" parent="Battle_Panel/GridContainer/MarginContainer/HBoxContainer/Spoils_Of_war"]
 margin_top = 123.0
@@ -481,8 +488,8 @@ margin_left = 19.0
 margin_right = 72.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 35, 12 )
-theme = SubResource( 9 )
-custom_styles/normal = SubResource( 10 )
+theme = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
 custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
 text = "x 200"
 align = 2
@@ -507,8 +514,8 @@ margin_left = 19.0
 margin_right = 60.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 27, 12 )
-theme = SubResource( 9 )
-custom_styles/normal = SubResource( 10 )
+theme = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
 custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
 text = "x 50"
 align = 2
@@ -533,8 +540,8 @@ margin_left = 24.0
 margin_right = 53.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 19, 12 )
-theme = SubResource( 9 )
-custom_styles/normal = SubResource( 10 )
+theme = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
 custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
 text = "x 5"
 align = 2
