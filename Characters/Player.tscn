@@ -10,11 +10,10 @@
 [ext_resource path="res://Images/light.png" type="Texture" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 9.43102
-height = 11.7195
+radius = 6.0
+height = 4.0
 
 [sub_resource type="CanvasItemMaterial" id=2]
-blend_mode = 1
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 4 )
@@ -136,34 +135,35 @@ animations = [ {
 "Player",
 ]]
 position = Vector2( 0.358475, -0.859184 )
+z_index = 10
 collision_layer = 10
 collision_mask = 13
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 1, -2 )
+position = Vector2( 0.189407, 0.346832 )
+rotation = -1.5708
 shape = SubResource( 1 )
 
 [node name="HealthBar" parent="." instance=ExtResource( 2 )]
-margin_left = -13.2704
-margin_top = -26.2083
-margin_right = 26.7296
-margin_bottom = 13.7917
+margin_left = -14.7225
+margin_top = -33.7206
+margin_right = 25.2775
+margin_bottom = 6.27937
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = SubResource( 2 )
-position = Vector2( 2, -2 )
+position = Vector2( 0.547882, -9.51234 )
 frames = SubResource( 25 )
 animation = "walk"
 
 [node name="Light2D" type="Light2D" parent="."]
 light_mask = 7
-position = Vector2( 2.09364, -27.6285 )
+position = Vector2( 0.641525, -35.1408 )
+z_index = 10
 texture = ExtResource( 8 )
+energy = 0.28
+
 [connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
 [connection signal="melee" from="." to="." method="_on_Player_melee"]
 [connection signal="shoot" from="." to="." method="_on_Player_shoot"]
