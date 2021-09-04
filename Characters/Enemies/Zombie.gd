@@ -12,7 +12,7 @@ const MOVE_SPEED = 40
 enum STATES { IDLE, FOLLOW }
 onready var collision_shape = $CollisionShape2D
 onready var health = max_health setget _set_health
-onready var itemDrop_scene = preload("res://Characters/Item_Drops/Item_Drop.tscn")
+onready var itemDrop_scene = preload("res://Characters/ItemDrops/Item_Drop.tscn")
 onready var path_line = $PathLine
 var Melee = preload("res://Characters/Combat/Melee.tscn")
 

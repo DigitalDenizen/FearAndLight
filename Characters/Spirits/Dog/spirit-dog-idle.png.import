@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/structure-mud-pylon-active.png-7e0c26f3f9dc4f9b018d5fd672d6ad83.stex"
+path="res://.import/spirit-dog-idle.png-6dd6ba797efc15bb6308c656ea6919c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Structures/mud pylon/structure-mud-pylon-active.png"
-dest_files=[ "res://.import/structure-mud-pylon-active.png-7e0c26f3f9dc4f9b018d5fd672d6ad83.stex" ]
+source_file="res://Characters/Spirits/Dog/spirit-dog-idle.png"
+dest_files=[ "res://.import/spirit-dog-idle.png-6dd6ba797efc15bb6308c656ea6919c3.stex" ]
 
 [params]
 
