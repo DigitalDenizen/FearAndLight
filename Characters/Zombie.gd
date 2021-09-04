@@ -14,7 +14,7 @@ onready var itemDrop_scene = preload("res://Characters/Item_Drops/Item_Drop.tscn
 onready var path_line = $PathLine
 var Melee = preload("res://Characters/Combat/Melee.tscn")
 
-export (bool) var should_draw_path_line := true
+export (bool) var should_draw_path_line := false
 
 var pathFinding: PathFinding
 

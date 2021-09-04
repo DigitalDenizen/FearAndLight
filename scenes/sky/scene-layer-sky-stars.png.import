@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-sky-stars.png-b9903191bb187bc8b69b36ce7afc652c.stex"
+path="res://.import/scene-layer-sky-stars.png-65348a1ffca71b05923409020e8642dd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/sky/scene-layer-sky-stars.png"
-dest_files=[ "res://.import/scene-layer-sky-stars.png-b9903191bb187bc8b69b36ce7afc652c.stex" ]
+source_file="res://scenes/sky/scene-layer-sky-stars.png"
+dest_files=[ "res://.import/scene-layer-sky-stars.png-65348a1ffca71b05923409020e8642dd.stex" ]
 
 [params]
 
