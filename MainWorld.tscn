@@ -1,24 +1,27 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://Images/tile-mud.png" type="Texture" id=2]
 [ext_resource path="res://UI/Score.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/Victory/VictoryStats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Characters/Enemies/Mob_Spawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Fore_Ground.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/Ice_Wall_Below.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Structures/MudHut.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Shared/PathFinding.tscn" type="PackedScene" id=10]
 [ext_resource path="res://objects/Ice_Wall_Main.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Structures/MudWall.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/Barrier_top.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Barrier_top.tscn" type="PackedScene" id=14]
 [ext_resource path="res://MainWorld.gd" type="Script" id=15]
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Images/tile-mud.png" type="Texture" id=19]
+[ext_resource path="res://Audio/Music/Menu/F&L_main-title-loop-v3.wav" type="AudioStream" id=20]
+[ext_resource path="res://Audio/Music/Village/woods.wav" type="AudioStream" id=21]
+[ext_resource path="res://scenes/structures/structure-mud-pylon-idle-single-frame.tscn" type="PackedScene" id=22]
 
 [sub_resource type="TileSet" id=1]
 0/name = "mud"
-0/texture = ExtResource( 2 )
+0/texture = ExtResource( 19 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 30, 30 )
@@ -135,12 +138,12 @@ points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
 } ]
 3/z_index = 0
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="YSort"]
 script = ExtResource( 15 )
 
 [node name="MobSpawn" parent="." instance=ExtResource( 5 )]
 position = Vector2( 369.643, 194.889 )
-spawn_num = 10
+spawn_num = 1
 
 [node name="BarrierTop" parent="." instance=ExtResource( 14 )]
 visible = false
@@ -148,7 +151,8 @@ position = Vector2( -2921.69, 56.5692 )
 
 [node name="Player" parent="." instance=ExtResource( 12 )]
 position = Vector2( -124.893, 150.631 )
-z_index = 3
+z_index = 1
+z_as_relative = false
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 4.24744, -30.6759 )
@@ -171,15 +175,31 @@ position = Vector2( -2.05194, 0.943878 )
 
 [node name="Ice_Wall_below" parent="Scene" instance=ExtResource( 7 )]
 
-[node name="ParallaxBackground" parent="Scene" instance=ExtResource( 8 )]
+[node name="ParallaxBackground" parent="Scene" instance=ExtResource( 17 )]
 
-[node name="Buildings" type="Node2D" parent="."]
+[node name="Buildings" type="YSort" parent="."]
+z_index = 1
 
 [node name="MudHut" parent="Buildings" instance=ExtResource( 9 )]
-position = Vector2( -32.143, 175.841 )
+light_mask = 2
+position = Vector2( 54.4463, 196.577 )
+z_index = 1
+z_as_relative = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Buildings/MudHut"]
+stream = ExtResource( 21 )
+volume_db = -9.132
+attenuation = 5.46416
 
 [node name="MudWall" parent="Buildings" instance=ExtResource( 13 )]
-position = Vector2( -267.228, 232.564 )
+position = Vector2( -207.298, 190.422 )
+z_index = 1
+z_as_relative = false
+
+[node name="structure-mud-pylon-idle-single-frame" parent="." instance=ExtResource( 22 )]
+position = Vector2( -154.44, 335 )
+z_index = 1
+z_as_relative = false
 
 [node name="Ground" type="TileMap" parent="." groups=[
 "tileMap",
@@ -210,5 +230,10 @@ pause_mode = 2
 
 [node name="Score" parent="UI" instance=ExtResource( 3 )]
 pause_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+volume_db = -14.712
+autoplay = true
 [connection signal="victory" from="MobSpawn" to="UI/VictoryStatsPopup" method="waveSpawnVictory"]
 [connection signal="hide" from="UI/VictoryStatsPopup" to="UI/VictoryStatsPopup" method="closeWindow"]

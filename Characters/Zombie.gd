@@ -14,7 +14,7 @@ onready var collision_shape = $CollisionShape2D
 onready var health = max_health setget _set_health
 onready var itemDrop_scene = preload("res://Characters/Item_Drops/Item_Drop.tscn")
 onready var path_line = $PathLine
-onready var Melee = preload("res://Characters/Combat/Melee.tscn")
+var Melee = preload("res://Characters/Combat/Melee.tscn")
 
 var pathFinding: PathFinding
 var spawner = {}

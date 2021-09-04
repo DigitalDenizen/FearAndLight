@@ -40,7 +40,7 @@ region = Rect2( 0, 0, 57, 40 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 4 )
-region = Rect2( 114, 0, 57, 42 )
+region = Rect2( 57, 0, 57, 42 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 4 )
@@ -60,11 +60,11 @@ region = Rect2( 399, 0, 57, 42 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 4 )
-region = Rect2( 171, 0, 57, 42 )
+region = Rect2( 114, 0, 57, 42 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 4 )
-region = Rect2( 57, 0, 57, 42 )
+region = Rect2( 171, 0, 57, 42 )
 
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
@@ -75,7 +75,7 @@ animations = [ {
 }, {
 "frames": [ SubResource( 9 ) ],
 "loop": true,
-"name": "Health 50",
+"name": "Health 75",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
@@ -85,17 +85,17 @@ animations = [ {
 }, {
 "frames": [ SubResource( 14 ) ],
 "loop": true,
-"name": "Health 25",
+"name": "Health 50",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 15 ) ],
 "loop": true,
-"name": "Health 75",
+"name": "Health 25",
 "speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=17]
-radius = 8.90231
+radius = 11.5214
 height = 32.0195
 
 [node name="MudHut" type="StaticBody2D" groups=[
@@ -114,21 +114,19 @@ margin_bottom = 48.0555
 rect_scale = Vector2( 0.9, 0.75 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -0.203911, 5.09768 )
-z_index = 8
+position = Vector2( 0.5, -9 )
 frames = SubResource( 16 )
 animation = "idle"
-frame = 1
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.203911, 13.619 )
 rotation = -1.5708
 shape = SubResource( 17 )
 
 [node name="Light2D" type="Light2D" parent="."]
-visible = false
-position = Vector2( 11.0767, 5.76283 )
-scale = Vector2( 0.342324, 0.354767 )
+position = Vector2( 0, -6 )
+scale = Vector2( 0.65, 0.25 )
+z_index = 1
 texture = ExtResource( 5 )
-energy = 0.69
+energy = 1.09
