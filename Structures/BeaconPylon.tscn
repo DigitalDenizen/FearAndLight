@@ -1,9 +1,9 @@
 [gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://structures/mud pylon/structure-mud-pylon-idle.png" type="Texture" id=1]
-[ext_resource path="res://structures/mud pylon/structure-mud-pylon-active.png" type="Texture" id=2]
-[ext_resource path="res://structures/mud pylon/structure-mud-pylon-attacked.png" type="Texture" id=3]
-[ext_resource path="res://structures/Beacon_Pylon.gd" type="Script" id=4]
+[ext_resource path="res://Structures/MudPylon/structure-mud-pylon-idle.png" type="Texture" id=1]
+[ext_resource path="res://Structures/MudPylon/structure-mud-pylon-active.png" type="Texture" id=2]
+[ext_resource path="res://Structures/MudPylon/structure-mud-pylon-attacked.png" type="Texture" id=3]
+[ext_resource path="res://Structures/BeaconPylon.gd" type="Script" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )

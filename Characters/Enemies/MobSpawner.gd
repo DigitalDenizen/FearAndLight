@@ -7,8 +7,6 @@ export (float) var shape_x = 0.0
 export (float) var shape_y = 0.0
 export (int) var spawn_num = 0
 
-onready var zombie = load("res://Characters/Zombie.tscn")
-
 var pathFinding: PathFinding
 var waveSize = 0
 var enemiesKilled = 0
@@ -28,7 +26,7 @@ func spawn(mobSpawner):
 	waveSize = spawn_num
 	var center = colShape.position
 	var size = colShape.shape.extents
-	var enemyscene = zombie
+	var enemyscene = load("res://Characters/Enemies/Zombie.tscn")
 	var screen_size = get_viewport().get_visible_rect().size
 	for i in range(0,spawn_num):
 		var enemy = enemyscene.instance()

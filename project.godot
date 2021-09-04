@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Zombie",
 "language": "GDScript",
-"path": "res://Characters/Zombie.gd"
+"path": "res://Characters/Enemies/Zombie.gd"
 } ]
 _global_script_class_icons={
 "MobSpawner": "",

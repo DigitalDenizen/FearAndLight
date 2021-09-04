@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spirit-dog-lantern.png-40aa6d458aac7244964b3994e2c19f65.stex"
+path="res://.import/structure-mud-pylon-active.png-0c92f216eff1ff4032a2432d2a50d179.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spirits/dog/spirit-dog-lantern.png"
-dest_files=[ "res://.import/spirit-dog-lantern.png-40aa6d458aac7244964b3994e2c19f65.stex" ]
+source_file="res://Structures/MudPylon/structure-mud-pylon-active.png"
+dest_files=[ "res://.import/structure-mud-pylon-active.png-0c92f216eff1ff4032a2432d2a50d179.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

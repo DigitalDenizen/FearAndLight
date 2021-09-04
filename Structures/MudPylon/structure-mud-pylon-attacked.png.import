@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spirit-dog-talk.png-6fd3db9e4adef0476acd03ae762e50df.stex"
+path="res://.import/structure-mud-pylon-attacked.png-10b0dcde601510885ce2cc72af8222c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spirits/dog/spirit-dog-talk.png"
-dest_files=[ "res://.import/spirit-dog-talk.png-6fd3db9e4adef0476acd03ae762e50df.stex" ]
+source_file="res://Structures/MudPylon/structure-mud-pylon-attacked.png"
+dest_files=[ "res://.import/structure-mud-pylon-attacked.png-10b0dcde601510885ce2cc72af8222c9.stex" ]
 
 [params]
 
