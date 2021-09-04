@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/logo-fear-light-3x.png-62af3423d207c99c47fbdd4cbe49bc2e.stex"
+path="res://.import/glow.png-b5aa8ee8b50bb25b73dbf3dd48979eab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/start screen/logo-fear-light-3x.png"
-dest_files=[ "res://.import/logo-fear-light-3x.png-62af3423d207c99c47fbdd4cbe49bc2e.stex" ]
+source_file="res://UI/StartScreen/glow.png"
+dest_files=[ "res://.import/glow.png-b5aa8ee8b50bb25b73dbf3dd48979eab.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

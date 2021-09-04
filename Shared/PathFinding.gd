@@ -6,7 +6,7 @@ class_name PathFinding
 
 export (Color) var enabled_color
 export (Color) var disabled_color
-export (bool) var should_display_grid := true
+export (bool) var should_display_grid := false
 
 
 onready var grid = $Grid
@@ -24,7 +24,7 @@ var _point_path = []
 func _physics_process(delta: float) -> void:
 	update_navigation_map()
 
-func create_navigation_map(tileMap: TileMap):
+func createNavigationMap(tileMap: TileMap):
 	self.tileMap = tileMap
 	
 	half_cell_size = tileMap.cell_size / 2

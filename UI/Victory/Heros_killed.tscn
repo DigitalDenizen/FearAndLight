@@ -74,7 +74,7 @@ text = "HEROES KILLED: "
 
 [node name="Label2" type="Label" parent="Heros_Killed/HBoxContainer/CenterContainer/HBoxContainer"]
 margin_left = 167.0
-margin_top = 17.0
-margin_right = 179.0
-margin_bottom = 41.0
+margin_top = 25.0
+margin_right = 171.0
+margin_bottom = 33.0
 text = "5"

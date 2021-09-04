@@ -53,10 +53,10 @@ func _physics_process(delta):
 			$AnimatedSprite.play("walk")
 		
 		if abs(vec_not_norm.x) <= 35 && abs(vec_not_norm.y) <= 35: 
-			_on_vampireSpider_melee(Melee, player.global_position, global_position)
+			onVampireSpiderMelee(Melee, player.global_position, global_position)
 	
 		elif abs(vec_not_norm.x) > 55 && abs(vec_not_norm.y) > 55:
-			_on_vampireSpider_shoot(Web, player.global_position, global_position)
+			onVampireSpiderShoot(Web, player.global_position, global_position)
 		
 		var _look_vec = get_global_mouse_position() - global_position
 	else:
@@ -86,13 +86,13 @@ func _set_health(value):
 		emit_signal("health_updated", health)
 		if health <= 0:
 			deathCountdown = 15
-			Score._on_vampire_spider_killed()
+			Score.onVampireSpiderKilled()
 			alive = false
 			$AnimatedSprite.play("death")
 
-func _on_vampireSpider_melee(Melee, player_pos, vampireSpider_pos):
+func onVampireSpiderMelee(Melee, playerPos, vampireSpiderPos):
 	not_attacking = false
-	var player_direction = player_pos - vampireSpider_pos
+	var player_direction = playerPos - vampireSpiderPos
 	if player_direction.x > 0:
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("melee")
@@ -103,7 +103,7 @@ func _on_vampireSpider_melee(Melee, player_pos, vampireSpider_pos):
 	var scratch = Melee.instance()
 	scratch.attacker = "vampireSpider"
 	add_child(scratch)
-	scratch.shoot(player_pos, vampireSpider_pos)
+	scratch.shoot(playerPos, vampireSpiderPos)
 
 func _on_vampireSpider_killed():
 	if rng.randf() <= 0.8:
@@ -112,9 +112,9 @@ func _on_vampireSpider_killed():
 		get_tree().get_root().add_child(itemDrop)
 		itemDrop.global_position = global_position
 
-func _on_vampireSpider_shoot(Web, player_pos, vampireSpider_pos):
+func onVampireSpiderShoot(Web, playerPos, vampireSpiderPos):
 	not_attacking = false
-	var player_direction = player_pos - vampireSpider_pos
+	var player_direction = playerPos - vampireSpiderPos
 	if player_direction.x > 0:
 		$AnimatedSprite.play("projectile")
 		$AnimatedSprite.flip_h = true
@@ -124,4 +124,4 @@ func _on_vampireSpider_shoot(Web, player_pos, vampireSpider_pos):
 	attackCountDown = 175
 	var web = Web.instance()
 	add_child(web)
-	web.shoot(player_pos, vampireSpider_pos)
+	web.shoot(playerPos, vampireSpiderPos)

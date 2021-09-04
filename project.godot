@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "MobSpawner",
+"language": "GDScript",
+"path": "res://Characters/Enemies/MobSpawner.gd"
+}, {
 "base": "Node2D",
 "class": "PathFinding",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://Characters/Zombie.gd"
 } ]
 _global_script_class_icons={
+"MobSpawner": "",
 "PathFinding": "",
 "Zombie": ""
 }
@@ -32,17 +38,16 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Movement_Logic="*res://Shared/Physics/MovementLogic.gd"
 Score="*res://UI/Score.gd"
 Util="*res://Shared/Util.gd"
-Constants="*res://constants/constants.gd"
 Nav="*res://Shared/PathFinding.gd"
 Physics="*res://Shared/Physics/MovementPhysics.gd"
+Constants="*res://Shared/Constants.gd"
 
 [display]
 
 window/size/width=640
-window/size/height=360
+window/size/height=480
 window/size/test_width=1280
 window/size/test_height=720
 window/stretch/mode="2d"
@@ -82,6 +87,6 @@ move_down={
 
 [rendering]
 
+environment/default_environment="res://default_env.tres"
 2d/options/use_nvidia_rect_flicker_workaround=true
 2d/snapping/use_gpu_pixel_snap=true
-environment/default_environment="res://default_env.tres"
