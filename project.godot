@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "Zombie",
 "language": "GDScript",
 "path": "res://Characters/Enemies/Zombie.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "direWolf",
+"language": "GDScript",
+"path": "res://Characters/Enemies/direWolf.gd"
 } ]
 _global_script_class_icons={
 "MobSpawner": "",
 "PathFinding": "",
-"Zombie": ""
+"Zombie": "",
+"direWolf": ""
 }
 
 [application]

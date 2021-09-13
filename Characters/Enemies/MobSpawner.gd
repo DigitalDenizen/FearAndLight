@@ -21,15 +21,14 @@ func spawn(mobSpawner):
 	var colShape = $Spawn_area
 	if shape_x != 0.0 && shape_y != 0.0:
 		colShape.shape.extents = Vector2(shape_x/2, shape_y/2)
-		
+
 	var rand = RandomNumberGenerator.new()
 	waveSize = spawn_num
 	var center = colShape.position
 	var size = colShape.shape.extents
-	var enemyscene = load("res://Characters/Enemies/Zombie.tscn")
 	var screen_size = get_viewport().get_visible_rect().size
 	for i in range(0,spawn_num):
-		var enemy = enemyscene.instance()
+		var enemy = enemyType()
 		enemy.spawner = mobSpawner
 		enemy.waveSpawn = true
 		enemy.max_health = 150
@@ -50,3 +49,19 @@ func heroKilled():
 
 func defenseDestroyed():
 	defensesDestroyed = defensesDestroyed + 1
+
+func enemyType():
+	var enemyScene 
+	var randn1 = RandomNumberGenerator.new()
+	randn1.randomize()
+	var num = randn1.randi_range(0,100)
+	#randomize()
+	if num >= 50:
+		print(num)
+		enemyScene = preload("res://Characters/Enemies/Zombie.tscn")
+		return enemyScene.instance() #returning and intacing enemy
+
+	else:
+		print(num)
+		enemyScene = preload("res://Characters/Enemies/direWolf.tscn")
+		return enemyScene.instance() #returning and intacing enemy
