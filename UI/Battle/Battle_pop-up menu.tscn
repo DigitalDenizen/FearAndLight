@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://UI/Battle/Battle_Tabs.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Battle/Battle_pop-up menu.tscn" type="PackedScene" id=1]
+
 
 [sub_resource type="StyleBoxTexture" id=1]
 
