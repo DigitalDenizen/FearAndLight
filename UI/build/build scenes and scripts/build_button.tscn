@@ -14,22 +14,35 @@ region_rect = Rect2( 0, 0, 39, 40 )
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 39, 40 )
 
-[node name="build_button_container" type="CenterContainer"]
-margin_left = -0.396851
-margin_right = 38.6031
-margin_bottom = 40.0
-rect_min_size = Vector2( 39, 40 )
+[node name="MarginContainer" type="MarginContainer"]
+anchor_right = 0.152
+anchor_bottom = 0.202
+margin_left = 1.0
+margin_top = -1.0
+margin_right = -16.28
+margin_bottom = -26.96
+rect_min_size = Vector2( 65, 65 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="build_button" type="Button" parent="."]
-margin_right = 39.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 39, 40 )
+[node name="build_button_container" type="CenterContainer" parent="."]
+margin_right = 80.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 55, 55 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="build_button" type="Button" parent="build_button_container"]
+margin_left = 7.0
+margin_top = 3.0
+margin_right = 72.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 65, 65 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/disabled = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
 script = ExtResource( 3 )
-[connection signal="button_down" from="build_button" to="build_button" method="_on_build_button_button_down"]
-[connection signal="button_up" from="build_button" to="build_button" method="_on_build_button_button_up"]
+[connection signal="button_down" from="build_button_container/build_button" to="build_button_container/build_button" method="_on_build_button_button_down"]
+[connection signal="button_up" from="build_button_container/build_button" to="build_button_container/build_button" method="_on_build_button_button_up"]
