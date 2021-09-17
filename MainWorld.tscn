@@ -142,7 +142,7 @@ script = ExtResource( 15 )
 
 [node name="MobSpawn" parent="." instance=ExtResource( 5 )]
 position = Vector2( 369.643, 194.889 )
-spawn_num = 1
+spawn_num = 12
 
 [node name="BarrierTop" parent="." instance=ExtResource( 14 )]
 visible = false
@@ -230,6 +230,5 @@ pause_mode = 2
 stream = ExtResource( 20 )
 volume_db = -14.712
 autoplay = true
-
 [connection signal="victory" from="MobSpawn" to="UI/VictoryStatsPopup" method="waveSpawnVictory"]
 [connection signal="hide" from="UI/VictoryStatsPopup" to="UI/VictoryStatsPopup" method="closeWindow"]
