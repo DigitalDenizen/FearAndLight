@@ -1,7 +1,6 @@
 extends WindowDialog
 
 var startBattle
-onready var battleBanner_scene = preload("res://UI/Battle/Battle_Banner.tscn")
 
 func _process(delta):
 	if visible == true:
@@ -10,17 +9,10 @@ func _process(delta):
 
 func _on_Battle_popup_visibility_changed():
 	if visible == false:
-		hide()
-
-
-func battleBanner():
-	var battleBanner = battleBanner_scene.instance()
-	add_child(battleBanner)
-	battleBanner 
+		hide() 
 
 func _on_Battle_Panel_battleStart():
 	startBattle = true
 	print("startBattle")
 	if startBattle == true:
 		visible = false
-		battleBanner()
