@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/logo-fear-light-3x.png-fa9751ff6c7a70a69afbfcf96a9f93fa.stex"
+path="res://.import/object-weapon-rock-right.png-49f2faa2b14d8abf0bd83507c74793f1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Start Screen/logo-fear-light-3x.png"
-dest_files=[ "res://.import/logo-fear-light-3x.png-fa9751ff6c7a70a69afbfcf96a9f93fa.stex" ]
+source_file="res://Images/Objects/Weapons/Rock/object-weapon-rock-right.png"
+dest_files=[ "res://.import/object-weapon-rock-right.png-49f2faa2b14d8abf0bd83507c74793f1.stex" ]
 
 [params]
 
