@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Characters/Combat/FireBall.gd" type="Script" id=1]
+[ext_resource path="res://Images/light.png" type="Texture" id=2]
 [ext_resource path="res://Images/effect-poof-large.png" type="Texture" id=3]
 [ext_resource path="res://Images/object-fireball-right.png" type="Texture" id=5]
 [ext_resource path="res://Images/effect-poof-small.png" type="Texture" id=6]
@@ -52,5 +53,14 @@ rotation = 0.0261799
 frames = SubResource( 5 )
 animation = "Fire"
 flip_v = true
+
+[node name="Light2D" type="Light2D" parent="."]
+light_mask = 7
+position = Vector2( 0.463286, 1.07343 )
+scale = Vector2( 0.242899, 0.200614 )
+z_index = 10
+texture = ExtResource( 2 )
+color = Color( 1, 0.584314, 0.145098, 1 )
+
 [connection signal="body_entered" from="." to="." method="_body_entered"]
 [connection signal="body_exited" from="." to="." method="_FireBall_body_exited"]

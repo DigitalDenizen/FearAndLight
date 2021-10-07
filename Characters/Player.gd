@@ -57,6 +57,7 @@ func _on_Player_shoot(FireBall, mouse_pos, player_pos):
 	fire.attacker = "Player"
 	add_child(fire)
 	fire.shoot(mouse_pos, player_pos)
+	$SoundFireBall.play()
 	
 func _on_Player_melee(Melee, mouse_pos, player_pos):
 	var direction = mouse_pos - player_pos
@@ -79,20 +80,25 @@ func _player_movement(delta):
 		input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 		input_vector = input_vector.normalized()
 		
+		
 		if input_vector != Vector2.ZERO:
+			
 			if input_vector.x > 0:
 				facing = "Right"
 				$AnimatedSprite.play("walk")
 				$AnimatedSprite.flip_h = false
+				
 			else:
 				facing = "Left"
 				$AnimatedSprite.play("walk")
 				$AnimatedSprite.flip_h = true
 			move_vec = move_vec.move_toward(input_vector * MOVE_SPEED, ACCELERATION * delta)
 		else:
+			$SoundWalk.stop()
 			if facing == "Right":
 				$AnimatedSprite.play("idle")
 				$AnimatedSprite.flip_h = false
+
 			else:
 				$AnimatedSprite.play("idle")
 				$AnimatedSprite.flip_h = true
@@ -117,6 +123,7 @@ func hurt(damage: int, type: String = ""):
 	
 func heal(healing):
 	_set_health(health + healing)
+	$SoundHeal.play()
 	
 func stuck(hold):
 	statusEffect = true
