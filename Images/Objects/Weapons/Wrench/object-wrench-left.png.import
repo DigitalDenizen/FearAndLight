@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-rock-right.png-5f42768c5777455b227a098b5cbb7947.stex"
+path="res://.import/object-wrench-left.png-02877c4c1cfc89361e3ef27b8a6ce37f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Objects/Weapons/object-rock-right.png"
-dest_files=[ "res://.import/object-rock-right.png-5f42768c5777455b227a098b5cbb7947.stex" ]
+source_file="res://Images/Objects/Weapons/Wrench/object-wrench-left.png"
+dest_files=[ "res://.import/object-wrench-left.png-02877c4c1cfc89361e3ef27b8a6ce37f.stex" ]
 
 [params]
 

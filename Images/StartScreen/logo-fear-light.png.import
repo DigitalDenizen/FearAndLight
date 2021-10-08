@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-fireball-right.png-6889f4a13ab3a7a9c66e9a04d22c9886.stex"
+path="res://.import/logo-fear-light.png-686dedecb6ded19591f96efd360bef74.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Objects/Weapons/object-fireball-right.png"
-dest_files=[ "res://.import/object-fireball-right.png-6889f4a13ab3a7a9c66e9a04d22c9886.stex" ]
+source_file="res://Images/StartScreen/logo-fear-light.png"
+dest_files=[ "res://.import/logo-fear-light.png-686dedecb6ded19591f96efd360bef74.stex" ]
 
 [params]
 

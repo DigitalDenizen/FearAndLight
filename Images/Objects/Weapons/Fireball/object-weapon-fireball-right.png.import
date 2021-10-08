@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/btn-options-3x.png-ad02f93dc2ee844f9c880dc6a45e159b.stex"
+path="res://.import/object-weapon-fireball-right.png-bb7e2fb9c0b721a88c6638894f217ff5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Start Screen/btn-options-3x.png"
-dest_files=[ "res://.import/btn-options-3x.png-ad02f93dc2ee844f9c880dc6a45e159b.stex" ]
+source_file="res://Images/Objects/Weapons/Fireball/object-weapon-fireball-right.png"
+dest_files=[ "res://.import/object-weapon-fireball-right.png-bb7e2fb9c0b721a88c6638894f217ff5.stex" ]
 
 [params]
 

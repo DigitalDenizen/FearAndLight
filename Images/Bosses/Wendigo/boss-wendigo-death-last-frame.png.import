@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/btn-play-game-3x.png-45857adb8ed2b957fe14ee764f91cf9e.stex"
+path="res://.import/boss-wendigo-death-last-frame.png-727a1510663e97c368bd9ca1559343ff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Start Screen/btn-play-game-3x.png"
-dest_files=[ "res://.import/btn-play-game-3x.png-45857adb8ed2b957fe14ee764f91cf9e.stex" ]
+source_file="res://Images/Bosses/Wendigo/boss-wendigo-death-last-frame.png"
+dest_files=[ "res://.import/boss-wendigo-death-last-frame.png-727a1510663e97c368bd9ca1559343ff.stex" ]
 
 [params]
 

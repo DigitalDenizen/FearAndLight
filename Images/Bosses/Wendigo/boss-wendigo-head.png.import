@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile-brick.png-d402939d6aed2f00e589eefd64d421db.stex"
+path="res://.import/boss-wendigo-head.png-1b9eee74af8cae5fc14540a3fac8e75e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Start Screen/tile-brick.png"
-dest_files=[ "res://.import/tile-brick.png-d402939d6aed2f00e589eefd64d421db.stex" ]
+source_file="res://Images/Bosses/Wendigo/boss-wendigo-head.png"
+dest_files=[ "res://.import/boss-wendigo-head.png-1b9eee74af8cae5fc14540a3fac8e75e.stex" ]
 
 [params]
 

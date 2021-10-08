@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile-brick-3x.png-0e1230584063bdcecf6c7c354b556f99.stex"
+path="res://.import/logo-fear-light-3x.png-124a309879e059e6cc9a0429729ce650.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Start Screen/tile-brick-3x.png"
-dest_files=[ "res://.import/tile-brick-3x.png-0e1230584063bdcecf6c7c354b556f99.stex" ]
+source_file="res://Images/StartScreen/logo-fear-light-3x.png"
+dest_files=[ "res://.import/logo-fear-light-3x.png-124a309879e059e6cc9a0429729ce650.stex" ]
 
 [params]
 

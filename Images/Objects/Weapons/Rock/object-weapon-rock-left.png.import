@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/btn-play-game.png-16ecfb60b470a7957969bc66d3f5bd24.stex"
+path="res://.import/object-weapon-rock-left.png-b9ec67ace9194a76f4facb0d08979a9e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Start Screen/btn-play-game.png"
-dest_files=[ "res://.import/btn-play-game.png-16ecfb60b470a7957969bc66d3f5bd24.stex" ]
+source_file="res://Images/Objects/Weapons/Rock/object-weapon-rock-left.png"
+dest_files=[ "res://.import/object-weapon-rock-left.png-b9ec67ace9194a76f4facb0d08979a9e.stex" ]
 
 [params]
 
