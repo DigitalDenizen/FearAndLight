@@ -1,5 +1,6 @@
 [gd_scene load_steps=24 format=2]
 
+[ext_resource path="res://Audio/Music/Scary/spooky-atmos.wav" type="AudioStream" id=1]
 [ext_resource path="res://UI/Score.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/Victory/VictoryStats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Characters/Enemies/MobSpawner.tscn" type="PackedScene" id=5]
@@ -15,7 +16,6 @@
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Images/tile-mud.png" type="Texture" id=19]
-[ext_resource path="res://Audio/Music/Menu/F&L_main-title-loop-v3.wav" type="AudioStream" id=20]
 [ext_resource path="res://Audio/Music/Village/woods.wav" type="AudioStream" id=21]
 
 [sub_resource type="TileSet" id=1]
@@ -226,9 +226,9 @@ pause_mode = 2
 [node name="Score" parent="UI" instance=ExtResource( 3 )]
 pause_mode = 2
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 20 )
-volume_db = -14.712
+[node name="MusicWorld" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -13.697
 autoplay = true
 
 [connection signal="victory" from="MobSpawn" to="UI/VictoryStatsPopup" method="waveSpawnVictory"]

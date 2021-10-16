@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/AttackTwo.wav-754a4f07f1d53e05bb31c286bd3b976d.sample"
+
+[deps]
+
+source_file="res://Audio/Sounds/Attacks/Zombie/AttackTwo.wav"
+dest_files=[ "res://.import/AttackTwo.wav-754a4f07f1d53e05bb31c286bd3b976d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
