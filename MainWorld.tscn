@@ -14,10 +14,18 @@
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Structures/MudWall.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Barrier_top.tscn" type="PackedScene" id=14]
-[ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Images/tile-mud.png" type="Texture" id=19]
 [ext_resource path="res://Audio/Music/Village/woods.wav" type="AudioStream" id=21]
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends Camera2D
+#
+#func _process(delta):
+#
+#	if is_current():
+#	Globals.set(\"currentCamera\", self)
+"
 
 [sub_resource type="TileSet" id=1]
 0/name = "mud"
@@ -157,7 +165,7 @@ current = true
 zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true
 drag_margin_bottom = 1.0
-script = ExtResource( 16 )
+script = SubResource( 7 )
 
 [node name="UI" type="CanvasLayer" parent="Player/Camera2D"]
 
@@ -168,6 +176,9 @@ pause_mode = 2
 pause_mode = 2
 
 [node name="uiButtonLayout" parent="Player/Camera2D/UI" instance=ExtResource( 5 )]
+
+[node name="AnimatedSprite" parent="Player/Camera2D/UI/uiButtonLayout/buttonArea/battleMenuBanner/CenterContainer2" index="0"]
+frame = 4
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
@@ -232,13 +243,14 @@ autoplay = true
 
 [node name="MobSpawn" parent="." instance=ExtResource( 2 )]
 spawn_num = 9
+
 [connection signal="hide" from="Player/Camera2D/UI/VictoryStatsPopup" to="Player/Camera2D/UI/VictoryStatsPopup" method="closeWindow"]
 [connection signal="bannerClosed" from="Player/Camera2D/UI/uiButtonLayout" to="." method="_on_uiButtonLayout_bannerClosed"]
 [connection signal="bannerClosed" from="Player/Camera2D/UI/uiButtonLayout" to="MobSpawn" method="_on_uiButtonLayout_bannerClosed"]
 [connection signal="bannerClosed" from="Player/Camera2D/UI/uiButtonLayout/buttonArea/battleMenuBanner/CenterContainer2" to="MobSpawn" method="_on_CenterContainer2_bannerClosed"]
 
 [editable path="Player/Camera2D/UI/uiButtonLayout"]
-
 [editable path="Player/Camera2D/UI/uiButtonLayout/buttonArea"]
-
+[editable path="Player/Camera2D/UI/uiButtonLayout/buttonArea/VBoxContainer/HBoxContainer3/HBoxContainer3/battleButton"]
 [editable path="Player/Camera2D/UI/uiButtonLayout/buttonArea/battleMenuBanner"]
+[editable path="Player/Camera2D/UI/uiButtonLayout/buttonArea/battleMenuBanner/CenterContainer2"]

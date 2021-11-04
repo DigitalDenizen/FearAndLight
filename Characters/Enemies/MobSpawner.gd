@@ -55,12 +55,10 @@ func enemyType():
 	var randn1 = RandomNumberGenerator.new()
 	randn1.randomize()
 	var num = randn1.randi_range(0,100)
-	if num >=50:
-		print(num)
+	if num >= 50:
 		enemyScene = preload("res://Characters/Enemies/Zombie.tscn")
 		return enemyScene.instance() #returning and intacing enemy
 		
 	else:
-		print(num)
 		enemyScene = preload("res://Characters/Enemies/direWolf.tscn")
 		return enemyScene.instance() #returning and intacing enemy
