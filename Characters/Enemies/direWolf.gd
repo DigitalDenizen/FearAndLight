@@ -1,7 +1,6 @@
 extends KinematicBody2D
 class_name direWolf
 
-
 signal health_updated(health)
 signal melee(melee, player_pos, direWolf_pos)
 signal killed()

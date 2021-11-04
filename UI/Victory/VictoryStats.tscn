@@ -57,9 +57,10 @@ margin_bottom = 25.0
 rect_min_size = Vector2( 914, 25 )
 
 [node name="Label" type="Label" parent="GridContainer/Your_Results"]
-margin_left = 384.0
-margin_right = 530.0
-margin_bottom = 24.0
+margin_left = 432.0
+margin_top = 8.0
+margin_right = 481.0
+margin_bottom = 16.0
 text = "YOUR RESULTS"
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer"]

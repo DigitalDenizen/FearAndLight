@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://UI/Score.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/Buttons/Score.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/Victory/VictoryStats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Characters/Enemies/MobSpawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Fore_Ground.tscn" type="PackedScene" id=6]

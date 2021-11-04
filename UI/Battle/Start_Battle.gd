@@ -1,17 +1,8 @@
 extends Button
+signal battleStart
 
-var startBattle
- 
-onready var battlePanel = load("res://UI/Battle/Battle_Panel.tscn")
-
-func _process(delta):
-	if pressed == true:
-		pass
-	else:
-		pressed = false
-
-func _on_Start_Battle_toggled(button_pressed):
+func _on_Button_toggled(button_pressed):
 	if button_pressed == true:
-		battlePanel
-		print("pressed")
-
+		emit_signal("battleStart")
+		print("start button pressed")
+		
