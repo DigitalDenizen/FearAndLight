@@ -43,7 +43,7 @@ func removeEnemy():
 	enemiesKilled = enemiesKilled + 1
 	if waveSize == 0:
 		emit_signal("victory", enemiesKilled, heroesKilled, defensesDestroyed)
-		
+
 func heroKilled():
 	heroesKilled = heroesKilled + 1
 
