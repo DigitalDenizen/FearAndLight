@@ -9,20 +9,10 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "WindowDialog",
-"class": "BattleMenu",
-"language": "GDScript",
-"path": "res://UI/Battle/Battle_Popup_window.gd"
-}, {
 "base": "Node",
 "class": "MobSpawner",
 "language": "GDScript",
 "path": "res://Characters/Enemies/MobSpawner.gd"
-}, {
-"base": "Node",
-"class": "MobSpawnerStartBattle",
-"language": "GDScript",
-"path": "res://Characters/Enemies/MobSpawnerStartBattle.gd"
 }, {
 "base": "Node2D",
 "class": "PathFinding",
@@ -40,9 +30,7 @@ _global_script_classes=[ {
 "path": "res://Characters/Enemies/direWolf.gd"
 } ]
 _global_script_class_icons={
-"BattleMenu": "",
 "MobSpawner": "",
-"MobSpawnerStartBattle": "",
 "PathFinding": "",
 "Zombie": "",
 "direWolf": ""
@@ -56,7 +44,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Score="*res://UI/Buttons/Score.gd"
+Score="*res://UI/Score.gd"
 Util="*res://Shared/Util.gd"
 Nav="*res://Shared/PathFinding.gd"
 Physics="*res://Shared/Physics/MovementPhysics.gd"
@@ -102,7 +90,6 @@ move_down={
 2d_render/layer_4="item drops"
 2d_render/layer_5="walls"
 2d_render/layer_6="world"
-2d_render/layer_7="ui"
 
 [rendering]
 
