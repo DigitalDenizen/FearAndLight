@@ -174,6 +174,8 @@ func _on_direWolf_melee(melee, target_pos, direWolf_pos):
 	scratch.attacker = "direWolf"
 	add_child(scratch)
 	scratch.shoot(target_pos, direWolf_pos)
+	$RandomBarkPlayer.play_random()
+	
 
 func _on_direWolf_killed():
 	if rng.randf() <= 0.8:

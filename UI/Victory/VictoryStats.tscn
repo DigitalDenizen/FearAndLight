@@ -23,11 +23,10 @@ region_rect = Rect2( 0, 0, 451, 247 )
 [node name="Victory_Stats_popup" type="WindowDialog"]
 anchor_right = 1.026
 anchor_bottom = 1.0
-margin_left = -0.94397
-margin_top = 3.83163
-margin_right = -0.567993
-margin_bottom = -0.168335
-rect_min_size = Vector2( 701, 288 )
+margin_left = 28.0
+margin_top = 28.0
+margin_right = -47.64
+margin_bottom = -80.0
 theme = SubResource( 1 )
 custom_icons/close_highlight = ExtResource( 1 )
 custom_icons/close = ExtResource( 1 )
@@ -42,19 +41,18 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="."]
-margin_left = 71.4143
-margin_top = 251.0
-margin_right = 985.414
-margin_bottom = 595.0
-rect_min_size = Vector2( 914, 285 )
+margin_left = 51.0
+margin_top = 153.0
+margin_right = 914.0
+margin_bottom = 465.0
+rect_scale = Vector2( 0.55, 0.65 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Your_Results" type="CenterContainer" parent="GridContainer"]
-margin_right = 914.0
-margin_bottom = 25.0
-rect_min_size = Vector2( 914, 25 )
+margin_right = 863.0
+margin_bottom = 24.0
 
 [node name="Label" type="Label" parent="GridContainer/Your_Results"]
 margin_left = 432.0
@@ -64,22 +62,17 @@ margin_bottom = 16.0
 text = "YOUR RESULTS"
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer"]
-margin_top = 29.0
-margin_right = 914.0
-margin_bottom = 274.0
-rect_min_size = Vector2( 910, 245 )
+margin_top = 28.0
+margin_right = 863.0
+margin_bottom = 253.0
 
 [node name="CenterContainer" type="CenterContainer" parent="GridContainer/MarginContainer"]
-margin_right = 914.0
-margin_bottom = 245.0
-rect_min_size = Vector2( 910, 245 )
+margin_right = 863.0
+margin_bottom = 225.0
 
 [node name="Stats_container" type="HBoxContainer" parent="GridContainer/MarginContainer/CenterContainer"]
-margin_left = 25.0
-margin_top = 10.0
-margin_right = 888.0
-margin_bottom = 235.0
-rect_min_size = Vector2( 800, 215 )
+margin_right = 863.0
+margin_bottom = 225.0
 
 [node name="Killed" type="CenterContainer" parent="GridContainer/MarginContainer/CenterContainer/Stats_container"]
 margin_right = 305.0
@@ -129,13 +122,11 @@ margin_right = 275.0
 margin_bottom = 208.0
 
 [node name="CenterContainer" type="CenterContainer" parent="GridContainer"]
-margin_top = 278.0
-margin_right = 914.0
-margin_bottom = 503.0
-rect_min_size = Vector2( 914, 225 )
+margin_top = 257.0
+margin_right = 863.0
+margin_bottom = 312.0
 
 [node name="Continue_button" parent="GridContainer/CenterContainer" instance=ExtResource( 9 )]
-margin_left = 309.0
-margin_top = 85.0
-margin_right = 604.0
-margin_bottom = 140.0
+margin_left = 284.0
+margin_right = 579.0
+margin_bottom = 55.0

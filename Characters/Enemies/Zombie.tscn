@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Characters/Enemies/Zombie.gd" type="Script" id=1]
 [ext_resource path="res://Images/zombie/enemy-zombie-walk.png" type="Texture" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://Images/zombie/enemy-zombie-idle.png" type="Texture" id=4]
 [ext_resource path="res://Images/zombie/enemy-die-poof.png" type="Texture" id=5]
 [ext_resource path="res://Characters/UI/HealthBar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Audio/Sounds/Attacks/Zombie/AttackThree.wav" type="AudioStream" id=7]
+[ext_resource path="res://Audio/Sounds/Attacks/Zombie/AttackTwo.wav" type="AudioStream" id=8]
+[ext_resource path="res://Audio/Sounds/Attacks/Zombie/AttackOne.wav" type="AudioStream" id=9]
+[ext_resource path="res://Characters/Enemies/RandomBarkPlayer.gd" type="Script" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 12.0809
@@ -38,8 +42,12 @@ region = Rect2( 70, 0, 35, 32 )
 atlas = ExtResource( 4 )
 region = Rect2( 105, 0, 35, 32 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 35, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 35, 32 )
 
 [sub_resource type="AtlasTexture" id=10]
@@ -119,6 +127,12 @@ width = 2.0
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
+
+[node name="RandomGrowlPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -16.741
+script = ExtResource( 10 )
+audio_files = [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ) ]
+
 [connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
 [connection signal="killed" from="." to="." method="_on_Zombie_killed"]
 [connection signal="melee" from="." to="." method="_on_Zombie_melee"]

@@ -126,6 +126,7 @@ func _set_health(value):
 			$AnimatedSprite.play("Death")
 
 func _on_Zombie_melee(Melee, target_pos, zombie_pos):
+	
 	var direction = target_pos - zombie_pos
 	if direction.x > 0:
 		$AnimatedSprite.play("Attack")
@@ -139,6 +140,7 @@ func _on_Zombie_melee(Melee, target_pos, zombie_pos):
 	scratch.attacker = "Zombie"
 	add_child(scratch)
 	scratch.shoot(target_pos, zombie_pos)
+	$RandomGrowlPlayer.play_random()
 
 func _on_Zombie_killed():
 	if rng.randf() <= 0.3:

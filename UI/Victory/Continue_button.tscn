@@ -18,6 +18,9 @@ region_rect = Rect2( 0, 0, 86, 21 )
 [node name="Continue" type="CenterContainer"]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Continue_button" type="Button" parent="."]
 margin_right = 295.0
@@ -26,11 +29,13 @@ rect_min_size = Vector2( 295, 55 )
 theme = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
+text = "CONTINUE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="Continue_button"]
+visible = false
 margin_left = -1.0
 margin_right = 298.0
 margin_bottom = 51.0
