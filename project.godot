@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Reference",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Shared/Models/Item.gd"
+}, {
 "base": "Node",
 "class": "MobSpawner",
 "language": "GDScript",
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://Characters/Enemies/direWolf.gd"
 } ]
 _global_script_class_icons={
+"Item": "",
 "MobSpawner": "",
 "PathFinding": "",
 "Zombie": "",
@@ -93,6 +99,6 @@ move_down={
 
 [rendering]
 
+environment/default_environment="res://default_env.tres"
 2d/options/use_nvidia_rect_flicker_workaround=true
 2d/snapping/use_gpu_pixel_snap=true
-environment/default_environment="res://default_env.tres"

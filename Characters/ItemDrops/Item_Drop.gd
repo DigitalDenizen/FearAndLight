@@ -24,4 +24,9 @@ func _Item_Drop_body_entered(body):
 			body.heal(25)
 			queue_free()
 		if type == ItemDrop.BONES:
+#			addInventory(ItemDrop.BONES)
 			queue_free()
+			
+
+func addInventory(item):
+	emit_signal("")

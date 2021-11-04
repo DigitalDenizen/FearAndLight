@@ -17,6 +17,7 @@ var attackCountdown = 0
 var statusEffect = false
 var statusEffectCountDown
 var statusCooldown
+var items = []
 
 var FireBall = preload("res://Characters/Combat/FireBall.tscn")
 var Melee = preload("res://Characters/Combat/Melee.tscn")
