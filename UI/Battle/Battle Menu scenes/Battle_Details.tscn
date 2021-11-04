@@ -1,0 +1,273 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Images/Battle_UI/ui-battle-star-active.png" type="Texture" id=1]
+[ext_resource path="res://Images/Battle_UI/ui-battle-star-inactive.png" type="Texture" id=2]
+[ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=3]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 3 )
+
+[sub_resource type="Theme" id=2]
+
+[node name="Battle_Details" type="VBoxContainer"]
+margin_right = 132.0
+margin_bottom = 163.0
+rect_min_size = Vector2( 132, 163 )
+theme = SubResource( 1 )
+custom_constants/separation = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 138.0
+margin_bottom = 163.0
+rect_min_size = Vector2( 132, 163 )
+custom_constants/margin_top = 0
+custom_constants/margin_left = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 6.0
+margin_right = 138.0
+margin_bottom = 163.0
+rect_min_size = Vector2( 132, 163 )
+theme = SubResource( 2 )
+custom_constants/separation = 17
+alignment = 1
+
+[node name="CenterContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 132.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 120, 8 )
+custom_constants/margin_right = 0
+custom_constants/margin_top = 6
+custom_constants/margin_left = 9
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CenterContainer3"]
+margin_left = 9.0
+margin_top = 6.0
+margin_right = 132.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 120, 8 )
+custom_colors/font_color = Color( 1, 0.988235, 0.988235, 1 )
+text = "      BATTLE   DETAILS"
+valign = 1
+
+[node name="Difficulty_Rating" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 31.0
+margin_right = 132.0
+margin_bottom = 39.0
+rect_min_size = Vector2( 90, 8 )
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Difficulty_Rating"]
+margin_right = 132.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 90, 8 )
+custom_constants/separation = 0
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Difficulty_Rating/HBoxContainer5"]
+margin_right = 70.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 70, 8 )
+custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
+text = "DIFFCULTY RATING:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Difficulty_Rating/HBoxContainer5"]
+margin_left = 70.0
+margin_right = 90.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 20, 0 )
+custom_colors/font_color = Color( 0.709804, 0.760784, 0.105882, 1 )
+text = "1/5"
+align = 1
+
+[node name="Stars" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 56.0
+margin_right = 132.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 120, 20 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Stars"]
+margin_right = 132.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 120, 15 )
+custom_constants/separation = -1
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/Stars/HBoxContainer"]
+margin_right = 21.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 21, 16 )
+texture = ExtResource( 1 )
+stretch_mode = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TextureRect7" type="TextureRect" parent="MarginContainer/VBoxContainer/Stars/HBoxContainer"]
+margin_left = 20.0
+margin_right = 44.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 24, 16 )
+texture = ExtResource( 2 )
+stretch_mode = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VBoxContainer/Stars/HBoxContainer"]
+margin_left = 43.0
+margin_right = 67.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 24, 18 )
+texture = ExtResource( 2 )
+stretch_mode = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TextureRect6" type="TextureRect" parent="MarginContainer/VBoxContainer/Stars/HBoxContainer"]
+margin_left = 66.0
+margin_right = 90.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 24, 16 )
+texture = ExtResource( 2 )
+stretch_mode = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/Stars/HBoxContainer"]
+margin_left = 89.0
+margin_right = 113.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 24, 16 )
+texture = ExtResource( 2 )
+stretch_mode = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 93.0
+margin_right = 132.0
+margin_bottom = 163.0
+rect_min_size = Vector2( 132, 70 )
+
+[node name="CenterContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+margin_right = 132.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 120, 60 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/CenterContainer"]
+margin_right = 132.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 91, 40 )
+custom_constants/separation = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2"]
+margin_right = 132.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 91, 0 )
+custom_constants/separation = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer"]
+margin_right = 42.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 40, 0 )
+custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
+text = "DIRECTION: "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer"]
+margin_left = 44.0
+margin_right = 91.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 40, 0 )
+custom_colors/font_color = Color( 0.509804, 0.494118, 0.494118, 1 )
+text = "RIGHT & LEFT"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2"]
+margin_top = 9.0
+margin_right = 132.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 80, 10 )
+custom_constants/separation = 0
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer2"]
+margin_top = 1.0
+margin_right = 52.0
+margin_bottom = 9.0
+rect_min_size = Vector2( 40, 0 )
+custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
+text = "ENEMY COUNT: "
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer2"]
+margin_left = 52.0
+margin_top = 1.0
+margin_right = 75.0
+margin_bottom = 9.0
+rect_min_size = Vector2( 21, 0 )
+custom_colors/font_color = Color( 0.509804, 0.494118, 0.494118, 1 )
+text = " RIGHT"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2"]
+margin_top = 20.0
+margin_right = 132.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 70, 8 )
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer3"]
+margin_right = 45.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 45, 0 )
+custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
+text = "ENEMY TYPE: "
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer3"]
+margin_left = 49.0
+margin_right = 70.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 21, 0 )
+custom_colors/font_color = Color( 0.454902, 0.443137, 0.443137, 1 )
+text = "RIGHT"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2"]
+margin_top = 29.0
+margin_right = 132.0
+margin_bottom = 39.0
+rect_min_size = Vector2( 50, 10 )
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer4"]
+margin_top = 1.0
+margin_right = 25.0
+margin_bottom = 9.0
+rect_min_size = Vector2( 25, 8 )
+custom_colors/font_color = Color( 0.701961, 0.682353, 0.682353, 1 )
+text = "HORDE: "
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/CenterContainer/VBoxContainer2/HBoxContainer4"]
+margin_left = 29.0
+margin_top = 1.0
+margin_right = 46.0
+margin_bottom = 9.0
+rect_min_size = Vector2( 17, 0 )
+custom_colors/font_color = Color( 0.454902, 0.443137, 0.443137, 1 )
+text = "107"

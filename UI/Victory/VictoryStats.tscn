@@ -55,9 +55,10 @@ margin_right = 863.0
 margin_bottom = 24.0
 
 [node name="Label" type="Label" parent="GridContainer/Your_Results"]
-margin_left = 358.0
-margin_right = 504.0
-margin_bottom = 24.0
+margin_left = 432.0
+margin_top = 8.0
+margin_right = 481.0
+margin_bottom = 16.0
 text = "YOUR RESULTS"
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer"]

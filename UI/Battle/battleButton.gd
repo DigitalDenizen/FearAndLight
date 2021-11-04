@@ -1,10 +1,12 @@
 extends Button
 
-onready var battleMenuScene = load("res://UI/Battle/battleButton.tscn")
-
+onready var battleMenu = load("res://UI/Battle/battleMenuBanner.tscn").instance()
 
 func _on_Button_toggled(button_pressed):
-	var battleMenu = battleMenuScene.instance()
-	add_child(battleMenu)
 	if button_pressed:
-		battleMenu
+		add_child(battleMenu)
+		battleMenu 
+		print("battle menu called")
+		get_tree().paused = true
+	else:
+		hide()
