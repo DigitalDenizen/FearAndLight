@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://battleTab.gd" type="Script" id=1]
+[ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Images/Battle_UI/ui-tab-active.png" type="Texture" id=3]
+[ext_resource path="res://Images/Battle_UI/ui-battle-three-panel-window.png" type="Texture" id=4]
+[ext_resource path="res://UI/Battle/battlePanel.tscn" type="PackedScene" id=6]
+
+[sub_resource type="StyleBoxTexture" id=1]
+content_margin_top = 5.0
+content_margin_bottom = 0.0
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 54, 23 )
+margin_left = 5.0
+margin_right = 5.0
+margin_bottom = 6.18237
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="Theme" id=3]
+default_font = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 397, 163 )
+
+[node name="TabContainer" type="TabContainer"]
+margin_left = 1.0
+margin_right = 423.0
+margin_bottom = 187.0
+rect_min_size = Vector2( 397, 163 )
+custom_styles/tab_fg = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
+custom_constants/label_valign_fg = 8
+custom_constants/hseparation = 6
+custom_constants/label_valign_bg = 8
+custom_constants/top_margin = 10
+custom_constants/side_margin = 15
+tab_align = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Battle" type="Tabs" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 24.0
+rect_min_size = Vector2( 410, 163 )
+custom_constants/label_valign_bg = 0
+
+[node name="CenterContainer" type="MarginContainer" parent="Battle"]
+margin_left = 13.0
+margin_top = 4.0
+margin_right = 410.0
+margin_bottom = 167.0
+rect_min_size = Vector2( 397, 163 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Battle_Panel" parent="Battle/CenterContainer" instance=ExtResource( 6 )]
+theme = SubResource( 3 )
+custom_styles/panel = SubResource( 4 )
+[connection signal="battleStart" from="Battle/CenterContainer/Battle_Panel" to="." method="_on_Battle_Panel_battleStart"]

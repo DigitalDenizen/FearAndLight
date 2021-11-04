@@ -2,9 +2,10 @@
 
 [ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Images/Battle_UI/ui-window-large.png" type="Texture" id=4]
-[ext_resource path="res://UI/Score.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/Buttons/Score.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/Victory/VictoryStats.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Images/Victory/ui-victory-text-banner-wndw.png" type="Texture" id=8]
+
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 3 )
