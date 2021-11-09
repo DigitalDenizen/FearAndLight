@@ -67,7 +67,6 @@ margin_bottom = 17.0
 rect_min_size = Vector2( 116, 17 )
 
 [node name="slot_name" type="Label" parent="slot_vcontainer/slot_name_vcontainer"]
-margin_top = 2.0
 margin_right = 116.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 116, 15 )
@@ -90,8 +89,8 @@ custom_constants/separation = -1
 alignment = 1
 
 [node name="build_button_hcontainer" type="MarginContainer" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer"]
-margin_left = 2.0
-margin_right = 17.0
+margin_left = 3.0
+margin_right = 18.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 15, 15 )
 rect_clip_content = true
@@ -273,14 +272,13 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="slot_vcontainer/slot_button_container/slot_main_button/MarginContainer"]
-margin_left = 32.0
-margin_right = 84.0
+margin_right = 116.0
 margin_bottom = 21.0
 rect_min_size = Vector2( 84, 21 )
 
 [node name="Label" type="Label" parent="slot_vcontainer/slot_button_container/slot_main_button/MarginContainer/CenterContainer"]
-margin_top = 1.0
-margin_right = 84.0
+margin_left = 16.0
+margin_right = 100.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 84, 20 )
 text = "PLACE IT!"
