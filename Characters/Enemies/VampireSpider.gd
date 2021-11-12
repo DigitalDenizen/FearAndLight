@@ -6,14 +6,12 @@ signal killed()
 
 const MOVE_SPEED = 28
 export (float) var max_health = 150
-onready var itemdrop_scene = load("res://Characters/ItemDrops/Item_Drop_2.tscn")
+onready var itemdrop_scene = preload("res://Characters/Item_Drops/Item_Drop_2.tscn")
 onready var health = max_health setget _set_health
 var Melee = preload("res://Characters/Combat/Melee.tscn")
 var Web = preload("res://Characters/Combat/sprider_web.tscn")
 var player = null
 var mudwall = null
-var spawner = {}
-var waveSpawn = false
 
 var can_fire = true
 var fire_direction
