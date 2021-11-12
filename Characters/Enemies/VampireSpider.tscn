@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Characters/UI/HealthBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/Spider/enemy-vampire-spider-idle (1).png" type="Texture" id=2]
-[ext_resource path="res://Characters/VampireSpider.gd" type="Script" id=3]
+[ext_resource path="res://Characters/Enemies/VampireSpider.gd" type="Script" id=3]
 [ext_resource path="res://Images/Spider/enemy-vampire-spider-walk (1).png" type="Texture" id=4]
 [ext_resource path="res://Images/Spider/enemy-vampire-spider-attack-2 (1).png" type="Texture" id=5]
 [ext_resource path="res://Images/Spider/enemy-vampire-spider-attack (1).png" type="Texture" id=6]
@@ -152,7 +152,9 @@ position = Vector2( -5.89503, 0.260857 )
 scale = Vector2( 1.23255, 1.2279 )
 frames = SubResource( 24 )
 animation = "idle"
+
+[node name="Pathline" type="Line2D" parent="."]
 [connection signal="health_updated" from="." to="HealthBar" method="_on_vampireSpider_health_updated"]
 [connection signal="killed" from="." to="." method="_on_vampireSpider_killed"]
-[connection signal="melee" from="." to="." method="_on_vampireSpider_melee"]
-[connection signal="shoot" from="." to="." method="_on_vampireSpider_shoot"]
+[connection signal="melee" from="." to="." method="_on_VampireSpider_melee"]
+[connection signal="shoot" from="." to="." method="_on_VampireSpider_shoot"]

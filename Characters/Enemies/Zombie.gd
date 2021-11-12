@@ -58,7 +58,6 @@ func _physics_process(delta):
 		else:
 			path = pathHeroes
 		
-		
 		var zomboidVector
 		if path.size() > 2:
 			zomboidVector = global_position.direction_to(path[1]) * MOVE_SPEED

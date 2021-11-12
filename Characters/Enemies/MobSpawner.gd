@@ -63,5 +63,5 @@ func enemyType():
 
 	else:
 		print(num)
-		enemyScene = preload("res://Characters/Enemies/direWolf.tscn")
+		enemyScene = preload("res://Characters/Enemies/VampireSpider.tscn")
 		return enemyScene.instance() #returning and intacing enemy

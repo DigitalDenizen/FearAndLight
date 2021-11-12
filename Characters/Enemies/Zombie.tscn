@@ -27,51 +27,51 @@ atlas = ExtResource( 5 )
 region = Rect2( 66, 0, 33, 48 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 35, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 4 )
 region = Rect2( 35, 0, 35, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 4 )
 region = Rect2( 70, 0, 35, 32 )
 
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 4 )
 region = Rect2( 105, 0, 35, 32 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 35, 32 )
 
 [sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 3 )
 region = Rect2( 35, 0, 35, 32 )
 
 [sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 3 )
 region = Rect2( 70, 0, 35, 32 )
 
 [sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 3 )
 region = Rect2( 105, 0, 35, 32 )
 
 [sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 35, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 35, 0, 35, 32 )
 
 [sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 70, 0, 35, 32 )
 
 [sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 105, 0, 35, 32 )
 
 [sub_resource type="SpriteFrames" id=17]
@@ -83,17 +83,17 @@ animations = [ {
 }, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
-"name": "Walk",
+"name": "Idle",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
-"name": "Idle",
+"name": "Attack",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
-"name": "Attack",
+"name": "Walk",
 "speed": 5.0
 } ]
 
@@ -128,7 +128,6 @@ end_cap_mode = 2
 volume_db = -16.741
 script = ExtResource( 10 )
 audio_files = [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ) ]
-
 [connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
 [connection signal="killed" from="." to="." method="_on_Zombie_killed"]
 [connection signal="melee" from="." to="." method="_on_Zombie_melee"]
