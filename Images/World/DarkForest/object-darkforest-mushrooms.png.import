@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-darkforest-mushrooms.png-76ade278291e2c7e3cfcaec9d1abead8.stex"
+path="res://.import/object-darkforest-mushrooms.png-3a9a9ac9c7c8673bcf5957dc3b3cbfae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/dark forest/object-darkforest-mushrooms.png"
-dest_files=[ "res://.import/object-darkforest-mushrooms.png-76ade278291e2c7e3cfcaec9d1abead8.stex" ]
+source_file="res://Images/World/DarkForest/object-darkforest-mushrooms.png"
+dest_files=[ "res://.import/object-darkforest-mushrooms.png-3a9a9ac9c7c8673bcf5957dc3b3cbfae.stex" ]
 
 [params]
 

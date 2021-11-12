@@ -5,7 +5,8 @@
 [ext_resource path="res://UI/StartScreen/btn-options.png" type="Texture" id=3]
 [ext_resource path="res://UI/StartScreen/btn-play-game.png" type="Texture" id=4]
 [ext_resource path="res://UI/StartScreen/glow.png" type="Texture" id=5]
-[ext_resource path="res://UI/Button.gd" type="Script" id=6]
+[ext_resource path="res://UI/Buttons/Button.gd" type="Script" id=6]
+
 [ext_resource path="res://Audio/Music/Menu/F&L_main-title-loop-v3.wav" type="AudioStream" id=7]
 
 [node name="TitleScreen" type="Node2D"]

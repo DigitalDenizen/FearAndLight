@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://UI/Score.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Buttons/Score.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/enemies/Mob_Spawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/Ice_Wall_Main.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/Ice_Wall_Below.tscn" type="PackedScene" id=4]
@@ -10,6 +10,7 @@
 [ext_resource path="res://scenes/Barrier_top.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/ParallaxBackground.tscn" type="PackedScene" id=9]
 [ext_resource path="res://structures/Beacon_Pylon.tscn" type="PackedScene" id=10]
+
 
 [node name="Main" type="Node2D"]
 position = Vector2( -462.585, -40.5123 )

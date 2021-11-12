@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Buttons/itemBarSquare.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Buttons/hideButton.tscn" type="PackedScene" id=2]
+
+[node name="MarginContainer" type="MarginContainer"]
+margin_top = 53.0
+margin_right = 240.0
+margin_bottom = 53.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 240.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 161, 30 )
+custom_constants/separation = -1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 240.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 161, 23 )
+custom_constants/separation = -1
+
+[node name="itemBarSquare" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_right = 23.0
+
+[node name="itemBarSquare2" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 22.0
+margin_right = 45.0
+
+[node name="itemBarSquare3" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 44.0
+margin_right = 67.0
+custom_constants/hseparation = 1
+
+[node name="itemBarSquare4" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 66.0
+margin_right = 89.0
+
+[node name="itemBarSquare5" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 88.0
+margin_right = 111.0
+
+[node name="itemBarSquare6" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 110.0
+margin_right = 133.0
+
+[node name="itemBarSquare7" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 132.0
+margin_right = 155.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 22.0
+margin_right = 240.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 161, 13 )
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 161.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 161, 13 )
+
+[node name="Button" parent="VBoxContainer/HBoxContainer2/CenterContainer" instance=ExtResource( 2 )]
+margin_left = 70.0
+margin_right = 91.0

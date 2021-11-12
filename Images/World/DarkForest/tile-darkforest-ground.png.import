@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile-darkforest-ground.png-f631f88baa59f7716202776aa3dd4bb9.stex"
+path="res://.import/tile-darkforest-ground.png-b29ffbe0d0b607a3410874c600b6bdde.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/dark forest/tile-darkforest-ground.png"
-dest_files=[ "res://.import/tile-darkforest-ground.png-f631f88baa59f7716202776aa3dd4bb9.stex" ]
+source_file="res://Images/World/DarkForest/tile-darkforest-ground.png"
+dest_files=[ "res://.import/tile-darkforest-ground.png-b29ffbe0d0b607a3410874c600b6bdde.stex" ]
 
 [params]
 
