@@ -1,7 +1,7 @@
-extends Panel
+extends PanelContainer
 
 signal battleStart()
 
-func _on_Button_toggled(button_pressed):
+func _on_Start_Battle_toggled(button_pressed):
 	if button_pressed == true:
 		emit_signal("battleStart")
