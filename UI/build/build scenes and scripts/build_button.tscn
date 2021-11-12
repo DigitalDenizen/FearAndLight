@@ -44,5 +44,6 @@ custom_styles/hover = SubResource( 1 )
 custom_styles/disabled = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
 script = ExtResource( 3 )
+
 [connection signal="button_down" from="build_button_container/build_button" to="build_button_container/build_button" method="_on_build_button_button_down"]
 [connection signal="button_up" from="build_button_container/build_button" to="build_button_container/build_button" method="_on_build_button_button_up"]
