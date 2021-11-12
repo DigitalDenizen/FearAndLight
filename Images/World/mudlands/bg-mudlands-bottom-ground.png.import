@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg-mudlands-bottom-ground.png-a8425fc8db7eb044248e22baee506b76.stex"
+path="res://.import/bg-mudlands-bottom-ground.png-a5d067d86557ab13545e89e4a4a22ddc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/mudlands/background/bg-mudlands-bottom-ground.png"
-dest_files=[ "res://.import/bg-mudlands-bottom-ground.png-a8425fc8db7eb044248e22baee506b76.stex" ]
+source_file="res://Images/World/MudLands/bg-mudlands-bottom-ground.png"
+dest_files=[ "res://.import/bg-mudlands-bottom-ground.png-a5d067d86557ab13545e89e4a4a22ddc.stex" ]
 
 [params]
 

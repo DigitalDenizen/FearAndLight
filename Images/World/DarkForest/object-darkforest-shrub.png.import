@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-darkforest-shrub.png-1c1167e82475f6fda48fa76049361fe6.stex"
+path="res://.import/object-darkforest-shrub.png-90de0f0fffbb763318266d35fd6be753.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/dark forest/object-darkforest-shrub.png"
-dest_files=[ "res://.import/object-darkforest-shrub.png-1c1167e82475f6fda48fa76049361fe6.stex" ]
+source_file="res://Images/World/DarkForest/object-darkforest-shrub.png"
+dest_files=[ "res://.import/object-darkforest-shrub.png-90de0f0fffbb763318266d35fd6be753.stex" ]
 
 [params]
 

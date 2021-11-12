@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg-darkforest-top-hills.png-116230ea0428570d62a260d09e782f1f.stex"
+path="res://.import/bg-darkforest-top-hills.png-129dc0e3d1c2f4e04340350517bc4408.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/dark forest/background/bg-darkforest-top-hills.png"
-dest_files=[ "res://.import/bg-darkforest-top-hills.png-116230ea0428570d62a260d09e782f1f.stex" ]
+source_file="res://Images/World/DarkForest/bg-darkforest-top-hills.png"
+dest_files=[ "res://.import/bg-darkforest-top-hills.png-129dc0e3d1c2f4e04340350517bc4408.stex" ]
 
 [params]
 

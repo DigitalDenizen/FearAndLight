@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-darkforest-small-tree.png-3cc6917d0da1eb6714a1cfd4a6e2a05a.stex"
+path="res://.import/object-darkforest-small-tree.png-358242a6ea473436d1c96693141e90d8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/dark forest/object-darkforest-small-tree.png"
-dest_files=[ "res://.import/object-darkforest-small-tree.png-3cc6917d0da1eb6714a1cfd4a6e2a05a.stex" ]
+source_file="res://Images/World/DarkForest/object-darkforest-small-tree.png"
+dest_files=[ "res://.import/object-darkforest-small-tree.png-358242a6ea473436d1c96693141e90d8.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-ice-trans-left-trees-ground.png-ee1f3ae60e2883fd71d185448ae9b82d.stex"
+path="res://.import/scene-layer-ice-trans-left-trees-ground.png-e99730f5c991fc9552ea1a4282e8de31.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/icelands/ice-main-trans-left/scene-layer-ice-trans-left-trees-ground.png"
-dest_files=[ "res://.import/scene-layer-ice-trans-left-trees-ground.png-ee1f3ae60e2883fd71d185448ae9b82d.stex" ]
+source_file="res://Images/World/IceLands/ice-main-trans-left/scene-layer-ice-trans-left-trees-ground.png"
+dest_files=[ "res://.import/scene-layer-ice-trans-left-trees-ground.png-e99730f5c991fc9552ea1a4282e8de31.stex" ]
 
 [params]
 
