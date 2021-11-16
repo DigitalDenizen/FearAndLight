@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg-mudlands-top-trees.png-2d23ca8ea186977888e74eddf273e7a0.stex"
+path="res://.import/bg-mudlands-top-trees.png-3b6615b204272fcef3ae319a8442bb09.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/MudLands/bg-mudlands-top-trees.png"
-dest_files=[ "res://.import/bg-mudlands-top-trees.png-2d23ca8ea186977888e74eddf273e7a0.stex" ]
+source_file="res://Images/World/mudlands/bg-mudlands-top-trees.png"
+dest_files=[ "res://.import/bg-mudlands-top-trees.png-3b6615b204272fcef3ae319a8442bb09.stex" ]
 
 [params]
 

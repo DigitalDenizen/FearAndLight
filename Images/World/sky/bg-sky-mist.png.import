@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg-sky-mist.png-1305a17a7f365d31750a5cd9eee8474c.stex"
+path="res://.import/bg-sky-mist.png-90704f5ec716d71c8f9c31e1ccc5350e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/Sky/bg-sky-mist.png"
-dest_files=[ "res://.import/bg-sky-mist.png-1305a17a7f365d31750a5cd9eee8474c.stex" ]
+source_file="res://Images/World/sky/bg-sky-mist.png"
+dest_files=[ "res://.import/bg-sky-mist.png-90704f5ec716d71c8f9c31e1ccc5350e.stex" ]
 
 [params]
 
