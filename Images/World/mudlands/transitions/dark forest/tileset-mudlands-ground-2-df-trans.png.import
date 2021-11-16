@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset-mudlands-ground-2-df-trans.png-8f0e30fec496b655a63b6a74a6cfcd32.stex"
+path="res://.import/tileset-mudlands-ground-2-df-trans.png-631f662146608e4e673fd63ac4ea228b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/MudLands/transitions/dark forest/tileset-mudlands-ground-2-df-trans.png"
-dest_files=[ "res://.import/tileset-mudlands-ground-2-df-trans.png-8f0e30fec496b655a63b6a74a6cfcd32.stex" ]
+source_file="res://Images/World/mudlands/transitions/dark forest/tileset-mudlands-ground-2-df-trans.png"
+dest_files=[ "res://.import/tileset-mudlands-ground-2-df-trans.png-631f662146608e4e673fd63ac4ea228b.stex" ]
 
 [params]
 

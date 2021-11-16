@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-ice-below-trees.png-82b99cf3e9c0795fde018f7f85379f59.stex"
+path="res://.import/scene-layer-ice-below-trees.png-2bd060d5ab3994be4a656039c177fb29.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/IceLands/ice-below/scene-layer-ice-below-trees.png"
-dest_files=[ "res://.import/scene-layer-ice-below-trees.png-82b99cf3e9c0795fde018f7f85379f59.stex" ]
+source_file="res://Images/World/icelands/ice-below/scene-layer-ice-below-trees.png"
+dest_files=[ "res://.import/scene-layer-ice-below-trees.png-2bd060d5ab3994be4a656039c177fb29.stex" ]
 
 [params]
 

@@ -66,12 +66,18 @@ margin_right = 116.0
 margin_bottom = 17.0
 rect_min_size = Vector2( 116, 17 )
 
-[node name="slot_name" type="Label" parent="slot_vcontainer/slot_name_vcontainer"]
+[node name="MarginContainer" type="MarginContainer" parent="slot_vcontainer/slot_name_vcontainer"]
 margin_right = 116.0
-margin_bottom = 15.0
+margin_bottom = 16.0
+custom_constants/margin_top = 1
+
+[node name="slot_name" type="Label" parent="slot_vcontainer/slot_name_vcontainer/MarginContainer"]
+margin_top = 1.0
+margin_right = 116.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 116, 15 )
 custom_fonts/font = ExtResource( 3 )
-text = "MUD WALL"
+text = "LARGE MUD WALL"
 align = 1
 valign = 1
 
@@ -236,10 +242,11 @@ margin_right = 27.0
 margin_bottom = 13.0
 
 [node name="slot_info_button" type="Button" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer/slot_main_right_hcontainer/slot_right_vcontainer/slot_top_right_hcontainer/CenterContainer"]
-margin_left = 1.0
-margin_right = 14.0
-margin_bottom = 13.0
-rect_min_size = Vector2( 13, 13 )
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 13.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 11, 11 )
 rect_clip_content = true
 custom_styles/hover = SubResource( 6 )
 custom_styles/disabled = SubResource( 7 )
@@ -267,18 +274,21 @@ flat = true
 [node name="MarginContainer" type="MarginContainer" parent="slot_vcontainer/slot_button_container/slot_main_button"]
 margin_bottom = 21.0
 rect_min_size = Vector2( 116, 21 )
+custom_constants/margin_top = 1
+custom_constants/margin_left = 32
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="slot_vcontainer/slot_button_container/slot_main_button/MarginContainer"]
+margin_left = 32.0
+margin_top = 1.0
 margin_right = 116.0
 margin_bottom = 21.0
-rect_min_size = Vector2( 84, 21 )
+rect_min_size = Vector2( 84, 20 )
 
 [node name="Label" type="Label" parent="slot_vcontainer/slot_button_container/slot_main_button/MarginContainer/CenterContainer"]
-margin_left = 16.0
-margin_right = 100.0
+margin_right = 84.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 84, 20 )
 text = "PLACE IT!"
