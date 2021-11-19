@@ -21,6 +21,7 @@ func _physics_process(delta):
 		if deathCountdown > 0:
 			deathCountdown = deathCountdown - 1
 		if deathCountdown <= 0:
+			print("Mudhut gonzo")
 			queue_free()
 
 func hurt(damage):

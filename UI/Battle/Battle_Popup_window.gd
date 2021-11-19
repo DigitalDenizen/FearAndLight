@@ -1,29 +1,18 @@
 extends WindowDialog
-class_name BattleMenu
-var battleMenuClosed
-signal battleMenuClosed
 
-signal startBattle
-var battleMenuCalled = false
+var startBattle
 
 func _process(delta):
 	if visible == true:
-		popup_centered()
+		popup_centered_minsize(Vector2(250,136))
+		
 
-func _on_startBattle_battleMenuButtonPressed():
-	visible = true
+func _on_Battle_popup_visibility_changed():
+	if visible == false:
+		hide() 
 
-func _on_TabContainer_battleStart():
-	if visible == true:
-		var t = Timer.new()
-		t.set_wait_time(.5)
-		t.set_one_shot(true)
-		self.add_child(t)
-		t.start()
-		yield(t, "timeout")
-		t.queue_free()
+func _on_Battle_Panel_battleStart():
+	startBattle = true
+	print("startBattle")
+	if startBattle == true:
 		visible = false
-		queue_free()
-		battleMenuClosed = true
-		emit_signal("battleMenuClosed")
-		emit_signal("startBattle")

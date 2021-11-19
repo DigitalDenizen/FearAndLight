@@ -1,15 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://UI/UIlayout/buttonArea.tscn" type="PackedScene" id=1]
-[ext_resource path="res://UI/UIlayout/uiButtonLayout.gd" type="Script" id=4]
 
 [node name="uiButtonLayout" type="CanvasLayer"]
-pause_mode = 2
-script = ExtResource( 4 )
 
+<<<<<<< HEAD
 [node name="buttonArea" parent="." instance=ExtResource( 1 )]
 margin_right = 643.0
 [connection signal="bannerClosed" from="buttonArea" to="." method="_on_buttonArea_bannerClosed"]
 [connection signal="bannerClosed" from="buttonArea/battleMenuBanner" to="." method="_on_battleMenuBanner_bannerClosed"]
 
 [editable path="buttonArea"]
+=======
+[node name="GridContainer" parent="." instance=ExtResource( 1 )]
+>>>>>>> master

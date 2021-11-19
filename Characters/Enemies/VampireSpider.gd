@@ -8,6 +8,7 @@ const MOVE_SPEED = 10
 export (float) var max_health = 150
 export (bool) var should_draw_path_line := false
 onready var itemdrop_scene = load("res://Characters/ItemDrops/Item_Drop_2.tscn")
+onready var itemdrop_scene = preload("res://Characters/Item_Drops/Item_Drop_2.tscn")
 onready var health = max_health setget _set_health
 var Melee = preload("res://Characters/Combat/Melee.tscn")
 var Web = preload("res://Characters/Combat/sprider_web.tscn")

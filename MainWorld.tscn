@@ -1,19 +1,19 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://Audio/Music/Menu/F&L_main-title-loop-v3.wav" type="AudioStream" id=1]
-[ext_resource path="res://Characters/Enemies/MobSpawnerStartBattle.tscn" type="PackedScene" id=2]
-[ext_resource path="res://UI/Buttons/Score.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Audio/Music/Scary/spooky-atmos.wav" type="AudioStream" id=1]
+[ext_resource path="res://UI/Score.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/Victory/VictoryStats.tscn" type="PackedScene" id=4]
-[ext_resource path="res://UI/UIlayout/uiButtonLayout.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Characters/Enemies/MobSpawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Fore_Ground.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/ice-wall/ice-wall-below/Ice_Wall_Below.tscn" type="PackedScene" id=7]
-[ext_resource path="res://MainWorld.gd" type="Script" id=8]
 [ext_resource path="res://Structures/MudHut.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Shared/PathFinding.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/ice-wall/ice-wall-main/Ice_Wall_Main.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Structures/MudWall.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Barrier_top.tscn" type="PackedScene" id=14]
+[ext_resource path="res://MainWorld.gd" type="Script" id=15]
+[ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Images/tile-mud.png" type="Texture" id=19]
 [ext_resource path="res://Audio/Music/Village/woods.wav" type="AudioStream" id=21]
@@ -28,6 +28,7 @@ script/source = "extends Camera2D
 "
 
 [sub_resource type="TileSet" id=2]
+[sub_resource type="TileSet" id=1]
 0/name = "mud"
 0/texture = ExtResource( 19 )
 0/tex_offset = Vector2( 0, 0 )
@@ -147,7 +148,11 @@ points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
 3/z_index = 0
 
 [node name="Main" type="YSort"]
-script = ExtResource( 8 )
+script = ExtResource( 15 )
+
+[node name="MobSpawn" parent="." instance=ExtResource( 5 )]
+position = Vector2( 369.643, 194.889 )
+spawn_num = 12
 
 [node name="BarrierTop" parent="." instance=ExtResource( 14 )]
 visible = false
@@ -176,6 +181,7 @@ pause_mode = 2
 pause_mode = 2
 
 [node name="uiButtonLayout" parent="Player/Camera2D/UI" instance=ExtResource( 5 )]
+script = ExtResource( 16 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
@@ -233,12 +239,22 @@ format = 1
 
 [node name="PathFinding" parent="." instance=ExtResource( 10 )]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
-volume_db = -14.712
-autoplay = true
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="VictoryStatsPopup" parent="UI" instance=ExtResource( 4 )]
+pause_mode = 2
 
 [node name="MobSpawn" parent="." instance=ExtResource( 2 )]
 spawn_num = 9
 [connection signal="hide" from="Player/Camera2D/UI/VictoryStatsPopup" to="Player/Camera2D/UI/VictoryStatsPopup" method="closeWindow"]
 [connection signal="bannerClosed" from="Player/Camera2D/UI/uiButtonLayout" to="MobSpawn" method="_on_uiButtonLayout_bannerClosed"]
+[node name="Score" parent="UI" instance=ExtResource( 3 )]
+pause_mode = 2
+
+[node name="MusicWorld" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -13.697
+autoplay = true
+
+[connection signal="victory" from="MobSpawn" to="UI/VictoryStatsPopup" method="waveSpawnVictory"]
+[connection signal="hide" from="UI/VictoryStatsPopup" to="UI/VictoryStatsPopup" method="closeWindow"]
