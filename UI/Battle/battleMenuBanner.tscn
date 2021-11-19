@@ -17,14 +17,18 @@ __meta__ = {
 [node name="CenterContainer2" parent="." instance=ExtResource( 1 )]
 margin_bottom = 188.0
 
+[node name="AnimatedSprite" parent="CenterContainer2" index="0"]
+frame = 0
+
 [node name="Control" parent="." instance=ExtResource( 2 )]
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -218.0
 margin_bottom = -283.0
-[connection signal="battleMenuButtonPressed" from="." to="CenterContainer2" method="_on_startBattle_battleMenuButtonPressed"]
 [connection signal="battleMenuButtonPressed" from="." to="Control" method="_on_startBattle_battleMenuButtonPressed"]
 [connection signal="about_to_show" from="CenterContainer2" to="CenterContainer2" method="_on_CenterContainer2_about_to_show"]
+[connection signal="bannerClosed" from="CenterContainer2" to="." method="_on_CenterContainer2_bannerClosed"]
 [connection signal="about_to_show" from="Control" to="Control" method="_on_Control_about_to_show"]
 [connection signal="battleMenuClosed" from="Control" to="CenterContainer2" method="_on_Control_battleMenuClosed"]
 [connection signal="battleMenuClosed" from="Control" to="." method="_on_Control_battleMenuClosed"]

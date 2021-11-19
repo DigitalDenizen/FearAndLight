@@ -61,7 +61,7 @@ position = Vector2( 321.911, 92.2293 )
 scale = Vector2( 1.44017, 1.19453 )
 frames = SubResource( 9 )
 animation = "enemiesComing"
-frame = 2
+frame = 5
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

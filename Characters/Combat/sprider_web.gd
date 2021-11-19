@@ -1,6 +1,6 @@
 extends Area2D
 var direction = Vector2()
-export var speed = 750
+export var speed = 500
 var collid = false
 var webCountdown = 0
 var statusEffect  = false

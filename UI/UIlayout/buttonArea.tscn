@@ -126,6 +126,7 @@ margin_left = 321.0
 margin_right = 321.0
 margin_bottom = 0.0
 [connection signal="toggled" from="VBoxContainer/HBoxContainer3/HBoxContainer3/battleButton/Button" to="battleMenuBanner" method="_on_Button_toggled"]
+[connection signal="bannerClosed" from="battleMenuBanner/CenterContainer2" to="." method="_on_CenterContainer2_bannerClosed"]
 
 [editable path="VBoxContainer/HBoxContainer3/HBoxContainer3/battleButton"]
 

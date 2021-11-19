@@ -8,7 +8,7 @@ signal killed()
 export (float) var max_health = 100
 export (bool) var should_draw_path_line := false
 
-const MOVE_SPEED = 40
+const MOVE_SPEED = 35
 enum STATES { IDLE, FOLLOW }
 onready var collision_shape = $CollisionShape2D
 onready var health = max_health setget _set_health
@@ -57,7 +57,6 @@ func _physics_process(delta):
 				path = pathHeroes
 		else:
 			path = pathHeroes
-		
 		
 		var zomboidVector
 		if path.size() > 2:

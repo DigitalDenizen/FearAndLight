@@ -15,7 +15,6 @@ region_rect = Rect2( 0, 0, 422, 196 )
 margin_bottom = 0.0567288
 
 [node name="WindowDialog" type="WindowDialog"]
-visible = true
 margin_right = 422.0
 margin_bottom = 196.0
 rect_min_size = Vector2( 422, 196 )

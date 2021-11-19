@@ -1,6 +1,6 @@
 extends KinematicBody2D
 	
-const MOVE_SPEED = 100
+var MOVE_SPEED = 100
 const ACCELERATION = 100
 const FRICTION = 100
 signal shoot(fireball, mouse_pos, player_pos)
@@ -15,7 +15,7 @@ var attacking = false
 var deathCountdown = 0
 var attackCountdown = 0
 var statusEffect = false
-var statusEffectCountDown
+var statusEffectCountDown = 0
 var statusCooldown
 
 var FireBall = preload("res://Characters/Combat/FireBall.tscn")
@@ -80,6 +80,11 @@ func _player_movement(delta):
 		input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 		input_vector = input_vector.normalized()
 		
+		if statusEffectCountDown != 0 && statusEffect: #If the statusEffectCountDown is NOT 0 subtract 1 
+			statusEffectCountDown = statusEffectCountDown - 1
+		elif statusEffect:
+			MOVE_SPEED = 100 #If does equal 0 return MOVE_SPEED to 100 
+			statusEffect = false
 		
 		if input_vector != Vector2.ZERO:
 			
@@ -118,17 +123,19 @@ func hurt(damage: int, type: String = ""):
 	_set_health(health - damage)
 	if type == "web":
 		statusEffect = true
-		statusEffectCountDown = 75
+		stuck(100) #Stuck value to be sutracted from MOVE_SPEED
+		statusEffectCountDown = 50
 
-	
+
 func heal(healing):
 	_set_health(health + healing)
 	$SoundHeal.play()
-	
+
 func stuck(hold):
-	statusEffect = true
-	if statusEffect == true:
-		MOVE_SPEED - hold
+	if statusEffect == true && MOVE_SPEED == 100: #When Status effect is true and MOVE_SPEED is 100 run the function
+		MOVE_SPEED = MOVE_SPEED - hold
+		print(MOVE_SPEED - hold)
+		
 
 func _set_health(value):
 	var prev_health = health
