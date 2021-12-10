@@ -1,8 +1,8 @@
 extends KinematicBody2D
-class_name Zombie
+class_name Wendigo
 
 signal health_updated(health)
-signal melee(melee, player_pos, zombie_pos)
+signal melee(melee, player_pos, wendigo_pos)
 signal killed()
 
 export (float) var max_health = 100
@@ -12,8 +12,8 @@ const MOVE_SPEED = 40
 enum STATES { IDLE, FOLLOW }
 onready var collision_shape = $CollisionShape2D
 onready var health = max_health setget _set_health
-onready var itemDrop_scene = preload("res://Characters/ItemDrops/Item_Drop.tscn")
 onready var path_line = $PathLine
+onready var itemDropScene = load("res://Characters/ItemDrops/WendigoItemDrop.tscn")
 var Melee = preload("res://Characters/Combat/Melee.tscn")
 
 var pathFinding: PathFinding
@@ -39,9 +39,9 @@ func _ready():
 	add_to_group("Baddies")
 	rng.randomize()
 	path_line.visible = should_draw_path_line
-	
-func _physics_process(delta):
-	if player == null:
+
+func _process(delta):
+	if player == null:  
 		return
 	if alive && not_attacking:
 		var pathHeroes:PoolVector2Array = pathFinding.get_new_path(global_position, player.global_position)
@@ -58,14 +58,14 @@ func _physics_process(delta):
 		else:
 			path = pathHeroes
 		
-		var zomboidVector
+		var wendigodVector
 		if path.size() > 2:
-			zomboidVector = global_position.direction_to(path[1]) * MOVE_SPEED
-			walk_animation(zomboidVector)
-			move_and_slide(zomboidVector)
+			wendigodVector = global_position.direction_to(path[1]) * MOVE_SPEED
+			walk_animation(wendigodVector)
+			move_and_slide(wendigodVector)
 			set_path_line(path)
 		else:
-			_on_Zombie_melee(Melee, player.global_position, global_position)
+			_on_Wendigo_melee(Melee, player.global_position, global_position)
 	else:
 		if not_attacking:
 			deathCountdown = deathCountdown - 1
@@ -90,27 +90,23 @@ func _change_state(new_state):
 		# we don't want the character to move back to it in this example
 		target_point_world = path[1]
 	_state = new_state
-
+	
 func set_player(p):
 	player = p
 
-func move_to(world_position):
-	var MASS = 10.0
-	var ARRIVE_DISTANCE = 10.0
+func on_wendigo_killed():
+		if rng.randf() <= 0.3:
+			var itemDrop = itemDropScene.instance()
 
-	var desired_velocity = (world_position - position).normalized() * MOVE_SPEED
-	var steering = desired_velocity - velocity
-	velocity += steering / MASS
-	position += velocity * get_process_delta_time()
-	rotation = velocity.angle()
-	return position.distance_to(world_position) < ARRIVE_DISTANCE
-
-func hurt(damage):
-	var vec_not_norm = player.global_position - global_position
-	var vec_to_player = vec_not_norm.normalized()
-	move_and_collide(vec_to_player * -10)
-	_set_health(health - damage)
-
+func _on_Wendigo_melee(Melee, target_pos, wendigo_pos):
+	var direction = target_pos - wendigo_pos
+	if direction.x > 2:
+		$AnimatedSprite.play("attack - slash")
+		$AnimatedSprite.flip_h = true
+	else:
+		$AnimatedSprite.play("attack - slash")
+		$AnimatedSprite.flip_h = false
+		
 func _set_health(value):
 	var prev_health = health
 	health = clamp(value, 0, max_health)
@@ -122,35 +118,11 @@ func _set_health(value):
 				spawner.removeEnemy()
 			alive = false
 			deathCountdown = 30
-			$AnimatedSprite.play("Death")
-
-func _on_Zombie_melee(Melee, target_pos, zombie_pos):
-	var direction = target_pos - zombie_pos
-	if direction.x > 0:
-		$AnimatedSprite.play("Attack")
-		$AnimatedSprite.flip_h = false
-	else:
-		$AnimatedSprite.play("Attack")
-		$AnimatedSprite.flip_h = true
-	not_attacking = false
-	attackCountDown = 50
-	var scratch = Melee.instance()
-	scratch.attacker = "Zombie"
-	add_child(scratch)
-	scratch.shoot(target_pos, zombie_pos)
-	$RandomGrowlPlayer.play_random()
-
-func _on_Zombie_killed():
-	if rng.randf() <= 0.3:
-		var itemDrop = itemDrop_scene.instance()
-		itemDrop.type = rng.randi() % 2
-		get_tree().get_root().add_child(itemDrop)
-		itemDrop.global_position = global_position
 
 func set_path_line(points: Array):
 	if not should_draw_path_line:
 		return
-
+		
 	var local_points := []
 	for point in points:
 		if point == points[0]:
@@ -162,11 +134,11 @@ func set_path_line(points: Array):
 
 func walk_animation(vector: Vector2):
 	if vector.x > 0:
-		$AnimatedSprite.play("Walk")
-		$AnimatedSprite.flip_h = false
-	else:
-		$AnimatedSprite.play("Walk")
+		$AnimatedSprite.play("walk")
 		$AnimatedSprite.flip_h = true
+	else:
+		$AnimatedSprite.play("walk")
+		$AnimatedSprite.flip_h = false
 
 func prioritize_target(buildings):
 	var target:PoolVector2Array
