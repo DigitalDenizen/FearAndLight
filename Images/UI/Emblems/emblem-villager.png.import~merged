@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-ice-below-ground.png-31750c85b3e6255a105b003d4bfc84c2.stex"
+path="res://.import/emblem-villager.png-921b81efb2c6841f0fd9c7fc7baa5835.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/IceLands/ice-below/scene-layer-ice-below-ground.png"
-dest_files=[ "res://.import/scene-layer-ice-below-ground.png-31750c85b3e6255a105b003d4bfc84c2.stex" ]
+source_file="res://Images/UI/Emblems/emblem-villager.png"
+dest_files=[ "res://.import/emblem-villager.png-921b81efb2c6841f0fd9c7fc7baa5835.stex" ]
 
 [params]
 

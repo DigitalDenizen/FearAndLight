@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spirit-dog-lantern.png-3c5816a972111fae42cf4bad0054063c.stex"
+path="res://.import/spirit-dog-transform-sprite.png-d062147b7cd53059976b644c0e602839.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Spirits/SpiritDog/spirit-dog-lantern.png"
-dest_files=[ "res://.import/spirit-dog-lantern.png-3c5816a972111fae42cf4bad0054063c.stex" ]
+source_file="res://Images/Spirits/SpiritDog/spirit-dog-transform-sprite.png"
+dest_files=[ "res://.import/spirit-dog-transform-sprite.png-d062147b7cd53059976b644c0e602839.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spirit-dog-exit-sprite.png-fe81833a4ae6f68214ab1686ff50fa93.stex"
+path="res://.import/spirit-dog-float-sprite.png-ad084cdff77f8b3b1cfa5ba89588f256.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Spirits/SpiritDog/spirit-dog-exit-sprite.png"
-dest_files=[ "res://.import/spirit-dog-exit-sprite.png-fe81833a4ae6f68214ab1686ff50fa93.stex" ]
+source_file="res://Images/Spirits/SpiritDog/spirit-dog-float-sprite.png"
+dest_files=[ "res://.import/spirit-dog-float-sprite.png-ad084cdff77f8b3b1cfa5ba89588f256.stex" ]
 
 [params]
 

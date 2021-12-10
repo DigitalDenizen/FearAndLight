@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-ice-below-ground.png-31750c85b3e6255a105b003d4bfc84c2.stex"
+path="res://.import/object-spirit-lantern-sprite.png-5c4044a6ca5c220d66d7f5b502925dbd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/IceLands/ice-below/scene-layer-ice-below-ground.png"
-dest_files=[ "res://.import/scene-layer-ice-below-ground.png-31750c85b3e6255a105b003d4bfc84c2.stex" ]
+source_file="res://Images/Objects/Misc/object-spirit-lantern-sprite.png"
+dest_files=[ "res://.import/object-spirit-lantern-sprite.png-5c4044a6ca5c220d66d7f5b502925dbd.stex" ]
 
 [params]
 

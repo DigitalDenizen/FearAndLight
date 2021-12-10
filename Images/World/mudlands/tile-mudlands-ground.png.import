@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile-mudlands-ground.png-d84b7d45c3a561a861f50f371ccdaf31.stex"
+path="res://.import/tile-mudlands-ground.png-5ce342487e0fce22880fb00d2de8e8fe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/mudlands/tile-mudlands-ground.png"
-dest_files=[ "res://.import/tile-mudlands-ground.png-d84b7d45c3a561a861f50f371ccdaf31.stex" ]
+source_file="res://Images/World/MudLands/tile-mudlands-ground.png"
+dest_files=[ "res://.import/tile-mudlands-ground.png-5ce342487e0fce22880fb00d2de8e8fe.stex" ]
 
 [params]
 
