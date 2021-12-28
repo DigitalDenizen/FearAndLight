@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-ice-below-trans-left-trees.png-e61cc84aed8a4782e0a19df10634f394.stex"
+path="res://.import/hero-villager-walk-sprite.png-34b257b4e82c64053f5311d6ea02a0a7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/icelands/ice-below-trans-left/scene-layer-ice-below-trans-left-trees.png"
-dest_files=[ "res://.import/scene-layer-ice-below-trans-left-trees.png-e61cc84aed8a4782e0a19df10634f394.stex" ]
+source_file="res://Images/Heroes/Villager/hero-villager-walk-sprite.png"
+dest_files=[ "res://.import/hero-villager-walk-sprite.png-34b257b4e82c64053f5311d6ea02a0a7.stex" ]
 
 [params]
 

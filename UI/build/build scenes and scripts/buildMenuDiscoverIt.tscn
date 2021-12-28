@@ -1,16 +1,13 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UI/build/build scenes and scripts/inventory_slot.gd" type="Script" id=1]
-[ext_resource path="res://UI/build/ui-build-item-bkgd-place.png" type="Texture" id=2]
+[ext_resource path="res://Images/UI/Build/ui-build-bkgd-item-discover.png" type="Texture" id=2]
 [ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=3]
 [ext_resource path="res://UI/build/ui-build-button-craft-idle.png" type="Texture" id=4]
 [ext_resource path="res://UI/build/ui-build-button-craft-active.png" type="Texture" id=5]
-[ext_resource path="res://Images/Drops/ResourceDrops/MudClumps/res-mud-clumps-tiny.png" type="Texture" id=6]
-[ext_resource path="res://UI/build/ui-build-button-info-idle.png" type="Texture" id=7]
+[ext_resource path="res://Images/UI/Build/ui-build-button-info-disabled.png" type="Texture" id=6]
 [ext_resource path="res://UI/build/ui-build-button-craft-inactive.png" type="Texture" id=8]
-[ext_resource path="res://UI/build/ui-build-button-info-inactive.png" type="Texture" id=9]
-[ext_resource path="res://UI/build/ui-build-button-info-active.png" type="Texture" id=10]
-[ext_resource path="res://Images/Defenses/MudWallLarge/defense-mud-wall-large-idle.png" type="Texture" id=11]
+[ext_resource path="res://UI/build/ui-build-item-inactive-1.png" type="Texture" id=11]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 3 )
@@ -32,15 +29,7 @@ texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 15, 15 )
 
 [sub_resource type="StyleBoxTexture" id=6]
-texture = ExtResource( 10 )
-region_rect = Rect2( 0, 0, 11, 11 )
-
-[sub_resource type="StyleBoxTexture" id=7]
-texture = ExtResource( 9 )
-region_rect = Rect2( 0, 0, 11, 11 )
-
-[sub_resource type="StyleBoxTexture" id=8]
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 11, 11 )
 
 [node name="slot_panel" type="Panel"]
@@ -68,16 +57,17 @@ rect_min_size = Vector2( 116, 17 )
 
 [node name="MarginContainer" type="MarginContainer" parent="slot_vcontainer/slot_name_vcontainer"]
 margin_right = 116.0
-margin_bottom = 16.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 116, 16 )
 custom_constants/margin_top = 2
 
 [node name="slot_name" type="Label" parent="slot_vcontainer/slot_name_vcontainer/MarginContainer"]
 margin_top = 2.0
 margin_right = 116.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 116, 14 )
+margin_bottom = 17.0
+rect_min_size = Vector2( 116, 15 )
 custom_fonts/font = ExtResource( 3 )
-text = "LARGE MUD WALL"
+text = "???"
 align = 1
 valign = 1
 
@@ -92,21 +82,21 @@ margin_right = 116.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 116, 16 )
 custom_constants/separation = -1
-alignment = 1
 
 [node name="build_button_hcontainer" type="MarginContainer" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer"]
-margin_left = 3.0
-margin_right = 18.0
+margin_right = 17.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 15, 15 )
 rect_clip_content = true
 custom_constants/margin_top = 1
+custom_constants/margin_left = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer/build_button_hcontainer"]
+margin_left = 2.0
 margin_top = 1.0
-margin_right = 15.0
+margin_right = 17.0
 margin_bottom = 16.0
-rect_min_size = Vector2( 13, 13 )
+rect_min_size = Vector2( 15, 15 )
 
 [node name="build_button_craft" type="Button" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer/build_button_hcontainer/CenterContainer"]
 margin_right = 15.0
@@ -119,8 +109,8 @@ shortcut_in_tooltip = false
 clip_text = true
 
 [node name="resource_1_hcontainer" type="MarginContainer" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer"]
-margin_left = 17.0
-margin_right = 57.0
+margin_left = 16.0
+margin_right = 56.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 40, 16 )
 
@@ -130,23 +120,21 @@ margin_bottom = 16.0
 alignment = 1
 
 [node name="resource_1_icon" type="TextureRect" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer/resource_1_hcontainer/resource_1_icon_container"]
-margin_left = 3.0
-margin_right = 17.0
+margin_left = 18.0
+margin_right = 18.0
 margin_bottom = 16.0
-texture = ExtResource( 6 )
 stretch_mode = 6
 
 [node name="resource_1_count" type="Label" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer/resource_1_hcontainer/resource_1_icon_container"]
-margin_left = 21.0
+margin_left = 22.0
 margin_top = 4.0
-margin_right = 37.0
+margin_right = 22.0
 margin_bottom = 12.0
-text = "x200"
 valign = 1
 
 [node name="resource_2_hcontainer" type="MarginContainer" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer"]
-margin_left = 56.0
-margin_right = 96.0
+margin_left = 55.0
+margin_right = 95.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 40, 16 )
 
@@ -170,18 +158,17 @@ margin_bottom = 12.0
 valign = 1
 
 [node name="building_count_hcontainer" type="MarginContainer" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer"]
-margin_left = 95.0
-margin_right = 113.0
+margin_left = 94.0
+margin_right = 112.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 18, 16 )
-custom_constants/margin_left = 6
+custom_constants/margin_left = 9
 
 [node name="building_count" type="Label" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer/building_count_hcontainer"]
-margin_left = 6.0
+margin_left = 9.0
 margin_top = 4.0
 margin_right = 18.0
 margin_bottom = 12.0
-text = "x2"
 
 [node name="slot_main_frame_vcontainer" type="VBoxContainer" parent="slot_vcontainer"]
 margin_top = 34.0
@@ -196,68 +183,66 @@ margin_bottom = 61.0
 rect_min_size = Vector2( 116, 61 )
 
 [node name="slot_main_left_hcontainer" type="HBoxContainer" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer"]
-margin_right = 30.0
+margin_right = 28.0
 margin_bottom = 61.0
-rect_min_size = Vector2( 30, 61 )
+rect_min_size = Vector2( 28, 61 )
 
 [node name="slot_main_middle_hcontainer" type="MarginContainer" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer"]
-margin_left = 34.0
-margin_right = 84.0
+margin_left = 32.0
+margin_right = 87.0
 margin_bottom = 61.0
 rect_min_size = Vector2( 50, 61 )
+custom_constants/margin_top = 5
 
 [node name="CenterContainer" type="CenterContainer" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer/slot_main_middle_hcontainer"]
-margin_right = 50.0
+margin_top = 5.0
+margin_right = 55.0
 margin_bottom = 61.0
-rect_min_size = Vector2( 50, 61 )
+rect_min_size = Vector2( 50, 55 )
 
 [node name="TextureRect" type="TextureRect" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer/slot_main_middle_hcontainer/CenterContainer"]
-margin_left = 4.0
-margin_top = 7.0
-margin_right = 45.0
-margin_bottom = 54.0
+margin_top = 8.0
+margin_right = 55.0
+margin_bottom = 48.0
 texture = ExtResource( 11 )
 
 [node name="slot_main_right_hcontainer" type="HBoxContainer" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer"]
-margin_left = 88.0
+margin_left = 91.0
 margin_right = 115.0
 margin_bottom = 61.0
-rect_min_size = Vector2( 27, 61 )
+rect_min_size = Vector2( 24, 61 )
 
 [node name="slot_right_vcontainer" type="VBoxContainer" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer/slot_main_right_hcontainer"]
-margin_right = 27.0
+margin_right = 24.0
 margin_bottom = 61.0
-rect_min_size = Vector2( 27, 15 )
+rect_min_size = Vector2( 24, 15 )
 
 [node name="slot_top_right_hcontainer" type="MarginContainer" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer/slot_main_right_hcontainer/slot_right_vcontainer"]
-margin_right = 27.0
+margin_right = 24.0
 margin_bottom = 13.0
-rect_min_size = Vector2( 13, 13 )
+rect_min_size = Vector2( 24, 13 )
 rect_clip_content = true
-custom_constants/margin_left = 12
+custom_constants/margin_left = 13
 
 [node name="CenterContainer" type="CenterContainer" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer/slot_main_right_hcontainer/slot_right_vcontainer/slot_top_right_hcontainer"]
-margin_left = 12.0
-margin_right = 27.0
+margin_left = 13.0
+margin_right = 24.0
 margin_bottom = 13.0
 
 [node name="slot_info_button" type="Button" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer/slot_main_right_hcontainer/slot_right_vcontainer/slot_top_right_hcontainer/CenterContainer"]
-margin_left = 2.0
 margin_top = 1.0
-margin_right = 13.0
+margin_right = 11.0
 margin_bottom = 12.0
 rect_min_size = Vector2( 11, 11 )
 rect_clip_content = true
-custom_styles/hover = SubResource( 6 )
-custom_styles/disabled = SubResource( 7 )
-custom_styles/normal = SubResource( 8 )
+custom_styles/normal = SubResource( 6 )
 align = 0
 
 [node name="slot_right_bottom_hcontainer" type="HBoxContainer" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer/slot_main_right_hcontainer/slot_right_vcontainer"]
 margin_top = 17.0
-margin_right = 27.0
+margin_right = 24.0
 margin_bottom = 59.0
-rect_min_size = Vector2( 27, 42 )
+rect_min_size = Vector2( 24, 42 )
 
 [node name="slot_button_container" type="VBoxContainer" parent="slot_vcontainer"]
 margin_top = 95.0
@@ -272,6 +257,7 @@ rect_min_size = Vector2( 83, 21 )
 flat = true
 
 [node name="MarginContainer" type="MarginContainer" parent="slot_vcontainer/slot_button_container/slot_main_button"]
+margin_right = 116.0
 margin_bottom = 21.0
 rect_min_size = Vector2( 116, 21 )
 custom_constants/margin_top = 1
