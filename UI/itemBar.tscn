@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://UI/itemBarSquare.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/hideButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Inventory.gd" type="Script" id=3]
-[ext_resource path="res://Images/Drops/EnemyDrops/ZombieBone/drop-zombie-bone-glow.png" type="Texture" id=4]
 
 [node name="CenterContainer4" type="CenterContainer"]
 margin_right = 270.0
@@ -26,14 +24,11 @@ margin_right = 240.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 240, 35 )
 custom_constants/separation = -1
-script = ExtResource( 3 )
 
 [node name="itemBarSquare" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 0.0
 margin_right = 33.0
 margin_bottom = 35.0
-text = "10"
-icon = ExtResource( 4 )
 expand_icon = true
 
 [node name="itemBarSquare2" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]

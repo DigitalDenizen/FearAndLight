@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
-"class": "Item",
-"language": "GDScript",
-"path": "res://Shared/Models/Item.gd"
-}, {
 "base": "Node",
 "class": "MobSpawner",
 "language": "GDScript",
@@ -32,10 +27,9 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "direWolf",
 "language": "GDScript",
-"path": "res://Characters/Enemies/direWolf.gd"
+"path": "res://Characters/Enemies/DireWolf.gd"
 } ]
 _global_script_class_icons={
-"Item": "",
 "MobSpawner": "",
 "PathFinding": "",
 "Zombie": "",

@@ -21,6 +21,7 @@ var items = []
 
 var FireBall = preload("res://Characters/Combat/FireBall.tscn")
 var Melee = preload("res://Characters/Combat/Melee.tscn")
+var inventory
 var facing = "Right"
 var move_vec
 
@@ -28,6 +29,7 @@ func _ready():
 	yield(get_tree(), "idle_frame")
 	add_to_group("Player")
 	get_tree().call_group("zombies", "set_player", self)
+	inventory = get_node("Camera2D/Overlay/Inventory")
 	
 func _physics_process(delta):
 	move_vec = Vector2()
@@ -99,7 +101,6 @@ func _player_movement(delta):
 			if facing == "Right":
 				$AnimatedSprite.play("idle")
 				$AnimatedSprite.flip_h = false
-
 			else:
 				$AnimatedSprite.play("idle")
 				$AnimatedSprite.flip_h = true

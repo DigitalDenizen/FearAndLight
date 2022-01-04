@@ -181,6 +181,5 @@ func _on_direWolf_melee(melee, target_pos, direWolf_pos):
 func _on_direWolf_killed():
 	if rng.randf() <= 0.8:
 		var itemDrop = itemDrop_scene.instance()
-		itemDrop.type = rng.randi() % 2
 		get_tree().get_root().add_child(itemDrop)
 		itemDrop.global_position = global_position

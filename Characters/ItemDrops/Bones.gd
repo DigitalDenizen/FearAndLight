@@ -1,4 +1,5 @@
 extends StaticBody2D
+
 var collected = false
 var collectCountDown = 5
 enum ItemDrop {HEALTH, MANA, BONES}
