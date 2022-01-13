@@ -95,11 +95,12 @@ custom_constants/separation = -1
 alignment = 1
 
 [node name="build_button_hcontainer" type="MarginContainer" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer"]
-margin_left = 3.0
+margin_left = 2.0
 margin_right = 18.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 15, 15 )
 rect_clip_content = true
+custom_constants/margin_right = 1
 custom_constants/margin_top = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer/build_button_hcontainer"]

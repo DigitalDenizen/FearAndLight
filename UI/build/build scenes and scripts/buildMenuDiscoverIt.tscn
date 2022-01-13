@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://UI/build/build scenes and scripts/inventory_slot.gd" type="Script" id=1]
 [ext_resource path="res://Images/UI/Build/ui-build-bkgd-item-discover.png" type="Texture" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://UI/build/ui-build-button-craft-idle.png" type="Texture" id=4]
 [ext_resource path="res://UI/build/ui-build-button-craft-active.png" type="Texture" id=5]
 [ext_resource path="res://Images/UI/Build/ui-build-button-info-disabled.png" type="Texture" id=6]
+[ext_resource path="res://Images/UI/Build/ui-build-item-inactive-1.png" type="Texture" id=7]
 [ext_resource path="res://UI/build/ui-build-button-craft-inactive.png" type="Texture" id=8]
-[ext_resource path="res://UI/build/ui-build-item-inactive-1.png" type="Texture" id=11]
+[ext_resource path="res://Images/UI/Build/ui-build-icon-question.png" type="Texture" id=9]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 3 )
@@ -204,7 +205,14 @@ rect_min_size = Vector2( 50, 55 )
 margin_top = 8.0
 margin_right = 55.0
 margin_bottom = 48.0
-texture = ExtResource( 11 )
+texture = ExtResource( 7 )
+
+[node name="TextureRect2" type="TextureRect" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer/slot_main_middle_hcontainer/CenterContainer"]
+margin_left = 22.0
+margin_top = 18.0
+margin_right = 33.0
+margin_bottom = 37.0
+texture = ExtResource( 9 )
 
 [node name="slot_main_right_hcontainer" type="HBoxContainer" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer"]
 margin_left = 91.0
@@ -222,16 +230,17 @@ margin_right = 24.0
 margin_bottom = 13.0
 rect_min_size = Vector2( 24, 13 )
 rect_clip_content = true
-custom_constants/margin_left = 13
+custom_constants/margin_left = 8
 
 [node name="CenterContainer" type="CenterContainer" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer/slot_main_right_hcontainer/slot_right_vcontainer/slot_top_right_hcontainer"]
-margin_left = 13.0
+margin_left = 8.0
 margin_right = 24.0
 margin_bottom = 13.0
 
 [node name="slot_info_button" type="Button" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer/slot_main_right_hcontainer/slot_right_vcontainer/slot_top_right_hcontainer/CenterContainer"]
+margin_left = 2.0
 margin_top = 1.0
-margin_right = 11.0
+margin_right = 13.0
 margin_bottom = 12.0
 rect_min_size = Vector2( 11, 11 )
 rect_clip_content = true
@@ -277,6 +286,6 @@ rect_min_size = Vector2( 84, 20 )
 margin_right = 84.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 84, 20 )
-text = "PLACE IT!"
+text = "DISCOVER IT!"
 align = 1
 valign = 1
