@@ -8,9 +8,8 @@ onready var build_menu = load("res://UI/build/build scenes and scripts/build_men
 #onready var mudhut = load("res://UI/build/build scenes and scripts/mud_hut_position.tscn").instance()
 #
 func _ready():
-	$slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer/build_button_hcontainer/CenterContainer/build_button_craft.disabled = true
-	$slot_vcontainer/slot_button_container/slot_main_button.disabled = true
-	
+	pass
+	 
 	#_populate_mudhut()
 #	#_populate_wall()
 #

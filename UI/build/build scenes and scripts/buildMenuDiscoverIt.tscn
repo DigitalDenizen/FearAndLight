@@ -1,13 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UI/build/build scenes and scripts/inventory_slot.gd" type="Script" id=1]
 [ext_resource path="res://Images/UI/Build/ui-build-bkgd-item-discover.png" type="Texture" id=2]
 [ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=3]
-[ext_resource path="res://UI/build/ui-build-button-craft-idle.png" type="Texture" id=4]
-[ext_resource path="res://UI/build/ui-build-button-craft-active.png" type="Texture" id=5]
+[ext_resource path="res://Images/UI/Build/ui-build-button-craft-disabled.png" type="Texture" id=4]
 [ext_resource path="res://Images/UI/Build/ui-build-button-info-disabled.png" type="Texture" id=6]
 [ext_resource path="res://Images/UI/Build/ui-build-item-inactive-1.png" type="Texture" id=7]
-[ext_resource path="res://UI/build/ui-build-button-craft-inactive.png" type="Texture" id=8]
 [ext_resource path="res://Images/UI/Build/ui-build-icon-question.png" type="Texture" id=9]
 
 [sub_resource type="Theme" id=1]
@@ -18,11 +16,15 @@ texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 116, 116 )
 
 [sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 15, 15 )
 
 [sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 8 )
+texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 15, 15 )
 
 [sub_resource type="StyleBoxTexture" id=5]
@@ -104,6 +106,7 @@ margin_right = 15.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 15, 15 )
 custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 7 )
 custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 shortcut_in_tooltip = false
