@@ -23,31 +23,31 @@ region_rect = Rect2( 0, 0, 116, 116 )
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 15, 15 )
 
-[sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 15, 15 )
-
 [sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 4 )
+texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 15, 15 )
 
 [sub_resource type="StyleBoxTexture" id=5]
-texture = ExtResource( 8 )
+texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 15, 15 )
 
 [sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="StyleBoxTexture" id=7]
 texture = ExtResource( 10 )
 region_rect = Rect2( 0, 0, 11, 11 )
 
-[sub_resource type="StyleBoxTexture" id=10]
+[sub_resource type="StyleBoxTexture" id=8]
 texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 11, 11 )
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 11, 11 )
 
-[sub_resource type="StyleBoxTexture" id=8]
+[sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 11, 11 )
 
@@ -121,11 +121,13 @@ rect_min_size = Vector2( 13, 13 )
 margin_right = 15.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 15, 15 )
+focus_mode = 0
 custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 shortcut_in_tooltip = false
+enabled_focus_mode = 0
 clip_text = true
 
 [node name="resource_1_hcontainer" type="MarginContainer" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer"]
@@ -258,10 +260,12 @@ margin_right = 13.0
 margin_bottom = 12.0
 rect_min_size = Vector2( 11, 11 )
 rect_clip_content = true
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 10 )
-custom_styles/disabled = SubResource( 7 )
-custom_styles/normal = SubResource( 8 )
+focus_mode = 0
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+enabled_focus_mode = 0
 align = 0
 
 [node name="slot_right_bottom_hcontainer" type="HBoxContainer" parent="slot_vcontainer/slot_main_frame_vcontainer/slot_main_frame_hcontainer/slot_main_right_hcontainer/slot_right_vcontainer"]
