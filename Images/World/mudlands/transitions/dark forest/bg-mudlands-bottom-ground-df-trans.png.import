@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg-mudlands-bottom-ground-df-trans.png-91e3f91f70f9abed16e48e2072423166.stex"
+path="res://.import/bg-mudlands-bottom-ground-df-trans.png-1fd5b6626f4b6bca4c7cc0ac44656b28.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/MudLands/transitions/dark forest/bg-mudlands-bottom-ground-df-trans.png"
-dest_files=[ "res://.import/bg-mudlands-bottom-ground-df-trans.png-91e3f91f70f9abed16e48e2072423166.stex" ]
+source_file="res://Images/World/mudlands/transitions/dark forest/bg-mudlands-bottom-ground-df-trans.png"
+dest_files=[ "res://.import/bg-mudlands-bottom-ground-df-trans.png-1fd5b6626f4b6bca4c7cc0ac44656b28.stex" ]
 
 [params]
 

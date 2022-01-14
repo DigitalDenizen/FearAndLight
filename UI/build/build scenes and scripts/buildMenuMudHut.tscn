@@ -1,17 +1,17 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://UI/build/build scenes and scripts/inventory_slot.gd" type="Script" id=1]
 [ext_resource path="res://UI/build/ui-build-item-bkgd-place.png" type="Texture" id=2]
 [ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=3]
-[ext_resource path="res://UI/build/ui-build-button-craft-idle.png" type="Texture" id=4]
-[ext_resource path="res://UI/build/ui-build-button-craft-active.png" type="Texture" id=5]
+[ext_resource path="res://Images/UI/Build/ui-build-button-craft-hover.png" type="Texture" id=4]
+[ext_resource path="res://Images/UI/Build/ui-build-button-craft-disabled.png" type="Texture" id=5]
 [ext_resource path="res://Images/Structures/MudHut/structure-mud-hut-idle.png" type="Texture" id=6]
-[ext_resource path="res://UI/build/ui-build-button-info-idle.png" type="Texture" id=7]
-[ext_resource path="res://UI/build/ui-build-button-craft-inactive.png" type="Texture" id=8]
-[ext_resource path="res://UI/build/ui-build-button-info-inactive.png" type="Texture" id=9]
-[ext_resource path="res://UI/build/ui-build-button-info-active.png" type="Texture" id=10]
+[ext_resource path="res://Images/UI/Build/ui-build-button-info-hover.png" type="Texture" id=7]
+[ext_resource path="res://Images/UI/Build/ui-build-button-craft-normal.png" type="Texture" id=8]
+[ext_resource path="res://Images/UI/Build/ui-build-button-info-disabled.png" type="Texture" id=9]
+[ext_resource path="res://Images/UI/Build/ui-build-button-info-normal.png" type="Texture" id=10]
 [ext_resource path="res://UI/build/ui-build-res-mud-clumps-sm.png" type="Texture" id=11]
-[ext_resource path="res://UI/build/ui-build-res-wood-logs-sm.png" type="Texture" id=12]
+[ext_resource path="res://Images/Drops/ResourceDrops/WoodLogs/ui-icon-wood-logs-sm.png" type="Texture" id=12]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 3 )
@@ -21,7 +21,7 @@ texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 116, 116 )
 
 [sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 15, 15 )
 
 [sub_resource type="StyleBoxTexture" id=4]
@@ -29,19 +29,27 @@ texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 15, 15 )
 
 [sub_resource type="StyleBoxTexture" id=5]
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 15, 15 )
 
 [sub_resource type="StyleBoxTexture" id=6]
-texture = ExtResource( 10 )
-region_rect = Rect2( 0, 0, 11, 11 )
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 15, 15 )
 
 [sub_resource type="StyleBoxTexture" id=7]
-texture = ExtResource( 9 )
+texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 11, 11 )
 
 [sub_resource type="StyleBoxTexture" id=8]
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 11, 11 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 11, 11 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 10 )
 region_rect = Rect2( 0, 0, 11, 11 )
 
 [node name="slot_panel" type="Panel"]
@@ -67,10 +75,16 @@ margin_right = 116.0
 margin_bottom = 17.0
 rect_min_size = Vector2( 116, 17 )
 
-[node name="slot_name" type="Label" parent="slot_vcontainer/slot_name_vcontainer"]
+[node name="MarginContainer" type="MarginContainer" parent="slot_vcontainer/slot_name_vcontainer"]
 margin_right = 116.0
 margin_bottom = 16.0
-rect_min_size = Vector2( 116, 16 )
+custom_constants/margin_top = 2
+
+[node name="slot_name" type="Label" parent="slot_vcontainer/slot_name_vcontainer/MarginContainer"]
+margin_top = 2.0
+margin_right = 116.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 116, 14 )
 custom_fonts/font = ExtResource( 3 )
 text = "MUD HUT"
 align = 1
@@ -107,10 +121,13 @@ rect_min_size = Vector2( 15, 15 )
 margin_right = 15.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 15, 15 )
+focus_mode = 0
 custom_styles/hover = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 shortcut_in_tooltip = false
+enabled_focus_mode = 0
 clip_text = true
 
 [node name="resource_1_marginCont" type="MarginContainer" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer"]
@@ -250,9 +267,12 @@ margin_right = 14.0
 margin_bottom = 11.0
 rect_min_size = Vector2( 11, 11 )
 rect_clip_content = true
-custom_styles/hover = SubResource( 6 )
-custom_styles/disabled = SubResource( 7 )
-custom_styles/normal = SubResource( 8 )
+focus_mode = 0
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+enabled_focus_mode = 0
 align = 0
 
 [node name="slot_button_container" type="HBoxContainer" parent="slot_vcontainer"]

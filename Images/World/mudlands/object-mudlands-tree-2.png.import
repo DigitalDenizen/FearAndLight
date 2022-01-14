@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-mudlands-tree-2.png-8ccb6cb7f16f6420e27b52d7293c585d.stex"
+path="res://.import/object-mudlands-tree-2.png-e922a037b4ac84cdba1a2170743a078e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/MudLands/object-mudlands-tree-2.png"
-dest_files=[ "res://.import/object-mudlands-tree-2.png-8ccb6cb7f16f6420e27b52d7293c585d.stex" ]
+source_file="res://Images/World/mudlands/object-mudlands-tree-2.png"
+dest_files=[ "res://.import/object-mudlands-tree-2.png-e922a037b4ac84cdba1a2170743a078e.stex" ]
 
 [params]
 

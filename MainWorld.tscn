@@ -230,5 +230,6 @@ pause_mode = 2
 stream = ExtResource( 1 )
 volume_db = -13.697
 autoplay = true
+
 [connection signal="victory" from="MobSpawn" to="UI/VictoryStatsPopup" method="waveSpawnVictory"]
 [connection signal="hide" from="UI/VictoryStatsPopup" to="UI/VictoryStatsPopup" method="closeWindow"]
