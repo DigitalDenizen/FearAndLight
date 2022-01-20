@@ -1,6 +1,4 @@
 extends KinematicBody2D
-class_name direWolf
-
 
 signal health_updated(health)
 signal melee(melee, player_pos, direWolf_pos)
@@ -45,17 +43,15 @@ func _physics_process(delta):
 	if player == null:
 		return
 	if alive && not_attacking:
-		var pathHeroes:PoolVector2Array = pathFinding.get_new_path(global_position, player.global_position)
+		var pathHeroes = pathFinding.get_new_path(global_position, player.global_position)
 		var buildingList = buildings.get_children()
 		if buildingList.size() > 0:
-			var pathBuildings:PoolVector2Array = prioritize_target(buildings)
+			var pathBuildings = prioritize_target(buildings)
 			
 			if pathHeroes.size() < 10:
 				path = pathHeroes
 			elif pathBuildings.size() < 5:
 				path = pathBuildings
-			else:
-				path = pathHeroes
 		else:
 			path = pathHeroes
 		
@@ -66,6 +62,8 @@ func _physics_process(delta):
 			walk_animation(zomboidVector)
 			move_and_slide(zomboidVector)
 			set_path_line(path)
+		elif(path.size() == 0):
+			_change_state(STATES.IDLE)
 		else:
 			_on_direWolf_melee(Melee, player.global_position, global_position)
 	else:

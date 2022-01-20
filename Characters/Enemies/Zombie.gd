@@ -53,11 +53,8 @@ func _physics_process(delta):
 				path = pathHeroes
 			elif pathBuildings.size() < 5:
 				path = pathBuildings
-			else:
-				path = pathHeroes
 		else:
 			path = pathHeroes
-		
 		
 		var zomboidVector
 		if path.size() > 2:
@@ -65,6 +62,8 @@ func _physics_process(delta):
 			walk_animation(zomboidVector)
 			move_and_slide(zomboidVector)
 			set_path_line(path)
+		elif path.size() == 0:
+			_change_state(STATES.IDLE)
 		else:
 			_on_Zombie_melee(Melee, player.global_position, global_position)
 	else:
@@ -83,7 +82,7 @@ func kill():
 
 func _change_state(new_state):
 	if new_state == STATES.FOLLOW:
-		path = get_parent().get_node('TileMap').find_path(position, player.global_position)
+		path = get_parent().get_node("TileMap").find_path(position, player.global_position)
 		if not path or len(path) == 1:
 			_change_state(STATES.IDLE)
 			return
@@ -163,6 +162,15 @@ func set_path_line(points: Array):
 
 	path_line.points = local_points
 	
+
+func idle_animation(vector: Vector2):
+	if vector.x > 0:
+		$AnimatedSprite.play("Walk")
+		$AnimatedSprite.flip_h = false
+	else:
+		$AnimatedSprite.play("Walk")
+		$AnimatedSprite.flip_h = true
+		
 
 func walk_animation(vector: Vector2):
 	if vector.x > 0:

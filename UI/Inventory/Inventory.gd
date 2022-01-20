@@ -47,5 +47,7 @@ func addPickedUpItem(itemName, filePath, category):
 func _on_Button_toggled(button_pressed: bool) -> void:
 	if !visible:
 		visible = true
+		get_tree().paused = true
 	else:
 		visible = false
+		get_tree().paused = false
