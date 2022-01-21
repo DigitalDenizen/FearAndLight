@@ -1,91 +1,98 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Images/Battle_UI/ui-battle-three-panel-window.png" type="Texture" id=2]
 [ext_resource path="res://UI/Battle/Battle Menu scenes/Enemy_Info.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/Battle/Battle Menu scenes/Spoils_Of_war.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/Battle/Battle Menu scenes/Battle_Details.tscn" type="PackedScene" id=5]
-[ext_resource path="res://UI/Battle/battlePanel.gd" type="Script" id=13]
+[ext_resource path="res://Images/Battle_UI/ui-tab-active.png" type="Texture" id=6]
+[ext_resource path="res://UI/Battle/battleTab.gd" type="Script" id=7]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 1 )
 
 [sub_resource type="StyleBoxTexture" id=2]
+content_margin_top = 4.0
+content_margin_bottom = 0.0
+texture = ExtResource( 6 )
+region_rect = Rect2( -1, 0, 55, 17 )
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="Theme" id=4]
+default_font = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 397, 163 )
 
-[node name="Battle_Panel" type="Panel"]
-margin_right = 397.0
-margin_bottom = 163.0
-rect_min_size = Vector2( 397, 163 )
+[node name="TabContainer" type="TabContainer"]
+margin_left = -0.595276
+margin_top = -20.1984
+margin_right = 396.405
+margin_bottom = 163.802
 theme = SubResource( 1 )
-custom_styles/panel = SubResource( 2 )
-script = ExtResource( 13 )
+custom_styles/tab_fg = SubResource( 2 )
+custom_styles/panel = SubResource( 3 )
+custom_constants/label_valign_bg = 3
+tab_align = 0
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="BATTLE" type="GridContainer" parent="."]
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 397.0
-margin_bottom = -33.0
+margin_top = 18.0
 rect_min_size = Vector2( 397, 163 )
-custom_constants/vseparation = 3
 columns = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="GridContainer"]
+[node name="Battle_Panel" type="Panel" parent="BATTLE"]
 margin_right = 397.0
 margin_bottom = 163.0
 rect_min_size = Vector2( 397, 163 )
+theme = SubResource( 4 )
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="BATTLE/Battle_Panel"]
+anchor_top = 0.071
+anchor_bottom = 0.071
+margin_top = -14.573
 margin_right = 397.0
-margin_bottom = 163.0
+margin_bottom = 152.427
+rect_min_size = Vector2( 397, 163 )
+custom_constants/margin_top = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BATTLE/Battle_Panel/MarginContainer"]
+margin_top = 2.0
+margin_right = 397.0
+margin_bottom = 167.0
 rect_min_size = Vector2( 397, 163 )
 custom_constants/separation = -5
 
-[node name="Battle_Details" parent="GridContainer/MarginContainer/HBoxContainer" instance=ExtResource( 5 )]
+[node name="Battle_Details" parent="BATTLE/Battle_Panel/MarginContainer/HBoxContainer" instance=ExtResource( 5 )]
 margin_right = 138.0
+margin_bottom = 165.0
+rect_min_size = Vector2( 132, 160 )
 
-[node name="Enemy_Info" parent="GridContainer/MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="Enemy_Info" parent="BATTLE/Battle_Panel/MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
 margin_left = 133.0
 margin_right = 265.0
+margin_bottom = 165.0
 
-[node name="CenterContainer2" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info" index="0"]
-margin_right = 132.0
-
-[node name="VBoxContainer" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info/CenterContainer2" index="0"]
-margin_right = 132.0
-
-[node name="RichTextLabel" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info/CenterContainer2/VBoxContainer" index="0"]
-margin_right = 132.0
-
-[node name="MarginContainer" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info" index="1"]
-margin_right = 132.0
-
-[node name="CenterContainer" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer" index="0"]
-margin_right = 132.0
-
-[node name="TextureRect" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer/CenterContainer" index="0"]
-margin_left = 13.0
-margin_right = 119.0
-
-[node name="MarginContainer2" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info" index="2"]
-margin_right = 132.0
-
-[node name="CenterContainer" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer2" index="0"]
-margin_right = 132.0
-
-[node name="Button" parent="GridContainer/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer2/CenterContainer" index="0"]
-margin_left = 13.0
-margin_right = 119.0
-
-[node name="Spoils_Of_war" parent="GridContainer/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
+[node name="Spoils_Of_war" parent="BATTLE/Battle_Panel/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
 margin_left = 260.0
 margin_right = 392.0
-[connection signal="toggled" from="GridContainer/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer2/CenterContainer/Button" to="." method="_on_Button_toggled"]
-
-[editable path="GridContainer/MarginContainer/HBoxContainer/Enemy_Info"]
+margin_bottom = 165.0

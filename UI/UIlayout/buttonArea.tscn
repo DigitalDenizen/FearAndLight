@@ -122,9 +122,16 @@ margin_right = 643.0
 margin_bottom = 964.0
 
 [node name="CenterContainer2" parent="battleMenuBanner" index="0"]
+visible = false
 margin_left = 321.0
 margin_right = 321.0
 margin_bottom = 0.0
+
+[node name="Control" parent="battleMenuBanner" index="1"]
+margin_left = 2.58112
+margin_top = -3.24713
+margin_right = -215.419
+margin_bottom = -286.247
 [connection signal="toggled" from="VBoxContainer/HBoxContainer3/HBoxContainer3/battleButton/Button" to="battleMenuBanner" method="_on_Button_toggled"]
 
 [editable path="VBoxContainer/HBoxContainer3/HBoxContainer3/battleButton"]

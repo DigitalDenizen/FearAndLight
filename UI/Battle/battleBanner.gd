@@ -12,6 +12,9 @@ func _process(delta):
 		closeBanner()
 
 func closeBanner():
+	#When the banner is visible a timer is started
+	#Once timed out the banner is closed and emit a signal
+	#This is the signal that tiggers the Mob Spawn
 	if visible == true:
 		var t = Timer.new()
 		t.set_wait_time(3) #Setting timer

@@ -10,6 +10,7 @@ region_rect = Rect2( 0, 0, 422, 196 )
 expand_margin_top = 20.0
 
 [node name="WindowDialog" type="WindowDialog"]
+visible = true
 light_mask = 0
 anchor_right = 0.02
 anchor_bottom = 0.21
@@ -28,6 +29,6 @@ __meta__ = {
 show_behind_parent = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = -3.0
+margin_top = -3.62996
 margin_right = 422.0
-margin_bottom = 193.0
+margin_bottom = 192.37

@@ -1,22 +1,21 @@
 extends WindowDialog
+class_name BattleMenu
 var battleMenuClosed
 signal battleMenuClosed
 
 signal startBattle
 var battleMenuCalled = false
+var close
 
-func _ready():
+func _process(delta):
+	visible = true
 	if visible == true:
 		popup_centered()
 
 func _on_startBattle_battleMenuButtonPressed():
 	visible = true
-	if visible == true:
-		popup_centered()
 
 func _on_TabContainer_battleStart():
-	#When the Start button is pressed a timer start
-	#Once the timer runs out the menu closes and emaits a signal
 	if visible == true:
 		var t = Timer.new()
 		t.set_wait_time(.5)
@@ -30,4 +29,5 @@ func _on_TabContainer_battleStart():
 		battleMenuClosed = true
 		emit_signal("battleMenuClosed")
 		emit_signal("startBattle")
-		print("Step: 3 - start battle")
+
+

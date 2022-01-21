@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "WindowDialog",
 "class": "BattleMenu",
 "language": "GDScript",
-"path": "res://UI/Battle/Battle_Popup_window.gd"
+"path": "res://UI/Battle/Testing.gd"
 }, {
 "base": "Node",
 "class": "MobSpawner",

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Audio/Music/Menu/F&L_main-title-loop-v3.wav" type="AudioStream" id=1]
 [ext_resource path="res://Characters/Enemies/MobSpawnerStartBattle.tscn" type="PackedScene" id=2]
@@ -19,7 +19,15 @@
 [ext_resource path="res://Images/tile-mud.png" type="Texture" id=19]
 [ext_resource path="res://Audio/Music/Village/woods.wav" type="AudioStream" id=21]
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="StreamTexture" id=1]
+resource_local_to_scene = true
+load_path = "res://.import/ui-button-close.png-450e3c1a49599666deacecf72839fc05.stex"
+
+[sub_resource type="StreamTexture" id=2]
+resource_local_to_scene = true
+load_path = "res://.import/ui-button-close.png-450e3c1a49599666deacecf72839fc05.stex"
+
+[sub_resource type="TileSet" id=3]
 0/name = "mud"
 0/texture = ExtResource( 19 )
 0/tex_offset = Vector2( 0, 0 )
@@ -44,19 +52,19 @@
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
-
-[sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
-
 [sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
 
-[sub_resource type="TileSet" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
+
+[sub_resource type="TileSet" id=8]
 0/name = "Top-Left-Wall"
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
@@ -66,14 +74,14 @@ points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 2 )
+0/shape = SubResource( 4 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -86,14 +94,14 @@ points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 3 )
+1/shape = SubResource( 5 )
 1/shape_one_way = false
 1/shape_one_way_margin = 1.0
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
@@ -106,14 +114,14 @@ points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 4 )
+2/shape = SubResource( 6 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 4 ),
+"shape": SubResource( 6 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -126,14 +134,14 @@ points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
 3/navigation_offset = Vector2( 0, 0 )
 3/shape_offset = Vector2( 0, 0 )
 3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape = SubResource( 5 )
+3/shape = SubResource( 7 )
 3/shape_one_way = false
 3/shape_one_way_margin = 1.0
 3/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 5 ),
+"shape": SubResource( 7 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 3/z_index = 0
@@ -163,11 +171,19 @@ script = ExtResource( 16 )
 
 [node name="VictoryStatsPopup" parent="Player/Camera2D/UI" instance=ExtResource( 4 )]
 pause_mode = 2
+custom_icons/close_highlight = SubResource( 1 )
+custom_icons/close = SubResource( 1 )
 
 [node name="Score" parent="Player/Camera2D/UI" instance=ExtResource( 3 )]
 pause_mode = 2
 
 [node name="uiButtonLayout" parent="Player/Camera2D/UI" instance=ExtResource( 5 )]
+
+[node name="Control" parent="Player/Camera2D/UI/uiButtonLayout/buttonArea/battleMenuBanner" index="1"]
+margin_left = 0.707092
+margin_right = -217.293
+custom_icons/close_highlight = SubResource( 2 )
+custom_icons/close = SubResource( 2 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
@@ -206,7 +222,7 @@ z_as_relative = false
 [node name="Ground" type="TileMap" parent="." groups=[
 "tileMap",
 ]]
-tile_set = SubResource( 1 )
+tile_set = SubResource( 3 )
 cell_size = Vector2( 30, 30 )
 collision_mask = 13
 occluder_light_mask = 2
@@ -217,7 +233,7 @@ tile_data = PoolIntArray( 327638, 0, 0, 327639, 0, 0, 327640, 0, 0, 327641, 0, 0
 "obstacles",
 "tileMap",
 ]]
-tile_set = SubResource( 6 )
+tile_set = SubResource( 8 )
 cell_size = Vector2( 30, 30 )
 collision_mask = 13
 occluder_light_mask = 2
