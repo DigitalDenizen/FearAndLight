@@ -38,3 +38,7 @@ func _body_entered(body):
 		if !body.is_in_group("Baddies") && !body.is_in_group('CollisionBox') && !body.is_in_group('tileMap'):
 			body.hurt(10)
 			queue_free()
+	elif attacker == "Wendigo":
+		if !body.is_in_group("Baddies") && !body.is_in_group('CollisionBox') && !body.is_in_group('tileMap'):
+			body.hurt(30)
+			queue_free()

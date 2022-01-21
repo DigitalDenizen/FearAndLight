@@ -7,8 +7,10 @@ onready var build_menu = load("res://UI/build/build scenes and scripts/build_men
 #onready var wall = load("res://UI/build/build scenes and scripts/mud_wall_position.tscn").instance()
 #onready var mudhut = load("res://UI/build/build scenes and scripts/mud_hut_position.tscn").instance()
 #
-##func _ready():
-#	#_populate_mudhut()
+func _ready():
+	pass
+	 
+	#_populate_mudhut()
 #	#_populate_wall()
 #
 #

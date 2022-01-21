@@ -4,4 +4,10 @@
 
 [node name="uiButtonLayout" type="CanvasLayer"]
 
+[node name="buttonArea" parent="." instance=ExtResource( 1 )]
+margin_right = 643.0
+[connection signal="bannerClosed" from="buttonArea" to="." method="_on_buttonArea_bannerClosed"]
+[connection signal="bannerClosed" from="buttonArea/battleMenuBanner" to="." method="_on_battleMenuBanner_bannerClosed"]
+
+[editable path="buttonArea"]
 [node name="GridContainer" parent="." instance=ExtResource( 1 )]
