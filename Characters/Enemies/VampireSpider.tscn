@@ -152,6 +152,8 @@ position = Vector2( -5.89503, 0.260857 )
 scale = Vector2( 1.23255, 1.2279 )
 frames = SubResource( 24 )
 animation = "idle"
+
+[node name="PathLine" type="Line2D" parent="."]
 [connection signal="health_updated" from="." to="HealthBar" method="_on_vampireSpider_health_updated"]
 [connection signal="killed" from="." to="." method="_on_vampireSpider_killed"]
 [connection signal="melee" from="." to="." method="_on_vampireSpider_melee"]

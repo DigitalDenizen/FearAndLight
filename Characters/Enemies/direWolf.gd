@@ -58,8 +58,6 @@ func _physics_process(delta):
 				path = pathHeroes
 		else:
 			path = pathHeroes
-		
-		
 		var zomboidVector
 		if path.size() > 2:
 			zomboidVector = global_position.direction_to(path[1]) * MOVE_SPEED
@@ -99,7 +97,6 @@ func set_player(p):
 func move_to(world_position):
 	var MASS = 10.0
 	var ARRIVE_DISTANCE = 10.0
-
 	var desired_velocity = (world_position - position).normalized() * MOVE_SPEED
 	var steering = desired_velocity - velocity
 	velocity += steering / MASS
@@ -129,7 +126,6 @@ func _set_health(value):
 func set_path_line(points: Array):
 	if not should_draw_path_line:
 		return
-
 	var local_points := []
 	for point in points:
 		if point == points[0]:
@@ -138,7 +134,6 @@ func set_path_line(points: Array):
 			local_points.append(point - global_position)
 
 	path_line.points = local_points
-	
 
 func walk_animation(vector: Vector2):
 	if vector.x > 0:
@@ -176,7 +171,6 @@ func _on_direWolf_melee(melee, target_pos, direWolf_pos):
 	add_child(scratch)
 	scratch.shoot(target_pos, direWolf_pos)
 	$RandomBarkPlayer.play_random()
-	
 
 func _on_direWolf_killed():
 	if rng.randf() <= 0.8:
