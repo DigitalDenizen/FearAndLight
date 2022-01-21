@@ -92,7 +92,39 @@ margin_left = 133.0
 margin_right = 265.0
 margin_bottom = 165.0
 
+[node name="CenterContainer2" parent="BATTLE/Battle_Panel/MarginContainer/HBoxContainer/Enemy_Info" index="0"]
+margin_right = 132.0
+
+[node name="VBoxContainer" parent="BATTLE/Battle_Panel/MarginContainer/HBoxContainer/Enemy_Info/CenterContainer2" index="0"]
+margin_right = 132.0
+
+[node name="RichTextLabel" parent="BATTLE/Battle_Panel/MarginContainer/HBoxContainer/Enemy_Info/CenterContainer2/VBoxContainer" index="0"]
+margin_right = 132.0
+
+[node name="MarginContainer" parent="BATTLE/Battle_Panel/MarginContainer/HBoxContainer/Enemy_Info" index="1"]
+margin_right = 132.0
+
+[node name="CenterContainer" parent="BATTLE/Battle_Panel/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer" index="0"]
+margin_right = 132.0
+
+[node name="TextureRect" parent="BATTLE/Battle_Panel/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer/CenterContainer" index="0"]
+margin_left = 13.0
+margin_right = 119.0
+
+[node name="MarginContainer2" parent="BATTLE/Battle_Panel/MarginContainer/HBoxContainer/Enemy_Info" index="2"]
+margin_right = 132.0
+
+[node name="CenterContainer" parent="BATTLE/Battle_Panel/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer2" index="0"]
+margin_right = 132.0
+
+[node name="Button" parent="BATTLE/Battle_Panel/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer2/CenterContainer" index="0"]
+margin_left = 13.0
+margin_right = 119.0
+
 [node name="Spoils_Of_war" parent="BATTLE/Battle_Panel/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
 margin_left = 260.0
 margin_right = 392.0
 margin_bottom = 165.0
+[connection signal="battleStart" from="BATTLE/Battle_Panel/MarginContainer/HBoxContainer/Enemy_Info/MarginContainer2/CenterContainer/Button" to="." method="_on_Button_battleStart"]
+
+[editable path="BATTLE/Battle_Panel/MarginContainer/HBoxContainer/Enemy_Info"]

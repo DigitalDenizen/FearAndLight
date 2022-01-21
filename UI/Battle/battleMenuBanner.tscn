@@ -29,7 +29,7 @@ margin_bottom = -283.0
 [connection signal="battleMenuButtonPressed" from="." to="CenterContainer2" method="_on_startBattle_battleMenuButtonPressed"]
 [connection signal="about_to_show" from="CenterContainer2" to="CenterContainer2" method="_on_CenterContainer2_about_to_show"]
 [connection signal="about_to_show" from="Control" to="Control" method="_on_Control_about_to_show"]
-[connection signal="battleMenuClosed" from="Control" to="CenterContainer2" method="_on_Control_battleMenuClosed"]
 [connection signal="battleMenuClosed" from="Control" to="." method="_on_Control_battleMenuClosed"]
+[connection signal="battleMenuClosed" from="Control" to="CenterContainer2" method="_on_Control_battleMenuClosed"]
 
 [editable path="CenterContainer2"]
