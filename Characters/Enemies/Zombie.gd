@@ -125,7 +125,6 @@ func _set_health(value):
 			$AnimatedSprite.play("Death")
 
 func _on_Zombie_melee(Melee, target_pos, zombie_pos):
-	
 	var direction = target_pos - zombie_pos
 	if direction.x > 0:
 		$AnimatedSprite.play("Attack")
@@ -147,7 +146,6 @@ func _on_Zombie_killed():
 		itemDrop.type = rng.randi() % 2
 		get_tree().get_root().add_child(itemDrop)
 		itemDrop.global_position = global_position
-		
 
 func set_path_line(points: Array):
 	if not should_draw_path_line:
@@ -161,7 +159,6 @@ func set_path_line(points: Array):
 			local_points.append(point - global_position)
 
 	path_line.points = local_points
-	
 
 func idle_animation(vector: Vector2):
 	if vector.x > 0:

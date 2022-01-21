@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://Shared/PathFinding.gd"
 }, {
 "base": "KinematicBody2D",
+"class": "Wendigo",
+"language": "GDScript",
+"path": "res://Characters/Bosses/wendigo.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Zombie",
 "language": "GDScript",
 "path": "res://Characters/Enemies/Zombie.gd"
@@ -27,6 +32,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "MobSpawner": "",
 "PathFinding": "",
+"Wendigo": "",
 "Zombie": ""
 }
 

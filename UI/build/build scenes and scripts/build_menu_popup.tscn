@@ -4,7 +4,7 @@
 [ext_resource path="res://UI/global/ui-button-close.png" type="Texture" id=2]
 [ext_resource path="res://UI/global/ui-window-main.png" type="Texture" id=3]
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 422, 196 )
 expand_margin_top = 20.0
@@ -15,11 +15,11 @@ light_mask = 0
 anchor_right = 0.02
 anchor_bottom = 0.21
 margin_top = 2.0
-margin_right = 423.52
-margin_bottom = 57.0
+margin_right = 423.2
+margin_bottom = 82.2
 custom_icons/close_highlight = ExtResource( 2 )
 custom_icons/close = ExtResource( 2 )
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 1 )
 popup_exclusive = true
 __meta__ = {
 "_edit_use_anchors_": false
