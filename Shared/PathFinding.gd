@@ -95,13 +95,6 @@ func update_navigation_map():
 					astar.set_point_disabled(id, true)
 					if should_display_grid:
 						grid_rects[str(id)].color = disabled_color
-			if obstacle is StaticBody2D:
-				var tile_coord = tileMap.world_to_map(obstacle.collision_shape.global_position)
-				var id = get_id_for_point(tile_coord)
-				if astar.has_point(id):
-					astar.set_point_disabled(id, true)
-					if should_display_grid:
-						grid_rects[str(id)].color = disabled_color
 	
 func get_id_for_point(point: Vector2):
 	var x = point.x - used_rect.position.x

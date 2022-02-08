@@ -20,15 +20,18 @@ var pathFinding: PathFinding
 var spawner = {}
 var waveSpawn = false
 var player = null
-var path = []
+var pathObject: TargetPath
 var _state = null
 var buildings = null
 var alive = true
+var previousPosition
 var not_attacking = true
+var target = false
 var attackCountDown = 0
 var deathCountdown = 0
 var velocity: = Vector2.ZERO
 var rng = RandomNumberGenerator.new()
+var thread
 
 var target_point_world = Vector2()
 var target_position = Vector2()
@@ -44,28 +47,25 @@ func _physics_process(delta):
 	if player == null:
 		return
 	if alive && not_attacking:
-		var pathHeroes:PoolVector2Array = pathFinding.get_new_path(global_position, player.global_position)
-		var buildingList = buildings.get_children()
-		if buildingList.size() > 0:
-			var pathBuildings:PoolVector2Array = prioritize_target(buildings)
-			
-			if pathHeroes.size() < 10:
-				path = pathHeroes
-			elif pathBuildings.size() < 5:
-				path = pathBuildings
-		else:
-			path = pathHeroes
+		var target = true
+		var targetList = buildings.get_children()
+		targetList.append(player)
+		var targetObject = prioritize_target(targetList)
+		if targetObject.path.size() > 30:
+			var noTarget = TargetPath.new()
+			targetObject = noTarget
+			target = false
 		
-		var zomboidVector
-		if path.size() > 2:
-			zomboidVector = global_position.direction_to(path[1]) * MOVE_SPEED
-			walk_animation(zomboidVector)
-			move_and_slide(zomboidVector)
-			set_path_line(path)
-		elif path.size() == 0:
+		var enemyVector
+		if targetObject.path.size() > 2:
+			enemyVector = global_position.direction_to(targetObject.path[1]) * MOVE_SPEED
+			walk_animation(enemyVector)
+			move_and_slide(enemyVector)
+			set_path_line(targetObject.path)
+		elif targetObject.path.size() == 0 && !target:
 			_change_state(STATES.IDLE)
 		else:
-			_on_Zombie_melee(Melee, player.global_position, global_position)
+			_on_Zombie_melee(Melee, targetObject.targetObject.global_position, global_position)
 	else:
 		if not_attacking:
 			deathCountdown = deathCountdown - 1
@@ -82,13 +82,13 @@ func kill():
 
 func _change_state(new_state):
 	if new_state == STATES.FOLLOW:
-		path = get_parent().get_node("TileMap").find_path(position, player.global_position)
-		if not path or len(path) == 1:
+		pathObject.path = get_parent().get_node("TileMap").find_path(position, player.global_position)
+		if not pathObject.path or len(pathObject.path) == 1:
 			_change_state(STATES.IDLE)
 			return
 		# The index 0 is the starting cell
 		# we don't want the character to move back to it in this example
-		target_point_world = path[1]
+		target_point_world = pathObject.path[1]
 	_state = new_state
 
 func set_player(p):
@@ -177,15 +177,21 @@ func walk_animation(vector: Vector2):
 		$AnimatedSprite.play("Walk")
 		$AnimatedSprite.flip_h = true
 
-func prioritize_target(buildings):
-	var target:PoolVector2Array
-	var count = 0
-	for building in buildings.get_children():
-		var currentPath:PoolVector2Array = pathFinding.get_new_path(global_position, building.global_position)
-		if currentPath.size() > 0:
-			if count == 0:
-				target = currentPath
+func prioritize_target(targets):
+	var target
+	var distanceToCompare
+	var firstItem = true
+	for obj in targets:
+		if firstItem:
+			firstItem = false
+			distanceToCompare = obj.global_position.distance_to(global_position);
+			target = obj
 			
-			target = currentPath if currentPath.size() < target.size() else target
+		if distanceToCompare > obj.global_position.distance_to(global_position):
+			distanceToCompare = obj.global_position.distance_to(global_position);
+			target = obj
 		
-	return target
+	var closestTarget = TargetPath.new()
+	closestTarget.targetObject = target
+	closestTarget.path = pathFinding.get_new_path(global_position, target.global_position)
+	return closestTarget

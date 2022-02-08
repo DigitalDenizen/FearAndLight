@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Audio/Music/Scary/spooky-atmos.wav" type="AudioStream" id=1]
 [ext_resource path="res://UI/UIlayout/ButtonArea.tscn" type="PackedScene" id=2]
@@ -18,7 +18,6 @@
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Images/tile-mud.png" type="Texture" id=19]
-[ext_resource path="res://Audio/Music/Village/woods.wav" type="AudioStream" id=21]
 
 [sub_resource type="TileSet" id=1]
 0/name = "mud"
@@ -144,7 +143,7 @@ script = ExtResource( 15 )
 
 [node name="MobSpawn" parent="." instance=ExtResource( 5 )]
 position = Vector2( 369.643, 194.889 )
-spawn_num = 20
+spawn_num = 5
 
 [node name="BarrierTop" parent="." instance=ExtResource( 14 )]
 visible = false
@@ -199,21 +198,13 @@ position = Vector2( -3.24115, 0.943878 )
 [node name="Buildings" type="YSort" parent="."]
 z_index = 1
 
-[node name="MudHut" parent="Buildings" instance=ExtResource( 9 )]
-light_mask = 2
-position = Vector2( 54.4463, 196.577 )
-z_index = 1
-z_as_relative = false
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Buildings/MudHut"]
-stream = ExtResource( 21 )
-volume_db = -9.132
-attenuation = 5.46416
-
 [node name="MudWall" parent="Buildings" instance=ExtResource( 13 )]
 position = Vector2( -207.298, 190.422 )
 z_index = 1
 z_as_relative = false
+
+[node name="MudHut" parent="Buildings" instance=ExtResource( 9 )]
+position = Vector2( 2.22725, 167.489 )
 
 [node name="Ground" type="TileMap" parent="." groups=["tileMap"]]
 tile_set = SubResource( 1 )
@@ -229,6 +220,7 @@ cell_size = Vector2( 30, 30 )
 collision_mask = 13
 occluder_light_mask = 2
 format = 1
+tile_data = PoolIntArray( 262146, 3, 0, 262147, 3, 0, 327682, 3, 0, 327683, 3, 0, 327684, 3, 0, 327685, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 458754, 3, 0, 458755, 3, 0, 458756, 3, 0 )
 
 [node name="PathFinding" parent="." instance=ExtResource( 10 )]
 
@@ -236,6 +228,7 @@ format = 1
 
 [node name="VictoryStatsPopup" parent="UI" instance=ExtResource( 4 )]
 pause_mode = 2
+visible = false
 
 [node name="Score" parent="UI" instance=ExtResource( 3 )]
 pause_mode = 2
