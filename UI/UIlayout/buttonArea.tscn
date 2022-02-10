@@ -95,3 +95,18 @@ margin_bottom = 110.0
 margin_left = 111.0
 margin_right = 176.0
 margin_bottom = 110.0
+
+[node name="Button" parent="VBoxContainer/HBoxContainer3/HBoxContainer3/battleButton" index="0"]
+margin_top = 35.0
+margin_bottom = 75.0
+
+[node name="CenterContainer2" parent="battleMenuBanner" index="0"]
+margin_left = 321.0
+margin_right = 321.0
+margin_bottom = 0.0
+[connection signal="toggled" from="VBoxContainer/HBoxContainer3/HBoxContainer3/battleButton/Button" to="battleMenuBanner" method="_on_Button_toggled"]
+[connection signal="bannerClosed" from="battleMenuBanner/CenterContainer2" to="." method="_on_CenterContainer2_bannerClosed"]
+
+[editable path="VBoxContainer/HBoxContainer3/HBoxContainer3/battleButton"]
+
+[editable path="battleMenuBanner"]
