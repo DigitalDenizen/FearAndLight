@@ -6,6 +6,7 @@ onready var inventorySlots = $Control/ChestPanel/MarginContainer/GridContainer
 var holdingItem = null
 
 func _ready() -> void:
+	EventBus.connect("toggle_inventory", self, "_on_Button_toggled")
 	visible = false
 	for slot in inventorySlots.get_children():
 		slot.connect("guiInput", self, "slotGuiInput", [slot])

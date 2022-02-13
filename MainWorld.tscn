@@ -233,6 +233,3 @@ autoplay = true
 
 [connection signal="victory" from="MobSpawn" to="UI/VictoryStatsPopup" method="waveSpawnVictory"]
 [connection signal="hide" from="UI/VictoryStatsPopup" to="UI/VictoryStatsPopup" method="closeWindow"]
-
-[editable path="Player/Camera2D/Overlay/GridContainer"]
-[editable path="Player/Camera2D/Overlay/GridContainer/buttonArea"]
