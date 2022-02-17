@@ -15,8 +15,5 @@ func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		collected = true
 		collectedCountDown = 1
-		if type == ItemDrop2.HEALTH:
-			body.heal(25)
-			queue_free()
 		if type == ItemDrop2.IRON:
 			queue_free()

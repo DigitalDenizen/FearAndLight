@@ -135,6 +135,7 @@ __meta__ = {
 "_edit_group_": true
 }
 type = 1
+max_health = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.452384, -0.0944223 )
@@ -154,5 +155,4 @@ z_index = 10
 texture = ExtResource( 4 )
 color = Color( 0.352941, 0.145098, 1, 1 )
 energy = 0.69
-
 [connection signal="body_entered" from="." to="." method="_Item_Drop_body_entered"]

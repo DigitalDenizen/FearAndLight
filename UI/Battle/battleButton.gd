@@ -1,6 +1,6 @@
 extends Button
 
-onready var battleMenuScene = load("res://UI/Battle/battleButton.tscn")
+onready var battleMenuScene = load("res://UI/Battle/battleMenu.tscn")
 
 
 func _on_Button_toggled(button_pressed):

@@ -29,6 +29,7 @@ custom_constants/separation = -1
 margin_left = 0.0
 margin_right = 33.0
 margin_bottom = 35.0
+expand_icon = true
 
 [node name="itemBarSquare2" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 32.0

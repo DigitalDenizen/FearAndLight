@@ -11,17 +11,10 @@ var player = null
 func _ready():
 	player = get_parent().get_node("Player")
 	add_to_group("item_drops")
-	if type == ItemDrop.BONES:
-		$AnimatedSprite.play("bones")
-	else:
-		$AnimatedSprite.play("health")
+	$AnimatedSprite.play("bones")
 
 func _Item_Drop_body_entered(body):
 	if body.name == "Player":
-		collected = true
-		collectedCountDown = 5
-		if type == ItemDrop.HEALTH:
-			body.heal(25)
-			queue_free()
-		if type == ItemDrop.BONES:
-			queue_free()
+		body.inventory.addPickedUpItem("Bones", Constants.imagePath.bones, Constants.itemCategories.CONSUMABLE)
+		queue_free()
+			

@@ -42,4 +42,5 @@ custom_styles/normal = SubResource( 4 )
 toggle_mode = true
 enabled_focus_mode = 0
 script = ExtResource( 5 )
+
 [connection signal="toggled" from="Button" to="Button" method="_on_Button_toggled"]
