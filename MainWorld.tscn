@@ -175,6 +175,7 @@ scale = Vector2( 3, 3 )
 pause_mode = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Scene" type="Node2D" parent="."]
@@ -197,7 +198,7 @@ z_index = 1
 z_as_relative = false
 
 [node name="MudHut" parent="Buildings" instance=ExtResource( 9 )]
-position = Vector2( 2.22725, 167.489 )
+position = Vector2( -30.9404, 211.326 )
 
 [node name="Ground" type="TileMap" parent="." groups=["tileMap"]]
 tile_set = SubResource( 1 )
