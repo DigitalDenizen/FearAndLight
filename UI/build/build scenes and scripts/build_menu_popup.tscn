@@ -11,6 +11,7 @@ region_rect = Rect2( 0, 0, 422, 196 )
 expand_margin_top = 20.0
 
 [node name="WindowDialog" type="WindowDialog"]
+visible = true
 light_mask = 0
 anchor_right = 0.02
 anchor_bottom = 0.21

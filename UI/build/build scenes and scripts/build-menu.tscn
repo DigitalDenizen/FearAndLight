@@ -82,9 +82,9 @@ margin_bottom = 180.0
 grow_horizontal = 0
 grow_vertical = 0
 rect_min_size = Vector2( 400, 0 )
+custom_constants/top_margin = 0
 custom_styles/tab_fg = SubResource( 3 )
 custom_styles/panel = SubResource( 4 )
-custom_constants/top_margin = 0
 tab_align = 0
 __meta__ = {
 "_edit_use_anchors_": false
