@@ -15,32 +15,32 @@
 radius = 12.0809
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 35, 32 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 3 )
-region = Rect2( 35, 0, 35, 32 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 3 )
-region = Rect2( 70, 0, 35, 32 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 3 )
-region = Rect2( 105, 0, 35, 32 )
-
-[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 33, 48 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
 region = Rect2( 33, 0, 33, 48 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 5 )
 region = Rect2( 66, 0, 33, 48 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 35, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 35, 0, 35, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 70, 0, 35, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 105, 0, 35, 32 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 4 )
@@ -76,14 +76,14 @@ region = Rect2( 105, 0, 35, 32 )
 
 [sub_resource type="SpriteFrames" id=17]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
-"loop": true,
-"name": "Attack",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "Death",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "Attack",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
@@ -128,6 +128,7 @@ end_cap_mode = 2
 volume_db = -16.741
 script = ExtResource( 10 )
 audio_files = [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ) ]
+
 [connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
 [connection signal="killed" from="." to="." method="_on_Zombie_killed"]
 [connection signal="melee" from="." to="." method="_on_Zombie_melee"]

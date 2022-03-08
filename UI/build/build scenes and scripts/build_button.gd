@@ -6,3 +6,5 @@ func _on_build_button_button_down():
 
 func _on_build_button_button_up():
 	build_menu.popup_centered()
+	EventBus.emit_signal("build_menu_opened")
+	

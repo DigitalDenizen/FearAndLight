@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://UI/build/build scenes and scripts/inventory_slot.gd" type="Script" id=1]
+[ext_resource path="res://UI/build/build scenes and scripts/buildMenuMudHut.gd" type="Script" id=1]
 [ext_resource path="res://UI/build/ui-build-item-bkgd-place.png" type="Texture" id=2]
 [ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Images/UI/Build/ui-build-button-craft-normal.png" type="Texture" id=4]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Images/UI/Build/ui-build-button-info-hover.png" type="Texture" id=9]
 [ext_resource path="res://Images/UI/Build/ui-build-button-info-disabled.png" type="Texture" id=10]
 [ext_resource path="res://Images/Defenses/MudWallSmall/defense-mud-wall-small-idle.png" type="Texture" id=11]
+
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 3 )
