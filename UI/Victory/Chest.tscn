@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Font/f-l-base-font-dynamic_21.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Images/Victory/ui-victory-bkgd-large.png" type="Texture" id=2]
 [ext_resource path="res://Images/Victory/ui-stats-icon-chest.png" type="Texture" id=3]
 

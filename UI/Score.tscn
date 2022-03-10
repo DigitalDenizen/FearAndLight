@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://UI/ScoreBoard.gd" type="Script" id=1]
-[ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Font/f-l-base-font-dynamic_14.tres" type="DynamicFont" id=2]
 
 [node name="Score" type="CanvasLayer"]
 script = ExtResource( 1 )
