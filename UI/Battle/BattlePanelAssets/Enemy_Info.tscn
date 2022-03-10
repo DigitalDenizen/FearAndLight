@@ -95,3 +95,5 @@ custom_styles/normal = SubResource( 8 )
 toggle_mode = true
 shortcut_in_tooltip = false
 script = ExtResource( 2 )
+
+[connection signal="toggled" from="MarginContainer2/CenterContainer/Button" to="MarginContainer2/CenterContainer/Button" method="_on_Button_toggled"]
