@@ -15,3 +15,4 @@ signal battle_menu_opened() #Emitted when the battle menu is opened
 signal battle_menu_closed() #Emitted when the user battle menu is closed
 signal start_button_pressed() #Emitted when the start button is pressed
 signal battle_banner_opened() #Emitted when the battle banner has been opened
+signal battle_banner_closed() #Emitted when the battle banner is closed

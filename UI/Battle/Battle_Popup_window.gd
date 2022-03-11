@@ -14,10 +14,7 @@ func _on_Battle_Panel_battleStart():
 	t.start()
 	yield(t, "timeout")
 	t.queue_free()
-	visible = false
 	queue_free()
-	_on_WindowDialog_popup_hide()
-	#EventBus.emit_signal("battle_menu_closed")
 
 func battleMenuShow():
 	EventBus.emit_signal("battle_menu_opened")
@@ -27,10 +24,13 @@ func battleMenuShow():
 		get_tree().paused = true
 	else:
 		get_tree().paused = false
+		
+func battleBanner():
+	var battleBanner = battleBannerScene
+	get_tree().get_root().add_child(battleBanner)
 
 func _on_WindowDialog_popup_hide():
 	get_tree().paused = false
-	EventBus.emit_signal("battle_menu_closed")
 	print("Battle Menu Closed")
-	var battleBanner = battleBannerScene
-	get_tree().get_root().add_child(battleBanner)
+	battleBanner()
+	EventBus.emit_signal("battle_menu_closed")

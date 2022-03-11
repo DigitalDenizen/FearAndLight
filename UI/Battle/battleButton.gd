@@ -11,4 +11,3 @@ func _on_Button_toggled(button_pressed):
 	if button_pressed == true:
 		EventBus.emit_signal("battle_button_pressed")
 		print("Battle Button Pressed")
-

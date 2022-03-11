@@ -41,7 +41,6 @@ animations = [ {
 } ]
 
 [node name="Panel" type="PopupDialog"]
-visible = true
 self_modulate = Color( 0.0681305, 0.0696526, 0.0742188, 1 )
 show_behind_parent = true
 light_mask = -2147483647
@@ -73,6 +72,5 @@ frame = 2
 
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="about_to_show" from="." to="." method="_on_Panel_about_to_show"]
 [connection signal="popup_hide" from="." to="." method="_on_Panel_popup_hide"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
