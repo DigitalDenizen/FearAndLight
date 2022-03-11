@@ -34,11 +34,11 @@ margin_right = 45.0
 margin_bottom = 45.0
 
 [node name="Button" type="Button" parent="CenterContainer"]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 42.0
-margin_bottom = 42.0
-rect_min_size = Vector2( 40, 40 )
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 39.0
+margin_bottom = 39.0
+rect_min_size = Vector2( 33, 33 )
 focus_mode = 0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )

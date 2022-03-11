@@ -42,11 +42,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="mud_hut_position" type="Node2D"]
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite"]
 frames = SubResource( 9 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
 centered = false

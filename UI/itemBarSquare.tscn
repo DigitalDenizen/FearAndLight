@@ -12,9 +12,9 @@ region_rect = Rect2( 0, 0, 23, 23 )
 
 [node name="itemBarSquare" type="Button"]
 margin_left = 2.0
-margin_right = 35.0
-margin_bottom = 28.0
-rect_min_size = Vector2( 33, 28 )
+margin_right = 25.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 23, 23 )
 custom_styles/pressed = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 __meta__ = {

@@ -2,11 +2,10 @@ extends WindowDialog
 
 var startBattle
 
-func _process(delta):
+func _ready():
 	if visible == true:
-		popup_centered_minsize(Vector2(250,136))
+		popup_centered_minsize(Vector2(250,136)) 
 		
-
 func _on_Battle_popup_visibility_changed():
 	if visible == false:
 		hide() 
