@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://UI/build/build scenes and scripts/buildMenuMudHut.gd" type="Script" id=1]
+[ext_resource path="res://UI/build/build scenes and scripts/buildMenuWallSmall.gd" type="Script" id=1]
 [ext_resource path="res://UI/build/ui-build-item-bkgd-place.png" type="Texture" id=2]
 [ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Images/UI/Build/ui-build-button-craft-normal.png" type="Texture" id=4]
@@ -11,7 +11,6 @@
 [ext_resource path="res://Images/UI/Build/ui-build-button-info-hover.png" type="Texture" id=9]
 [ext_resource path="res://Images/UI/Build/ui-build-button-info-disabled.png" type="Texture" id=10]
 [ext_resource path="res://Images/Defenses/MudWallSmall/defense-mud-wall-small-idle.png" type="Texture" id=11]
-
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 3 )
@@ -277,19 +276,13 @@ margin_right = 27.0
 margin_bottom = 59.0
 rect_min_size = Vector2( 27, 42 )
 
-[node name="slot_button_container" type="VBoxContainer" parent="slot_vcontainer"]
+[node name="slot_button_container" type="MarginContainer" parent="slot_vcontainer"]
 margin_top = 95.0
 margin_right = 116.0
 margin_bottom = 116.0
 rect_min_size = Vector2( 116, 21 )
 
-[node name="slot_main_button" type="Button" parent="slot_vcontainer/slot_button_container"]
-margin_right = 116.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 83, 21 )
-flat = true
-
-[node name="MarginContainer" type="MarginContainer" parent="slot_vcontainer/slot_button_container/slot_main_button"]
+[node name="MarginContainer" type="MarginContainer" parent="slot_vcontainer/slot_button_container"]
 margin_right = 116.0
 margin_bottom = 21.0
 rect_min_size = Vector2( 116, 21 )
@@ -299,17 +292,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="slot_vcontainer/slot_button_container/slot_main_button/MarginContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="slot_vcontainer/slot_button_container/MarginContainer"]
 margin_left = 32.0
 margin_top = 1.0
 margin_right = 116.0
 margin_bottom = 21.0
 rect_min_size = Vector2( 84, 20 )
 
-[node name="Label" type="Label" parent="slot_vcontainer/slot_button_container/slot_main_button/MarginContainer/CenterContainer"]
+[node name="Label" type="Label" parent="slot_vcontainer/slot_button_container/MarginContainer/CenterContainer"]
 margin_right = 84.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 84, 20 )
 text = "PLACE IT!"
 align = 1
 valign = 1
+
+[node name="slot_main_button" type="Button" parent="slot_vcontainer/slot_button_container"]
+margin_right = 116.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 83, 21 )
+flat = true
+
+[connection signal="button_up" from="slot_vcontainer/slot_button_container/slot_main_button" to="." method="_on_slot_main_button_button_up"]
