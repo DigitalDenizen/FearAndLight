@@ -6,7 +6,7 @@
 [sub_resource type="Theme" id=1]
 
 [sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.286275, 0.286275, 0.168627, 0.0745098 )
+bg_color = Color( 0.286275, 0.286275, 0.168627, 0.168627 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
