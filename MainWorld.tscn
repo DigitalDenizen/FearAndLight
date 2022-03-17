@@ -142,10 +142,6 @@ points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
 [node name="Main" type="YSort"]
 script = ExtResource( 15 )
 
-[node name="MobSpawn" parent="." instance=ExtResource( 5 )]
-position = Vector2( 369.643, 194.889 )
-spawn_num = 5
-
 [node name="BarrierTop" parent="." instance=ExtResource( 14 )]
 visible = false
 position = Vector2( -2921.69, 56.5692 )
@@ -224,7 +220,6 @@ tile_data = PoolIntArray( 262146, 3, 0, 262147, 3, 0, 327682, 3, 0, 327683, 3, 0
 
 [node name="VictoryStatsPopup" parent="UI" instance=ExtResource( 4 )]
 pause_mode = 2
-visible = false
 
 [node name="Score" parent="UI" instance=ExtResource( 3 )]
 pause_mode = 2
@@ -234,5 +229,8 @@ stream = ExtResource( 1 )
 volume_db = -13.697
 autoplay = true
 
-[connection signal="victory" from="MobSpawn" to="UI/VictoryStatsPopup" method="waveSpawnVictory"]
+[node name="Mob_Spawn" parent="." instance=ExtResource( 5 )]
+position = Vector2( 385.456, 179.212 )
+spawn_num = 5
+
 [connection signal="hide" from="UI/VictoryStatsPopup" to="UI/VictoryStatsPopup" method="closeWindow"]

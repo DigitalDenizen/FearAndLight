@@ -1,8 +1,5 @@
 extends PopupDialog
 
-#onready var mobSpawn = load("res://Characters/Enemies/Mob_Spawner.tscn").instance()
-onready var battleBannerScene = load("res://UI/Battle/Battle_Banner.tscn").instance()
-
 func _ready():
 	EventBus.connect("battle_menu_closed",self,"_showBattlePanel")
 
@@ -20,6 +17,7 @@ func closeBanner():
 		yield(t, "timeout")
 		t.queue_free()
 		queue_free()
+		on_battleBannerClose()
 
 func _showBattlePanel():
 	visible = true
@@ -29,14 +27,8 @@ func _showBattlePanel():
 
 func _on_Timer_timeout():
 	queue_free()
-	_on_Panel_popup_hide()
-#	mobSpawn()
 
-#func mobSpawn():
-#	get_tree().get_root().add_child(mobSpawn)
-#	mobSpawn
-
-func _on_Panel_popup_hide():
+func on_battleBannerClose():
 	EventBus.emit_signal("battle_banner_closed")
 	print("Battle Banner Closed")
 	visible = false
