@@ -6,7 +6,7 @@
 [sub_resource type="Theme" id=1]
 
 [sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.286275, 0.286275, 0.168627, 0.0745098 )
+bg_color = Color( 0.286275, 0.286275, 0.168627, 0.168627 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
@@ -41,14 +41,13 @@ animations = [ {
 } ]
 
 [node name="Panel" type="PopupDialog"]
-visible = true
 self_modulate = Color( 0.0681305, 0.0696526, 0.0742188, 1 )
 show_behind_parent = true
 light_mask = -2147483647
 margin_left = -3.0
-margin_top = 98.0
+margin_top = 169.0
 margin_right = 640.0
-margin_bottom = 220.0
+margin_bottom = 291.0
 rect_min_size = Vector2( 550, 122 )
 theme = SubResource( 1 )
 custom_styles/panel = SubResource( 9 )
@@ -73,5 +72,4 @@ frame = 2
 
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="about_to_show" from="." to="." method="_on_Panel_about_to_show"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
