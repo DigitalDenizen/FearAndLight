@@ -236,7 +236,7 @@ volume_db = -13.697
 autoplay = true
 
 [node name="Mob_Spawn" parent="." instance=ExtResource( 5 )]
-position = Vector2( 385.456, 179.212 )
+position = Vector2( 383.869, 204.61 )
 spawn_num = 5
 
 [connection signal="hide" from="UI/VictoryStatsPopup" to="UI/VictoryStatsPopup" method="closeWindow"]
