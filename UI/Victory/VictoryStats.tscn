@@ -21,7 +21,6 @@ normal_map = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 451, 247 )
 
 [node name="Victory_Stats_popup" type="WindowDialog"]
-visible = true
 anchor_right = 1.026
 anchor_bottom = 1.0
 margin_left = 28.0
@@ -57,9 +56,10 @@ margin_right = 863.0
 margin_bottom = 24.0
 
 [node name="Label" type="Label" parent="GridContainer/Your_Results"]
-margin_left = 358.0
-margin_right = 504.0
-margin_bottom = 24.0
+margin_left = 407.0
+margin_top = 8.0
+margin_right = 456.0
+margin_bottom = 16.0
 text = "YOUR RESULTS"
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer"]

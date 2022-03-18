@@ -1,17 +1,28 @@
 extends WindowDialog
 
-var startBattle
+onready var battleBannerScene = load("res://UI/Battle/Battle_Banner.tscn").instance()
 
 func _ready():
-	if visible == true:
-		popup_centered_minsize(Vector2(250,136)) 
-		
-func _on_Battle_popup_visibility_changed():
-	if visible == false:
-		hide() 
+	EventBus.connect("start_button_pressed",self, "_on_Battle_Panel_battleStart")
+	EventBus.connect("battle_button_pressed",self,"battleMenuShow")
 
 func _on_Battle_Panel_battleStart():
-	startBattle = true
-	print("startBattle")
-	if startBattle == true:
-		visible = false
+	print("Start Button Pressed")
+	queue_free()
+	var battleBanner = battleBannerScene
+	get_parent().add_child(battleBanner)
+	battleBanner
+
+func battleMenuShow():
+	EventBus.emit_signal("battle_menu_opened")
+	visible = true
+	popup_centered()
+	if visible == true:
+		get_tree().paused = true
+	else:
+		get_tree().paused = false
+
+func _on_WindowDialog_popup_hide():
+	get_tree().paused = false
+	print("Battle Menu Closed")
+	EventBus.emit_signal("battle_menu_closed")

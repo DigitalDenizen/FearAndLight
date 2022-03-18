@@ -13,6 +13,9 @@ var enemiesKilled = 0
 var heroesKilled = 0
 var defensesDestroyed = 0
 
+func _ready():
+	EventBus.connect("battle_banner_closed",self,"spawn")
+
 func initialize(pathFinding: PathFinding):
 	self.pathFinding = pathFinding
 	spawn(self)
@@ -29,7 +32,7 @@ func spawn(mobSpawner):
 	var screen_size = get_viewport().get_visible_rect().size
 	for i in range(0,spawn_num):
 		var enemy = enemyType()
-		enemy.spawner = mobSpawner
+		enemy.spawner = mobSpawner     
 		enemy.waveSpawn = true
 		enemy.max_health = 150
 		enemy.add_to_group('Baddies')
@@ -42,7 +45,8 @@ func removeEnemy():
 	waveSize = waveSize - 1
 	enemiesKilled = enemiesKilled + 1
 	if waveSize == 0:
-		emit_signal("victory", enemiesKilled, heroesKilled, defensesDestroyed)
+		EventBus.emit_signal("victory",enemiesKilled, heroesKilled, defensesDestroyed)
+		#emit_signal("victory", enemiesKilled, heroesKilled, defensesDestroyed)
 		
 func heroKilled():
 	heroesKilled = heroesKilled + 1
@@ -65,3 +69,4 @@ func enemyType():
 		print(num)
 		enemyScene = preload("res://Characters/Enemies/direWolf.tscn")
 		return enemyScene.instance() #returning and intacing enemy
+	removeEnemy()

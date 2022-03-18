@@ -7,8 +7,8 @@ onready var defensesKilled = $GridContainer/MarginContainer/CenterContainer/Stat
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	EventBus.connect("victory",self,"waveSpawnVictory")
 	visible = false
-
 
 func waveSpawnVictory(enemies, heroes, defenses):
 	enemiesKilled.text = str(enemies)
@@ -16,7 +16,6 @@ func waveSpawnVictory(enemies, heroes, defenses):
 	defensesKilled.text = str(defenses)
 	get_tree().paused = true
 	visible = true
-
 
 func closeWindow():
 	get_tree().paused = false
