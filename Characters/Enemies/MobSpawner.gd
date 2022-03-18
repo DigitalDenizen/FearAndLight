@@ -12,6 +12,7 @@ var waveSize = 0
 var enemiesKilled = 0
 var heroesKilled = 0
 var defensesDestroyed = 0
+var windigoKilled = 0
 
 func _ready():
 	EventBus.connect("battle_banner_closed",self,"spawn")
@@ -45,28 +46,35 @@ func removeEnemy():
 	waveSize = waveSize - 1
 	enemiesKilled = enemiesKilled + 1
 	if waveSize == 0:
+		spawnWindigo()
+	if windigoKilled == 0:
 		EventBus.emit_signal("victory",enemiesKilled, heroesKilled, defensesDestroyed)
-		#emit_signal("victory", enemiesKilled, heroesKilled, defensesDestroyed)
-		
+
 func heroKilled():
 	heroesKilled = heroesKilled + 1
 
 func defenseDestroyed():
 	defensesDestroyed = defensesDestroyed + 1
+	
+func windigoDefeated():
+	windigoKilled = windigoKilled - 1
 
-func enemyType():
+func enemyType(): #Enemy type selection 
 	var enemyScene 
 	var randn1 = RandomNumberGenerator.new()
 	randn1.randomize()
 	var num = randn1.randi_range(0,100)
-	#randomize()
 	if num <= 50:
 		print(num)
 		enemyScene = preload("res://Characters/Enemies/Zombie.tscn")
 		return enemyScene.instance() #returning and intacing enemy
-
 	else:
 		print(num)
 		enemyScene = preload("res://Characters/Enemies/direWolf.tscn")
 		return enemyScene.instance() #returning and intacing enemy
 	removeEnemy()
+
+func spawnWindigo(): #Spawn the windigo when spawn is defeated
+	var windigoScene = preload("res://Characters/Bosses/wendigo.tscn")
+	return windigoScene.instance()
+
