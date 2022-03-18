@@ -232,7 +232,7 @@ stream = ExtResource( 1 )
 volume_db = -13.697
 autoplay = true
 
-[node name="Mob_Spawn" parent="." instance=ExtResource( 5 )]
+[node name="MobSpawn" parent="." instance=ExtResource( 5 )]
 position = Vector2( 383.869, 204.61 )
 spawn_num = 5
 

@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Font/f-l-base-font-dynamic_14.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Font/f-l-base-font-dynamic_7.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Images/Battle_UI/ui-battle-three-panel-window.png" type="Texture" id=2]
 [ext_resource path="res://UI/Battle/BattlePanelAssets/Spoils_Of_war.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/Battle/BattlePanelAssets/Enemy_Info.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/Battle/BattlePanelAssets/BattleDetails.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/Battle/Battle_Panel.gd" type="Script" id=13]
 
-[sub_resource type="Theme" id=1]
+[sub_resource type="Theme" id=3]
 default_font = ExtResource( 1 )
 
 [sub_resource type="StyleBoxTexture" id=2]
@@ -26,7 +26,7 @@ __meta__ = {
 margin_right = 397.0
 margin_bottom = 163.0
 rect_min_size = Vector2( 397, 163 )
-theme = SubResource( 1 )
+theme = SubResource( 3 )
 custom_styles/panel = SubResource( 2 )
 script = ExtResource( 13 )
 __meta__ = {
@@ -44,19 +44,19 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Battle_Panel/MarginContainer"]
 margin_left = -1.0
-margin_right = 399.0
+margin_right = 433.0
 margin_bottom = 163.0
 rect_min_size = Vector2( 0, 163 )
 custom_constants/separation = -2
 
 [node name="Battle_Details" parent="Battle_Panel/MarginContainer/HBoxContainer" instance=ExtResource( 5 )]
-margin_right = 140.0
+margin_right = 176.0
 
 [node name="Enemy_Info" parent="Battle_Panel/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
-margin_left = 138.0
-margin_right = 265.0
+margin_left = 174.0
+margin_right = 301.0
 custom_constants/separation = 5
 
 [node name="Spoils_Of_war" parent="Battle_Panel/MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_left = 263.0
-margin_right = 398.0
+margin_left = 299.0
+margin_right = 434.0
