@@ -12,9 +12,14 @@ onready var largeWall = preload("res://Structures/MudWall.tscn")
 var largeWallMouse = preload("res://UI/build/build scenes and scripts/largeWallPosition.tscn").instance()
 var largeWallPlacement = 0
 
+onready var smallWall = preload("res://Structures/SmallWall.tscn")
+var smallWallMouse = preload("res://UI/build/build scenes and scripts/smallWallPosition.tscn").instance()
+var smallWallPlacement = 0
+
 func _ready():
 	EventBus.connect("placing_mud_hut", self, "_on_placing_mudhut")
 	EventBus.connect("placing_large_wall", self, "_on_placing_large_wall")
+	EventBus.connect("placing_small_wall", self, "_on_placing_small_wall")
 	
 func _on_placing_mudhut():
 	print("placing mudhut")
@@ -24,6 +29,11 @@ func _on_placing_mudhut():
 func _on_placing_large_wall():
 	print("placing large wall")
 	largeWallPlacement = 1
+	EventBus.emit_signal("close_build_menu")
+	
+func _on_placing_small_wall():
+	print("placing small wall")
+	smallWallPlacement = 1
 	EventBus.emit_signal("close_build_menu")
 	
 
@@ -40,6 +50,12 @@ func _physics_process(delta):
 		var mouse_pos = get_global_mouse_position().snapped(GRID_SIZE)
 		tile = world_to_map(mouse_pos)
 		largeWallMouse.position = map_to_world(tile)
+		
+	if smallWallPlacement == 1:
+		self.add_child(smallWallMouse)
+		var mouse_pos = get_global_mouse_position().snapped(GRID_SIZE)
+		tile = world_to_map(mouse_pos)
+		smallWallMouse.position = map_to_world(tile)
 		
 		
 	
@@ -64,3 +80,13 @@ func _input(event):
 			remove_child(largeWallMouse)
 			largeWallPlacement = 0
 			print("large wall placed")
+			
+	if smallWallPlacement == 1:		
+		if Input.is_mouse_button_pressed(BUTTON_LEFT):
+			var buildings = Util.get_main_node().get_node("Buildings")
+			var sw = smallWall.instance()
+			buildings.add_child(sw)
+			sw.global_position = get_global_mouse_position().snapped(GRID_SIZE)
+			remove_child(smallWallMouse)
+			smallWallPlacement = 0
+			print("small wall placed")

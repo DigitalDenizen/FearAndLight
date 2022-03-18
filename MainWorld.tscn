@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Audio/Music/Scary/spooky-atmos.wav" type="AudioStream" id=1]
 [ext_resource path="res://UI/UIlayout/uiButtonLayout.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Ground.gd" type="Script" id=18]
 [ext_resource path="res://Images/tile-mud.png" type="Texture" id=19]
+[ext_resource path="res://Structures/SmallWall.tscn" type="PackedScene" id=20]
 
 [sub_resource type="TileSet" id=1]
 0/name = "mud"
@@ -142,10 +143,6 @@ points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
 [node name="Main" type="YSort"]
 script = ExtResource( 15 )
 
-[node name="MobSpawn" parent="." instance=ExtResource( 5 )]
-position = Vector2( 369.643, 194.889 )
-spawn_num = 5
-
 [node name="BarrierTop" parent="." instance=ExtResource( 14 )]
 visible = false
 position = Vector2( -2921.69, 56.5692 )
@@ -200,6 +197,9 @@ z_as_relative = false
 [node name="MudHut" parent="Buildings" instance=ExtResource( 9 )]
 position = Vector2( -30.9404, 211.326 )
 
+[node name="SmallWall" parent="Buildings" instance=ExtResource( 20 )]
+position = Vector2( 18.5406, 161.568 )
+
 [node name="Ground" type="TileMap" parent="." groups=["tileMap"]]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 30, 30 )
@@ -232,5 +232,8 @@ stream = ExtResource( 1 )
 volume_db = -13.697
 autoplay = true
 
-[connection signal="victory" from="MobSpawn" to="UI/VictoryStatsPopup" method="waveSpawnVictory"]
+[node name="MobSpawn" parent="." instance=ExtResource( 5 )]
+position = Vector2( 383.869, 204.61 )
+spawn_num = 5
+
 [connection signal="hide" from="UI/VictoryStatsPopup" to="UI/VictoryStatsPopup" method="closeWindow"]

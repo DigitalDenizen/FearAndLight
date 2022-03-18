@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="FearAndLight"
-run/main_scene="res://MainWorld.tscn"
+run/main_scene="res://UI/title-screen.tscn"
 config/icon="res://icon.png"
 
 [autoload]

@@ -21,7 +21,6 @@ normal_map = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 451, 247 )
 
 [node name="Victory_Stats_popup" type="WindowDialog"]
-visible = true
 anchor_right = 1.026
 anchor_bottom = 1.0
 margin_left = 28.0
