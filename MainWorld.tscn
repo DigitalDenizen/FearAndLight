@@ -173,7 +173,6 @@ scale = Vector2( 3, 3 )
 pause_mode = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Scene" type="Node2D" parent="."]
@@ -201,9 +200,7 @@ position = Vector2( -30.9404, 211.326 )
 [node name="SmallWall" parent="Buildings" instance=ExtResource( 20 )]
 position = Vector2( 18.5406, 161.568 )
 
-[node name="Ground" type="TileMap" parent="." groups=[
-"tileMap",
-]]
+[node name="Ground" type="TileMap" parent="." groups=["tileMap"]]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 30, 30 )
 collision_mask = 13

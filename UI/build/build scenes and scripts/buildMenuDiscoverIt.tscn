@@ -2,7 +2,7 @@
 
 [ext_resource path="res://UI/build/build scenes and scripts/buildMenuMudHut.gd" type="Script" id=1]
 [ext_resource path="res://Images/UI/Build/ui-build-bkgd-item-discover.png" type="Texture" id=2]
-[ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Font/f-l-base-font-dynamic_14.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Images/UI/Build/ui-build-button-craft-disabled.png" type="Texture" id=4]
 [ext_resource path="res://Images/UI/Build/ui-build-button-info-disabled.png" type="Texture" id=6]
 [ext_resource path="res://Images/UI/Build/ui-build-item-inactive-1.png" type="Texture" id=7]
