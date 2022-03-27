@@ -127,9 +127,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="VampireSpider" type="KinematicBody2D" groups=[
-"Baddies",
-]]
+[node name="VampireSpider" type="KinematicBody2D" groups=["Baddies"]]
 position = Vector2( -3.34086, -10.0226 )
 z_index = 5
 z_as_relative = false
@@ -154,6 +152,7 @@ frames = SubResource( 24 )
 animation = "idle"
 
 [node name="PathLine" type="Line2D" parent="."]
+
 [connection signal="health_updated" from="." to="HealthBar" method="_on_vampireSpider_health_updated"]
 [connection signal="killed" from="." to="." method="_on_vampireSpider_killed"]
 [connection signal="melee" from="." to="." method="_on_vampireSpider_melee"]

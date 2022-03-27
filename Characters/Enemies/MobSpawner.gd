@@ -42,13 +42,31 @@ func spawn(mobSpawner):
 		enemy.pathFinding = pathFinding
 		add_child(enemy)
 
+func spawnWindigo(mobSpawner):
+	var colShape = $Spawn_area
+	if shape_x != 0.0 && shape_y != 0.0:
+		colShape.shape.extents = Vector2(shape_x/2, shape_y/2)
+	var rand = RandomNumberGenerator.new()
+	waveSize = spawn_num
+	var center = colShape.position
+	var size = colShape.shape.extents
+	var screen_size = get_viewport().get_visible_rect().size
+	var windigoSpawn = windigoSpawn()
+	windigoSpawn.spawner = mobSpawner
+	windigoSpawn.max_health = 500
+	windigoSpawn.add_to_group("Bosses")
+	windigoSpawn.position.y = (randi() % int(size.x)) - (int(size.x/2)) + center.x
+	windigoSpawn.position.x = (randi() % int(size.y)) - (int(size.y/2)) + center.y
+	windigoSpawn.pathFinding = pathFinding
+	add_child(windigoSpawn)
+	
+
 func removeEnemy():
 	waveSize = waveSize - 1
 	enemiesKilled = enemiesKilled + 1
 	if waveSize == 0:
-		spawnWindigo()
-	if windigoKilled == 0:
-		EventBus.emit_signal("victory",enemiesKilled, heroesKilled, defensesDestroyed)
+		spawnWindigo(self)
+		print("wave defeated")
 
 func heroKilled():
 	heroesKilled = heroesKilled + 1
@@ -64,17 +82,21 @@ func enemyType(): #Enemy type selection
 	var randn1 = RandomNumberGenerator.new()
 	randn1.randomize()
 	var num = randn1.randi_range(0,100)
+
 	if num <= 50:
 		print(num)
 		enemyScene = preload("res://Characters/Enemies/Zombie.tscn")
-		return enemyScene.instance() #returning and intacing enemy
+		return enemyScene.instance() #returning and intacing zombie enemy
 	else:
 		print(num)
 		enemyScene = preload("res://Characters/Enemies/direWolf.tscn")
-		return enemyScene.instance() #returning and intacing enemy
+		return enemyScene.instance() #returning and intacing direWolf enemy
 	removeEnemy()
 
-func spawnWindigo(): #Spawn the windigo when spawn is defeated
+func windigoSpawn():
 	var windigoScene = preload("res://Characters/Bosses/wendigo.tscn")
-	return windigoScene.instance()
+	var windigo = windigoScene
+	return windigo.instance()
 
+func WindigoDefeated(): #Spawn the windigo when spawn is defeated
+	EventBus.emit_signal("victory",enemiesKilled, heroesKilled, defensesDestroyed)
