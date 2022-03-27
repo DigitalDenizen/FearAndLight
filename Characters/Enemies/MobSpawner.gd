@@ -43,15 +43,18 @@ func spawn(mobSpawner):
 		add_child(enemy)
 
 func spawnWindigo(mobSpawner):
+	#Setting shape of spawning area
 	var colShape = $Spawn_area
 	if shape_x != 0.0 && shape_y != 0.0:
 		colShape.shape.extents = Vector2(shape_x/2, shape_y/2)
-	var rand = RandomNumberGenerator.new()
-	waveSize = spawn_num
+
+
 	var center = colShape.position
 	var size = colShape.shape.extents
 	var screen_size = get_viewport().get_visible_rect().size
 	var windigoSpawn = windigoSpawn()
+	
+	#Determining the spawn position of the enemy
 	windigoSpawn.spawner = mobSpawner
 	windigoSpawn.max_health = 500
 	windigoSpawn.add_to_group("Bosses")
@@ -59,7 +62,6 @@ func spawnWindigo(mobSpawner):
 	windigoSpawn.position.x = (randi() % int(size.y)) - (int(size.y/2)) + center.y
 	windigoSpawn.pathFinding = pathFinding
 	add_child(windigoSpawn)
-	
 
 func removeEnemy():
 	waveSize = waveSize - 1
@@ -73,7 +75,7 @@ func heroKilled():
 
 func defenseDestroyed():
 	defensesDestroyed = defensesDestroyed + 1
-	
+
 func windigoDefeated():
 	windigoKilled = windigoKilled - 1
 
@@ -82,7 +84,6 @@ func enemyType(): #Enemy type selection
 	var randn1 = RandomNumberGenerator.new()
 	randn1.randomize()
 	var num = randn1.randi_range(0,100)
-
 	if num <= 50:
 		print(num)
 		enemyScene = preload("res://Characters/Enemies/Zombie.tscn")
