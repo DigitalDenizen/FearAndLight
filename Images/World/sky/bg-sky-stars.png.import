@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg-sky-stars.png-867961a71503705dfb91550c265a292f.stex"
+path="res://.import/bg-sky-stars.png-30072e156e7f94c53592ed7d96f2c3c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/Sky/bg-sky-stars.png"
-dest_files=[ "res://.import/bg-sky-stars.png-867961a71503705dfb91550c265a292f.stex" ]
+source_file="res://Images/World/sky/bg-sky-stars.png"
+dest_files=[ "res://.import/bg-sky-stars.png-30072e156e7f94c53592ed7d96f2c3c0.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

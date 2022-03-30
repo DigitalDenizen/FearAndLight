@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg-mudlands-top-trees-df-trans.png-6af91eb56e862a0b8c1ccf54dbdb461d.stex"
+path="res://.import/bg-mudlands-top-trees-df-trans.png-8e3ee7b4e619ae145ccc14308d664ccc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/MudLands/transitions/dark forest/bg-mudlands-top-trees-df-trans.png"
-dest_files=[ "res://.import/bg-mudlands-top-trees-df-trans.png-6af91eb56e862a0b8c1ccf54dbdb461d.stex" ]
+source_file="res://Images/World/mudlands/transitions/dark forest/bg-mudlands-top-trees-df-trans.png"
+dest_files=[ "res://.import/bg-mudlands-top-trees-df-trans.png-8e3ee7b4e619ae145ccc14308d664ccc.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-mudlands-tree-5.png-490774aafd0300788d511b74c51d6a85.stex"
+path="res://.import/object-mudlands-tree-5.png-7789511606c87adb56c336f768f3df03.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/MudLands/object-mudlands-tree-5.png"
-dest_files=[ "res://.import/object-mudlands-tree-5.png-490774aafd0300788d511b74c51d6a85.stex" ]
+source_file="res://Images/World/mudlands/object-mudlands-tree-5.png"
+dest_files=[ "res://.import/object-mudlands-tree-5.png-7789511606c87adb56c336f768f3df03.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
