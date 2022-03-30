@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg-mudlands-top-hills.png-3d2246e3e643c02c88e1894bbc59f546.stex"
+path="res://.import/bg-mudlands-top-hills.png-d293543c7cf61dbdae8224e06f5ef055.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/mudlands/bg-mudlands-top-hills.png"
-dest_files=[ "res://.import/bg-mudlands-top-hills.png-3d2246e3e643c02c88e1894bbc59f546.stex" ]
+source_file="res://Images/World/MudLands/bg-mudlands-top-hills.png"
+dest_files=[ "res://.import/bg-mudlands-top-hills.png-d293543c7cf61dbdae8224e06f5ef055.stex" ]
 
 [params]
 
