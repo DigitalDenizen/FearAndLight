@@ -23,9 +23,6 @@ __meta__ = {
 margin_right = 640.0
 margin_bottom = 484.0
 alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 68.0
@@ -50,9 +47,6 @@ margin_top = -95.7609
 margin_right = 381.219
 margin_bottom = 184.239
 texture = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 358.0

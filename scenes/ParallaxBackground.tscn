@@ -7,9 +7,9 @@
 [ext_resource path="res://scenes/sky/scene-layer-sky-stars.png" type="Texture" id=5]
 [ext_resource path="res://scenes/sky/scene-layer-sky-quasars.png" type="Texture" id=6]
 [ext_resource path="res://scenes/global/scene-layer-main-sky.png" type="Texture" id=7]
+[ext_resource path="res://Images/World/Swamp/bg-swamp-top-trees-middle.png" type="Texture" id=8]
 [ext_resource path="res://scenes/global/scene-layer-main-clouds.png" type="Texture" id=9]
-[ext_resource path="res://scenes/global/scene-layer-main-hills.png" type="Texture" id=10]
-[ext_resource path="res://scenes/global/scene-layer-main-dark-trees.png" type="Texture" id=11]
+[ext_resource path="res://Images/World/Swamp/bg-swamp-top-trees-back.png" type="Texture" id=11]
 [ext_resource path="res://AnimatedTileset/fog.shader" type="Shader" id=14]
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -23,7 +23,7 @@ shader_param/OCTAVES = 1
 motion_scale = Vector2( 0, 1 )
 
 [node name="Moon_2" type="Sprite" parent="Moon_Sky_Mist"]
-position = Vector2( 1.06065, 27.5772 )
+position = Vector2( 1.06065, 6.5772 )
 z_index = 2
 texture = ExtResource( 1 )
 centered = false
@@ -220,11 +220,11 @@ __meta__ = {
 
 [node name="Hills_4" type="Sprite" parent="Hills_Screen1"]
 z_index = 4
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="Dark_Trees_Screen1" type="ParallaxLayer" parent="."]
-position = Vector2( -435, 0 )
+position = Vector2( -512, 0 )
 motion_scale = Vector2( 0.4, 1 )
 __meta__ = {
 "_edit_group_": true
@@ -232,7 +232,7 @@ __meta__ = {
 
 [node name="DarkTrees_5" type="Sprite" parent="Dark_Trees_Screen1"]
 z_index = 5
-texture = ExtResource( 11 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="Screen2" type="ParallaxLayer" parent="."]
@@ -242,6 +242,20 @@ __meta__ = {
 
 [node name="Sky_0" type="Sprite" parent="Screen2"]
 texture = ExtResource( 7 )
+centered = false
+
+[node name="Fog_all_screens" type="ParallaxLayer" parent="."]
+visible = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Fog_5" type="Sprite" parent="Fog_all_screens"]
+material = SubResource( 1 )
+position = Vector2( -1740.88, 168.569 )
+scale = Vector2( 163.163, 1.56979 )
+z_index = 5
+texture = ExtResource( 1 )
 centered = false
 
 [node name="Clouds_Screen2" type="ParallaxLayer" parent="."]
@@ -263,7 +277,7 @@ __meta__ = {
 
 [node name="Hills_4" type="Sprite" parent="Hills_Screen2"]
 z_index = 4
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="Dark_Trees_Screen2" type="ParallaxLayer" parent="."]
@@ -274,7 +288,7 @@ __meta__ = {
 
 [node name="DarkTrees_5" type="Sprite" parent="Dark_Trees_Screen2"]
 z_index = 5
-texture = ExtResource( 11 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="Screen3" type="ParallaxLayer" parent="."]
@@ -308,11 +322,11 @@ __meta__ = {
 
 [node name="Hills_4" type="Sprite" parent="Hills_Screen3"]
 z_index = 4
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="Dark_Trees_Screen3" type="ParallaxLayer" parent="."]
-position = Vector2( 435, 0 )
+position = Vector2( 511, 0 )
 motion_scale = Vector2( 0.4, 1 )
 __meta__ = {
 "_edit_group_": true
@@ -320,7 +334,7 @@ __meta__ = {
 
 [node name="DarkTrees_5" type="Sprite" parent="Dark_Trees_Screen3"]
 z_index = 5
-texture = ExtResource( 11 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="Screen4" type="ParallaxLayer" parent="."]
@@ -330,25 +344,13 @@ __meta__ = {
 }
 
 [node name="Sky_0" type="Sprite" parent="Screen4"]
+position = Vector2( 204, 0 )
 texture = ExtResource( 7 )
 centered = false
 
 [node name="Mud_to_ice_dark_trees" type="Sprite" parent="Screen4"]
 z_index = 5
-texture = ExtResource( 11 )
-centered = false
-
-[node name="Fog_all_screens" type="ParallaxLayer" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Fog_5" type="Sprite" parent="Fog_all_screens"]
-material = SubResource( 1 )
-position = Vector2( -1740.88, 168.569 )
-scale = Vector2( 163.163, 1.56979 )
-z_index = 5
-texture = ExtResource( 1 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="Screen5" type="ParallaxLayer" parent="."]
@@ -359,6 +361,7 @@ texture = ExtResource( 7 )
 centered = false
 
 [node name="Ice_Dark_trees_5" type="Sprite" parent="Screen5"]
+position = Vector2( -127, 0 )
 z_index = 5
-texture = ExtResource( 11 )
+texture = ExtResource( 8 )
 centered = false

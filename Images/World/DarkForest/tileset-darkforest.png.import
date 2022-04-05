@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset-swamp-water.png-4fb1ef061ce0e71c6adcd301cc506f9f.stex"
+path="res://.import/tileset-darkforest.png-400935ebb11f715ce5eea02f462d4bcb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/Swamp/tileset-swamp-water.png"
-dest_files=[ "res://.import/tileset-swamp-water.png-4fb1ef061ce0e71c6adcd301cc506f9f.stex" ]
+source_file="res://Images/World/DarkForest/tileset-darkforest.png"
+dest_files=[ "res://.import/tileset-darkforest.png-400935ebb11f715ce5eea02f462d4bcb.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

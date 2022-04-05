@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Audio/Music/Scary/spooky-atmos.wav" type="AudioStream" id=1]
 [ext_resource path="res://UI/UIlayout/uiButtonLayout.tscn" type="PackedScene" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://Scenes/ice-wall/ice-wall-main/Ice_Wall_Main.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Structures/MudWall.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Barrier_top.tscn" type="PackedScene" id=14]
 [ext_resource path="res://MainWorld.gd" type="Script" id=15]
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=17]
@@ -144,10 +143,6 @@ points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
 [node name="Main" type="YSort"]
 script = ExtResource( 15 )
 
-[node name="BarrierTop" parent="." instance=ExtResource( 14 )]
-visible = false
-position = Vector2( -2921.69, 56.5692 )
-
 [node name="Player" parent="." instance=ExtResource( 12 )]
 position = Vector2( -124.893, 150.631 )
 z_index = 1
@@ -178,13 +173,16 @@ visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Scene" type="Node2D" parent="."]
+visible = false
 
 [node name="Fore_Ground" parent="Scene" instance=ExtResource( 6 )]
 position = Vector2( -3.24115, -0.119324 )
 
 [node name="Ice_Wall_main" parent="Scene" instance=ExtResource( 11 )]
+visible = false
 
 [node name="Ice_Wall_below" parent="Scene" instance=ExtResource( 7 )]
+visible = false
 
 [node name="ParallaxBackground" parent="Scene" instance=ExtResource( 17 )]
 
@@ -203,6 +201,7 @@ position = Vector2( -30.9404, 211.326 )
 position = Vector2( 18.5406, 161.568 )
 
 [node name="Ground" type="TileMap" parent="." groups=["tileMap"]]
+visible = false
 tile_set = SubResource( 1 )
 cell_size = Vector2( 30, 30 )
 collision_mask = 13
@@ -217,10 +216,10 @@ cell_size = Vector2( 30, 30 )
 collision_mask = 13
 occluder_light_mask = 2
 format = 1
-tile_data = PoolIntArray( 262146, 3, 0, 262147, 3, 0, 327682, 3, 0, 327683, 3, 0, 327684, 3, 0, 327685, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 458754, 3, 0, 458755, 3, 0, 458756, 3, 0 )
+tile_data = PoolIntArray( 262146, 3, 0, 262147, 3, 0, 327682, 3, 0, 327683, 3, 0, 327684, 3, 0, 327685, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 458754, 3, 0, 458755, 3, 0, 458756, 3, 0, 589827, 0, 0, 720887, 0, 0 )
 
 [node name="World" parent="." instance=ExtResource( 21 )]
-position = Vector2( -282.136, 240.416 )
+position = Vector2( -371, 95 )
 
 [node name="PathFinding" parent="." instance=ExtResource( 10 )]
 position = Vector2( -279.073, 3.1498 )
@@ -239,7 +238,7 @@ volume_db = -13.697
 autoplay = true
 
 [node name="MobSpawn" parent="." instance=ExtResource( 5 )]
-position = Vector2( 383.869, 204.61 )
+position = Vector2( 327, -103 )
 spawn_num = 5
 
 [connection signal="hide" from="UI/VictoryStatsPopup" to="UI/VictoryStatsPopup" method="closeWindow"]
