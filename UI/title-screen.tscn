@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://UI/StartScreen/logo-fear-light.png" type="Texture" id=1]
-[ext_resource path="res://UI/StartScreen/tile-brick.png" type="Texture" id=2]
+[ext_resource path="res://Images/StartScreen/tile-brick.png" type="Texture" id=2]
 [ext_resource path="res://UI/StartScreen/btn-options.png" type="Texture" id=3]
 [ext_resource path="res://UI/StartScreen/btn-play-game.png" type="Texture" id=4]
 [ext_resource path="res://UI/StartScreen/glow.png" type="Texture" id=5]
@@ -15,9 +15,6 @@ margin_right = 641.0
 margin_bottom = 484.0
 texture = ExtResource( 2 )
 stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 640.0

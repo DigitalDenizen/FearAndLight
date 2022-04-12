@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui-battle-announcement-enemies-are-coming.png-63cb47994ec7eb6ad1b9921cdad478b5.stex"
+path="res://.import/enemy-vampire-spider-sprite.png-817094cb655b4c3141d7068bbdfce408.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/UI/Battle/ui-battle-announcement-enemies-are-coming.png"
-dest_files=[ "res://.import/ui-battle-announcement-enemies-are-coming.png-63cb47994ec7eb6ad1b9921cdad478b5.stex" ]
+source_file="res://Images/Enemies/VampireSpider/enemy-vampire-spider-sprite.png"
+dest_files=[ "res://.import/enemy-vampire-spider-sprite.png-817094cb655b4c3141d7068bbdfce408.stex" ]
 
 [params]
 
