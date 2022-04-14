@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset-mudlands-bricks.png-51a1dab990a31599062efe86f9a30f8e.stex"
+path="res://.import/tileset-mudlands-bricks.png-4341fc325c38345a73cef2d577d7098a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/mudlands/tileset-mudlands-bricks.png"
-dest_files=[ "res://.import/tileset-mudlands-bricks.png-51a1dab990a31599062efe86f9a30f8e.stex" ]
+source_file="res://Images/World/MudLands/tileset-mudlands-bricks.png"
+dest_files=[ "res://.import/tileset-mudlands-bricks.png-4341fc325c38345a73cef2d577d7098a.stex" ]
 
 [params]
 

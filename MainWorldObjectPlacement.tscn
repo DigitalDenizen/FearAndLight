@@ -223,7 +223,6 @@ tile_data = PoolIntArray( 262146, 3, 0, 262147, 3, 0, 327682, 3, 0, 327683, 3, 0
 
 [node name="VictoryStatsPopup" parent="UI" instance=ExtResource( 4 )]
 pause_mode = 2
-visible = false
 
 [node name="Score" parent="UI" instance=ExtResource( 3 )]
 pause_mode = 2

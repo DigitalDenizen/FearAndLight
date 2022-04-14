@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset-mudlands-water.png-c0414993c06831d4c47fed8373cd0865.stex"
+path="res://.import/tileset-mudlands-water.png-6afaf23f45549fd175b879e953ce13a6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/mudlands/tileset-mudlands-water.png"
-dest_files=[ "res://.import/tileset-mudlands-water.png-c0414993c06831d4c47fed8373cd0865.stex" ]
+source_file="res://Images/World/MudLands/tileset-mudlands-water.png"
+dest_files=[ "res://.import/tileset-mudlands-water.png-6afaf23f45549fd175b879e953ce13a6.stex" ]
 
 [params]
 
