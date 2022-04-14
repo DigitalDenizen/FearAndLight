@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-weapon-fireball-down.png-fb9e159ec5fcc488d5d073f684c17c1f.stex"
+path="res://.import/effect-poof-enemy-death-sprite-simplet.png-aed180f9cade2e8de889953a32de4416.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Objects/Weapons/Fireball/object-weapon-fireball-down.png"
-dest_files=[ "res://.import/object-weapon-fireball-down.png-fb9e159ec5fcc488d5d073f684c17c1f.stex" ]
+source_file="res://Images/Effects/Explosions/effect-poof-enemy-death-sprite-simplet.png"
+dest_files=[ "res://.import/effect-poof-enemy-death-sprite-simplet.png-aed180f9cade2e8de889953a32de4416.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

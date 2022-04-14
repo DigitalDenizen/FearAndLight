@@ -59,14 +59,17 @@ func enemyType():
 	var randn1 = RandomNumberGenerator.new()
 	randn1.randomize()
 	var num = randn1.randi_range(0,100)
-	#randomize()
-	if num <= 50:
+	if num <= 33:
 		print(num)
 		enemyScene = preload("res://Characters/Enemies/Zombie.tscn")
 		return enemyScene.instance() #returning and intacing enemy
 
-	else:
+	elif num <= 67 :
 		print(num)
 		enemyScene = preload("res://Characters/Enemies/direWolf.tscn")
 		return enemyScene.instance() #returning and intacing enemy
+	else:
+		print(num)
+		enemyScene = preload("res://Characters/Enemies/VampireSpider.tscn")
+		return enemyScene.instance()
 	removeEnemy()

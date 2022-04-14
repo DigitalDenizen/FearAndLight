@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Audio/Music/Scary/spooky-atmos.wav" type="AudioStream" id=1]
 [ext_resource path="res://UI/UIlayout/uiButtonLayout.tscn" type="PackedScene" id=2]
@@ -19,6 +19,9 @@
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Ground.gd" type="Script" id=18]
 [ext_resource path="res://Images/tile-mud.png" type="Texture" id=19]
+[ext_resource path="res://Images/Effects/Fire/fire.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Characters/Enemies/VampireSpider.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Images/Effects/Rain.tscn" type="PackedScene" id=22]
 
 [sub_resource type="TileSet" id=1]
 0/name = "mud"
@@ -176,6 +179,7 @@ scale = Vector2( 3, 3 )
 pause_mode = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Scene" type="Node2D" parent="."]
@@ -223,7 +227,6 @@ tile_data = PoolIntArray( 262146, 3, 0, 262147, 3, 0, 327682, 3, 0, 327683, 3, 0
 
 [node name="VictoryStatsPopup" parent="UI" instance=ExtResource( 4 )]
 pause_mode = 2
-visible = false
 
 [node name="Score" parent="UI" instance=ExtResource( 3 )]
 pause_mode = 2
@@ -232,6 +235,15 @@ pause_mode = 2
 stream = ExtResource( 1 )
 volume_db = -13.697
 autoplay = true
+
+[node name="fire" parent="." instance=ExtResource( 20 )]
+position = Vector2( 524.131, 194.197 )
+
+[node name="VampireSpider" parent="fire" instance=ExtResource( 21 )]
+position = Vector2( 49.6095, -23.4186 )
+
+[node name="Rain" parent="." instance=ExtResource( 22 )]
+position = Vector2( 341.727, 232.35 )
 
 [connection signal="victory" from="MobSpawn" to="UI/VictoryStatsPopup" method="waveSpawnVictory"]
 [connection signal="hide" from="UI/VictoryStatsPopup" to="UI/VictoryStatsPopup" method="closeWindow"]

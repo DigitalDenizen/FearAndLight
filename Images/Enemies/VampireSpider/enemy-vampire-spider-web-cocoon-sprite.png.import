@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-weapon-fireball-down.png-fb9e159ec5fcc488d5d073f684c17c1f.stex"
+path="res://.import/enemy-vampire-spider-web-cocoon-sprite.png-65ad33754b4046ed03ed719eda629927.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Objects/Weapons/Fireball/object-weapon-fireball-down.png"
-dest_files=[ "res://.import/object-weapon-fireball-down.png-fb9e159ec5fcc488d5d073f684c17c1f.stex" ]
+source_file="res://Images/Enemies/VampireSpider/enemy-vampire-spider-web-cocoon-sprite.png"
+dest_files=[ "res://.import/enemy-vampire-spider-web-cocoon-sprite.png-65ad33754b4046ed03ed719eda629927.stex" ]
 
 [params]
 

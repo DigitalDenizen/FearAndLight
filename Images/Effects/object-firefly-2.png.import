@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-weapon-fireball-down.png-fb9e159ec5fcc488d5d073f684c17c1f.stex"
+path="res://.import/object-firefly-2.png-c08d0dd2b6cd13fc09cd5d61ab6a8921.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Objects/Weapons/Fireball/object-weapon-fireball-down.png"
-dest_files=[ "res://.import/object-weapon-fireball-down.png-fb9e159ec5fcc488d5d073f684c17c1f.stex" ]
+source_file="res://Images/Effects/object-firefly-2.png"
+dest_files=[ "res://.import/object-firefly-2.png-c08d0dd2b6cd13fc09cd5d61ab6a8921.stex" ]
 
 [params]
 

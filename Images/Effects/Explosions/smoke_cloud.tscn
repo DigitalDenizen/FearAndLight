@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Images/Effects/Fire/3.png" type="Texture" id=1]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0, 0, 0, 1, 0.393066, 0.373106, 0.373106, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+lifetime_randomness = 1.0
+emission_shape = 2
+emission_box_extents = Vector3( 5, 5, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 40.07
+initial_velocity_random = 0.79
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.6
+linear_accel_random = 0.72
+damping = 100.0
+damping_random = 1.0
+scale = 0.15
+color_ramp = SubResource( 2 )
+
+[node name="smoke_cloud" type="Particles2D"]
+position = Vector2( 305, 246 )
+amount = 25000
+explosiveness = 0.99
+process_material = SubResource( 3 )
+texture = ExtResource( 1 )

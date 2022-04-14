@@ -47,6 +47,30 @@ region = Rect2( 177, 0, 59, 43 )
 atlas = ExtResource( 6 )
 region = Rect2( 236, 0, 59, 43 )
 
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 59, 43 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 5 )
+region = Rect2( 59, 0, 59, 43 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 5 )
+region = Rect2( 118, 0, 59, 43 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 5 )
+region = Rect2( 177, 0, 59, 43 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 5 )
+region = Rect2( 236, 0, 59, 43 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 5 )
+region = Rect2( 295, 0, 59, 43 )
+
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 44, 48 )
@@ -75,30 +99,6 @@ region = Rect2( 118, 0, 59, 43 )
 atlas = ExtResource( 4 )
 region = Rect2( 177, 0, 59, 43 )
 
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 59, 43 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 5 )
-region = Rect2( 59, 0, 59, 43 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 5 )
-region = Rect2( 118, 0, 59, 43 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 5 )
-region = Rect2( 177, 0, 59, 43 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 5 )
-region = Rect2( 236, 0, 59, 43 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 5 )
-region = Rect2( 295, 0, 59, 43 )
-
 [sub_resource type="SpriteFrames" id=24]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
@@ -111,6 +111,11 @@ animations = [ {
 "name": "melee",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": false,
+"name": "projectile",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
 "name": "death",
@@ -120,16 +125,9 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
-"loop": false,
-"name": "projectile",
-"speed": 5.0
 } ]
 
-[node name="VampireSpider" type="KinematicBody2D" groups=[
-"Baddies",
-]]
+[node name="VampireSpider" type="KinematicBody2D" groups=["Baddies"]]
 position = Vector2( -3.34086, -10.0226 )
 z_index = 5
 z_as_relative = false
@@ -154,6 +152,7 @@ frames = SubResource( 24 )
 animation = "idle"
 
 [node name="PathLine" type="Line2D" parent="."]
+
 [connection signal="health_updated" from="." to="HealthBar" method="_on_vampireSpider_health_updated"]
 [connection signal="killed" from="." to="." method="_on_vampireSpider_killed"]
 [connection signal="melee" from="." to="." method="_on_vampireSpider_melee"]
