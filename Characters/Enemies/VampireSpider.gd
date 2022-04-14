@@ -7,7 +7,7 @@ signal killed()
 export (bool) var should_draw_path_line := false
 
 const MOVE_SPEED = 28
-export (float) var max_health = 150
+export (float) var max_health = 350
 enum STATES { IDLE, FOLLOW }
 onready var collision_shape = $CollisionShape2D
 onready var itemdrop_scene = load("res://Characters/ItemDrops/Item_Drop_2.tscn")

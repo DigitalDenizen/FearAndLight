@@ -7,7 +7,7 @@ signal killed()
 export (float) var max_health = 100
 export (bool) var should_draw_path_line := false
 
-const MOVE_SPEED = 40
+const MOVE_SPEED = 85
 enum STATES { IDLE, FOLLOW }
 onready var collision_shape = $CollisionShape2D
 onready var health = max_health setget _set_health
