@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-mudlands-shrub-2.png-973b16febe6bc48e7c2b5863a08ca93a.stex"
+path="res://.import/object-mudlands-shrub-2.png-dd8ec63e4fd454e5536ebffdb219b56f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/mudlands/object-mudlands-shrub-2.png"
-dest_files=[ "res://.import/object-mudlands-shrub-2.png-973b16febe6bc48e7c2b5863a08ca93a.stex" ]
+source_file="res://Images/World/MudLands/object-mudlands-shrub-2.png"
+dest_files=[ "res://.import/object-mudlands-shrub-2.png-dd8ec63e4fd454e5536ebffdb219b56f.stex" ]
 
 [params]
 
