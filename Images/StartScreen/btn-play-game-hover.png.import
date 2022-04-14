@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/btn-play-game.png-de0d2c95799c4e853238a0091ec56405.stex"
+path="res://.import/btn-play-game-hover.png-5b4fd5f222cee66f2138bf8413a570de.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/StartScreen/btn-play-game.png"
-dest_files=[ "res://.import/btn-play-game.png-de0d2c95799c4e853238a0091ec56405.stex" ]
+source_file="res://Images/StartScreen/btn-play-game-hover.png"
+dest_files=[ "res://.import/btn-play-game-hover.png-5b4fd5f222cee66f2138bf8413a570de.stex" ]
 
 [params]
 

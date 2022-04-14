@@ -12,6 +12,7 @@ var waveSize = 0
 var enemiesKilled = 0
 var heroesKilled = 0
 var defensesDestroyed = 0
+var windigoKilled = 0
 
 func _ready():
 	EventBus.connect("battle_banner_closed",self,"spawn")
@@ -41,46 +42,62 @@ func spawn(mobSpawner):
 		enemy.pathFinding = pathFinding
 		add_child(enemy)
 
+func spawnWindigo(mobSpawner):
+	#Setting shape of spawning area
+	var colShape = $Spawn_area
+	if shape_x != 0.0 && shape_y != 0.0:
+		colShape.shape.extents = Vector2(shape_x/2, shape_y/2)
+
+
+	var center = colShape.position
+	var size = colShape.shape.extents
+	var screen_size = get_viewport().get_visible_rect().size
+	var windigoSpawn = windigoSpawn()
+	
+	#Determining the spawn position of the enemy
+	windigoSpawn.spawner = mobSpawner
+	windigoSpawn.max_health = 500
+	windigoSpawn.add_to_group("Bosses")
+	windigoSpawn.position.y = (randi() % int(size.x)) - (int(size.x/2)) + center.x
+	windigoSpawn.position.x = (randi() % int(size.y)) - (int(size.y/2)) + center.y
+	windigoSpawn.pathFinding = pathFinding
+	add_child(windigoSpawn)
+
 func removeEnemy():
 	waveSize = waveSize - 1
 	enemiesKilled = enemiesKilled + 1
 	if waveSize == 0:
-		EventBus.emit_signal("victory",enemiesKilled, heroesKilled, defensesDestroyed)
-		#emit_signal("victory", enemiesKilled, heroesKilled, defensesDestroyed)
-		
+		spawnWindigo(self)
+		print("wave defeated")
+
 func heroKilled():
 	heroesKilled = heroesKilled + 1
 
 func defenseDestroyed():
 	defensesDestroyed = defensesDestroyed + 1
 
-func enemyType():
+func windigoDefeated():
+	windigoKilled = windigoKilled - 1
+
+func enemyType(): #Enemy type selection 
 	var enemyScene 
 	var randn1 = RandomNumberGenerator.new()
 	randn1.randomize()
 	var num = randn1.randi_range(0,100)
-	if num <= 33:
+	if num <= 50:
 		print(num)
 		enemyScene = preload("res://Characters/Enemies/Zombie.tscn")
-		return enemyScene.instance() #returning and instancing zombie
-	elif num <= 66:
-		print(num)
-		enemyScene = preload("res://Characters/Enemies/direWolf.tscn")
-		return enemyScene.instance() #returning and instancing vampire spider
+		return enemyScene.instance() #returning and intacing zombie enemy
 	else:
 		print(num)
-		enemyScene = preload("res://Characters/Enemies/VampireSpider.tscn")
-		return enemyScene.instance() #returning and instancing dire wolf
-	removeEnemy()
-	
-"""
-	elif num <= 66:
-		print(num)
 		enemyScene = preload("res://Characters/Enemies/direWolf.tscn")
-		return enemyScene.instance() #returning and instancing vampire spider
-	 else:
-		print(num)
-		enemyScene = preload("res://Characters/Enemies/VampireSpider.tscn")
-		return enemyScene.instance() #returning and instancing dire wolf
+		return enemyScene.instance() #returning and intacing direWolf enemy
 	removeEnemy()
-"""
+
+func windigoSpawn():
+	var windigoScene = preload("res://Characters/Bosses/wendigo.tscn")
+	var windigo = windigoScene
+	return windigo.instance()
+
+func WindigoDefeated(): #Spawn the windigo when spawn is defeated
+	EventBus.emit_signal("victory",enemiesKilled, heroesKilled, defensesDestroyed)
