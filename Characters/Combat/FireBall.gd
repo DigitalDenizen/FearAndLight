@@ -1,6 +1,6 @@
 extends Area2D
 var direction = Vector2()
-export var speed = 1000
+export var speed = 850
 var collid = false
 var poofCountdown = 0
 var attacker = ""

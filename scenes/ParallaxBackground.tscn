@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/global/scene-layer-moon.png" type="Texture" id=1]
 [ext_resource path="res://scenes/sky/scene-layer-sky-star-mist.png" type="Texture" id=2]
@@ -10,12 +10,6 @@
 [ext_resource path="res://scenes/global/scene-layer-main-clouds.png" type="Texture" id=9]
 [ext_resource path="res://scenes/global/scene-layer-main-hills.png" type="Texture" id=10]
 [ext_resource path="res://scenes/global/scene-layer-main-dark-trees.png" type="Texture" id=11]
-[ext_resource path="res://AnimatedTileset/fog.shader" type="Shader" id=14]
-
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 14 )
-shader_param/color = Vector3( 0.3, 0.26, 0.367 )
-shader_param/OCTAVES = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
@@ -336,19 +330,6 @@ centered = false
 [node name="Mud_to_ice_dark_trees" type="Sprite" parent="Screen4"]
 z_index = 5
 texture = ExtResource( 11 )
-centered = false
-
-[node name="Fog_all_screens" type="ParallaxLayer" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Fog_5" type="Sprite" parent="Fog_all_screens"]
-material = SubResource( 1 )
-position = Vector2( -1740.88, 168.569 )
-scale = Vector2( 163.163, 1.56979 )
-z_index = 5
-texture = ExtResource( 1 )
 centered = false
 
 [node name="Screen5" type="ParallaxLayer" parent="."]
