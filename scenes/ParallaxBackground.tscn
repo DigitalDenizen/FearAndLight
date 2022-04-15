@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/global/scene-layer-moon.png" type="Texture" id=1]
 [ext_resource path="res://scenes/sky/scene-layer-sky-star-mist.png" type="Texture" id=2]
@@ -16,6 +16,9 @@
 shader = ExtResource( 14 )
 shader_param/color = Vector3( 0.3, 0.26, 0.367 )
 shader_param/OCTAVES = 1
+[ext_resource path="res://scenes/global/scene-layer-main-dark-trees.png" type="Texture" id=13]
+[ext_resource path="res://scenes/global/scene-layer-main-hills.png" type="Texture" id=10]
+[ext_resource path="res://scenes/global/scene-layer-main-dark-trees.png" type="Texture" id=11]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 

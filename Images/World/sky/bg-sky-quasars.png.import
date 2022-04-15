@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg-sky-quasars.png-e61d411b1f4703189f650cd552726c1c.stex"
+path="res://.import/bg-sky-quasars.png-0adeeeb779094f43e9c9f019e20eae9f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/sky/bg-sky-quasars.png"
-dest_files=[ "res://.import/bg-sky-quasars.png-e61d411b1f4703189f650cd552726c1c.stex" ]
+source_file="res://Images/World/Sky/bg-sky-quasars.png"
+dest_files=[ "res://.import/bg-sky-quasars.png-0adeeeb779094f43e9c9f019e20eae9f.stex" ]
 
 [params]
 
