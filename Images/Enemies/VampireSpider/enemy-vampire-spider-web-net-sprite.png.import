@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile-darkforest-cliffs.png-be5b9ccf1d5af7de84e1e16c16d2cd9a.stex"
+path="res://.import/enemy-vampire-spider-web-net-sprite.png-30bb8a02006701857ced59627dcfafb7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/DarkForest/tile-darkforest-cliffs.png"
-dest_files=[ "res://.import/tile-darkforest-cliffs.png-be5b9ccf1d5af7de84e1e16c16d2cd9a.stex" ]
+source_file="res://Images/Enemies/VampireSpider/enemy-vampire-spider-web-net-sprite.png"
+dest_files=[ "res://.import/enemy-vampire-spider-web-net-sprite.png-30bb8a02006701857ced59627dcfafb7.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

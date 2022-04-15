@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset-swamp-cliffs.png-162f68fcd036ab80c7f969968530bf31.stex"
+path="res://.import/drop-spritesheet-vampire-spider-web.png-8e4fce60f6892af5529d9f36531a9f13.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/Swamp/tileset-swamp-cliffs.png"
-dest_files=[ "res://.import/tileset-swamp-cliffs.png-162f68fcd036ab80c7f969968530bf31.stex" ]
+source_file="res://Images/Drops/EnemyDrops/VampireSpiderWeb/drop-spritesheet-vampire-spider-web.png"
+dest_files=[ "res://.import/drop-spritesheet-vampire-spider-web.png-8e4fce60f6892af5529d9f36531a9f13.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

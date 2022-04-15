@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset-darkforest-bricks.png-96fc2e7e2430ed43e33906213880edbe.stex"
+path="res://.import/btn-play-game-3x.png-fbe8f8ec1e30e44ecf6fb551ceb3b350.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/World/DarkForest/tileset-darkforest-bricks.png"
-dest_files=[ "res://.import/tileset-darkforest-bricks.png-96fc2e7e2430ed43e33906213880edbe.stex" ]
+source_file="res://Images/StartScreen/btn-play-game-3x.png"
+dest_files=[ "res://.import/btn-play-game-3x.png-fbe8f8ec1e30e44ecf6fb551ceb3b350.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
