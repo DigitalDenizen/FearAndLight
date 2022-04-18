@@ -145,6 +145,9 @@ points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
 [node name="Main" type="YSort"]
 script = ExtResource( 15 )
 
+[node name="Rain" parent="." instance=ExtResource( 22 )]
+position = Vector2( 389.83, 20.7956 )
+
 [node name="MobSpawn" parent="." instance=ExtResource( 5 )]
 position = Vector2( 369.643, 194.889 )
 spawn_num = 5
@@ -179,7 +182,6 @@ scale = Vector2( 3, 3 )
 pause_mode = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Scene" type="Node2D" parent="."]
@@ -236,14 +238,11 @@ stream = ExtResource( 1 )
 volume_db = -13.697
 autoplay = true
 
+[node name="VampireSpider" parent="." instance=ExtResource( 21 )]
+position = Vector2( 604.456, 177.895 )
+
 [node name="fire" parent="." instance=ExtResource( 20 )]
-position = Vector2( 524.131, 194.197 )
-
-[node name="VampireSpider" parent="fire" instance=ExtResource( 21 )]
-position = Vector2( 49.6095, -23.4186 )
-
-[node name="Rain" parent="." instance=ExtResource( 22 )]
-position = Vector2( 341.727, 232.35 )
+position = Vector2( 483.615, 209.494 )
 
 [connection signal="victory" from="MobSpawn" to="UI/VictoryStatsPopup" method="waveSpawnVictory"]
 [connection signal="hide" from="UI/VictoryStatsPopup" to="UI/VictoryStatsPopup" method="closeWindow"]
