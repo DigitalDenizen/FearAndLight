@@ -1,26 +1,28 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Images/Battle_UI/ui-button-close.png" type="Texture" id=1]
-[ext_resource path="res://Font/f-l-base-font-dynamic_21.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/Victory/VictoryStats.gd" type="Script" id=1]
+[ext_resource path="res://Images/UI/Defeat/ui-defeat-text-banner-wndw.png" type="Texture" id=2]
 [ext_resource path="res://Images/Battle_UI/ui-window-large.png" type="Texture" id=3]
-[ext_resource path="res://Images/Victory/ui-victory-text-banner-wndw.png" type="Texture" id=4]
-[ext_resource path="res://UI/Victory/Heros_killed.tscn" type="PackedScene" id=5]
-[ext_resource path="res://UI/Victory/Defenses_destroyed.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Images/Battle_UI/ui-button-close.png" type="Texture" id=4]
+[ext_resource path="res://UI/Victory/Medal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Victory/ContinueButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/Victory/Enemies_killed.tscn" type="PackedScene" id=7]
-[ext_resource path="res://UI/Victory/Chest.tscn" type="PackedScene" id=8]
-[ext_resource path="res://UI/Victory/ContinueButton.tscn" type="PackedScene" id=9]
-[ext_resource path="res://UI/Victory/Medal.tscn" type="PackedScene" id=10]
-[ext_resource path="res://UI/Victory/VictoryStats.gd" type="Script" id=11]
+[ext_resource path="res://UI/Victory/Defenses_destroyed.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI/Victory/Heros_killed.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Font/f-l-base-font-dynamic_21.tres" type="DynamicFont" id=10]
 
 [sub_resource type="Theme" id=1]
-default_font = ExtResource( 2 )
+default_font = ExtResource( 10 )
 
 [sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 normal_map = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 451, 247 )
+region_rect = Rect2( 0, 0, 451, 236 )
 
-[node name="Victory_Stats_popup" type="WindowDialog"]
+[sub_resource type="Theme" id=3]
+default_font = ExtResource( 10 )
+
+[node name="DefeatPanel" type="WindowDialog"]
 anchor_right = 1.026
 anchor_bottom = 1.0
 margin_left = 28.0
@@ -32,11 +34,11 @@ custom_constants/close_h_ofs = 62
 custom_constants/scaleborder_size = 11
 custom_constants/close_v_ofs = -135
 custom_constants/title_height = 3
-custom_icons/close_highlight = ExtResource( 1 )
-custom_icons/close = ExtResource( 1 )
+custom_icons/close_highlight = ExtResource( 4 )
+custom_icons/close = ExtResource( 4 )
 custom_styles/panel = SubResource( 2 )
 popup_exclusive = true
-script = ExtResource( 11 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -52,27 +54,30 @@ __meta__ = {
 }
 
 [node name="Your_Results" type="CenterContainer" parent="GridContainer"]
-margin_right = 863.0
+margin_right = 914.0
 margin_bottom = 24.0
+theme = SubResource( 3 )
 
 [node name="Label" type="Label" parent="GridContainer/Your_Results"]
-margin_left = 358.0
-margin_right = 504.0
+margin_left = 377.0
+margin_right = 537.0
 margin_bottom = 24.0
-text = "YOUR RESULTS"
+text = "YOU FUCKED UP!"
+align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer"]
 margin_top = 28.0
-margin_right = 863.0
+margin_right = 584.0
 margin_bottom = 253.0
 
 [node name="CenterContainer" type="CenterContainer" parent="GridContainer/MarginContainer"]
-margin_right = 863.0
+margin_right = 584.0
 margin_bottom = 225.0
 
 [node name="Stats_container" type="HBoxContainer" parent="GridContainer/MarginContainer/CenterContainer"]
-margin_right = 863.0
+margin_right = 584.0
 margin_bottom = 225.0
+alignment = 1
 
 [node name="Killed" type="CenterContainer" parent="GridContainer/MarginContainer/CenterContainer/Stats_container"]
 margin_right = 305.0
@@ -85,7 +90,7 @@ margin_bottom = 225.0
 rect_min_size = Vector2( 245, 225 )
 alignment = 1
 
-[node name="Heros_Killed" parent="GridContainer/MarginContainer/CenterContainer/Stats_container/Killed/VBoxContainer" instance=ExtResource( 5 )]
+[node name="Heros_Killed" parent="GridContainer/MarginContainer/CenterContainer/Stats_container/Killed/VBoxContainer" instance=ExtResource( 9 )]
 margin_top = 13.0
 margin_bottom = 74.0
 
@@ -94,7 +99,7 @@ margin_top = 78.0
 margin_right = 305.0
 margin_bottom = 143.0
 
-[node name="Defenses_destroyed" parent="GridContainer/MarginContainer/CenterContainer/Stats_container/Killed/VBoxContainer" instance=ExtResource( 6 )]
+[node name="Defenses_destroyed" parent="GridContainer/MarginContainer/CenterContainer/Stats_container/Killed/VBoxContainer" instance=ExtResource( 8 )]
 margin_top = 147.0
 margin_right = 305.0
 margin_bottom = 212.0
@@ -105,28 +110,17 @@ margin_right = 584.0
 margin_bottom = 225.0
 rect_min_size = Vector2( 255, 215 )
 
-[node name="Medals_Earned" parent="GridContainer/MarginContainer/CenterContainer/Stats_container/Medals" instance=ExtResource( 10 )]
-margin_top = 17.0
-margin_right = 275.0
-margin_bottom = 208.0
-
-[node name="Chest" type="CenterContainer" parent="GridContainer/MarginContainer/CenterContainer/Stats_container"]
-margin_left = 588.0
-margin_right = 863.0
-margin_bottom = 225.0
-rect_min_size = Vector2( 255, 215 )
-
-[node name="Panel" parent="GridContainer/MarginContainer/CenterContainer/Stats_container/Chest" instance=ExtResource( 8 )]
+[node name="Medals_Earned" parent="GridContainer/MarginContainer/CenterContainer/Stats_container/Medals" instance=ExtResource( 5 )]
 margin_top = 17.0
 margin_right = 275.0
 margin_bottom = 208.0
 
 [node name="CenterContainer" type="CenterContainer" parent="GridContainer"]
 margin_top = 257.0
-margin_right = 863.0
+margin_right = 584.0
 margin_bottom = 312.0
 
-[node name="Continue_button" parent="GridContainer/CenterContainer" instance=ExtResource( 9 )]
-margin_left = 284.0
-margin_right = 579.0
+[node name="Continue_button" parent="GridContainer/CenterContainer" instance=ExtResource( 6 )]
+margin_left = 144.0
+margin_right = 439.0
 margin_bottom = 55.0
