@@ -42,10 +42,6 @@ region = Rect2( 0, 0, 57, 40 )
 atlas = ExtResource( 4 )
 region = Rect2( 57, 0, 57, 42 )
 
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 4 )
-region = Rect2( 114, 0, 57, 42 )
-
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 4 )
 region = Rect2( 228, 0, 57, 42 )
@@ -61,6 +57,10 @@ region = Rect2( 342, 0, 57, 42 )
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 4 )
 region = Rect2( 399, 0, 57, 42 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 4 )
+region = Rect2( 114, 0, 57, 42 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 4 )
@@ -78,14 +78,14 @@ animations = [ {
 "name": "Health 75",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 14 ) ],
-"loop": true,
-"name": "Health 50",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": false,
 "name": "Death",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ) ],
+"loop": true,
+"name": "Health 50",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 15 ) ],
@@ -104,18 +104,17 @@ collision_mask = 16
 script = ExtResource( 1 )
 
 [node name="HealthBar" parent="." instance=ExtResource( 2 )]
-visible = false
-margin_left = 12.3975
-margin_top = -8.71703
-margin_right = 53.4162
-margin_bottom = 48.0555
+margin_left = -15.603
+margin_top = -37.717
+margin_right = 25.4157
+margin_bottom = 19.0555
 rect_scale = Vector2( 0.9, 0.75 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.5, -9 )
 frames = SubResource( 16 )
 animation = "idle"
-frame = 4
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
