@@ -25,20 +25,20 @@ region_rect = Rect2( 0, 0, 137, 24 )
 [node name="TitleScreen" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 641.0
-margin_bottom = 484.0
+margin_right = 640.0
+margin_bottom = 360.0
 texture = ExtResource( 2 )
 stretch_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 640.0
-margin_bottom = 484.0
+margin_bottom = 360.0
 alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 71.0
+margin_top = 9.0
 margin_right = 640.0
-margin_bottom = 357.0
+margin_bottom = 295.0
 alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer2"]
@@ -54,15 +54,15 @@ stretch_mode = 6
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer2/CenterContainer/TextureRect"]
 margin_left = 92.2188
-margin_top = -95.7609
+margin_top = -95.0
 margin_right = 381.219
 margin_bottom = 184.239
 texture = ExtResource( 5 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 361.0
+margin_top = 299.0
 margin_right = 640.0
-margin_bottom = 385.0
+margin_bottom = 323.0
 alignment = 1
 
 [node name="Play_Button" type="Button" parent="VBoxContainer/HBoxContainer"]
@@ -83,9 +83,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 389.0
+margin_top = 327.0
 margin_right = 640.0
-margin_bottom = 412.0
+margin_bottom = 350.0
 alignment = 1
 
 [node name="Options_Button" type="Button" parent="VBoxContainer/HBoxContainer3"]

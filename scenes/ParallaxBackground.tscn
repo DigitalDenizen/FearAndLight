@@ -7,10 +7,11 @@
 [ext_resource path="res://scenes/sky/scene-layer-sky-stars.png" type="Texture" id=5]
 [ext_resource path="res://scenes/sky/scene-layer-sky-quasars.png" type="Texture" id=6]
 [ext_resource path="res://scenes/global/scene-layer-main-sky.png" type="Texture" id=7]
-[ext_resource path="res://Images/World/Swamp/bg-swamp-top-trees-middle.png" type="Texture" id=8]
+[ext_resource path="res://Images/StartScreen/bg-swamp-top-trees-middle.png" type="Texture" id=8]
 [ext_resource path="res://scenes/global/scene-layer-main-clouds.png" type="Texture" id=9]
-[ext_resource path="res://Images/World/Swamp/bg-swamp-top-trees-back.png" type="Texture" id=11]
+[ext_resource path="res://Images/StartScreen/bg-swamp-top-trees-back.png" type="Texture" id=11]
 [ext_resource path="res://AnimatedTileset/fog.shader" type="Shader" id=14]
+
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 14 )
@@ -353,7 +354,7 @@ centered = false
 
 [node name="Mud_to_ice_dark_trees" type="Sprite" parent="Screen4"]
 z_index = 5
-texture = ExtResource( 11 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="Screen5" type="ParallaxLayer" parent="."]

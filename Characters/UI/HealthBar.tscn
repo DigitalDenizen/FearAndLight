@@ -42,9 +42,6 @@ func _on_direWolf_health_updated(health):
 margin_right = 40.0
 margin_bottom = 40.0
 script = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HealthUnder" type="TextureProgress" parent="."]
 margin_right = 31.0
@@ -52,9 +49,6 @@ margin_bottom = 6.0
 value = 100.0
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HealthOver" type="TextureProgress" parent="."]
 margin_top = -0.0331097
@@ -63,8 +57,5 @@ margin_bottom = 5.96689
 value = 100.0
 texture_progress = ExtResource( 3 )
 tint_progress = Color( 0.215686, 0.913725, 0.117647, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="UpdateTween" type="Tween" parent="."]
