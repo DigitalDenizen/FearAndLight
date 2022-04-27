@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-sky-star-mist.png-7fd8ee38cf8afcd47844ed81b6a92371.stex"
+path="res://.import/btn-play-game-default.png-13c5819bf1f77d8c8e7fe2c86a972519.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/sky/scene-layer-sky-star-mist.png"
-dest_files=[ "res://.import/scene-layer-sky-star-mist.png-7fd8ee38cf8afcd47844ed81b6a92371.stex" ]
+source_file="res://Images/StartScreen/btn-play-game-default.png"
+dest_files=[ "res://.import/btn-play-game-default.png-13c5819bf1f77d8c8e7fe2c86a972519.stex" ]
 
 [params]
 

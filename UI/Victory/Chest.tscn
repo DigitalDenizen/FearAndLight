@@ -28,7 +28,8 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 margin_right = 121.0
-margin_bottom = 109.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 121, 108 )
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
 margin_right = 121.0
@@ -38,6 +39,7 @@ rect_min_size = Vector2( 121, 87 )
 [node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/MarginContainer"]
 margin_right = 121.0
 margin_bottom = 87.0
+rect_min_size = Vector2( 121, 87 )
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/CenterContainer"]
 margin_left = 51.0
@@ -50,30 +52,50 @@ stretch_mode = 1
 [node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer"]
 margin_top = 91.0
 margin_right = 121.0
-margin_bottom = 109.0
-rect_min_size = Vector2( 121, 16 )
+margin_bottom = 111.0
+rect_min_size = Vector2( 120, 20 )
+custom_constants/margin_right = 0
+custom_constants/margin_top = -9
+custom_constants/margin_bottom = 0
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/MarginContainer2"]
+margin_top = -9.0
 margin_right = 121.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 121, 17 )
+margin_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 121, 21 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer2/CenterContainer"]
-margin_right = 121.0
+margin_left = 21.0
+margin_top = 10.0
+margin_right = 100.0
 margin_bottom = 18.0
-rect_min_size = Vector2( 121, 0 )
+custom_constants/separation = 1
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer2/CenterContainer/HBoxContainer"]
-margin_right = 48.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 48, 18 )
+margin_right = 38.0
+margin_bottom = 8.0
 text = "YOU GOT A:"
-align = 2
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Label2" type="Label" parent="Panel/VBoxContainer/MarginContainer2/CenterContainer/HBoxContainer"]
-margin_left = 52.0
-margin_right = 119.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 67, 18 )
-custom_colors/font_color = Color( 0.345843, 0.348145, 0.345425, 1 )
-text = "SILVER CHEST"
+margin_left = 39.0
+margin_right = 79.0
+margin_bottom = 8.0
+custom_colors/font_color = Color( 0.741176, 0.752941, 0.109804, 1 )
+text = "GOLD CHEST"
+__meta__ = {
+"_editor_description_": ""
+}

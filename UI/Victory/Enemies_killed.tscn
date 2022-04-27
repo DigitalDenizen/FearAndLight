@@ -7,51 +7,67 @@
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 121, 32 )
 
 [sub_resource type="Theme" id=3]
 
 [node name="Enemies_Killed" type="CenterContainer"]
-margin_right = 296.0
-margin_bottom = 65.0
-rect_min_size = Vector2( 121, 32 )
+margin_right = 121.0
+margin_bottom = 32.0
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = 87.0
-margin_top = 16.0
-margin_right = 208.0
-margin_bottom = 48.0
+margin_right = 121.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 121, 32 )
 theme = SubResource( 1 )
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 2 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+margin_right = 121.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 121, 32 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Enemy_Image" type="CenterContainer" parent="Panel/HBoxContainer"]
-margin_right = 23.0
-margin_bottom = 24.0
+margin_right = 33.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 33, 32 )
 
 [node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/Enemy_Image"]
-margin_right = 23.0
-margin_bottom = 24.0
+margin_left = 5.0
+margin_top = 4.0
+margin_right = 28.0
+margin_bottom = 28.0
 theme = SubResource( 3 )
 texture = ExtResource( 3 )
 stretch_mode = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel/HBoxContainer"]
-margin_left = 27.0
-margin_right = 219.0
-margin_bottom = 24.0
+margin_left = 37.0
+margin_right = 121.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 84, 32 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/CenterContainer"]
-margin_right = 192.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 192, 24 )
+margin_left = 1.0
+margin_top = 4.0
+margin_right = 82.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 81, 24 )
 
 [node name="Label" type="Label" parent="Panel/HBoxContainer/CenterContainer/HBoxContainer"]
 margin_top = 8.0

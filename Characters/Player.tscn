@@ -43,6 +43,22 @@ region = Rect2( 910, 0, 182, 74 )
 atlas = ExtResource( 3 )
 region = Rect2( 1092, 0, 182, 74 )
 
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 3 )
+region = Rect2( 2366, 0, 182, 74 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 3 )
+region = Rect2( 2548, 0, 182, 74 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 3 )
+region = Rect2( 2730, 0, 182, 74 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 3 )
+region = Rect2( 2912, 0, 182, 74 )
+
 [sub_resource type="AtlasTexture" id=60]
 atlas = ExtResource( 3 )
 region = Rect2( 3094, 0, 182, 74 )
@@ -195,27 +211,16 @@ region = Rect2( 2002, 0, 182, 74 )
 atlas = ExtResource( 3 )
 region = Rect2( 2184, 0, 182, 74 )
 
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 3 )
-region = Rect2( 2366, 0, 182, 74 )
-
-[sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 3 )
-region = Rect2( 2548, 0, 182, 74 )
-
-[sub_resource type="AtlasTexture" id=41]
-atlas = ExtResource( 3 )
-region = Rect2( 2730, 0, 182, 74 )
-
-[sub_resource type="AtlasTexture" id=42]
-atlas = ExtResource( 3 )
-region = Rect2( 2912, 0, 182, 74 )
-
 [sub_resource type="SpriteFrames" id=25]
 animations = [ {
 "frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
 "loop": true,
 "name": "idle",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
+"loop": true,
+"name": "throw",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ) ],
@@ -231,11 +236,6 @@ animations = [ {
 "frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "walk",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
-"loop": true,
-"name": "throw",
 "speed": 10.0
 } ]
 

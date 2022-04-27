@@ -80,7 +80,6 @@ scale = Vector2( 3, 3 )
 pause_mode = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="YSort"]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Ground" type="TileMap" parent="YSort" groups=["tileMap"]]

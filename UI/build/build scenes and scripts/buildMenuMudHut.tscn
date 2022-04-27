@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://UI/build/build scenes and scripts/buildMenuMudHut.gd" type="Script" id=1]
-[ext_resource path="res://UI/build/ui-build-item-bkgd-place.png" type="Texture" id=2]
+[ext_resource path="res://Images/UI/Build/ui-build-bkgd-item-place.png" type="Texture" id=2]
 [ext_resource path="res://Font/f-l-base-font-dynamic_14.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Images/UI/Build/ui-build-button-craft-hover.png" type="Texture" id=4]
 [ext_resource path="res://Images/UI/Build/ui-build-button-craft-disabled.png" type="Texture" id=5]
@@ -10,9 +10,8 @@
 [ext_resource path="res://Images/UI/Build/ui-build-button-craft-normal.png" type="Texture" id=8]
 [ext_resource path="res://Images/UI/Build/ui-build-button-info-disabled.png" type="Texture" id=9]
 [ext_resource path="res://Images/UI/Build/ui-build-button-info-normal.png" type="Texture" id=10]
-[ext_resource path="res://UI/build/ui-build-res-mud-clumps-sm.png" type="Texture" id=11]
-[ext_resource path="res://Images/Drops/ResourceDrops/WoodLogs/res-icon-wood-logs-sm.png" type="Texture" id=12]
-
+[ext_resource path="res://Images/UI/Global/ui-icon-resource-wood.png" type="Texture" id=11]
+[ext_resource path="res://Images/UI/Global/ui-icon-resource-mud.png" type="Texture" id=12]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 3 )
@@ -58,9 +57,6 @@ rect_min_size = Vector2( 116, 116 )
 theme = SubResource( 1 )
 custom_styles/panel = SubResource( 2 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="slot_vcontainer" type="VBoxContainer" parent="."]
 margin_right = 116.0
@@ -152,7 +148,7 @@ margin_left = 2.0
 margin_right = 16.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 14, 12 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 stretch_mode = 6
 
 [node name="resource_1_count" type="Label" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer/resource_1_marginCont/resource_1_HorizCont"]
@@ -181,7 +177,7 @@ alignment = 1
 margin_left = 4.0
 margin_right = 21.0
 margin_bottom = 16.0
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 stretch_mode = 6
 
 [node name="resource_2_count" type="Label" parent="slot_vcontainer/slot_build_panel_vcontainer/panel_hcontainer/resource_2_hcontainer/resource_2_count_container"]

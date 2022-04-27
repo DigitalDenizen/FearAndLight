@@ -1,9 +1,10 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Images/Spirits/SpiritDog/spirit-dog-transform-sprite.png" type="Texture" id=1]
 [ext_resource path="res://Images/StartScreen/tile-brick.png" type="Texture" id=2]
 [ext_resource path="res://Images/Spirits/SpiritDog/spirit-dog-talk-sprite.png" type="Texture" id=3]
 [ext_resource path="res://Images/UI/Global/ui-talk-bubble.png" type="Texture" id=4]
+[ext_resource path="res://Images/Effects/Lights/light.png" type="Texture" id=5]
 [ext_resource path="res://Images/UI/Global/ui-talk-bubble-more.png" type="Texture" id=6]
 [ext_resource path="res://UI/intro.gd" type="Script" id=7]
 [ext_resource path="res://Images/Spirits/SpiritDog/spirit-dog-float-sprite.png" type="Texture" id=8]
@@ -450,6 +451,22 @@ centered = false
 anims/enter = SubResource( 20 )
 anims/move = SubResource( 21 )
 anims/talk = SubResource( 22 )
+
+[node name="Light2D" type="Light2D" parent="."]
+light_mask = 7
+position = Vector2( 27, 69 )
+texture = ExtResource( 5 )
+energy = 0.56
+shadow_color = Color( 0.0352941, 0.027451, 0.027451, 0 )
+shadow_filter_smooth = 6.2
+
+[node name="Light2D2" type="Light2D" parent="."]
+light_mask = 7
+position = Vector2( 26, 8 )
+texture = ExtResource( 5 )
+energy = 0.56
+shadow_color = Color( 0.0352941, 0.027451, 0.027451, 0 )
+shadow_filter_smooth = 6.2
 
 [connection signal="pressed" from="skip_button" to="." method="_on_skip_button_pressed"]
 [connection signal="pressed" from="speech_bubble/next_button" to="." method="_on_Text_Button_pressed"]

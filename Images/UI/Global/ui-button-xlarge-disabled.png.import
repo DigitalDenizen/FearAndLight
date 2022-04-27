@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scene-layer-sky-star-mist.png-7fd8ee38cf8afcd47844ed81b6a92371.stex"
+path="res://.import/ui-button-xlarge-disabled.png-e84fca5e2975aedc8a79cf7dd5718411.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/sky/scene-layer-sky-star-mist.png"
-dest_files=[ "res://.import/scene-layer-sky-star-mist.png-7fd8ee38cf8afcd47844ed81b6a92371.stex" ]
+source_file="res://Images/UI/Global/ui-button-xlarge-disabled.png"
+dest_files=[ "res://.import/ui-button-xlarge-disabled.png-e84fca5e2975aedc8a79cf7dd5718411.stex" ]
 
 [params]
 
