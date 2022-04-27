@@ -11,7 +11,8 @@
 [ext_resource path="res://Images/UI/Build/ui-build-button-info-disabled.png" type="Texture" id=9]
 [ext_resource path="res://Images/UI/Build/ui-build-button-info-normal.png" type="Texture" id=10]
 [ext_resource path="res://UI/build/ui-build-res-mud-clumps-sm.png" type="Texture" id=11]
-[ext_resource path="res://Images/Drops/ResourceDrops/WoodLogs/ui-icon-wood-logs-sm.png" type="Texture" id=12]
+[ext_resource path="res://Images/Drops/ResourceDrops/WoodLogs/res-icon-wood-logs-sm.png" type="Texture" id=12]
+
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 3 )

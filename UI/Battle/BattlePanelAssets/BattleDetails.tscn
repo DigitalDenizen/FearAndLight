@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Images/Battle_UI/ui-battle-star-active.png" type="Texture" id=1]
-[ext_resource path="res://Images/Battle_UI/ui-battle-star-inactive.png" type="Texture" id=2]
+[ext_resource path="res://Images/UI/Battle/ui-battle-star-inactive.png" type="Texture" id=1]
+[ext_resource path="res://Images/UI/Battle/ui-battle-star-active.png" type="Texture" id=2]
 
 [sub_resource type="Theme" id=4]
 
@@ -14,9 +14,6 @@ margin_right = 163.0
 margin_bottom = 163.0
 rect_min_size = Vector2( 128, 163 )
 theme = SubResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_right = 163.0
@@ -97,7 +94,7 @@ custom_constants/separation = -1
 margin_right = 21.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 21, 18 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 stretch_mode = 1
 __meta__ = {
 "_editor_description_": ""
@@ -108,7 +105,7 @@ margin_left = 20.0
 margin_right = 41.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 21, 18 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 stretch_mode = 1
 __meta__ = {
 "_editor_description_": ""
@@ -119,7 +116,7 @@ margin_left = 40.0
 margin_right = 61.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 21, 18 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 stretch_mode = 1
 __meta__ = {
 "_editor_description_": ""
@@ -130,7 +127,7 @@ margin_left = 60.0
 margin_right = 81.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 21, 18 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 stretch_mode = 1
 __meta__ = {
 "_editor_description_": ""
@@ -141,7 +138,7 @@ margin_left = 80.0
 margin_right = 101.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 21, 18 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 stretch_mode = 1
 __meta__ = {
 "_editor_description_": ""
