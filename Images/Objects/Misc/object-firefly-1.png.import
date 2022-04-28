@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-firefly-2.png-c08d0dd2b6cd13fc09cd5d61ab6a8921.stex"
+path="res://.import/object-firefly-1.png-f56c8ff493b9ab3024c76e7c717433bf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Effects/object-firefly-2.png"
-dest_files=[ "res://.import/object-firefly-2.png-c08d0dd2b6cd13fc09cd5d61ab6a8921.stex" ]
+source_file="res://Images/Objects/Misc/object-firefly-1.png"
+dest_files=[ "res://.import/object-firefly-1.png-f56c8ff493b9ab3024c76e7c717433bf.stex" ]
 
 [params]
 

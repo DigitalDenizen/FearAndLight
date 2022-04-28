@@ -2,24 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-<<<<<<<< HEAD:Images/Drops/ResourceDrops/WoodLogs/drop-wood-logs.png.import
-path="res://.import/drop-wood-logs.png-7d540fdf17529e5be8bddfb1d8e4fe9a.stex"
-========
 path="res://.import/res-icon-wood-logs-lg.png-2dd3186c6c1a695ec08e4baa0ce85d28.stex"
->>>>>>>> master:Images/Drops/ResourceDrops/WoodLogs/res-icon-wood-logs-lg.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:Images/Drops/ResourceDrops/WoodLogs/drop-wood-logs.png.import
-source_file="res://Images/Drops/ResourceDrops/WoodLogs/drop-wood-logs.png"
-dest_files=[ "res://.import/drop-wood-logs.png-7d540fdf17529e5be8bddfb1d8e4fe9a.stex" ]
-========
 source_file="res://Images/Drops/ResourceDrops/WoodLogs/res-icon-wood-logs-lg.png"
 dest_files=[ "res://.import/res-icon-wood-logs-lg.png-2dd3186c6c1a695ec08e4baa0ce85d28.stex" ]
->>>>>>>> master:Images/Drops/ResourceDrops/WoodLogs/res-icon-wood-logs-lg.png.import
 
 [params]
 
@@ -29,16 +20,16 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

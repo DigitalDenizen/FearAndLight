@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-torch-base.png-b496f510ff558d770025de3555a84bc3.stex"
+path="res://.import/4.png-151c55aabe19874015a7777ce947870d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Effects/Fire/object-torch-base.png"
-dest_files=[ "res://.import/object-torch-base.png-b496f510ff558d770025de3555a84bc3.stex" ]
+source_file="res://Images/Objects/Misc/Effects/Fire/4.png"
+dest_files=[ "res://.import/4.png-151c55aabe19874015a7777ce947870d.stex" ]
 
 [params]
 

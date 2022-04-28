@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/effect-poof-enemy-death-sprite.png-23284f28594cd0833771aa3b4fcc7a81.stex"
+path="res://.import/effect-poof-enemy-death-sprite.png-0b3658e2c3ca4e593d32469f88a07adf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Effects/Explosions/effect-poof-enemy-death-sprite.png"
-dest_files=[ "res://.import/effect-poof-enemy-death-sprite.png-23284f28594cd0833771aa3b4fcc7a81.stex" ]
+source_file="res://Images/Objects/Misc/Effects/Explosions/effect-poof-enemy-death-sprite.png"
+dest_files=[ "res://.import/effect-poof-enemy-death-sprite.png-0b3658e2c3ca4e593d32469f88a07adf.stex" ]
 
 [params]
 

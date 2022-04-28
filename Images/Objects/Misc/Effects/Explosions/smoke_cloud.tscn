@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Images/Effects/Fire/3.png" type="Texture" id=1]
+[ext_resource path="res://Images/Objects/Misc/Effects/Fire/3.png" type="Texture" id=1]
+
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0, 0, 0, 1, 0.393066, 0.373106, 0.373106, 1 )
