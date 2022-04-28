@@ -2,24 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-<<<<<<<< HEAD:Images/StartScreen/btn-options-hover.png.import
 path="res://.import/btn-options-hover.png-26b03d180c755a41de152b1c52cf9b2d.stex"
-========
-path="res://.import/btn-play-game-default.png-13c5819bf1f77d8c8e7fe2c86a972519.stex"
->>>>>>>> master:Images/StartScreen/btn-play-game-default.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:Images/StartScreen/btn-options-hover.png.import
 source_file="res://Images/StartScreen/btn-options-hover.png"
 dest_files=[ "res://.import/btn-options-hover.png-26b03d180c755a41de152b1c52cf9b2d.stex" ]
-========
-source_file="res://Images/StartScreen/btn-play-game-default.png"
-dest_files=[ "res://.import/btn-play-game-default.png-13c5819bf1f77d8c8e7fe2c86a972519.stex" ]
->>>>>>>> master:Images/StartScreen/btn-play-game-default.png.import
 
 [params]
 

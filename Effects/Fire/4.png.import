@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object-bomb-barrel-sprite.png-f3c5b085be98c8e6beee7706aa7dfd19.stex"
+path="res://.import/4.png-bc18bfd3b39e0c19d79f36a098352512.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Defenses/BombBarrel/object-bomb-barrel-sprite.png"
-dest_files=[ "res://.import/object-bomb-barrel-sprite.png-f3c5b085be98c8e6beee7706aa7dfd19.stex" ]
+source_file="res://Effects/Fire/4.png"
+dest_files=[ "res://.import/4.png-bc18bfd3b39e0c19d79f36a098352512.stex" ]
 
 [params]
 

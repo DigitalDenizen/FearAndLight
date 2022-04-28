@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Audio/Music/Scary/spooky-atmos.wav" type="AudioStream" id=1]
 [ext_resource path="res://UI/UIlayout/uiButtonLayout.tscn" type="PackedScene" id=2]
@@ -142,6 +142,9 @@ points = PoolVector2Array( 0, 0, 30, 0, 30, 30, 0, 30 )
 [node name="Main" type="YSort"]
 script = ExtResource( 15 )
 
+[node name="Rain" parent="." instance=ExtResource( 22 )]
+position = Vector2( 389.83, 20.7956 )
+
 [node name="MobSpawn" parent="." instance=ExtResource( 5 )]
 position = Vector2( 369.643, 194.889 )
 spawn_num = 5
@@ -232,6 +235,12 @@ pause_mode = 2
 stream = ExtResource( 1 )
 volume_db = -13.697
 autoplay = true
+
+[node name="VampireSpider" parent="." instance=ExtResource( 21 )]
+position = Vector2( 604.456, 177.895 )
+
+[node name="fire" parent="." instance=ExtResource( 20 )]
+position = Vector2( 483.615, 209.494 )
 
 [connection signal="victory" from="MobSpawn" to="UI/VictoryStatsPopup" method="waveSpawnVictory"]
 [connection signal="hide" from="UI/VictoryStatsPopup" to="UI/VictoryStatsPopup" method="closeWindow"]

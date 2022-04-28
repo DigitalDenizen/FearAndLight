@@ -24,6 +24,10 @@ region = Rect2( 60, 0, 20, 36 )
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 16, 9 )
 
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 9 )
+
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
@@ -53,7 +57,6 @@ __meta__ = {
 position = Vector2( -0.582865, 0.0926933 )
 frames = SubResource( 6 )
 animation = "web"
-frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

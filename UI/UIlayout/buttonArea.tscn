@@ -8,7 +8,15 @@
 [ext_resource path="res://UI/settingsButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/Battle/battleButton.tscn" type="PackedScene" id=7]
 
-[node name="GridContainer" type="GridContainer"]
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
 margin_right = 643.0
 margin_bottom = 360.0
 rect_min_size = Vector2( 640, 360 )

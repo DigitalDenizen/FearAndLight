@@ -38,7 +38,6 @@ axis_stretch_vertical = 1
 [sub_resource type="StyleBoxEmpty" id=5]
 
 [node name="WindowDialog" type="WindowDialog"]
-visible = true
 anchor_bottom = 0.098
 margin_right = 426.0
 margin_bottom = 150.253
