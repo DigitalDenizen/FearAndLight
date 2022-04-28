@@ -1,15 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/itemBarSquare.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/hideButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Images/UI/ItemBar/ui-item-bar-square-hover.png" type="Texture" id=3]
+[ext_resource path="res://Images/UI/ItemBar/ui-item-bar-square-pressed.png" type="Texture" id=4]
+[ext_resource path="res://Images/UI/ItemBar/ui-item-bar-square-default.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 23, 23 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 23, 23 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 23, 23 )
 
 [node name="CenterContainer4" type="MarginContainer"]
 margin_right = 165.0
 margin_bottom = 37.0
 rect_min_size = Vector2( 0, 20 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 165.0
@@ -30,32 +42,58 @@ alignment = 1
 [node name="itemBarSquare" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 5.0
 margin_right = 28.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 expand_icon = true
 
 [node name="itemBarSquare2" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 27.0
 margin_right = 50.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+expand_icon = true
 
 [node name="itemBarSquare3" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 49.0
 margin_right = 72.0
-custom_constants/hseparation = 1
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+expand_icon = true
 
 [node name="itemBarSquare4" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 71.0
 margin_right = 94.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+expand_icon = true
 
 [node name="itemBarSquare5" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 93.0
 margin_right = 116.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+expand_icon = true
 
 [node name="itemBarSquare6" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 115.0
 margin_right = 138.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+expand_icon = true
 
 [node name="itemBarSquare7" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 137.0
 margin_right = 160.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+expand_icon = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 22.0
@@ -63,6 +101,9 @@ margin_right = 165.0
 margin_bottom = 37.0
 rect_min_size = Vector2( 165, 15 )
 alignment = 1
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer2"]
 margin_right = 165.0
@@ -72,5 +113,4 @@ rect_min_size = Vector2( 165, 15 )
 [node name="Button" parent="VBoxContainer/HBoxContainer2/CenterContainer" instance=ExtResource( 2 )]
 margin_left = 72.0
 margin_right = 93.0
-margin_bottom = 14.0
 rect_min_size = Vector2( 21, 13 )

@@ -8,7 +8,7 @@ signal killed()
 export (float) var max_health = 100
 export (bool) var should_draw_path_line := false
 
-const MOVE_SPEED = 40
+const MOVE_SPEED = 30
 enum STATES { IDLE, FOLLOW }
 onready var collision_shape = $CollisionShape2D
 onready var health = max_health setget _set_health
@@ -128,7 +128,7 @@ func _on_Zombie_melee(Melee, target_pos, zombie_pos):
 	var direction = target_pos - zombie_pos
 	if direction.x > 0:
 		$AnimatedSprite.play("Attack")
-		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.flip_h = true
 	else:
 		$AnimatedSprite.play("Attack")
 		$AnimatedSprite.flip_h = true
@@ -166,16 +166,16 @@ func idle_animation(vector: Vector2):
 		$AnimatedSprite.flip_h = false
 	else:
 		$AnimatedSprite.play("Walk")
-		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.flip_h = false
 		
 
 func walk_animation(vector: Vector2):
 	if vector.x > 0:
 		$AnimatedSprite.play("Walk")
-		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.flip_h = true
 	else:
 		$AnimatedSprite.play("Walk")
-		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.flip_h = false
 
 func prioritize_target(targets):
 	var target

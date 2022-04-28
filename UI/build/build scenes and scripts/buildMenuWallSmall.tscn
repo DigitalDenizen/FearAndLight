@@ -1,11 +1,11 @@
 [gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://UI/build/build scenes and scripts/buildMenuWallSmall.gd" type="Script" id=1]
-[ext_resource path="res://UI/build/ui-build-item-bkgd-place.png" type="Texture" id=2]
+[ext_resource path="res://Images/UI/Build/ui-build-bkgd-item-place.png" type="Texture" id=2]
 [ext_resource path="res://Font/f-l-base-font-dynamic_14.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Images/UI/Build/ui-build-button-craft-normal.png" type="Texture" id=4]
 [ext_resource path="res://Images/UI/Build/ui-build-button-craft-disabled.png" type="Texture" id=5]
-[ext_resource path="res://Images/Drops/ResourceDrops/MudClumps/res-mud-clumps-tiny.png" type="Texture" id=6]
+[ext_resource path="res://Images/Drops/ResourceDrops/MudClumps/drop-mud-clumps-tiny.png" type="Texture" id=6]
 [ext_resource path="res://Images/UI/Build/ui-build-button-info-normal.png" type="Texture" id=7]
 [ext_resource path="res://Images/UI/Build/ui-build-button-craft-hover.png" type="Texture" id=8]
 [ext_resource path="res://Images/UI/Build/ui-build-button-info-hover.png" type="Texture" id=9]
@@ -56,18 +56,12 @@ rect_min_size = Vector2( 116, 116 )
 theme = SubResource( 1 )
 custom_styles/panel = SubResource( 2 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="slot_vcontainer" type="VBoxContainer" parent="."]
 margin_right = 116.0
 margin_bottom = 116.0
 rect_min_size = Vector2( 116, 116 )
 custom_constants/separation = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="slot_name_vcontainer" type="VBoxContainer" parent="slot_vcontainer"]
 margin_right = 116.0

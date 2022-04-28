@@ -33,12 +33,12 @@ func _speech0():
 func _speech1():
 	$speech_bubble/speech_bubble1.visible = true
 	$speech_bubble/next_button.visible = true
+	$skip_button.visible = true
 	dialog_text = 2
 	
 func _speech2():
 	$speech_bubble/speech_bubble1.visible = false
 	$speech_bubble/speech_bubble2.visible = true
-	$skip_button.visible = true
 	dialog_text = 3
 	
 func _speech3():
@@ -84,7 +84,7 @@ func _on_Text_Button_pressed():
 	if dialog_text == 1:
 		_speech1()
 	elif dialog_text == 2:
-		_speech2()		
+		_speech2()
 	elif dialog_text == 3:
 		_speech3()
 	elif dialog_text == 4:
@@ -100,18 +100,39 @@ func _on_Text_Button_pressed():
 	elif dialog_text == 9:
 		_speech9()
 	elif dialog_text == 10:
-		get_tree().change_scene("res://UI/title-screen.tscn")
+		queue_free()
+		#get_tree().change_scene("res://UI/title-screen.tscn")
 
 
 func _on_skip_button_pressed():
-	get_tree().change_scene("res://UI/title-screen.tscn")
+	if dialog_text == 1:
+		_speech1()
+	elif dialog_text == 2:
+		_speech2()
+	elif dialog_text == 3:
+		_speech3()
+	elif dialog_text == 4:
+		_speech4()
+	elif dialog_text == 5:
+		_speech5()
+	elif dialog_text == 6:
+		_speech6()
+	elif dialog_text == 7:
+		_speech7()
+	elif dialog_text == 8:
+		_speech8()
+	elif dialog_text == 9:
+		_speech9()
+	elif dialog_text == 10:
+		queue_free()
+		#get_tree().change_scene("res://UI/title-screen.tscn")
 	
-	if dialog_text == 6:
-		get_tree().change_scene("res://UI/title-screen.tscn")
+	#if dialog_text == 6:
+		#get_tree().change_scene("res://UI/title-screen.tscn")
 		
 
 
-func _on_AnimationPlayer_animation_finished(move):	
+func _on_AnimationPlayer_animation_finished(move):
 	_talk()
 	_speech1()
 
