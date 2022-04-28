@@ -1527,6 +1527,9 @@ position = Vector2( 760.863, 465.593 )
 [node name="Tree204" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
 position = Vector2( -565.425, 1392.05 )
 
+[node name="Bush90" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -1375.98, 1073.09 )
+
 [node name="DarkForest" type="YSort" parent="YSort/Objects"]
 __meta__ = {
 "_edit_group_": true
