@@ -2,15 +2,24 @@
 
 importer="texture"
 type="StreamTexture"
+<<<<<<<< HEAD:Images/Drops/CrystalDrops/BlueCrystal/drop-blue-crystal.png.import
 path="res://.import/drop-blue-crystal.png-198fd97ca6601c7e58b70fbcde71c879.stex"
+========
+path="res://.import/res-icon-wood-logs-sm.png-163d000a452994703c08f9b225f1c5fe.stex"
+>>>>>>>> master:Images/Drops/ResourceDrops/WoodLogs/res-icon-wood-logs-sm.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:Images/Drops/CrystalDrops/BlueCrystal/drop-blue-crystal.png.import
 source_file="res://Images/Drops/CrystalDrops/BlueCrystal/drop-blue-crystal.png"
 dest_files=[ "res://.import/drop-blue-crystal.png-198fd97ca6601c7e58b70fbcde71c879.stex" ]
+========
+source_file="res://Images/Drops/ResourceDrops/WoodLogs/res-icon-wood-logs-sm.png"
+dest_files=[ "res://.import/res-icon-wood-logs-sm.png-163d000a452994703c08f9b225f1c5fe.stex" ]
+>>>>>>>> master:Images/Drops/ResourceDrops/WoodLogs/res-icon-wood-logs-sm.png.import
 
 [params]
 
@@ -24,7 +33,7 @@ flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

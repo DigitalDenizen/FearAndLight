@@ -83,7 +83,6 @@ scale = Vector2( 3, 3 )
 pause_mode = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="YSort"]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Ground" type="TileMap" parent="YSort" groups=["tileMap"]]
@@ -140,9 +139,6 @@ position = Vector2( 32, -40 )
 [node name="Swamp" type="YSort" parent="YSort/Objects"]
 position = Vector2( 16, 6 )
 rotation = 0.00185059
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Tree1" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
 position = Vector2( -190, -254 )

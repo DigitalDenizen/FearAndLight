@@ -2,15 +2,24 @@
 
 importer="texture"
 type="StreamTexture"
+<<<<<<<< HEAD:Images/UI/Defeat/ui-defeat-bkgd.png.import
 path="res://.import/ui-defeat-bkgd.png-a8b809226d71428d2ed0559c9af52edf.stex"
+========
+path="res://.import/btn-options-hover.png-26b03d180c755a41de152b1c52cf9b2d.stex"
+>>>>>>>> master:Images/StartScreen/btn-options-hover.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:Images/UI/Defeat/ui-defeat-bkgd.png.import
 source_file="res://Images/UI/Defeat/ui-defeat-bkgd.png"
 dest_files=[ "res://.import/ui-defeat-bkgd.png-a8b809226d71428d2ed0559c9af52edf.stex" ]
+========
+source_file="res://Images/StartScreen/btn-options-hover.png"
+dest_files=[ "res://.import/btn-options-hover.png-26b03d180c755a41de152b1c52cf9b2d.stex" ]
+>>>>>>>> master:Images/StartScreen/btn-options-hover.png.import
 
 [params]
 
