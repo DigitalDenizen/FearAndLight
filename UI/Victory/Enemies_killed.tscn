@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Font/f-l-base-font-dynamic_21.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Images/Victory/ui-victory-bkgd-small.png" type="Texture" id=2]
-[ext_resource path="res://Images/Victory/ui-stats-icon-enemies.png" type="Texture" id=3]
+[ext_resource path="res://Images/UI/Victory/ui-victory-bkgd-small.png" type="Texture" id=2]
+[ext_resource path="res://Images/UI/Stats/ui-stats-icon-enemies.png" type="Texture" id=3]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 1 )
@@ -14,68 +14,70 @@ region_rect = Rect2( 0, 0, 121, 32 )
 [sub_resource type="Theme" id=3]
 
 [node name="Enemies_Killed" type="CenterContainer"]
-margin_right = 296.0
-margin_bottom = 55.0
-rect_min_size = Vector2( 296, 65 )
+margin_right = 121.0
+margin_bottom = 32.0
 __meta__ = {
-"_edit_use_anchors_": false
+"_editor_description_": ""
 }
 
 [node name="Panel" type="Panel" parent="."]
-margin_top = 2.0
-margin_right = 296.0
-margin_bottom = 62.0
-rect_min_size = Vector2( 296, 60 )
+margin_right = 121.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 121, 32 )
 theme = SubResource( 1 )
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
-margin_top = 3.0
-margin_right = 298.0
-margin_bottom = 58.0
-rect_min_size = Vector2( 298, 55 )
+margin_right = 121.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 121, 32 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_editor_description_": ""
 }
 
 [node name="Enemy_Image" type="CenterContainer" parent="Panel/HBoxContainer"]
-margin_right = 79.0
-margin_bottom = 56.0
-rect_min_size = Vector2( 79, 56 )
+margin_right = 33.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 33, 32 )
 
 [node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/Enemy_Image"]
-margin_left = 17.0
-margin_top = 5.0
-margin_right = 62.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 45, 45 )
+margin_left = 5.0
+margin_top = 4.0
+margin_right = 28.0
+margin_bottom = 28.0
 theme = SubResource( 3 )
 texture = ExtResource( 3 )
 stretch_mode = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel/HBoxContainer"]
-margin_left = 83.0
-margin_right = 287.0
-margin_bottom = 56.0
-rect_min_size = Vector2( 199, 0 )
+margin_left = 37.0
+margin_right = 121.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 84, 32 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/CenterContainer"]
-margin_top = 16.0
-margin_right = 204.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 192, 24 )
+margin_left = 1.0
+margin_top = 4.0
+margin_right = 82.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 81, 24 )
 
 [node name="Label" type="Label" parent="Panel/HBoxContainer/CenterContainer/HBoxContainer"]
-margin_right = 176.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 176, 24 )
+margin_top = 8.0
+margin_right = 59.0
+margin_bottom = 16.0
 text = "ENEMIES KILLED:"
 
 [node name="Label2" type="Label" parent="Panel/HBoxContainer/CenterContainer/HBoxContainer"]
-margin_left = 180.0
-margin_right = 204.0
-margin_bottom = 24.0
+margin_left = 63.0
+margin_top = 8.0
+margin_right = 71.0
+margin_bottom = 16.0
 text = "25"

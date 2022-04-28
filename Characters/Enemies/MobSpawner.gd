@@ -90,7 +90,7 @@ func enemyType(): #Enemy type selection
 		return enemyScene.instance() #returning and intacing zombie enemy
 	else:
 		print(num)
-		enemyScene = preload("res://Characters/Enemies/direWolf.tscn")
+		enemyScene = preload("res://Characters/Enemies/DireWolf.tscn")
 		return enemyScene.instance() #returning and intacing direWolf enemy
 	removeEnemy()
 
