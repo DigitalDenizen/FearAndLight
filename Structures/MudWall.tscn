@@ -1,44 +1,36 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Images/Defenses/MudWallLarge/defense-mud-wall-large-idle.png" type="Texture" id=1]
 [ext_resource path="res://Structures/MudWall.gd" type="Script" id=2]
 [ext_resource path="res://Images/Defenses/MudWallLarge/defense-mud-wall-large-attacked-spritesheet.png" type="Texture" id=3]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 3 )
-region = Rect2( 41, 0, 41, 47 )
-
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 3 )
 region = Rect2( 123, 0, 41, 47 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 3 )
+region = Rect2( 82, 0, 41, 47 )
+
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 3 )
 region = Rect2( 164, 0, 41, 47 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 3 )
 region = Rect2( 205, 0, 41, 47 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 3 )
 region = Rect2( 246, 0, 41, 47 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 3 )
 region = Rect2( 287, 0, 41, 47 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 3 )
-region = Rect2( 328, 0, 41, 47 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 3 )
-region = Rect2( 369, 0, 41, 47 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 3 )
-region = Rect2( 82, 0, 41, 47 )
+region = Rect2( 41, 0, 41, 47 )
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
@@ -47,24 +39,24 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 1 ) ],
-"loop": true,
-"name": "Health 75",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 3 ) ],
+"frames": [ SubResource( 16 ) ],
 "loop": true,
 "name": "Health 25",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "Health 50",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": false,
 "name": "Death",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 2 ) ],
+"frames": [ SubResource( 18 ) ],
 "loop": true,
-"name": "Health 50",
+"name": "Health 75",
 "speed": 5.0
 } ]
 

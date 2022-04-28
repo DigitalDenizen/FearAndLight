@@ -2,15 +2,24 @@
 
 importer="texture"
 type="StreamTexture"
+<<<<<<<< HEAD:Images/UI/Global/ui-button-xlarge-special-hover.png.import
 path="res://.import/ui-button-xlarge-special-hover.png-3bdc1c1c3ad8bb692175aec848de4e5b.stex"
+========
+path="res://.import/ui-button-xlarge-special-normal.png-6b88a83bb79cbd9ae86bdb3a9d9b4e39.stex"
+>>>>>>>> master:Images/UI/Global/ui-button-xlarge-special-normal.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:Images/UI/Global/ui-button-xlarge-special-hover.png.import
 source_file="res://Images/UI/Global/ui-button-xlarge-special-hover.png"
 dest_files=[ "res://.import/ui-button-xlarge-special-hover.png-3bdc1c1c3ad8bb692175aec848de4e5b.stex" ]
+========
+source_file="res://Images/UI/Global/ui-button-xlarge-special-normal.png"
+dest_files=[ "res://.import/ui-button-xlarge-special-normal.png-6b88a83bb79cbd9ae86bdb3a9d9b4e39.stex" ]
+>>>>>>>> master:Images/UI/Global/ui-button-xlarge-special-normal.png.import
 
 [params]
 
