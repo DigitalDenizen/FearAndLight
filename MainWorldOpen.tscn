@@ -75,14 +75,11 @@ script = ExtResource( 16 )
 [node name="Inventory" parent="YSort/Player/Camera2D/Overlay" instance=ExtResource( 8 )]
 pause_mode = 2
 visible = false
-position = Vector2( 80.635, 45.9871 )
-scale = Vector2( 3, 3 )
 
 [node name="GridContainer" parent="YSort/Player/Camera2D/Overlay" instance=ExtResource( 2 )]
 pause_mode = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="YSort"]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Ground" type="TileMap" parent="YSort" groups=["tileMap"]]
