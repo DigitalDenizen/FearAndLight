@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Font/f-l-base-font-dynamic_21.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Images/UI/Victory/ui-victory-bkgd-small.png" type="Texture" id=2]
-[ext_resource path="res://Images/UI/Stats/ui-stats-icon-enemies.png" type="Texture" id=3]
+[ext_resource path="res://Images/UI/Global/ui-icon-enemies.png" type="Texture" id=2]
+[ext_resource path="res://Images/UI/Global/ui-window-bkgd-small.png" type="Texture" id=3]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 1 )
 
 [sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 121, 32 )
 
 [sub_resource type="Theme" id=3]
@@ -50,7 +50,7 @@ margin_top = 4.0
 margin_right = 28.0
 margin_bottom = 28.0
 theme = SubResource( 3 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 stretch_mode = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel/HBoxContainer"]

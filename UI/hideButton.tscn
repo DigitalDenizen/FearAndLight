@@ -1,29 +1,37 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Images/UI/Global/ui-button-hide-normal.png" type="Texture" id=1]
-[ext_resource path="res://Images/UI/Global/ui-button-hide-disabled.png" type="Texture" id=2]
-[ext_resource path="res://Images/UI/Global/ui-button-hide-hover.png" type="Texture" id=3]
+[ext_resource path="res://Images/UI/Global/ui-button-hide-hover.png" type="Texture" id=2]
+[ext_resource path="res://Images/UI/Global/ui-button-hide-disabled.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxTexture" id=1]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 21, 13 )
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 21, 14 )
 
 [sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 21, 13 )
-
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 21, 13 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 21, 14 )
 
 [sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 21, 14 )
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 1 )
-region_rect = Rect2( 0, 0, 21, 13 )
+region_rect = Rect2( 0, 0, 21, 14 )
 
 [node name="Button" type="Button"]
 margin_right = 21.0
 margin_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 21, 10 )
+focus_mode = 0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 3 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0

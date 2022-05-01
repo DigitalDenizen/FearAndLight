@@ -16,7 +16,6 @@ region_rect = Rect2( 0, 0, 422, 196 )
 margin_top = 4.853
 
 [node name="WindowDialog" type="WindowDialog"]
-visible = true
 anchor_bottom = 0.098
 margin_right = 426.0
 margin_bottom = 160.72

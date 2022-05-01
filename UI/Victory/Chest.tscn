@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Font/f-l-base-font-dynamic_21.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Images/UI/Victory/ui-victory-bkgd-large.png" type="Texture" id=2]
-[ext_resource path="res://Images/UI/Stats/ui-stats-icon-chest.png" type="Texture" id=3]
+[ext_resource path="res://Images/UI/Global/ui-window-bkgd-large.png" type="Texture" id=2]
+[ext_resource path="res://Images/UI/Global/ui-icon-chest.png" type="Texture" id=3]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 1 )
