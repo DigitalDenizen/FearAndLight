@@ -1,0 +1,40 @@
+[gd_scene format=2]
+
+[node name="StyleGuide" type="Control"]
+margin_right = 640.0
+margin_bottom = 360.0
+
+[node name="Button" type="Button" parent="."]
+margin_left = 39.0
+margin_top = 11.0
+margin_right = 143.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 82, 48 )
+text = "CLICK ME"
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 39.0
+margin_top = 63.0
+margin_right = 143.0
+margin_bottom = 102.0
+rect_pivot_offset = Vector2( 82, 48 )
+text = "Click Me"
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = 78.0
+margin_top = 172.0
+margin_right = 102.0
+margin_bottom = 196.0
+
+[node name="CheckButton" type="CheckButton" parent="."]
+margin_left = 348.0
+margin_top = 120.0
+margin_right = 424.0
+margin_bottom = 160.0
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 363.0
+margin_top = 49.0
+margin_right = 577.0
+margin_bottom = 73.0
+rect_scale = Vector2( 1, 0.954108 )

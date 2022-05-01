@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui-settings-button-slider.png-fe217e59c582e7ca27e2209fff90247f.stex"
+path="res://.import/ui-chest-button-pressed.png-bcc2a850eac71fe9805640b3f327fa3a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/UI/Settings/ui-settings-button-slider.png"
-dest_files=[ "res://.import/ui-settings-button-slider.png-fe217e59c582e7ca27e2209fff90247f.stex" ]
+source_file="res://Images/UI/Chest/ui-chest-button-pressed.png"
+dest_files=[ "res://.import/ui-chest-button-pressed.png-bcc2a850eac71fe9805640b3f327fa3a.stex" ]
 
 [params]
 

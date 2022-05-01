@@ -1,17 +1,18 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Images/UI/Battle/ui-battle-button-normal.png" type="Texture" id=1]
 [ext_resource path="res://Images/UI/Battle/ui-battle-button-disabled.png" type="Texture" id=2]
 [ext_resource path="res://Images/UI/Battle/ui-battle-button-focus.png" type="Texture" id=3]
 [ext_resource path="res://Images/UI/Battle/ui-battle-button-hover.png" type="Texture" id=4]
 [ext_resource path="res://UI/Battle/battleButton.gd" type="Script" id=5]
+[ext_resource path="res://Images/UI/Battle/ui-battle-button-pressed.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 40, 40 )
 
 [sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 40, 40 )
 
 [sub_resource type="StyleBoxTexture" id=5]

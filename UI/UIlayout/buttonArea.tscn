@@ -97,7 +97,6 @@ margin_left = 143.0
 margin_top = 7.0
 margin_right = 176.0
 margin_bottom = 40.0
-rect_min_size = Vector2( 33, 33 )
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
