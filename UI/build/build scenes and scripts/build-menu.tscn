@@ -55,8 +55,8 @@ axis_stretch_vertical = 2
 [sub_resource type="StyleBoxTexture" id=8]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 9, 154 )
-margin_top = 6.0
-margin_bottom = 6.0
+margin_top = 8.0
+margin_bottom = 8.0
 
 [sub_resource type="Theme" id=9]
 VScrollBar/icons/decrement = null
