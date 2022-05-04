@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui-button-large-disabled.png-9bf6aced60949102ceec0887e3e219cb.stex"
+path="res://.import/ui-battle-button-start-hover.png-5c731e080675c914835344c2351f7e50.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/UI/Global/ui-button-large-disabled.png"
-dest_files=[ "res://.import/ui-button-large-disabled.png-9bf6aced60949102ceec0887e3e219cb.stex" ]
+source_file="res://Images/UI/Battle/ui-battle-button-start-hover.png"
+dest_files=[ "res://.import/ui-battle-button-start-hover.png-5c731e080675c914835344c2351f7e50.stex" ]
 
 [params]
 

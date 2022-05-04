@@ -83,7 +83,6 @@ texture = ExtResource( 13 )
 stretch_mode = 3
 
 [node name="DarkForest" type="Node2D" parent="."]
-visible = false
 
 [node name="TreesBack" type="TextureRect" parent="DarkForest"]
 margin_top = 258.0
@@ -114,6 +113,7 @@ texture = ExtResource( 16 )
 stretch_mode = 2
 
 [node name="Swamp" type="Node2D" parent="."]
+visible = false
 
 [node name="TreesBack" type="TextureRect" parent="Swamp"]
 margin_top = 264.0

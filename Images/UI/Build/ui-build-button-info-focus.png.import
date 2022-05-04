@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui-button-large-normal.png-ffb5255ed34c9c8d140fd75be0533914.stex"
+path="res://.import/ui-build-button-info-focus.png-593523775f6d1f519426926a4d15a24c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/UI/Global/ui-button-large-normal.png"
-dest_files=[ "res://.import/ui-button-large-normal.png-ffb5255ed34c9c8d140fd75be0533914.stex" ]
+source_file="res://Images/UI/Build/ui-build-button-info-focus.png"
+dest_files=[ "res://.import/ui-build-button-info-focus.png-593523775f6d1f519426926a4d15a24c.stex" ]
 
 [params]
 

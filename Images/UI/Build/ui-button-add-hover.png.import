@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui-medium-hover.png-07f9e8baf20a5203c86f99e89a17d443.stex"
+path="res://.import/ui-button-add-hover.png-882faabc4b9a701e7ea68dfe158e0de1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/UI/Global/ui-medium-hover.png"
-dest_files=[ "res://.import/ui-medium-hover.png-07f9e8baf20a5203c86f99e89a17d443.stex" ]
+source_file="res://Images/UI/Build/ui-button-add-hover.png"
+dest_files=[ "res://.import/ui-button-add-hover.png-882faabc4b9a701e7ea68dfe158e0de1.stex" ]
 
 [params]
 

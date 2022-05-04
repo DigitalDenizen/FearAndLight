@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui-battle-button-start.png-070c6f625d476ca453869df307a5b956.stex"
+path="res://.import/ui-build-button-craft-pressed.png-d911d919a9f185fa496331d4f4f52c1c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/UI/Battle/ui-battle-button-start.png"
-dest_files=[ "res://.import/ui-battle-button-start.png-070c6f625d476ca453869df307a5b956.stex" ]
+source_file="res://Images/UI/Build/ui-build-button-craft-pressed.png"
+dest_files=[ "res://.import/ui-build-button-craft-pressed.png-d911d919a9f185fa496331d4f4f52c1c.stex" ]
 
 [params]
 

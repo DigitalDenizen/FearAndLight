@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/btn-play-game-hover.png-5b4fd5f222cee66f2138bf8413a570de.stex"
+path="res://.import/ui-build-button-place-focus.png-0e7b797a7cd964851c6322e63a0f5849.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/StartScreen/btn-play-game-hover.png"
-dest_files=[ "res://.import/btn-play-game-hover.png-5b4fd5f222cee66f2138bf8413a570de.stex" ]
+source_file="res://Images/UI/Build/ui-build-button-place-focus.png"
+dest_files=[ "res://.import/ui-build-button-place-focus.png-0e7b797a7cd964851c6322e63a0f5849.stex" ]
 
 [params]
 
