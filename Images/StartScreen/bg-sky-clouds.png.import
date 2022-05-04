@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg-swamp-bottom-ground.png-857033a7d3d07ce9a8840b27d118bccf.stex"
+path="res://.import/bg-sky-clouds.png-8f1eb32a50191dde01855f71866d4463.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/StartScreen/bg-swamp-bottom-ground.png"
-dest_files=[ "res://.import/bg-swamp-bottom-ground.png-857033a7d3d07ce9a8840b27d118bccf.stex" ]
+source_file="res://Images/StartScreen/bg-sky-clouds.png"
+dest_files=[ "res://.import/bg-sky-clouds.png-8f1eb32a50191dde01855f71866d4463.stex" ]
 
 [params]
 

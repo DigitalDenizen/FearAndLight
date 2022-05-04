@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg-darkforest-top-back-trees.png-f11f936f41f3e566b44bbcd9dd80de68.stex"
+path="res://.import/bg-swamp-trees-back.png-1c5a59939bacf646da97dbb0cd9aff16.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/StartScreen/bg-darkforest-top-back-trees.png"
-dest_files=[ "res://.import/bg-darkforest-top-back-trees.png-f11f936f41f3e566b44bbcd9dd80de68.stex" ]
+source_file="res://Images/StartScreen/bg-swamp-trees-back.png"
+dest_files=[ "res://.import/bg-swamp-trees-back.png-1c5a59939bacf646da97dbb0cd9aff16.stex" ]
 
 [params]
 

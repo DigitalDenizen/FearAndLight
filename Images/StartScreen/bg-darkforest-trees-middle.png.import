@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/start-page.png-1811c7c5af27b8c84d2e3ce6c772e913.stex"
+path="res://.import/bg-darkforest-trees-middle.png-e86819a473e0feb2133965574239c3d3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/StartScreen/start-page.png"
-dest_files=[ "res://.import/start-page.png-1811c7c5af27b8c84d2e3ce6c772e913.stex" ]
+source_file="res://Images/StartScreen/bg-darkforest-trees-middle.png"
+dest_files=[ "res://.import/bg-darkforest-trees-middle.png-e86819a473e0feb2133965574239c3d3.stex" ]
 
 [params]
 
