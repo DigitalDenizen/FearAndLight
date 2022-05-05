@@ -25,17 +25,19 @@ func _on_placing_mudhut():
 	print("placing mudhut")
 	mudHutPlacement = 1
 	EventBus.emit_signal("close_build_menu")
+	visible = true
 	
 func _on_placing_large_wall():
 	print("placing large wall")
 	largeWallPlacement = 1
 	EventBus.emit_signal("close_build_menu")
+	visible = true
 	
 func _on_placing_small_wall():
 	print("placing small wall")
 	smallWallPlacement = 1
 	EventBus.emit_signal("close_build_menu")
-	
+	visible = true
 
 #this function locks the child sprite to the mouse position
 func _physics_process(delta):
@@ -69,7 +71,9 @@ func _input(event):
 			mh.global_position = get_global_mouse_position().snapped(GRID_SIZE)
 			remove_child(mudHutMouse)
 			mudHutPlacement = 0
+			visible = false
 			print("mudhut placed")
+			EventBus.emit_signal("unpause_game")
 			
 	if largeWallPlacement == 1:		
 		if Input.is_mouse_button_pressed(BUTTON_LEFT):
@@ -79,7 +83,9 @@ func _input(event):
 			lw.global_position = get_global_mouse_position().snapped(GRID_SIZE)
 			remove_child(largeWallMouse)
 			largeWallPlacement = 0
+			visible = false
 			print("large wall placed")
+			EventBus.emit_signal("unpause_game")
 			
 	if smallWallPlacement == 1:		
 		if Input.is_mouse_button_pressed(BUTTON_LEFT):
@@ -89,4 +95,6 @@ func _input(event):
 			sw.global_position = get_global_mouse_position().snapped(GRID_SIZE)
 			remove_child(smallWallMouse)
 			smallWallPlacement = 0
+			visible = false
 			print("small wall placed")
+			EventBus.emit_signal("unpause_game")
