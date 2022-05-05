@@ -17,8 +17,7 @@ margin_top = 4.853
 
 [node name="WindowDialog" type="WindowDialog"]
 visible = true
-anchor_bottom = 0.098
-margin_right = 426.0
+margin_right = 422.0
 margin_bottom = 160.72
 rect_min_size = Vector2( 422, 196 )
 theme = SubResource( 1 )
@@ -34,7 +33,6 @@ __meta__ = {
 }
 
 [node name="build_menu_panel" parent="." instance=ExtResource( 1 )]
-anchor_bottom = 0.0
 margin_right = 412.0
 margin_bottom = 195.0
 rect_min_size = Vector2( 412, 189 )

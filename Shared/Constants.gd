@@ -11,6 +11,6 @@ enum itemCategories {CONSUMABLE, TOOL, WEAPON, MATERIAL}
 
 #Item Image Paths
 const imagePath: Dictionary = {
-	"fur": "res://Images/Drops/EnemyDrops/DireWolfFur/drop-dire-wolf-fur-tiny.png",
-	"bones": "res://Images/Drops/EnemyDrops/ZombieBone/drop-zombie-bone-small.png"
+	"fur": "res://Images/Drops/EnemyDrops/DireWolfFur/drop-dire-wolf-fur.png",
+	"bones": "res://Images/Drops/EnemyDrops/ZombieBone/drop-zombie-bone.png"
 } 

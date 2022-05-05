@@ -1,8 +1,7 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://World/DarkForest/Tree1.tscn" type="PackedScene" id=1]
-[ext_resource path="res://UI/UIlayout/uiButtonLayout.tscn" type="PackedScene" id=2]
-[ext_resource path="res://UI/Score.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/UILayout/uiButtonLayout.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/Victory/VictoryStats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Characters/Enemies/MobSpawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/Swamp/Tree2.tscn" type="PackedScene" id=6]
@@ -76,8 +75,6 @@ script = ExtResource( 16 )
 [node name="Inventory" parent="YSort/Player/Camera2D/Overlay" instance=ExtResource( 8 )]
 pause_mode = 2
 visible = false
-position = Vector2( 80.635, 45.9871 )
-scale = Vector2( 3, 3 )
 
 [node name="GridContainer" parent="YSort/Player/Camera2D/Overlay" instance=ExtResource( 2 )]
 pause_mode = 2
@@ -108,9 +105,6 @@ position = Vector2( -279.073, 3.1498 )
 [node name="UI" type="CanvasLayer" parent="YSort"]
 
 [node name="VictoryStatsPopup" parent="YSort/UI" instance=ExtResource( 4 )]
-pause_mode = 2
-
-[node name="Score" parent="YSort/UI" instance=ExtResource( 3 )]
 pause_mode = 2
 
 [node name="MusicWorld" type="AudioStreamPlayer" parent="YSort"]

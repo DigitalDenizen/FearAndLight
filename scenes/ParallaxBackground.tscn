@@ -5,9 +5,10 @@
 [ext_resource path="res://Images/StartScreen/bg-sky-stars.png" type="Texture" id=5]
 [ext_resource path="res://Images/StartScreen/bg-sky-quasars.png" type="Texture" id=6]
 [ext_resource path="res://Images/StartScreen/bg-sky-gradient.png" type="Texture" id=7]
-[ext_resource path="res://Images/StartScreen/bg-swamp-top-trees-middle.png" type="Texture" id=8]
+[ext_resource path="res://Images/StartScreen/bg-swamp-trees-middle.png" type="Texture" id=8]
 [ext_resource path="res://Images/StartScreen/scene-layer-main-clouds.png" type="Texture" id=9]
 [ext_resource path="res://AnimatedTileset/fog.shader" type="Shader" id=14]
+
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 14 )
