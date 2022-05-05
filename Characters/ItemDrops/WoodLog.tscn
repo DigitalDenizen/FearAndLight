@@ -1,0 +1,99 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Images/Drops/ResourceDrops/WoodLog/drop-wood-log-glow-sprite.png" type="Texture" id=1]
+[ext_resource path="res://Characters/ItemDrops/WoodLog.gd" type="Script" id=2]
+[ext_resource path="res://Images/Effects/Lights/light.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 6.57643
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 28, 24 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 1 )
+region = Rect2( 28, 0, 28, 24 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 1 )
+region = Rect2( 56, 0, 28, 24 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 1 )
+region = Rect2( 84, 0, 28, 24 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 1 )
+region = Rect2( 112, 0, 28, 24 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 1 )
+region = Rect2( 140, 0, 28, 24 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 1 )
+region = Rect2( 168, 0, 28, 24 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 1 )
+region = Rect2( 196, 0, 28, 24 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 1 )
+region = Rect2( 224, 0, 28, 24 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 1 )
+region = Rect2( 252, 0, 28, 24 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 1 )
+region = Rect2( 280, 0, 28, 24 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 1 )
+region = Rect2( 308, 0, 28, 24 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 1 )
+region = Rect2( 336, 0, 28, 24 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
+"loop": true,
+"name": "WoodLog",
+"speed": 10.0
+} ]
+
+[node name="WoodLog" type="Area2D"]
+position = Vector2( 0, -2.095 )
+collision_layer = 8
+collision_mask = 2
+gravity_point = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.452384, -0.0944223 )
+scale = Vector2( 2.39668, 2.39668 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.69834, -5.24521e-06 )
+frames = SubResource( 28 )
+animation = "WoodLog"
+frame = 11
+
+[node name="Light2D" type="Light2D" parent="."]
+light_mask = 7
+position = Vector2( 1, 0.0950003 )
+scale = Vector2( 0.141038, 0.137773 )
+z_index = 10
+texture = ExtResource( 4 )
+energy = 0.3
+
+[connection signal="body_entered" from="." to="." method="_Item_Drop_body_entered"]

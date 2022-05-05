@@ -5,6 +5,7 @@
 [ext_resource path="res://Images/Drops/ItemDrops/SilverChest/drop-silver-chest.png" type="Texture" id=3]
 [ext_resource path="res://Images/Drops/CoinDrops/SilverCoin/drop-silver-coin.png" type="Texture" id=4]
 
+
 [node name="Spoils_Of_war" type="VBoxContainer"]
 margin_right = 153.0
 margin_bottom = 163.0

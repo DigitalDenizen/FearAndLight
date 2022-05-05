@@ -45,7 +45,6 @@ texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 30, 30 )
 
 [node name="Inventory" type="WindowDialog"]
-visible = true
 anchor_bottom = 0.098
 margin_left = 109.0
 margin_top = 82.0

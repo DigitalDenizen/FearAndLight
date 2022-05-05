@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Audio/Music/Scary/spooky-atmos.wav" type="AudioStream" id=1]
 [ext_resource path="res://UI/UILayout/uiButtonLayout.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Ground.gd" type="Script" id=18]
 [ext_resource path="res://Images/World/Swamp/tileset-swamp.png" type="Texture" id=19]
 [ext_resource path="res://Structures/SmallWall.tscn" type="PackedScene" id=20]
+[ext_resource path="res://World/Swamp/Bush1.tscn" type="PackedScene" id=21]
 
 [sub_resource type="TileSet" id=1]
 1/name = "mud"
@@ -145,5 +146,8 @@ spawn_num = 5
 [node name="MobSpawn2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 243, 345 )
 spawn_num = 5
+
+[node name="Bush1" parent="." instance=ExtResource( 21 )]
+position = Vector2( -301, 207 )
 
 [connection signal="hide" from="UI/VictoryStatsPopup" to="UI/VictoryStatsPopup" method="closeWindow"]

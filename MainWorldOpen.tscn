@@ -47,7 +47,7 @@
 [ext_resource path="res://World/DarkForest/Shrub4.tscn" type="PackedScene" id=46]
 [ext_resource path="res://World/DarkForest/Shrub3.tscn" type="PackedScene" id=47]
 [ext_resource path="res://Audio/Music/Scary/scary-atmos.wav" type="AudioStream" id=48]
-[ext_resource path="res://UI/intro.tscn" type="PackedScene" id=49]
+[ext_resource path="res://Characters/Spirits/Dog/intro.tscn" type="PackedScene" id=49]
 [ext_resource path="res://World/Swamp/Mushroom3.tscn" type="PackedScene" id=50]
 [ext_resource path="res://World/Swamp/Mushroom1.tscn" type="PackedScene" id=51]
 
@@ -74,7 +74,6 @@ script = ExtResource( 16 )
 
 [node name="Inventory" parent="YSort/Player/Camera2D/Overlay" instance=ExtResource( 8 )]
 pause_mode = 2
-visible = false
 
 [node name="GridContainer" parent="YSort/Player/Camera2D/Overlay" instance=ExtResource( 2 )]
 pause_mode = 2
@@ -1507,6 +1506,9 @@ position = Vector2( -2814.6, 759.21 )
 
 [node name="Mushroom4" parent="YSort/Objects/Swamp" instance=ExtResource( 19 )]
 position = Vector2( -175.271, 394.325 )
+
+[node name="Bush90" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -135.996, 2.25168 )
 
 [node name="DarkForest" type="YSort" parent="YSort/Objects"]
 __meta__ = {
