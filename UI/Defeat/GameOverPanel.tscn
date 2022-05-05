@@ -4,7 +4,7 @@
 [ext_resource path="res://Images/UI/Defeat/ui-defeat-text-banner-wndw.png" type="Texture" id=2]
 [ext_resource path="res://Images/Battle_UI/ui-window-large.png" type="Texture" id=3]
 [ext_resource path="res://Images/Battle_UI/ui-button-close.png" type="Texture" id=4]
-[ext_resource path="res://UI/Victory/Medal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Victory/DeathMedal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/Victory/ContinueButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/Victory/Enemies_killed.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/Victory/Defenses_destroyed.tscn" type="PackedScene" id=8]
@@ -44,23 +44,29 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="."]
-margin_left = 51.0
-margin_top = 153.0
-margin_right = 914.0
-margin_bottom = 465.0
+margin_left = 129.137
+margin_top = 146.587
+margin_right = 713.137
+margin_bottom = 458.587
 rect_scale = Vector2( 0.55, 0.65 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Your_Results" type="CenterContainer" parent="GridContainer"]
-margin_right = 914.0
+[node name="LabelContainer" type="MarginContainer" parent="GridContainer"]
+margin_right = 584.0
 margin_bottom = 24.0
+
+[node name="Your_Results" type="CenterContainer" parent="GridContainer/LabelContainer"]
+margin_right = 584.0
+margin_bottom = 24.0
+grow_horizontal = 2
 theme = SubResource( 3 )
 
-[node name="Label" type="Label" parent="GridContainer/Your_Results"]
-margin_left = 377.0
-margin_right = 537.0
+[node name="Label" type="Label" parent="GridContainer/LabelContainer/Your_Results"]
+margin_left = 212.0
+margin_right = 372.0
 margin_bottom = 24.0
 text = "YOU FUCKED UP!"
 align = 1
@@ -115,12 +121,16 @@ margin_top = 17.0
 margin_right = 275.0
 margin_bottom = 208.0
 
-[node name="CenterContainer" type="CenterContainer" parent="GridContainer"]
+[node name="ButtonContainer" type="MarginContainer" parent="GridContainer"]
 margin_top = 257.0
 margin_right = 584.0
 margin_bottom = 312.0
 
-[node name="Continue_button" parent="GridContainer/CenterContainer" instance=ExtResource( 6 )]
+[node name="CenterContainer" type="CenterContainer" parent="GridContainer/ButtonContainer"]
+margin_right = 584.0
+margin_bottom = 55.0
+
+[node name="Continue_button" parent="GridContainer/ButtonContainer/CenterContainer" instance=ExtResource( 6 )]
 margin_left = 144.0
 margin_right = 439.0
 margin_bottom = 55.0
