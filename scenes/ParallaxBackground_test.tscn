@@ -4,11 +4,12 @@
 [ext_resource path="res://Images/StartScreen/bg-sky-mist.png" type="Texture" id=2]
 [ext_resource path="res://Images/StartScreen/bg-sky-stars.png" type="Texture" id=3]
 [ext_resource path="res://Images/StartScreen/scene-layer-main-clouds.png" type="Texture" id=9]
-[ext_resource path="res://Images/StartScreen/bg-swamp-top-trees-back.png" type="Texture" id=11]
+[ext_resource path="res://Images/StartScreen/bg-swamp-trees-back.png" type="Texture" id=11]
 [ext_resource path="res://AnimatedTileset/fog.shader" type="Shader" id=14]
 [ext_resource path="res://Images/StartScreen/bg-sky-gradient.png" type="Texture" id=15]
-[ext_resource path="res://Images/StartScreen/bg-swamp-top-trees-front.png" type="Texture" id=16]
-[ext_resource path="res://Images/StartScreen/bg-swamp-top-trees-middle.png" type="Texture" id=17]
+[ext_resource path="res://Images/StartScreen/bg-swamp-trees-front.png" type="Texture" id=16]
+[ext_resource path="res://Images/StartScreen/bg-swamp-trees-middle.png" type="Texture" id=17]
+
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 14 )

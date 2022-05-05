@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Audio/Music/Scary/spooky-atmos.wav" type="AudioStream" id=1]
-[ext_resource path="res://UI/UIlayout/uiButtonLayout.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/UILayout/uiButtonLayout.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/Score.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/Victory/VictoryStats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Characters/Enemies/MobSpawner.tscn" type="PackedScene" id=5]

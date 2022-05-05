@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://UI/build/build scenes and scripts/buildMenuMudHut.gd" type="Script" id=1]
 [ext_resource path="res://Images/UI/Build/ui-build-bkgd-item-place.png" type="Texture" id=2]
@@ -12,6 +12,10 @@
 [ext_resource path="res://Images/UI/Build/ui-build-button-info-normal.png" type="Texture" id=10]
 [ext_resource path="res://Images/Drops/ResourceDrops/WoodLogs/drop-wood-logs-tiny.png" type="Texture" id=11]
 [ext_resource path="res://Images/Drops/ResourceDrops/MudClumps/drop-mud-clumps-tiny.png" type="Texture" id=12]
+[ext_resource path="res://Images/UI/Build/ui-build-button-craft-focus.png" type="Texture" id=13]
+[ext_resource path="res://Images/UI/Build/ui-build-button-craft-pressed.png" type="Texture" id=14]
+[ext_resource path="res://Images/UI/Build/ui-build-button-info-pressed.png" type="Texture" id=15]
+[ext_resource path="res://Images/UI/Build/ui-build-button-info-focus.png" type="Texture" id=16]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 3 )
@@ -25,7 +29,11 @@ texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 15, 15 )
 
 [sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 8 )
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 13 )
 region_rect = Rect2( 0, 0, 15, 15 )
 
 [sub_resource type="StyleBoxTexture" id=5]
@@ -41,7 +49,11 @@ texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 11, 11 )
 
 [sub_resource type="StyleBoxTexture" id=8]
-texture = ExtResource( 10 )
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 11, 11 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 16 )
 region_rect = Rect2( 0, 0, 11, 11 )
 
 [sub_resource type="StyleBoxTexture" id=9]
@@ -121,6 +133,7 @@ rect_min_size = Vector2( 15, 15 )
 focus_mode = 0
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 11 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
 shortcut_in_tooltip = false
@@ -267,6 +280,7 @@ rect_clip_content = true
 focus_mode = 0
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 12 )
 custom_styles/disabled = SubResource( 9 )
 custom_styles/normal = SubResource( 10 )
 enabled_focus_mode = 0

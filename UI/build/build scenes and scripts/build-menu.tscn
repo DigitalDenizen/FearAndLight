@@ -55,8 +55,8 @@ axis_stretch_vertical = 2
 [sub_resource type="StyleBoxTexture" id=8]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 9, 154 )
-margin_top = 6.0
-margin_bottom = 6.0
+margin_top = 8.0
+margin_bottom = 8.0
 
 [sub_resource type="Theme" id=9]
 VScrollBar/icons/decrement = null
@@ -72,7 +72,6 @@ VScrollBar/styles/scroll_focus = null
 [sub_resource type="Theme" id=10]
 
 [node name="build_menu_panel" type="Panel"]
-anchor_bottom = 0.098
 margin_right = 414.0
 margin_bottom = 160.72
 rect_min_size = Vector2( 415, 196 )
@@ -88,6 +87,8 @@ margin_top = -1.0
 margin_right = 413.0
 margin_bottom = 184.0
 rect_min_size = Vector2( 412, 163 )
+size_flags_horizontal = 8
+size_flags_vertical = 8
 custom_styles/tab_fg = SubResource( 14 )
 custom_styles/tab_bg = SubResource( 7 )
 custom_styles/panel = SubResource( 5 )
@@ -99,17 +100,21 @@ __meta__ = {
 [node name="STRUCTURES" type="CenterContainer" parent="TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 28.0
+margin_top = 17.0
 rect_min_size = Vector2( 387, 145 )
+size_flags_horizontal = 8
+size_flags_vertical = 8
 __meta__ = {
 "_editor_description_": ""
 }
 
 [node name="scrollContainer" type="ScrollContainer" parent="TabContainer/STRUCTURES"]
-margin_top = 1.0
+margin_top = 6.0
 margin_right = 413.0
-margin_bottom = 156.0
+margin_bottom = 161.0
 rect_min_size = Vector2( 406, 155 )
+size_flags_horizontal = 8
+size_flags_vertical = 8
 theme = SubResource( 9 )
 follow_focus = true
 scroll_horizontal_enabled = false
@@ -121,8 +126,8 @@ __meta__ = {
 margin_right = 404.0
 margin_bottom = 245.0
 rect_min_size = Vector2( -1, 0 )
-size_flags_horizontal = 0
-size_flags_vertical = 3
+size_flags_horizontal = 8
+size_flags_vertical = 8
 theme = SubResource( 10 )
 custom_constants/vseparation = 13
 custom_constants/hseparation = 0

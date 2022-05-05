@@ -1,8 +1,8 @@
-extends Node2D
+extends WindowDialog
 
 const SlotClass = preload("res://UI/Inventory/Slot.gd")
 var Item = preload("res://Shared/Models/Item.tscn")
-onready var inventorySlots = $Control/ChestPanel/MarginContainer/GridContainer
+onready var inventorySlots = $TabContainer/ITEMS/MarginContainer/GridContainer/
 var holdingItem = null
 
 func _ready() -> void:
