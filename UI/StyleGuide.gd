@@ -1,4 +1,4 @@
-extends Control
+extends WindowDialog
 
 func _ready():
-	pass # Replace with function body.
+	popup_centered()

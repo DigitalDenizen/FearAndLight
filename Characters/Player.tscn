@@ -1,8 +1,9 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Characters/UI/HealthBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Images/Heroes/hero-male-medium-sprite.png" type="Texture" id=3]
+[ext_resource path="res://Audio/Sounds/Attacks/Player/swipe.wav" type="AudioStream" id=4]
 [ext_resource path="res://Images/Effects/Lights/light.png" type="Texture" id=8]
 [ext_resource path="res://Audio/Sounds/Attacks/Player/fireball.wav" type="AudioStream" id=9]
 [ext_resource path="res://Audio/Sounds/Attacks/Player/heal.wav" type="AudioStream" id=10]
@@ -236,7 +237,7 @@ animations = [ {
 "frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
 "loop": true,
 "name": "throw",
-"speed": 10.0
+"speed": 15.0
 } ]
 
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
@@ -286,6 +287,11 @@ volume_db = -0.393
 [node name="SoundWalking" type="AudioStreamPlayer" parent="."]
 script = ExtResource( 12 )
 audio_files = [ null, null, null ]
+
+[node name="SoundSwipe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -15.769
+pitch_scale = 1.02
 
 [connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
 [connection signal="melee" from="." to="." method="_on_Player_melee"]

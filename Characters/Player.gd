@@ -80,6 +80,7 @@ func _on_Player_melee(Melee, mouse_pos, player_pos):
 	punch.attacker = "Player"
 	add_child(punch)
 	punch.shoot(mouse_pos, player_pos)
+	$SoundSwipe.play()
 	
 func _player_movement(delta):
 	if alive && not attacking:
@@ -126,7 +127,6 @@ func hurt(damage: int, type: String = ""):
 	if type == "web":
 		statusEffect = true
 		statusEffectCountDown = 75
-
 	
 func heal(healing):
 	_set_health(health + healing)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://UI/intro.gd" type="Script" id=1]
 [ext_resource path="res://Images/Effects/Lights/light.png" type="Texture" id=2]
@@ -46,22 +46,6 @@ region = Rect2( 57, 0, 57, 37 )
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 57, 37 )
 
-[sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 63, 40 )
-
-[sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 8 )
-region = Rect2( 63, 0, 63, 40 )
-
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 8 )
-region = Rect2( 126, 0, 63, 40 )
-
-[sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 8 )
-region = Rect2( 189, 0, 63, 40 )
-
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 63, 40 )
@@ -82,6 +66,22 @@ region = Rect2( 189, 0, 63, 40 )
 atlas = ExtResource( 6 )
 region = Rect2( 252, 0, 63, 40 )
 
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 63, 40 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 8 )
+region = Rect2( 63, 0, 63, 40 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 8 )
+region = Rect2( 126, 0, 63, 40 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 8 )
+region = Rect2( 189, 0, 63, 40 )
+
 [sub_resource type="SpriteFrames" id=19]
 animations = [ {
 "frames": [ SubResource( 31 ), SubResource( 30 ), SubResource( 29 ), SubResource( 28 ), SubResource( 27 ), SubResource( 26 ), SubResource( 25 ), SubResource( 24 ), SubResource( 23 ) ],
@@ -89,14 +89,14 @@ animations = [ {
 "name": "enter",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
-"loop": true,
-"name": "talk",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
 "loop": true,
 "name": "walk",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "talk",
 "speed": 10.0
 } ]
 
@@ -205,6 +205,9 @@ tracks/1/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3 ]
 }
+
+[sub_resource type="CapsuleShape2D" id=41]
+height = 34.0
 
 [node name="DogSpiritIntro" type="Node2D"]
 z_index = 1
@@ -441,16 +444,22 @@ flat = true
 
 [node name="spirit_dog" type="AnimatedSprite" parent="."]
 position = Vector2( -58, 32 )
-z_index = 1
 frames = SubResource( 19 )
 animation = "enter"
-frame = 8
 centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="spirit_dog"]
 anims/enter = SubResource( 20 )
 anims/move = SubResource( 21 )
 anims/talk = SubResource( 22 )
+
+[node name="CollisionShape2D" type="StaticBody2D" parent="."]
+position = Vector2( -23, 61 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D"]
+position = Vector2( 0, 4 )
+shape = SubResource( 41 )
 
 [node name="Light2D" type="Light2D" parent="."]
 light_mask = 7
