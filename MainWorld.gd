@@ -14,11 +14,11 @@ func _ready() -> void:
 	
 	EventBus.connect("battle_banner_closed", self,"on_battle_banner_clsoed") # When this signal is received run the closed banner function
 	
-func on_build_menu_opened():
-	get_tree().paused = true
-	
-func on_build_menu_closed():
-	get_tree().paused = false
+#func on_build_menu_opened():
+#	get_tree().paused = true
+#
+#func on_build_menu_closed():
+#	get_tree().paused = false
 	
 func on_battle_banner_clsoed():
 	mobSpawner.initialize(pathFinding)
