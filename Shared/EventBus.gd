@@ -2,6 +2,10 @@ extends Node
 
 signal toggle_inventory(msg)
 
+#pause
+signal pause_game()
+signal unpause_game()
+
 #Build Menu Signals
 signal build_menu_opened() #This signal is emitted whenever the build menu is opened
 signal build_menu_closed() #This signal is used to capture the event when the build menu is closed, either by the user or a proces

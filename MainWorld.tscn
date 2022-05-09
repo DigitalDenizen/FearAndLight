@@ -17,7 +17,7 @@
 [ext_resource path="res://MainWorld.gd" type="Script" id=15]
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Ground.gd" type="Script" id=18]
+[ext_resource path="res://UI/build/build scenes and scripts/buildGrid.gd" type="Script" id=18]
 [ext_resource path="res://Images/World/Swamp/tileset-swamp.png" type="Texture" id=19]
 [ext_resource path="res://Structures/SmallWall.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Images/World/Construct/tileset-construct.png" type="Texture" id=21]
