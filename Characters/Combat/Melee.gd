@@ -14,7 +14,7 @@ func _ready():
 func _process(delta):
 	position += direction * speed * delta
 	if speed > 0:
-		speed = speed - 2.6
+		speed = speed - 2.2
 	else:
 		queue_free()
 

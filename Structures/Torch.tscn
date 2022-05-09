@@ -4,53 +4,53 @@
 [ext_resource path="res://Images/Structures/Torch/structure-torch-sprite.png" type="Texture" id=3]
 [ext_resource path="res://Effects/Fire/fire.tscn" type="PackedScene" id=5]
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 14, 23 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
 region = Rect2( 84, 0, 14, 23 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
 region = Rect2( 84, 0, 14, 23 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 3 )
 region = Rect2( 98, 0, 14, 23 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
 region = Rect2( 112, 0, 14, 23 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
 region = Rect2( 126, 0, 14, 23 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 3 )
 region = Rect2( 140, 0, 14, 23 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 20 ) ],
+"frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 21 ) ],
+"frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "Health 25",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": false,
 "name": "Death",
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 6.37383, 1.60519 )
 
 [node name="Torch" type="StaticBody2D" groups=[
@@ -62,7 +62,7 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.5, -9 )
-frames = SubResource( 11 )
+frames = SubResource( 8 )
 animation = "idle"
 playing = true
 
@@ -74,4 +74,4 @@ scale = Vector2( 2.16, 1.64 )
 visible = false
 position = Vector2( -0.457583, -3.76306 )
 rotation = -1.5708
-shape = SubResource( 19 )
+shape = SubResource( 9 )

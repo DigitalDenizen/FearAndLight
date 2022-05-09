@@ -40,7 +40,7 @@ animations = [ {
 "frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [ SubResource( 2 ) ],
 "loop": true,
@@ -50,12 +50,12 @@ animations = [ {
 "frames": [ SubResource( 3 ) ],
 "loop": true,
 "name": "Health 25",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "Health 50",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": false,

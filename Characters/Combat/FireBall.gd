@@ -33,9 +33,12 @@ func _body_entered(body):
 		if body.is_in_group("Baddies"):
 			body.hurt(25)
 			_fireBall_collid()
+		if body.is_in_group("Objects"):
+			body.hurt(25)
+			_fireBall_collid()
 		if body.is_in_group("walls"):
 			_fireBall_collid()
-		elif body.is_in_group("structures"):
+		elif body.is_in_group("Structures"):
 			_fireBall_collid()
 
 func _fireBall_collid():
