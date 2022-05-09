@@ -131,7 +131,7 @@ func _on_Zombie_melee(Melee, target_pos, zombie_pos):
 		$AnimatedSprite.flip_h = true
 	else:
 		$AnimatedSprite.play("Attack")
-		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.flip_h = false
 	not_attacking = false
 	attackCountDown = 50
 	var scratch = Melee.instance()

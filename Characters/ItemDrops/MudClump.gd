@@ -11,6 +11,7 @@ var player = null
 func _ready():
 	player = get_parent().get_node("Player")
 	add_to_group("item_drops")
+	$AnimationPlayer.play("Bounce")
 	$AnimatedSprite.play("MudClump")
 
 func _Item_Drop_body_entered(body):

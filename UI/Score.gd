@@ -17,6 +17,9 @@ func _on_MudClump_killed():
 func _on_TinyTree_killed():
 	score += 15
 	
+func _on_Tree_killed():
+	score += 25
+	
 func _on_Mushroom_killed():
 	score += 25
 

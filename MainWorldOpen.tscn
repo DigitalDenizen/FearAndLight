@@ -1514,10 +1514,7 @@ position = Vector2( -175.271, 394.325 )
 position = Vector2( -135.996, 2.25168 )
 
 [node name="Mushroom5" parent="YSort/Objects/Swamp" instance=ExtResource( 50 )]
-position = Vector2( -47.9074, 50.0887 )
-
-[node name="Mushroom" parent="YSort/Objects/Swamp/Mushroom5" instance=ExtResource( 51 )]
-position = Vector2( -7.98519, 8.01479 )
+position = Vector2( -15.876, 67.0295 )
 
 [node name="TinyTree" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
 position = Vector2( -223.878, 66.4144 )
@@ -4351,5 +4348,8 @@ position = Vector2( 3304, -1112 )
 position = Vector2( 3408, -1064 )
 
 [node name="World" parent="." instance=ExtResource( 21 )]
+
+[node name="Tree" parent="." instance=ExtResource( 14 )]
+position = Vector2( -112, 80 )
 
 [connection signal="hide" from="YSort/UI/VictoryStatsPopup" to="YSort/UI/VictoryStatsPopup" method="closeWindow"]

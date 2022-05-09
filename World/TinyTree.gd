@@ -3,6 +3,7 @@ extends StaticBody2D
 signal killed()
 
 onready var collision_shape = $CollisionShape2D
+onready var collision_segment = $CollisionSegment
 onready var health = max_health setget _set_health
 onready var itemDrop_scene = preload("res://Characters/ItemDrops/WoodLog.tscn")
 export (float) var max_health = 210
@@ -61,6 +62,7 @@ func _set_health(value):
 			destroyed = true
 			Score._on_TinyTree_killed()
 			collision_shape.queue_free()
+			collision_segment.queue_free()
 			$AnimatedSprite.play('Destroy')
 			emit_signal("killed")
 
