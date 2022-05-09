@@ -12,6 +12,7 @@
 [ext_resource path="res://Images/StartScreen/asset-sphere.png" type="Texture" id=10]
 [ext_resource path="res://AnimatedTileset/fog.shader" type="Shader" id=14]
 
+
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 14 )
 shader_param/color = Vector3( 0.3, 0.26, 0.367 )

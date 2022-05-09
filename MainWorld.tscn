@@ -1902,6 +1902,7 @@ position = Vector2( -3, 6 )
 [node name="Ice_Wall_main" parent="Scene" instance=ExtResource( 11 )]
 
 [node name="Ice_Wall_below" parent="Scene" instance=ExtResource( 7 )]
+visible = false
 
 [node name="ParallaxBackground" parent="Scene" instance=ExtResource( 17 )]
 

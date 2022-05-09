@@ -12,6 +12,7 @@ metadata={
 source_file="res://Images/Drops/ItemDrops/Bomb/drop-bomb.png"
 dest_files=[ "res://.import/drop-bomb.png-0d87fbd08db6ede819fe69151a4f0f36.stex" ]
 
+
 [params]
 
 compress/mode=0

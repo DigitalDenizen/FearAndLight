@@ -12,6 +12,7 @@ metadata={
 source_file="res://Images/StartScreen/bg-construct-boxes-front.png"
 dest_files=[ "res://.import/bg-construct-boxes-front.png-265a47a85b631cd512d54dfaed8b36c2.stex" ]
 
+
 [params]
 
 compress/mode=0

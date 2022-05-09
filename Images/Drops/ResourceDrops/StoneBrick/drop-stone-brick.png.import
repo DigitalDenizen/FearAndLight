@@ -9,6 +9,7 @@ metadata={
 
 [deps]
 
+
 source_file="res://Images/Drops/ResourceDrops/StoneBrick/drop-stone-brick.png"
 dest_files=[ "res://.import/drop-stone-brick.png-d453cfbbbe684ed896509f3d8049fa04.stex" ]
 
