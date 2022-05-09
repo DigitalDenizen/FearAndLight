@@ -3,6 +3,7 @@
 [ext_resource path="res://Images/Drops/ItemDrops/PotionHealth/drop-health-potion-glow-sprite.png" type="Texture" id=1]
 [ext_resource path="res://Images/Drops/EnemyDrops/VampireSpiderWeb/drop-vampire-spider-web-sprite.png" type="Texture" id=2]
 
+
 [sub_resource type="AtlasTexture" id=55]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 18, 24 )

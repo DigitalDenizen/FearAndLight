@@ -46,10 +46,13 @@ func _input(event):
 		if event.button_index == BUTTON_RIGHT and event.pressed:
 			emit_signal("melee", Melee, get_global_mouse_position(), global_position)
 #Trying to make the melee and shoot buttons work on the controller
-	#if Input.is_action_just_pressed("melee"):
-			#emit_signal("melee", Melee, Vector2.ZERO, global_position)
-	#if Input.is_action_just_pressed("shoot"):
-			#emit_signal("shoot", Melee, Vector2.ZERO, global_position)
+#	if Input.is_action_just_pressed("melee"):
+#			emit_signal("melee", Melee, Vector2.ZERO, global_position)
+#	if Input.is_action_just_pressed("shoot"):
+#			emit_signal("shoot", Melee, Vector2.ZERO, global_position)#	if Input.is_action_just_pressed("melee"):
+#			emit_signal("melee", Melee, Vector2.ZERO, global_position)
+#	if Input.is_action_just_pressed("shoot"):
+#			emit_signal("shoot", Melee, Vector2.ZERO, global_position)
 
 func _on_Player_shoot(FireBall, mouse_pos, player_pos):
 	var direction = mouse_pos - player_pos
@@ -80,6 +83,7 @@ func _on_Player_melee(Melee, mouse_pos, player_pos):
 	punch.attacker = "Player"
 	add_child(punch)
 	punch.shoot(mouse_pos, player_pos)
+	$SoundSwipe.play()
 	
 func _player_movement(delta):
 	if alive && not attacking:
@@ -126,7 +130,6 @@ func hurt(damage: int, type: String = ""):
 	if type == "web":
 		statusEffect = true
 		statusEffectCountDown = 75
-
 	
 func heal(healing):
 	_set_health(health + healing)
