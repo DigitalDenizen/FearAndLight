@@ -1,4 +1,4 @@
-extends Node2D
+extends YSort
 
 onready var ground = $Ground
 onready var pathFinding = $PathFinding

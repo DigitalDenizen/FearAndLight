@@ -124,11 +124,10 @@ scale = Vector2( 2.25, 2.25 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -37.5, -2.5 )
-scale = Vector2( 1, 0.78125 )
+position = Vector2( -40, 0 )
 frames = SubResource( 28 )
 animation = "WoodLog"
-frame = 1
+frame = 11
 
 [node name="Light2D" type="Light2D" parent="."]
 light_mask = 7

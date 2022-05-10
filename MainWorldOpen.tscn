@@ -2,6 +2,7 @@
 
 [ext_resource path="res://World/DarkForest/Tree1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/UILayout/uiButtonLayout.tscn" type="PackedScene" id=2]
+[ext_resource path="res://BattleStart.gd" type="Script" id=3]
 [ext_resource path="res://UI/Victory/VictoryStats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Characters/Enemies/MobSpawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/Swamp/Tree2.tscn" type="PackedScene" id=6]
@@ -13,7 +14,6 @@
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Structures/MudWall.tscn" type="PackedScene" id=13]
 [ext_resource path="res://World/Swamp/Tree1.tscn" type="PackedScene" id=14]
-[ext_resource path="res://MainWorld.gd" type="Script" id=15]
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=16]
 [ext_resource path="res://World/Swamp/Tree3.tscn" type="PackedScene" id=17]
 [ext_resource path="res://UI/build/build scenes and scripts/buildGrid.gd" type="Script" id=18]
@@ -53,8 +53,6 @@
 [ext_resource path="res://Images/UI/Grid/ui-grid-square-normal.png" type="Texture" id=52]
 [ext_resource path="res://MainWorldOpen.gd" type="Script" id=53]
 
-[sub_resource type="TileSet" id=1]
-
 [sub_resource type="TileSet" id=2]
 0/name = "ui-grid-square-normal.png 0"
 0/texture = ExtResource( 52 )
@@ -82,11 +80,13 @@
 
 [sub_resource type="TileSet" id=3]
 
+[sub_resource type="TileSet" id=1]
+
 [node name="Main" type="Node2D"]
 script = ExtResource( 53 )
 
 [node name="YSort" type="YSort" parent="."]
-script = ExtResource( 15 )
+script = ExtResource( 3 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( -72, -34 )
@@ -110,15 +110,7 @@ pause_mode = 2
 position = Vector2( -136, -88 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="YSort"]
-visible = false
 color = Color( 0, 0, 0, 1 )
-
-[node name="Ground" type="TileMap" parent="YSort" groups=["tileMap"]]
-tile_set = SubResource( 1 )
-cell_size = Vector2( 32, 32 )
-collision_mask = 13
-occluder_light_mask = 2
-format = 1
 
 [node name="BuildGrid" type="TileMap" parent="YSort"]
 pause_mode = 2
@@ -137,6 +129,13 @@ collision_mask = 13
 occluder_light_mask = 2
 format = 1
 tile_data = PoolIntArray( 262146, 3, 0, 262147, 3, 0, 327682, 3, 0, 327683, 3, 0, 327684, 3, 0, 327685, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 458754, 3, 0, 458755, 3, 0, 458756, 3, 0, 589827, 0, 0, 720887, 0, 0 )
+
+[node name="Ground" type="TileMap" parent="YSort" groups=["tileMap"]]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+collision_mask = 13
+occluder_light_mask = 2
+format = 1
 
 [node name="PathFinding" parent="YSort" instance=ExtResource( 10 )]
 visible = false

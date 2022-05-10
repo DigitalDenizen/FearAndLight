@@ -14,11 +14,12 @@
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Structures/MudWall.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Barrier_top.tscn" type="PackedScene" id=14]
-[ext_resource path="res://MainWorld.gd" type="Script" id=15]
+[ext_resource path="res://Construct.gd" type="Script" id=15]
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=17]
 [ext_resource path="res://UI/build/build scenes and scripts/buildGrid.gd" type="Script" id=18]
 [ext_resource path="res://Images/World/Swamp/tileset-swamp.png" type="Texture" id=19]
+
 
 
 [sub_resource type="TileSet" id=1]
