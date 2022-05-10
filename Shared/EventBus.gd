@@ -12,7 +12,8 @@ signal build_menu_closed() #This signal is used to capture the event when the bu
 signal close_build_menu() #This signal is used to close the build menu
 signal placing_mud_hut() #Emitted when user clicks on the Mud Hut's Place It button
 signal placing_large_wall() #Emitted when user clicks on the Large Wall's Place It button
-signal placing_small_wall() 
+signal placing_small_wall() #Emitted when user clicks on the Small Wall's Place It button
+signal placing_torch() #Emitted when user clicks on the Torch's Place It button
 
 #Battle Menu Signals
 signal battle_button_pressed() #Emitted when the user click the battle button

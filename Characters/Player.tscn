@@ -264,7 +264,7 @@ animation = "melee"
 light_mask = 7
 position = Vector2( 0.641525, 0.859184 )
 texture = ExtResource( 8 )
-energy = 0.59
+energy = 0.25
 shadow_color = Color( 0.0352941, 0.027451, 0.027451, 0 )
 shadow_filter_smooth = 6.2
 
