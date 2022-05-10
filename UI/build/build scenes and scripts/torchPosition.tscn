@@ -3,14 +3,11 @@
 [ext_resource path="res://Images/Structures/Torch/object-torch-base.png" type="Texture" id=1]
 [ext_resource path="res://Effects/Fire/fire.tscn" type="PackedScene" id=2]
 
-
-
-[node name="Torch" type="Sprite"]
-position = Vector2( 53, 25 )
+[node name="torch" type="Sprite"]
+position = Vector2( 0.235968, 8.61285 )
+z_index = 20
 texture = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
+centered = false
 
 [node name="fire" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, -6 )
+position = Vector2( 2.03145, -0.946662 )

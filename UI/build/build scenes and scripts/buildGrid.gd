@@ -16,10 +16,15 @@ onready var smallWall = preload("res://Structures/SmallWall.tscn")
 var smallWallMouse = preload("res://UI/build/build scenes and scripts/smallWallPosition.tscn").instance()
 var smallWallPlacement = 0
 
+onready var torch = preload("res://Structures/Torch.tscn")
+var torchMouse = preload("res://UI/build/build scenes and scripts/torchPosition.tscn").instance()
+var torchPlacement = 0
+
 func _ready():
 	EventBus.connect("placing_mud_hut", self, "_on_placing_mudhut")
 	EventBus.connect("placing_large_wall", self, "_on_placing_large_wall")
 	EventBus.connect("placing_small_wall", self, "_on_placing_small_wall")
+	EventBus.connect("placing_torch", self, "on_placing_torch")
 	
 func _on_placing_mudhut():
 	print("placing mudhut")
@@ -36,6 +41,12 @@ func _on_placing_large_wall():
 func _on_placing_small_wall():
 	print("placing small wall")
 	smallWallPlacement = 1
+	EventBus.emit_signal("close_build_menu")
+	visible = true
+
+func on_placing_torch():
+	print("placing torch")
+	torchPlacement = 1
 	EventBus.emit_signal("close_build_menu")
 	visible = true
 
@@ -58,6 +69,12 @@ func _physics_process(delta):
 		var mouse_pos = get_global_mouse_position().snapped(GRID_SIZE)
 		tile = world_to_map(mouse_pos)
 		smallWallMouse.position = map_to_world(tile)
+		
+	if torchPlacement == 1:
+		self.add_child(torchMouse)
+		var mouse_pos = get_global_mouse_position().snapped(GRID_SIZE)
+		tile = world_to_map(mouse_pos)
+		torchMouse.position = map_to_world(tile)
 		
 		
 	
@@ -97,4 +114,16 @@ func _input(event):
 			smallWallPlacement = 0
 			visible = false
 			print("small wall placed")
+			EventBus.emit_signal("unpause_game")
+			
+	if torchPlacement == 1:		
+		if Input.is_mouse_button_pressed(BUTTON_LEFT):
+			var buildings = Util.get_main_node().get_node("YSort/Buildings")
+			var tp = torch.instance()
+			buildings.add_child(tp)
+			tp.global_position = get_global_mouse_position().snapped(GRID_SIZE)
+			remove_child(torchMouse)
+			torchPlacement = 0
+			visible = false
+			print("torch placed")
 			EventBus.emit_signal("unpause_game")
