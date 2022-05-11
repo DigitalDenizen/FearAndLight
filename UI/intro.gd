@@ -2,10 +2,12 @@ extends Node2D
 
 var dog_frame = 1
 var dialog_text = 0
+onready var collision_shape = $CollisionShape2D
 
 func _ready():
 	_speech0()
 	_move()
+	add_to_group("Objects")
 
 func _move():
 	$spirit_dog/AnimationPlayer.play("move")

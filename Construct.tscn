@@ -1941,7 +1941,6 @@ z_index = 1
 
 [node name="MudWall" parent="YSort/Buildings" instance=ExtResource( 49 )]
 position = Vector2( -207.298, 190.422 )
-z_index = 1
 z_as_relative = false
 
 [node name="MudHut" parent="YSort/Buildings" instance=ExtResource( 48 )]

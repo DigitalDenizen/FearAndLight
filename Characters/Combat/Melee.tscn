@@ -42,7 +42,7 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[node name="Melee" type="Area2D"]
+[node name="Melee" type="Area2D" groups=["Objects"]]
 scale = Vector2( 0.291327, 0.206214 )
 script = ExtResource( 1 )
 
