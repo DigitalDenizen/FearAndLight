@@ -51,8 +51,7 @@ scale = Vector2( 3, 3 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0.231651, -0.694939 )
-rotation = 0.0261799
+scale = Vector2( 3, 3 )
 frames = SubResource( 13 )
 flip_v = true
 

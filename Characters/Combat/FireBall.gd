@@ -10,6 +10,9 @@ func shoot(aim_position, caster_position):
 	direction = (aim_position - caster_position).normalized()
 	rotation = direction.angle()
 
+func _ready():
+	pass
+
 func _process(delta):
 	if not collid:
 		$AnimatedSprite.play("Fire")
@@ -37,6 +40,8 @@ func _body_entered(body):
 			body.hurt(25)
 			_fireBall_collid()
 		if body.is_in_group("walls"):
+			_fireBall_collid()
+		if body.is_in_group("tileMap"):
 			_fireBall_collid()
 		elif body.is_in_group("Structures"):
 			_fireBall_collid()
