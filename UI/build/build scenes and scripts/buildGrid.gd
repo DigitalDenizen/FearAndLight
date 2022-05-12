@@ -20,11 +20,16 @@ onready var torch = preload("res://Structures/Torch.tscn")
 var torchMouse = preload("res://UI/build/build scenes and scripts/torchPosition.tscn").instance()
 var torchPlacement = 0
 
+onready var bombBarrel = preload("res://Structures/BombBarrel.tscn")
+var bombBarrelMouse = preload("res://UI/build/build scenes and scripts/bombBarrelPosition.tscn").instance()
+var bombBarrelPlacement = 0
+
 func _ready():
 	EventBus.connect("placing_mud_hut", self, "_on_placing_mudhut")
 	EventBus.connect("placing_large_wall", self, "_on_placing_large_wall")
 	EventBus.connect("placing_small_wall", self, "_on_placing_small_wall")
 	EventBus.connect("placing_torch", self, "on_placing_torch")
+	EventBus.connect("placing_bomb_barrel", self, "on_placing_bomb_barrel")
 	
 func _on_placing_mudhut():
 	print("placing mudhut")
@@ -47,6 +52,12 @@ func _on_placing_small_wall():
 func on_placing_torch():
 	print("placing torch")
 	torchPlacement = 1
+	EventBus.emit_signal("close_build_menu")
+	visible = true
+	
+func on_placing_bomb_barrel():
+	print("placing bomb barrel")
+	bombBarrelPlacement = 1
 	EventBus.emit_signal("close_build_menu")
 	visible = true
 
@@ -76,7 +87,11 @@ func _physics_process(delta):
 		tile = world_to_map(mouse_pos)
 		torchMouse.position = map_to_world(tile)
 		
-		
+	if bombBarrelPlacement == 1:
+		self.add_child(bombBarrelMouse)
+		var mouse_pos = get_global_mouse_position().snapped(GRID_SIZE)
+		tile = world_to_map(mouse_pos)
+		bombBarrelMouse.position = map_to_world(tile)	
 	
 #The below function places one instance of the mud hut wherever user clicks
 func _input(event):
@@ -126,4 +141,16 @@ func _input(event):
 			torchPlacement = 0
 			visible = false
 			print("torch placed")
+			EventBus.emit_signal("unpause_game")
+			
+	if bombBarrelPlacement == 1:		
+		if Input.is_mouse_button_pressed(BUTTON_LEFT):
+			var buildings = Util.get_main_node().get_node("YSort/Buildings")
+			var bb = bombBarrel.instance()
+			buildings.add_child(bb)
+			bb.global_position = get_global_mouse_position().snapped(GRID_SIZE)
+			remove_child(torchMouse)
+			bombBarrelPlacement = 0
+			visible = false
+			print("bomb barrel placed")
 			EventBus.emit_signal("unpause_game")
