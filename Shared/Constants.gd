@@ -6,6 +6,7 @@ const PLAYER_GROUP : String = "Player"
 const ENEMY_GROUP : String = "Baddies"
 const STRUCTURES_GROUP : String = "Structures"
 const OBJECTS_GROUP : String = "Objects"
+const TILEMAPS_GROUP : String = "TileMaps"
 
 enum itemCategories {CONSUMABLE, TOOL, WEAPON, MATERIAL}
 

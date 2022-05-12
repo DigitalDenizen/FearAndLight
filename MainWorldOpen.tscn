@@ -47,7 +47,7 @@
 [ext_resource path="res://World/DarkForest/TreeStump1.tscn" type="PackedScene" id=45]
 [ext_resource path="res://World/DarkForest/Bush4.tscn" type="PackedScene" id=46]
 [ext_resource path="res://World/DarkForest/Bush3.tscn" type="PackedScene" id=47]
-[ext_resource path="res://Audio/Music/Scary/scary-atmos.wav" type="AudioStream" id=48]
+[ext_resource path="res://Audio/Music/Village/village-song-1.1.wav" type="AudioStream" id=48]
 [ext_resource path="res://Characters/Spirits/Dog/intro.tscn" type="PackedScene" id=49]
 [ext_resource path="res://World/Swamp/BlueMushroom3.tscn" type="PackedScene" id=50]
 [ext_resource path="res://World/Swamp/BlueMushroom1.tscn" type="PackedScene" id=51]
@@ -112,6 +112,7 @@ pause_mode = 2
 position = Vector2( -136, -88 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="YSort"]
+visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="BuildGrid" type="TileMap" parent="YSort"]
