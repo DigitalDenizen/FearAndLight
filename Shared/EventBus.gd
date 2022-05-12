@@ -14,6 +14,7 @@ signal placing_mud_hut() #Emitted when user clicks on the Mud Hut's Place It but
 signal placing_large_wall() #Emitted when user clicks on the Large Wall's Place It button
 signal placing_small_wall() #Emitted when user clicks on the Small Wall's Place It button
 signal placing_torch() #Emitted when user clicks on the Torch's Place It button
+signal placing_bomb_barrel() #Emitted when user clicks on the Bomb Barrel's Place It button
 
 #Battle Menu Signals
 signal battle_button_pressed() #Emitted when the user click the battle button
