@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://UI/build/build scenes and scripts/buildMenuMudHut.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/UI/Global/ui-scrollbar-scroller-normal-tile.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://UI/build/build scenes and scripts/buildMenuDiscoverIt.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Font/f-l-base-font-dynamic_7.tres" type="DynamicFont" id=11]
 [ext_resource path="res://Images/UI/Global/ui-tab-normal.png" type="Texture" id=12]
+[ext_resource path="res://UI/build/build scenes and scripts/buildMenuBombBarrel.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 11 )
@@ -79,6 +80,7 @@ rect_min_size = Vector2( 415, 196 )
 theme = SubResource( 1 )
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
+"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
@@ -198,7 +200,7 @@ margin_right = 260.0
 margin_bottom = 116.0
 rect_min_size = Vector2( 86, 75 )
 
-[node name="slot_panel" parent="TabContainer/STRUCTURES/scrollContainer/GridContainer/HBoxContainer3/VBoxContainer2" instance=ExtResource( 10 )]
+[node name="slot_panel" parent="TabContainer/STRUCTURES/scrollContainer/GridContainer/HBoxContainer3/VBoxContainer2" instance=ExtResource( 13 )]
 margin_right = 116.0
 margin_bottom = 116.0
 
