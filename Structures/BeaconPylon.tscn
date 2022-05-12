@@ -1,0 +1,138 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Images/Structures/MudCampfireBeacon/structure-mud-campfire-beacon-sprite.png" type="Texture" id=1]
+[ext_resource path="res://Structures/BeaconPylon.gd" type="Script" id=4]
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 1 )
+region = Rect2( 1332, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 1 )
+region = Rect2( 1369, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 1 )
+region = Rect2( 1406, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 1 )
+region = Rect2( 1443, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 1 )
+region = Rect2( 777, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 1 )
+region = Rect2( 814, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 1 )
+region = Rect2( 851, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 1 )
+region = Rect2( 888, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 1 )
+region = Rect2( 925, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 1 )
+region = Rect2( 962, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 1 )
+region = Rect2( 999, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 1 )
+region = Rect2( 1036, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 1 )
+region = Rect2( 1073, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 1 )
+region = Rect2( 1110, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 1 )
+region = Rect2( 1258, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 1 )
+region = Rect2( 1295, 0, 37, 124 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 1 )
+region = Rect2( 1221, 0, 37, 124 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": false,
+"name": "Death",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 39 ) ],
+"loop": true,
+"name": "Health50",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 38 ) ],
+"loop": true,
+"name": "Health25",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 40 ) ],
+"loop": true,
+"name": "Health75",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 1 )
+region = Rect2( 1147, 0, 37, 124 )
+
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [ SubResource( 41 ) ],
+"loop": true,
+"name": "Active",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=23]
+radius = 8.1199
+
+[node name="Pylon" type="StaticBody2D"]
+z_index = 12
+input_pickable = true
+script = ExtResource( 4 )
+
+[node name="Pylon" type="AnimatedSprite" parent="."]
+position = Vector2( 2.50899, -32.0785 )
+frames = SubResource( 17 )
+animation = "Idle"
+
+[node name="Pylon_Active" type="AnimatedSprite" parent="."]
+position = Vector2( 2.50382, -32 )
+frames = SubResource( 22 )
+animation = "Active"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2.57868, 18.7896 )
+rotation = -1.5708
+shape = SubResource( 23 )
+
+[connection signal="beacon_activated" from="." to="." method="_on_Pylon_beacon_activated"]
+[connection signal="input_event" from="." to="." method="_on_Pylon_input_event"]

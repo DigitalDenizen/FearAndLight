@@ -1,35 +1,60 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://UI/build/ui-build-button-active.png" type="Texture" id=1]
-[ext_resource path="res://UI/build/ui-build-button-build-idle.png" type="Texture" id=2]
+[ext_resource path="res://Images/UI/Build/ui-build-button-normal.png" type="Texture" id=1]
+[ext_resource path="res://Images/UI/Build/ui-build-button-hover.png" type="Texture" id=2]
 [ext_resource path="res://UI/build/build scenes and scripts/build_button.gd" type="Script" id=3]
-
-[sub_resource type="StyleBoxTexture" id=1]
-texture = ExtResource( 1 )
-region_rect = Rect2( 0, 0, 39, 40 )
-
-[sub_resource type="StyleBoxTexture" id=2]
+[ext_resource path="res://Images/UI/Build/ui-build-button-disabled.png" type="Texture" id=4]
+[ext_resource path="res://Images/UI/Build/ui-build-button-focus.png" type="Texture" id=5]
+[ext_resource path="res://Images/UI/Build/ui-build-button-pressed.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 39, 40 )
+region_rect = Rect2( 0, 0, 40, 40 )
 
-[node name="build_button_container" type="CenterContainer"]
-margin_left = -0.396851
-margin_right = 38.6031
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 40, 40 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 40, 40 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 40, 40 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 40, 40 )
+
+[node name="MarginContainer" type="MarginContainer"]
+margin_right = 40.0
 margin_bottom = 40.0
-rect_min_size = Vector2( 39, 40 )
+rect_min_size = Vector2( 40, 40 )
+
+[node name="build_button_container" type="CenterContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="build_button" type="Button" parent="."]
-margin_right = 39.0
+[node name="build_button" type="Button" parent="build_button_container"]
+margin_right = 40.0
 margin_bottom = 40.0
-rect_min_size = Vector2( 39, 40 )
-custom_styles/hover = SubResource( 1 )
-custom_styles/disabled = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
+rect_min_size = Vector2( 40, 40 )
+focus_mode = 0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+toggle_mode = true
+shortcut_in_tooltip = false
+action_mode = 0
+enabled_focus_mode = 0
 script = ExtResource( 3 )
-[connection signal="button_down" from="build_button" to="build_button" method="_on_build_button_button_down"]
-[connection signal="button_up" from="build_button" to="build_button" method="_on_build_button_button_up"]
+
+[connection signal="button_down" from="build_button_container/build_button" to="build_button_container/build_button" method="_on_build_button_button_down"]
+[connection signal="button_up" from="build_button_container/build_button" to="build_button_container/build_button" method="_on_build_button_button_up"]

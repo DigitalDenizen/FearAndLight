@@ -1,34 +1,41 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/build/build scenes and scripts/build-menu.tscn" type="PackedScene" id=1]
-[ext_resource path="res://UI/global/ui-button-close.png" type="Texture" id=2]
-[ext_resource path="res://UI/global/ui-window-main.png" type="Texture" id=3]
+[ext_resource path="res://Images/UI/Global/ui-button-close.png" type="Texture" id=2]
+[ext_resource path="res://Images/UI/Global/ui-window-main.png" type="Texture" id=3]
+[ext_resource path="res://UI/build/build scenes and scripts/build_menu_popup.gd" type="Script" id=4]
+[ext_resource path="res://Font/f-l-base-font-dynamic_7.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Images/UI/Global/ui-button-close-hover.png" type="Texture" id=6]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 5 )
 
 [sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 422, 196 )
-expand_margin_top = 20.0
+margin_top = 4.853
 
 [node name="WindowDialog" type="WindowDialog"]
 visible = true
-light_mask = 0
-anchor_right = 0.02
-anchor_bottom = 0.21
-margin_top = 2.0
-margin_right = 423.52
-margin_bottom = 57.0
-custom_icons/close_highlight = ExtResource( 2 )
+margin_right = 422.0
+margin_bottom = 160.72
+rect_min_size = Vector2( 422, 196 )
+theme = SubResource( 1 )
+custom_constants/close_h_ofs = 13
+custom_constants/close_v_ofs = 0
+custom_icons/close_highlight = ExtResource( 6 )
 custom_icons/close = ExtResource( 2 )
 custom_styles/panel = SubResource( 2 )
 popup_exclusive = true
+script = ExtResource( 4 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_editor_description_": ""
 }
 
 [node name="build_menu_panel" parent="." instance=ExtResource( 1 )]
-show_behind_parent = false
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = -3.0
-margin_right = 422.0
-margin_bottom = 193.0
+margin_right = 412.0
+margin_bottom = 195.0
+rect_min_size = Vector2( 412, 189 )
+
+[connection signal="modal_closed" from="." to="." method="_on_WindowDialog_modal_closed"]
+[connection signal="popup_hide" from="." to="." method="_on_WindowDialog_popup_hide"]

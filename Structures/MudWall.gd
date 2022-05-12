@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+signal defenseDestroyed()
 signal health_updated(health)
 signal killed()
 
@@ -13,7 +14,7 @@ var attacker = ""
 
 func _ready():
 	$AnimatedSprite.play("idle")
-	add_to_group("structures")
+	add_to_group("Structures")
 	
 func _physics_process(delta):
 	if destroyed == false:
@@ -30,7 +31,7 @@ func hurt(damage):
 func _on_DefenseRange_body_entered(body):
 	if body.name == "FireBall":
 		queue_free()
-	if body.name == "Zombie" || body.name == "vampireSpider":
+	if body.name == "Zombie" || body.name == "vampireSpider" || body.name == "direWolf":
 		attacked = true
 
 func _set_health(value):
@@ -48,6 +49,7 @@ func _set_health(value):
 			$AnimatedSprite.play('Health 25')
 			deathCountdown = 75
 		if health <= 0:
+			emit_signal("defenseDestroyed")
 			deathCountdown = 100
 			destroyed = true
 			$AnimatedSprite.play('Death')

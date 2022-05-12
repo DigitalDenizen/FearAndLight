@@ -1,49 +1,47 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Font/f-l-base-font-dynamic.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Images/Buttons/ui-button-large-idle.png" type="Texture" id=2]
-[ext_resource path="res://Images/Buttons/ui-button-large-active.png" type="Texture" id=3]
+[ext_resource path="res://Font/f-l-base-font-dynamic_21.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Images/UI/Global/ui-button-xlarge-disabled.png" type="Texture" id=2]
+[ext_resource path="res://Images/UI/Global/ui-button-xlarge-special-hover.png" type="Texture" id=3]
+[ext_resource path="res://Images/UI/Global/ui-button-xlarge-special-normal.png" type="Texture" id=4]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 86, 21 )
+region_rect = Rect2( 0, 0, 116, 21 )
 
-[sub_resource type="StyleBoxTexture" id=3]
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 116, 21 )
+
+[sub_resource type="StyleBoxTexture" id=7]
 texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 86, 21 )
+region_rect = Rect2( 0, 0, 116, 21 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 116, 21 )
 
 [node name="Continue" type="CenterContainer"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 116.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 116, 21 )
 
 [node name="Continue_button" type="Button" parent="."]
-margin_right = 295.0
-margin_bottom = 55.0
-rect_min_size = Vector2( 295, 55 )
+margin_right = 116.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 116, 21 )
+focus_mode = 0
 theme = SubResource( 1 )
+custom_styles/hover = SubResource( 6 )
 custom_styles/pressed = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CenterContainer" type="CenterContainer" parent="Continue_button"]
-margin_left = -1.0
-margin_right = 298.0
-margin_bottom = 51.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Continue_button/CenterContainer"]
-margin_left = 87.0
-margin_top = 13.0
-margin_right = 212.0
-margin_bottom = 38.0
-rect_min_size = Vector2( 125, 25 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 5 )
+toggle_mode = true
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
 text = "CONTINUE"
 __meta__ = {
 "_edit_use_anchors_": false

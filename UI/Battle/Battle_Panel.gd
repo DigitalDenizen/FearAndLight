@@ -1,14 +1,7 @@
-extends PanelContainer
-signal battleStart()
+extends Panel
 
-func _ready():
-	
-	pass # Replace with function body.
-
-func _process(delta):
-	pass
 
 func _on_Start_Battle_toggled(button_pressed):
 	if button_pressed == true:
-		emit_signal("battleStart")
-		
+		EventBus.emit_signal("start_button_pressed",self)
+		print("Start button Pressed")

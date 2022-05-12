@@ -5,3 +5,4 @@ func get_main_node() -> Node:
 	return root_node.get_child(root_node.get_child_count() - 1)
 
 var pathFinding: PathFinding
+

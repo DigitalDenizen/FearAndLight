@@ -6,7 +6,7 @@ class_name PathFinding
 
 export (Color) var enabled_color
 export (Color) var disabled_color
-export (bool) var should_display_grid := true
+export (bool) var should_display_grid := false
 
 
 onready var grid = $Grid
@@ -24,7 +24,7 @@ var _point_path = []
 func _physics_process(delta: float) -> void:
 	update_navigation_map()
 
-func create_navigation_map(tileMap: TileMap):
+func createNavigationMap(tileMap: TileMap):
 	self.tileMap = tileMap
 	
 	half_cell_size = tileMap.cell_size / 2
@@ -89,13 +89,6 @@ func update_navigation_map():
 						grid_rects[str(id)].color = disabled_color
 		if tileMap:
 			if obstacle is KinematicBody2D:
-				var tile_coord = tileMap.world_to_map(obstacle.collision_shape.global_position)
-				var id = get_id_for_point(tile_coord)
-				if astar.has_point(id):
-					astar.set_point_disabled(id, true)
-					if should_display_grid:
-						grid_rects[str(id)].color = disabled_color
-			if obstacle is StaticBody2D:
 				var tile_coord = tileMap.world_to_map(obstacle.collision_shape.global_position)
 				var id = get_id_for_point(tile_coord)
 				if astar.has_point(id):

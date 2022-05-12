@@ -1,0 +1,88 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://UI/Battle/Battle_Panel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Font/f-l-base-font-dynamic_7.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Images/UI/Global/ui-tab-hover.png" type="Texture" id=3]
+[ext_resource path="res://Images/UI/Global/ui-tab-normal.png" type="Texture" id=4]
+[ext_resource path="res://Images/UI/Global/ui-window-main.png" type="Texture" id=5]
+[ext_resource path="res://Images/UI/Global/ui-button-close.png" type="Texture" id=6]
+[ext_resource path="res://UI/Battle/Battle_Popup_window.gd" type="Script" id=7]
+[ext_resource path="res://Images/UI/Global/ui-button-close-hover.png" type="Texture" id=8]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 422, 196 )
+margin_top = 4.853
+
+[sub_resource type="StyleBoxTexture" id=8]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 6.0
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 53, 17 )
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id=7]
+content_margin_left = 7.0
+content_margin_right = 5.0
+content_margin_top = 6.0
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 55, 16 )
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[node name="WindowDialog" type="WindowDialog"]
+visible = true
+anchor_bottom = 0.098
+margin_right = 422.0
+margin_bottom = 160.72
+rect_min_size = Vector2( 422, 196 )
+theme = SubResource( 1 )
+custom_constants/close_h_ofs = 13
+custom_constants/close_v_ofs = 0
+custom_icons/close_highlight = ExtResource( 8 )
+custom_icons/close = ExtResource( 6 )
+custom_styles/panel = SubResource( 2 )
+popup_exclusive = true
+script = ExtResource( 7 )
+
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 407.0
+margin_bottom = 184.0
+rect_min_size = Vector2( 397, 163 )
+custom_styles/tab_fg = SubResource( 8 )
+custom_styles/tab_bg = SubResource( 7 )
+custom_styles/panel = SubResource( 5 )
+tab_align = 0
+
+[node name="BATTLE" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 17.0
+rect_min_size = Vector2( 408, 163 )
+
+[node name="CenterContainer" type="MarginContainer" parent="TabContainer/BATTLE"]
+margin_left = 13.0
+margin_top = 4.0
+margin_right = 410.0
+margin_bottom = 167.0
+rect_min_size = Vector2( 397, 163 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Battle_Panel" parent="TabContainer/BATTLE/CenterContainer" instance=ExtResource( 1 )]
+margin_right = 397.0
+margin_bottom = 163.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="popup_hide" from="." to="." method="_on_WindowDialog_popup_hide"]

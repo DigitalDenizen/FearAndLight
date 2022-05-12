@@ -1,0 +1,324 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Images/UI/Chest/ui-chest-bkgd-drop-slot.png" type="Texture" id=1]
+[ext_resource path="res://Images/UI/Global/ui-window-main.png" type="Texture" id=2]
+[ext_resource path="res://UI/Inventory/Slot.gd" type="Script" id=3]
+[ext_resource path="res://UI/Inventory/Inventory.gd" type="Script" id=4]
+[ext_resource path="res://Images/UI/Global/ui-button-close.png" type="Texture" id=5]
+[ext_resource path="res://Images/UI/Global/ui-button-close-hover.png" type="Texture" id=6]
+[ext_resource path="res://Font/f-l-base-font-dynamic_7.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Images/UI/Global/ui-tab-hover.png" type="Texture" id=8]
+[ext_resource path="res://Images/UI/Global/ui-tab-normal.png" type="Texture" id=9]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 7 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 422, 196 )
+margin_top = 4.853
+
+[sub_resource type="StyleBoxTexture" id=6]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 6.0
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 53, 17 )
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id=7]
+content_margin_left = 7.0
+content_margin_right = 5.0
+content_margin_top = 6.0
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 55, 16 )
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxTexture" id=8]
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 30, 30 )
+
+[node name="Inventory" type="WindowDialog"]
+anchor_bottom = 0.098
+margin_left = 109.0
+margin_top = 82.0
+margin_right = 422.0
+margin_bottom = 160.72
+rect_min_size = Vector2( 422, 196 )
+theme = SubResource( 1 )
+custom_constants/close_h_ofs = 13
+custom_constants/close_v_ofs = 0
+custom_icons/close_highlight = ExtResource( 6 )
+custom_icons/close = ExtResource( 5 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_top = -1.0
+margin_right = 408.0
+margin_bottom = 212.0
+rect_min_size = Vector2( 408, 205 )
+size_flags_horizontal = 8
+size_flags_vertical = 8
+custom_styles/tab_fg = SubResource( 6 )
+custom_styles/tab_bg = SubResource( 7 )
+custom_styles/panel = SubResource( 5 )
+tab_align = 0
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ITEMS" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 17.0
+rect_min_size = Vector2( 404, 196 )
+input_pass_on_modal_close_click = false
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="Panel" type="Panel" parent="TabContainer/ITEMS"]
+margin_right = 422.0
+margin_bottom = 196.0
+custom_styles/panel = SubResource( 8 )
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/ITEMS"]
+margin_right = 422.0
+margin_bottom = 196.0
+rect_min_size = Vector2( 422, 196 )
+custom_constants/margin_top = 23
+custom_constants/margin_left = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/ITEMS/MarginContainer"]
+margin_left = 10.0
+margin_top = 23.0
+margin_right = 422.0
+margin_bottom = 196.0
+custom_constants/vseparation = 1
+custom_constants/hseparation = 1
+columns = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot1" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot2" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 31.0
+margin_right = 61.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot3" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 62.0
+margin_right = 92.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot4" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 93.0
+margin_right = 123.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot5" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 124.0
+margin_right = 154.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot6" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 155.0
+margin_right = 185.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot7" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 186.0
+margin_right = 216.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot8" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 217.0
+margin_right = 247.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot9" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 248.0
+margin_right = 278.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot10" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 279.0
+margin_right = 309.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot11" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 310.0
+margin_right = 340.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot12" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 341.0
+margin_right = 371.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot13" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_top = 31.0
+margin_right = 30.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot14" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 31.0
+margin_top = 31.0
+margin_right = 61.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot15" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 62.0
+margin_top = 31.0
+margin_right = 92.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot16" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 93.0
+margin_top = 31.0
+margin_right = 123.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot17" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 124.0
+margin_top = 31.0
+margin_right = 154.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot18" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 155.0
+margin_top = 31.0
+margin_right = 185.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot19" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 186.0
+margin_top = 31.0
+margin_right = 216.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot20" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 217.0
+margin_top = 31.0
+margin_right = 247.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot21" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 248.0
+margin_top = 31.0
+margin_right = 278.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot22" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 279.0
+margin_top = 31.0
+margin_right = 309.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot23" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 310.0
+margin_top = 31.0
+margin_right = 340.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot24" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_left = 341.0
+margin_top = 31.0
+margin_right = 371.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Slot25" type="Panel" parent="TabContainer/ITEMS/MarginContainer/GridContainer"]
+margin_top = 62.0
+margin_right = 30.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 3 )

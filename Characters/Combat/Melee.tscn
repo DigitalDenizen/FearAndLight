@@ -1,14 +1,58 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Characters/Combat/Melee.gd" type="Script" id=1]
+[ext_resource path="res://Images/Effects/Kapows/effect-kapow-small-sprite.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 4.55626
+radius = 8.73086
 
-[node name="Melee" type="Area2D"]
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 39, 38 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 39, 0, 39, 38 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 78, 0, 39, 38 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 117, 0, 39, 38 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 156, 0, 39, 38 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 195, 0, 39, 38 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 2 )
+region = Rect2( 234, 0, 39, 38 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "Poof",
+"speed": 15.0
+} ]
+
+[node name="Melee" type="Area2D" groups=["Objects"]]
+scale = Vector2( 0.291327, 0.206214 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 2, 2 )
+scale = Vector2( 3, 3 )
 shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 3, 3 )
+frames = SubResource( 13 )
+flip_v = true
+
 [connection signal="body_entered" from="." to="." method="_body_entered"]

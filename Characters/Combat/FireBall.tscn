@@ -1,36 +1,56 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Characters/Combat/FireBall.gd" type="Script" id=1]
-[ext_resource path="res://Images/effect-poof-large.png" type="Texture" id=3]
-[ext_resource path="res://Images/object-fireball-right.png" type="Texture" id=5]
-[ext_resource path="res://Images/effect-poof-small.png" type="Texture" id=6]
+[ext_resource path="res://Images/Effects/Lights/light.png" type="Texture" id=2]
+[ext_resource path="res://Images/Effects/Kapows/effect-kapow-small-sprite.png" type="Texture" id=3]
+[ext_resource path="res://Images/Objects/Weapons/Fireball/object-weapon-fireball-right.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.56409
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 11, 9 )
-
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 18, 17 )
+region = Rect2( 0, 0, 39, 38 )
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 12, 12 )
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 39, 0, 39, 38 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 78, 0, 39, 38 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 117, 0, 39, 38 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 156, 0, 39, 38 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
+region = Rect2( 195, 0, 39, 38 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 234, 0, 39, 38 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 11, 9 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 2 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "Poof",
+"speed": 15.0
+}, {
+"frames": [ SubResource( 13 ) ],
 "loop": true,
 "name": "Fire",
 "speed": 1.5
-}, {
-"frames": [ SubResource( 3 ), SubResource( 4 ) ],
-"loop": true,
-"name": "Poof",
-"speed": 5.0
 } ]
 
 [node name="FireBall" type="Area2D"]
@@ -52,5 +72,14 @@ rotation = 0.0261799
 frames = SubResource( 5 )
 animation = "Fire"
 flip_v = true
+
+[node name="Light2D" type="Light2D" parent="."]
+light_mask = 7
+position = Vector2( 0.463286, 1.07343 )
+scale = Vector2( 0.242899, 0.200614 )
+z_index = 10
+texture = ExtResource( 2 )
+color = Color( 1, 0.584314, 0.145098, 1 )
+
 [connection signal="body_entered" from="." to="." method="_body_entered"]
 [connection signal="body_exited" from="." to="." method="_FireBall_body_exited"]
