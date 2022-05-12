@@ -10,7 +10,7 @@ const MOVE_SPEED = 28
 export (float) var max_health = 350
 enum STATES { IDLE, FOLLOW }
 onready var collision_shape = $CollisionShape2D
-onready var itemdrop_scene = load("res://Characters/ItemDrops/Item_Drop_2.tscn")
+onready var itemDrop_scene = preload("res://Characters/ItemDrops/SpiderDrop.tscn")
 onready var health = max_health setget _set_health
 var Melee = preload("res://Characters/Combat/Melee.tscn")
 var Web = preload("res://Characters/Combat/sprider_web.tscn")
@@ -43,8 +43,8 @@ var target_point_world = Vector2()
 var target_position = Vector2()
 
 func _ready():
-	player = Util.get_main_node().get_node("Player")
-	buildings = Util.get_main_node().get_node("Buildings")
+	player = Util.get_main_node().get_node("YSort").get_node("Player")
+	buildings = Util.get_main_node().get_node("YSort").get_node("Buildings")
 	add_to_group("Baddies")
 	rng.randomize()
 	path_line.visible = should_draw_path_line
@@ -164,8 +164,8 @@ func onVampireSpiderMelee(Melee, playerPos, vampireSpiderPos):
 	scratch.shoot(playerPos, vampireSpiderPos)
 
 func _on_vampireSpider_killed():
-	if rng.randf() <= 0.8:
-		var itemDrop = itemdrop_scene.instance()
+	if rng.randf() <= 1:
+		var itemDrop = itemDrop_scene.instance()
 		itemDrop.type = rng.randi() % 2
 		get_tree().get_root().add_child(itemDrop)
 		itemDrop.global_position = global_position

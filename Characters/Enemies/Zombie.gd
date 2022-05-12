@@ -12,7 +12,7 @@ const MOVE_SPEED = 30
 enum STATES { IDLE, FOLLOW }
 onready var collision_shape = $CollisionShape2D
 onready var health = max_health setget _set_health
-onready var itemDrop_scene = preload("res://Characters/ItemDrops/Item_Drop.tscn")
+onready var itemDrop_scene = preload("res://Characters/ItemDrops/ZombieDrop.tscn")
 onready var path_line = $PathLine
 var Melee = preload("res://Characters/Combat/Melee.tscn")
 
@@ -37,8 +37,8 @@ var target_point_world = Vector2()
 var target_position = Vector2()
 
 func _ready():
-	player = Util.get_main_node().get_node("Player")
-	buildings = Util.get_main_node().get_node("Buildings")
+	player = Util.get_main_node().get_node("YSort").get_node("Player")
+	buildings = Util.get_main_node().get_node("YSort").get_node("Buildings")
 	add_to_group("Baddies")
 	rng.randomize()
 	path_line.visible = should_draw_path_line
@@ -141,7 +141,7 @@ func _on_Zombie_melee(Melee, target_pos, zombie_pos):
 	$RandomGrowlPlayer.play_random()
 
 func _on_Zombie_killed():
-	if rng.randf() <= 0.3:
+	if rng.randf() <= 1:
 		var itemDrop = itemDrop_scene.instance()
 		itemDrop.type = rng.randi() % 2
 		get_tree().get_root().add_child(itemDrop)

@@ -20,10 +20,11 @@ const imagePath: Dictionary = {
 	"bronzecoin": "res://Images/Drops/CoinDrops/BronzeCoin/drop-bronze-coin.png",
 	"fur": "res://Images/Drops/EnemyDrops/DireWolfFur/drop-dire-wolf-fur.png",
 	"bones": "res://Images/Drops/EnemyDrops/ZombieBone/drop-zombie-bone.png",
-	"spiderweb": "res://Images/Drops/EnemyDrops/ZombieBone/drop-spider-web.png",
+	"spiderweb": "res://Images/Drops/EnemyDrops/VampireSpiderWeb/drop-vampire-spider-web.png",
 	"mudclump": "res://Images/Drops/ResourceDrops/MudClump/drop-mud-clump.png",
 	"woodlog": "res://Images/Drops/ResourceDrops/WoodLog/drop-wood-log.png",
 	"stonebrick": "res://Images/Drops/ResourceDrops/StoneBrick/drop-stone-brick.png",
 	"steelplate": "res://Images/Drops/ResourceDrops/SteelPlate/drop-steel-plate.png",
-	"goldnugget": "res://Images/Drops/ResourceDrops/GoldNugget/drop-gold-nugget.png"
-} 
+	"goldnugget": "res://Images/Drops/ResourceDrops/GoldNugget/drop-gold-nugget.png",
+	"wendigohead": "res://Images/Drops/BossDrops/WendigoHead/drop-wendigo-head.png"
+}

@@ -46,5 +46,4 @@ color = Color( 0.988235, 0.984314, 0.984314, 1 )
 energy = 0.99
 range_z_min = -800
 range_z_max = 800
-shadow_enabled = true
 shadow_color = Color( 0.0862745, 0.0784314, 0.0784314, 0.905882 )

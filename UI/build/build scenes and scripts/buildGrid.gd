@@ -97,7 +97,7 @@ func _physics_process(delta):
 func _input(event):
 	if mudHutPlacement == 1:
 		if Input.is_mouse_button_pressed(BUTTON_LEFT):
-			var buildings = Util.get_main_node().get_node("YSort/Buildings")
+			var buildings = Util.get_main_node().get_node("YSort").get_node("Buildings")
 			var mh = mudHut.instance()
 			buildings.add_child(mh)
 			mh.global_position = get_global_mouse_position().snapped(GRID_SIZE)
