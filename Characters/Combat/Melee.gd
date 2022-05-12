@@ -31,17 +31,17 @@ func _on_Visibility_exit_screen():
 
 func _body_entered(body):
 	if attacker == "Player":
-		if body.is_in_group('Player'):
+		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && body.is_in_group('Player'):
 			_melee_collid()
-		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && !body.is_in_group('Baddies'):
+		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && body.is_in_group('Baddies'):
 			body.hurt(25)
 			_melee_collid()
-		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && !body.is_in_group('Objects'):
+		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && body.is_in_group('Objects'):
 			body.hurt(25)
 			_melee_collid()
-		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && !body.is_in_group('TileMaps'):
+		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && body.is_in_group('TileMaps'):
 			_melee_collid()
-		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && !body.is_in_group('Structures'):
+		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && body.is_in_group('Structures'):
 			_melee_collid()
 	elif attacker == "Zombie":
 		if !body.is_in_group('Baddies') && !body.is_in_group('CollisionBox') && !body.is_in_group('tileMap'):

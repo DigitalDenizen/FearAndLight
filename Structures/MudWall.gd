@@ -31,7 +31,7 @@ func hurt(damage):
 func _on_DefenseRange_body_entered(body):
 	if body.name == "FireBall":
 		queue_free()
-	if body.name == "Zombie" || body.name == "vampireSpider":
+	if body.name == "Zombie" || body.name == "vampireSpider" || body.name == "direWolf":
 		attacked = true
 
 func _set_health(value):

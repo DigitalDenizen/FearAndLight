@@ -36,8 +36,8 @@ var target_point_world = Vector2()
 var target_position = Vector2()
 
 func _ready():
-	player = Util.get_main_node().get_node("YSort").get_node("Player")
-	buildings = Util.get_main_node().get_node("YSort").get_node("Buildings")
+	player = Util.get_main_node().get_node("YSort/Buildings")
+	buildings = Util.get_main_node().get_node("YSort/Buildings")
 	add_to_group("Baddies")
 	rng.randomize()
 	path_line.visible = should_draw_path_line
