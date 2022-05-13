@@ -18,4 +18,9 @@ signal start_button_pressed() #Emitted when the start button is pressed
 signal battle_banner_opened() #Emitted when the battle banner has been opened
 signal battle_banner_closed() #Emitted when the battle banner is closed
 
-signal victory() #Emitted when emeny spawn is defeated
+#Enemy Spawning signals
+signal spawnDefeated() #Emitted when mobspawn has been defeated
+signal victory() #Emitted when emeny spawn and windigo is defeated
+
+#Defeat Signals
+signal defeat() #When the character dies Game Over Window pops up

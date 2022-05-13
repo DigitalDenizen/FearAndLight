@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Effects/Fire/3.png" type="Texture" id=1]
+
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.015873, 0.396825, 0.619048, 0.984127 )
+colors = PoolColorArray( 0.180392, 0.431373, 0.482353, 0.431373, 0.0980392, 0.54902, 0.635294, 1, 0.0980392, 0.54902, 0.635294, 1, 0.0980392, 0.54902, 0.635294, 0.321569 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 500, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 2, 0, 0 )
+gravity = Vector3( 0, 500, 0 )
+initial_velocity = 100.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 1.0
+scale = 0.2
+color_ramp = SubResource( 3 )
+
+[node name="Rain" type="Particles2D"]
+position = Vector2( 164, -60 )
+amount = 1500
+lifetime = 2.0
+speed_scale = 0.76
+randomness = 0.24
+local_coords = false
+process_material = SubResource( 1 )
+texture = ExtResource( 1 )

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 	
-const MOVE_SPEED = 100
+const MOVE_SPEED = 90
 const ACCELERATION = 100
 const FRICTION = 100
 signal shoot(fireball, mouse_pos, player_pos)
@@ -34,7 +34,7 @@ func _ready():
 func _physics_process(delta):
 	move_vec = Vector2()
 	_player_movement(delta)
-	move_and_collide(move_vec * MOVE_SPEED * delta)
+	move_and_slide(move_vec * MOVE_SPEED)
 
 func kill():
 	queue_free()
@@ -45,6 +45,11 @@ func _input(event):
 			emit_signal("shoot", FireBall, get_global_mouse_position(), global_position)
 		if event.button_index == BUTTON_RIGHT and event.pressed:
 			emit_signal("melee", Melee, get_global_mouse_position(), global_position)
+#Trying to make the melee and shoot buttons work on the controller
+	#if Input.is_action_just_pressed("melee"):
+			#emit_signal("melee", Melee, Vector2.ZERO, global_position)
+	#if Input.is_action_just_pressed("shoot"):
+			#emit_signal("shoot", Melee, Vector2.ZERO, global_position)
 
 func _on_Player_shoot(FireBall, mouse_pos, player_pos):
 	var direction = mouse_pos - player_pos
@@ -83,7 +88,6 @@ func _player_movement(delta):
 		input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 		input_vector = input_vector.normalized()
 		
-		
 		if input_vector != Vector2.ZERO:
 			
 			if input_vector.x > 0:
@@ -108,6 +112,7 @@ func _player_movement(delta):
 	else:
 		if not alive:
 			if deathCountdown == 0:
+				emit_signal("defeat")
 				kill()
 			else:
 				deathCountdown = deathCountdown - 1
@@ -115,6 +120,7 @@ func _player_movement(delta):
 			attackCountdown -= 1
 			if attackCountdown <= 0:
 				attacking = false
+				
 
 func hurt(damage: int, type: String = ""):
 	_set_health(health - damage)

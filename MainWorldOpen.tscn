@@ -1,0 +1,4348 @@
+[gd_scene load_steps=54 format=2]
+
+[ext_resource path="res://World/DarkForest/Tree1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/UILayout/uiButtonLayout.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/Defeat/GameOverPanel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/Victory/VictoryStats.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/Enemies/MobSpawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/Swamp/Tree2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/Swamp/Bush1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/Inventory/Inventory.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Structures/MudHut.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Shared/PathFinding.tscn" type="PackedScene" id=10]
+[ext_resource path="res://World/Swamp/Bush2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Structures/MudWall.tscn" type="PackedScene" id=13]
+[ext_resource path="res://World/Swamp/Tree1.tscn" type="PackedScene" id=14]
+[ext_resource path="res://MainWorld.gd" type="Script" id=15]
+[ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=16]
+[ext_resource path="res://World/Swamp/Tree3.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Ground.gd" type="Script" id=18]
+[ext_resource path="res://World/Swamp/Mushroom2.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Structures/SmallWall.tscn" type="PackedScene" id=20]
+[ext_resource path="res://World/World.tscn" type="PackedScene" id=21]
+[ext_resource path="res://World/Swamp/TinyTree2.tscn" type="PackedScene" id=22]
+[ext_resource path="res://World/Swamp/Bush3.tscn" type="PackedScene" id=23]
+[ext_resource path="res://World/Swamp/TinyTree1.tscn" type="PackedScene" id=24]
+[ext_resource path="res://World/Swamp/Bush4.tscn" type="PackedScene" id=25]
+[ext_resource path="res://World/Swamp/Tree4.tscn" type="PackedScene" id=26]
+[ext_resource path="res://World/Swamp/TinyTree3.tscn" type="PackedScene" id=27]
+[ext_resource path="res://World/Swamp/TinyTree4.tscn" type="PackedScene" id=28]
+[ext_resource path="res://World/Swamp/MudClump2.tscn" type="PackedScene" id=29]
+[ext_resource path="res://World/Swamp/MudClump1.tscn" type="PackedScene" id=30]
+[ext_resource path="res://World/Swamp/MudClump4.tscn" type="PackedScene" id=31]
+[ext_resource path="res://World/Swamp/MudClump3.tscn" type="PackedScene" id=32]
+[ext_resource path="res://World/DarkForest/Tree3.tscn" type="PackedScene" id=33]
+[ext_resource path="res://World/DarkForest/Tree2.tscn" type="PackedScene" id=34]
+[ext_resource path="res://World/DarkForest/Tree4.tscn" type="PackedScene" id=35]
+[ext_resource path="res://World/DarkForest/Tree5.tscn" type="PackedScene" id=36]
+[ext_resource path="res://World/DarkForest/TinyTree3.tscn" type="PackedScene" id=37]
+[ext_resource path="res://World/DarkForest/TinyTree4.tscn" type="PackedScene" id=38]
+[ext_resource path="res://World/DarkForest/TinyTree2.tscn" type="PackedScene" id=39]
+[ext_resource path="res://World/DarkForest/TinyTree1.tscn" type="PackedScene" id=40]
+[ext_resource path="res://World/DarkForest/Shrub1.tscn" type="PackedScene" id=41]
+[ext_resource path="res://World/DarkForest/TreeStump4.tscn" type="PackedScene" id=42]
+[ext_resource path="res://World/DarkForest/TreeStump2.tscn" type="PackedScene" id=43]
+[ext_resource path="res://World/DarkForest/Shrub2.tscn" type="PackedScene" id=44]
+[ext_resource path="res://World/DarkForest/TreeStump1.tscn" type="PackedScene" id=45]
+[ext_resource path="res://World/DarkForest/Shrub4.tscn" type="PackedScene" id=46]
+[ext_resource path="res://World/DarkForest/Shrub3.tscn" type="PackedScene" id=47]
+[ext_resource path="res://Audio/Music/Scary/scary-atmos.wav" type="AudioStream" id=48]
+[ext_resource path="res://UI/intro.tscn" type="PackedScene" id=49]
+[ext_resource path="res://World/Swamp/Mushroom3.tscn" type="PackedScene" id=50]
+[ext_resource path="res://World/Swamp/Mushroom1.tscn" type="PackedScene" id=51]
+
+[sub_resource type="TileSet" id=1]
+
+[sub_resource type="TileSet" id=6]
+
+[node name="Main" type="Node2D"]
+
+[node name="YSort" type="YSort" parent="."]
+script = ExtResource( 15 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( -72, -34 )
+
+[node name="Camera2D" type="Camera2D" parent="YSort/Player"]
+current = true
+process_mode = 0
+smoothing_enabled = true
+drag_margin_bottom = 1.0
+script = ExtResource( 16 )
+
+[node name="Overlay" type="CanvasLayer" parent="YSort/Player/Camera2D"]
+
+[node name="Inventory" parent="YSort/Player/Camera2D/Overlay" instance=ExtResource( 8 )]
+pause_mode = 2
+visible = false
+
+[node name="GridContainer" parent="YSort/Player/Camera2D/Overlay" instance=ExtResource( 2 )]
+pause_mode = 2
+
+[node name="CanvasModulate" type="CanvasModulate" parent="YSort"]
+visible = false
+color = Color( 0, 0, 0, 1 )
+
+[node name="Ground" type="TileMap" parent="YSort" groups=["tileMap"]]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 30, 30 )
+collision_mask = 13
+occluder_light_mask = 2
+format = 1
+script = ExtResource( 18 )
+
+[node name="Structures" type="TileMap" parent="YSort" groups=["obstacles", "tileMap"]]
+tile_set = SubResource( 6 )
+cell_size = Vector2( 30, 30 )
+collision_mask = 13
+occluder_light_mask = 2
+format = 1
+tile_data = PoolIntArray( 262146, 3, 0, 262147, 3, 0, 327682, 3, 0, 327683, 3, 0, 327684, 3, 0, 327685, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 458754, 3, 0, 458755, 3, 0, 458756, 3, 0, 589827, 0, 0, 720887, 0, 0 )
+
+[node name="PathFinding" parent="YSort" instance=ExtResource( 10 )]
+visible = false
+position = Vector2( -279.073, 3.1498 )
+
+[node name="UI" type="CanvasLayer" parent="YSort"]
+
+[node name="VictoryStatsPopup" parent="YSort/UI" instance=ExtResource( 4 )]
+pause_mode = 2
+
+[node name="GameOverPopup" parent="YSort/UI" instance=ExtResource( 3 )]
+
+[node name="MusicWorld" type="AudioStreamPlayer" parent="YSort"]
+stream = ExtResource( 48 )
+volume_db = -13.697
+autoplay = true
+
+[node name="MobSpawn" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 461, -107 )
+spawn_num = 5
+
+[node name="Buildings" type="YSort" parent="YSort"]
+z_index = 1
+
+[node name="MudWall" parent="YSort/Buildings" instance=ExtResource( 13 )]
+position = Vector2( -192, -72 )
+
+[node name="MudHut" parent="YSort/Buildings" instance=ExtResource( 9 )]
+position = Vector2( -72, -110 )
+
+[node name="SmallWall" parent="YSort/Buildings" instance=ExtResource( 20 )]
+position = Vector2( 32, -40 )
+
+[node name="Objects" type="YSort" parent="YSort"]
+
+[node name="Swamp" type="YSort" parent="YSort/Objects"]
+position = Vector2( 16, 6 )
+rotation = 0.00185059
+
+[node name="Tree1" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -190, -254 )
+
+[node name="Tree2" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( 186, -155 )
+
+[node name="Tree3" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( 231, -99 )
+
+[node name="Tree4" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -424, 34 )
+
+[node name="Tree5" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3192, -1837 )
+
+[node name="Tree6" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3162, -1895 )
+
+[node name="Tree7" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3199, -1918 )
+
+[node name="Tree8" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3125, -1867 )
+
+[node name="Tree9" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3110, -1915 )
+
+[node name="Tree10" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3052, -1944 )
+
+[node name="Tree11" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3210, -1940 )
+
+[node name="Tree12" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3042, -1893 )
+
+[node name="Tree13" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3072, -1847 )
+
+[node name="Tree14" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3162, -1808 )
+
+[node name="Bush" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( 292, -54 )
+
+[node name="Bush2" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( 354, -12 )
+
+[node name="Bush3" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( 453, -76 )
+
+[node name="Bush4" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -328, -3 )
+
+[node name="Bush1" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( 255, 45 )
+
+[node name="Bush5" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( 463, 57 )
+
+[node name="Bush6" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( 96, -192 )
+
+[node name="Bush7" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( 604, -206 )
+
+[node name="TinyTree1" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3135, -1924 )
+
+[node name="TinyTree2" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3039, -1838 )
+
+[node name="Tree15" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3205, -1782 )
+
+[node name="Tree16" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -2996, -1992 )
+
+[node name="Tree17" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3130, -1766 )
+
+[node name="Bush8" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -2871, -1893 )
+
+[node name="Tree18" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3176, -1737 )
+
+[node name="Tree19" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3219, -1695 )
+
+[node name="TinyTree3" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3231, -1879 )
+
+[node name="TinyTree4" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3002, -1940 )
+
+[node name="Tree20" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -2980, -1827 )
+
+[node name="Tree21" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3107, -1828 )
+
+[node name="TinyTree5" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3156, -1936 )
+
+[node name="TinyTree6" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3140, -1836 )
+
+[node name="TinyTree7" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3171, -1862 )
+
+[node name="Tree22" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3230, -1860 )
+
+[node name="TinyTree8" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3145, -1777 )
+
+[node name="TinyTree9" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3172, -1751 )
+
+[node name="Tree23" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3218, -1757 )
+
+[node name="Tree24" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3231, -1811 )
+
+[node name="Tree25" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -2994, -1931 )
+
+[node name="Tree26" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3057, -1920 )
+
+[node name="Tree27" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -2907, -1856 )
+
+[node name="Tree28" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -2949, -1878 )
+
+[node name="Tree29" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3001, -1896 )
+
+[node name="Tree30" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2944, -1917 )
+
+[node name="TinyTree10" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3003, -1849 )
+
+[node name="Tree31" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2934, -2027 )
+
+[node name="TinyTree11" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -2979, -2024 )
+
+[node name="TinyTree12" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3022, -2003 )
+
+[node name="TinyTree13" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -2975, -2000 )
+
+[node name="Bush9" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -3015, -1824 )
+
+[node name="Bush10" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -3074, -1796 )
+
+[node name="Bush11" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -3099, -1773 )
+
+[node name="TinyTree14" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3220, -1994 )
+
+[node name="TinyTree15" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3091, -1922 )
+
+[node name="Bush12" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -3109, -1727 )
+
+[node name="TinyTree16" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3223, -1651 )
+
+[node name="TinyTree17" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3191, -1700 )
+
+[node name="Bush13" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -3198, -1648 )
+
+[node name="Bush14" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -3228, -1616 )
+
+[node name="Tree32" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -2921, -1982 )
+
+[node name="TinyTree18" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -2952, -1989 )
+
+[node name="Bush15" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -2885, -2049 )
+
+[node name="TinyTree19" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -2889, -1933 )
+
+[node name="TinyTree20" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -2879, -2006 )
+
+[node name="TinyTree21" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -2969, -1955 )
+
+[node name="Bush16" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -2983, -1930 )
+
+[node name="Tree33" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3263, -1974 )
+
+[node name="Tree34" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3275, -1922 )
+
+[node name="Tree35" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3282, -1861 )
+
+[node name="Tree36" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3274, -1809 )
+
+[node name="TinyTree22" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3237, -1889 )
+
+[node name="TinyTree23" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3211, -1874 )
+
+[node name="TinyTree24" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3082, -1875 )
+
+[node name="Bush17" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -3057, -1848 )
+
+[node name="Bush18" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -3024, -1892 )
+
+[node name="TinyTree25" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3024, -1948 )
+
+[node name="TinyTree26" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -2846, -1869 )
+
+[node name="Tree37" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -2896, -1931 )
+
+[node name="Tree38" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2868, -2000 )
+
+[node name="Tree39" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -2854, -1945 )
+
+[node name="Bush19" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -2828, -2000 )
+
+[node name="TinyTree27" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -2835, -1965 )
+
+[node name="Bush20" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -2814, -1884 )
+
+[node name="Tree40" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3303, -1834 )
+
+[node name="Tree41" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3307, -1899 )
+
+[node name="Tree42" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3294, -1950 )
+
+[node name="TinyTree28" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3257, -1874 )
+
+[node name="TinyTree29" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3250, -1941 )
+
+[node name="Tree43" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3273, -1749 )
+
+[node name="Tree44" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3286, -1775 )
+
+[node name="Tree45" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3251, -1718 )
+
+[node name="TinyTree30" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3251, -1766 )
+
+[node name="TinyTree31" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3263, -1829 )
+
+[node name="Tree46" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -2964, -1851 )
+
+[node name="TinyTree32" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -2834, -1911 )
+
+[node name="Tree47" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -2890, -1897 )
+
+[node name="Tree48" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -2929, -1950 )
+
+[node name="TinyTree33" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3041, -2014 )
+
+[node name="Tree49" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3313, -2030 )
+
+[node name="Tree50" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3267, -1670 )
+
+[node name="Tree51" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3277, -1609 )
+
+[node name="Tree52" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3318, -1572 )
+
+[node name="Tree53" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3314, -1656 )
+
+[node name="Tree54" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3340, -1733 )
+
+[node name="Tree55" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3351, -1816 )
+
+[node name="Tree56" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3350, -1910 )
+
+[node name="Tree57" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3355, -1990 )
+
+[node name="Tree58" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3346, -2081 )
+
+[node name="Tree59" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3368, -1863 )
+
+[node name="Tree60" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3396, -1946 )
+
+[node name="Tree61" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3379, -1675 )
+
+[node name="Tree62" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3384, -1770 )
+
+[node name="Tree63" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3362, -1618 )
+
+[node name="Tree64" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3183, 1436 )
+
+[node name="Tree65" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3130, 1188 )
+
+[node name="Tree66" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3128, 1396 )
+
+[node name="Tree67" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3186, 1279 )
+
+[node name="Tree68" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3197, 1150 )
+
+[node name="Tree69" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3191, 1340 )
+
+[node name="Tree70" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3136, 1253 )
+
+[node name="Tree71" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3184, 1200 )
+
+[node name="Tree72" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3137, 1470 )
+
+[node name="Tree73" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3250, 1454 )
+
+[node name="Tree74" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3031, 1472 )
+
+[node name="Tree75" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3052, 1388 )
+
+[node name="Tree76" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3083, 1436 )
+
+[node name="TinyTree34" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3168, 1386 )
+
+[node name="TinyTree35" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3118, 1298 )
+
+[node name="TinyTree36" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3162, 1237 )
+
+[node name="Tree77" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3139, 1096 )
+
+[node name="Tree78" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3081, 1220 )
+
+[node name="Tree79" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3230, 1174 )
+
+[node name="Tree80" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3216, 1251 )
+
+[node name="TinyTree37" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3233, 1215 )
+
+[node name="TinyTree38" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3204, 1236 )
+
+[node name="Tree81" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3220, 1316 )
+
+[node name="Tree82" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3219, 1371 )
+
+[node name="Tree83" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3236, 1419 )
+
+[node name="Tree84" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3220, 1462 )
+
+[node name="Tree85" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3176, 1490 )
+
+[node name="TinyTree39" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3231, 1509 )
+
+[node name="TinyTree40" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3183, 1413 )
+
+[node name="TinyTree41" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3170, 1315 )
+
+[node name="TinyTree42" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3142, 1297 )
+
+[node name="TinyTree43" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3144, 1325 )
+
+[node name="TinyTree44" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3128, 1349 )
+
+[node name="Tree86" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3069.4, 1407.68 )
+
+[node name="MudClump1" parent="YSort/Objects/Swamp/Tree86" instance=ExtResource( 30 )]
+position = Vector2( 3674.58, 1393.2 )
+
+[node name="MudClump2" parent="YSort/Objects/Swamp/Tree86" instance=ExtResource( 29 )]
+position = Vector2( 3634.6, 1401.28 )
+
+[node name="Tree1" parent="YSort/Objects/Swamp/Tree86" instance=ExtResource( 14 )]
+position = Vector2( 3845.17, -1535.12 )
+
+[node name="Tree2" parent="YSort/Objects/Swamp/Tree86" instance=ExtResource( 6 )]
+position = Vector2( 3869.25, -1487.16 )
+
+[node name="Tree3" parent="YSort/Objects/Swamp/Tree86" instance=ExtResource( 17 )]
+position = Vector2( 3805.23, -1503.04 )
+
+[node name="Tree4" parent="YSort/Objects/Swamp/Tree86" instance=ExtResource( 26 )]
+position = Vector2( 3821.31, -1455.07 )
+
+[node name="Bush21" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -3109.47, 1370.76 )
+
+[node name="Bush22" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -3061.44, 1383.67 )
+
+[node name="TinyTree45" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3136, 1381 )
+
+[node name="Bush23" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -3152, 1349 )
+
+[node name="Tree87" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3088, 1477 )
+
+[node name="TinyTree46" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3118, 1474 )
+
+[node name="TinyTree47" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3152, 1437 )
+
+[node name="Bush24" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -3160, 1429 )
+
+[node name="Tree88" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3112, 1125 )
+
+[node name="Tree89" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3152, 1157 )
+
+[node name="Tree90" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3080, 1165 )
+
+[node name="Tree91" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3112, 1061 )
+
+[node name="Tree92" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3072, 1093 )
+
+[node name="Tree93" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3040, 1133 )
+
+[node name="Tree94" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3032, 1189 )
+
+[node name="TinyTree48" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3048, 1173 )
+
+[node name="TinyTree49" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3048, 1229 )
+
+[node name="TinyTree50" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3104, 1253 )
+
+[node name="Tree95" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3008, 1349 )
+
+[node name="Tree96" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -2992, 1389 )
+
+[node name="Tree97" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3016, 1421 )
+
+[node name="Tree98" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3000, 1445 )
+
+[node name="TinyTree51" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3000, 1309 )
+
+[node name="Bush25" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -3032, 1349 )
+
+[node name="Tree99" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2984, 1165 )
+
+[node name="Tree100" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3024, 1061 )
+
+[node name="TinyTree52" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3072, 1045 )
+
+[node name="TinyTree53" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3040, 1013 )
+
+[node name="Bush26" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -3088, 1029 )
+
+[node name="Bush27" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -3048, 1045 )
+
+[node name="Bush28" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -3168, 1085 )
+
+[node name="Tree101" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3000, 1101 )
+
+[node name="Tree102" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -2952, 1429 )
+
+[node name="Tree103" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2968, 1325 )
+
+[node name="TinyTree54" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3008, 1005 )
+
+[node name="Tree104" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2920, 1069 )
+
+[node name="TinyTree55" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -2968, 1093 )
+
+[node name="TinyTree56" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -2952, 1125 )
+
+[node name="Bush29" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -3016, 1045 )
+
+[node name="Tree105" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -2928, 1357 )
+
+[node name="Tree106" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -2848, 1381 )
+
+[node name="Tree107" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -2928, 1121 )
+
+[node name="Tree108" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -2880, 901 )
+
+[node name="Tree109" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2952, 965 )
+
+[node name="TinyTree57" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -2920, 941 )
+
+[node name="Tree110" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3280, 1229 )
+
+[node name="Tree111" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3280, 1293 )
+
+[node name="Tree112" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3280, 1357 )
+
+[node name="Tree113" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3280, 1429 )
+
+[node name="Tree114" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3288, 1493 )
+
+[node name="TinyTree58" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3256, 1237 )
+
+[node name="TinyTree59" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -3248, 1285 )
+
+[node name="Tree115" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3320, 1277 )
+
+[node name="Tree116" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3328, 1333 )
+
+[node name="Tree117" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3320, 1405 )
+
+[node name="Tree118" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3336, 1461 )
+
+[node name="Tree119" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3392, 1269 )
+
+[node name="Tree120" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3416, 1349 )
+
+[node name="Tree121" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3424, 1421 )
+
+[node name="Tree122" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3368, 1501 )
+
+[node name="Tree123" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3368, 1381 )
+
+[node name="TinyTree60" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3352, 1237 )
+
+[node name="Tree124" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3432, 1485 )
+
+[node name="Tree125" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3440, 1541 )
+
+[node name="Tree126" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3440, 1237 )
+
+[node name="Tree127" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3464, 1301 )
+
+[node name="Tree128" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3544, 1237 )
+
+[node name="Tree129" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3504, 1581 )
+
+[node name="TinyTree61" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -3472, 1453 )
+
+[node name="Tree130" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3488, 1173 )
+
+[node name="TinyTree62" parent="YSort/Objects/Swamp" instance=ExtResource( 27 )]
+position = Vector2( -312, -211 )
+
+[node name="TinyTree63" parent="YSort/Objects/Swamp" instance=ExtResource( 28 )]
+position = Vector2( 120, 5 )
+
+[node name="MudClump1" parent="YSort/Objects/Swamp" instance=ExtResource( 30 )]
+position = Vector2( -296.135, -72.4521 )
+
+[node name="MudClump2" parent="YSort/Objects/Swamp" instance=ExtResource( 29 )]
+position = Vector2( -312, -123 )
+
+[node name="MudClump5" parent="YSort/Objects/Swamp" instance=ExtResource( 31 )]
+position = Vector2( 584, 2781 )
+
+[node name="MudClump6" parent="YSort/Objects/Swamp" instance=ExtResource( 32 )]
+position = Vector2( 568, 2789 )
+
+[node name="MudClump7" parent="YSort/Objects/Swamp" instance=ExtResource( 31 )]
+position = Vector2( 592, 2789 )
+
+[node name="MudClump8" parent="YSort/Objects/Swamp" instance=ExtResource( 32 )]
+position = Vector2( 608, 2797 )
+
+[node name="MudClump9" parent="YSort/Objects/Swamp" instance=ExtResource( 29 )]
+position = Vector2( 584, 2805 )
+
+[node name="MudClump10" parent="YSort/Objects/Swamp" instance=ExtResource( 30 )]
+position = Vector2( 568, 2797 )
+
+[node name="MudClump11" parent="YSort/Objects/Swamp" instance=ExtResource( 30 )]
+position = Vector2( 520, 2780 )
+
+[node name="MudClump12" parent="YSort/Objects/Swamp" instance=ExtResource( 29 )]
+position = Vector2( 536, 2836 )
+
+[node name="MudClump13" parent="YSort/Objects/Swamp" instance=ExtResource( 30 )]
+position = Vector2( 600, 2740 )
+
+[node name="MudClump14" parent="YSort/Objects/Swamp" instance=ExtResource( 29 )]
+position = Vector2( 624, 2836 )
+
+[node name="MudClump15" parent="YSort/Objects/Swamp" instance=ExtResource( 30 )]
+position = Vector2( 640, 2772 )
+
+[node name="MudClump16" parent="YSort/Objects/Swamp" instance=ExtResource( 29 )]
+position = Vector2( 576, 2796 )
+
+[node name="MudClump17" parent="YSort/Objects/Swamp" instance=ExtResource( 30 )]
+position = Vector2( 592, 2796 )
+
+[node name="MudClump20" parent="YSort/Objects/Swamp" instance=ExtResource( 30 )]
+position = Vector2( 38, 120 )
+
+[node name="MudClump22" parent="YSort/Objects/Swamp" instance=ExtResource( 29 )]
+position = Vector2( 38, -296 )
+
+[node name="MudClump23" parent="YSort/Objects/Swamp" instance=ExtResource( 32 )]
+position = Vector2( 118, -280 )
+
+[node name="MudClump3" parent="YSort/Objects/Swamp" instance=ExtResource( 29 )]
+position = Vector2( 166, 80 )
+
+[node name="TinyTree64" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -402, -48 )
+
+[node name="Tree131" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -1138, 696 )
+
+[node name="Tree132" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -1106, 720 )
+
+[node name="Tree133" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -1154, 736 )
+
+[node name="Tree134" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -1098, 760 )
+
+[node name="Tree135" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -1066, 672 )
+
+[node name="Tree136" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -1042, 712 )
+
+[node name="Tree137" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -1042, 752 )
+
+[node name="TinyTree65" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -1074, 712 )
+
+[node name="TinyTree66" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -1098, 672 )
+
+[node name="TinyTree67" parent="YSort/Objects/Swamp" instance=ExtResource( 27 )]
+position = Vector2( -1146, 768 )
+
+[node name="Tree138" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -1018, 664 )
+
+[node name="Tree139" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -994, 704 )
+
+[node name="Tree140" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -1002, 744 )
+
+[node name="Tree141" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -1194, 696 )
+
+[node name="TinyTree68" parent="YSort/Objects/Swamp" instance=ExtResource( 28 )]
+position = Vector2( -1154, 672 )
+
+[node name="TinyTree69" parent="YSort/Objects/Swamp" instance=ExtResource( 27 )]
+position = Vector2( -1026, 776 )
+
+[node name="TinyTree70" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -1074, 784 )
+
+[node name="MudClump4" parent="YSort/Objects/Swamp" instance=ExtResource( 31 )]
+position = Vector2( -818, 672 )
+
+[node name="TinyTree71" parent="YSort/Objects/Swamp" instance=ExtResource( 27 )]
+position = Vector2( -946, 680 )
+
+[node name="Bush30" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -906, 672 )
+
+[node name="Bush31" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -1282, 720 )
+
+[node name="Bush32" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -1298, 672 )
+
+[node name="Bush33" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -1330, 712 )
+
+[node name="Tree142" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -882, 800 )
+
+[node name="Tree143" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -858, 832 )
+
+[node name="Tree144" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -914, 840 )
+
+[node name="Tree145" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -786, 840 )
+
+[node name="Tree146" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -818, 880 )
+
+[node name="TinyTree72" parent="YSort/Objects/Swamp" instance=ExtResource( 28 )]
+position = Vector2( -882, 880 )
+
+[node name="TinyTree73" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -826, 808 )
+
+[node name="TinyTree74" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -1014.45, 835.879 )
+
+[node name="Bush34" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -978, 800 )
+
+[node name="MudClump18" parent="YSort/Objects/Swamp" instance=ExtResource( 32 )]
+position = Vector2( -786, 768 )
+
+[node name="MudClump19" parent="YSort/Objects/Swamp" instance=ExtResource( 30 )]
+position = Vector2( -554, -136 )
+
+[node name="MudClump21" parent="YSort/Objects/Swamp" instance=ExtResource( 29 )]
+position = Vector2( -530, -88 )
+
+[node name="TinyTree75" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -570, -224 )
+
+[node name="TinyTree76" parent="YSort/Objects/Swamp" instance=ExtResource( 27 )]
+position = Vector2( -658, -120 )
+
+[node name="Tree147" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -658, -24 )
+
+[node name="Tree148" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -592.005, -1.90444 )
+
+[node name="Tree149" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -1258, 968 )
+
+[node name="TinyTree77" parent="YSort/Objects/Swamp" instance=ExtResource( 28 )]
+position = Vector2( -1122, 1080 )
+
+[node name="Tree150" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -1314, 1008 )
+
+[node name="Tree151" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -1250, 1024 )
+
+[node name="TinyTree78" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -1282, 1008 )
+
+[node name="TinyTree79" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -1202, 976 )
+
+[node name="TinyTree80" parent="YSort/Objects/Swamp" instance=ExtResource( 27 )]
+position = Vector2( -1346, 952 )
+
+[node name="TinyTree81" parent="YSort/Objects/Swamp" instance=ExtResource( 28 )]
+position = Vector2( -1322, 1064 )
+
+[node name="Tree152" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -1026, 1024 )
+
+[node name="Bush35" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -1042, 784 )
+
+[node name="Bush36" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -1018, 704 )
+
+[node name="Bush37" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -1186, 736 )
+
+[node name="Bush38" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -1162, 768 )
+
+[node name="Bush39" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -994, 664 )
+
+[node name="TinyTree82" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -978, 728 )
+
+[node name="Bush40" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -930, 704 )
+
+[node name="Tree153" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -882, 824 )
+
+[node name="Tree154" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -858, 856 )
+
+[node name="Tree155" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -826, 816 )
+
+[node name="Bush41" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -858, 888 )
+
+[node name="Bush42" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -914, 872 )
+
+[node name="Bush43" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -786, 872 )
+
+[node name="Bush44" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -802, 816 )
+
+[node name="TinyTree83" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -746, 848 )
+
+[node name="MudClump24" parent="YSort/Objects/Swamp" instance=ExtResource( 32 )]
+position = Vector2( -1014.32, 909.879 )
+
+[node name="MudClump25" parent="YSort/Objects/Swamp" instance=ExtResource( 30 )]
+position = Vector2( -706, 848 )
+
+[node name="TinyTree84" parent="YSort/Objects/Swamp" instance=ExtResource( 27 )]
+position = Vector2( -858, 920 )
+
+[node name="TinyTree85" parent="YSort/Objects/Swamp" instance=ExtResource( 28 )]
+position = Vector2( -874, 944 )
+
+[node name="TinyTree86" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -826, 968 )
+
+[node name="MudClump26" parent="YSort/Objects/Swamp" instance=ExtResource( 32 )]
+position = Vector2( -734.157, 996.36 )
+
+[node name="Tree156" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -850, 936 )
+
+[node name="TinyTree87" parent="YSort/Objects/Swamp" instance=ExtResource( 28 )]
+position = Vector2( -950.168, 990.76 )
+
+[node name="MudClump27" parent="YSort/Objects/Swamp" instance=ExtResource( 29 )]
+position = Vector2( -1090, 928 )
+
+[node name="Tree157" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -1122, 936 )
+
+[node name="Tree158" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -1106, 960 )
+
+[node name="Tree159" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -1338, 816 )
+
+[node name="Tree160" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -1306, 840 )
+
+[node name="Bush45" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -1066, 752 )
+
+[node name="Bush46" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -1122, 760 )
+
+[node name="Bush47" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -1082, 672 )
+
+[node name="Bush48" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -1066, 712 )
+
+[node name="Bush49" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -1170, 696 )
+
+[node name="Bush50" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -930, 840 )
+
+[node name="Bush51" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -866, 904 )
+
+[node name="Bush52" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -802, 880 )
+
+[node name="Bush53" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -770, 848 )
+
+[node name="Bush54" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -858, 792 )
+
+[node name="TinyTree88" parent="YSort/Objects/Swamp" instance=ExtResource( 28 )]
+position = Vector2( -1130, 960 )
+
+[node name="Bush55" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -1130, 984 )
+
+[node name="Bush56" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -1090, 968 )
+
+[node name="Bush57" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -1106, 1032 )
+
+[node name="Bush58" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -1162, 1096 )
+
+[node name="TinyTree89" parent="YSort/Objects/Swamp" instance=ExtResource( 28 )]
+position = Vector2( -1042, 1056 )
+
+[node name="MudClump28" parent="YSort/Objects/Swamp" instance=ExtResource( 32 )]
+position = Vector2( -918.029, 1065.7 )
+
+[node name="Bush59" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -1014.01, 1075.88 )
+
+[node name="Tree161" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -1258, 1000 )
+
+[node name="Bush60" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -1274, 1056 )
+
+[node name="Bush61" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -1298, 1048 )
+
+[node name="Bush62" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -1346, 976 )
+
+[node name="Bush63" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -1194, 1000 )
+
+[node name="Tree162" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -1338, 856 )
+
+[node name="TinyTree90" parent="YSort/Objects/Swamp" instance=ExtResource( 27 )]
+position = Vector2( -1330, 880 )
+
+[node name="Bush64" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -1362, 888 )
+
+[node name="Bush65" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -1306, 872 )
+
+[node name="MudClump29" parent="YSort/Objects/Swamp" instance=ExtResource( 31 )]
+position = Vector2( -1414.07, 1043.62 )
+
+[node name="MudClump30" parent="YSort/Objects/Swamp" instance=ExtResource( 30 )]
+position = Vector2( -1302.32, 910.412 )
+
+[node name="MudClump31" parent="YSort/Objects/Swamp" instance=ExtResource( 32 )]
+position = Vector2( -1414.78, 662.619 )
+
+[node name="MudClump32" parent="YSort/Objects/Swamp" instance=ExtResource( 31 )]
+position = Vector2( -1194, 816 )
+
+[node name="TinyTree91" parent="YSort/Objects/Swamp" instance=ExtResource( 28 )]
+position = Vector2( -1362, 976 )
+
+[node name="MudClump33" parent="YSort/Objects/Swamp" instance=ExtResource( 30 )]
+position = Vector2( -818, 512 )
+
+[node name="Tree163" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -1034, 432 )
+
+[node name="Tree164" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -938, 472 )
+
+[node name="Tree165" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -986, 512 )
+
+[node name="Tree166" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -898, 544 )
+
+[node name="Bush66" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -1058, 464 )
+
+[node name="TinyTree92" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -1034, 464 )
+
+[node name="TinyTree93" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -954, 504 )
+
+[node name="TinyTree94" parent="YSort/Objects/Swamp" instance=ExtResource( 27 )]
+position = Vector2( -994, 448 )
+
+[node name="TinyTree95" parent="YSort/Objects/Swamp" instance=ExtResource( 28 )]
+position = Vector2( -922, 536 )
+
+[node name="MudClump34" parent="YSort/Objects/Swamp" instance=ExtResource( 31 )]
+position = Vector2( -1106, 584 )
+
+[node name="Bush67" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -986, 552 )
+
+[node name="Bush68" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -946, 528 )
+
+[node name="Bush69" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -986, 472 )
+
+[node name="Bush70" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -890, 576 )
+
+[node name="Bush71" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -906, 488 )
+
+[node name="Bush72" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -1010, 448 )
+
+[node name="Tree167" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -1098, 696 )
+
+[node name="Tree168" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -1018, 688 )
+
+[node name="Bush73" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -1098, 792 )
+
+[node name="TinyTree96" parent="YSort/Objects/Swamp" instance=ExtResource( 28 )]
+position = Vector2( -2234, 1520 )
+
+[node name="Tree169" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2250, 1520 )
+
+[node name="Tree170" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2234, 1560 )
+
+[node name="Tree171" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3386, 1416 )
+
+[node name="Tree172" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3330, 1512 )
+
+[node name="Tree173" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3394, 1536 )
+
+[node name="Tree174" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3386, 1448 )
+
+[node name="Bush74" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -3370, 1544 )
+
+[node name="Bush75" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -3250, 1496 )
+
+[node name="Tree175" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -3322, 1368 )
+
+[node name="Tree176" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -3370, 1296 )
+
+[node name="Tree177" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -3250, 1344 )
+
+[node name="Tree178" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -3466, 1464 )
+
+[node name="Tree179" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2746, 1576 )
+
+[node name="Tree180" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -2778, 1624 )
+
+[node name="TinyTree97" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -2746, 1616 )
+
+[node name="Bush76" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -2730, 1592 )
+
+[node name="Bush77" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -2754, 1664 )
+
+[node name="Tree181" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2818, 1664 )
+
+[node name="Tree182" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -2786, 1672 )
+
+[node name="Tree183" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -2834, 1696 )
+
+[node name="Tree184" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -2778, 1712 )
+
+[node name="Tree185" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2730, 1656 )
+
+[node name="Tree186" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -2722, 1696 )
+
+[node name="Tree187" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2730, 1736 )
+
+[node name="TinyTree98" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -2746, 1696 )
+
+[node name="TinyTree99" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -2810, 1736 )
+
+[node name="Tree188" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2858, 1664 )
+
+[node name="TinyTree100" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -2778, 1752 )
+
+[node name="Tree189" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2674, 1240 )
+
+[node name="Tree190" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -2650, 1272 )
+
+[node name="TinyTree101" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -2690, 1280 )
+
+[node name="Bush78" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -2650, 1304 )
+
+[node name="TinyTree102" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -2642, 1240 )
+
+[node name="Bush79" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -2626, 1272 )
+
+[node name="Bush80" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -2682, 1296 )
+
+[node name="TinyTree103" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -2866, 1112 )
+
+[node name="Bush81" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -2858, 1136 )
+
+[node name="Tree191" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2858, 1928 )
+
+[node name="Tree192" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -2834, 1952 )
+
+[node name="Tree193" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( -2818, 1904 )
+
+[node name="Tree194" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -2802, 1992 )
+
+[node name="TinyTree104" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -2810, 1944 )
+
+[node name="Bush82" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -2794, 1944 )
+
+[node name="Bush83" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -2882, 1928 )
+
+[node name="Bush84" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -2834, 1992 )
+
+[node name="Tree195" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -2778, 1872 )
+
+[node name="MudClump35" parent="YSort/Objects/Swamp" instance=ExtResource( 30 )]
+position = Vector2( -2620.78, 1742.85 )
+
+[node name="TinyTree105" parent="YSort/Objects/Swamp" instance=ExtResource( 24 )]
+position = Vector2( -402, 64 )
+
+[node name="TinyTree106" parent="YSort/Objects/Swamp" instance=ExtResource( 28 )]
+position = Vector2( -378, 40 )
+
+[node name="Tree196" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -370, 64 )
+
+[node name="Tree197" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( -351.648, 190.651 )
+
+[node name="Tree198" parent="YSort/Objects/Swamp" instance=ExtResource( 26 )]
+position = Vector2( -98, 192 )
+
+[node name="TinyTree107" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( -74, 184 )
+
+[node name="TinyTree108" parent="YSort/Objects/Swamp" instance=ExtResource( 27 )]
+position = Vector2( -82, 216 )
+
+[node name="Bush85" parent="YSort/Objects/Swamp" instance=ExtResource( 7 )]
+position = Vector2( -346, 80 )
+
+[node name="Bush86" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( -394, 104 )
+
+[node name="Bush87" parent="YSort/Objects/Swamp" instance=ExtResource( 23 )]
+position = Vector2( -106, 224 )
+
+[node name="Bush88" parent="YSort/Objects/Swamp" instance=ExtResource( 25 )]
+position = Vector2( -50, 200 )
+
+[node name="MudClump36" parent="YSort/Objects/Swamp" instance=ExtResource( 30 )]
+position = Vector2( 62, 232 )
+
+[node name="MudClump37" parent="YSort/Objects/Swamp" instance=ExtResource( 31 )]
+position = Vector2( -882, 344 )
+
+[node name="MudClump38" parent="YSort/Objects/Swamp" instance=ExtResource( 32 )]
+position = Vector2( 30, 680 )
+
+[node name="MudClump39" parent="YSort/Objects/Swamp" instance=ExtResource( 31 )]
+position = Vector2( 969.142, 616.208 )
+
+[node name="MudClump40" parent="YSort/Objects/Swamp" instance=ExtResource( 32 )]
+position = Vector2( 1184, 32 )
+
+[node name="Tree199" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( 1320, 184 )
+
+[node name="Tree200" parent="YSort/Objects/Swamp" instance=ExtResource( 17 )]
+position = Vector2( 1288, 216 )
+
+[node name="Tree201" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( 1264.45, 242.66 )
+
+[node name="TinyTree109" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( 1256.4, 213.675 )
+
+[node name="TinyTree110" parent="YSort/Objects/Swamp" instance=ExtResource( 27 )]
+position = Vector2( 1304.5, 269.586 )
+
+[node name="MudClump41" parent="YSort/Objects/Swamp" instance=ExtResource( 32 )]
+position = Vector2( 880.596, 321.371 )
+
+[node name="Bush89" parent="YSort/Objects/Swamp" instance=ExtResource( 11 )]
+position = Vector2( 1232.46, 248.72 )
+
+[node name="TinyTree111" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+position = Vector2( 784.924, 498.548 )
+
+[node name="MudClump42" parent="YSort/Objects/Swamp" instance=ExtResource( 29 )]
+position = Vector2( 1048.92, 498.06 )
+
+[node name="MudClump43" parent="YSort/Objects/Swamp" instance=ExtResource( 31 )]
+position = Vector2( 448.093, 590.172 )
+
+[node name="Tree202" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( 424.828, 447.215 )
+
+[node name="Tree203" parent="YSort/Objects/Swamp" instance=ExtResource( 6 )]
+position = Vector2( 760.863, 465.593 )
+
+[node name="Tree204" parent="YSort/Objects/Swamp" instance=ExtResource( 14 )]
+position = Vector2( -565.425, 1392.05 )
+
+[node name="Mushroom3" parent="YSort/Objects/Swamp" instance=ExtResource( 50 )]
+position = Vector2( 655.455, -295.214 )
+
+[node name="Mushroom2" parent="YSort/Objects/Swamp" instance=ExtResource( 19 )]
+position = Vector2( -1238.35, 892.293 )
+
+[node name="Mushroom1" parent="YSort/Objects/Swamp" instance=ExtResource( 51 )]
+position = Vector2( -2814.6, 759.21 )
+
+[node name="Mushroom4" parent="YSort/Objects/Swamp" instance=ExtResource( 19 )]
+position = Vector2( -175.271, 394.325 )
+
+[node name="DarkForest" type="YSort" parent="YSort/Objects"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Tree1" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2936, 1360 )
+
+[node name="Tree2" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2904, 1328 )
+
+[node name="Tree4" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2920, 1400 )
+
+[node name="Tree5" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 2960, 1384 )
+
+[node name="Tree3" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2960, 1328 )
+
+[node name="Tree6" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2960, 1416 )
+
+[node name="Tree7" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 2920, 1440 )
+
+[node name="Tree8" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2984, 1352 )
+
+[node name="Tree9" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3000, 1392 )
+
+[node name="Tree10" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2936, 1304 )
+
+[node name="Tree11" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2976, 1432 )
+
+[node name="Tree12" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2904, 1472 )
+
+[node name="Tree13" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2944, 1456 )
+
+[node name="Tree14" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 2992, 1456 )
+
+[node name="Tree15" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2872, 1232 )
+
+[node name="Tree16" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2832, 1264 )
+
+[node name="Tree17" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 2936, 1136 )
+
+[node name="Tree18" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2960, 1152 )
+
+[node name="Tree19" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2952, 1104 )
+
+[node name="Tree20" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2920, 1088 )
+
+[node name="Tree21" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3024, 1352 )
+
+[node name="TinyTree1" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2792, 1248 )
+
+[node name="TinyTree2" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2864, 1296 )
+
+[node name="Tree22" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2904, 1272 )
+
+[node name="Tree23" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3152, 1336 )
+
+[node name="Tree24" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3120, 1320 )
+
+[node name="Tree25" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3152, 1296 )
+
+[node name="Tree26" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3136, 1280 )
+
+[node name="Tree27" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3160, 1256 )
+
+[node name="TinyTree3" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3136, 1232 )
+
+[node name="TinyTree4" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3112, 1264 )
+
+[node name="TinyTree5" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2968, 1248 )
+
+[node name="Tree28" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3200, 1232 )
+
+[node name="TinyTree6" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3176, 1288 )
+
+[node name="Tree29" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3184, 1368 )
+
+[node name="Tree30" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 2936, 1560 )
+
+[node name="Tree31" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2968, 1536 )
+
+[node name="Tree32" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2920, 1528 )
+
+[node name="Tree33" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2944, 1504 )
+
+[node name="Tree34" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2984, 1496 )
+
+[node name="TinyTree7" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 2880, 1512 )
+
+[node name="TinyTree8" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 2832, 1536 )
+
+[node name="Tree35" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3048, 1512 )
+
+[node name="Tree36" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3032, 1416 )
+
+[node name="Tree37" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3136, 1008 )
+
+[node name="Tree38" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3104, 1040 )
+
+[node name="Tree39" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3128, 1064 )
+
+[node name="Tree40" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3144, 1104 )
+
+[node name="TinyTree9" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3120, 1168 )
+
+[node name="TinyTree10" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3096, 1104 )
+
+[node name="Tree41" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3176, 1048 )
+
+[node name="Tree42" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3000, 1624 )
+
+[node name="Tree43" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3040, 1728 )
+
+[node name="Tree44" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3008, 1672 )
+
+[node name="TinyTree11" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2952, 1624 )
+
+[node name="TinyTree12" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2864, 1720 )
+
+[node name="Tree45" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3000, 840 )
+
+[node name="Tree46" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3176, 928 )
+
+[node name="Tree47" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3144, 896 )
+
+[node name="Tree48" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3176, 872 )
+
+[node name="Tree49" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3208, 840 )
+
+[node name="Tree50" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3168, 816 )
+
+[node name="Tree51" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3208, 792 )
+
+[node name="TinyTree13" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3160, 784 )
+
+[node name="Tree52" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3264, 856 )
+
+[node name="Tree53" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3200, 744 )
+
+[node name="TinyTree14" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2968, 832 )
+
+[node name="Tree54" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3056, 1592 )
+
+[node name="Tree55" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2840, 1760 )
+
+[node name="TinyTree15" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2800, 1752 )
+
+[node name="Tree56" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2776, 1896 )
+
+[node name="Tree57" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2752, 1928 )
+
+[node name="Tree58" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2792, 1944 )
+
+[node name="TinyTree16" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2696, 1792 )
+
+[node name="TinyTree17" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2856, 1632 )
+
+[node name="TinyTree18" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2808, 1488 )
+
+[node name="TreeStrump4" parent="YSort/Objects/DarkForest" instance=ExtResource( 42 )]
+position = Vector2( 3000, 1840 )
+
+[node name="TreeStrump2" parent="YSort/Objects/DarkForest" instance=ExtResource( 43 )]
+position = Vector2( 3024, 1944 )
+
+[node name="TinyTree19" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2672, 1944 )
+
+[node name="TinyTree20" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 2640, 2000 )
+
+[node name="Tree59" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2792, 1976 )
+
+[node name="Tree60" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2760, 1960 )
+
+[node name="Tree61" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2800, 1872 )
+
+[node name="Tree62" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 2744, 2104 )
+
+[node name="Tree63" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2720, 2128 )
+
+[node name="Tree64" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2752, 2152 )
+
+[node name="Tree65" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2704, 2168 )
+
+[node name="Tree66" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2704, 1976 )
+
+[node name="Tree67" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2680, 2008 )
+
+[node name="Tree68" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2720, 1904 )
+
+[node name="Tree69" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2800, 1800 )
+
+[node name="Tree70" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2816, 1776 )
+
+[node name="Tree71" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2896, 1704 )
+
+[node name="Tree72" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2872, 1736 )
+
+[node name="Tree73" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2864, 1520 )
+
+[node name="Tree74" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2904, 1168 )
+
+[node name="Tree75" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2848, 1904 )
+
+[node name="Tree76" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2672, 2192 )
+
+[node name="TinyTree21" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2672, 2112 )
+
+[node name="Tree77" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3088, 888 )
+
+[node name="Tree78" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3096, 520 )
+
+[node name="Tree79" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3064, 544 )
+
+[node name="Tree80" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3104, 560 )
+
+[node name="Tree81" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3048, 584 )
+
+[node name="Tree82" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3088, 600 )
+
+[node name="Tree83" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3256, 560 )
+
+[node name="TinyTree22" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3024, 536 )
+
+[node name="TinyTree23" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2976, 608 )
+
+[node name="Tree84" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3040, 632 )
+
+[node name="Tree85" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3080, 632 )
+
+[node name="Tree86" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3024, 656 )
+
+[node name="Tree87" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3128, 488 )
+
+[node name="Tree88" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3288, 528 )
+
+[node name="Tree89" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3296, 584 )
+
+[node name="Tree90" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3312, 552 )
+
+[node name="Tree91" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3232, 696 )
+
+[node name="Shrub1" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2944, 664 )
+
+[node name="Shrub2" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2976, 560 )
+
+[node name="TinyTree24" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3016, 472 )
+
+[node name="TreeStrump3" parent="YSort/Objects/DarkForest" instance=ExtResource( 43 )]
+position = Vector2( 2896, 864 )
+
+[node name="Tree92" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3016, 872 )
+
+[node name="Tree93" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3072, 968 )
+
+[node name="Shrub3" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2792, 976 )
+
+[node name="Tree94" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3072, 1296 )
+
+[node name="TreeStump1" parent="YSort/Objects/DarkForest" instance=ExtResource( 45 )]
+position = Vector2( 2504, 2400 )
+
+[node name="Tree95" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2592, 2328 )
+
+[node name="Tree96" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2712, 2256 )
+
+[node name="Tree97" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2576, 2240 )
+
+[node name="Tree98" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2640, 2216 )
+
+[node name="Tree99" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 2952, 1848 )
+
+[node name="Tree100" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3064, 1336 )
+
+[node name="TinyTree25" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3200, 1216 )
+
+[node name="Tree101" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3000, 1288 )
+
+[node name="Shrub4" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3000, 1200 )
+
+[node name="TreeStump2" parent="YSort/Objects/DarkForest" instance=ExtResource( 45 )]
+position = Vector2( 2936, 1248 )
+
+[node name="Tree102" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2552, 2456 )
+
+[node name="Tree103" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2520, 2440 )
+
+[node name="Tree104" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2592, 2488 )
+
+[node name="Tree105" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2648, 2384 )
+
+[node name="Tree106" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2632, 2416 )
+
+[node name="Tree107" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2616, 2440 )
+
+[node name="Tree108" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2664, 2416 )
+
+[node name="Tree109" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2608, 2344 )
+
+[node name="Tree110" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2696, 2280 )
+
+[node name="Tree111" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2672, 2312 )
+
+[node name="TinyTree26" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2632, 2336 )
+
+[node name="Shrub5" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2544, 2312 )
+
+[node name="Shrub6" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 2552, 2344 )
+
+[node name="TreeStrump5" parent="YSort/Objects/DarkForest" instance=ExtResource( 43 )]
+position = Vector2( 2896, 2088 )
+
+[node name="Tree112" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2824, 2088 )
+
+[node name="Tree113" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2832, 2032 )
+
+[node name="Tree114" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2880, 2040 )
+
+[node name="Tree115" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2640, 2544 )
+
+[node name="Tree116" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2616, 2520 )
+
+[node name="TreeStump3" parent="YSort/Objects/DarkForest" instance=ExtResource( 45 )]
+position = Vector2( 2816, 2512 )
+
+[node name="Shrub7" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2472, 2520 )
+
+[node name="TinyTree27" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2456, 2488 )
+
+[node name="TinyTree28" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 2368, 2480 )
+
+[node name="Shrub8" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2336, 2504 )
+
+[node name="TreeStump4" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 2424, 2464 )
+
+[node name="Tree117" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2736, 2696 )
+
+[node name="Tree118" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2760, 2664 )
+
+[node name="Tree119" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2704, 2712 )
+
+[node name="Tree120" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2792, 2696 )
+
+[node name="Tree121" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 2768, 2720 )
+
+[node name="Tree122" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2800, 2632 )
+
+[node name="Tree123" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2824, 2664 )
+
+[node name="TinyTree29" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2824, 2656 )
+
+[node name="TinyTree30" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2672, 2720 )
+
+[node name="Tree124" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2288, 2736 )
+
+[node name="Tree125" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2320, 2784 )
+
+[node name="Tree126" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2256, 2824 )
+
+[node name="Tree127" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 1936, 2808 )
+
+[node name="TinyTree31" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 1872, 2808 )
+
+[node name="Shrub9" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 1744, 2704 )
+
+[node name="Tree128" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2224, 2856 )
+
+[node name="TinyTree32" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 2168, 2856 )
+
+[node name="Shrub10" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 2120, 2840 )
+
+[node name="Shrub11" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2408, 2840 )
+
+[node name="TinyTree33" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2360, 2832 )
+
+[node name="Tree129" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2728, 2744 )
+
+[node name="Tree130" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2864, 2848 )
+
+[node name="Tree131" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2880, 2816 )
+
+[node name="Tree132" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2840, 2560 )
+
+[node name="Tree133" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2768, 2504 )
+
+[node name="Tree134" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2688, 2552 )
+
+[node name="Tree135" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2880, 2736 )
+
+[node name="Tree136" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2912, 2680 )
+
+[node name="Tree137" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2728, 2864 )
+
+[node name="Tree138" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2768, 2816 )
+
+[node name="TinyTree34" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2760, 2864 )
+
+[node name="TinyTree35" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2744, 2848 )
+
+[node name="TreeStump5" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 2816, 2848 )
+
+[node name="Tree139" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2848, 2776 )
+
+[node name="TinyTree36" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2840, 2720 )
+
+[node name="Tree140" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2904, 2880 )
+
+[node name="Tree141" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2816, 2536 )
+
+[node name="Tree142" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2736, 2520 )
+
+[node name="Shrub12" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2752, 2592 )
+
+[node name="TreeStump6" parent="YSort/Objects/DarkForest" instance=ExtResource( 45 )]
+position = Vector2( 2712, 2616 )
+
+[node name="TinyTree37" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2656, 2456 )
+
+[node name="TinyTree38" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2592, 2400 )
+
+[node name="Shrub13" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2640, 2304 )
+
+[node name="Shrub14" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2656, 2152 )
+
+[node name="Tree143" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2648, 2048 )
+
+[node name="Tree144" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2784, 2064 )
+
+[node name="TinyTree39" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2768, 2200 )
+
+[node name="TinyTree40" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2808, 2144 )
+
+[node name="Shrub15" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2800, 2776 )
+
+[node name="Shrub16" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 2448, 2128 )
+
+[node name="Shrub17" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2608, 2168 )
+
+[node name="Tree145" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2984, 2904 )
+
+[node name="Tree146" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3048, 2808 )
+
+[node name="Shrub18" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2736, 2792 )
+
+[node name="TinyTree41" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2728, 2936 )
+
+[node name="Tree147" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2768, 2536 )
+
+[node name="Shrub19" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2632, 2728 )
+
+[node name="TinyTree42" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 2608, 2760 )
+
+[node name="Tree148" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 2832, 2808 )
+
+[node name="Tree149" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2800, 2776 )
+
+[node name="Tree150" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2816, 2728 )
+
+[node name="Tree151" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2776, 2744 )
+
+[node name="Tree152" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2864, 2696 )
+
+[node name="Tree153" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2952, 2840 )
+
+[node name="Tree154" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2960, 2584 )
+
+[node name="Tree155" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2784, 2416 )
+
+[node name="Tree156" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2840, 2320 )
+
+[node name="Tree157" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2840, 2384 )
+
+[node name="Tree158" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2912, 2520 )
+
+[node name="Tree159" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2776, 2288 )
+
+[node name="Tree160" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2904, 2336 )
+
+[node name="Tree161" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2952, 2272 )
+
+[node name="Tree162" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3000, 2208 )
+
+[node name="Tree163" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2608, 2376 )
+
+[node name="Tree164" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2592, 2408 )
+
+[node name="Tree165" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2792, 2568 )
+
+[node name="Tree166" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2800, 2592 )
+
+[node name="Tree167" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2736, 2560 )
+
+[node name="TinyTree43" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2848, 2656 )
+
+[node name="TinyTree44" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2744, 2624 )
+
+[node name="TinyTree45" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2696, 2744 )
+
+[node name="Tree168" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3056, 2704 )
+
+[node name="Tree169" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3216, 2744 )
+
+[node name="Tree170" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3016, 2528 )
+
+[node name="Tree171" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2992, 2624 )
+
+[node name="Tree172" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3072, 2456 )
+
+[node name="Tree173" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3112, 2512 )
+
+[node name="Tree174" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2896, 2256 )
+
+[node name="TinyTree46" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2800, 2464 )
+
+[node name="TinyTree47" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2728, 2424 )
+
+[node name="TinyTree48" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 2680, 2360 )
+
+[node name="Tree175" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2728, 2192 )
+
+[node name="Tree176" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2584, 2776 )
+
+[node name="Tree177" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2296, 2816 )
+
+[node name="Tree178" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2320, 2832 )
+
+[node name="Tree179" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2280, 2776 )
+
+[node name="TinyTree49" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2720, 2504 )
+
+[node name="Tree180" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3216, 1536 )
+
+[node name="Tree181" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3112, 1560 )
+
+[node name="Tree182" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3232, 1616 )
+
+[node name="Tree183" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3264, 1488 )
+
+[node name="Tree184" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3232, 1432 )
+
+[node name="Tree185" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3200, 1408 )
+
+[node name="Tree186" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3104, 1752 )
+
+[node name="Tree187" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3224, 1352 )
+
+[node name="Tree188" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3272, 1568 )
+
+[node name="Tree189" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3192, 1688 )
+
+[node name="Tree190" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3064, 1880 )
+
+[node name="Tree191" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2992, 1992 )
+
+[node name="Tree192" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3072, 1952 )
+
+[node name="Tree193" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3032, 2160 )
+
+[node name="Tree194" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3112, 2384 )
+
+[node name="Tree195" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3008, 1888 )
+
+[node name="TinyTree50" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 2784, 2120 )
+
+[node name="Tree196" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2936, 712 )
+
+[node name="Shrub20" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3128, 816 )
+
+[node name="Tree197" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3352, 616 )
+
+[node name="Tree198" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3464, 720 )
+
+[node name="Tree199" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3448, 696 )
+
+[node name="Tree200" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3344, 856 )
+
+[node name="Tree201" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3328, 912 )
+
+[node name="Tree202" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3352, 960 )
+
+[node name="Tree203" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3384, 904 )
+
+[node name="Tree204" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3264, 664 )
+
+[node name="Tree205" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3256, 616 )
+
+[node name="Tree206" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3304, 624 )
+
+[node name="TinyTree51" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3240, 760 )
+
+[node name="TinyTree52" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3168, 728 )
+
+[node name="Tree207" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3176, 984 )
+
+[node name="Tree208" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3152, 1024 )
+
+[node name="Tree209" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3168, 1072 )
+
+[node name="Tree210" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3144, 1144 )
+
+[node name="Tree211" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3120, 1192 )
+
+[node name="Tree212" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3128, 1224 )
+
+[node name="Tree213" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2896, 1208 )
+
+[node name="Tree214" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2912, 1248 )
+
+[node name="Tree215" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2872, 1256 )
+
+[node name="Tree216" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2968, 1272 )
+
+[node name="Tree217" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 2920, 2560 )
+
+[node name="Tree218" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2968, 2528 )
+
+[node name="TinyTree53" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 2952, 2520 )
+
+[node name="TinyTree54" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2872, 2552 )
+
+[node name="Tree219" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2704, 2616 )
+
+[node name="Tree220" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2648, 2320 )
+
+[node name="TinyTree55" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 2592, 2448 )
+
+[node name="Tree221" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2624, 2464 )
+
+[node name="Tree222" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2592, 2432 )
+
+[node name="Tree223" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2760, 2592 )
+
+[node name="Shrub21" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2624, 2640 )
+
+[node name="Tree224" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2416, 2464 )
+
+[node name="Tree225" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3168, 840 )
+
+[node name="Tree226" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3304, 840 )
+
+[node name="Tree227" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2816, 1920 )
+
+[node name="Tree228" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2840, 1944 )
+
+[node name="Tree229" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2856, 1704 )
+
+[node name="Tree230" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2864, 1672 )
+
+[node name="TreeStump7" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 2816, 1712 )
+
+[node name="TinyTree56" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 2728, 1960 )
+
+[node name="Tree231" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2720, 1944 )
+
+[node name="TinyTree57" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2720, 2008 )
+
+[node name="Tree232" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2776, 2128 )
+
+[node name="TinyTree58" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2704, 2192 )
+
+[node name="Tree233" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2688, 2224 )
+
+[node name="TinyTree59" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2664, 2664 )
+
+[node name="Tree234" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3088, 672 )
+
+[node name="Tree235" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3128, 600 )
+
+[node name="Tree236" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3056, 264 )
+
+[node name="Tree237" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3032, 304 )
+
+[node name="Tree238" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3072, 296 )
+
+[node name="Tree239" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3056, 328 )
+
+[node name="Tree240" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3016, 352 )
+
+[node name="Tree241" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3056, 360 )
+
+[node name="Tree242" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3104, 328 )
+
+[node name="TinyTree60" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3088, 288 )
+
+[node name="Tree243" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3072, 216 )
+
+[node name="Tree244" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3032, 384 )
+
+[node name="Tree245" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3152, 360 )
+
+[node name="Tree246" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3144, 280 )
+
+[node name="Tree247" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2968, 280 )
+
+[node name="TreeStump8" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 2920, 280 )
+
+[node name="Shrub22" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2968, 328 )
+
+[node name="Shrub23" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3008, 272 )
+
+[node name="Tree248" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3336, 592 )
+
+[node name="Tree249" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3224, 720 )
+
+[node name="Tree250" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3264, 720 )
+
+[node name="Tree251" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3208, 760 )
+
+[node name="Tree252" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3248, 784 )
+
+[node name="Tree253" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3256, 816 )
+
+[node name="Tree254" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3072, 704 )
+
+[node name="Tree255" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3120, 704 )
+
+[node name="Tree256" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3112, 728 )
+
+[node name="Tree257" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3128, 768 )
+
+[node name="Tree258" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3160, 720 )
+
+[node name="Tree259" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2736, 1960 )
+
+[node name="Tree260" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2736, 2224 )
+
+[node name="Tree261" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2744, 2592 )
+
+[node name="TinyTree61" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3200, 2152 )
+
+[node name="Tree262" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3216, 1944 )
+
+[node name="Tree263" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3240, 1968 )
+
+[node name="Tree264" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3328, 2224 )
+
+[node name="Tree265" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3352, 2200 )
+
+[node name="Tree266" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3352, 2240 )
+
+[node name="Tree267" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3152, 2200 )
+
+[node name="Tree268" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3136, 2224 )
+
+[node name="Tree269" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3256, 2352 )
+
+[node name="TinyTree62" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3240, 2384 )
+
+[node name="TinyTree63" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3384, 2264 )
+
+[node name="TinyTree64" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3160, 2248 )
+
+[node name="TinyTree65" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3136, 2416 )
+
+[node name="TreeStump9" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 3152, 2336 )
+
+[node name="TreeStump10" parent="YSort/Objects/DarkForest" instance=ExtResource( 45 )]
+position = Vector2( 3272, 2192 )
+
+[node name="Shrub24" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3208, 2056 )
+
+[node name="TreeStump11" parent="YSort/Objects/DarkForest" instance=ExtResource( 45 )]
+position = Vector2( 2936, 2440 )
+
+[node name="Tree270" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3032, 2832 )
+
+[node name="TinyTree66" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2968, 2928 )
+
+[node name="Tree271" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2960, 2864 )
+
+[node name="Tree272" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3184, 2408 )
+
+[node name="Tree273" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3200, 2432 )
+
+[node name="Tree274" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3208, 1712 )
+
+[node name="Tree275" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3120, 1776 )
+
+[node name="Tree276" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3064, 352 )
+
+[node name="Tree277" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3128, -176 )
+
+[node name="Tree278" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3104, -152 )
+
+[node name="Tree279" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3128, -144 )
+
+[node name="Tree280" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3144, -112 )
+
+[node name="Tree281" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3096, -120 )
+
+[node name="Tree282" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3056, -104 )
+
+[node name="Tree283" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3096, -224 )
+
+[node name="Tree284" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3088, -208 )
+
+[node name="Tree285" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3088, -184 )
+
+[node name="Tree286" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3136, -232 )
+
+[node name="Tree287" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3104, -264 )
+
+[node name="Tree288" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2984, -72 )
+
+[node name="Tree289" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2952, -32 )
+
+[node name="Tree290" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2984, -8 )
+
+[node name="Tree291" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3024, 112 )
+
+[node name="Tree292" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2968, 72 )
+
+[node name="Tree293" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3032, 176 )
+
+[node name="Shrub25" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2968, 144 )
+
+[node name="Shrub26" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2928, 24 )
+
+[node name="Tree294" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3016, 216 )
+
+[node name="Shrub27" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2896, -32 )
+
+[node name="Shrub28" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 2992, -144 )
+
+[node name="TinyTree67" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3032, -48 )
+
+[node name="TinyTree68" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3000, 48 )
+
+[node name="TinyTree69" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3064, 144 )
+
+[node name="Tree295" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3224, 272 )
+
+[node name="Tree296" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3200, 296 )
+
+[node name="Tree297" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3168, 392 )
+
+[node name="Tree298" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3280, 128 )
+
+[node name="Tree299" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3256, 160 )
+
+[node name="Tree300" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3296, -64 )
+
+[node name="Tree301" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3272, -32 )
+
+[node name="Tree302" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3296, -8 )
+
+[node name="Tree303" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3064, -976 )
+
+[node name="Tree304" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3040, -944 )
+
+[node name="Tree305" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3064, -936 )
+
+[node name="Tree306" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3048, -1016 )
+
+[node name="Tree307" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3024, -1000 )
+
+[node name="Tree308" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3016, -968 )
+
+[node name="Tree309" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3048, -904 )
+
+[node name="Tree310" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3096, -952 )
+
+[node name="Tree311" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3088, -1000 )
+
+[node name="Tree312" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3104, -904 )
+
+[node name="Tree330" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3120, -1000 )
+
+[node name="Tree331" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3112, -1040 )
+
+[node name="Tree332" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3144, -1064 )
+
+[node name="Tree333" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3144, -1032 )
+
+[node name="Tree334" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3128, -976 )
+
+[node name="TinyTree70" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3024, -920 )
+
+[node name="TinyTree71" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3008, -1000 )
+
+[node name="TinyTree72" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3128, -1064 )
+
+[node name="TinyTree73" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3136, -1088 )
+
+[node name="TinyTree74" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3072, -880 )
+
+[node name="TinyTree77" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3088, -624 )
+
+[node name="Tree335" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3032, -624 )
+
+[node name="Tree336" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3080, -616 )
+
+[node name="Tree337" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3048, -592 )
+
+[node name="Tree338" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3104, -592 )
+
+[node name="Tree339" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3072, -560 )
+
+[node name="Tree340" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3024, -568 )
+
+[node name="Tree341" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3112, -560 )
+
+[node name="TinyTree79" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3048, -544 )
+
+[node name="TinyTree80" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3000, -592 )
+
+[node name="TinyTree81" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2976, -576 )
+
+[node name="TinyTree83" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3080, -536 )
+
+[node name="Shrub29" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2976, -616 )
+
+[node name="Tree342" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3008, -40 )
+
+[node name="Tree343" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2968, 24 )
+
+[node name="Tree344" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 2992, 72 )
+
+[node name="Tree345" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2992, -40 )
+
+[node name="Tree346" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3024, -88 )
+
+[node name="Shrub32" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2944, -96 )
+
+[node name="TinyTree84" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2944, -8 )
+
+[node name="Tree347" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3048, -80 )
+
+[node name="Tree348" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3000, 88 )
+
+[node name="Tree349" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3016, 136 )
+
+[node name="Tree350" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3040, 200 )
+
+[node name="Tree351" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3008, 160 )
+
+[node name="Tree352" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3016, 280 )
+
+[node name="Tree353" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3192, 256 )
+
+[node name="Tree354" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3016, 432 )
+
+[node name="Tree355" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3032, 480 )
+
+[node name="Tree356" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3040, 512 )
+
+[node name="Tree357" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3048, 552 )
+
+[node name="TinyTree85" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3064, 504 )
+
+[node name="TinyTree86" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3008, 528 )
+
+[node name="TinyTree87" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3008, 568 )
+
+[node name="TinyTree88" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 2992, 632 )
+
+[node name="Shrub33" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3000, 592 )
+
+[node name="Tree358" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2976, 680 )
+
+[node name="Tree359" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3144, 752 )
+
+[node name="Tree360" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3176, 744 )
+
+[node name="Tree361" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3136, 712 )
+
+[node name="Tree362" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3232, 712 )
+
+[node name="Tree363" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3168, 856 )
+
+[node name="Tree364" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3216, 880 )
+
+[node name="TinyTree89" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3208, 912 )
+
+[node name="TinyTree90" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3288, 880 )
+
+[node name="Tree365" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3072, 912 )
+
+[node name="Tree366" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3040, 896 )
+
+[node name="TinyTree91" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2904, 720 )
+
+[node name="TinyTree92" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3024, 696 )
+
+[node name="Shrub34" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 2968, 728 )
+
+[node name="TreeStump13" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 2952, 832 )
+
+[node name="TinyTree93" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2960, 856 )
+
+[node name="TinyTree94" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 2968, 880 )
+
+[node name="TinyTree95" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 2816, 968 )
+
+[node name="TinyTree96" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 2808, 984 )
+
+[node name="Shrub35" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 2824, 1000 )
+
+[node name="Shrub36" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2784, 1264 )
+
+[node name="TinyTree97" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2808, 1240 )
+
+[node name="Tree367" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3240, 1464 )
+
+[node name="Tree368" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3232, 1400 )
+
+[node name="Tree369" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3248, 1520 )
+
+[node name="Tree370" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3240, 1552 )
+
+[node name="Tree371" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3216, 1584 )
+
+[node name="Tree372" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3080, 1560 )
+
+[node name="Tree373" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3040, 1608 )
+
+[node name="Tree374" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3024, 1536 )
+
+[node name="Tree375" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3000, 1512 )
+
+[node name="TinyTree98" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 2904, 1504 )
+
+[node name="Tree376" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2992, 1568 )
+
+[node name="Tree377" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2960, 1592 )
+
+[node name="Tree378" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3256, 1584 )
+
+[node name="Tree379" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3216, 1680 )
+
+[node name="Tree380" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3128, 1744 )
+
+[node name="Tree381" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3032, 1712 )
+
+[node name="Tree382" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3032, 1664 )
+
+[node name="Tree383" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3032, 1560 )
+
+[node name="Tree384" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2792, 2152 )
+
+[node name="Tree385" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2800, 2032 )
+
+[node name="Tree386" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2800, 2384 )
+
+[node name="Tree387" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2864, 2344 )
+
+[node name="TinyTree99" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2888, 2384 )
+
+[node name="TinyTree100" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 2792, 2360 )
+
+[node name="Shrub37" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2896, 2400 )
+
+[node name="Shrub38" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 2752, 2424 )
+
+[node name="TreeStump14" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 2824, 2432 )
+
+[node name="Tree388" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2704, 2528 )
+
+[node name="Tree389" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2776, 2544 )
+
+[node name="Tree390" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2768, 2608 )
+
+[node name="Tree391" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2792, 2800 )
+
+[node name="Tree392" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2856, 2728 )
+
+[node name="Tree393" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2912, 2832 )
+
+[node name="Tree394" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2984, 1600 )
+
+[node name="Tree395" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3008, 1648 )
+
+[node name="Shrub39" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2976, 1656 )
+
+[node name="Shrub40" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 2984, 1680 )
+
+[node name="TinyTree101" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3176, 1720 )
+
+[node name="TinyTree102" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3240, 1712 )
+
+[node name="TinyTree103" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3216, 1744 )
+
+[node name="Shrub41" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 3184, 1544 )
+
+[node name="Shrub42" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3304, 1568 )
+
+[node name="TinyTree104" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3208, 1440 )
+
+[node name="TinyTree105" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3256, 1408 )
+
+[node name="TinyTree106" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3208, 1344 )
+
+[node name="TinyTree107" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3032, 1312 )
+
+[node name="TinyTree108" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3088, 1320 )
+
+[node name="Tree396" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3024, 1456 )
+
+[node name="TinyTree109" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3024, 1592 )
+
+[node name="TinyTree110" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3016, 1752 )
+
+[node name="Tree397" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3048, 1376 )
+
+[node name="Tree398" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3016, 1360 )
+
+[node name="TreeStump15" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 2888, 1088 )
+
+[node name="TinyTree111" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3080, 1040 )
+
+[node name="Tree399" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3016, 592 )
+
+[node name="Shrub43" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3112, 872 )
+
+[node name="Tree400" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3104, 904 )
+
+[node name="Shrub44" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3040, 960 )
+
+[node name="TinyTree112" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3024, 928 )
+
+[node name="Shrub45" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3016, 936 )
+
+[node name="Shrub46" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2960, 896 )
+
+[node name="Shrub47" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2952, 856 )
+
+[node name="Tree401" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3088, 1000 )
+
+[node name="TinyTree113" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3104, 1000 )
+
+[node name="Shrub48" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3088, 1080 )
+
+[node name="Shrub49" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 3120, 1112 )
+
+[node name="TinyTree114" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2976, 1192 )
+
+[node name="Shrub50" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2984, 1208 )
+
+[node name="Tree402" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2896, 1296 )
+
+[node name="TinyTree115" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3040, 936 )
+
+[node name="Shrub51" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3136, 1592 )
+
+[node name="TinyTree116" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3152, 1552 )
+
+[node name="Shrub52" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2936, 1872 )
+
+[node name="TinyTree117" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2896, 1896 )
+
+[node name="TinyTree118" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2912, 1912 )
+
+[node name="Tree403" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2973, 2024 )
+
+[node name="Shrub53" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 2936, 2064 )
+
+[node name="Tree404" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2824, 1992 )
+
+[node name="TinyTree119" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2704, 2320 )
+
+[node name="Shrub54" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2712, 2656 )
+
+[node name="Tree405" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2736, 2624 )
+
+[node name="Tree406" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2608, 2800 )
+
+[node name="Tree407" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2656, 2688 )
+
+[node name="Tree408" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2688, 2664 )
+
+[node name="Shrub55" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2648, 2608 )
+
+[node name="TinyTree120" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2640, 2616 )
+
+[node name="Shrub56" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 2816, 2480 )
+
+[node name="Tree409" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2616, 2728 )
+
+[node name="TinyTree121" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 2680, 2624 )
+
+[node name="TinyTree122" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 2656, 2536 )
+
+[node name="TinyTree123" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2656, 2576 )
+
+[node name="TinyTree124" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2672, 2600 )
+
+[node name="TinyTree125" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 2568, 2368 )
+
+[node name="Tree410" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3040, 696 )
+
+[node name="TreeStump16" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 3040, 736 )
+
+[node name="TinyTree126" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3056, 616 )
+
+[node name="Tree411" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3016, 464 )
+
+[node name="Tree412" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3000, 296 )
+
+[node name="TinyTree127" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2992, -912 )
+
+[node name="TinyTree128" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3024, -1056 )
+
+[node name="TinyTree129" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3168, -992 )
+
+[node name="Tree414" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3152, -928 )
+
+[node name="Tree415" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3056, -1144 )
+
+[node name="Tree416" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3032, -1128 )
+
+[node name="Tree417" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3024, -1096 )
+
+[node name="Tree418" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3096, -1176 )
+
+[node name="Tree419" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3128, -1168 )
+
+[node name="Tree420" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3144, -1160 )
+
+[node name="TinyTree131" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3160, -1120 )
+
+[node name="Tree421" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3176, -1112 )
+
+[node name="TinyTree132" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3032, -432 )
+
+[node name="Tree422" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3048, -424 )
+
+[node name="Tree423" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3096, -360 )
+
+[node name="Tree424" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3112, -376 )
+
+[node name="Tree425" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3120, -344 )
+
+[node name="Tree426" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3080, -424 )
+
+[node name="Tree427" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3072, -384 )
+
+[node name="Shrub57" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3048, -376 )
+
+[node name="TreeStump17" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 3080, -328 )
+
+[node name="TinyTree133" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3120, -400 )
+
+[node name="Tree429" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3136, -392 )
+
+[node name="Tree430" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3136, -1424 )
+
+[node name="Tree431" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3120, -1400 )
+
+[node name="Tree432" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3144, -1392 )
+
+[node name="Tree433" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3168, -1368 )
+
+[node name="Tree434" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2984, -1368 )
+
+[node name="Tree435" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2968, -1336 )
+
+[node name="Tree436" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3000, -1320 )
+
+[node name="Tree437" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3024, -1288 )
+
+[node name="Tree438" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2992, -1272 )
+
+[node name="Tree439" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3176, -1424 )
+
+[node name="Tree440" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3152, -1456 )
+
+[node name="Tree441" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3008, -1392 )
+
+[node name="Tree442" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3024, -1448 )
+
+[node name="Tree443" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2992, -1440 )
+
+[node name="Tree444" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3016, -1488 )
+
+[node name="Tree445" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2960, -1408 )
+
+[node name="Tree446" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3080, -1440 )
+
+[node name="Tree447" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3056, -1224 )
+
+[node name="Tree448" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3024, -1248 )
+
+[node name="Tree449" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3008, -1216 )
+
+[node name="Tree450" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3064, -1200 )
+
+[node name="Tree451" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3016, -1176 )
+
+[node name="Tree452" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3088, -1256 )
+
+[node name="Tree453" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3160, -1288 )
+
+[node name="TinyTree134" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2984, -1224 )
+
+[node name="TinyTree135" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2984, -1176 )
+
+[node name="TinyTree136" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2992, -1144 )
+
+[node name="TinyTree137" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3136, -1240 )
+
+[node name="TinyTree138" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3024, -1392 )
+
+[node name="TinyTree139" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 2944, -1360 )
+
+[node name="TinyTree140" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3088, -1392 )
+
+[node name="Tree454" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3208, -1336 )
+
+[node name="TinyTree141" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3104, -1456 )
+
+[node name="TinyTree142" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2976, -1480 )
+
+[node name="TinyTree143" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 2944, -1424 )
+
+[node name="Shrub58" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 2920, -1344 )
+
+[node name="Tree455" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3064, -1464 )
+
+[node name="Tree456" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3128, -1480 )
+
+[node name="Tree457" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2976, -1248 )
+
+[node name="TinyTree144" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 2952, -1256 )
+
+[node name="Shrub59" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 2960, -1208 )
+
+[node name="Shrub60" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 2936, -1264 )
+
+[node name="Shrub61" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3144, -1312 )
+
+[node name="Shrub62" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3056, -1408 )
+
+[node name="Tree458" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3192, -1312 )
+
+[node name="TinyTree145" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3120, -1288 )
+
+[node name="Shrub63" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3064, -1296 )
+
+[node name="TreeStump18" parent="YSort/Objects/DarkForest" instance=ExtResource( 45 )]
+position = Vector2( 3072, -1336 )
+
+[node name="Tree459" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3064, -1600 )
+
+[node name="Tree460" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3032, -1616 )
+
+[node name="Tree461" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3056, -1648 )
+
+[node name="Tree462" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3040, -1576 )
+
+[node name="Tree463" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3136, -1736 )
+
+[node name="Tree464" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3176, -1768 )
+
+[node name="Tree465" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3168, -1728 )
+
+[node name="TinyTree146" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3120, -1712 )
+
+[node name="Tree466" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3088, -1816 )
+
+[node name="Tree467" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3096, -1848 )
+
+[node name="Tree468" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3096, -1896 )
+
+[node name="Tree469" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3072, -1872 )
+
+[node name="Tree470" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3064, -1832 )
+
+[node name="Tree471" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3056, -1768 )
+
+[node name="Tree472" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3080, -1736 )
+
+[node name="Tree473" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3096, -1712 )
+
+[node name="Shrub64" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3048, -1712 )
+
+[node name="Shrub65" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 3040, -1808 )
+
+[node name="Shrub66" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3056, -1880 )
+
+[node name="TreeStump19" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 3008, -1616 )
+
+[node name="Shrub67" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3032, -1656 )
+
+[node name="TreeStump20" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 3000, -1584 )
+
+[node name="Shrub68" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3024, -1536 )
+
+[node name="TinyTree147" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3080, -1640 )
+
+[node name="TinyTree148" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3072, -1912 )
+
+[node name="Tree474" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3064, -1936 )
+
+[node name="Tree475" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3064, -1984 )
+
+[node name="TinyTree149" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3048, -1968 )
+
+[node name="Shrub69" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3032, -1944 )
+
+[node name="Shrub70" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 3048, -1904 )
+
+[node name="Tree476" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3216, -1952 )
+
+[node name="Tree477" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3208, -2000 )
+
+[node name="Tree478" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3240, -1976 )
+
+[node name="Tree479" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3224, -1864 )
+
+[node name="Tree480" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3248, -1880 )
+
+[node name="Tree481" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3216, -1904 )
+
+[node name="TinyTree150" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3208, -1824 )
+
+[node name="TinyTree151" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3160, -2096 )
+
+[node name="Tree482" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3144, -2088 )
+
+[node name="Tree483" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3160, -2080 )
+
+[node name="Tree484" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3176, -2048 )
+
+[node name="Tree485" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3104, -2072 )
+
+[node name="Tree486" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3128, -2112 )
+
+[node name="Tree487" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3072, -2128 )
+
+[node name="Tree488" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3088, -2232 )
+
+[node name="Tree489" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3136, -2056 )
+
+[node name="TreeStump21" parent="YSort/Objects/DarkForest" instance=ExtResource( 45 )]
+position = Vector2( 3360, -2064 )
+
+[node name="Tree490" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3080, -2088 )
+
+[node name="TinyTree152" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3064, -2048 )
+
+[node name="TinyTree153" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3048, -2088 )
+
+[node name="Shrub71" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3040, -2024 )
+
+[node name="TreeStump22" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 3040, -2064 )
+
+[node name="Shrub72" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3088, -1944 )
+
+[node name="Tree491" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3192, -1816 )
+
+[node name="TinyTree154" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3048, -1680 )
+
+[node name="Tree492" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3088, -1672 )
+
+[node name="Tree493" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3120, -1672 )
+
+[node name="TinyTree155" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3144, -1640 )
+
+[node name="Tree494" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3048, -1528 )
+
+[node name="Tree495" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3080, -1528 )
+
+[node name="TreeStump23" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 2928, -1392 )
+
+[node name="Tree496" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3048, -1520 )
+
+[node name="Tree497" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3056, -1720 )
+
+[node name="Shrub73" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3176, -1992 )
+
+[node name="Shrub74" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 3144, -2016 )
+
+[node name="Tree498" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3080, -2064 )
+
+[node name="Tree499" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3120, -2256 )
+
+[node name="Tree500" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3160, -2272 )
+
+[node name="Tree501" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3128, -2288 )
+
+[node name="Tree502" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3096, -2272 )
+
+[node name="TinyTree156" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3080, -2256 )
+
+[node name="TinyTree157" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3080, -2200 )
+
+[node name="Tree503" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3160, -2320 )
+
+[node name="Tree504" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3192, -2288 )
+
+[node name="Tree505" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3216, -2248 )
+
+[node name="Tree506" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3192, -2264 )
+
+[node name="Tree507" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3200, -2184 )
+
+[node name="Tree508" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3168, -2144 )
+
+[node name="Tree509" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3200, -2152 )
+
+[node name="Tree510" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3224, -2064 )
+
+[node name="TinyTree158" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3184, -2096 )
+
+[node name="Tree511" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3072, -2248 )
+
+[node name="Tree512" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3408, -2080 )
+
+[node name="Tree513" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3424, -2048 )
+
+[node name="Tree514" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3368, -1864 )
+
+[node name="Tree515" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3392, -1872 )
+
+[node name="Tree516" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3512, -1848 )
+
+[node name="Tree517" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3496, -1824 )
+
+[node name="Tree518" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3328, -2456 )
+
+[node name="Tree519" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3312, -2432 )
+
+[node name="Tree520" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3336, -2424 )
+
+[node name="Tree521" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3304, -2384 )
+
+[node name="Tree522" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3144, -2496 )
+
+[node name="Tree523" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3176, -2504 )
+
+[node name="Tree524" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3128, -2472 )
+
+[node name="Tree525" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3136, -2528 )
+
+[node name="Tree526" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3120, -2504 )
+
+[node name="Tree527" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3200, -2480 )
+
+[node name="TinyTree159" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3208, -2528 )
+
+[node name="TinyTree160" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3216, -2448 )
+
+[node name="TinyTree161" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3104, -2496 )
+
+[node name="TinyTree162" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3120, -2544 )
+
+[node name="TinyTree163" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3152, -2528 )
+
+[node name="Tree528" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3104, -2552 )
+
+[node name="Tree529" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3096, -2528 )
+
+[node name="Shrub75" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3072, -2544 )
+
+[node name="Shrub76" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3088, -2496 )
+
+[node name="Shrub77" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 3128, -2432 )
+
+[node name="TinyTree164" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3160, -2472 )
+
+[node name="Tree530" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3248, -2448 )
+
+[node name="TinyTree165" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3200, -2448 )
+
+[node name="Tree531" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3256, -2416 )
+
+[node name="Tree532" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3144, -2656 )
+
+[node name="Tree533" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3160, -2640 )
+
+[node name="Tree534" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3144, -2616 )
+
+[node name="Tree535" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3304, -2560 )
+
+[node name="Tree536" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3320, -2544 )
+
+[node name="Tree537" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3328, -2584 )
+
+[node name="TinyTree166" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3272, -2560 )
+
+[node name="TinyTree167" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3304, -2600 )
+
+[node name="Tree538" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3352, -2552 )
+
+[node name="Shrub78" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3264, -2536 )
+
+[node name="Tree539" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3360, -2536 )
+
+[node name="TinyTree168" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3320, -2512 )
+
+[node name="Tree540" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3320, -2504 )
+
+[node name="Tree541" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3360, -2488 )
+
+[node name="Tree542" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3296, -2456 )
+
+[node name="Tree543" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3360, -2464 )
+
+[node name="TinyTree169" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3296, -2496 )
+
+[node name="TinyTree170" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3280, -2312 )
+
+[node name="TinyTree171" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3288, -2304 )
+
+[node name="Shrub79" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3280, -2288 )
+
+[node name="TreeStump24" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 3296, -2304 )
+
+[node name="TreeStump25" parent="YSort/Objects/DarkForest" instance=ExtResource( 45 )]
+position = Vector2( 3320, -2320 )
+
+[node name="Tree544" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3280, -1624 )
+
+[node name="Tree545" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3256, -1600 )
+
+[node name="Tree546" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3296, -1584 )
+
+[node name="TinyTree172" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3264, -1688 )
+
+[node name="Tree547" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3304, -1608 )
+
+[node name="Tree548" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3256, -1536 )
+
+[node name="Tree549" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3336, -1536 )
+
+[node name="Tree550" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3296, -1760 )
+
+[node name="Tree551" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3192, -1664 )
+
+[node name="Tree552" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3448, -1664 )
+
+[node name="Tree553" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3480, -1560 )
+
+[node name="Tree554" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3480, -1680 )
+
+[node name="Tree555" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3264, -1736 )
+
+[node name="Tree556" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3520, -1800 )
+
+[node name="Shrub80" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3480, -1776 )
+
+[node name="Shrub81" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3352, -1824 )
+
+[node name="Tree557" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3240, -1824 )
+
+[node name="Tree558" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3408, -2016 )
+
+[node name="Tree559" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3448, -2008 )
+
+[node name="Tree560" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3264, -2048 )
+
+[node name="Tree561" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3208, -2104 )
+
+[node name="Tree562" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3496, -1760 )
+
+[node name="Tree563" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3056, -2832 )
+
+[node name="Tree564" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3080, -2808 )
+
+[node name="Tree565" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3064, -2784 )
+
+[node name="Tree566" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3104, -2768 )
+
+[node name="Tree567" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3088, -2736 )
+
+[node name="Tree568" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3120, -2736 )
+
+[node name="Tree569" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3152, -2760 )
+
+[node name="Tree570" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3152, -2712 )
+
+[node name="Tree571" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3120, -2696 )
+
+[node name="TinyTree173" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3096, -2848 )
+
+[node name="TinyTree174" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3064, -2744 )
+
+[node name="TinyTree175" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3032, -2832 )
+
+[node name="TinyTree176" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3088, -2696 )
+
+[node name="TinyTree177" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3112, -2648 )
+
+[node name="TinyTree178" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3128, -2712 )
+
+[node name="Tree572" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3096, -2696 )
+
+[node name="Tree573" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3120, -2640 )
+
+[node name="Tree574" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3184, -2640 )
+
+[node name="TinyTree179" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3096, -2608 )
+
+[node name="Tree575" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3104, -2656 )
+
+[node name="TinyTree180" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3144, -2896 )
+
+[node name="Shrub82" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3056, -2712 )
+
+[node name="Shrub83" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 3056, -2640 )
+
+[node name="Shrub84" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3272, -2464 )
+
+[node name="TreeStump26" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 3064, -2280 )
+
+[node name="Shrub85" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3040, -2240 )
+
+[node name="TreeStump27" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 3064, -2176 )
+
+[node name="Tree313" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3032, -528 )
+
+[node name="Tree314" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3072, -512 )
+
+[node name="Tree315" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3096, -512 )
+
+[node name="Tree316" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3032, -496 )
+
+[node name="Tree317" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3064, -480 )
+
+[node name="Tree318" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3112, -480 )
+
+[node name="TinyTree75" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3016, -448 )
+
+[node name="TinyTree76" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 2992, -496 )
+
+[node name="Shrub30" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 2976, -504 )
+
+[node name="TreeStump12" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 3000, -432 )
+
+[node name="TinyTree78" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3024, -400 )
+
+[node name="Tree319" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3160, -504 )
+
+[node name="Tree320" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3192, -392 )
+
+[node name="Tree321" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3240, -472 )
+
+[node name="TinyTree82" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3064, -656 )
+
+[node name="TinyTree130" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3128, -896 )
+
+[node name="Shrub31" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3040, -864 )
+
+[node name="Shrub86" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 3112, -872 )
+
+[node name="Tree322" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3136, -432 )
+
+[node name="Tree323" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3048, -288 )
+
+[node name="Tree324" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3080, -304 )
+
+[node name="Tree325" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3080, -256 )
+
+[node name="Tree326" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3152, -312 )
+
+[node name="Tree327" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3120, -320 )
+
+[node name="Tree328" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3184, -344 )
+
+[node name="Tree329" parent="YSort/Objects/DarkForest" instance=ExtResource( 36 )]
+position = Vector2( 3160, -280 )
+
+[node name="Tree413" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3064, -352 )
+
+[node name="TinyTree181" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3040, -352 )
+
+[node name="TinyTree182" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3032, -304 )
+
+[node name="Tree428" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3176, -240 )
+
+[node name="Tree576" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3192, -56 )
+
+[node name="Tree577" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3168, -176 )
+
+[node name="Tree578" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3168, -144 )
+
+[node name="Tree579" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3184, -96 )
+
+[node name="TinyTree183" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3184, -24 )
+
+[node name="Shrub87" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 3160, -48 )
+
+[node name="Tree580" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3224, -1776 )
+
+[node name="Tree581" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3144, -1696 )
+
+[node name="Tree582" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3280, -1720 )
+
+[node name="Tree583" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3104, -1632 )
+
+[node name="TinyTree184" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3072, -2856 )
+
+[node name="Tree584" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3088, -2840 )
+
+[node name="Tree585" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3216, -2792 )
+
+[node name="TinyTree185" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3048, -2336 )
+
+[node name="Shrub88" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 3040, -2320 )
+
+[node name="Tree586" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2944, -1832 )
+
+[node name="Shrub89" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 2872, -1888 )
+
+[node name="Tree587" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3104, -1584 )
+
+[node name="Tree588" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3112, -1544 )
+
+[node name="TinyTree186" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3104, -1504 )
+
+[node name="Tree589" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3120, -1512 )
+
+[node name="Tree590" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3112, -1232 )
+
+[node name="Shrub90" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3064, -1272 )
+
+[node name="Tree591" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2912, -352 )
+
+[node name="Tree592" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2960, -304 )
+
+[node name="Tree593" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2888, -264 )
+
+[node name="Tree594" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3288, -488 )
+
+[node name="Tree595" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3272, -408 )
+
+[node name="Tree596" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3064, -176 )
+
+[node name="Tree597" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3088, -160 )
+
+[node name="Tree598" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3032, -152 )
+
+[node name="Tree599" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3008, -128 )
+
+[node name="Tree600" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3288, 48 )
+
+[node name="TinyTree187" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 3264, 80 )
+
+[node name="TinyTree188" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3240, 16 )
+
+[node name="Tree601" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3392, 520 )
+
+[node name="Tree602" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3416, 552 )
+
+[node name="Tree603" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3096, 1264 )
+
+[node name="Tree604" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3016, 1280 )
+
+[node name="Tree605" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3288, 1176 )
+
+[node name="Tree606" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3312, 1208 )
+
+[node name="Tree607" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 2952, -568 )
+
+[node name="Tree608" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 2912, -600 )
+
+[node name="TinyTree189" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2848, -608 )
+
+[node name="TinyTree190" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 2928, -536 )
+
+[node name="Tree609" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 2920, -568 )
+
+[node name="Tree610" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 2984, -552 )
+
+[node name="Tree611" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3232, -416 )
+
+[node name="Shrub91" parent="YSort/Objects/DarkForest" instance=ExtResource( 41 )]
+position = Vector2( 3208, -424 )
+
+[node name="Shrub92" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 3280, -368 )
+
+[node name="TinyTree191" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3256, -376 )
+
+[node name="TinyTree192" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3304, -472 )
+
+[node name="TinyTree193" parent="YSort/Objects/DarkForest" instance=ExtResource( 40 )]
+position = Vector2( 2976, -1640 )
+
+[node name="TinyTree194" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3008, -1696 )
+
+[node name="Shrub93" parent="YSort/Objects/DarkForest" instance=ExtResource( 44 )]
+position = Vector2( 3000, -1680 )
+
+[node name="Shrub94" parent="YSort/Objects/DarkForest" instance=ExtResource( 47 )]
+position = Vector2( 2960, -1624 )
+
+[node name="TreeStump28" parent="YSort/Objects/DarkForest" instance=ExtResource( 46 )]
+position = Vector2( 3152, -1624 )
+
+[node name="TreeStump29" parent="YSort/Objects/DarkForest" instance=ExtResource( 45 )]
+position = Vector2( 3000, -1640 )
+
+[node name="TreeStrump6" parent="YSort/Objects/DarkForest" instance=ExtResource( 43 )]
+position = Vector2( 3160, -1592 )
+
+[node name="TreeStump30" parent="YSort/Objects/DarkForest" instance=ExtResource( 45 )]
+position = Vector2( 2880, -1376 )
+
+[node name="TinyTree195" parent="YSort/Objects/DarkForest" instance=ExtResource( 38 )]
+position = Vector2( 3280, -1184 )
+
+[node name="Tree612" parent="YSort/Objects/DarkForest" instance=ExtResource( 35 )]
+position = Vector2( 3304, -1168 )
+
+[node name="Tree613" parent="YSort/Objects/DarkForest" instance=ExtResource( 33 )]
+position = Vector2( 3288, -1136 )
+
+[node name="Tree614" parent="YSort/Objects/DarkForest" instance=ExtResource( 1 )]
+position = Vector2( 3400, -1120 )
+
+[node name="Tree615" parent="YSort/Objects/DarkForest" instance=ExtResource( 34 )]
+position = Vector2( 3384, -1088 )
+
+[node name="TinyTree196" parent="YSort/Objects/DarkForest" instance=ExtResource( 39 )]
+position = Vector2( 3304, -1112 )
+
+[node name="TinyTree197" parent="YSort/Objects/DarkForest" instance=ExtResource( 37 )]
+position = Vector2( 3408, -1064 )
+
+[node name="World" parent="." instance=ExtResource( 21 )]
+
+[node name="DogSpiritIntro" parent="." instance=ExtResource( 49 )]
+position = Vector2( -136, -88 )
+
+[connection signal="hide" from="YSort/UI/VictoryStatsPopup" to="YSort/UI/VictoryStatsPopup" method="closeWindow"]
