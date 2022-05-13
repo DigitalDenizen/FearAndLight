@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Cursors/MouseCursor.gd" type="Script" id=1]
+[ext_resource path="res://Images/UI/Cursors/ui-cursor-pointer..png" type="Texture" id=2]
+
+[node name="Pointer" type="Node2D"]
+z_index = 100
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 9, 8 )
+z_index = 100
+texture = ExtResource( 2 )
+script = ExtResource( 1 )

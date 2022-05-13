@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://UI/UILayout/ButtonArea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Cursors/Arrow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/Score.tscn" type="PackedScene" id=3]
 
 [node name="uiButtonLayout" type="CanvasLayer"]
@@ -19,3 +20,6 @@ pause_mode = 2
 margin_left = 341.0
 margin_top = 309.0
 grow_horizontal = 2
+
+[node name="MouseCursor" parent="." instance=ExtResource( 2 )]
+z_index = 1
