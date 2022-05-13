@@ -1,34 +1,33 @@
 extends KinematicBody2D
+
 signal health_updated(health)
 signal melee(Melee, player_pos, vampireSpider_pos)
 signal shoot(Web, player_pos, vampireSpider_pos)
 signal killed()
 
+export (float) var max_health = 350
 export (bool) var should_draw_path_line := false
 
 const MOVE_SPEED = 28
-export (float) var max_health = 350
 enum STATES { IDLE, FOLLOW }
 onready var collision_shape = $CollisionShape2D
-onready var itemDrop_scene = preload("res://Characters/ItemDrops/SpiderDrop.tscn")
 onready var health = max_health setget _set_health
-var Melee = preload("res://Characters/Combat/Melee.tscn")
-var Web = preload("res://Characters/Combat/sprider_web.tscn")
+onready var itemDrop_scene = preload("res://Characters/ItemDrops/SpiderDrop.tscn")
 onready var path_line = $PathLine
-var player = null
-var mudwall = null
+var Melee = preload("res://Characters/Combat/Melee.tscn")
+var Web = preload("res://Characters/Combat/SpiderWeb.tscn")
 
+var player = null
 var pathFinding: PathFinding
+var mudwall = null
 var spawner = {}
 var waveSpawn = false
 var path = []
 var _state = null
 var buildings = null
-
 var can_fire = true
 var fire_direction
 var proejctile_speed
-
 var alive = true
 var not_attacking = true
 var attackCountDown = 0

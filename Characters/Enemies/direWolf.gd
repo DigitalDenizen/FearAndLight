@@ -7,7 +7,7 @@ signal killed()
 export (float) var max_health = 100
 export (bool) var should_draw_path_line := false
 
-const MOVE_SPEED = 85
+const MOVE_SPEED = 87
 enum STATES { IDLE, FOLLOW }
 onready var collision_shape = $CollisionShape2D
 onready var health = max_health setget _set_health
@@ -15,10 +15,10 @@ onready var itemDrop_scene = preload("res://Characters/ItemDrops/wolfDrop.tscn")
 onready var path_line = $PathLine
 var Melee = preload("res://Characters/Combat/Melee.tscn")
 
+var player = null
 var pathFinding: PathFinding
 var spawner = {}
 var waveSpawn = false
-var player = null
 var pathObject
 var _state = null
 var target = false
