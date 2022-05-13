@@ -7,7 +7,7 @@ signal killed()
 export (float) var max_health = 100
 export (bool) var should_draw_path_line := false
 
-const MOVE_SPEED = 87
+const MOVE_SPEED = 85
 enum STATES { IDLE, FOLLOW }
 onready var collision_shape = $CollisionShape2D
 onready var health = max_health setget _set_health
@@ -15,10 +15,10 @@ onready var itemDrop_scene = preload("res://Characters/ItemDrops/wolfDrop.tscn")
 onready var path_line = $PathLine
 var Melee = preload("res://Characters/Combat/Melee.tscn")
 
-var player = null
 var pathFinding: PathFinding
 var spawner = {}
 var waveSpawn = false
+var player = null
 var pathObject
 var _state = null
 var target = false
@@ -36,8 +36,8 @@ var target_point_world = Vector2()
 var target_position = Vector2()
 
 func _ready():
-	player = Util.get_main_node().get_node("YSort").get_node("Player")
-	buildings = Util.get_main_node().get_node("YSort").get_node("Buildings")
+	player = Util.get_main_node().get_node("YSort/Player")
+	buildings = Util.get_main_node().get_node("YSort/Buildings")
 	add_to_group("Baddies")
 	rng.randomize()
 	path_line.visible = should_draw_path_line
@@ -56,12 +56,12 @@ func _physics_process(delta):
 			target = false
 			
 		var enemyVector
-		if targetObject.path.size() > 2:
+		if targetObject.path.size() > 1.97:
 			enemyVector = global_position.direction_to(targetObject.path[1]) * MOVE_SPEED
 			walk_animation(enemyVector)
 			move_and_slide(enemyVector)
 			set_path_line(targetObject.path)
-		elif targetObject.path.size() == 0 && !target:
+		elif targetObject.path.size() < 1.96 && !target:
 			_change_state(STATES.IDLE)
 		else:
 			_on_direWolf_melee(Melee, targetObject.targetObject.global_position, global_position)
@@ -170,7 +170,7 @@ func _on_direWolf_melee(melee, target_pos, direWolf_pos):
 		$AnimatedSprite.play("Attack")
 		$AnimatedSprite.flip_h = false
 	not_attacking = false
-	attackCountDown = 50
+	attackCountDown = 40
 	var scratch = Melee.instance()
 	scratch.attacker = "direWolf"
 	add_child(scratch)

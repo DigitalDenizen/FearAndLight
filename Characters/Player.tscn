@@ -11,7 +11,7 @@
 [ext_resource path="res://Characters/SoundWalking.gd" type="Script" id=12]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 6.00003
+radius = 7.85901
 height = 7.02235
 
 [sub_resource type="CanvasItemMaterial" id=2]

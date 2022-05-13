@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 signal health_updated(health)
-signal melee(Melee, player_pos, vampireSpider_pos)
-signal shoot(Web, player_pos, vampireSpider_pos)
+signal melee(melee, player_pos, vampireSpider_pos)
+signal shoot(shoot, player_pos, vampireSpider_pos)
 signal killed()
 
 export (float) var max_health = 350
@@ -18,8 +18,8 @@ var Melee = preload("res://Characters/Combat/Melee.tscn")
 var Web = preload("res://Characters/Combat/SpiderWeb.tscn")
 
 var player = null
-var pathFinding: PathFinding
 var mudwall = null
+var pathFinding: PathFinding
 var spawner = {}
 var waveSpawn = false
 var path = []
@@ -42,8 +42,8 @@ var target_point_world = Vector2()
 var target_position = Vector2()
 
 func _ready():
-	player = Util.get_main_node().get_node("YSort").get_node("Player")
-	buildings = Util.get_main_node().get_node("YSort").get_node("Buildings")
+	player = Util.get_main_node().get_node("YSort/Player")
+	buildings = Util.get_main_node().get_node("YSort/Buildings")
 	add_to_group("Baddies")
 	rng.randomize()
 	path_line.visible = should_draw_path_line
@@ -56,7 +56,6 @@ func _physics_process(delta):
 		var buildingList = buildings.get_children()
 		if buildingList.size() > 0:
 			var pathBuildings:PoolVector2Array = prioritize_target(buildings)
-			
 			if pathHeroes.size() < 10:
 				path = pathHeroes
 			elif pathBuildings.size() < 5:
@@ -66,14 +65,15 @@ func _physics_process(delta):
 		else:
 			path = pathHeroes
 		var spiderboidVector
-		if path.size() > 2:
+		if path.size() > 6 && path.size() < 9:
+			onVampireSpiderShoot(Web, player.global_position, global_position)
+		elif path.size() > 1.97:
 			spiderboidVector = global_position.direction_to(path[1]) * MOVE_SPEED
 			walk_animation(spiderboidVector)
 			move_and_slide(spiderboidVector)
 			set_path_line(path)
-		else:
+		elif path.size() < 1.96:
 			onVampireSpiderMelee(Melee, player.global_position, global_position)
-			onVampireSpiderShoot(Web, player.global_position, global_position)
 	else:
 		if not_attacking:
 			deathCountdown = deathCountdown - 1
@@ -147,7 +147,7 @@ func prioritize_target(buildings):
 		
 	return target
 
-func onVampireSpiderMelee(Melee, playerPos, vampireSpiderPos):
+func onVampireSpiderMelee(melee, playerPos, vampireSpiderPos):
 	not_attacking = false
 	var player_direction = playerPos - vampireSpiderPos
 	if player_direction.x > 0:
@@ -169,17 +169,17 @@ func _on_vampireSpider_killed():
 		get_tree().get_root().add_child(itemDrop)
 		itemDrop.global_position = global_position
 
-func onVampireSpiderShoot(Web, playerPos, vampireSpiderPos):
+func onVampireSpiderShoot(shoot, playerPos, vampireSpiderPos):
 	not_attacking = false
 	var player_direction = playerPos - vampireSpiderPos
-	if player_direction.x > 2:
-		$AnimatedSprite.play("projectile")
+	if player_direction.x > 0:
 		$AnimatedSprite.flip_h = true
-	else: 
 		$AnimatedSprite.play("projectile")
+	else:
 		$AnimatedSprite.flip_h = false
-	attackCountDown = 200
-	var web = Web.instance()
+		$AnimatedSprite.play("projectile")
+	attackCountDown = 50
+	var web = shoot.instance()
 	add_child(web)
 	web.shoot(playerPos, vampireSpiderPos)
 

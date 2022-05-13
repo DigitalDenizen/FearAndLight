@@ -43,15 +43,15 @@ func _body_entered(body):
 			body.hurt(10)
 			_melee_collid()
 	elif attacker == "vampireSpider":
-		if !body.is_in_group("Baddies") && !body.is_in_group('CollisionBox') && !body.is_in_group('TileMaps'):
+		if !body.is_in_group("Baddies") && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && !body.is_in_group('TileMaps'):
 			body.hurt(10)
 			_melee_collid()
 	elif attacker == "direWolf":
-		if !body.is_in_group("Baddies") && !body.is_in_group('CollisionBox') && !body.is_in_group('TileMaps'):
+		if !body.is_in_group("Baddies") && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && !body.is_in_group('TileMaps'):
 			body.hurt(10)
 			_melee_collid()
 	elif attacker == "Wendigo":
-		if !body.is_in_group("Baddies") && !body.is_in_group('CollisionBox') && !body.is_in_group('TileMaps'):
+		if !body.is_in_group("Baddies") && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && !body.is_in_group('TileMaps'):
 			body.hurt(30)
 			_melee_collid()
 
