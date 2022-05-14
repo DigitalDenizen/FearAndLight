@@ -36,7 +36,7 @@ margin_right = 33.0
 margin_bottom = 33.0
 rect_min_size = Vector2( 33, 33 )
 
-[node name="Button" type="Button" parent="CenterContainer"]
+[node name="Button" type="Button" parent="CenterContainer" groups=["UI"]]
 margin_right = 33.0
 margin_bottom = 33.0
 rect_min_size = Vector2( 33, 33 )

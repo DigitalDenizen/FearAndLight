@@ -35,10 +35,6 @@ rect_min_size = Vector2( 40, 40 )
 [node name="build_button_container" type="CenterContainer" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-rect_min_size = Vector2( 40, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="build_button" type="Button" parent="build_button_container"]
 margin_right = 40.0
