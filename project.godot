@@ -50,6 +50,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
+Cursors="*res://UI/Cursors/Cursor.tscn"
 Score="*res://UI/Score.gd"
 Util="*res://Shared/Util.gd"
 Nav="*res://Shared/PathFinding.gd"
