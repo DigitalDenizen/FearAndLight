@@ -50,13 +50,13 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Cursors="*res://UI/Cursors/Cursor.tscn"
+Constants="*res://Shared/Constants.gd"
 Score="*res://UI/Score.gd"
+EventBus="*res://Shared/EventBus.gd"
 Util="*res://Shared/Util.gd"
 Nav="*res://Shared/PathFinding.gd"
 Physics="*res://Shared/Physics/MovementPhysics.gd"
-Constants="*res://Shared/Constants.gd"
-EventBus="*res://Shared/EventBus.gd"
+Cursors="*res://UI/Cursors/Cursor.tscn"
 
 [display]
 

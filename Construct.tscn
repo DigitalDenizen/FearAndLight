@@ -1980,7 +1980,7 @@ tile_data = PoolIntArray( 262098, 2, 0, 262099, 2, 0, 262100, 2, 0, 262101, 2, 0
 
 [node name="PathFinding" parent="YSort" instance=ExtResource( 35 )]
 
-[node name="UI" type="CanvasLayer" parent="YSort"]
+[node name="UI" type="Node2D" parent="YSort"]
 
 [node name="VictoryStatsPopup" parent="YSort/UI" instance=ExtResource( 36 )]
 pause_mode = 2

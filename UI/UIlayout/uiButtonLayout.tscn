@@ -3,7 +3,7 @@
 [ext_resource path="res://UI/UILayout/ButtonArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Score.tscn" type="PackedScene" id=3]
 
-[node name="uiButtonLayout" type="CanvasLayer"]
+[node name="uiButtonLayout" type="Node2D"]
 
 [node name="ButtonArea" parent="." instance=ExtResource( 1 )]
 margin_left = 11.0
