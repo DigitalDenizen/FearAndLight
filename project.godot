@@ -56,7 +56,7 @@ EventBus="*res://Shared/EventBus.gd"
 Util="*res://Shared/Util.gd"
 Nav="*res://Shared/PathFinding.gd"
 Physics="*res://Shared/Physics/MovementPhysics.gd"
-Cursors="*res://UI/Cursors/Cursor.tscn"
+Cursor="*res://UI/Cursors/Cursor.tscn"
 
 [display]
 
