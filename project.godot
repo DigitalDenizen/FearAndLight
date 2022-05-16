@@ -63,6 +63,10 @@ Cursor="*res://UI/Cursors/Cursor.tscn"
 
 window/size/width=640
 window/size/height=360
+window/size/borderless=true
+window/size/fullscreen=true
+window/size/test_width=1920
+window/size/test_height=1028
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
