@@ -8,29 +8,32 @@ onready var swordCursor = preload("res://Images/UI/Cursors/ui-cursor-sword.png")
 onready var hammerCursor = preload("res://Images/UI/Cursors/ui-cursor-hammer.png")
 onready var rockCursor = preload("res://Images/UI/Cursors/ui-cursor-rock.png")
 onready var Icon = self.get_node("Sprite")
-#var cursor = null
-
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-#	cursor = Util.get_main_node().get_node("YSort/Player/")
+	Icon.hide()
 	
 func _process(delta):
 	self.position = self.get_global_mouse_position()
 
-#	Potential usage
-#	Input.set_custom_mouse_cursor(pointerCursor, Input.CURSOR_POINTING_HAND, Vector2())
-
 func _on_Cursor_body_entered(body):
 	if body.is_in_group("Objects"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		self.Icon.texture = swordCursor
+		Icon.show()
 	if body.is_in_group("Baddies"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		self.Icon.texture = swordCursor
+		Icon.show()
 	if body.is_in_group("Structures"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		self.Icon.texture = hammerCursor
+		Icon.show()
 	if body.is_in_group("TileMaps"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		self.Icon.texture = rockCursor
+		Icon.show()
 
 func _on_Cursor_body_exited(body):
-	if body.is_in_group("Objects") || body.is_in_group("Baddies") || body.is_in_group("Structures"):
-		self.Icon.texture = arrowCursor
+	if body.is_in_group("Objects") || body.is_in_group("Baddies") || body.is_in_group("Structures") || body.is_in_group("TileMaps"):
+		Icon.hide()
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

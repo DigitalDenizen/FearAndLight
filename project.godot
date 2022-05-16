@@ -57,6 +57,7 @@ Util="*res://Shared/Util.gd"
 Nav="*res://Shared/PathFinding.gd"
 Physics="*res://Shared/Physics/MovementPhysics.gd"
 CursorManager="*res://UI/Cursors/CursorManager.tscn"
+Cursor="*res://UI/Cursors/Cursor.tscn"
 
 [display]
 
