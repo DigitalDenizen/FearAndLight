@@ -31,27 +31,32 @@ func update_cursor():
 	var texture_pointer = ImageTexture.new()
 	var texture_ibeam = ImageTexture.new()
 	var texture_sword = ImageTexture.new()
+	var texture_hand_open = ImageTexture.new()
 	
 	# Get Texture Data
 	var arrow = arrow_cursor.get_data()
 	var pointer = pointer_cursor.get_data()
 	var ibeam = ibeam_cursor.get_data()
 	var sword = sword_cursor.get_data()
+	var hand_open = hand_open_cursor.get_data()
 	
 	# Interpolate
 	arrow.resize(base_cursor_size.x * (scale_multiple), base_cursor_size.y * (scale_multiple ), Image.INTERPOLATE_NEAREST)
 	pointer.resize(base_cursor_size.x * (scale_multiple), base_cursor_size.y * (scale_multiple), Image.INTERPOLATE_NEAREST)
 	ibeam.resize(base_cursor_size.x * (scale_multiple), base_cursor_size.y * (scale_multiple), Image.INTERPOLATE_NEAREST)
 	sword.resize(base_cursor_size.x * (scale_multiple), base_cursor_size.y * (scale_multiple), Image.INTERPOLATE_NEAREST)
+	hand_open.resize(base_cursor_size.x * (scale_multiple), base_cursor_size.y * (scale_multiple), Image.INTERPOLATE_NEAREST)
 	
 	# Create New Texture
 	texture_arrow.create_from_image(arrow)
 	texture_pointer.create_from_image(pointer)
 	texture_ibeam.create_from_image(ibeam)
 	texture_sword.create_from_image(sword)
+	texture_hand_open.create_from_image(hand_open)
 	
 	# Set Custom Cursor
 	Input.set_custom_mouse_cursor(texture_arrow, Input.CURSOR_ARROW)
 	Input.set_custom_mouse_cursor(texture_pointer, Input.CURSOR_POINTING_HAND)
 	Input.set_custom_mouse_cursor(texture_ibeam, Input.CURSOR_IBEAM)
 	Input.set_custom_mouse_cursor(texture_sword, Input.CURSOR_CROSS)
+	Input.set_custom_mouse_cursor(texture_hand_open, Input.CURSOR_DRAG)
