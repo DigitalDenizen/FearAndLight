@@ -12,15 +12,9 @@ export(Texture) var hand_grab_cursor = null
 export(Vector2) var base_window_size = Vector2.ZERO
 export(Vector2) var base_cursor_size = Vector2.ZERO
 
-onready var Icon = self.get_node("Cursor/Sprite")
-
 func _ready():
-	Icon.hide()
 	update_cursor()
 	get_tree().connect("screen_resized", self, "update_cursor")
-
-func _process(delta):
-	Icon.position = Icon.get_global_mouse_position()
 
 func update_cursor():
 	var current_window_size = OS.window_size

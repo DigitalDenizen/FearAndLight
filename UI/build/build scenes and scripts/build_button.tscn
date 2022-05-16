@@ -32,7 +32,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
 
-[node name="build_button_container" type="CenterContainer" parent="."]
+[node name="build_button_container" type="CenterContainer" parent="." groups=["UI"]]
 margin_right = 40.0
 margin_bottom = 40.0
 

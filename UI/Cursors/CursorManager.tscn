@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://UI/Cursors/CursorManager.gd" type="Script" id=1]
 [ext_resource path="res://Images/UI/Cursors/ui-cursor-arrow.png" type="Texture" id=2]
@@ -10,10 +10,8 @@
 [ext_resource path="res://Images/UI/Cursors/ui-cursor-handgrab.png" type="Texture" id=8]
 [ext_resource path="res://Images/UI/Cursors/ui-cursor-handopen.png" type="Texture" id=9]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9, 8.5 )
-
 [node name="CursorManager" type="CanvasLayer"]
+layer = 2
 script = ExtResource( 1 )
 empty_cursor = ExtResource( 3 )
 arrow_cursor = ExtResource( 2 )
@@ -25,13 +23,3 @@ hand_open_cursor = ExtResource( 9 )
 hand_grab_cursor = ExtResource( 8 )
 base_window_size = Vector2( 640, 360 )
 base_cursor_size = Vector2( 17, 17 )
-
-[node name="Cursor" type="Area2D" parent="."]
-
-[node name="Sprite" type="Sprite" parent="Cursor"]
-texture = ExtResource( 2 )
-centered = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor"]
-position = Vector2( 9, 8.5 )
-shape = SubResource( 1 )

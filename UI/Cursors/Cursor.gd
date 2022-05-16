@@ -17,23 +17,22 @@ func _process(delta):
 
 func _on_Cursor_body_entered(body):
 	if body.is_in_group("Objects"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-		self.Icon.texture = swordCursor
 		Icon.show()
+		self.Icon.texture = swordCursor
 	if body.is_in_group("Baddies"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+		Icon.show()
 		self.Icon.texture = swordCursor
-		Icon.show()
 	if body.is_in_group("Structures"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+		Icon.show()
 		self.Icon.texture = hammerCursor
-		Icon.show()
 	if body.is_in_group("TileMaps"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-		self.Icon.texture = rockCursor
 		Icon.show()
+		self.Icon.texture = rockCursor
+	if body.is_in_group("UI"):
+		Icon.show()
+		self.Icon.texture = arrowCursor
 
 func _on_Cursor_body_exited(body):
-	if body.is_in_group("Objects") || body.is_in_group("Baddies") || body.is_in_group("Structures") || body.is_in_group("TileMaps"):
+	if body.is_in_group("Objects") || body.is_in_group("Baddies") || body.is_in_group("Structures") || body.is_in_group("TileMaps") || body.is_in_group("UI"):
+		self.Icon.texture = arrowCursor
 		Icon.hide()
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
