@@ -7,6 +7,9 @@ const ENEMY_GROUP : String = "Baddies"
 const STRUCTURES_GROUP : String = "Structures"
 const OBJECTS_GROUP : String = "Objects"
 const TILEMAPS_GROUP : String = "TileMaps"
+const UI_GROUP : String = "UI"
+const MUSHROOM_GROUP : String = "Mushrooms"
+const DEFENSES_GROUP : String = "Defenses"
 
 enum itemCategories {CONSUMABLE, TOOL, WEAPON, MATERIAL}
 

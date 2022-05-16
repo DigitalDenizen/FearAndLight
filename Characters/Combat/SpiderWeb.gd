@@ -35,9 +35,9 @@ func _on_Area2D_body_entered(body):
 			body.hurt(10, "web")
 		if body.is_in_group("Baddies"):
 			collid = false
-		if body.is_in_group("item drops"):
+		if body.is_in_group("Objects"):
 			collid = false
-		if body.is_in_group("structures"):
+		if body.is_in_group("Structures"):
 			collid = true
 
 func _web_collid():

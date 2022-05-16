@@ -11,14 +11,6 @@ region = Rect2( 0, 0, 22, 24 )
 atlas = ExtResource( 2 )
 region = Rect2( 22, 0, 22, 24 )
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 2 )
-region = Rect2( 66, 0, 22, 24 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 2 )
-region = Rect2( 44, 0, 22, 24 )
-
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
 region = Rect2( 88, 0, 22, 24 )
@@ -35,6 +27,14 @@ region = Rect2( 132, 0, 22, 24 )
 atlas = ExtResource( 2 )
 region = Rect2( 154, 0, 22, 24 )
 
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 66, 0, 22, 24 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 44, 0, 22, 24 )
+
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [ SubResource( 1 ) ],
@@ -47,6 +47,11 @@ animations = [ {
 "name": "Health 75",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": false,
+"name": "Death",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 3 ) ],
 "loop": true,
 "name": "Health 25",
@@ -56,20 +61,13 @@ animations = [ {
 "loop": true,
 "name": "Health 50",
 "speed": 10.0
-}, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
-"loop": false,
-"name": "Death",
-"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=10]
 radius = 4.94168
 height = 11.8357
 
-[node name="SmallWall" type="StaticBody2D" groups=[
-"obstacles",
-]]
+[node name="SmallWall" type="StaticBody2D" groups=["obstacles"]]
 collision_layer = 7
 collision_mask = 16
 script = ExtResource( 3 )

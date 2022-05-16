@@ -9,6 +9,7 @@
 [ext_resource path="res://UI/Battle/battleButton.tscn" type="PackedScene" id=7]
 
 [node name="Control" type="Control"]
+show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -67,11 +68,27 @@ margin_bottom = 30.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[node name="itemBarSquare" parent="HBoxContainer3/HBoxContainer2/CenterContainer4/VBoxContainer/HBoxContainer" index="0" groups=["UI"]]
+
+[node name="itemBarSquare2" parent="HBoxContainer3/HBoxContainer2/CenterContainer4/VBoxContainer/HBoxContainer" index="1" groups=["UI"]]
+
+[node name="itemBarSquare3" parent="HBoxContainer3/HBoxContainer2/CenterContainer4/VBoxContainer/HBoxContainer" index="2" groups=["UI"]]
+
+[node name="itemBarSquare4" parent="HBoxContainer3/HBoxContainer2/CenterContainer4/VBoxContainer/HBoxContainer" index="3" groups=["UI"]]
+
+[node name="itemBarSquare5" parent="HBoxContainer3/HBoxContainer2/CenterContainer4/VBoxContainer/HBoxContainer" index="4" groups=["UI"]]
+
+[node name="itemBarSquare6" parent="HBoxContainer3/HBoxContainer2/CenterContainer4/VBoxContainer/HBoxContainer" index="5" groups=["UI"]]
+
+[node name="itemBarSquare7" parent="HBoxContainer3/HBoxContainer2/CenterContainer4/VBoxContainer/HBoxContainer" index="6" groups=["UI"]]
+
 [node name="HBoxContainer2" parent="HBoxContainer3/HBoxContainer2/CenterContainer4/VBoxContainer" index="1"]
 margin_top = 30.0
 margin_bottom = 44.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="Button" parent="HBoxContainer3/HBoxContainer2/CenterContainer4/VBoxContainer/HBoxContainer2/CenterContainer" index="0" groups=["UI"]]
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer3"]
 margin_left = 390.0

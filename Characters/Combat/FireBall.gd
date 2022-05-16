@@ -32,17 +32,14 @@ func _FireBall_body_exited(body):
 
 func _body_entered(body):
 	if attacker == "Player":
-		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && !body.is_in_group('Player'):
-			_fireBall_collid()
-		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && !body.is_in_group('Baddies'):
+		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && body.is_in_group('Baddies') || body.is_in_group('Objects') || body.is_in_group('Mushrooms'):
 			body.hurt(25)
 			_fireBall_collid()
-		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && !body.is_in_group('Objects'):
-			body.hurt(25)
+		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && body.is_in_group('TileMaps'):
 			_fireBall_collid()
-		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && !body.is_in_group('TileMaps'):
+		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && body.is_in_group('Structures'):
 			_fireBall_collid()
-		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && !body.is_in_group('Structures'):
+		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && body.is_in_group('Defenses'):
 			_fireBall_collid()
 
 func _fireBall_collid():

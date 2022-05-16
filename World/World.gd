@@ -8,7 +8,7 @@ func _set_health(value):
 	health = clamp(value, 0, max_health)
 
 func _ready():
-	add_to_group("tileMap")
+	add_to_group("TileMaps")
 
 func hurt(damage):
 	_set_health(health - damage)

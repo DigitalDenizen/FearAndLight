@@ -50,21 +50,23 @@ config/icon="res://icon.png"
 
 [autoload]
 
+Constants="*res://Shared/Constants.gd"
 Score="*res://UI/Score.gd"
+EventBus="*res://Shared/EventBus.gd"
 Util="*res://Shared/Util.gd"
 Nav="*res://Shared/PathFinding.gd"
 Physics="*res://Shared/Physics/MovementPhysics.gd"
-Constants="*res://Shared/Constants.gd"
-EventBus="*res://Shared/EventBus.gd"
+CursorManager="*res://UI/Cursors/CursorManager.tscn"
+Cursor="*res://UI/Cursors/Cursor.tscn"
 
 [display]
 
 window/size/width=640
 window/size/height=360
+window/size/borderless=true
 window/size/fullscreen=true
 window/size/test_width=1920
-window/size/test_height=1080
-mouse_cursor/custom_image="res://Images/UI/Global/ui-cursor-pointer-2.png"
+window/size/test_height=1028
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
