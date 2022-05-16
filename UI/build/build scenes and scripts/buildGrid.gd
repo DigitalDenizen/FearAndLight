@@ -97,7 +97,7 @@ func _physics_process(delta):
 func _input(event):
 	if mudHutPlacement == 1:
 		if Input.is_mouse_button_pressed(BUTTON_LEFT):
-			var buildings = Util.get_main_node().get_node("YSort").get_node("Buildings")
+			var buildings = get_parent().get_node("Buildings")
 			var mh = mudHut.instance()
 			buildings.add_child(mh)
 			mh.global_position = get_global_mouse_position().snapped(GRID_SIZE)
@@ -109,7 +109,7 @@ func _input(event):
 			
 	if largeWallPlacement == 1:		
 		if Input.is_mouse_button_pressed(BUTTON_LEFT):
-			var buildings = Util.get_main_node().get_node("YSort/Buildings")
+			var buildings = get_parent().get_node("Buildings")
 			var lw = largeWall.instance()
 			buildings.add_child(lw)
 			lw.global_position = get_global_mouse_position().snapped(GRID_SIZE)
@@ -121,7 +121,7 @@ func _input(event):
 			
 	if smallWallPlacement == 1:		
 		if Input.is_mouse_button_pressed(BUTTON_LEFT):
-			var buildings = Util.get_main_node().get_node("YSort/Buildings")
+			var buildings = get_parent().get_node("Buildings")
 			var sw = smallWall.instance()
 			buildings.add_child(sw)
 			sw.global_position = get_global_mouse_position().snapped(GRID_SIZE)
@@ -133,7 +133,7 @@ func _input(event):
 			
 	if torchPlacement == 1:		
 		if Input.is_mouse_button_pressed(BUTTON_LEFT):
-			var buildings = Util.get_main_node().get_node("YSort/Buildings")
+			var buildings = get_parent().get_node("Buildings")
 			var tp = torch.instance()
 			buildings.add_child(tp)
 			tp.global_position = get_global_mouse_position().snapped(GRID_SIZE)
@@ -145,7 +145,7 @@ func _input(event):
 			
 	if bombBarrelPlacement == 1:		
 		if Input.is_mouse_button_pressed(BUTTON_LEFT):
-			var buildings = Util.get_main_node().get_node("YSort/Buildings")
+			var buildings = get_parent().get_node("Buildings")
 			var bb = bombBarrel.instance()
 			buildings.add_child(bb)
 			bb.global_position = get_global_mouse_position().snapped(GRID_SIZE)
