@@ -1,9 +1,10 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Characters/UI/HealthBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Images/Heroes/hero-female-dark-sprite.png" type="Texture" id=3]
 [ext_resource path="res://Audio/Sounds/Attacks/Player/swipe.wav" type="AudioStream" id=4]
+[ext_resource path="res://Images/Heroes/hero-female-emission-sprite.png" type="Texture" id=5]
 [ext_resource path="res://Images/Effects/Lights/light.png" type="Texture" id=8]
 [ext_resource path="res://Audio/Sounds/Attacks/Player/fireball.wav" type="AudioStream" id=9]
 [ext_resource path="res://Audio/Sounds/Attacks/Player/heal.wav" type="AudioStream" id=10]
@@ -14,7 +15,30 @@
 radius = 7.85901
 height = 7.02235
 
-[sub_resource type="CanvasItemMaterial" id=2]
+[sub_resource type="Shader" id=87]
+code = "shader_type canvas_item;
+uniform sampler2D emission_texture;
+uniform vec4 glow_color : hint_color = vec4(1.0);
+
+void fragment()
+{
+	vec4 current_color = texture(TEXTURE,UV);
+	vec4 emission_color = texture(emission_texture, UV);
+	
+	if(emission_color.r > 0f)
+	{
+		COLOR = (emission_color + glow_color)
+	}
+	else
+	{
+		COLOR = current_color; // we aren't over an emission pixel leave alone
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=88]
+shader = SubResource( 87 )
+shader_param/glow_color = Color( 1, 1, 1, 1 )
+shader_param/emission_texture = ExtResource( 5 )
 
 [sub_resource type="AtlasTexture" id=47]
 atlas = ExtResource( 3 )
@@ -236,6 +260,16 @@ animations = [ {
 "speed": 15.0
 } ]
 
+[sub_resource type="Environment" id=86]
+background_mode = 4
+glow_enabled = true
+glow_intensity = 0.11
+glow_strength = 0.56
+glow_blend_mode = 0
+glow_hdr_threshold = 0.38
+glow_hdr_luminance_cap = 45.25
+glow_hdr_scale = 1.95
+
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 z_as_relative = false
 collision_layer = 10
@@ -254,7 +288,7 @@ margin_right = 25.2775
 margin_bottom = 6.27937
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-material = SubResource( 2 )
+material = SubResource( 88 )
 position = Vector2( 0, -15 )
 z_as_relative = false
 frames = SubResource( 25 )
@@ -263,8 +297,9 @@ animation = "melee"
 [node name="Light2D" type="Light2D" parent="."]
 light_mask = 7
 position = Vector2( 0.641525, 0.859184 )
+scale = Vector2( 2.63349, 2.50224 )
 texture = ExtResource( 8 )
-energy = 0.25
+energy = 0.28
 shadow_color = Color( 0.0352941, 0.027451, 0.027451, 0 )
 shadow_filter_smooth = 6.2
 
@@ -288,6 +323,12 @@ audio_files = [ null, null, null ]
 stream = ExtResource( 4 )
 volume_db = -15.769
 pitch_scale = 1.02
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 86 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [connection signal="health_updated" from="." to="HealthBar" method="_on_health_updated"]
 [connection signal="melee" from="." to="." method="_on_Player_melee"]

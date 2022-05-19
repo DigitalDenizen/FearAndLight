@@ -45,6 +45,10 @@ region = Rect2( 464, 0, 58, 45 )
 atlas = ExtResource( 3 )
 region = Rect2( 522, 0, 58, 45 )
 
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 3 )
+region = Rect2( 928, 0, 58, 45 )
+
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 3 )
 region = Rect2( 870, 0, 58, 45 )
@@ -52,10 +56,6 @@ region = Rect2( 870, 0, 58, 45 )
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 3 )
 region = Rect2( 986, 0, 58, 45 )
-
-[sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 3 )
-region = Rect2( 928, 0, 58, 45 )
 
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 3 )
@@ -88,6 +88,11 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
+"frames": [ SubResource( 36 ) ],
+"loop": true,
+"name": "Health 50",
+"speed": 10.0
+}, {
 "frames": [ SubResource( 28 ) ],
 "loop": true,
 "name": "Health 75",
@@ -96,11 +101,6 @@ animations = [ {
 "frames": [ SubResource( 29 ) ],
 "loop": true,
 "name": "Health 25",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 36 ) ],
-"loop": true,
-"name": "Health 50",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
@@ -119,17 +119,16 @@ collision_mask = 16
 script = ExtResource( 1 )
 
 [node name="HealthBar" parent="." instance=ExtResource( 2 )]
-margin_left = -15.603
-margin_top = -37.717
-margin_right = 25.4157
-margin_bottom = 19.0555
-rect_scale = Vector2( 0.9, 0.75 )
+margin_left = -17.0
+margin_top = -43.0
+margin_right = 24.0187
+margin_bottom = 13.7725
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.5, -9 )
 frames = SubResource( 16 )
 animation = "idle"
-frame = 3
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -142,3 +141,5 @@ scale = Vector2( 0.65, 0.25 )
 z_index = 1
 texture = ExtResource( 5 )
 energy = 1.09
+
+[connection signal="health_updated" from="." to="HealthBar" method="_on_MudHut_health_updated"]
