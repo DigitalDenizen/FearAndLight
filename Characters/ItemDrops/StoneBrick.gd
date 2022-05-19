@@ -1,6 +1,6 @@
 extends Area2D
 signal health_updated(health)
-enum ItemDrop {HEALTH, WENDIGOHEAD}
+enum ItemDrop {HEALTH, STONEBRICK}
 export(ItemDrop) var type = ItemDrop.HEALTH
 var collected = false
 var collectedCountDown = 0
@@ -12,9 +12,10 @@ func _ready():
 	player = get_parent().get_node("Player")
 	add_to_group("item_drops")
 	$AnimationPlayer.play("Bounce")
-	$AnimatedSprite.play("WendigoHead")
+	$AnimatedSprite.play("StoneBrick")
 
-func _on_WendigoItemDrop_body_entered(body):
+func _Item_Drop_body_entered(body):
 	if body.name == "Player":
-		body.inventory.addPickedUpItem("WendigoHead", Constants.imagePath.wendigohead, Constants.itemCategories.CONSUMABLE)
+		body.inventory.addPickedUpItem("StoneBrick", Constants.imagePath.stonebrick, Constants.itemCategories.CONSUMABLE)
 		queue_free()
+

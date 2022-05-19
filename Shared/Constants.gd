@@ -10,6 +10,7 @@ const TILEMAPS_GROUP : String = "TileMaps"
 const UI_GROUP : String = "UI"
 const MUSHROOM_GROUP : String = "Mushrooms"
 const DEFENSES_GROUP : String = "Defenses"
+const BOSSES_GROUP : String = "Bosses"
 
 enum itemCategories {CONSUMABLE, TOOL, WEAPON, MATERIAL}
 

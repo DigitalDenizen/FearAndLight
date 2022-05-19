@@ -124,17 +124,15 @@ scale = Vector2( 2.39668, 2.39668 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -37.5, -2.5 )
-scale = Vector2( 1, 0.78125 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 28 )
 animation = "BlueMushroom"
-frame = 1
 
 [node name="Light2D" type="Light2D" parent="."]
 light_mask = 7
 position = Vector2( -37, -1.905 )
 scale = Vector2( 0.141038, 0.137773 )
-z_index = 10
+z_as_relative = false
 texture = ExtResource( 4 )
 color = Color( 0.0313726, 0.207843, 0.67451, 1 )
 energy = 1.11

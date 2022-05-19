@@ -1,73 +1,73 @@
 [gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://Images/Drops/ResourceDrops/MudClump/drop-mud-clump-glow-sprite.png" type="Texture" id=1]
-[ext_resource path="res://Characters/ItemDrops/MudClump.gd" type="Script" id=2]
-[ext_resource path="res://Images/Effects/Lights/light.png" type="Texture" id=4]
+[ext_resource path="res://Images/Drops/BossDrops/WendigoHead/drop-wendigo-head-glow-sprite.png" type="Texture" id=1]
+[ext_resource path="res://Characters/ItemDrops/WendigoHead.gd" type="Script" id=2]
+[ext_resource path="res://Images/Effects/Lights/light.png" type="Texture" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 6.57643
-
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 28, 24 )
+region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 28, 0, 28, 24 )
+region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
-region = Rect2( 56, 0, 28, 24 )
+region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
-region = Rect2( 84, 0, 28, 24 )
+region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
-region = Rect2( 112, 0, 28, 24 )
+region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
-region = Rect2( 140, 0, 28, 24 )
+region = Rect2( 160, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
-region = Rect2( 168, 0, 28, 24 )
+region = Rect2( 192, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=36]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 196, 0, 28, 24 )
+region = Rect2( 224, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 224, 0, 28, 24 )
+region = Rect2( 256, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=38]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 252, 0, 28, 24 )
+region = Rect2( 288, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=39]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 280, 0, 28, 24 )
+region = Rect2( 320, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=40]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 308, 0, 28, 24 )
+region = Rect2( 352, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=41]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 336, 0, 28, 24 )
+region = Rect2( 384, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=28]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
-"name": "MudClump",
-"speed": 10.0
+"name": "WendigoHead",
+"speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=42]
+[sub_resource type="CircleShape2D" id=3]
+radius = 23.9354
+
+[sub_resource type="Animation" id=17]
 resource_name = "Bounce"
 length = 0.866667
 step = 0.0333333
@@ -108,40 +108,32 @@ tracks/2/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
 }
 
-[node name="MudClump" type="Area2D"]
-position = Vector2( 0, -2.095 )
-collision_layer = 8
-collision_mask = 2
-gravity_point = true
+[node name="WendigoHead" type="Area2D"]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -41, 0.095 )
-scale = Vector2( 2.39668, 2.39668 )
-shape = SubResource( 1 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -40, 0 )
-frames = SubResource( 28 )
-animation = "MudClump"
-frame = 11
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 2 )
+animation = "WendigoHead"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -38, -1 )
+shape = SubResource( 3 )
 
 [node name="Light2D" type="Light2D" parent="."]
 light_mask = 7
-position = Vector2( -39, 0.0950003 )
+position = Vector2( -37, -1 )
 scale = Vector2( 0.141038, 0.137773 )
 z_index = 10
-texture = ExtResource( 4 )
-energy = 0.3
-__meta__ = {
-"_edit_group_": true
-}
+texture = ExtResource( 3 )
+color = Color( 0.352941, 0.145098, 1, 1 )
+energy = 0.69
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite")
-anims/Bounce = SubResource( 42 )
+anims/Bounce = SubResource( 17 )
 
-[connection signal="body_entered" from="." to="." method="_Item_Drop_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_WendigoHead_body_entered"]

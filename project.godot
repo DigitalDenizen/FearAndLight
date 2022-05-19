@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "DireWolf",
+"language": "GDScript",
+"path": "res://Characters/Enemies/DireWolf.gd"
+}, {
 "base": "Node",
 "class": "MobSpawner",
 "language": "GDScript",
@@ -19,15 +24,25 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Shared/PathFinding.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "StoneMan",
+"language": "GDScript",
+"path": "res://Characters/Enemies/StoneMan.gd"
+}, {
 "base": "Node2D",
 "class": "TargetPath",
 "language": "GDScript",
 "path": "res://Shared/Models/Target.gd"
 }, {
 "base": "KinematicBody2D",
+"class": "VampireSpider",
+"language": "GDScript",
+"path": "res://Characters/Enemies/VampireSpider.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Wendigo",
 "language": "GDScript",
-"path": "res://Characters/Bosses/wendigo.gd"
+"path": "res://Characters/Bosses/Wendigo.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Zombie",
@@ -35,9 +50,12 @@ _global_script_classes=[ {
 "path": "res://Characters/Enemies/Zombie.gd"
 } ]
 _global_script_class_icons={
+"DireWolf": "",
 "MobSpawner": "",
 "PathFinding": "",
+"StoneMan": "",
 "TargetPath": "",
+"VampireSpider": "",
 "Wendigo": "",
 "Zombie": ""
 }
@@ -66,7 +84,7 @@ window/size/height=360
 window/size/borderless=true
 window/size/fullscreen=true
 window/size/test_width=1920
-window/size/test_height=1028
+window/size/test_height=1080
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -98,39 +116,39 @@ texture={
 
 move_up={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":-1.0,"script":null)
  ]
 }
 move_left={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":-1.0,"script":null)
  ]
 }
 move_right={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":1.0,"script":null)
  ]
 }
 move_down={
 "deadzone": 0.49,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
  ]
 }
 shoot={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":74,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":74,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
 melee={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":75,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":75,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
  ]
 }

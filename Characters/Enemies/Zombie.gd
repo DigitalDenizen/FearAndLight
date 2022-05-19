@@ -12,8 +12,8 @@ const MOVE_SPEED = 30
 enum STATES { IDLE, FOLLOW }
 onready var collision_shape = $CollisionShape2D
 onready var health = max_health setget _set_health
-onready var itemDrop_scene = preload("res://Characters/ItemDrops/ZombieDrop.tscn")
 onready var path_line = $PathLine
+onready var itemDrop_scene = preload("res://Characters/ItemDrops/ZombieDrop.tscn")
 var Melee = preload("res://Characters/Combat/Melee.tscn")
 
 var player = null
@@ -57,12 +57,12 @@ func _physics_process(delta):
 			target = false
 		
 		var enemyVector
-		if targetObject.path.size() > 1.97:
+		if targetObject.path.size() > 1.99:
 			enemyVector = global_position.direction_to(targetObject.path[1]) * MOVE_SPEED
 			walk_animation(enemyVector)
 			move_and_slide(enemyVector)
 			set_path_line(targetObject.path)
-		elif targetObject.path.size() < 1.96 && !target:
+		elif targetObject.path.size() < 1.99 && !target:
 			_change_state(STATES.IDLE)
 		else:
 			_on_Zombie_melee(Melee, targetObject.targetObject.global_position, global_position)
@@ -126,7 +126,7 @@ func _set_health(value):
 
 func _on_Zombie_melee(Melee, target_pos, zombie_pos):
 	var direction = target_pos - zombie_pos
-	if direction.x > 0:
+	if direction.x > 1:
 		$AnimatedSprite.play("Attack")
 		$AnimatedSprite.flip_h = true
 	else:
@@ -162,12 +162,11 @@ func set_path_line(points: Array):
 
 func idle_animation(vector: Vector2):
 	if vector.x > 0:
-		$AnimatedSprite.play("Walk")
+		$AnimatedSprite.play("Idle")
 		$AnimatedSprite.flip_h = false
 	else:
-		$AnimatedSprite.play("Walk")
+		$AnimatedSprite.play("Idle")
 		$AnimatedSprite.flip_h = false
-		
 
 func walk_animation(vector: Vector2):
 	if vector.x > 0:
