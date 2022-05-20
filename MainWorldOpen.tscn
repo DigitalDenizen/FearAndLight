@@ -112,6 +112,7 @@ z_index = 1
 position = Vector2( -136, -88 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="YSort"]
+visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="BuildGrid" type="TileMap" parent="YSort"]
