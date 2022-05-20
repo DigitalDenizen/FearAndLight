@@ -3,7 +3,7 @@ extends Area2D
 export(PackedScene) var target_scene
 
 func _ready():
-	pass
+	add_to_group("Doors")
 	
 func _input(event):
 	if event.is_action_pressed("shoot") || event.is_action_pressed("melee"):
