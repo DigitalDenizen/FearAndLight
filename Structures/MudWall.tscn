@@ -5,17 +5,9 @@
 [ext_resource path="res://Images/Defenses/MudWallLarge/defense-mud-wall-large-attacked-spritesheet.png" type="Texture" id=3]
 [ext_resource path="res://Characters/UI/HealthBar.tscn" type="PackedScene" id=4]
 
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 3 )
-region = Rect2( 82, 0, 41, 47 )
-
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 3 )
 region = Rect2( 41, 0, 41, 47 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 3 )
-region = Rect2( 123, 0, 41, 47 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 3 )
@@ -33,6 +25,14 @@ region = Rect2( 246, 0, 41, 47 )
 atlas = ExtResource( 3 )
 region = Rect2( 287, 0, 41, 47 )
 
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 3 )
+region = Rect2( 82, 0, 41, 47 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 3 )
+region = Rect2( 123, 0, 41, 47 )
+
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
@@ -40,24 +40,24 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 17 ) ],
-"loop": true,
-"name": "Health 50",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 18 ) ],
 "loop": true,
 "name": "Health 75",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 16 ) ],
-"loop": true,
-"name": "Health 25",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": false,
 "name": "Death",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "Health 50",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 16 ) ],
+"loop": true,
+"name": "Health 25",
 "speed": 10.0
 } ]
 

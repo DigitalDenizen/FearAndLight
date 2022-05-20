@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://World/Swamp/Bush4.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/DarkForest/TreeStump1.tscn" type="PackedScene" id=2]
@@ -53,6 +53,7 @@
 [ext_resource path="res://Images/World/Swamp/tileset-swamp.png" type="Texture" id=56]
 [ext_resource path="res://Images/World/Construct/tileset-construct.png" type="Texture" id=57]
 [ext_resource path="res://Images/UI/Grid/ui-grid-square-normal.png" type="Texture" id=58]
+[ext_resource path="res://World/Swamp/WallDoor.tscn" type="PackedScene" id=61]
 [ext_resource path="res://World/World.tscn" type="PackedScene" id=62]
 
 [sub_resource type="TileSet" id=1]
@@ -227,6 +228,12 @@ position = Vector2( 16, 160 )
 [node name="Swamp" type="YSort" parent="YSort/Objects"]
 position = Vector2( 16, 6 )
 rotation = 0.00185059
+
+[node name="Door" parent="YSort/Objects/Swamp" instance=ExtResource( 61 )]
+position = Vector2( -366.471, 826.68 )
+
+[node name="Door2" parent="YSort/Objects/Swamp" instance=ExtResource( 61 )]
+position = Vector2( 271.278, -390.503 )
 
 [node name="Tree1" parent="YSort/Objects/Swamp" instance=ExtResource( 13 )]
 position = Vector2( -190, -254 )
