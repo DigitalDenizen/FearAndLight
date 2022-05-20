@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=2]
+[gd_scene load_steps=149 format=2]
 
 [ext_resource path="res://World/Swamp/Bush4.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/DarkForest/TreeStump1.tscn" type="PackedScene" id=2]
@@ -60,6 +60,7 @@
 [ext_resource path="res://Images/World/DarkForest/tileset-darkforest.png" type="Texture" id=59]
 [ext_resource path="res://World/World.gd" type="Script" id=60]
 [ext_resource path="res://World/Swamp/WallDoor.tscn" type="PackedScene" id=61]
+[ext_resource path="res://World/World.tscn" type="PackedScene" id=62]
 
 [sub_resource type="TileSet" id=1]
 0/name = "ui-grid-square-normal.png 0"
@@ -1952,5 +1953,7 @@ position = Vector2( -232, 305 )
 
 [node name="Bush4" parent="YSort/SwampTest" instance=ExtResource( 1 )]
 position = Vector2( -221, 295 )
+
+[node name="World" parent="YSort" instance=ExtResource( 62 )]
 
 [connection signal="hide" from="YSort/UI/VictoryStatsPopup" to="YSort/UI/VictoryStatsPopup" method="closeWindow"]
