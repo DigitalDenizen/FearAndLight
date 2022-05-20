@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=2]
+[gd_scene load_steps=148 format=2]
 
 [ext_resource path="res://World/Swamp/Bush4.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/DarkForest/TreeStump1.tscn" type="PackedScene" id=2]
@@ -28,7 +28,7 @@
 [ext_resource path="res://World/Swamp/Bush1.tscn" type="PackedScene" id=26]
 [ext_resource path="res://World/Swamp/MudClump4.tscn" type="PackedScene" id=27]
 [ext_resource path="res://World/DarkForest/Tree1.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Scenes/Barrier_top.tscn" type="PackedScene" id=29]
+[ext_resource path="res://MainWorld.gd" type="Script" id=29]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Scenes/ice-wall/ice-wall-main/Ice_Wall_Main.tscn" type="PackedScene" id=31]
 [ext_resource path="res://UI/Inventory/Inventory.tscn" type="PackedScene" id=32]
@@ -53,7 +53,6 @@
 [ext_resource path="res://BattleStart.gd" type="Script" id=51]
 [ext_resource path="res://UI/build/build scenes and scripts/buildGrid.gd" type="Script" id=52]
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=53]
-[ext_resource path="res://Construct.gd" type="Script" id=54]
 [ext_resource path="res://Audio/Music/Village/village-song-1.wav" type="AudioStream" id=55]
 [ext_resource path="res://Images/World/Swamp/tileset-swamp.png" type="Texture" id=56]
 [ext_resource path="res://Images/World/Construct/tileset-construct.png" type="Texture" id=57]
@@ -1661,14 +1660,10 @@ segments = PoolVector2Array( 22.1758, 31.7998, 25.5674, 28.0852, 25.5674, 28.085
 23/z_index = 0
 
 [node name="Main" type="Node2D"]
-script = ExtResource( 54 )
+script = ExtResource( 29 )
 
 [node name="YSort" type="YSort" parent="."]
 script = ExtResource( 51 )
-
-[node name="BarrierTop" parent="YSort" instance=ExtResource( 29 )]
-visible = false
-position = Vector2( -2921.69, 56.5692 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 30 )]
 position = Vector2( -124.893, 150.631 )
