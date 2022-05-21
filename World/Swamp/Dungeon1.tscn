@@ -1048,12 +1048,13 @@ segments = PoolVector2Array( 21.7878, 0.307861, 31.994, 0.307861, 31.994, 0.3078
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( -128, 189 )
+position = Vector2( -128, 208 )
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="YSort/Player"]
 position = Vector2( 4.24744, -30.6759 )
 scale = Vector2( 0.646373, 0.360952 )
+current = true
 smoothing_enabled = true
 drag_margin_bottom = 1.0
 script = ExtResource( 3 )
