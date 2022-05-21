@@ -496,6 +496,7 @@ position = Vector2( -2828, -2000 )
 position = Vector2( -2835, -1965 )
 
 [node name="Bush20" parent="YSort/Objects/Swamp" instance=ExtResource( 22 )]
+visible = false
 position = Vector2( -2814, -1884 )
 
 [node name="Tree40" parent="YSort/Objects/Swamp" instance=ExtResource( 9 )]

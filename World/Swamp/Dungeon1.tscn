@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=2]
+[gd_scene load_steps=104 format=2]
 
 [ext_resource path="res://Images/World/Swamp/tileset-swamp.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://UI/UILayout/uiButtonLayout.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/Inventory/Inventory.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/Swamp/DungeonDoor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Structures/Torch.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConcavePolygonShape2D" id=84]
 segments = PoolVector2Array( -0.0161438, 31.7075, -0.500671, 0, -0.500671, 0, 31.8004, 0.213867, 31.8004, 0.213867, 31.8004, 19.433, 31.8004, 19.433, 30.8314, 20.7251, 30.8314, 20.7251, 28.4088, 20.5636, 28.4088, 20.5636, 25.5017, 18.9485, 25.5017, 18.9485, 21.3026, 20.4021, 21.3026, 20.4021, 18.7185, 23.7937, 18.7185, 23.7937, 17.4265, 31.869, 17.4265, 31.869, -0.0161438, 31.7075 )
@@ -1048,7 +1049,7 @@ segments = PoolVector2Array( 21.7878, 0.307861, 31.994, 0.307861, 31.994, 0.3078
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( -128, 208 )
+position = Vector2( -129, 133 )
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="YSort/Player"]
@@ -1066,6 +1067,17 @@ pause_mode = 2
 
 [node name="GridContainer" parent="YSort/Player/Camera2D/Overlay" instance=ExtResource( 4 )]
 pause_mode = 2
+
+[node name="CanvasModulate" type="CanvasModulate" parent="YSort"]
+light_mask = 32
+z_as_relative = false
+color = Color( 0, 0, 0, 1 )
+
+[node name="Torch" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( -163, 108 )
+
+[node name="Torch2" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( -92, 108 )
 
 [node name="Door" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( -144, 96 )

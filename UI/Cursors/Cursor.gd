@@ -7,6 +7,8 @@ onready var objectIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-object.
 onready var tilemapIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-tilemap.png")
 onready var structureIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-structures.png")
 onready var mushroomIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-mushrooms.png")
+onready var doorIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-door.png")
+onready var heartIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-heart.png")
 onready var Icon = self.get_node("Sprite")
 
 func _ready():
@@ -16,6 +18,9 @@ func _process(delta):
 	self.position = self.get_global_mouse_position()
 
 func _on_Cursor_body_entered(body):
+	if body.is_in_group("Player"):
+		Icon.show()
+		self.Icon.texture = heartIcon
 	if body.is_in_group("Objects"):
 		Icon.show()
 		self.Icon.texture = objectIcon
@@ -25,9 +30,9 @@ func _on_Cursor_body_entered(body):
 	if body.is_in_group("Structures"):
 		Icon.show()
 		self.Icon.texture = structureIcon
-	if body.is_in_group("TileMaps"):
+	if body.is_in_group("Doors"):
 		Icon.show()
-		self.Icon.texture = tilemapIcon
+		self.Icon.texture = doorIcon
 	if body.is_in_group("Defenses"):
 		Icon.show()
 		self.Icon.texture = defenseIcon
@@ -36,5 +41,5 @@ func _on_Cursor_body_entered(body):
 		self.Icon.texture = mushroomIcon
 
 func _on_Cursor_body_exited(body):
-	if body.is_in_group("Objects") || body.is_in_group("Baddies") || body.is_in_group("Structures") || body.is_in_group("TileMaps") || body.is_in_group("UI") || body.is_in_group("Defenses") || body.is_in_group("Mushrooms"):
+	if body.is_in_group("Player") || body.is_in_group("Objects") || body.is_in_group("Baddies") || body.is_in_group("Structures") || body.is_in_group("TileMaps") || body.is_in_group("UI") || body.is_in_group("Defenses") || body.is_in_group("Mushrooms"):
 		Icon.hide()

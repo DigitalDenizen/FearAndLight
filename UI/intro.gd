@@ -5,9 +5,10 @@ var dialog_text = 0
 onready var collision_shape = $CollisionShape2D
 
 func _ready():
+	add_to_group("Player")
 	_speech0()
 	_move()
-	add_to_group("Objects")
+
 
 func _move():
 	$spirit_dog/AnimationPlayer.play("move")
