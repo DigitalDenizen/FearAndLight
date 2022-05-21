@@ -1,10 +1,11 @@
-[gd_scene load_steps=102 format=2]
+[gd_scene load_steps=103 format=2]
 
 [ext_resource path="res://Images/World/Swamp/tileset-swamp.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://UI/UILayout/uiButtonLayout.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/Inventory/Inventory.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/Swamp/DungeonDoor.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConcavePolygonShape2D" id=84]
 segments = PoolVector2Array( -0.0161438, 31.7075, -0.500671, 0, -0.500671, 0, 31.8004, 0.213867, 31.8004, 0.213867, 31.8004, 19.433, 31.8004, 19.433, 30.8314, 20.7251, 30.8314, 20.7251, 28.4088, 20.5636, 28.4088, 20.5636, 25.5017, 18.9485, 25.5017, 18.9485, 21.3026, 20.4021, 21.3026, 20.4021, 18.7185, 23.7937, 18.7185, 23.7937, 17.4265, 31.869, 17.4265, 31.869, -0.0161438, 31.7075 )
@@ -1053,7 +1054,6 @@ z_index = 1
 [node name="Camera2D" type="Camera2D" parent="YSort/Player"]
 position = Vector2( 4.24744, -30.6759 )
 scale = Vector2( 0.646373, 0.360952 )
-current = true
 smoothing_enabled = true
 drag_margin_bottom = 1.0
 script = ExtResource( 3 )
@@ -1065,6 +1065,9 @@ pause_mode = 2
 
 [node name="GridContainer" parent="YSort/Player/Camera2D/Overlay" instance=ExtResource( 4 )]
 pause_mode = 2
+
+[node name="Door" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -144, 96 )
 
 [node name="Dungeon" type="TileMap" parent="YSort"]
 tile_set = SubResource( 164 )
