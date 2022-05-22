@@ -11,7 +11,7 @@ const UI_GROUP : String = "UI"
 const MUSHROOM_GROUP : String = "Mushrooms"
 const DEFENSES_GROUP : String = "Defenses"
 const BOSSES_GROUP : String = "Bosses"
-const DOORS : String = "Doors"
+const DOORS_GROUP : String = "Doors"
 
 enum itemCategories {CONSUMABLE, TOOL, WEAPON, MATERIAL}
 

@@ -21,6 +21,7 @@ onready var structureIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-stru
 onready var mushroomIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-mushrooms.png")
 onready var doorIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-door.png")
 onready var heartIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-heart.png")
+onready var bossIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-boss.png")
 onready var Icon = self.get_node("Sprite")
 
 func _ready():
@@ -126,11 +127,15 @@ func _on_Cursor_body_entered(body):
 		Icon.show()
 		self.Icon.texture = mushroomIcon
 		Input.set_custom_mouse_cursor(texture_target, Input.CURSOR_ARROW)
+	if body.is_in_group("Bosses"):
+		Icon.show()
+		self.Icon.texture = bossIcon
+		Input.set_custom_mouse_cursor(texture_target, Input.CURSOR_ARROW)
 
 func _on_Cursor_body_exited(body):
 	var texture_arrow = arrow_cursor()
 	
 	# Set Custom Hovers
-	if body.is_in_group("Player") || body.is_in_group("Objects") || body.is_in_group("Baddies") || body.is_in_group("Structures") || body.is_in_group("TileMaps") || body.is_in_group("UI") || body.is_in_group("Defenses") || body.is_in_group("Mushrooms"):
+	if body.is_in_group("Player") || body.is_in_group("Objects") || body.is_in_group("Baddies") || body.is_in_group("Structures") || body.is_in_group("TileMaps") || body.is_in_group("UI") || body.is_in_group("Defenses") || body.is_in_group("Mushrooms") || body.is_in_group("Bosses"):
 		Icon.hide()
 		Input.set_custom_mouse_cursor(texture_arrow, Input.CURSOR_ARROW)
