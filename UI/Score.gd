@@ -35,5 +35,8 @@ func _on_Tree_killed():
 func _on_Mushroom_killed():
 	score += 25
 
+func _on_Object_killed():
+	score += 5
+
 func _update_score():
 	return str(score)
