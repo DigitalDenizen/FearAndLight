@@ -14,7 +14,7 @@ var attacker = ""
 
 func _ready():
 	$AnimatedSprite.play("idle")
-	add_to_group("structures")
+	add_to_group("Structures")
 	
 func _physics_process(delta):
 	if destroyed == false:
@@ -52,4 +52,5 @@ func _set_health(value):
 			emit_signal("defenseDestroyed")
 			deathCountdown = 100
 			destroyed = true
+			Score._on_Buildings_destroyed()
 			$AnimatedSprite.play('Death')

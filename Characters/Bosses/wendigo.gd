@@ -13,7 +13,7 @@ enum STATES { IDLE, FOLLOW }
 onready var collision_shape = $CollisionShape2D
 onready var health = max_health setget _set_health
 onready var path_line = $PathLine
-onready var itemDropScene = load("res://Characters/ItemDrops/WendigoItemDrop.tscn")
+onready var itemDropScene = load("res://Characters/ItemDrops/WendigoDrop.tscn")
 var Melee = preload("res://Characters/Combat/Melee.tscn")
 
 var pathFinding: PathFinding
@@ -34,8 +34,8 @@ var target_point_world = Vector2()
 var target_position = Vector2()
 
 func _ready():
-	player = Util.get_main_node().get_node("Player")
-	buildings = Util.get_main_node().get_node("Buildings")
+	player = Util.get_main_node().get_node("YSort").get_node("Player")
+	buildings = Util.get_main_node().get_node("YSort").get_node("Buildings")
 	add_to_group("Baddies")
 	rng.randomize()
 	path_line.visible = should_draw_path_line

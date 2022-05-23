@@ -1,22 +1,18 @@
 extends WindowDialog
 
-onready var enemiesKilled = $GridContainer/MarginContainer/CenterContainer/Stats_container/Killed/VBoxContainer/Enemies_Killed/Panel/HBoxContainer/CenterContainer/HBoxContainer/Label2
-onready var heroesKilled = $GridContainer/MarginContainer/CenterContainer/Stats_container/Killed/VBoxContainer/Heros_Killed/Heros_Killed/HBoxContainer/CenterContainer/HBoxContainer/Label2
-onready var defensesKilled = $GridContainer/MarginContainer/CenterContainer/Stats_container/Killed/VBoxContainer/Defenses_destroyed/Defenses_Destroyed/HBoxContainer/CenterContainer/HBoxContainer/Label2
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	EventBus.connect("defeat",self,"gameOverPanel")
+	EventBus.connect("defeat", self, "gameOverPanel")
+	EventBus.connect("return_to_menu", self, "_return_to_menu")
 	visible = false
 
-func gameOverPanel(enemies, heroes, defenses):
-	enemiesKilled.text = str(enemies)
-	heroesKilled.text = str(heroes)
-	defensesKilled.text = str(defenses)
-	get_tree().paused = true
+func gameOverPanel():
+	EventBus.emit_signal("set_enemies_killed", str(Score.vampSpiderStat + Score.zombieStat + Score.direWolfStat))
+	EventBus.emit_signal("set_heroes_killed", "1")
+	EventBus.emit_signal("set_defenses_destroyed", str(Score.buildingsDestroyed))
+	popup_centered()
 	visible = true
 
 func closeWindow():
-	get_tree().paused = false
+	get_tree().change_scene("res://UI/title-screen.tscn")
 	

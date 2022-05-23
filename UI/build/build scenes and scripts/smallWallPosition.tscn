@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Images/Defenses/MudWallSmall/defense-mud-wall-small-idle.png" type="Texture" id=1]
 
-[node name="mud_wall" type="Sprite"]
+[node name="small_wall" type="Sprite"]
 z_index = 20
 texture = ExtResource( 1 )
 centered = false

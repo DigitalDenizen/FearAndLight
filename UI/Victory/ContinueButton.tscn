@@ -28,6 +28,9 @@ region_rect = Rect2( 0, 0, 116, 21 )
 margin_right = 116.0
 margin_bottom = 21.0
 rect_min_size = Vector2( 116, 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Continue_button" type="Button" parent="."]
 margin_right = 116.0

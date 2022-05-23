@@ -1,0 +1,484 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://UI/intro.gd" type="Script" id=1]
+[ext_resource path="res://Images/Effects/Lights/light.png" type="Texture" id=2]
+[ext_resource path="res://Font/f-l-base-font-dynamic_7.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Images/StartScreen/tile-brick.png" type="Texture" id=4]
+[ext_resource path="res://Images/Spirits/SpiritDog/spirit-dog-transform-sprite.png" type="Texture" id=5]
+[ext_resource path="res://Images/Spirits/SpiritDog/spirit-dog-float-sprite.png" type="Texture" id=6]
+[ext_resource path="res://Images/UI/Global/ui-talk-bubble.png" type="Texture" id=7]
+[ext_resource path="res://Images/Spirits/SpiritDog/spirit-dog-talk-sprite.png" type="Texture" id=8]
+[ext_resource path="res://Images/UI/Global/ui-talk-bubble-more.png" type="Texture" id=9]
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 5 )
+region = Rect2( 456, 0, 57, 37 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 5 )
+region = Rect2( 399, 0, 57, 37 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 5 )
+region = Rect2( 342, 0, 57, 37 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 5 )
+region = Rect2( 285, 0, 57, 37 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 5 )
+region = Rect2( 228, 0, 57, 37 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 5 )
+region = Rect2( 171, 0, 57, 37 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 5 )
+region = Rect2( 114, 0, 57, 37 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 5 )
+region = Rect2( 57, 0, 57, 37 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 57, 37 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 63, 40 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 6 )
+region = Rect2( 63, 0, 63, 40 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 6 )
+region = Rect2( 126, 0, 63, 40 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 6 )
+region = Rect2( 189, 0, 63, 40 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 6 )
+region = Rect2( 252, 0, 63, 40 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 63, 40 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 8 )
+region = Rect2( 63, 0, 63, 40 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 8 )
+region = Rect2( 126, 0, 63, 40 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 8 )
+region = Rect2( 189, 0, 63, 40 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ SubResource( 31 ), SubResource( 30 ), SubResource( 29 ), SubResource( 28 ), SubResource( 27 ), SubResource( 26 ), SubResource( 25 ), SubResource( 24 ), SubResource( 23 ) ],
+"loop": false,
+"name": "enter",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "talk",
+"speed": 10.0
+} ]
+
+[sub_resource type="Animation" id=20]
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "enter" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 3, 2, 4, 5, 6, 7, 8 ]
+}
+
+[sub_resource type="Animation" id=21]
+length = 3.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 3.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 976.977, -40.118 ), Vector2( 970, -25 ), Vector2( 950, -30.49 ), Vector2( 920, -20 ), Vector2( 900, -10 ), Vector2( 870, 0 ), Vector2( 850, 20 ), Vector2( 825, 45 ), Vector2( 795, 60 ), Vector2( 755, 70 ), Vector2( 735, 90 ), Vector2( 685, 100 ), Vector2( 655, 120 ), Vector2( 630, 100 ), Vector2( 110, 393.012 ), Vector2( 120, 393.012 ), Vector2( 130, 393.012 ), Vector2( 140, 393.012 ), Vector2( 140, 393.012 ), Vector2( 140, 393.012 ), Vector2( 140, 393.012 ), Vector2( 140, 393.012 ), Vector2( 140, 393.012 ), Vector2( -58, 32 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.9, 2.3, 2.4, 2.5, 2.6, 2.8, 3.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3, 3 ), Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1.3, 1.3 ), Vector2( 1.4, 1.4 ), Vector2( 1.6, 1.6 ), Vector2( 1.8, 1.8 ), Vector2( 2, 2 ), Vector2( 2.2, 2.2 ), Vector2( 2.2, 2.2 ), Vector2( 2.5, 2.5 ), Vector2( 2.5, 2.5 ), Vector2( 2.5, 2.5 ), Vector2( 2.5, 2.5 ), Vector2( 3, 3 ), Vector2( 3, 3 ), Vector2( 3, 3 ), Vector2( 3, 3 ), Vector2( 3, 3 ), Vector2( 3, 3 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "enter", "enter", "enter", "enter", "enter", "enter", "enter" ]
+}
+
+[sub_resource type="Animation" id=22]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "talk" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=41]
+height = 34.0
+
+[node name="DogSpiritIntro" type="Node2D"]
+z_index = 1
+script = ExtResource( 1 )
+
+[node name="Background" type="TextureRect" parent="."]
+visible = false
+margin_right = 640.0
+margin_bottom = 360.0
+texture = ExtResource( 4 )
+stretch_mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="skip_button" type="Button" parent="."]
+margin_left = 103.0
+margin_top = 44.0
+margin_right = 134.0
+margin_bottom = 57.0
+hint_tooltip = "Skip Intro"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 3 )
+action_mode = 0
+enabled_focus_mode = 0
+text = "NEXT"
+flat = true
+align = 0
+expand_icon = true
+
+[node name="speech_bubble" type="Sprite" parent="."]
+z_index = 1
+
+[node name="speech_bubble1" type="TextureRect" parent="speech_bubble"]
+margin_right = 135.0
+margin_bottom = 44.0
+texture = ExtResource( 7 )
+stretch_mode = 1
+
+[node name="Speech1" type="RichTextLabel" parent="speech_bubble/speech_bubble1"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 135.0
+margin_bottom = 35.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+text = "AAAAHHH! WHERE'S MY BODY? 
+WHAT HAPPENED TO ME, AM I DEAD?
+WHO ARE YOU? DID YOU KILL ME?"
+scroll_active = false
+
+[node name="speech_bubble2" type="TextureRect" parent="speech_bubble"]
+texture = ExtResource( 7 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Speech2" type="RichTextLabel" parent="speech_bubble/speech_bubble2"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 135.0
+margin_bottom = 35.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+text = "HAHA! JUST KIDDING! I AM YOUR SPIRIT GUIDE: SHMERKEDERP! REMEMBER ME?"
+scroll_active = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="speech_bubble3" type="TextureRect" parent="speech_bubble"]
+texture = ExtResource( 7 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Speech3" type="RichTextLabel" parent="speech_bubble/speech_bubble3"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 135.0
+margin_bottom = 32.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+text = "NO! OH...OK. THAT'S FINE. THIS HAPPENS I GUESS. PEOPLE FORGET THEIR SPIRIT ANIMALS."
+scroll_active = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="speech_bubble4" type="TextureRect" parent="speech_bubble"]
+texture = ExtResource( 7 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Speech4" type="RichTextLabel" parent="speech_bubble/speech_bubble4"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 135.0
+margin_bottom = 35.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+text = "IT'S NOT LIKE IT WOULD BE MEMORABLE TO MEET YOUR SPIRIT ANIMAL OR ANYTHING."
+scroll_active = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="speech_bubble5" type="TextureRect" parent="speech_bubble"]
+texture = ExtResource( 7 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Speech5" type="RichTextLabel" parent="speech_bubble/speech_bubble5"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 135.0
+margin_bottom = 35.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+text = "I MEAN, I REMEMBER MY SPIRIT ANIMAL, I NEVER FORGOT GOOD OLD FARGLEBARTS..."
+scroll_active = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="speech_bubble6" type="TextureRect" parent="speech_bubble"]
+texture = ExtResource( 7 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Speech6" type="RichTextLabel" parent="speech_bubble/speech_bubble6"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 135.0
+margin_bottom = 35.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+text = "SO ANYWAY, ZOMBIES ARE COMING. SO ARE OTHER CREATURES OF THE DARK. PROTECT YOUR VILLAGE."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="speech_bubble7" type="TextureRect" parent="speech_bubble"]
+texture = ExtResource( 7 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Speech7" type="RichTextLabel" parent="speech_bubble/speech_bubble7"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 135.0
+margin_bottom = 35.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+text = "PROTECT WHAT YOU LOVE! PROTECT YOUR LIFE WITH EVERYTHING YOU'VE GOT!"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="speech_bubble8" type="TextureRect" parent="speech_bubble"]
+texture = ExtResource( 7 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Speech8" type="RichTextLabel" parent="speech_bubble/speech_bubble8"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 135.0
+margin_bottom = 35.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+text = "BUILD THINGS TO SLOW THEM DOWN. BUT BE VIGILANT! FOR YOU ALONE MUST CONFRONT THE DARKNESS."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="speech_bubble9" type="TextureRect" parent="speech_bubble"]
+margin_right = 135.0
+margin_bottom = 44.0
+texture = ExtResource( 7 )
+stretch_mode = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Speech9" type="RichTextLabel" parent="speech_bubble/speech_bubble9"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 135.0
+margin_bottom = 35.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+text = "BE NOT AFRAID, FOR I SHALL GUIDE YOU ON YOUR JOURNEY. LET'S GO. SHMERKEDERP AWAY!"
+scroll_active = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="next_button" type="Button" parent="speech_bubble"]
+margin_left = 116.0
+margin_top = 17.0
+margin_right = 133.0
+margin_bottom = 37.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 9 )
+flat = true
+
+[node name="spirit_dog" type="AnimatedSprite" parent="."]
+position = Vector2( 825, 45 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 19 )
+animation = "enter"
+frame = 8
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="spirit_dog"]
+anims/enter = SubResource( 20 )
+anims/move = SubResource( 21 )
+anims/talk = SubResource( 22 )
+
+[node name="CollisionShape2D" type="StaticBody2D" parent="."]
+position = Vector2( -23, 61 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D"]
+position = Vector2( 0, 4 )
+shape = SubResource( 41 )
+
+[node name="Light2D" type="Light2D" parent="."]
+light_mask = 7
+position = Vector2( 27, 69 )
+texture = ExtResource( 2 )
+energy = 0.56
+shadow_color = Color( 0.0352941, 0.027451, 0.027451, 0 )
+shadow_filter_smooth = 6.2
+
+[node name="Light2D2" type="Light2D" parent="."]
+light_mask = 7
+position = Vector2( 26, 8 )
+texture = ExtResource( 2 )
+energy = 0.56
+shadow_color = Color( 0.0352941, 0.027451, 0.027451, 0 )
+shadow_filter_smooth = 6.2
+
+[connection signal="pressed" from="skip_button" to="." method="_on_skip_button_pressed"]
+[connection signal="pressed" from="speech_bubble/next_button" to="." method="_on_Text_Button_pressed"]
+[connection signal="animation_finished" from="spirit_dog/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

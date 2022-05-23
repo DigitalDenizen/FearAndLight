@@ -84,14 +84,20 @@ func enemyType(): #Enemy type selection
 	var randn1 = RandomNumberGenerator.new()
 	randn1.randomize()
 	var num = randn1.randi_range(0,100)
-	if num <= 50:
+	if num <= 33:
 		print(num)
 		enemyScene = preload("res://Characters/Enemies/Zombie.tscn")
-		return enemyScene.instance() #returning and intacing zombie enemy
-	else:
+		return enemyScene.instance() #returning and instacing zombie enemy
+	
+	elif num <= 67:
 		print(num)
 		enemyScene = preload("res://Characters/Enemies/DireWolf.tscn")
-		return enemyScene.instance() #returning and intacing direWolf enemy
+		return enemyScene.instance() #returning and instancing direwolf enemy
+	
+	else:
+		print(num)
+		enemyScene = preload("res://Characters/Enemies/VampireSpider.tscn")
+		return enemyScene.instance() #returning and instacing direWolf enemy
 	removeEnemy()
 
 func windigoSpawn():

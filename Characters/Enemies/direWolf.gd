@@ -36,8 +36,8 @@ var target_point_world = Vector2()
 var target_position = Vector2()
 
 func _ready():
-	player = Util.get_main_node().get_node("Player")
-	buildings = Util.get_main_node().get_node("Buildings")
+	player = Util.get_main_node().get_node("YSort").get_node("Player")
+	buildings = Util.get_main_node().get_node("YSort").get_node("Buildings")
 	add_to_group("Baddies")
 	rng.randomize()
 	path_line.visible = should_draw_path_line
@@ -115,7 +115,7 @@ func _set_health(value):
 	if health != prev_health:
 		emit_signal("health_updated", health)
 		if health <= 0:
-			Score._on_Zombie_killed()
+			Score._on_Wolf_killed()
 			if waveSpawn:
 				spawner.removeEnemy()
 			alive = false

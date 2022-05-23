@@ -45,14 +45,6 @@ region = Rect2( 464, 0, 58, 45 )
 atlas = ExtResource( 3 )
 region = Rect2( 522, 0, 58, 45 )
 
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 3 )
-region = Rect2( 870, 0, 58, 45 )
-
-[sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 3 )
-region = Rect2( 986, 0, 58, 45 )
-
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 3 )
 region = Rect2( 1044, 0, 58, 45 )
@@ -77,6 +69,14 @@ region = Rect2( 1276, 0, 58, 45 )
 atlas = ExtResource( 3 )
 region = Rect2( 1334, 0, 58, 45 )
 
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 3 )
+region = Rect2( 870, 0, 58, 45 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 3 )
+region = Rect2( 986, 0, 58, 45 )
+
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 3 )
 region = Rect2( 928, 0, 58, 45 )
@@ -88,6 +88,11 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"loop": false,
+"name": "Death",
+"speed": 10.0
+}, {
 "frames": [ SubResource( 28 ) ],
 "loop": true,
 "name": "Health 75",
@@ -96,11 +101,6 @@ animations = [ {
 "frames": [ SubResource( 29 ) ],
 "loop": true,
 "name": "Health 25",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
-"loop": false,
-"name": "Death",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 36 ) ],
@@ -129,7 +129,7 @@ rect_scale = Vector2( 0.9, 0.75 )
 position = Vector2( 0.5, -9 )
 frames = SubResource( 16 )
 animation = "idle"
-frame = 9
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

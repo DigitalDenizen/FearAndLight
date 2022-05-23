@@ -8,10 +8,6 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.56409
 
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 11, 9 )
-
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 39, 38 )
@@ -40,17 +36,21 @@ region = Rect2( 195, 0, 39, 38 )
 atlas = ExtResource( 3 )
 region = Rect2( 234, 0, 39, 38 )
 
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 11, 9 )
+
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "Poof",
+"speed": 15.0
+}, {
 "frames": [ SubResource( 13 ) ],
 "loop": true,
 "name": "Fire",
 "speed": 1.5
-}, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
-"loop": true,
-"name": "Poof",
-"speed": 5.0
 } ]
 
 [node name="FireBall" type="Area2D"]

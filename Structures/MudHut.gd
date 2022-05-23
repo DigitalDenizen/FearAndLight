@@ -12,7 +12,7 @@ var destroyed = false
 
 func _ready():
 	$AnimatedSprite.play("idle")
-	add_to_group("structures")
+	add_to_group("Structures")
 	
 func _physics_process(delta):
 	if destroyed == false:
@@ -21,7 +21,6 @@ func _physics_process(delta):
 		if deathCountdown > 0:
 			deathCountdown = deathCountdown - 1
 		if deathCountdown <= 0:
-			print("Mudhut gonzo")
 			queue_free()
 
 func hurt(damage):
@@ -44,4 +43,5 @@ func _set_health(value):
 		if health <= 0:
 			deathCountdown = 100
 			destroyed = true
+			Score._on_Buildings_destroyed()
 			$AnimatedSprite.play('Death')

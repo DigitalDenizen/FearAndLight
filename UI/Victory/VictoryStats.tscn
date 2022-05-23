@@ -22,8 +22,8 @@ normal_map = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 451, 247 )
 
 [node name="Victory_Stats_popup" type="WindowDialog"]
-margin_right = 451.0
-margin_bottom = 247.0
+anchor_right = 0.704687
+anchor_bottom = 0.686111
 theme = SubResource( 1 )
 custom_constants/close_h_ofs = 28
 custom_constants/scaleborder_size = 11
@@ -34,6 +34,9 @@ custom_icons/close = ExtResource( 3 )
 custom_styles/panel = SubResource( 2 )
 popup_exclusive = true
 script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="GridContainer" type="GridContainer" parent="."]
 margin_left = 40.0

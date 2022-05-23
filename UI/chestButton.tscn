@@ -26,6 +26,9 @@ region_rect = Rect2( 0, 0, 33, 33 )
 margin_right = 33.0
 margin_bottom = 33.0
 rect_min_size = Vector2( 33, 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 margin_right = 33.0
