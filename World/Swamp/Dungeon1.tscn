@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=2]
+[gd_scene load_steps=119 format=2]
 
 [ext_resource path="res://Images/World/Swamp/tileset-swamp.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://World/Objects/Box1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Images/Effects/Lights/light.png" type="Texture" id=13]
 [ext_resource path="res://World/Objects/Barrel1.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Traps/SpikeTrap.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConcavePolygonShape2D" id=84]
 segments = PoolVector2Array( -0.0161438, 31.7075, -0.500671, 0, -0.500671, 0, 31.8004, 0.213867, 31.8004, 0.213867, 31.8004, 19.433, 31.8004, 19.433, 30.8314, 20.7251, 30.8314, 20.7251, 28.4088, 20.5636, 28.4088, 20.5636, 25.5017, 18.9485, 25.5017, 18.9485, 21.3026, 20.4021, 21.3026, 20.4021, 18.7185, 23.7937, 18.7185, 23.7937, 17.4265, 31.869, 17.4265, 31.869, -0.0161438, 31.7075 )
@@ -1305,6 +1306,11 @@ position = Vector2( -674, 258 )
 
 [node name="Object19" parent="YSort/Objects" instance=ExtResource( 14 )]
 position = Vector2( -656, 269 )
+
+[node name="Traps" type="YSort" parent="YSort"]
+
+[node name="SpikeTrap" parent="YSort/Traps" instance=ExtResource( 15 )]
+position = Vector2( -151, 375 )
 
 [node name="Door" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( -144, 64 )

@@ -12,6 +12,7 @@ const MUSHROOM_GROUP : String = "Mushrooms"
 const DEFENSES_GROUP : String = "Defenses"
 const BOSSES_GROUP : String = "Bosses"
 const DOORS_GROUP : String = "Doors"
+const TRAPS_GROUP : String = "Traps"
 
 enum itemCategories {CONSUMABLE, TOOL, WEAPON, MATERIAL}
 

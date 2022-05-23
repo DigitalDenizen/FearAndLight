@@ -251,7 +251,7 @@ energy = 1.06
 
 [node name="White2" type="Light2D" parent="."]
 light_mask = 7
-position = Vector2( 273, 190 )
+position = Vector2( 242, 194 )
 scale = Vector2( 1.15557, 1.12882 )
 z_as_relative = false
 texture = ExtResource( 4 )
@@ -285,12 +285,22 @@ scale = Vector2( 1.15557, 1.12882 )
 z_as_relative = false
 texture = ExtResource( 4 )
 offset = Vector2( -8.65372, -2.65762 )
-color = Color( 0.0196078, 0.0941176, 0.580392, 1 )
+color = Color( 0.0196078, 0.423529, 0.109804, 1 )
+energy = 1.11
+
+[node name="Red" type="Light2D" parent="."]
+light_mask = 7
+position = Vector2( 599, 363 )
+scale = Vector2( 1.15557, 1.12882 )
+z_as_relative = false
+texture = ExtResource( 4 )
+offset = Vector2( -8.65372, -2.65762 )
+color = Color( 0.243137, 0.509804, 0, 1 )
 energy = 1.11
 
 [node name="White3" type="Light2D" parent="."]
 light_mask = 7
-position = Vector2( 389, 391 )
+position = Vector2( 404, 354 )
 scale = Vector2( 1.15557, 1.12882 )
 z_as_relative = false
 texture = ExtResource( 4 )
