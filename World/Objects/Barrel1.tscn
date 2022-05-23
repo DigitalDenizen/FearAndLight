@@ -4,11 +4,15 @@
 [ext_resource path="res://Images/World/Objects/Barrels/world-object-barrel-medium-sprite.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 7.0
-height = 10.0
+radius = 9.00002
+height = 14.0
 
 [sub_resource type="SegmentShape2D" id=56]
 a = Vector2( 0, -4 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 45, 44 )
 
 [sub_resource type="AtlasTexture" id=57]
 atlas = ExtResource( 2 )
@@ -70,20 +74,16 @@ region = Rect2( 630, 0, 45, 44 )
 atlas = ExtResource( 2 )
 region = Rect2( 675, 0, 45, 44 )
 
-[sub_resource type="AtlasTexture" id=72]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 45, 44 )
-
 [sub_resource type="SpriteFrames" id=29]
 animations = [ {
-"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ) ],
-"loop": false,
-"name": "Destroy",
-"speed": 20.0
-}, {
 "frames": [ SubResource( 72 ) ],
 "loop": false,
 "name": "Idle",
+"speed": 20.0
+}, {
+"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ) ],
+"loop": false,
+"name": "Destroy",
 "speed": 20.0
 } ]
 
@@ -92,7 +92,7 @@ input_pickable = true
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -6, 7 )
+position = Vector2( -6, 5 )
 rotation = -1.5708
 shape = SubResource( 1 )
 

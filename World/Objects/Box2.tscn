@@ -5,11 +5,15 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 7.0
-height = 8.0
+height = 9.99999
 
 [sub_resource type="SegmentShape2D" id=56]
 a = Vector2( -5, -12 )
 b = Vector2( -4, 1 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 26, 29 )
 
 [sub_resource type="AtlasTexture" id=57]
 atlas = ExtResource( 2 )
@@ -71,20 +75,16 @@ region = Rect2( 364, 0, 26, 29 )
 atlas = ExtResource( 2 )
 region = Rect2( 390, 0, 26, 29 )
 
-[sub_resource type="AtlasTexture" id=72]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 26, 29 )
-
 [sub_resource type="SpriteFrames" id=29]
 animations = [ {
-"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ) ],
-"loop": false,
-"name": "Destroy",
-"speed": 20.0
-}, {
 "frames": [ SubResource( 72 ) ],
 "loop": false,
 "name": "Idle",
+"speed": 20.0
+}, {
+"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ) ],
+"loop": false,
+"name": "Destroy",
 "speed": 20.0
 } ]
 

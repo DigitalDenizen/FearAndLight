@@ -37,8 +37,8 @@ animations = [ {
 "name": "Idle",
 "speed": 20.0
 }, {
-"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
-"loop": true,
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
+"loop": false,
 "name": "Active",
 "speed": 10.0
 } ]
@@ -56,4 +56,4 @@ position = Vector2( -9, -7 )
 frames = SubResource( 29 )
 animation = "Idle"
 
-[connection signal="body_entered" from="." to="." method="_on_SpikeTrap_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_FlipPitTrap_body_entered"]
