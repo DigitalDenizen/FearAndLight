@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=2]
+[gd_scene load_steps=118 format=2]
 
 [ext_resource path="res://Images/World/Swamp/tileset-swamp.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://World/Objects/jar2.tscn" type="PackedScene" id=10]
 [ext_resource path="res://World/World.gd" type="Script" id=11]
 [ext_resource path="res://World/Objects/Box1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Images/Effects/Lights/light.png" type="Texture" id=13]
+[ext_resource path="res://World/Objects/Barrel1.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConcavePolygonShape2D" id=84]
 segments = PoolVector2Array( -0.0161438, 31.7075, -0.500671, 0, -0.500671, 0, 31.8004, 0.213867, 31.8004, 0.213867, 31.8004, 19.433, 31.8004, 19.433, 30.8314, 20.7251, 30.8314, 20.7251, 28.4088, 20.5636, 28.4088, 20.5636, 25.5017, 18.9485, 25.5017, 18.9485, 21.3026, 20.4021, 21.3026, 20.4021, 18.7185, 23.7937, 18.7185, 23.7937, 17.4265, 31.869, 17.4265, 31.869, -0.0161438, 31.7075 )
@@ -1220,6 +1222,9 @@ color = Color( 0, 0, 0, 1 )
 [node name="Torch" parent="YSort/Objects" instance=ExtResource( 7 )]
 position = Vector2( -175, 73 )
 
+[node name="Torch10" parent="YSort/Objects" instance=ExtResource( 7 )]
+position = Vector2( -623, 233 )
+
 [node name="Torch2" parent="YSort/Objects" instance=ExtResource( 7 )]
 position = Vector2( -79, 73 )
 
@@ -1292,6 +1297,15 @@ position = Vector2( -9, 462 )
 [node name="Object14" parent="YSort/Objects" instance=ExtResource( 9 )]
 position = Vector2( 7, 460 )
 
+[node name="Object17" parent="YSort/Objects" instance=ExtResource( 9 )]
+position = Vector2( 32, 337 )
+
+[node name="Object18" parent="YSort/Objects" instance=ExtResource( 14 )]
+position = Vector2( -674, 258 )
+
+[node name="Object19" parent="YSort/Objects" instance=ExtResource( 14 )]
+position = Vector2( -656, 269 )
+
 [node name="Door" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( -144, 64 )
 
@@ -1321,7 +1335,81 @@ tile_set = SubResource( 164 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 196601, 26, 0, 196602, 27, 0, 196605, 27, 0, 196606, 26, 0, 524271, 25, 0, 524281, 26, 0, 524286, 26, 0, 655351, 27, 0, 589824, 27, 0, 720885, 25, 0, 786412, 26, 0, 786413, 27, 0, 786414, 26, 0, 851942, 26, 0, 851943, 27, 0, 851954, 25, 0, 851955, 28, 0, 786436, 27, 0, 786437, 26, 0, 786439, 25, 0, 786441, 26, 0, 1048569, 27, 0, 1048574, 27, 0, 1507320, 27, 0 )
+tile_data = PoolIntArray( 196601, 26, 0, 196602, 27, 0, 196605, 27, 0, 196606, 26, 0, 524267, 28, 0, 524270, 28, 0, 524271, 25, 0, 524281, 26, 0, 524286, 26, 0, 655351, 27, 0, 589824, 27, 0, 720885, 25, 0, 655362, 28, 0, 786412, 26, 0, 786413, 27, 0, 786414, 26, 0, 851942, 26, 0, 851943, 27, 0, 851954, 25, 0, 851955, 28, 0, 786436, 27, 0, 786437, 26, 0, 786439, 25, 0, 786441, 26, 0, 1048569, 27, 0, 1048574, 27, 0, 1507318, 26, 0, 1507319, 28, 0, 1507320, 27, 0 )
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Lights" type="Node2D" parent="YSort"]
+
+[node name="Blue" type="Light2D" parent="YSort/Lights"]
+light_mask = 7
+position = Vector2( -139, 433 )
+scale = Vector2( 0.929894, 0.908367 )
+z_as_relative = false
+texture = ExtResource( 13 )
+color = Color( 0.0313726, 0.207843, 0.67451, 1 )
+energy = 1.11
+
+[node name="Blue2" type="Light2D" parent="YSort/Lights"]
+light_mask = 7
+position = Vector2( -670, 273 )
+scale = Vector2( 0.929894, 0.908367 )
+z_as_relative = false
+texture = ExtResource( 13 )
+color = Color( 0.0313726, 0.207843, 0.67451, 1 )
+energy = 1.11
+
+[node name="Purple" type="Light2D" parent="YSort/Lights"]
+light_mask = 7
+position = Vector2( -324, 451 )
+scale = Vector2( 0.929894, 0.908367 )
+z_as_relative = false
+texture = ExtResource( 13 )
+color = Color( 0.141176, 0.0313726, 0.67451, 1 )
+energy = 1.11
+
+[node name="Purple3" type="Light2D" parent="YSort/Lights"]
+light_mask = 7
+position = Vector2( -128, 235 )
+scale = Vector2( 0.929894, 0.908367 )
+z_as_relative = false
+texture = ExtResource( 13 )
+color = Color( 0.141176, 0.0313726, 0.67451, 1 )
+energy = 1.11
+
+[node name="Purple4" type="Light2D" parent="YSort/Lights"]
+light_mask = 7
+position = Vector2( -673, 338 )
+scale = Vector2( 0.929894, 0.908367 )
+z_as_relative = false
+texture = ExtResource( 13 )
+color = Color( 0.141176, 0.0313726, 0.67451, 1 )
+energy = 1.11
+
+[node name="Purple2" type="Light2D" parent="YSort/Lights"]
+light_mask = 7
+position = Vector2( 241, 444 )
+scale = Vector2( 0.929894, 0.908367 )
+z_as_relative = false
+texture = ExtResource( 13 )
+color = Color( 0.141176, 0.0313726, 0.67451, 1 )
+energy = 1.11
+
+[node name="Red" type="Light2D" parent="YSort/Lights"]
+light_mask = 7
+position = Vector2( -49, 286 )
+scale = Vector2( 0.929894, 0.908367 )
+z_as_relative = false
+texture = ExtResource( 13 )
+color = Color( 0.67451, 0.0313726, 0.0313726, 1 )
+energy = 1.11
+
+[node name="Red2" type="Light2D" parent="YSort/Lights"]
+light_mask = 7
+position = Vector2( -223, 596 )
+scale = Vector2( 0.929894, 0.908367 )
+z_as_relative = false
+texture = ExtResource( 13 )
+color = Color( 0.67451, 0.0313726, 0.0313726, 1 )
+energy = 1.11
