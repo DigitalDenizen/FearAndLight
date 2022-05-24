@@ -68,13 +68,13 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Constants="*res://Shared/Constants.gd"
-Score="*res://UI/Score.gd"
-EventBus="*res://Shared/EventBus.gd"
-Util="*res://Shared/Util.gd"
 Nav="*res://Shared/PathFinding.gd"
+Score="*res://UI/Score.gd"
+Util="*res://Shared/Util.gd"
 Physics="*res://Shared/Physics/MovementPhysics.gd"
-Cursor="*res://UI/Cursors/Cursor.tscn"
+Constants="*res://Shared/Constants.gd"
+EventBus="*res://Shared/EventBus.gd"
+Cursor="*res://UI/Cursors/Cursor.gd"
 
 [display]
 
@@ -84,7 +84,7 @@ window/size/borderless=true
 window/size/fullscreen=true
 window/size/test_width=1920
 window/size/test_height=1080
-window/vsync/use_vsync=false
+mouse_cursor/custom_image="res://Images/UI/Global/ui-cursor-pointer-2.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -155,15 +155,12 @@ melee={
 
 [layer_names]
 
-2d_render/layer_1="Projectile"
-2d_render/layer_2="Player"
+2d_render/layer_1="projectile"
+2d_render/layer_2="player"
 2d_render/layer_3="Baddies"
-2d_render/layer_4="ItemDrops"
-2d_render/layer_5="Walls"
-2d_render/layer_6="World"
-2d_render/layer_7="Doors"
-2d_physics/layer_2="Player"
-2d_physics/layer_7="Doors"
+2d_render/layer_4="item drops"
+2d_render/layer_5="walls"
+2d_render/layer_6="world"
 
 [rendering]
 

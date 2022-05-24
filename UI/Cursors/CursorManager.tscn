@@ -1,25 +1,4 @@
-[gd_scene load_steps=10 format=2]
-
-[ext_resource path="res://UI/Cursors/CursorManager.gd" type="Script" id=1]
-[ext_resource path="res://Images/UI/Cursors/ui-cursor-arrow.png" type="Texture" id=2]
-[ext_resource path="res://Images/UI/Cursors/ui-cursor-empty.png" type="Texture" id=3]
-[ext_resource path="res://Images/UI/Cursors/ui-cursor-target.png" type="Texture" id=4]
-[ext_resource path="res://Images/UI/Cursors/ui-cursor-pointer.png" type="Texture" id=5]
-[ext_resource path="res://Images/UI/Cursors/ui-cursor-sword.png" type="Texture" id=6]
-[ext_resource path="res://Images/UI/Cursors/ui-cursor-ibeam.png" type="Texture" id=7]
-[ext_resource path="res://Images/UI/Cursors/ui-cursor-handgrab.png" type="Texture" id=8]
-[ext_resource path="res://Images/UI/Cursors/ui-cursor-handopen.png" type="Texture" id=9]
+[gd_scene format=2]
 
 [node name="CursorManager" type="CanvasLayer"]
 layer = 2
-script = ExtResource( 1 )
-empty_cursor = ExtResource( 3 )
-arrow_cursor = ExtResource( 2 )
-target_cursor = ExtResource( 4 )
-pointer_cursor = ExtResource( 5 )
-sword_cursor = ExtResource( 6 )
-ibeam_cursor = ExtResource( 7 )
-hand_open_cursor = ExtResource( 9 )
-hand_grab_cursor = ExtResource( 8 )
-base_window_size = Vector2( 640, 360 )
-base_cursor_size = Vector2( 17, 17 )
