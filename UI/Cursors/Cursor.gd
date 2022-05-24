@@ -106,11 +106,12 @@ func _on_Cursor_body_entered(body):
 	if body.is_in_group("Objects"):
 		Icon.show()
 		self.Icon.texture = objectIcon
-		Input.set_custom_mouse_cursor(texture_target, Input.CURSOR_ARROW)
+		Input.set_custom_mouse_cursor(texture_target, Input.CURSOR_ARROW, Vector2(30, 30))
+#		      set_custom_mouse_cursor(Resource image, CursorShape shape=0, Vector2 hotspot=Vector2( 0, 0 ) )
 	if body.is_in_group("Baddies"):
 		Icon.show()
 		self.Icon.texture = enemyIcon
-		Input.set_custom_mouse_cursor(texture_target, Input.CURSOR_ARROW)
+		Input.set_custom_mouse_cursor(texture_target, Input.CURSOR_ARROW, Vector2(30, 30))
 	if body.is_in_group("Structures"):
 		Icon.show()
 		self.Icon.texture = structureIcon
@@ -126,11 +127,11 @@ func _on_Cursor_body_entered(body):
 	if body.is_in_group("Mushrooms"):
 		Icon.show()
 		self.Icon.texture = mushroomIcon
-		Input.set_custom_mouse_cursor(texture_target, Input.CURSOR_ARROW)
+		Input.set_custom_mouse_cursor(texture_target, Input.CURSOR_ARROW, Vector2(30, 30))
 	if body.is_in_group("Bosses"):
 		Icon.show()
 		self.Icon.texture = bossIcon
-		Input.set_custom_mouse_cursor(texture_target, Input.CURSOR_ARROW)
+		Input.set_custom_mouse_cursor(texture_target, Input.CURSOR_ARROW, Vector2(30, 30))
 
 func _on_Cursor_body_exited(body):
 	var texture_arrow = arrow_cursor()

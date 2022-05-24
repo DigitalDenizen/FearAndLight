@@ -28,7 +28,7 @@
 [ext_resource path="res://World/Swamp/Bush1.tscn" type="PackedScene" id=26]
 [ext_resource path="res://World/Swamp/MudClump4.tscn" type="PackedScene" id=27]
 [ext_resource path="res://World/DarkForest/Tree1.tscn" type="PackedScene" id=28]
-[ext_resource path="res://MainWorld.gd" type="Script" id=29]
+[ext_resource path="res://NoMansLand.gd" type="Script" id=29]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=30]
 [ext_resource path="res://World/Swamp/Dungeon1.tscn" type="PackedScene" id=31]
 [ext_resource path="res://UI/Inventory/Inventory.tscn" type="PackedScene" id=32]
@@ -163,6 +163,7 @@ pause_mode = 2
 position = Vector2( -208, 144 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="YSort"]
+visible = false
 light_mask = 32
 z_as_relative = false
 color = Color( 0, 0, 0, 1 )

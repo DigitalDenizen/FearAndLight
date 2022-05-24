@@ -11,7 +11,7 @@ func shoot(aim_position, caster_position):
 	rotation = direction.angle()
 
 func _ready():
-	speed = 100
+	speed = 125
 
 func _process(delta):
 	if not collid:

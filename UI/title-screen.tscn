@@ -247,7 +247,7 @@ scale = Vector2( 1.43091, 1.39779 )
 z_as_relative = false
 texture = ExtResource( 4 )
 offset = Vector2( -79.6142, -82.3868 )
-energy = 1.06
+energy = 0.95
 
 [node name="White2" type="Light2D" parent="."]
 light_mask = 7
@@ -256,7 +256,7 @@ scale = Vector2( 1.15557, 1.12882 )
 z_as_relative = false
 texture = ExtResource( 4 )
 offset = Vector2( -79.6142, -82.3868 )
-energy = 1.06
+energy = 0.95
 
 [node name="Blue" type="Light2D" parent="."]
 light_mask = 7
