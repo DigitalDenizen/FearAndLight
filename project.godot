@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody2D",
-"class": "DireWolf",
-"language": "GDScript",
-"path": "res://Characters/Enemies/DireWolf.gd"
-}, {
 "base": "Node",
 "class": "MobSpawner",
 "language": "GDScript",
@@ -50,7 +45,6 @@ _global_script_classes=[ {
 "path": "res://Characters/Enemies/Zombie.gd"
 } ]
 _global_script_class_icons={
-"DireWolf": "",
 "MobSpawner": "",
 "PathFinding": "",
 "StoneMan": "",
@@ -68,14 +62,12 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Constants="*res://Shared/Constants.gd"
-Score="*res://UI/Score.gd"
-EventBus="*res://Shared/EventBus.gd"
-Util="*res://Shared/Util.gd"
 Nav="*res://Shared/PathFinding.gd"
+Score="*res://UI/Score.gd"
+Util="*res://Shared/Util.gd"
 Physics="*res://Shared/Physics/MovementPhysics.gd"
-CursorManager="*res://UI/Cursors/CursorManager.tscn"
-Cursor="*res://UI/Cursors/Cursor.tscn"
+Constants="*res://Shared/Constants.gd"
+EventBus="*res://Shared/EventBus.gd"
 
 [display]
 
@@ -85,6 +77,7 @@ window/size/borderless=true
 window/size/fullscreen=true
 window/size/test_width=1920
 window/size/test_height=1080
+mouse_cursor/custom_image="res://Images/UI/Global/ui-cursor-pointer-2.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

@@ -15,6 +15,9 @@ region_rect = Rect2( 0, 0, 121, 108 )
 margin_right = 121.0
 margin_bottom = 108.0
 rect_min_size = Vector2( 121, 108 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 121.0

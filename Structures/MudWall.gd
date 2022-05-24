@@ -52,4 +52,5 @@ func _set_health(value):
 			emit_signal("defenseDestroyed")
 			deathCountdown = 100
 			destroyed = true
+			Score._on_Buildings_destroyed()
 			$AnimatedSprite.play('Death')

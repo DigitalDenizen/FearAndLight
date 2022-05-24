@@ -235,5 +235,3 @@ autoplay = true
 
 [connection signal="button_down" from="VBoxContainer/HBoxContainer/Play_Button" to="VBoxContainer/HBoxContainer/Play_Button" method="_on_Button_button_down"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/Play_Button" to="VBoxContainer/HBoxContainer/Play_Button" method="_on_Play_Button_button_up"]
-[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/Play_Button" to="VBoxContainer/HBoxContainer/Play_Button" method="_on_Play_Button_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/Play_Button" to="VBoxContainer/HBoxContainer/Play_Button" method="_on_Play_Button_mouse_exited"]

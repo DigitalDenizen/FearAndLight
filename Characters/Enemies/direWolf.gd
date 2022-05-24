@@ -1,5 +1,4 @@
 extends KinematicBody2D
-class_name DireWolf
 
 signal health_updated(health)
 signal melee(melee, player_pos, direWolf_pos)
@@ -116,7 +115,7 @@ func _set_health(value):
 	if health != prev_health:
 		emit_signal("health_updated", health)
 		if health <= 0:
-			Score._on_DireWolf_killed()
+			Score._on_Wolf_killed()
 			if waveSpawn:
 				spawner.removeEnemy()
 			alive = false

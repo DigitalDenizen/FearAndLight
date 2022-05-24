@@ -38,19 +38,19 @@ custom_constants/margin_left = -1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Battle_Panel/MarginContainer"]
 margin_left = -1.0
-margin_right = 399.0
+margin_right = 433.0
 margin_bottom = 163.0
 rect_min_size = Vector2( 0, 163 )
 custom_constants/separation = -2
 
 [node name="Battle_Details" parent="Battle_Panel/MarginContainer/HBoxContainer" instance=ExtResource( 5 )]
-margin_right = 140.0
+margin_right = 176.0
 
 [node name="Enemy_Info" parent="Battle_Panel/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
-margin_left = 138.0
-margin_right = 265.0
+margin_left = 174.0
+margin_right = 301.0
 custom_constants/separation = 5
 
 [node name="Spoils_Of_war" parent="Battle_Panel/MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_left = 263.0
-margin_right = 398.0
+margin_left = 299.0
+margin_right = 434.0

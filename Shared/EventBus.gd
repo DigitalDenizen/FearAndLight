@@ -27,3 +27,10 @@ signal battle_banner_closed() #Emitted when the battle banner is closed
 #Enemy Spawning signals
 signal spawnDefeated() #Emitted when mobspawn has been defeated
 signal victory() #Emitted when emeny spawn and windigo is defeated
+
+#Defeat Signals
+signal defeat() #When the character dies Game Over Window pops up
+signal close_toolbar()
+signal set_enemies_killed()
+signal set_heroes_killed()
+signal set_defenses_destroyed()

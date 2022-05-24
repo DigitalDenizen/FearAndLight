@@ -81,6 +81,18 @@ region = Rect2( 1276, 0, 58, 45 )
 atlas = ExtResource( 3 )
 region = Rect2( 1334, 0, 58, 45 )
 
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 3 )
+region = Rect2( 870, 0, 58, 45 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 3 )
+region = Rect2( 986, 0, 58, 45 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 3 )
+region = Rect2( 928, 0, 58, 45 )
+
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
 "frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],

@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://World/DarkForest/Tree1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/UILayout/uiButtonLayout.tscn" type="PackedScene" id=2]
@@ -53,6 +53,7 @@
 [ext_resource path="res://Images/UI/Grid/ui-grid-square-normal.png" type="Texture" id=52]
 [ext_resource path="res://MainWorldOpen.gd" type="Script" id=53]
 [ext_resource path="res://Structures/BombBarrel.tscn" type="PackedScene" id=54]
+[ext_resource path="res://UI/Defeat/GameOverPanel.tscn" type="PackedScene" id=55]
 
 [sub_resource type="TileSet" id=2]
 0/name = "ui-grid-square-normal.png 0"
@@ -148,6 +149,8 @@ layer = -1
 
 [node name="VictoryStatsPopup" parent="YSort/UI" instance=ExtResource( 4 )]
 pause_mode = 2
+
+[node name="GameOverPopup" parent="YSort/UI" instance=ExtResource( 55 )]
 
 [node name="MusicWorld" type="AudioStreamPlayer" parent="YSort"]
 volume_db = -13.697
