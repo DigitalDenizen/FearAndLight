@@ -24,7 +24,7 @@ onready var Icon = self.get_node("Sprite")
 func _ready():
 	update_cursor()
 	get_tree().connect("screen_resized", self, "update_cursor")
-	print("huh")
+	print(Icon)
 	
 func _physics_process(delta):
 	self.position = self.get_global_mouse_position()

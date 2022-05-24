@@ -1,4 +1,0 @@
-[gd_scene format=2]
-
-[node name="CursorManager" type="CanvasLayer"]
-layer = 2

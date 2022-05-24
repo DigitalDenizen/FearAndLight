@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody2D",
-"class": "DireWolf",
-"language": "GDScript",
-"path": "res://Characters/Enemies/DireWolf.gd"
-}, {
 "base": "Node",
 "class": "MobSpawner",
 "language": "GDScript",
@@ -50,7 +45,6 @@ _global_script_classes=[ {
 "path": "res://Characters/Enemies/Zombie.gd"
 } ]
 _global_script_class_icons={
-"DireWolf": "",
 "MobSpawner": "",
 "PathFinding": "",
 "StoneMan": "",
@@ -74,7 +68,7 @@ Util="*res://Shared/Util.gd"
 Physics="*res://Shared/Physics/MovementPhysics.gd"
 Constants="*res://Shared/Constants.gd"
 EventBus="*res://Shared/EventBus.gd"
-Cursor="*res://UI/Cursors/Cursor.gd"
+Cursor="*res://UI/Cursors/Cursor.tscn"
 
 [display]
 
