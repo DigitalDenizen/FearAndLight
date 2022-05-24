@@ -32,19 +32,16 @@ margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
 
-[node name="build_button_container" type="CenterContainer" parent="."]
+[node name="build_button_container" type="CenterContainer" parent="." groups=["UI"]]
 margin_right = 40.0
 margin_bottom = 40.0
-rect_min_size = Vector2( 40, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="build_button" type="Button" parent="build_button_container"]
 margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
 focus_mode = 0
+mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 6 )
 custom_styles/focus = SubResource( 5 )

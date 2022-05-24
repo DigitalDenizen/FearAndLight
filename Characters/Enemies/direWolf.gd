@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name DireWolf
 
 signal health_updated(health)
 signal melee(melee, player_pos, direWolf_pos)
@@ -36,8 +37,8 @@ var target_point_world = Vector2()
 var target_position = Vector2()
 
 func _ready():
-	player = Util.get_main_node().get_node("YSort").get_node("Player")
-	buildings = Util.get_main_node().get_node("YSort").get_node("Buildings")
+	player = Util.get_main_node().get_node("YSort/Player")
+	buildings = Util.get_main_node().get_node("YSort/Buildings")
 	add_to_group("Baddies")
 	rng.randomize()
 	path_line.visible = should_draw_path_line
@@ -56,15 +57,15 @@ func _physics_process(delta):
 			target = false
 			
 		var enemyVector
-		if targetObject.path.size() > 2:
+		if targetObject.path.size() > 1.99:
 			enemyVector = global_position.direction_to(targetObject.path[1]) * MOVE_SPEED
 			walk_animation(enemyVector)
 			move_and_slide(enemyVector)
 			set_path_line(targetObject.path)
-		elif targetObject.path.size() == 0 && !target:
+		elif targetObject.path.size() < 1.98 && !target:
 			_change_state(STATES.IDLE)
 		else:
-			_on_direWolf_melee(Melee, targetObject.targetObject.global_position, global_position)
+			_on_DireWolf_melee(Melee, targetObject.targetObject.global_position, global_position)
 	else:
 		if not_attacking:
 			deathCountdown = deathCountdown - 1
@@ -151,33 +152,33 @@ func prioritize_target(targets):
 			firstItem = false
 			distanceToCompare = obj.global_position.distance_to(global_position);
 			target = obj
-			
+
 		if distanceToCompare > obj.global_position.distance_to(global_position):
 			distanceToCompare = obj.global_position.distance_to(global_position);
 			target = obj
-		
+
 	var closestTarget = TargetPath.new()
 	closestTarget.targetObject = target
 	closestTarget.path = pathFinding.get_new_path(global_position, target.global_position)
 	return closestTarget
 
-func _on_direWolf_melee(melee, target_pos, direWolf_pos):
+func _on_DireWolf_melee(melee, target_pos, direWolf_pos):
 	var direction = target_pos - direWolf_pos
-	if direction.x > 0:
+	if direction.x > 1:
 		$AnimatedSprite.play("Attack")
 		$AnimatedSprite.flip_h = true
 	else:
 		$AnimatedSprite.play("Attack")
 		$AnimatedSprite.flip_h = false
 	not_attacking = false
-	attackCountDown = 50
+	attackCountDown = 40
 	var scratch = Melee.instance()
-	scratch.attacker = "direWolf"
+	scratch.attacker = "DireWolf"
 	add_child(scratch)
 	scratch.shoot(target_pos, direWolf_pos)
 	$RandomBarkPlayer.play_random()
 
-func _on_direWolf_killed():
+func _on_DireWolf_killed():
 	if rng.randf() <= 0.8:
 		var itemDrop = itemDrop_scene.instance()
 		get_tree().get_root().add_child(itemDrop)

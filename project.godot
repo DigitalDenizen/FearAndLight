@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "DireWolf",
+"language": "GDScript",
+"path": "res://Characters/Enemies/DireWolf.gd"
+}, {
 "base": "Node",
 "class": "MobSpawner",
 "language": "GDScript",
@@ -19,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Shared/PathFinding.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "StoneMan",
+"language": "GDScript",
+"path": "res://Characters/Enemies/StoneMan.gd"
+}, {
 "base": "Node2D",
 "class": "TargetPath",
 "language": "GDScript",
@@ -27,7 +37,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Wendigo",
 "language": "GDScript",
-"path": "res://Characters/Bosses/wendigo.gd"
+"path": "res://Characters/Bosses/Wendigo.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Zombie",
@@ -35,8 +45,10 @@ _global_script_classes=[ {
 "path": "res://Characters/Enemies/Zombie.gd"
 } ]
 _global_script_class_icons={
+"DireWolf": "",
 "MobSpawner": "",
 "PathFinding": "",
+"StoneMan": "",
 "TargetPath": "",
 "Wendigo": "",
 "Zombie": ""

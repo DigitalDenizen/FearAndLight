@@ -20,6 +20,7 @@ region_rect = Rect2( 0, 0, 23, 23 )
 margin_right = 23.0
 margin_bottom = 23.0
 rect_min_size = Vector2( 23, 23 )
+mouse_default_cursor_shape = 6
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )

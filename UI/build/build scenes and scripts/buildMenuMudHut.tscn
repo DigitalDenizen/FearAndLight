@@ -131,6 +131,7 @@ margin_right = 15.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 15, 15 )
 focus_mode = 0
+mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 4 )
 custom_styles/focus = SubResource( 11 )

@@ -17,6 +17,15 @@ func _on_Wolf_killed():
 func _on_vampire_spider_killed():
 	vampSpiderStat += 1
 	score += 75
+
+func _on_VampireSpider_killed():
+	score += 100
+	
+func _on_StoneMan_killed():
+	score += 500
+
+func _on_Wendigo_killed():
+	score += 5000
 	
 func _on_Bush_killed():
 	score += 5 

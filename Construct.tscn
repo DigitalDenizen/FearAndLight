@@ -54,7 +54,7 @@
 [ext_resource path="res://UI/build/build scenes and scripts/buildGrid.gd" type="Script" id=52]
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=53]
 [ext_resource path="res://Construct.gd" type="Script" id=54]
-[ext_resource path="res://Audio/Music/Scary/spooky-atmos.wav" type="AudioStream" id=55]
+[ext_resource path="res://Audio/Music/Village/village-song-1.wav" type="AudioStream" id=55]
 [ext_resource path="res://Images/World/Swamp/tileset-swamp.png" type="Texture" id=56]
 [ext_resource path="res://Images/World/Construct/tileset-construct.png" type="Texture" id=57]
 [ext_resource path="res://Images/UI/Grid/ui-grid-square-normal.png" type="Texture" id=58]
@@ -1891,7 +1891,7 @@ segments = PoolVector2Array( 21.7878, 0.307861, 31.994, 0.307861, 31.994, 0.3078
 23/shapes = [  ]
 23/z_index = 0
 
-[node name="Main" type="Node2D"]
+[node name="Main2" type="Node2D"]
 script = ExtResource( 54 )
 
 [node name="YSort" type="YSort" parent="."]

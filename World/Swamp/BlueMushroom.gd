@@ -12,7 +12,7 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	$AnimatedSprite.play("Idle")
-	add_to_group("Objects")
+	add_to_group("Mushrooms")
 
 func _physics_process(delta):
 	if destroyed == false:
