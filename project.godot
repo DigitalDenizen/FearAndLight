@@ -35,6 +35,11 @@ _global_script_classes=[ {
 "path": "res://Shared/Models/Target.gd"
 }, {
 "base": "KinematicBody2D",
+"class": "VampireSpider",
+"language": "GDScript",
+"path": "res://Characters/Enemies/VampireSpider.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Wendigo",
 "language": "GDScript",
 "path": "res://Characters/Bosses/Wendigo.gd"
@@ -50,6 +55,7 @@ _global_script_class_icons={
 "PathFinding": "",
 "StoneMan": "",
 "TargetPath": "",
+"VampireSpider": "",
 "Wendigo": "",
 "Zombie": ""
 }
