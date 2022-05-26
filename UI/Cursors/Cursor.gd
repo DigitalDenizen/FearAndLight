@@ -9,22 +9,9 @@ onready var handOpenCursor = preload("res://Images/UI/Cursors/ui-cursor-handopen
 onready var handGrabCursor = preload("res://Images/UI/Cursors/ui-cursor-handgrab.png")
 onready var emptyCursor = preload("res://Images/UI/Cursors/ui-cursor-empty.png")
 
-onready var enemyIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-enemy.png")
-onready var defenseIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-defense.png")
-onready var objectIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-object.png")
-onready var tilemapIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-tilemap.png")
-onready var structureIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-structures.png")
-onready var mushroomIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-mushrooms.png")
-onready var doorIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-door.png")
-onready var heartIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-heart.png")
-onready var bossIcon = preload("res://Images/UI/Cursors/ui-cursor-icon-boss.png")
-
-onready var Icon = self.get_node("Sprite")
-
 func _ready():
 	update_cursor()
 	get_tree().connect("screen_resized", self, "update_cursor")
-	print(Icon)
 	
 func _physics_process(delta):
 	self.position = self.get_global_mouse_position()
@@ -98,41 +85,65 @@ func target_cursor():
 func _on_Cursor_body_entered(body):
 	var texture_target = target_cursor()
 	var texture_pointer = pointer_cursor()
-	
+	var open_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("OpenIcon")
+	var object_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("ObjectIcon")
+	var defense_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("DefenseIcon")
+	var structure_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("StructureIcon")
+	var mushroom_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("MushroomIcon")
+	var enemy_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("EnemyIcon")
+	var boss_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("BossIcon")
+	var door_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("DoorIcon")
+	var question_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("QuestionIcon")
+
 	# Set Custom Hovers
+	if body.is_in_group("Player"):
+		Input.set_custom_mouse_cursor(texture_pointer, Input.CURSOR_ARROW)
 	if body.is_in_group("Objects"):
-		Icon.show()
-		self.Icon.texture = objectIcon
+		object_icon.show()
 		Input.set_custom_mouse_cursor(texture_target, Input.CURSOR_ARROW, Vector2(30, 30))
 	if body.is_in_group("Baddies"):
-		Icon.show()
-		self.Icon.texture = enemyIcon
+		enemy_icon.show()
 		Input.set_custom_mouse_cursor(texture_target, Input.CURSOR_ARROW, Vector2(30, 30))
 	if body.is_in_group("Structures"):
-		Icon.show()
-		self.Icon.texture = structureIcon
+		structure_icon.show()
 		Input.set_custom_mouse_cursor(texture_pointer, Input.CURSOR_ARROW)
 	if body.is_in_group("Doors"):
-		Icon.show()
-		self.Icon.texture = doorIcon
+		door_icon.show()
 		Input.set_custom_mouse_cursor(texture_pointer, Input.CURSOR_ARROW)
 	if body.is_in_group("Defenses"):
-		Icon.show()
-		self.Icon.texture = defenseIcon
+		defense_icon.show()
+		Input.set_custom_mouse_cursor(texture_pointer, Input.CURSOR_ARROW)
+	if body.is_in_group("Chests"):
+		question_icon.show()
 		Input.set_custom_mouse_cursor(texture_pointer, Input.CURSOR_ARROW)
 	if body.is_in_group("Mushrooms"):
-		Icon.show()
-		self.Icon.texture = mushroomIcon
+		mushroom_icon.show()
 		Input.set_custom_mouse_cursor(texture_target, Input.CURSOR_ARROW, Vector2(30, 30))
 	if body.is_in_group("Bosses"):
-		Icon.show()
-		self.Icon.texture = bossIcon
+		boss_icon.show()
 		Input.set_custom_mouse_cursor(texture_target, Input.CURSOR_ARROW, Vector2(30, 30))
 
 func _on_Cursor_body_exited(body):
 	var texture_arrow = arrow_cursor()
+	var open_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("OpenIcon")
+	var object_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("ObjectIcon")
+	var defense_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("DefenseIcon")
+	var structure_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("StructureIcon")
+	var mushroom_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("MushroomIcon")
+	var enemy_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("EnemyIcon")
+	var boss_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("BossIcon")
+	var door_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("DoorIcon")
+	var question_icon = get_tree().get_root().get_node("Main").get_node("YSort").get_node("Player").get_node("BubbleIcons").get_node("QuestionIcon")
 	
 	# Set Custom Hovers
 	if body.is_in_group("Player") || body.is_in_group("Objects") || body.is_in_group("Baddies") || body.is_in_group("Structures") || body.is_in_group("TileMaps") || body.is_in_group("UI") || body.is_in_group("Defenses") || body.is_in_group("Mushrooms") || body.is_in_group("Bosses"):
-		Icon.hide()
+		open_icon.hide()
+		object_icon.hide()
+		defense_icon.hide()
+		structure_icon.hide()
+		mushroom_icon.hide()
+		enemy_icon.hide()
+		boss_icon.hide()
+		door_icon.hide()
+		question_icon.hide()
 		Input.set_custom_mouse_cursor(texture_arrow, Input.CURSOR_ARROW)
