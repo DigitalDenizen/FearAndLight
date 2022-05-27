@@ -5,6 +5,7 @@
 [ext_resource path="res://Images/Bosses/Wendigo/boss-wendigo-sprite.png" type="Texture" id=3]
 [ext_resource path="res://Images/Bosses/Wendigo/boss-wendigo-emission-sprite.png" type="Texture" id=4]
 
+
 [sub_resource type="Shader" id=138]
 code = "shader_type canvas_item;
 uniform sampler2D emission_texture;

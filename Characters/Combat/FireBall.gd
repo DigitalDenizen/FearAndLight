@@ -10,8 +10,6 @@ func shoot(aim_position, caster_position):
 	direction = (aim_position - caster_position).normalized()
 	rotation = direction.angle()
 
-func _ready():
-	pass
 
 func _process(delta):
 	if not collid:

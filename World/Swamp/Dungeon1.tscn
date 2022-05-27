@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=2]
+[gd_scene load_steps=126 format=2]
 
 [ext_resource path="res://Images/World/Swamp/tileset-swamp.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://World/Objects/Box2.tscn" type="PackedScene" id=17]
 [ext_resource path="res://World/Objects/Box3.tscn" type="PackedScene" id=18]
 [ext_resource path="res://World/Objects/BronzeChest.tscn" type="PackedScene" id=19]
+[ext_resource path="res://UI/Defeat/GameOverPanel.tscn" type="PackedScene" id=20]
+[ext_resource path="res://UI/Victory/VictoryStats.tscn" type="PackedScene" id=21]
 
 [sub_resource type="ConcavePolygonShape2D" id=84]
 segments = PoolVector2Array( -0.0161438, 31.7075, -0.500671, 0, -0.500671, 0, 31.8004, 0.213867, 31.8004, 0.213867, 31.8004, 19.433, 31.8004, 19.433, 30.8314, 20.7251, 30.8314, 20.7251, 28.4088, 20.5636, 28.4088, 20.5636, 25.5017, 18.9485, 25.5017, 18.9485, 21.3026, 20.4021, 21.3026, 20.4021, 18.7185, 23.7937, 18.7185, 23.7937, 17.4265, 31.869, 17.4265, 31.869, -0.0161438, 31.7075 )
@@ -1193,6 +1195,8 @@ segments = PoolVector2Array( 21.7878, 0.307861, 31.994, 0.307861, 31.994, 0.3078
 29/shapes = [  ]
 29/z_index = 0
 
+[sub_resource type="ImageTexture" id=196]
+
 [node name="Main" type="Node2D"]
 
 [node name="YSort" type="YSort" parent="."]
@@ -1544,3 +1548,13 @@ z_as_relative = false
 texture = ExtResource( 13 )
 color = Color( 0.67451, 0.0313726, 0.0313726, 1 )
 energy = 1.11
+
+[node name="UI" type="CanvasLayer" parent="YSort"]
+
+[node name="GameOverPopup" parent="YSort/UI" instance=ExtResource( 20 )]
+custom_icons/close = SubResource( 196 )
+
+[node name="VictoryStatsPopup" parent="YSort/UI" instance=ExtResource( 21 )]
+pause_mode = 2
+
+[connection signal="hide" from="YSort/UI/VictoryStatsPopup" to="YSort/UI/VictoryStatsPopup" method="closeWindow"]

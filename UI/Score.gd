@@ -1,11 +1,21 @@
 extends CanvasLayer
+var zombieStat = 0
+var vampSpiderStat = 0
+var direWolfStat = 0
+var buildingsDestroyed = 0
 
 var score = 0
 	
 func _on_Zombie_killed():
+	zombieStat += 1
 	score += 50 
 
-func _on_DireWolf_killed():
+func _on_Wolf_killed():
+	direWolfStat += 1
+	score += 50
+
+func _on_vampire_spider_killed():
+	vampSpiderStat += 1
 	score += 75
 
 func _on_VampireSpider_killed():
@@ -34,6 +44,9 @@ func _on_Tree_killed():
 	
 func _on_Mushroom_killed():
 	score += 25
+	
+func _on_Buildings_destroyed():
+	buildingsDestroyed += 1
 
 func _on_Object_killed():
 	score += 5

@@ -115,7 +115,7 @@ func _set_health(value):
 	if health != prev_health:
 		emit_signal("health_updated", health)
 		if health <= 0:
-			Score._on_DireWolf_killed()
+			Score._on_Wolf_killed()
 			if waveSpawn:
 				spawner.removeEnemy()
 			alive = false

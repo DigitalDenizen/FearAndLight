@@ -1,0 +1,166 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://UI/Defeat/GameOverMedal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Font/f-l-base-font-dynamic_21.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/Victory/Heros_killed.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Images/UI/Defeat/ui-defeat-text-banner-wndw.png" type="Texture" id=4]
+[ext_resource path="res://UI/Victory/Defenses_destroyed.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Victory/Enemies_killed.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/Victory/Chest.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/Defeat/GameOverPanel.gd" type="Script" id=8]
+[ext_resource path="res://Images/UI/Global/ui-button-xlarge-special-hover.png" type="Texture" id=9]
+[ext_resource path="res://Images/UI/Global/ui-button-xlarge-special-normal.png" type="Texture" id=10]
+[ext_resource path="res://Images/UI/Global/ui-button-xlarge-disabled.png" type="Texture" id=11]
+[ext_resource path="res://FearAndLightTheme.tres" type="Theme" id=12]
+
+[sub_resource type="ImageTexture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 451, 236 )
+
+[sub_resource type="Theme" id=8]
+default_font = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 116, 21 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 116, 21 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 116, 21 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 116, 21 )
+
+[node name="GameOverPopup" type="WindowDialog"]
+pause_mode = 2
+visible = true
+margin_right = 451.0
+margin_bottom = 247.0
+theme = ExtResource( 12 )
+custom_constants/title_height = 3
+custom_icons/close = SubResource( 3 )
+custom_styles/panel = SubResource( 2 )
+popup_exclusive = true
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 40.0
+margin_top = 106.0
+margin_right = 411.0
+margin_bottom = 301.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer"]
+margin_right = 371.0
+margin_bottom = 108.0
+
+[node name="CenterContainer" type="CenterContainer" parent="GridContainer/MarginContainer"]
+margin_right = 371.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 371, 108 )
+
+[node name="StatsContainer" type="HBoxContainer" parent="GridContainer/MarginContainer/CenterContainer"]
+margin_right = 371.0
+margin_bottom = 108.0
+
+[node name="Killed" type="CenterContainer" parent="GridContainer/MarginContainer/CenterContainer/StatsContainer"]
+margin_right = 121.0
+margin_bottom = 108.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 121, 104 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/MarginContainer/CenterContainer/StatsContainer/Killed"]
+margin_right = 121.0
+margin_bottom = 108.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 121, 104 )
+custom_constants/separation = 6
+alignment = 1
+
+[node name="HerosKilled" parent="GridContainer/MarginContainer/CenterContainer/StatsContainer/Killed/VBoxContainer" instance=ExtResource( 3 )]
+rect_min_size = Vector2( 121, 32 )
+
+[node name="EnemiesKilled" parent="GridContainer/MarginContainer/CenterContainer/StatsContainer/Killed/VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 38.0
+margin_bottom = 70.0
+
+[node name="DefensesDestroyed" parent="GridContainer/MarginContainer/CenterContainer/StatsContainer/Killed/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 76.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 121, 32 )
+
+[node name="Medals" type="CenterContainer" parent="GridContainer/MarginContainer/CenterContainer/StatsContainer"]
+margin_left = 125.0
+margin_right = 246.0
+margin_bottom = 108.0
+
+[node name="MedalsEarned" parent="GridContainer/MarginContainer/CenterContainer/StatsContainer/Medals" instance=ExtResource( 1 )]
+
+[node name="Chest" type="CenterContainer" parent="GridContainer/MarginContainer/CenterContainer/StatsContainer"]
+margin_left = 250.0
+margin_right = 371.0
+margin_bottom = 108.0
+
+[node name="Panel" parent="GridContainer/MarginContainer/CenterContainer/StatsContainer/Chest" instance=ExtResource( 7 )]
+rect_min_size = Vector2( 121, 108 )
+
+[node name="Your_Results" type="CenterContainer" parent="GridContainer"]
+margin_top = 112.0
+margin_right = 370.0
+margin_bottom = 133.0
+rect_min_size = Vector2( 370, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="GridContainer/Your_Results"]
+margin_left = 127.0
+margin_right = 243.0
+margin_bottom = 21.0
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ReturnToMenu" type="Button" parent="GridContainer/Your_Results/CenterContainer"]
+pause_mode = 2
+margin_right = 116.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 116, 21 )
+focus_mode = 0
+theme = SubResource( 8 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 5 )
+toggle_mode = true
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "RETURN TO MENU"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="GridContainer"]
+margin_top = 137.0
+margin_right = 371.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 371, 21 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[connection signal="button_down" from="GridContainer/Your_Results/CenterContainer/ReturnToMenu" to="." method="closeWindow"]
