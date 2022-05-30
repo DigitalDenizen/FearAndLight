@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Spawn.gd" type="Script" id=1]
+[ext_resource path="res://SpawnTestingWorld.gd" type="Script" id=2]
+
+[node name="SpawnTestingWorld" type="Node2D"]
+position = Vector2( 0, -1 )
+script = ExtResource( 2 )
+
+[node name="Spawn" type="Node2D" parent="."]
+position = Vector2( 61, 178 )
+script = ExtResource( 1 )
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[node name="SpawnArea" type="ReferenceRect" parent="."]
+margin_left = 5.0
+margin_top = 130.0
+margin_right = 227.0
+margin_bottom = 358.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
