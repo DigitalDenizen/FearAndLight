@@ -32,6 +32,7 @@ func spawn():
 		if t.wait_time > 0:
 			var enemy = EnemyType()
 			add_child(enemy)
+			enemy.pathFinding = self.pathFinding
 			enemy.position = $Spawn.position
 			var nodes = get_tree().get_nodes_in_group("spawn")
 			var node = nodes[randi() % nodes.size()]

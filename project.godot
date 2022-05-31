@@ -37,7 +37,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Wendigo",
 "language": "GDScript",
-"path": "res://Characters/Bosses/Wendigo.gd"
+"path": "res://Characters/Bosses/wendigo.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Zombie",
