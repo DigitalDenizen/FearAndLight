@@ -3,9 +3,15 @@ extends YSort
 onready var ground = $Ground
 onready var pathFinding = $PathFinding
 onready var mobSpawner = $MobSpawn
+onready var battleBanner = preload("res://UI/Battle/Battle_Banner.tscn").instance()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+#	var t = Timer.new()
+#	t.set_wait_time(10)
+#	self.add_child(t)
+#	t.start()
+	spawn()
 	pathFinding.createNavigationMap(ground)
 	
 	#mobSpawner.initialize(pathFinding)
@@ -23,6 +29,13 @@ func _ready() -> void:
 func on_battle_banner_clsoed():
 	mobSpawner.initialize(pathFinding)
 
+#func BattleBanner():
+#	var t = Timer.new()
+#	t.set_wait_time(5)
+#	self.add_child(t)
+#	t.start()
+	
+
 func spawn():
 	var t = Timer.new()
 	t.set_wait_time(25)
@@ -38,6 +51,7 @@ func spawn():
 			var node = nodes[randi() % nodes.size()]
 			var position = node.position
 			$Spawn.position = position
+			print(t)
 		else:
 			t.stop()
 
