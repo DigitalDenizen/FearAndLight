@@ -283,7 +283,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="MarginContainer"]
 position = Vector2( 318.562, 59.9638 )
 frames = SubResource( 8 )
-frame = 47
+frame = 29
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

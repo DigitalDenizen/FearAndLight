@@ -1990,6 +1990,7 @@ pause_mode = 2
 
 [node name="GameOverPopup" parent="YSort/UI" instance=ExtResource( 60 )]
 pause_mode = 0
+visible = false
 
 [node name="MusicWorld" type="AudioStreamPlayer" parent="YSort"]
 stream = ExtResource( 55 )
@@ -2157,6 +2158,24 @@ position = Vector2( -232, 305 )
 [node name="Bush4" parent="YSort/SwampTest" instance=ExtResource( 1 )]
 position = Vector2( -221, 295 )
 
+[node name="Spawn" type="Node2D" parent="YSort"]
+position = Vector2( -364, 148 )
+
+[node name="SpawnTimer" type="Timer" parent="YSort"]
+
+[node name="SpawnPoints" type="Node2D" parent="YSort"]
+position = Vector2( 3, 2 )
+
+[node name="Position2D" type="Position2D" parent="YSort/SpawnPoints" groups=["spawn"]]
+position = Vector2( -327, 272 )
+
+[node name="Position2D2" type="Position2D" parent="YSort/SpawnPoints" groups=["spawn"]]
+position = Vector2( -109, 273 )
+
+[node name="Position2D3" type="Position2D" parent="YSort/SpawnPoints" groups=["spawn"]]
+position = Vector2( -207, 277 )
+
 [node name="World" type="Node2D" parent="."]
+position = Vector2( 2, 2 )
 
 [connection signal="hide" from="YSort/UI/VictoryStatsPopup" to="YSort/UI/VictoryStatsPopup" method="closeWindow"]

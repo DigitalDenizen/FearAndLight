@@ -22,3 +22,42 @@ func _ready() -> void:
 	
 func on_battle_banner_clsoed():
 	mobSpawner.initialize(pathFinding)
+
+func spawn():
+	var t = Timer.new()
+	t.set_wait_time(25)
+	self.add_child(t)
+	t.start()
+	for i in rand_range(0,10):
+		if t.wait_time > 0:
+			var enemy = EnemyType()
+			add_child(enemy)
+			enemy.position = $Spawn.position
+			var nodes = get_tree().get_nodes_in_group("spawn")
+			var node = nodes[randi() % nodes.size()]
+			var position = node.position
+			$Spawn.position = position
+		else:
+			t.stop()
+
+func EnemyType():
+	var enemyScene 
+	var randn1 = RandomNumberGenerator.new()
+	randn1.randomize()
+	var num = randn1.randi_range(0,100)
+	if num <= 33:
+		print(num)
+		enemyScene = preload("res://Characters/Enemies/Zombie.tscn")
+		return enemyScene.instance() #returning and instancing zombie enemy
+	elif num <= 66:
+		print(num)
+		enemyScene = preload("res://Characters/Enemies/StoneMan.tscn")
+		return enemyScene.instance() #returning and instancing stone man enemy
+	elif num <= 88:
+		print(num)
+		enemyScene = preload("res://Characters/Enemies/VampireSpider.tscn")
+		return enemyScene.instance() #returning and instancing vampire spider enemy
+	elif num <= 99:
+		print(num)
+		enemyScene = preload("res://Characters/Enemies/DireWolf.tscn")
+		return enemyScene.instance() #returning and instancing dire wolf enemy

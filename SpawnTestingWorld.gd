@@ -1,25 +1,45 @@
 extends Node2D
 
-onready var t = $SpawnTimer
+var player
+export (float) var spawnNum = 0
 
-func enemySpawn():
-	t.set_wait_time(10)
-	t.one_shot(true)
-	t.start()
-	yield(t, "timeout")
-	t.queue_free()
-	queue_free()
+func _ready():
 	_on_SpawnTimer_timeout()
+	pass
+	#player = Util.get_main_node().get_node("res://Characters/Player.tscn")
+#	enemySpawn()
+
+#func enemySpawn():
+#	var t = Timer.new()
+#	t.set_wait_time(50)
+#	print(t)
+#	self.add_child(t)
+#	t.start()
+#	if t.wait_time > 0:
+#		_on_SpawnTimer_timeout()
+#	else:
+#		yield(t, "timeout")
+#		t.queue_free()
+#		queue_free()
 
 func _on_SpawnTimer_timeout():
-	if t > 0:
-		var enemy = EnemyType()
-		add_child(enemy)
-		enemy.position = $Spawn.position
-	
-		var area = $SpawnArea
-		var position = area.rect_position + Vector2(randf() * area.rect_size.x, randf() * area.rect_size.y)
-		$Spawn.position = position
+	var t = Timer.new()
+	t.set_wait_time(25)
+	self.add_child(t)
+	t.start()
+	if t.wait_time > 0:
+		for i in rand_range(0,spawnNum):
+			var enemy = EnemyType()
+			add_child(enemy)
+			enemy.position = $Spawn.position
+#			var area = $SpawnArea
+#			var position = area.rect_position + Vector2(randf() * area.rect_size.x, randf() * area.rect_size.y)
+#			$Spawn.position = position
+			var nodes = get_tree().get_nodes_in_group("spawn")
+			var node = nodes[randi() % nodes.size()]
+			
+			var position = node.position
+			$Spawn.position = position
 	else:
 		t.stop()
 
