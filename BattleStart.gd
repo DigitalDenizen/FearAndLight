@@ -8,7 +8,6 @@ export (int) var spawnNum = 0
 export (int) var wavenum = 1
 var enemyWavesSpawned = 0
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pathFinding.createNavigationMap(ground)
@@ -27,17 +26,8 @@ func _ready() -> void:
 func on_battle_banner_clsoed():
 	mobSpawner.initialize(pathFinding)
 
-#func battleStart():
-#	var t = Timer.new()
-#	t.set_wait_time(3)
-#	self.add_child(t)
-#	t.start()
-#	yield(t,"timeout")
-#	t.queue_free()
-#	queue_free()
-#	spawn()
-
 func spawn():
+	#Spawn new wave is the waves spawned is less then wave number
 	while enemyWavesSpawned < wavenum:
 		for i in rand_range(0,spawnNum):
 			var enemy = EnemyType()
@@ -48,6 +38,7 @@ func spawn():
 			var node = nodes[randi() % nodes.size()]
 			var position = node.position
 			$Spawn.position = position
+		#Increase waves spawned by 1
 		enemyWavesSpawned = enemyWavesSpawned + 1
 		break
 

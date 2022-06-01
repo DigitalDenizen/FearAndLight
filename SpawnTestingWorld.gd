@@ -2,6 +2,8 @@ extends Node2D
 
 var player
 export (float) var spawnNum = 0
+export (float) var enemyWavesSpawned = 0
+var wavenum = 0
 
 func _ready():
 	_on_SpawnTimer_timeout()
@@ -23,25 +25,17 @@ func _ready():
 #		queue_free()
 
 func _on_SpawnTimer_timeout():
-	var t = Timer.new()
-	t.set_wait_time(25)
-	self.add_child(t)
-	t.start()
-	if t.wait_time > 0:
-		for i in rand_range(0,spawnNum):
-			var enemy = EnemyType()
-			add_child(enemy)
-			enemy.position = $Spawn.position
-#			var area = $SpawnArea
-#			var position = area.rect_position + Vector2(randf() * area.rect_size.x, randf() * area.rect_size.y)
-#			$Spawn.position = position
-			var nodes = get_tree().get_nodes_in_group("spawn")
-			var node = nodes[randi() % nodes.size()]
-			
-			var position = node.position
-			$Spawn.position = position
-	else:
-		t.stop()
+	for i in rand_range(0,spawnNum):
+		var enemy = EnemyType()
+		add_child(enemy)
+		enemy.position = $Spawn.position
+#		var area = $SpawnArea
+#		var position = area.rect_position + Vector2(randf() * area.rect_size.x, randf() * area.rect_size.y)
+#		$Spawn.position = position
+		var nodes = get_tree().get_nodes_in_group("spawn")
+		var node = nodes[randi() % nodes.size()]
+		var position = node.position
+		$Spawn.position = position
 
 func EnemyType():
 	var enemyScene 
@@ -64,3 +58,18 @@ func EnemyType():
 		print(num)
 		enemyScene = preload("res://Characters/Enemies/DireWolf.tscn")
 		return enemyScene.instance() #returning and instancing dire wolf enemy
+
+func _on_spawnArea_area_entered(area):
+	while enemyWavesSpawned < wavenum:
+		for i in rand_range(0,spawnNum):
+			var enemy = EnemyType()
+			add_child(enemy)
+			enemy.pathFinding = self.pathFinding
+			enemy.position = $Spawn.position
+			var nodes = get_tree().get_nodes_in_group("spawn")
+			var node = nodes[randi() % nodes.size()]
+			var position = node.position
+			$Spawn.position = position
+			#Increase waves spawned by 1
+		enemyWavesSpawned = enemyWavesSpawned + 1
+		break
