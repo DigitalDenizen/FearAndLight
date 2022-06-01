@@ -1,4 +1,4 @@
-[gd_scene load_steps=226 format=2]
+[gd_scene load_steps=227 format=2]
 
 [ext_resource path="res://World/Swamp/Bush4.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/DarkForest/TreeStump1.tscn" type="PackedScene" id=2]
@@ -61,6 +61,7 @@
 [ext_resource path="res://Images/World/DarkForest/tileset-darkforest.png" type="Texture" id=59]
 [ext_resource path="res://UI/Defeat/GameOverPanel.tscn" type="PackedScene" id=60]
 [ext_resource path="res://UI/UILayout/ToolBar.gd" type="Script" id=61]
+[ext_resource path="res://SpawnTimer.gd" type="Script" id=62]
 
 [sub_resource type="TileSet" id=399]
 0/name = "ui-grid-square-normal.png 0"
@@ -1896,10 +1897,8 @@ script = ExtResource( 54 )
 
 [node name="YSort" type="YSort" parent="."]
 script = ExtResource( 51 )
-
-[node name="BarrierTop" parent="YSort" instance=ExtResource( 29 )]
-visible = false
-position = Vector2( -2921.69, 56.5692 )
+spawnNum = 8
+wavenum = 2
 
 [node name="Player" parent="YSort" instance=ExtResource( 30 )]
 position = Vector2( -124.893, 150.631 )
@@ -2162,6 +2161,9 @@ position = Vector2( -221, 295 )
 position = Vector2( -364, 148 )
 
 [node name="SpawnTimer" type="Timer" parent="YSort"]
+wait_time = 3.0
+autostart = true
+script = ExtResource( 62 )
 
 [node name="SpawnPoints" type="Node2D" parent="YSort"]
 position = Vector2( 3, 2 )
@@ -2175,7 +2177,12 @@ position = Vector2( -109, 273 )
 [node name="Position2D3" type="Position2D" parent="YSort/SpawnPoints" groups=["spawn"]]
 position = Vector2( -207, 277 )
 
+[node name="BarrierTop" parent="YSort" instance=ExtResource( 29 )]
+visible = false
+position = Vector2( -2921.69, 56.5692 )
+
 [node name="World" type="Node2D" parent="."]
 position = Vector2( 2, 2 )
 
 [connection signal="hide" from="YSort/UI/VictoryStatsPopup" to="YSort/UI/VictoryStatsPopup" method="closeWindow"]
+[connection signal="timeout" from="YSort/SpawnTimer" to="YSort" method="_on_SpawnTimer_timeout"]

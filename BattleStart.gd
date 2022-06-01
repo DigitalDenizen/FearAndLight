@@ -3,17 +3,15 @@ extends YSort
 onready var ground = $Ground
 onready var pathFinding = $PathFinding
 onready var mobSpawner = $MobSpawn
-onready var battleBanner = preload("res://UI/Battle/Battle_Banner.tscn").instance()
+
+export (int) var spawnNum = 0
+export (int) var wavenum = 1
+var enemyWavesSpawned = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-#	var t = Timer.new()
-#	t.set_wait_time(10)
-#	self.add_child(t)
-#	t.start()
-	spawn()
 	pathFinding.createNavigationMap(ground)
-	
 	#mobSpawner.initialize(pathFinding)
 	EventBus.connect("build_menu_opened",self, "on_build_menu_opened")
 	EventBus.connect("build_menu_closed",self, "on_build_menu_closed")
@@ -29,20 +27,19 @@ func _ready() -> void:
 func on_battle_banner_clsoed():
 	mobSpawner.initialize(pathFinding)
 
-#func BattleBanner():
+#func battleStart():
 #	var t = Timer.new()
-#	t.set_wait_time(5)
+#	t.set_wait_time(3)
 #	self.add_child(t)
 #	t.start()
-	
+#	yield(t,"timeout")
+#	t.queue_free()
+#	queue_free()
+#	spawn()
 
 func spawn():
-	var t = Timer.new()
-	t.set_wait_time(25)
-	self.add_child(t)
-	t.start()
-	for i in rand_range(0,10):
-		if t.wait_time > 0:
+	while enemyWavesSpawned < wavenum:
+		for i in rand_range(0,spawnNum):
 			var enemy = EnemyType()
 			add_child(enemy)
 			enemy.pathFinding = self.pathFinding
@@ -51,9 +48,8 @@ func spawn():
 			var node = nodes[randi() % nodes.size()]
 			var position = node.position
 			$Spawn.position = position
-			print(t)
-		else:
-			t.stop()
+		enemyWavesSpawned = enemyWavesSpawned + 1
+		break
 
 func EnemyType():
 	var enemyScene 
@@ -72,7 +68,10 @@ func EnemyType():
 		print(num)
 		enemyScene = preload("res://Characters/Enemies/VampireSpider.tscn")
 		return enemyScene.instance() #returning and instancing vampire spider enemy
-	elif num <= 99:
+	else:
 		print(num)
 		enemyScene = preload("res://Characters/Enemies/DireWolf.tscn")
 		return enemyScene.instance() #returning and instancing dire wolf enemy
+
+func _on_SpawnTimer_timeout():
+	spawn()
