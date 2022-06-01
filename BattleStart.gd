@@ -7,6 +7,8 @@ onready var mobSpawner = $MobSpawn
 export (int) var spawnNum = 0
 export (int) var wavenum = 1
 var enemyWavesSpawned = 0
+var spawnAreaEntered = false
+var intruder = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -65,4 +67,11 @@ func EnemyType():
 		return enemyScene.instance() #returning and instancing dire wolf enemy
 
 func _on_SpawnTimer_timeout():
+	pass
+
+func _on_SpawnArea_body_entered(body):
 	spawn()
+	print("Body Entered")
+
+func _on_SpawnArea_body_exited(body):
+	print("Body Exisited")

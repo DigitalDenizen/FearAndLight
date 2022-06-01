@@ -9,3 +9,4 @@ func _on_pause_game():
 	
 func _on_unpause_game():
 	get_tree().paused = false
+
