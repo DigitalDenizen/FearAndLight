@@ -11,6 +11,9 @@ const UI_GROUP : String = "UI"
 const MUSHROOM_GROUP : String = "Mushrooms"
 const DEFENSES_GROUP : String = "Defenses"
 const BOSSES_GROUP : String = "Bosses"
+const DOORS_GROUP : String = "Doors"
+const TRAPS_GROUP : String = "Traps"
+const CHESTS_GROUP : String = "Chests"
 
 enum itemCategories {CONSUMABLE, TOOL, WEAPON, MATERIAL}
 
@@ -22,7 +25,7 @@ const imagePath: Dictionary = {
 	"healthpotion": "res://Images/Drops/ItemDrops/PotionHealth/drop-health-potion.png",
 	"magicpotion": "res://Images/Drops/ItemDrops/MagicPotion/drop-magic-potion.png",
 	"bomb": "res://Images/Drops/ItemDrops/Bomb/drop-bomb-idle.png",
-	"bronzecoin": "res://Images/Drops/CoinDrops/BronzeCoin/drop-bronze-coin.png",
+	"goldcoin": "res://Images/Drops/CoinDrops/GoldCoin/drop-gold-coin.png",
 	"fur": "res://Images/Drops/EnemyDrops/DireWolfFur/drop-dire-wolf-fur.png",
 	"bones": "res://Images/Drops/EnemyDrops/ZombieBone/drop-zombie-bone.png",
 	"spiderweb": "res://Images/Drops/EnemyDrops/VampireSpiderWeb/drop-vampire-spider-web.png",

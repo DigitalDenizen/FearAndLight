@@ -11,7 +11,7 @@ func shoot(aim_position, caster_position):
 	rotation = direction.angle()
 
 func _ready():
-	speed = 100
+	speed = 142
 
 func _process(delta):
 	if not collid:
@@ -22,7 +22,7 @@ func _process(delta):
 		else:
 			poofCountdown -= 1
 	if speed > 0:
-		speed = speed - 2.2
+		speed = speed - 2.3
 	else:
 		queue_free()
 	
@@ -31,7 +31,7 @@ func _on_Visibility_exit_screen():
 
 func _body_entered(body):
 	if attacker == "Player":
-		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && body.is_in_group('Baddies') || body.is_in_group('Objects') || body.is_in_group('Mushrooms'):
+		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && body.is_in_group('Baddies') || body.is_in_group('Chests') ||  body.is_in_group('Objects') || body.is_in_group('Mushrooms'):
 			body.hurt(25)
 			_melee_collid()
 		if body.name != "Player" && body.name != "StaticBody2D" && !body.is_in_group('CollisionBox') && body.is_in_group('TileMaps'):

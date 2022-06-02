@@ -48,5 +48,8 @@ func _on_Mushroom_killed():
 func _on_Buildings_destroyed():
 	buildingsDestroyed += 1
 
+func _on_Object_killed():
+	score += 5
+
 func _update_score():
 	return str(score)

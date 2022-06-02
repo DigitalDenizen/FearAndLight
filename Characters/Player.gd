@@ -10,6 +10,17 @@ signal killed()
 
 export (float) var max_health = 100
 onready var health = max_health setget _set_health
+
+onready var open_icon = get_node("BubbleIcons/OpenIcon")
+onready var object_icon = get_node("BubbleIcons/ObjectIcon")
+onready var defense_icon = get_node("BubbleIcons/DefenseIcon")
+onready var structure_icon = get_node("BubbleIcons/StructureIcon")
+onready var mushroom_icon = get_node("BubbleIcons/MushroomIcon")
+onready var enemy_icon = get_node("BubbleIcons/EnemyIcon")
+onready var boss_icon = get_node("BubbleIcons/BossIcon")
+onready var door_icon = get_node("BubbleIcons/DoorIcon")
+onready var question_icon = get_node("BubbleIcons/QuestionIcon")
+
 var alive = true
 var attacking = false
 var deathCountdown = 0
@@ -25,11 +36,21 @@ var inventory
 var facing = "Right"
 var move_vec
 
+
 func _ready():
 	yield(get_tree(), "idle_frame")
 	add_to_group("Player")
 	get_tree().call_group("zombies", "set_player", self)
 	inventory = get_node("Camera2D/Overlay/Inventory")
+	open_icon.hide()
+	object_icon.hide()
+	defense_icon.hide()
+	structure_icon.hide()
+	mushroom_icon.hide()
+	enemy_icon.hide()
+	boss_icon.hide()
+	door_icon.hide()
+	question_icon.hide()
 	
 func _physics_process(delta):
 	move_vec = Vector2()

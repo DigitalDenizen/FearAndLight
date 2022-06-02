@@ -1,0 +1,109 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://World/Objects/Object.gd" type="Script" id=1]
+[ext_resource path="res://Images/World/Objects/Boxes/object-box-medium-sprite.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 7.0
+height = 9.99999
+
+[sub_resource type="SegmentShape2D" id=56]
+a = Vector2( -5, -12 )
+b = Vector2( -4, 1 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 2 )
+region = Rect2( 26, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 2 )
+region = Rect2( 52, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 2 )
+region = Rect2( 78, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 2 )
+region = Rect2( 104, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 2 )
+region = Rect2( 130, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 2 )
+region = Rect2( 156, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 2 )
+region = Rect2( 182, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 2 )
+region = Rect2( 208, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 2 )
+region = Rect2( 234, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 2 )
+region = Rect2( 260, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 2 )
+region = Rect2( 286, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 2 )
+region = Rect2( 312, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 2 )
+region = Rect2( 338, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 2 )
+region = Rect2( 364, 0, 26, 29 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 2 )
+region = Rect2( 390, 0, 26, 29 )
+
+[sub_resource type="SpriteFrames" id=29]
+animations = [ {
+"frames": [ SubResource( 72 ) ],
+"loop": false,
+"name": "Idle",
+"speed": 20.0
+}, {
+"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ) ],
+"loop": false,
+"name": "Destroy",
+"speed": 20.0
+} ]
+
+[node name="Object" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -6, 0 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionSegment" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 0 )
+shape = SubResource( 56 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -9, -7 )
+frames = SubResource( 29 )
+animation = "Idle"
+
+[connection signal="killed" from="." to="." method="_on_Object_killed"]
