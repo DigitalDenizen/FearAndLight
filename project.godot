@@ -68,8 +68,6 @@ EventBus="*res://Shared/EventBus.gd"
 Util="*res://Shared/Util.gd"
 Nav="*res://Shared/PathFinding.gd"
 Physics="*res://Shared/Physics/MovementPhysics.gd"
-Constants="*res://Shared/Constants.gd"
-EventBus="*res://Shared/EventBus.gd"
 Cursor="*res://UI/Cursors/Cursor.tscn"
 
 [display]
