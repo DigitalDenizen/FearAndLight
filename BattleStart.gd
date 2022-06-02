@@ -70,8 +70,11 @@ func _on_SpawnTimer_timeout():
 	pass
 
 func _on_SpawnArea_body_entered(body):
-	spawn()
-	print("Body Entered")
+	if body.name == "Player":
+		spawn()
+		print("Body Entered")
+	else:
+		pass
 
 func _on_SpawnArea_body_exited(body):
 	print("Body Exisited")

@@ -54,7 +54,7 @@
 [ext_resource path="res://UI/build/build scenes and scripts/buildGrid.gd" type="Script" id=52]
 [ext_resource path="res://AnimatedTileset/Camera2D.gd" type="Script" id=53]
 [ext_resource path="res://Construct.gd" type="Script" id=54]
-[ext_resource path="res://Audio/Music/Village/village-song-1.wav" type="AudioStream" id=55]
+[ext_resource path="res://Audio/Music/Village/Inside/Chill.wav" type="AudioStream" id=55]
 [ext_resource path="res://Images/World/Swamp/tileset-swamp.png" type="Texture" id=56]
 [ext_resource path="res://Images/World/Construct/tileset-construct.png" type="Texture" id=57]
 [ext_resource path="res://Images/UI/Grid/ui-grid-square-normal.png" type="Texture" id=58]
@@ -1901,7 +1901,7 @@ script = ExtResource( 54 )
 [node name="YSort" type="YSort" parent="."]
 script = ExtResource( 51 )
 spawnNum = 2
-wavenum = 2
+wavenum = 5
 
 [node name="Player" parent="YSort" instance=ExtResource( 30 )]
 position = Vector2( -124.893, 150.631 )
@@ -1945,7 +1945,7 @@ visible = false
 z_index = 1
 
 [node name="MudWall" parent="YSort/Buildings" instance=ExtResource( 49 )]
-position = Vector2( -207.298, 190.422 )
+position = Vector2( -196, 225 )
 z_as_relative = false
 
 [node name="MudHut" parent="YSort/Buildings" instance=ExtResource( 48 )]
@@ -2161,7 +2161,7 @@ position = Vector2( -232, 305 )
 position = Vector2( -221, 295 )
 
 [node name="Spawn" type="Node2D" parent="YSort"]
-position = Vector2( -439, 310 )
+position = Vector2( 192, 287 )
 
 [node name="SpawnTimer" type="Timer" parent="YSort"]
 wait_time = 3.0
@@ -2172,23 +2172,35 @@ script = ExtResource( 62 )
 position = Vector2( -112, 62 )
 
 [node name="Position2D" type="Position2D" parent="YSort/SpawnPoints" groups=["spawn"]]
-position = Vector2( -355, 138 )
+position = Vector2( -268, 262 )
 
 [node name="Position2D2" type="Position2D" parent="YSort/SpawnPoints" groups=["spawn"]]
-position = Vector2( -80, 242 )
+position = Vector2( -343, 499 )
 
 [node name="Position2D3" type="Position2D" parent="YSort/SpawnPoints" groups=["spawn"]]
-position = Vector2( -181, 269 )
+position = Vector2( 315, 380 )
+
+[node name="Position2D4" type="Position2D" parent="YSort/SpawnPoints" groups=["spawn"]]
+position = Vector2( -111, 582 )
+
+[node name="Position2D5" type="Position2D" parent="YSort/SpawnPoints" groups=["spawn"]]
+position = Vector2( -516, 628 )
+
+[node name="Position2D6" type="Position2D" parent="YSort/SpawnPoints" groups=["spawn"]]
+position = Vector2( -635, 482 )
 
 [node name="BarrierTop" parent="YSort" instance=ExtResource( 29 )]
 visible = false
 position = Vector2( -2921.69, 56.5692 )
 
-[node name="SpawnArea" type="Area2D" parent="YSort"]
-position = Vector2( -307, 163 )
+[node name="SpawnArea" type="Area2D" parent="YSort" groups=["SpawnTrigger"]]
+position = Vector2( -199, 158 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/SpawnArea"]
-position = Vector2( 1, 1 )
+position = Vector2( 0, -1 )
 rotation = 1.5708
 shape = SubResource( 400 )
 
