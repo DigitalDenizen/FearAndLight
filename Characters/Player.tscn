@@ -1,15 +1,24 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Characters/UI/HealthBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Images/Heroes/hero-female-dark-sprite.png" type="Texture" id=3]
 [ext_resource path="res://Audio/Sounds/Attacks/Player/swipe.wav" type="AudioStream" id=4]
 [ext_resource path="res://Images/Heroes/hero-female-emission-sprite.png" type="Texture" id=5]
+[ext_resource path="res://Images/UI/Cursors/ui-cursor-icon-open.png" type="Texture" id=6]
+[ext_resource path="res://Images/UI/Cursors/ui-cursor-icon-object.png" type="Texture" id=7]
 [ext_resource path="res://Images/Effects/Lights/light.png" type="Texture" id=8]
 [ext_resource path="res://Audio/Sounds/Attacks/Player/fireball.wav" type="AudioStream" id=9]
 [ext_resource path="res://Audio/Sounds/Attacks/Player/heal.wav" type="AudioStream" id=10]
 [ext_resource path="res://Audio/Sounds/Attacks/Player/walk.wav" type="AudioStream" id=11]
 [ext_resource path="res://Characters/SoundWalking.gd" type="Script" id=12]
+[ext_resource path="res://Images/UI/Cursors/ui-cursor-icon-defense.png" type="Texture" id=13]
+[ext_resource path="res://Images/UI/Cursors/ui-cursor-icon-structures.png" type="Texture" id=14]
+[ext_resource path="res://Images/UI/Cursors/ui-cursor-icon-mushrooms.png" type="Texture" id=15]
+[ext_resource path="res://Images/UI/Cursors/ui-cursor-icon-enemy.png" type="Texture" id=16]
+[ext_resource path="res://Images/UI/Cursors/ui-cursor-icon-boss.png" type="Texture" id=17]
+[ext_resource path="res://Images/UI/Cursors/ui-cursor-icon-door.png" type="Texture" id=18]
+[ext_resource path="res://Images/UI/Cursors/ui-cursor-icon-question.png" type="Texture" id=19]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 6.00003
@@ -262,7 +271,6 @@ animations = [ {
 
 [sub_resource type="Environment" id=86]
 background_mode = 4
-glow_enabled = true
 glow_intensity = 0.11
 glow_strength = 0.56
 glow_blend_mode = 0
@@ -273,8 +281,46 @@ glow_hdr_scale = 1.95
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 z_as_relative = false
 collision_layer = 10
-collision_mask = 13
+collision_mask = 77
 script = ExtResource( 1 )
+
+[node name="BubbleIcons" type="Node2D" parent="."]
+
+[node name="OpenIcon" type="Sprite" parent="BubbleIcons"]
+position = Vector2( 25, -17 )
+texture = ExtResource( 6 )
+
+[node name="ObjectIcon" type="Sprite" parent="BubbleIcons"]
+position = Vector2( 25, -17 )
+texture = ExtResource( 7 )
+
+[node name="DefenseIcon" type="Sprite" parent="BubbleIcons"]
+position = Vector2( 25, -17 )
+texture = ExtResource( 13 )
+
+[node name="StructureIcon" type="Sprite" parent="BubbleIcons"]
+position = Vector2( 25, -17 )
+texture = ExtResource( 14 )
+
+[node name="MushroomIcon" type="Sprite" parent="BubbleIcons"]
+position = Vector2( 25, -17 )
+texture = ExtResource( 15 )
+
+[node name="EnemyIcon" type="Sprite" parent="BubbleIcons"]
+position = Vector2( 25, -17 )
+texture = ExtResource( 16 )
+
+[node name="BossIcon" type="Sprite" parent="BubbleIcons"]
+position = Vector2( 25, -17 )
+texture = ExtResource( 17 )
+
+[node name="DoorIcon" type="Sprite" parent="BubbleIcons"]
+position = Vector2( 25, -17 )
+texture = ExtResource( 18 )
+
+[node name="QuestionIcon" type="Sprite" parent="BubbleIcons"]
+position = Vector2( 25, -17 )
+texture = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.358, 12.859 )
