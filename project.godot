@@ -62,12 +62,12 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Nav="*res://Shared/PathFinding.gd"
-Score="*res://UI/Score.gd"
-Util="*res://Shared/Util.gd"
-Physics="*res://Shared/Physics/MovementPhysics.gd"
 Constants="*res://Shared/Constants.gd"
+Score="*res://UI/Score.gd"
 EventBus="*res://Shared/EventBus.gd"
+Util="*res://Shared/Util.gd"
+Nav="*res://Shared/PathFinding.gd"
+Physics="*res://Shared/Physics/MovementPhysics.gd"
 Cursor="*res://UI/Cursors/Cursor.tscn"
 
 [display]
@@ -78,7 +78,6 @@ window/size/borderless=true
 window/size/fullscreen=true
 window/size/test_width=1920
 window/size/test_height=1080
-mouse_cursor/custom_image="res://Images/UI/Global/ui-cursor-pointer-2.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

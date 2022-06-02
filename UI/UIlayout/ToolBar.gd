@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node2D
 
 func _ready() -> void:
 	EventBus.connect("close_toolbar", self, "_close_toolbar")
